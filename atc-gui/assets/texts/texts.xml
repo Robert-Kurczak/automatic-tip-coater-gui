@@ -5,6 +5,20 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_FWMD" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Settings</Translation>
+      </Text>
+      <Text Id="__SingleUse_IEPH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Calibrate</Translation>
+      </Text>
+      <Text Id="__SingleUse_G8S3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_72QC" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Info</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
