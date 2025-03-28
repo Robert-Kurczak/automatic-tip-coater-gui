@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 protected:
+    void easeInAnimation(touchgfx::MoveAnimator<touchgfx::Container>& widget);
 };
 
 #endif // MAINSCREENVIEW_HPP

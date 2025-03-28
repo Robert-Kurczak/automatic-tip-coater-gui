@@ -59,6 +59,7 @@
                 "Y": 210,
                 "Width": 160,
                 "Height": 160,
+                "Moveable": true,
                 "Components": [
                   {
                     "Type": "FlexButton",
@@ -136,10 +137,11 @@
               },
               {
                 "Type": "Container",
-                "Name": "settingsContainer",
+                "Name": "settingsButtonContainer",
                 "Y": 210,
                 "Width": 160,
                 "Height": 160,
+                "Moveable": true,
                 "Components": [
                   {
                     "Type": "FlexButton",
@@ -221,6 +223,7 @@
                 "X": 210,
                 "Width": 160,
                 "Height": 160,
+                "Moveable": true,
                 "Components": [
                   {
                     "Type": "FlexButton",
@@ -300,6 +303,7 @@
                 "Name": "startButtonContainer",
                 "Width": 160,
                 "Height": 160,
+                "Moveable": true,
                 "Components": [
                   {
                     "Type": "FlexButton",
