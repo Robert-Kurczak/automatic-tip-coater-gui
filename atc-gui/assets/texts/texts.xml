@@ -6,6 +6,21 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_H9RC" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Z Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_EM0R" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_F34L" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Y Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_P760" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Z Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZU17" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Heater</Translation>
+      </Text>
       <Text Id="__SingleUse_FWMD" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Settings</Translation>
       </Text>
