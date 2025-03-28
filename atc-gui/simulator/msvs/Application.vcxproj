@@ -24,6 +24,9 @@
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -177,6 +180,9 @@
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
