@@ -1199,7 +1199,7 @@
                 "ButtonTrigger": {
                   "Type": "RepeatButtonTrigger",
                   "Delay": 200,
-                  "Interval": 1000
+                  "Interval": 200
                 },
                 "ButtonStyles": [
                   {
@@ -1318,12 +1318,12 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "startPositionValue",
+                "Name": "startPositionText",
                 "X": 170,
                 "Y": 230,
                 "Width": 140,
                 "Height": 20,
-                "TextId": "__SingleUse_4SF4",
+                "TextId": "startPositionText",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 205,
@@ -1331,7 +1331,9 @@
                   "Blue": 244
                 },
                 "Wildcard1": {
-                  "TextId": "__SingleUse_1U33"
+                  "TextId": "__SingleUse_1U33",
+                  "UseBuffer": true,
+                  "BufferSize": 10
                 }
               }
             ]
@@ -1602,12 +1604,36 @@
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "IncreaseStartPositionPressed",
             "Trigger": {
-              "Type": "TriggerClicked"
+              "Type": "TriggerClicked",
+              "TriggerComponent": "increaseStartPositionButton"
             },
             "Action": {
-              "Type": "ActionNone"
+              "Type": "ActionCustom",
+              "FunctionName": "increaseStartPositionPressed"
+            }
+          },
+          {
+            "InteractionName": "DecreaseStartPositionPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "decreaseStartPositionButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decreaseStartPositionPressed"
+            }
+          },
+          {
+            "InteractionName": "ApplyStartPositionPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "applyStartPositionButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "applyStartPositionPressed"
             }
           }
         ]
