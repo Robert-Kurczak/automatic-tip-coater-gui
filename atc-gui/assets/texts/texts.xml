@@ -6,11 +6,14 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_GK8B" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Rotation</Translation>
+      <Text Id="__SingleUse_1U33" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_1XAB" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Z Axis</Translation>
+      <Text Id="__SingleUse_4SF4" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_XEFU" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Apply</Translation>
       </Text>
       <Text Id="__SingleUse_QSEK" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Start position</Translation>
@@ -20,6 +23,12 @@
       </Text>
       <Text Id="__SingleUse_1KT7" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_GK8B" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation</Translation>
+      </Text>
+      <Text Id="__SingleUse_1XAB" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Z Axis</Translation>
       </Text>
       <Text Id="__SingleUse_H9RC" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Z Axis</Translation>
