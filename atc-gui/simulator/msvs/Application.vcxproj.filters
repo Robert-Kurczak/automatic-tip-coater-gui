@@ -196,6 +196,18 @@
     <Filter Include="Source Files\generated\gui_generated\settingsscreen_screen">
       <UniqueIdentifier>EC2BBEEA-8B83-B883-E7E2-6290D810F1A4</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\xaxissettings_screen">
+      <UniqueIdentifier>EFEF7DE0-7E1E-2E3B-D81B-941C69E4FBC4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxissettings_screen">
+      <UniqueIdentifier>DA24FFA9-7BDF-9ABB-9AD0-9563B8756703</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxissettings_screen">
+      <UniqueIdentifier>6487B8E2-A6D9-5388-B0A7-543A8D693E5B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxissettings_screen">
+      <UniqueIdentifier>FA1C22D5-32D4-C1BE-3E02-585D47DE28BB</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -245,6 +257,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxissettings_screen\XAxisSettingsPresenter.cpp">
+      <Filter>Source Files\gui\xaxissettings_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxissettings_screen\XAxisSettingsView.cpp">
+      <Filter>Source Files\gui\xaxissettings_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxissettings_screen\XAxisSettingsViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxissettings_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -705,6 +726,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxissettings_screen\XAxisSettingsPresenter.hpp">
+      <Filter>Header Files\gui\xaxissettings_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxissettings_screen\XAxisSettingsView.hpp">
+      <Filter>Header Files\gui\xaxissettings_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxissettings_screen\XAxisSettingsViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxissettings_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

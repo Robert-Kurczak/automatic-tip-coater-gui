@@ -27,6 +27,9 @@
     <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxissettings_screen\XAxisSettingsPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxissettings_screen\XAxisSettingsView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxissettings_screen\XAxisSettingsViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -183,6 +186,9 @@
     <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxissettings_screen\XAxisSettingsPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxissettings_screen\XAxisSettingsView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxissettings_screen\XAxisSettingsViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
