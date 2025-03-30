@@ -5,17 +5,26 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_NBCH" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Z Axis</Translation>
+      <Text Id="__SingleUse_68FH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Saved</Translation>
       </Text>
-      <Text Id="__SingleUse_1U33" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_8FYH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_F063" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">End&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1SJR" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_38YE" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="startPositionText" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+      <Text Id="__SingleUse_1U33" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_XEFU" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Apply</Translation>
+      <Text Id="startPositionText" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_QSEK" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Start</Translation>
@@ -28,9 +37,6 @@
       </Text>
       <Text Id="__SingleUse_GK8B" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Rotation</Translation>
-      </Text>
-      <Text Id="__SingleUse_H9RC" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Z Axis</Translation>
       </Text>
       <Text Id="__SingleUse_EM0R" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">X Axis</Translation>
@@ -59,8 +65,8 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

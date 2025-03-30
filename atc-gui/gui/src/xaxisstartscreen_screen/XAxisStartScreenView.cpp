@@ -35,7 +35,7 @@ void XAxisStartScreenView::decreaseStartPositionPressed()
     updateStartPositionValue();
 }
 
-void XAxisStartScreenView::applyStartPositionPressed()
+void XAxisStartScreenView::saveStartPositionPressed()
 {
 
 }
