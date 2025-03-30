@@ -997,13 +997,13 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "XAxisSettings"
+              "ActionComponent": "XAxisStartScreen"
             }
           }
         ]
       },
       {
-        "Name": "XAxisSettings",
+        "Name": "XAxisStartScreen",
         "Components": [
           {
             "Type": "Box",

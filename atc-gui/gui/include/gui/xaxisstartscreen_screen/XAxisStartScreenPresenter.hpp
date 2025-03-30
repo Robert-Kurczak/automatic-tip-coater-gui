@@ -1,17 +1,17 @@
-#ifndef XAXISSETTINGSPRESENTER_HPP
-#define XAXISSETTINGSPRESENTER_HPP
+#ifndef XAXISSTARTSCREENPRESENTER_HPP
+#define XAXISSTARTSCREENPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class XAxisSettingsView;
+class XAxisStartScreenView;
 
-class XAxisSettingsPresenter : public touchgfx::Presenter, public ModelListener
+class XAxisStartScreenPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    XAxisSettingsPresenter(XAxisSettingsView& v);
+    XAxisStartScreenPresenter(XAxisStartScreenView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~XAxisSettingsPresenter() {}
+    virtual ~XAxisStartScreenPresenter() {}
 
 private:
-    XAxisSettingsPresenter();
+    XAxisStartScreenPresenter();
 
-    XAxisSettingsView& view;
+    XAxisStartScreenView& view;
 };
 
-#endif // XAXISSETTINGSPRESENTER_HPP
+#endif // XAXISSTARTSCREENPRESENTER_HPP

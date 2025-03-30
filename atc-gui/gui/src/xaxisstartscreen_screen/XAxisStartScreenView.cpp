@@ -1,21 +1,21 @@
-#include <gui/xaxissettings_screen/XAxisSettingsView.hpp>
+#include <gui/xaxisstartscreen_screen/XAxisStartScreenView.hpp>
 
-XAxisSettingsView::XAxisSettingsView()
+XAxisStartScreenView::XAxisStartScreenView()
 {
 
 }
 
-void XAxisSettingsView::setupScreen()
+void XAxisStartScreenView::setupScreen()
 {
-    XAxisSettingsViewBase::setupScreen();
+    XAxisStartScreenViewBase::setupScreen();
 }
 
-void XAxisSettingsView::tearDownScreen()
+void XAxisStartScreenView::tearDownScreen()
 {
-    XAxisSettingsViewBase::tearDownScreen();
+    XAxisStartScreenViewBase::tearDownScreen();
 }
 
-void XAxisSettingsView::increaseStartPositionPressed()
+void XAxisStartScreenView::increaseStartPositionPressed()
 {
     if (startPosition <= maxPosition - positionIncrement)
     {
@@ -25,7 +25,7 @@ void XAxisSettingsView::increaseStartPositionPressed()
     updateStartPositionValue();
 }
 
-void XAxisSettingsView::decreaseStartPositionPressed()
+void XAxisStartScreenView::decreaseStartPositionPressed()
 {
     if (startPosition >= positionIncrement)
     {
@@ -35,12 +35,12 @@ void XAxisSettingsView::decreaseStartPositionPressed()
     updateStartPositionValue();
 }
 
-void XAxisSettingsView::applyStartPositionPressed()
+void XAxisStartScreenView::applyStartPositionPressed()
 {
 
 }
 
-void XAxisSettingsView::updateStartPositionValue()
+void XAxisStartScreenView::updateStartPositionValue()
 {
     Unicode::snprintf(
         startPositionTextBuffer,
