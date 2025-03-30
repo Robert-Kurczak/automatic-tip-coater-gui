@@ -1,14 +1,14 @@
-#ifndef XAXISSETTINGSVIEW_HPP
-#define XAXISSETTINGSVIEW_HPP
+#ifndef XAXISSTARTSCREENVIEW_HPP
+#define XAXISSTARTSCREENVIEW_HPP
 
-#include <gui_generated/xaxissettings_screen/XAxisSettingsViewBase.hpp>
-#include <gui/xaxissettings_screen/XAxisSettingsPresenter.hpp>
+#include <gui_generated/xaxisstartscreen_screen/XAxisStartScreenViewBase.hpp>
+#include <gui/xaxisstartscreen_screen/XAxisStartScreenPresenter.hpp>
 
-class XAxisSettingsView : public XAxisSettingsViewBase
+class XAxisStartScreenView : public XAxisStartScreenViewBase
 {
 public:
-    XAxisSettingsView();
-    virtual ~XAxisSettingsView() {}
+    XAxisStartScreenView();
+    virtual ~XAxisStartScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
 
@@ -33,4 +33,4 @@ private:
     void updateStartPositionValue();
 };
 
-#endif // XAXISSETTINGSVIEW_HPP
+#endif // XAXISSTARTSCREENVIEW_HPP
