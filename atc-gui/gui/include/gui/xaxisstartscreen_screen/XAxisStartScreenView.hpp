@@ -15,7 +15,7 @@ public:
 protected:
     virtual void increaseStartPositionPressed() override;
     virtual void decreaseStartPositionPressed() override;
-    virtual void applyStartPositionPressed() override;
+    virtual void saveStartPositionPressed() override;
 
 private:
     static const uint16_t minPosition = 0;

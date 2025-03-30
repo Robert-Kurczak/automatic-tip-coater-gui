@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_screen\XAxisStartScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -189,6 +192,9 @@
     <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_screen\XAxisStartScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

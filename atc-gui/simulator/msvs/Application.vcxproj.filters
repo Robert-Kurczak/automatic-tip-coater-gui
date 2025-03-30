@@ -208,6 +208,18 @@
     <Filter Include="Header Files\generated\gui_generated\xaxisstartscreen_screen">
       <UniqueIdentifier>C2D53B0A-AF29-2C83-A3B2-00768BF158E9</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\xaxisstartscreen_bak_screen">
+      <UniqueIdentifier>DDF7D5B4-0557-A1C2-A273-BF216405F20E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxisstartscreen_bak_screen">
+      <UniqueIdentifier>12574038-7035-8391-0D4D-B66879E54AA5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxisstartscreen_bak_screen">
+      <UniqueIdentifier>664127D9-EA9E-C72F-C13A-F7459B4182A7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxisstartscreen_bak_screen">
+      <UniqueIdentifier>48E5681A-F4E8-4BD7-C1DB-55869A298BB9</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -266,6 +278,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_screen\XAxisStartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.cpp">
+      <Filter>Source Files\gui\xaxisstartscreen_bak_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.cpp">
+      <Filter>Source Files\gui\xaxisstartscreen_bak_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxisstartscreen_bak_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -735,6 +756,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_screen\XAxisStartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.hpp">
+      <Filter>Header Files\gui\xaxisstartscreen_bak_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.hpp">
+      <Filter>Header Files\gui\xaxisstartscreen_bak_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxisstartscreen_bak_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
