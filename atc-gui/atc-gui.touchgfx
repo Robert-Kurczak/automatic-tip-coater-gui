@@ -19,31 +19,31 @@
           {
             "Type": "Container",
             "Name": "footerContainer",
-            "Y": 745,
+            "Y": 715,
             "Width": 480,
-            "Height": 55,
+            "Height": 85,
             "Components": [
               {
                 "Type": "Box",
-                "Name": "footer_shadow",
+                "Name": "footer",
+                "Y": 5,
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "footerShadow",
                 "Width": 480,
                 "Height": 5,
                 "Color": {
                   "Red": 24,
                   "Green": 24,
                   "Blue": 37
-                }
-              },
-              {
-                "Type": "Box",
-                "Name": "footer",
-                "Y": 5,
-                "Width": 480,
-                "Height": 50,
-                "Color": {
-                  "Red": 17,
-                  "Green": 17,
-                  "Blue": 27
                 }
               }
             ]
@@ -70,7 +70,6 @@
                     "Name": "infoButton",
                     "Width": 160,
                     "Height": 160,
-                    "LockPosition": true,
                     "ButtonTrigger": {
                       "Type": "ClickButtonTrigger"
                     },
@@ -93,10 +92,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_action_info_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_info_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_action_info_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_info_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -174,10 +173,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_action_settings_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_settings_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_action_settings_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_settings_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -255,10 +254,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_social_architecture_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_social_architecture_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_social_architecture_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_social_architecture_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -335,10 +334,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_action_not_started_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_not_started_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_action_not_started_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_not_started_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -387,12 +386,12 @@
             "Type": "Container",
             "Name": "headerContainer",
             "Width": 480,
-            "Height": 55,
+            "Height": 85,
             "Components": [
               {
                 "Type": "Box",
-                "Name": "header_shadow",
-                "Y": 50,
+                "Name": "headerShadow",
+                "Y": 80,
                 "Width": 480,
                 "Height": 5,
                 "Color": {
@@ -405,7 +404,7 @@
                 "Type": "Box",
                 "Name": "header",
                 "Width": 480,
-                "Height": 50,
+                "Height": 80,
                 "Color": {
                   "Red": 17,
                   "Green": 17,
@@ -449,13 +448,13 @@
           {
             "Type": "Container",
             "Name": "footerContainer",
-            "Y": 745,
+            "Y": 715,
             "Width": 480,
-            "Height": 55,
+            "Height": 85,
             "Components": [
               {
                 "Type": "Box",
-                "Name": "footer_shadow",
+                "Name": "footerShadow",
                 "Width": 480,
                 "Height": 5,
                 "Color": {
@@ -469,7 +468,7 @@
                 "Name": "backButton",
                 "Y": 5,
                 "Width": 480,
-                "Height": 50,
+                "Height": 80,
                 "ButtonTrigger": {
                   "Type": "ClickButtonTrigger"
                 },
@@ -492,14 +491,15 @@
                   },
                   {
                     "Type": "IconButtonStyle",
-                    "X": 215,
-                    "IconReleased": "__generated\\icon_theme_images_navigation_chevron_left_50_50_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_navigation_chevron_left_50_50_E8F6FB.svg.png"
+                    "X": 210,
+                    "Y": 10,
+                    "IconReleased": "__generated\\icon_theme_images_navigation_chevron_left_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_navigation_chevron_left_60_60_E8F6FB.svg.png"
                   },
                   {
                     "Type": "BoxWithBorderButtonStyle",
                     "Width": 480,
-                    "Height": 50,
+                    "Height": 80,
                     "LockToFlexButtonSize": true,
                     "ColorReleased": {
                       "Red": 17,
@@ -529,9 +529,9 @@
             "Type": "Container",
             "Name": "buttons",
             "X": 55,
-            "Y": 114,
+            "Y": 110,
             "Width": 370,
-            "Height": 595,
+            "Height": 580,
             "Components": [
               {
                 "Type": "Container",
@@ -569,10 +569,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_maps_local_fire_department_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_maps_local_fire_department_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_maps_local_fire_department_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_maps_local_fire_department_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -651,10 +651,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_maps_360_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_maps_360_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_maps_360_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_maps_360_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -732,10 +732,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_navigation_north_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_navigation_north_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_navigation_north_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_navigation_north_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -813,10 +813,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_navigation_north_west_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_navigation_north_west_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_navigation_north_west_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_navigation_north_west_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -893,10 +893,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_navigation_west_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_navigation_west_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_navigation_west_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_navigation_west_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -945,12 +945,12 @@
             "Type": "Container",
             "Name": "headerContainer",
             "Width": 480,
-            "Height": 55,
+            "Height": 85,
             "Components": [
               {
                 "Type": "Box",
-                "Name": "header_shadow",
-                "Y": 50,
+                "Name": "headerShadow",
+                "Y": 80,
                 "Width": 480,
                 "Height": 5,
                 "Color": {
@@ -963,7 +963,7 @@
                 "Type": "Box",
                 "Name": "header",
                 "Width": 480,
-                "Height": 50,
+                "Height": 80,
                 "Color": {
                   "Red": 17,
                   "Green": 17,
@@ -1020,13 +1020,13 @@
           {
             "Type": "Container",
             "Name": "footerContainer",
-            "Y": 745,
+            "Y": 715,
             "Width": 480,
-            "Height": 55,
+            "Height": 85,
             "Components": [
               {
                 "Type": "Box",
-                "Name": "footer_shadow",
+                "Name": "footerShadow",
                 "Width": 480,
                 "Height": 5,
                 "Color": {
@@ -1040,7 +1040,7 @@
                 "Name": "backButton",
                 "Y": 5,
                 "Width": 480,
-                "Height": 50,
+                "Height": 80,
                 "ButtonTrigger": {
                   "Type": "ClickButtonTrigger"
                 },
@@ -1048,7 +1048,7 @@
                   {
                     "Type": "TextButtonStyle",
                     "Y": 100,
-                    "TextId": "__SingleUse_1XAB",
+                    "TextId": "__SingleUse_NBCH",
                     "TextRotation": "0",
                     "ColorReleased": {
                       "Red": 205,
@@ -1063,14 +1063,15 @@
                   },
                   {
                     "Type": "IconButtonStyle",
-                    "X": 215,
-                    "IconReleased": "__generated\\icon_theme_images_navigation_chevron_left_50_50_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_navigation_chevron_left_50_50_E8F6FB.svg.png"
+                    "X": 210,
+                    "Y": 10,
+                    "IconReleased": "__generated\\icon_theme_images_navigation_chevron_left_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_navigation_chevron_left_60_60_E8F6FB.svg.png"
                   },
                   {
                     "Type": "BoxWithBorderButtonStyle",
                     "Width": 480,
-                    "Height": 50,
+                    "Height": 80,
                     "LockToFlexButtonSize": true,
                     "ColorReleased": {
                       "Red": 17,
@@ -1101,11 +1102,11 @@
             "Name": "startPositionSelectorContainer",
             "Y": 160,
             "Width": 480,
-            "Height": 590,
+            "Height": 560,
             "Components": [
               {
                 "Type": "Box",
-                "Name": "shadow_2",
+                "Name": "shadow3",
                 "X": 40,
                 "Y": 160,
                 "Width": 85,
@@ -1118,7 +1119,7 @@
               },
               {
                 "Type": "Box",
-                "Name": "shadow_1",
+                "Name": "shadow2",
                 "X": 360,
                 "Y": 160,
                 "Width": 85,
@@ -1131,7 +1132,7 @@
               },
               {
                 "Type": "Box",
-                "Name": "shadow_1_1",
+                "Name": "shadow1",
                 "X": 40,
                 "Y": 420,
                 "Width": 405,
@@ -1152,15 +1153,15 @@
                 "ButtonTrigger": {
                   "Type": "RepeatButtonTrigger",
                   "Delay": 200,
-                  "Interval": 1000
+                  "Interval": 200
                 },
                 "ButtonStyles": [
                   {
                     "Type": "IconButtonStyle",
-                    "X": 15,
-                    "Y": 55,
-                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_50_50_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_50_50_E8F6FB.svg.png"
+                    "X": 10,
+                    "Y": 50,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
                   },
                   {
                     "Type": "BoxWithBorderButtonStyle",
@@ -1204,10 +1205,10 @@
                 "ButtonStyles": [
                   {
                     "Type": "IconButtonStyle",
-                    "X": 15,
-                    "Y": 55,
-                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_50_50_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_50_50_E8F6FB.svg.png"
+                    "X": 10,
+                    "Y": 50,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png"
                   },
                   {
                     "Type": "BoxWithBorderButtonStyle",
@@ -1293,9 +1294,9 @@
               {
                 "Type": "Box",
                 "Name": "startPositionValueBackground",
-                "X": 170,
+                "X": 160,
                 "Y": 160,
-                "Width": 140,
+                "Width": 160,
                 "Height": 160,
                 "Color": {
                   "Red": 17,
@@ -1306,9 +1307,9 @@
               {
                 "Type": "Box",
                 "Name": "startPositionValueUnderline",
-                "X": 170,
+                "X": 160,
                 "Y": 320,
-                "Width": 140,
+                "Width": 160,
                 "Height": 5,
                 "Color": {
                   "Red": 180,
@@ -1319,10 +1320,10 @@
               {
                 "Type": "TextArea",
                 "Name": "startPositionText",
-                "X": 170,
+                "X": 160,
                 "Y": 230,
-                "Width": 140,
-                "Height": 20,
+                "Width": 160,
+                "Height": 30,
                 "TextId": "startPositionText",
                 "TextRotation": "0",
                 "Color": {
@@ -1379,10 +1380,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_av_speed_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_av_speed_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_av_speed_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_av_speed_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -1460,10 +1461,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -1511,7 +1512,6 @@
                 "Name": "startButtonContainer",
                 "Width": 160,
                 "Height": 160,
-                "Moveable": true,
                 "Components": [
                   {
                     "Type": "FlexButton",
@@ -1540,10 +1540,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_50_50_E8F6FB.svg.png"
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
