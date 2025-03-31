@@ -208,17 +208,29 @@
     <Filter Include="Header Files\generated\gui_generated\xaxisstartscreen_screen">
       <UniqueIdentifier>C2D53B0A-AF29-2C83-A3B2-00768BF158E9</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\xaxisstartscreen_bak_screen">
-      <UniqueIdentifier>DDF7D5B4-0557-A1C2-A273-BF216405F20E</UniqueIdentifier>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>9B9F61DF-EEEA-FBE3-8613-B25E5B16E6CB</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\xaxisstartscreen_bak_screen">
-      <UniqueIdentifier>12574038-7035-8391-0D4D-B66879E54AA5</UniqueIdentifier>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>55C707B2-3138-FBDC-4DA9-CC3CF82731BA</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\xaxisstartscreen_bak_screen">
-      <UniqueIdentifier>664127D9-EA9E-C72F-C13A-F7459B4182A7</UniqueIdentifier>
+    <Filter Include="Source Files\gui\xaxisendscreen_screen">
+      <UniqueIdentifier>FD81911C-F368-79CD-2A29-87DECA9E3EF6</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\xaxisstartscreen_bak_screen">
-      <UniqueIdentifier>48E5681A-F4E8-4BD7-C1DB-55869A298BB9</UniqueIdentifier>
+    <Filter Include="Header Files\gui\xaxisendscreen_screen">
+      <UniqueIdentifier>0CDC8FDE-8F8D-3D52-80A7-B45B2ECB5171</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxisendscreen_screen">
+      <UniqueIdentifier>C43071D7-35E5-ADC3-E4BC-B7AED7F3D8B4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxisendscreen_screen">
+      <UniqueIdentifier>9332B06A-C034-427A-5712-070DAC1D5112</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>BDAA0A78-147B-3BAB-FDE7-5C3AA5CEEAD9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>B080BB1A-3274-28DF-4740-E5D02F7A2E22</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -279,14 +291,20 @@
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_screen\XAxisStartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.cpp">
-      <Filter>Source Files\gui\xaxisstartscreen_bak_screen</Filter>
+    <ClCompile Include="..\..\gui\src\containers\ValueSelector.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.cpp">
-      <Filter>Source Files\gui\xaxisstartscreen_bak_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ValueSelectorBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\xaxisstartscreen_bak_screen</Filter>
+    <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenView.cpp">
+      <Filter>Source Files\gui\xaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisendscreen_screen\XAxisEndScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxisendscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -757,14 +775,20 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_screen\XAxisStartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.hpp">
-      <Filter>Header Files\gui\xaxisstartscreen_bak_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\ValueSelector.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.hpp">
-      <Filter>Header Files\gui\xaxisstartscreen_bak_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ValueSelectorBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\xaxisstartscreen_bak_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenView.hpp">
+      <Filter>Header Files\gui\xaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisendscreen_screen\XAxisEndScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxisendscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

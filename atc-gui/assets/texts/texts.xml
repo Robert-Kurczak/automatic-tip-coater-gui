@@ -5,23 +5,50 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_68FH" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_L3KM" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Saved</Translation>
       </Text>
-      <Text Id="__SingleUse_8FYH" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_QSV8" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_WWMZ" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Start</Translation>
       </Text>
-      <Text Id="__SingleUse_F063" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_TXHU" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">End&#10;</Translation>
       </Text>
-      <Text Id="__SingleUse_1SJR" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_D9AC" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Speed</Translation>
       </Text>
-      <Text Id="__SingleUse_38YE" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_EX31" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_1U33" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_Z6B3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Saved</Translation>
+      </Text>
+      <Text Id="__SingleUse_85AQ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_OHWW" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">End&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_NU5Q" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_WQFE" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_U400" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Saved</Translation>
+      </Text>
+      <Text Id="__SingleUse_J8VE" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y2SF" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">End&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_13JW" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
       </Text>
       <Text Id="startPositionText" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;value&gt;</Translation>

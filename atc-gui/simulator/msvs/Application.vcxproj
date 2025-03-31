@@ -30,9 +30,11 @@
     <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_screen\XAxisStartScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\ValueSelector.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ValueSelectorBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisendscreen_screen\XAxisEndScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -192,9 +194,11 @@
     <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_screen\XAxisStartScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_bak_screen\XAxisStartScreen_bakView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_bak_screen\XAxisStartScreen_bakViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\ValueSelector.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ValueSelectorBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisendscreen_screen\XAxisEndScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
