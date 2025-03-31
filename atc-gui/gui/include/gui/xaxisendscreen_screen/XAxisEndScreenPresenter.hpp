@@ -1,17 +1,17 @@
-#ifndef XAXISSTARTSCREEN_BAKPRESENTER_HPP
-#define XAXISSTARTSCREEN_BAKPRESENTER_HPP
+#ifndef XAXISENDSCREENPRESENTER_HPP
+#define XAXISENDSCREENPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class XAxisStartScreen_bakView;
+class XAxisEndScreenView;
 
-class XAxisStartScreen_bakPresenter : public touchgfx::Presenter, public ModelListener
+class XAxisEndScreenPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    XAxisStartScreen_bakPresenter(XAxisStartScreen_bakView& v);
+    XAxisEndScreenPresenter(XAxisEndScreenView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~XAxisStartScreen_bakPresenter() {}
+    virtual ~XAxisEndScreenPresenter() {}
 
 private:
-    XAxisStartScreen_bakPresenter();
+    XAxisEndScreenPresenter();
 
-    XAxisStartScreen_bakView& view;
+    XAxisEndScreenView& view;
 };
 
-#endif // XAXISSTARTSCREEN_BAKPRESENTER_HPP
+#endif // XAXISENDSCREENPRESENTER_HPP
