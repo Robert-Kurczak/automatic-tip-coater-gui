@@ -25,6 +25,13 @@
             "Components": [
               {
                 "Type": "Box",
+                "Name": "footerShadow",
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
                 "Name": "footer",
                 "Y": 5,
                 "Width": 480,
@@ -33,17 +40,6 @@
                   "Red": 17,
                   "Green": 17,
                   "Blue": 27
-                }
-              },
-              {
-                "Type": "Box",
-                "Name": "footerShadow",
-                "Width": 480,
-                "Height": 5,
-                "Color": {
-                  "Red": 24,
-                  "Green": 24,
-                  "Blue": 37
                 }
               }
             ]
@@ -394,11 +390,7 @@
                 "Y": 80,
                 "Width": 480,
                 "Height": 5,
-                "Color": {
-                  "Red": 24,
-                  "Green": 24,
-                  "Blue": 37
-                }
+                "Alpha": 50
               },
               {
                 "Type": "Box",
