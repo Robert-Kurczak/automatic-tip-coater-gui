@@ -1254,7 +1254,7 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "xAxisEndSelector",
+            "Name": "xAxisSpeedSelector",
             "Width": 480,
             "Height": 800,
             "CustomContainerDefinitionName": "ValueSelector"
@@ -1302,7 +1302,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
-              "TriggerComponent": "xAxisEndSelector"
+              "TriggerComponent": "xAxisSpeedSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1314,7 +1314,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
-              "TriggerComponent": "xAxisEndSelector"
+              "TriggerComponent": "xAxisSpeedSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1326,7 +1326,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "xAxisEndSelector"
+              "TriggerComponent": "xAxisSpeedSelector"
             },
             "Action": {
               "Type": "ActionCustom",
