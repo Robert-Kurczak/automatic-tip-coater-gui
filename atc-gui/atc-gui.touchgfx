@@ -1023,7 +1023,7 @@
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
-            "Y": 445,
+            "Y": 435,
             "Width": 370,
             "Height": 5,
             "Color": {
@@ -1044,8 +1044,16 @@
                 "Name": "speedButtonContainer",
                 "X": 324,
                 "Width": 157,
-                "Height": 120,
+                "Height": 125,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Y": 120,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "speedButton",
@@ -1116,9 +1124,16 @@
                 "Type": "Container",
                 "Name": "endButtonContainer",
                 "X": 162,
-                "Width": 157,
-                "Height": 120,
+                "Width": 162,
+                "Height": 125,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "endButton",
@@ -1188,9 +1203,16 @@
               {
                 "Type": "Container",
                 "Name": "startButtonContainer",
-                "Width": 157,
-                "Height": 160,
+                "Width": 162,
+                "Height": 165,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonShadow",
+                    "Width": 162,
+                    "Height": 165,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "startButton",
@@ -1399,7 +1421,7 @@
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
-            "Y": 445,
+            "Y": 435,
             "Width": 370,
             "Height": 5,
             "Color": {
@@ -1420,8 +1442,16 @@
                 "Name": "speedButtonContainer",
                 "X": 324,
                 "Width": 157,
-                "Height": 120,
+                "Height": 125,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Y": 120,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "speedButton",
@@ -1434,7 +1464,7 @@
                       {
                         "Type": "TextButtonStyle",
                         "Y": 45,
-                        "TextId": "__SingleUse_13JW",
+                        "TextId": "__SingleUse_T6H3",
                         "TextRotation": "0",
                         "ColorReleased": {
                           "Red": 205,
@@ -1492,9 +1522,16 @@
                 "Type": "Container",
                 "Name": "endButtonContainer",
                 "X": 162,
-                "Width": 157,
-                "Height": 160,
+                "Width": 162,
+                "Height": 165,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonShadow",
+                    "Width": 162,
+                    "Height": 165,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "endButton",
@@ -1571,9 +1608,16 @@
               {
                 "Type": "Container",
                 "Name": "startButtonContainer",
-                "Width": 157,
-                "Height": 120,
+                "Width": 162,
+                "Height": 125,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "startButton",
@@ -1775,7 +1819,7 @@
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
-            "Y": 445,
+            "Y": 435,
             "Width": 370,
             "Height": 5,
             "Color": {
@@ -1796,8 +1840,16 @@
                 "Name": "speedButtonContainer",
                 "X": 324,
                 "Width": 157,
-                "Height": 160,
+                "Height": 165,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Y": 160,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "speedButton",
@@ -1875,9 +1927,16 @@
                 "Type": "Container",
                 "Name": "endButtonContainer",
                 "X": 162,
-                "Width": 157,
-                "Height": 120,
+                "Width": 162,
+                "Height": 125,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "endButton",
@@ -1947,9 +2006,16 @@
               {
                 "Type": "Container",
                 "Name": "startButtonContainer",
-                "Width": 157,
-                "Height": 120,
+                "Width": 162,
+                "Height": 125,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "startButton",
