@@ -948,6 +948,22 @@
                   "Green": 17,
                   "Blue": 27
                 }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 188,
+                "Y": 25,
+                "Width": 104,
+                "Height": 30,
+                "TextId": "__SingleUse_WHJ3",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
               }
             ]
           }
@@ -1007,7 +1023,7 @@
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
-            "Y": 412,
+            "Y": 445,
             "Width": 370,
             "Height": 5,
             "Color": {
@@ -1019,6 +1035,7 @@
           {
             "Type": "Container",
             "Name": "buttons",
+            "Y": 80,
             "Width": 480,
             "Height": 160,
             "Components": [
@@ -1248,6 +1265,49 @@
                 ]
               }
             ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 201,
+                "Y": 25,
+                "Width": 78,
+                "Height": 30,
+                "TextId": "__SingleUse_6R12",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1339,7 +1399,7 @@
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
-            "Y": 412,
+            "Y": 445,
             "Width": 370,
             "Height": 5,
             "Color": {
@@ -1351,6 +1411,7 @@
           {
             "Type": "Container",
             "Name": "buttons",
+            "Y": 80,
             "Width": 480,
             "Height": 160,
             "Components": [
@@ -1580,6 +1641,49 @@
                 ]
               }
             ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 201,
+                "Y": 25,
+                "Width": 78,
+                "Height": 30,
+                "TextId": "__SingleUse_JK3N",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1671,7 +1775,7 @@
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
-            "Y": 412,
+            "Y": 445,
             "Width": 370,
             "Height": 5,
             "Color": {
@@ -1683,6 +1787,7 @@
           {
             "Type": "Container",
             "Name": "buttons",
+            "Y": 80,
             "Width": 480,
             "Height": 160,
             "Components": [
@@ -1912,6 +2017,49 @@
                 ]
               }
             ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 201,
+                "Y": 25,
+                "Width": 78,
+                "Height": 30,
+                "TextId": "__SingleUse_IACK",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1990,42 +2138,38 @@
           {
             "Type": "Container",
             "Name": "footerContainer",
-            "Y": 635,
+            "Y": 675,
             "Width": 480,
-            "Height": 165,
+            "Height": 125,
             "Components": [
               {
                 "Type": "Container",
                 "Name": "saveButtonContainer",
                 "X": 243,
-                "Y": 80,
+                "Y": 40,
                 "Width": 238,
-                "Height": 165,
+                "Height": 125,
                 "Components": [
                   {
                     "Type": "Box",
                     "Name": "saveButtonShadow",
                     "Width": 238,
                     "Height": 5,
-                    "Color": {
-                      "Red": 24,
-                      "Green": 24,
-                      "Blue": 37
-                    }
+                    "Alpha": 50
                   },
                   {
                     "Type": "FlexButton",
                     "Name": "saveButton",
                     "Y": 5,
                     "Width": 238,
-                    "Height": 160,
+                    "Height": 120,
                     "ButtonTrigger": {
                       "Type": "ClickButtonTrigger"
                     },
                     "ButtonStyles": [
                       {
                         "Type": "TextButtonStyle",
-                        "Y": 100,
+                        "Y": 80,
                         "TextId": "__SingleUse_L3KM",
                         "TextRotation": "0",
                         "ColorReleased": {
@@ -2049,7 +2193,7 @@
                       {
                         "Type": "BoxWithBorderButtonStyle",
                         "Width": 238,
-                        "Height": 160,
+                        "Height": 120,
                         "LockToFlexButtonSize": true,
                         "ColorReleased": {
                           "Red": 17,
@@ -2078,10 +2222,17 @@
               {
                 "Type": "Container",
                 "Name": "backButtonContainer",
-                "Y": 80,
-                "Width": 238,
+                "Y": 40,
+                "Width": 243,
                 "Height": 85,
                 "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "backButtonShadow",
+                    "Width": 242,
+                    "Height": 85,
+                    "Alpha": 50
+                  },
                   {
                     "Type": "FlexButton",
                     "Name": "backButton",
@@ -2125,17 +2276,6 @@
                         }
                       }
                     ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "backButtonShadow",
-                    "Width": 238,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 24,
-                      "Green": 24,
-                      "Blue": 37
-                    }
                   }
                 ]
               }
@@ -2144,161 +2284,179 @@
           {
             "Type": "Container",
             "Name": "selectorContainer",
-            "Y": 257,
+            "Y": 320,
             "Width": 480,
-            "Height": 375,
+            "Height": 305,
             "Components": [
               {
-                "Type": "Box",
-                "Name": "shadow2",
+                "Type": "Container",
+                "Name": "increaseButtonContainer",
                 "X": 265,
-                "Y": 210,
+                "Y": 180,
                 "Width": 165,
-                "Height": 165,
-                "Color": {
-                  "Red": 24,
-                  "Green": 24,
-                  "Blue": 37
-                }
-              },
-              {
-                "Type": "FlexButton",
-                "Name": "increaseButton",
-                "X": 265,
-                "Y": 210,
-                "Width": 160,
-                "Height": 160,
-                "ButtonTrigger": {
-                  "Type": "RepeatButtonTrigger",
-                  "Delay": 300,
-                  "Interval": 100
-                },
-                "ButtonStyles": [
+                "Height": 125,
+                "Components": [
                   {
-                    "Type": "IconButtonStyle",
-                    "X": 50,
-                    "Y": 50,
-                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png"
+                    "Type": "Box",
+                    "Name": "increaseButtonShadow",
+                    "Width": 165,
+                    "Height": 125,
+                    "Alpha": 50
                   },
                   {
-                    "Type": "BoxWithBorderButtonStyle",
+                    "Type": "FlexButton",
+                    "Name": "increaseButton",
                     "Width": 160,
-                    "Height": 160,
-                    "LockToFlexButtonSize": true,
-                    "ColorReleased": {
-                      "Red": 17,
-                      "Green": 17,
-                      "Blue": 27
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "RepeatButtonTrigger",
+                      "Delay": 300,
+                      "Interval": 100
                     },
-                    "ColorPressed": {
-                      "Red": 24,
-                      "Green": 24,
-                      "Blue": 37
-                    },
-                    "ColorBorderReleased": {
-                      "Green": 51,
-                      "Blue": 102
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
-                    }
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 30,
+                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
                   }
                 ]
               },
               {
-                "Type": "Box",
-                "Name": "shadow3",
+                "Type": "Container",
+                "Name": "decreaseButtonContainer",
                 "X": 55,
-                "Y": 210,
+                "Y": 180,
                 "Width": 165,
-                "Height": 165,
-                "Color": {
-                  "Red": 24,
-                  "Green": 24,
-                  "Blue": 37
-                }
-              },
-              {
-                "Type": "FlexButton",
-                "Name": "decreaseButton",
-                "X": 55,
-                "Y": 210,
-                "Width": 160,
-                "Height": 160,
-                "ButtonTrigger": {
-                  "Type": "RepeatButtonTrigger",
-                  "Delay": 300,
-                  "Interval": 100
-                },
-                "ButtonStyles": [
+                "Height": 125,
+                "Components": [
                   {
-                    "Type": "IconButtonStyle",
-                    "X": 50,
-                    "Y": 50,
-                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
+                    "Type": "Box",
+                    "Name": "decreaseButtonShadow",
+                    "Width": 165,
+                    "Height": 125,
+                    "Alpha": 50
                   },
                   {
-                    "Type": "BoxWithBorderButtonStyle",
+                    "Type": "FlexButton",
+                    "Name": "decreaseButton",
                     "Width": 160,
-                    "Height": 160,
-                    "LockToFlexButtonSize": true,
-                    "ColorReleased": {
-                      "Red": 17,
-                      "Green": 17,
-                      "Blue": 27
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "RepeatButtonTrigger",
+                      "Delay": 300,
+                      "Interval": 100
                     },
-                    "ColorPressed": {
-                      "Red": 24,
-                      "Green": 24,
-                      "Blue": 37
-                    },
-                    "ColorBorderReleased": {
-                      "Green": 51,
-                      "Blue": 102
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
-                    }
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 30,
+                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
                   }
                 ]
               },
               {
-                "Type": "Box",
-                "Name": "displayedValueBackground",
+                "Type": "Container",
+                "Name": "displayedValueContaienr",
                 "X": 55,
-                "Width": 370,
-                "Height": 160,
-                "Color": {
-                  "Red": 17,
-                  "Green": 17,
-                  "Blue": 27
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "displayedValue",
-                "X": 55,
-                "Y": 55,
-                "Width": 370,
-                "Height": 50,
-                "TextId": "startPositionText",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 205,
-                  "Green": 214,
-                  "Blue": 244
-                },
-                "Wildcard1": {
-                  "TextId": "__SingleUse_QSV8",
-                  "UseBuffer": true,
-                  "BufferSize": 10
-                }
+                "Width": 375,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "displayedValueShadow",
+                    "Width": 375,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "displayedValueBackground",
+                    "Width": 370,
+                    "Height": 120,
+                    "Color": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "displayedValue",
+                    "Y": 35,
+                    "Width": 370,
+                    "Height": 50,
+                    "TextId": "startPositionText",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_QSV8",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -2375,7 +2533,7 @@
             "Action": {
               "Type": "ActionMove",
               "X": 243,
-              "Y": 80,
+              "Y": 40,
               "Easing": "Back",
               "EasingOption": "In",
               "Duration": 500,

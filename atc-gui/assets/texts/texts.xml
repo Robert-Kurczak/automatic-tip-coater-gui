@@ -5,6 +5,18 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_IACK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_JK3N" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_WHJ3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Settings</Translation>
+      </Text>
+      <Text Id="__SingleUse_6R12" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
       <Text Id="__SingleUse_VOVY" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Start</Translation>
       </Text>
