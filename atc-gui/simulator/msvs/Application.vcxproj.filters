@@ -232,6 +232,18 @@
     <Filter Include="Source Files\generated\gui_generated\containers">
       <UniqueIdentifier>B080BB1A-3274-28DF-4740-E5D02F7A2E22</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\xaxisspeedscreen_screen">
+      <UniqueIdentifier>E8CB484E-5CDA-B844-791A-23AA45D44748</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxisspeedscreen_screen">
+      <UniqueIdentifier>CF3D6C8C-BEDD-A276-7F22-01F90F5DDE24</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxisspeedscreen_screen">
+      <UniqueIdentifier>48FEC07E-8C08-D7AB-8D51-8B0866C6A9D5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxisspeedscreen_screen">
+      <UniqueIdentifier>584E9F7E-59FD-A9C7-BF06-81DF67045A5B</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -305,6 +317,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisendscreen_screen\XAxisEndScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\xaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenView.cpp">
+      <Filter>Source Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxisspeedscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -789,6 +810,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisendscreen_screen\XAxisEndScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\xaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenView.hpp">
+      <Filter>Header Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxisspeedscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
