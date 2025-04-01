@@ -38,6 +38,12 @@
     <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\AxisEndSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisEndSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\AxisSpeedSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisSpeedSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\AxisStartSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisStartSettingsButtonsBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -205,6 +211,12 @@
     <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisEndSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisEndSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisSpeedSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisSpeedSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisStartSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisStartSettingsButtonsBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

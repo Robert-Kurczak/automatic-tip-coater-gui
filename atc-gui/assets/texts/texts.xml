@@ -5,29 +5,44 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_T6H3" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_IZTP" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_GSTM" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_DUHZ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q44E" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_M5EK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">End&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_R37E" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Speed</Translation>
       </Text>
-      <Text Id="__SingleUse_IACK" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">X Axis</Translation>
+      <Text Id="__SingleUse_A8ON" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
       </Text>
-      <Text Id="__SingleUse_JK3N" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">X Axis</Translation>
+      <Text Id="__SingleUse_ZIFT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">End&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_PJBO" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_MQS9" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_DQ39" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">End&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_FMY5" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
       </Text>
       <Text Id="__SingleUse_WHJ3" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Settings</Translation>
-      </Text>
-      <Text Id="__SingleUse_6R12" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">X Axis</Translation>
-      </Text>
-      <Text Id="__SingleUse_VOVY" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Start</Translation>
-      </Text>
-      <Text Id="__SingleUse_T71Z" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">End&#10;</Translation>
-      </Text>
-      <Text Id="__SingleUse_NGLD" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Speed</Translation>
       </Text>
       <Text Id="__SingleUse_L3KM" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Saved</Translation>
@@ -65,23 +80,8 @@
       <Text Id="__SingleUse_U400" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Saved</Translation>
       </Text>
-      <Text Id="__SingleUse_J8VE" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Start</Translation>
-      </Text>
-      <Text Id="__SingleUse_Y2SF" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">End&#10;</Translation>
-      </Text>
-      <Text Id="startPositionText" Alignment="Center" TypographyId="Large">
+      <Text Id="displayedValueText" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_QSEK" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Start</Translation>
-      </Text>
-      <Text Id="__SingleUse_KBTI" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">End&#10;</Translation>
-      </Text>
-      <Text Id="__SingleUse_1KT7" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Speed</Translation>
       </Text>
       <Text Id="__SingleUse_GK8B" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Rotation</Translation>

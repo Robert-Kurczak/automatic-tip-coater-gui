@@ -457,11 +457,7 @@
                 "Name": "footerShadow",
                 "Width": 480,
                 "Height": 5,
-                "Color": {
-                  "Red": 24,
-                  "Green": 24,
-                  "Blue": 37
-                }
+                "Alpha": 50
               },
               {
                 "Type": "FlexButton",
@@ -842,8 +838,8 @@
               {
                 "Type": "Container",
                 "Name": "xAxisButtonContainer",
-                "Width": 160,
-                "Height": 160,
+                "Width": 165,
+                "Height": 165,
                 "Components": [
                   {
                     "Type": "FlexButton",
@@ -932,11 +928,7 @@
                 "Y": 80,
                 "Width": 480,
                 "Height": 5,
-                "Color": {
-                  "Red": 24,
-                  "Green": 24,
-                  "Blue": 37
-                }
+                "Alpha": 50
               },
               {
                 "Type": "Box",
@@ -1020,6 +1012,13 @@
             "CustomContainerDefinitionName": "ValueSelector"
           },
           {
+            "Type": "CustomContainerInstance",
+            "Name": "axisStartSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "AxisStartSettingsButtons"
+          },
+          {
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
@@ -1033,303 +1032,20 @@
             }
           },
           {
-            "Type": "Container",
-            "Name": "buttons",
-            "Y": 80,
-            "Width": 480,
-            "Height": 160,
-            "Components": [
-              {
-                "Type": "Container",
-                "Name": "speedButtonContainer",
-                "X": 324,
-                "Width": 157,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "speedButtonShadow",
-                    "Y": 120,
-                    "Width": 157,
-                    "Height": 5,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "speedButton",
-                    "Width": 157,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 45,
-                        "TextId": "__SingleUse_1KT7",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "speedButtonUnderline",
-                    "Y": 115,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 166,
-                      "Green": 227,
-                      "Blue": 161
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "endButtonContainer",
-                "X": 162,
-                "Width": 162,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "endButtonShadow",
-                    "Width": 162,
-                    "Height": 125,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "endButton",
-                    "Width": 157,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 45,
-                        "TextId": "__SingleUse_KBTI",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "endButtonUnderline",
-                    "Y": 115,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 250,
-                      "Green": 179,
-                      "Blue": 135
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "startButtonContainer",
-                "Width": 162,
-                "Height": 165,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "startButtonShadow",
-                    "Width": 162,
-                    "Height": 165,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "startButton",
-                    "Width": 157,
-                    "Height": 160,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 100,
-                        "TextId": "__SingleUse_QSEK",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "IconButtonStyle",
-                        "X": 50,
-                        "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 160,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "startButtonUnderline",
-                    "Y": 155,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 243,
-                      "Green": 139,
-                      "Blue": 168
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "Type": "Container",
-            "Name": "headerContainer",
-            "Width": 480,
-            "Height": 85,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "headerShadow",
-                "Y": 80,
-                "Width": 480,
-                "Height": 5,
-                "Alpha": 50
-              },
-              {
-                "Type": "Box",
-                "Name": "header",
-                "Width": 480,
-                "Height": 80,
-                "Color": {
-                  "Red": 17,
-                  "Green": 17,
-                  "Blue": 27
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "submenuName",
-                "X": 201,
-                "Y": 25,
-                "Width": 78,
-                "Height": 30,
-                "TextId": "__SingleUse_6R12",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 205,
-                  "Green": 214,
-                  "Blue": 244
-                },
-                "AutoSize": true
-              }
-            ]
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 201,
+            "Y": 25,
+            "Width": 78,
+            "Height": 30,
+            "TextId": "__SingleUse_DUHZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1372,8 +1088,9 @@
           {
             "InteractionName": "GoToXAxisEnd",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "endButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisStartSettingsButtons endButtonPressed happens",
+              "TriggerComponent": "axisStartSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1384,8 +1101,9 @@
           {
             "InteractionName": "GoToXAxisSpeed",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "speedButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisStartSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "axisStartSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1418,6 +1136,13 @@
             "CustomContainerDefinitionName": "ValueSelector"
           },
           {
+            "Type": "CustomContainerInstance",
+            "Name": "axisEndSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "AxisEndSettingsButtons"
+          },
+          {
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
@@ -1431,303 +1156,20 @@
             }
           },
           {
-            "Type": "Container",
-            "Name": "buttons",
-            "Y": 80,
-            "Width": 480,
-            "Height": 160,
-            "Components": [
-              {
-                "Type": "Container",
-                "Name": "speedButtonContainer",
-                "X": 324,
-                "Width": 157,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "speedButtonShadow",
-                    "Y": 120,
-                    "Width": 157,
-                    "Height": 5,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "speedButton",
-                    "Width": 157,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 45,
-                        "TextId": "__SingleUse_T6H3",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "speedButtonUnderline",
-                    "Y": 115,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 166,
-                      "Green": 227,
-                      "Blue": 161
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "endButtonContainer",
-                "X": 162,
-                "Width": 162,
-                "Height": 165,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "endButtonShadow",
-                    "Width": 162,
-                    "Height": 165,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "endButton",
-                    "Width": 157,
-                    "Height": 160,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 100,
-                        "TextId": "__SingleUse_Y2SF",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "IconButtonStyle",
-                        "X": 50,
-                        "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 160,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "endButtonUnderline",
-                    "Y": 155,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 250,
-                      "Green": 179,
-                      "Blue": 135
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "startButtonContainer",
-                "Width": 162,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "startButtonShadow",
-                    "Width": 162,
-                    "Height": 125,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "startButton",
-                    "Width": 157,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 45,
-                        "TextId": "__SingleUse_J8VE",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "startButtonUnderline",
-                    "Y": 115,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 243,
-                      "Green": 139,
-                      "Blue": 168
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "Type": "Container",
-            "Name": "headerContainer",
-            "Width": 480,
-            "Height": 85,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "headerShadow",
-                "Y": 80,
-                "Width": 480,
-                "Height": 5,
-                "Alpha": 50
-              },
-              {
-                "Type": "Box",
-                "Name": "header",
-                "Width": 480,
-                "Height": 80,
-                "Color": {
-                  "Red": 17,
-                  "Green": 17,
-                  "Blue": 27
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "submenuName",
-                "X": 201,
-                "Y": 25,
-                "Width": 78,
-                "Height": 30,
-                "TextId": "__SingleUse_JK3N",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 205,
-                  "Green": 214,
-                  "Blue": 244
-                },
-                "AutoSize": true
-              }
-            ]
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 201,
+            "Y": 25,
+            "Width": 78,
+            "Height": 30,
+            "TextId": "__SingleUse_GSTM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1770,8 +1212,9 @@
           {
             "InteractionName": "GoToXAxisStart",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "startButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisEndSettingsButtons startButtonPressed happens",
+              "TriggerComponent": "axisEndSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1782,8 +1225,9 @@
           {
             "InteractionName": "GoToXAxisSpeed",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "speedButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisEndSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "axisEndSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1816,6 +1260,13 @@
             "CustomContainerDefinitionName": "ValueSelector"
           },
           {
+            "Type": "CustomContainerInstance",
+            "Name": "axisSpeedSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "AxisSpeedSettingsButtons"
+          },
+          {
             "Type": "Box",
             "Name": "displayedValueUnderline",
             "X": 55,
@@ -1829,303 +1280,20 @@
             }
           },
           {
-            "Type": "Container",
-            "Name": "buttons",
-            "Y": 80,
-            "Width": 480,
-            "Height": 160,
-            "Components": [
-              {
-                "Type": "Container",
-                "Name": "speedButtonContainer",
-                "X": 324,
-                "Width": 157,
-                "Height": 165,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "speedButtonShadow",
-                    "Y": 160,
-                    "Width": 157,
-                    "Height": 5,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "speedButton",
-                    "Width": 157,
-                    "Height": 160,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 100,
-                        "TextId": "__SingleUse_NGLD",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "IconButtonStyle",
-                        "X": 55,
-                        "Y": 25,
-                        "IconReleased": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png"
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 160,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "speedButtonUnderline",
-                    "Y": 155,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 166,
-                      "Green": 227,
-                      "Blue": 161
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "endButtonContainer",
-                "X": 162,
-                "Width": 162,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "endButtonShadow",
-                    "Width": 162,
-                    "Height": 125,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "endButton",
-                    "Width": 157,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 45,
-                        "TextId": "__SingleUse_T71Z",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "endButtonUnderline",
-                    "Y": 115,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 250,
-                      "Green": 179,
-                      "Blue": 135
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "startButtonContainer",
-                "Width": 162,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "startButtonShadow",
-                    "Width": 162,
-                    "Height": 125,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "startButton",
-                    "Width": 157,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 45,
-                        "TextId": "__SingleUse_VOVY",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 157,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "startButtonUnderline",
-                    "Y": 115,
-                    "Width": 157,
-                    "Height": 5,
-                    "Color": {
-                      "Red": 243,
-                      "Green": 139,
-                      "Blue": 168
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "Type": "Container",
-            "Name": "headerContainer",
-            "Width": 480,
-            "Height": 85,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "headerShadow",
-                "Y": 80,
-                "Width": 480,
-                "Height": 5,
-                "Alpha": 50
-              },
-              {
-                "Type": "Box",
-                "Name": "header",
-                "Width": 480,
-                "Height": 80,
-                "Color": {
-                  "Red": 17,
-                  "Green": 17,
-                  "Blue": 27
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "submenuName",
-                "X": 201,
-                "Y": 25,
-                "Width": 78,
-                "Height": 30,
-                "TextId": "__SingleUse_IACK",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 205,
-                  "Green": 214,
-                  "Blue": 244
-                },
-                "AutoSize": true
-              }
-            ]
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 201,
+            "Y": 25,
+            "Width": 78,
+            "Height": 30,
+            "TextId": "__SingleUse_IZTP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -2168,8 +1336,9 @@
           {
             "InteractionName": "GoToXAxisStart",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "startButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisSpeedSettingsButtons startButtonPressed happens",
+              "TriggerComponent": "axisSpeedSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -2180,8 +1349,9 @@
           {
             "InteractionName": "GoToXAxisEnd",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "endButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisSpeedSettingsButtons endButtonPressed happens",
+              "TriggerComponent": "axisSpeedSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -2509,7 +1679,7 @@
                     "Y": 35,
                     "Width": 370,
                     "Height": 50,
-                    "TextId": "startPositionText",
+                    "TextId": "displayedValueText",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 205,
@@ -2616,6 +1786,1020 @@
           },
           {
             "Name": "saveButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "AxisStartSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 160,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "speedButtonContainer",
+                "X": 324,
+                "Width": 157,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Y": 120,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "speedButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_FMY5",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 166,
+                      "Green": 227,
+                      "Blue": 161
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "endButtonContainer",
+                "X": 162,
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "endButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_DQ39",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "startButtonContainer",
+                "Width": 162,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonShadow",
+                    "Width": 162,
+                    "Height": 165,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "startButton",
+                    "Width": 157,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_MQS9",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonUnderline",
+                    "Y": 155,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisStartSettingsButtons startButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "EndButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "endButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisStartSettingsButtons endButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "SpeedButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "speedButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisStartSettingsButtons speedButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "startButtonPressed"
+          },
+          {
+            "Name": "endButtonPressed"
+          },
+          {
+            "Name": "speedButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "AxisEndSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 160,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "speedButtonContainer",
+                "X": 324,
+                "Width": 157,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Y": 120,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "speedButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_PJBO",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 166,
+                      "Green": 227,
+                      "Blue": 161
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "endButtonContainer",
+                "X": 162,
+                "Width": 162,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonShadow",
+                    "Width": 162,
+                    "Height": 165,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "endButton",
+                    "Width": 157,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_ZIFT",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonUnderline",
+                    "Y": 155,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "startButtonContainer",
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "startButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_A8ON",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisEndSettingsButtons startButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "EndButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "endButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisEndSettingsButtons endButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "SpeedButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "speedButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisEndSettingsButtons speedButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "startButtonPressed"
+          },
+          {
+            "Name": "endButtonPressed"
+          },
+          {
+            "Name": "speedButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "AxisSpeedSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 160,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "speedButtonContainer",
+                "X": 324,
+                "Width": 157,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Y": 160,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "speedButton",
+                    "Width": 157,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_R37E",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 55,
+                        "Y": 25,
+                        "IconReleased": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonUnderline",
+                    "Y": 155,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 166,
+                      "Green": 227,
+                      "Blue": 161
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "endButtonContainer",
+                "X": 162,
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "endButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_M5EK",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "endButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "startButtonContainer",
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "startButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_Q44E",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisSpeedSettingsButtons startButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "EndButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "endButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisSpeedSettingsButtons endButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "SpeedButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "speedButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "AxisSpeedSettingsButtons speedButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "startButtonPressed"
+          },
+          {
+            "Name": "endButtonPressed"
+          },
+          {
+            "Name": "speedButtonPressed"
           }
         ]
       }
