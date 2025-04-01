@@ -5,6 +5,9 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_T6H3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
       <Text Id="__SingleUse_IACK" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">X Axis</Translation>
       </Text>
@@ -67,9 +70,6 @@
       </Text>
       <Text Id="__SingleUse_Y2SF" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">End&#10;</Translation>
-      </Text>
-      <Text Id="__SingleUse_13JW" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Speed</Translation>
       </Text>
       <Text Id="startPositionText" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">&lt;value&gt;</Translation>
