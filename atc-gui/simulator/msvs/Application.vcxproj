@@ -35,6 +35,9 @@
     <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisendscreen_screen\XAxisEndScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -199,6 +202,9 @@
     <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisendscreen_screen\XAxisEndScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

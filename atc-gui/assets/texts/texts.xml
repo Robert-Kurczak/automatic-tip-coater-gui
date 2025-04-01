@@ -5,6 +5,15 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_VOVY" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_T71Z" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">End&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_NGLD" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
       <Text Id="__SingleUse_L3KM" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Saved</Translation>
       </Text>
