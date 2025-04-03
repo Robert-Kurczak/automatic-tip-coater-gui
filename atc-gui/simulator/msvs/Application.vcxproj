@@ -44,6 +44,15 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisSpeedSettingsButtonsBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\AxisStartSettingsButtons.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisStartSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisstartscreen_screen\YAxisStartScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisendscreen_screen\YAxisEndScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -217,6 +226,15 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisSpeedSettingsButtonsBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\AxisStartSettingsButtons.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisStartSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisstartscreen_screen\YAxisStartScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisendscreen_screen\YAxisEndScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

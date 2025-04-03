@@ -5,7 +5,7 @@ static uint8_t savedSpeed = 0;
 XAxisSpeedScreenView::XAxisSpeedScreenView()
 {
     speed = savedSpeed;
-    xAxisSpeedSelector.setDisplayedValue(savedSpeed);
+    axisSpeedSelector.setDisplayedValue(savedSpeed);
 }
 
 void XAxisSpeedScreenView::setupScreen()
@@ -23,7 +23,7 @@ void XAxisSpeedScreenView::increaseButtonPressed()
     if (speed <= maxSpeed - speedIncrement)
     {
         speed += speedIncrement;
-        xAxisSpeedSelector.setDisplayedValue(speed);
+        axisSpeedSelector.setDisplayedValue(speed);
     }
 }
 
@@ -32,7 +32,7 @@ void XAxisSpeedScreenView::decreaseButtonPressed()
     if (speed >= speedIncrement)
     {
         speed -= speedIncrement;
-        xAxisSpeedSelector.setDisplayedValue(speed);
+        axisSpeedSelector.setDisplayedValue(speed);
     }
 }
 

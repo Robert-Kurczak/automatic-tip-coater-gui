@@ -244,6 +244,42 @@
     <Filter Include="Header Files\generated\gui_generated\xaxisspeedscreen_screen">
       <UniqueIdentifier>584E9F7E-59FD-A9C7-BF06-81DF67045A5B</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\yaxisstartscreen_screen">
+      <UniqueIdentifier>B2C85D63-81E4-899B-6957-AAAEAB83B352</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\yaxisstartscreen_screen">
+      <UniqueIdentifier>70FF54F9-BA60-252E-855D-64E1A5D56720</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\yaxisstartscreen_screen">
+      <UniqueIdentifier>6D6C935F-5440-D3A0-58B1-AF90F10AE0A2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\yaxisstartscreen_screen">
+      <UniqueIdentifier>725ECFD2-3265-CE94-BDF4-F200022D9F11</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\yaxisspeedscreen_screen">
+      <UniqueIdentifier>686795AA-1DC2-7B3C-9F5A-07CE94D18E90</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\yaxisendscreen_screen">
+      <UniqueIdentifier>599757B5-20D9-C3BF-05B3-579E4A3B6E09</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\yaxisspeedscreen_screen">
+      <UniqueIdentifier>F52E0DF4-0818-849E-A2CA-6D9AF15BAEDD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\yaxisendscreen_screen">
+      <UniqueIdentifier>60CD9935-CE5D-3B44-B529-756F0913FF83</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\yaxisendscreen_screen">
+      <UniqueIdentifier>F06F70E5-99A4-C7A9-0E4F-9557DC81AA89</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\yaxisendscreen_screen">
+      <UniqueIdentifier>86FE71BD-6E0E-9F46-EF5A-998770B52720</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\yaxisspeedscreen_screen">
+      <UniqueIdentifier>9F9BEEDD-845E-7000-9BE9-AA4972BC1B11</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\yaxisspeedscreen_screen">
+      <UniqueIdentifier>28ED0973-8AC5-5639-0BAA-C6E50FFF638E</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -344,6 +380,33 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisStartSettingsButtonsBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenView.cpp">
+      <Filter>Source Files\gui\yaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisstartscreen_screen\YAxisStartScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenView.cpp">
+      <Filter>Source Files\gui\yaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisendscreen_screen\YAxisEndScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenView.cpp">
+      <Filter>Source Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxisspeedscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -855,6 +918,33 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisStartSettingsButtonsBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenView.hpp">
+      <Filter>Header Files\gui\yaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisstartscreen_screen\YAxisStartScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenView.hpp">
+      <Filter>Header Files\gui\yaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisendscreen_screen\YAxisEndScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenView.hpp">
+      <Filter>Header Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxisspeedscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

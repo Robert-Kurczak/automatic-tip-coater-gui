@@ -978,6 +978,19 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "XAxisStartScreen"
             }
+          },
+          {
+            "InteractionName": "GoToYAxisSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "yAxisButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "YAxisStartScreen"
+            }
           }
         ]
       },
@@ -998,7 +1011,7 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "xAxisStartSelector",
+            "Name": "axisStartSelector",
             "Width": 480,
             "Height": 800,
             "CustomContainerDefinitionName": "ValueSelector"
@@ -1046,7 +1059,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
-              "TriggerComponent": "xAxisStartSelector"
+              "TriggerComponent": "axisStartSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1058,7 +1071,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
-              "TriggerComponent": "xAxisStartSelector"
+              "TriggerComponent": "axisStartSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1070,7 +1083,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "xAxisStartSelector"
+              "TriggerComponent": "axisStartSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1122,7 +1135,7 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "xAxisEndSelector",
+            "Name": "axisEndSelector",
             "Width": 480,
             "Height": 800,
             "CustomContainerDefinitionName": "ValueSelector"
@@ -1170,7 +1183,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
-              "TriggerComponent": "xAxisEndSelector"
+              "TriggerComponent": "axisEndSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1182,7 +1195,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
-              "TriggerComponent": "xAxisEndSelector"
+              "TriggerComponent": "axisEndSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1194,7 +1207,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "xAxisEndSelector"
+              "TriggerComponent": "axisEndSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1246,7 +1259,7 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "xAxisSpeedSelector",
+            "Name": "axisSpeedSelector",
             "Width": 480,
             "Height": 800,
             "CustomContainerDefinitionName": "ValueSelector"
@@ -1278,7 +1291,7 @@
             "Y": 25,
             "Width": 78,
             "Height": 30,
-            "TextId": "__SingleUse_IZTP",
+            "TextId": "__SingleUse_ZXT0",
             "TextRotation": "0",
             "Color": {
               "Red": 205,
@@ -1294,7 +1307,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
-              "TriggerComponent": "xAxisSpeedSelector"
+              "TriggerComponent": "axisSpeedSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1306,7 +1319,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
-              "TriggerComponent": "xAxisSpeedSelector"
+              "TriggerComponent": "axisSpeedSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1318,7 +1331,7 @@
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "xAxisSpeedSelector"
+              "TriggerComponent": "axisSpeedSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1349,6 +1362,378 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "XAxisEndScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "YAxisStartScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "axisStartSelector",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "ValueSelector"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "axisStartSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "AxisStartSettingsButtons"
+          },
+          {
+            "Type": "Box",
+            "Name": "displayedValueUnderline",
+            "X": 55,
+            "Y": 435,
+            "Width": 370,
+            "Height": 5,
+            "Color": {
+              "Red": 243,
+              "Green": 139,
+              "Blue": 168
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 201,
+            "Y": 25,
+            "Width": 76,
+            "Height": 30,
+            "TextId": "__SingleUse_S6VK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IncreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
+              "TriggerComponent": "axisStartSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "increaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "DecreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
+              "TriggerComponent": "axisStartSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decreaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
+              "TriggerComponent": "axisStartSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "GoToYAxisEnd",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisStartSettingsButtons endButtonPressed happens",
+              "TriggerComponent": "axisStartSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "YAxisEndScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToYAxisSpeed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisStartSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "axisStartSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "YAxisSpeedScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "YAxisEndScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "axisEndSelector",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "ValueSelector"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "axisEndSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "AxisEndSettingsButtons"
+          },
+          {
+            "Type": "Box",
+            "Name": "displayedValueUnderline",
+            "X": 55,
+            "Y": 435,
+            "Width": 370,
+            "Height": 5,
+            "Color": {
+              "Red": 250,
+              "Green": 179,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 201,
+            "Y": 25,
+            "Width": 76,
+            "Height": 30,
+            "TextId": "__SingleUse_9YSO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IncreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
+              "TriggerComponent": "axisEndSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "increaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "DecreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
+              "TriggerComponent": "axisEndSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decreaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
+              "TriggerComponent": "axisEndSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "GoToYAxisStart",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisEndSettingsButtons startButtonPressed happens",
+              "TriggerComponent": "axisEndSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "YAxisStartScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToYAxisSpeed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisEndSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "axisEndSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "YAxisSpeedScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "YAxisSpeedScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "axisSpeedSelector",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "ValueSelector"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "axisSpeedSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "AxisSpeedSettingsButtons"
+          },
+          {
+            "Type": "Box",
+            "Name": "displayedValueUnderline",
+            "X": 55,
+            "Y": 435,
+            "Width": 370,
+            "Height": 5,
+            "Color": {
+              "Red": 166,
+              "Green": 227,
+              "Blue": 161
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 201,
+            "Y": 25,
+            "Width": 76,
+            "Height": 30,
+            "TextId": "__SingleUse_548D",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IncreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
+              "TriggerComponent": "axisSpeedSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "increaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "DecreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
+              "TriggerComponent": "axisSpeedSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decreaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
+              "TriggerComponent": "axisSpeedSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "GoToYAxisStart",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisSpeedSettingsButtons startButtonPressed happens",
+              "TriggerComponent": "axisSpeedSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "YAxisStartScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToYAxisEnd",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "AxisSpeedSettingsButtons endButtonPressed happens",
+              "TriggerComponent": "axisSpeedSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "YAxisEndScreen"
             }
           }
         ]
