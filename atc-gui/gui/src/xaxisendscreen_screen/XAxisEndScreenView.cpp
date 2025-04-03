@@ -5,7 +5,7 @@ static uint16_t savedEndPosition = 0;
 XAxisEndScreenView::XAxisEndScreenView()
 {
     endPosition = savedEndPosition;
-    xAxisEndSelector.setDisplayedValue(savedEndPosition);
+    axisEndSelector.setDisplayedValue(savedEndPosition);
 }
 
 void XAxisEndScreenView::setupScreen()
@@ -23,7 +23,7 @@ void XAxisEndScreenView::increaseButtonPressed()
     if (endPosition <= maxPosition - positionIncrement)
     {
         endPosition += positionIncrement;
-        xAxisEndSelector.setDisplayedValue(endPosition);
+        axisEndSelector.setDisplayedValue(endPosition);
     }
 }
 
@@ -32,7 +32,7 @@ void XAxisEndScreenView::decreaseButtonPressed()
     if (endPosition >= positionIncrement)
     {
         endPosition -= positionIncrement;
-        xAxisEndSelector.setDisplayedValue(endPosition);
+        axisEndSelector.setDisplayedValue(endPosition);
     }
 }
 

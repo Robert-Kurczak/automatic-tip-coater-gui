@@ -5,8 +5,17 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_IZTP" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_548D" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Y Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_9YSO" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Y Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZXT0" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_S6VK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Y Axis</Translation>
       </Text>
       <Text Id="__SingleUse_GSTM" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">X Axis</Translation>
