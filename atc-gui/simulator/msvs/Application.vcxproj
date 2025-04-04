@@ -53,6 +53,15 @@
     <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisendscreen_screen\ZAxisEndScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxisspeedscreen_screen\ZAxisSpeedScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxisspeedscreen_screen\ZAxisSpeedScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisspeedscreen_screen\ZAxisSpeedScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisstartscreen_screen\ZAxisStartScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -235,6 +244,15 @@
     <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisendscreen_screen\ZAxisEndScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxisspeedscreen_screen\ZAxisSpeedScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxisspeedscreen_screen\ZAxisSpeedScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisspeedscreen_screen\ZAxisSpeedScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisstartscreen_screen\ZAxisStartScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

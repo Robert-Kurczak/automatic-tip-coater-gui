@@ -280,6 +280,42 @@
     <Filter Include="Header Files\generated\gui_generated\yaxisspeedscreen_screen">
       <UniqueIdentifier>28ED0973-8AC5-5639-0BAA-C6E50FFF638E</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\zaxisstartscreen_screen">
+      <UniqueIdentifier>CF5B5144-A062-D013-ADFA-B7AF7C086AB6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\zaxisspeedscreen_screen">
+      <UniqueIdentifier>31A79BBB-1BF7-693D-D609-A0E9194BAAF5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zaxisspeedscreen_screen">
+      <UniqueIdentifier>CD27532A-182B-C05F-651F-E98D3CE6993F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zaxisstartscreen_screen">
+      <UniqueIdentifier>5167D6CA-CC7D-4A13-EC8E-26B7A8D2608F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zaxisendscreen_screen">
+      <UniqueIdentifier>B056F06A-F82E-B7C4-97F4-D6919101D0BC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\zaxisendscreen_screen">
+      <UniqueIdentifier>98A971B7-FEFD-3CA1-BEC5-F84B46A1017C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zaxisendscreen_screen">
+      <UniqueIdentifier>06992954-24CF-7E5A-8665-B77412CCF904</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zaxisendscreen_screen">
+      <UniqueIdentifier>F905F3C5-68C5-ADB2-CB5B-4B00CD45FF7D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zaxisspeedscreen_screen">
+      <UniqueIdentifier>65A80344-C578-4B53-DFA1-D448C7E2C410</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zaxisspeedscreen_screen">
+      <UniqueIdentifier>36CCF62B-8A97-66FD-77F6-A5F145AD4D61</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zaxisstartscreen_screen">
+      <UniqueIdentifier>BB66AAAB-6108-693C-985D-0446C9AF16A7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zaxisstartscreen_screen">
+      <UniqueIdentifier>9F9C479E-3F61-07BF-D229-31801EC41601</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -407,6 +443,33 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\yaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenView.cpp">
+      <Filter>Source Files\gui\zaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisendscreen_screen\ZAxisEndScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisspeedscreen_screen\ZAxisSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisspeedscreen_screen\ZAxisSpeedScreenView.cpp">
+      <Filter>Source Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisspeedscreen_screen\ZAxisSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenView.cpp">
+      <Filter>Source Files\gui\zaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisstartscreen_screen\ZAxisStartScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -945,6 +1008,33 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\yaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenView.hpp">
+      <Filter>Header Files\gui\zaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisendscreen_screen\ZAxisEndScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisspeedscreen_screen\ZAxisSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisspeedscreen_screen\ZAxisSpeedScreenView.hpp">
+      <Filter>Header Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisspeedscreen_screen\ZAxisSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenView.hpp">
+      <Filter>Header Files\gui\zaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisstartscreen_screen\ZAxisStartScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
