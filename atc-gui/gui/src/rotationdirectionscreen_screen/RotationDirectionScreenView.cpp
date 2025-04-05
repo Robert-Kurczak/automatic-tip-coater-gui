@@ -6,8 +6,7 @@ RotationDirectionScreenView::RotationDirectionScreenView()
 {
     clockwise = savedClockwise;
 
-    directionClockwiseButton.setVisible(clockwise);
-    directionCounterClockwiseButton.setVisible(!clockwise);
+    rotationDirectionSelector.setClockwiseState(clockwise);
 }
 
 void RotationDirectionScreenView::setupScreen()

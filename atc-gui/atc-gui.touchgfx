@@ -542,8 +542,8 @@
                         "Type": "IconButtonStyle",
                         "X": 50,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_maps_local_fire_department_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_maps_local_fire_department_60_60_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_device_thermostat_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_device_thermostat_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -1016,6 +1016,19 @@
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "RotationSpeedScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToHeaterSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "heaterButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HeaterTemperatureScreen"
             }
           }
         ]
@@ -2365,151 +2378,12 @@
             "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
-            "Type": "Container",
-            "Name": "directionButtonContainer",
-            "X": 159,
-            "Y": 400,
-            "Width": 162,
-            "Height": 165,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "directionButtonShadow",
-                "Width": 162,
-                "Height": 165,
-                "Alpha": 50
-              },
-              {
-                "Type": "FlexButton",
-                "Name": "directionCounterClockwiseButton",
-                "Width": 157,
-                "Height": 160,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
-                  {
-                    "Type": "TextButtonStyle",
-                    "Y": 80,
-                    "TextId": "__SingleUse_BXI5",
-                    "TextRotation": "0",
-                    "ColorReleased": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    },
-                    "ColorPressed": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    }
-                  },
-                  {
-                    "Type": "IconButtonStyle",
-                    "X": 50,
-                    "Y": 20,
-                    "IconReleased": "__generated\\icon_theme_images_image_rotate_left_60_60_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_image_rotate_left_60_60_E8F6FB.svg.png"
-                  },
-                  {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 157,
-                    "Height": 160,
-                    "LockToFlexButtonSize": true,
-                    "ColorReleased": {
-                      "Red": 17,
-                      "Green": 17,
-                      "Blue": 27
-                    },
-                    "ColorPressed": {
-                      "Red": 24,
-                      "Green": 24,
-                      "Blue": 37
-                    },
-                    "ColorBorderReleased": {
-                      "Green": 51,
-                      "Blue": 102
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "FlexButton",
-                "Name": "directionClockwiseButton",
-                "Width": 157,
-                "Height": 160,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
-                  {
-                    "Type": "TextButtonStyle",
-                    "Y": 100,
-                    "TextId": "__SingleUse_YU9A",
-                    "TextRotation": "0",
-                    "ColorReleased": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    },
-                    "ColorPressed": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    }
-                  },
-                  {
-                    "Type": "IconButtonStyle",
-                    "X": 50,
-                    "Y": 20,
-                    "IconReleased": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png"
-                  },
-                  {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 157,
-                    "Height": 160,
-                    "LockToFlexButtonSize": true,
-                    "ColorReleased": {
-                      "Red": 17,
-                      "Green": 17,
-                      "Blue": 27
-                    },
-                    "ColorPressed": {
-                      "Red": 24,
-                      "Green": 24,
-                      "Blue": 37
-                    },
-                    "ColorBorderReleased": {
-                      "Green": 51,
-                      "Blue": 102
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Box",
-                "Name": "directionButtonUnderline",
-                "Y": 155,
-                "Width": 157,
-                "Height": 5,
-                "Color": {
-                  "Red": 250,
-                  "Green": 179,
-                  "Blue": 135
-                }
-              }
-            ]
+            "Type": "CustomContainerInstance",
+            "Name": "rotationDirectionSelector",
+            "X": -3,
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "RotationDirectionSelector"
           },
           {
             "Type": "CustomContainerInstance",
@@ -2536,50 +2410,6 @@
           }
         ],
         "Interactions": [
-          {
-            "InteractionName": "HideClockwiseButton",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "directionClockwiseButton"
-            },
-            "Action": {
-              "Type": "ActionHide",
-              "ActionComponent": "directionClockwiseButton"
-            }
-          },
-          {
-            "InteractionName": "ShowCounterClockwiseButton",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "directionClockwiseButton"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "directionCounterClockwiseButton"
-            }
-          },
-          {
-            "InteractionName": "HideCounterClockwiseButton",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "directionCounterClockwiseButton"
-            },
-            "Action": {
-              "Type": "ActionHide",
-              "ActionComponent": "directionCounterClockwiseButton"
-            }
-          },
-          {
-            "InteractionName": "ShowClockwiseButton",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "directionCounterClockwiseButton"
-            },
-            "Action": {
-              "Type": "ActionShow",
-              "ActionComponent": "directionClockwiseButton"
-            }
-          },
           {
             "InteractionName": "GoToRotationSpeed",
             "Trigger": {
@@ -2609,8 +2439,9 @@
           {
             "InteractionName": "ClockwiseButtonPressed",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "directionClockwiseButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationDirectionSelector ClockwiseButtonPressed happens",
+              "TriggerComponent": "rotationDirectionSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -2620,8 +2451,9 @@
           {
             "InteractionName": "CounterClockwiseButtonPressed",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "directionCounterClockwiseButton"
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationDirectionSelector ClockwiseButtonPressed happens",
+              "TriggerComponent": "rotationDirectionSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -2770,6 +2602,231 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "RotationDirectionScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "HeaterTemperatureScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "temperatureSelector",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "ValueSelector"
+          },
+          {
+            "Type": "Box",
+            "Name": "displayedValueUnderline",
+            "X": 55,
+            "Y": 435,
+            "Width": 370,
+            "Height": 5,
+            "Color": {
+              "Red": 243,
+              "Green": 139,
+              "Blue": 168
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "heaterTemperatureSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "HeaterTemperatureSettingsButtons"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 198,
+            "Y": 25,
+            "Width": 85,
+            "Height": 30,
+            "TextId": "__SingleUse_ZUKI",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IncreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
+              "TriggerComponent": "temperatureSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "increaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "DecreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
+              "TriggerComponent": "temperatureSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decreaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "GoToHeaterState",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "HeaterTemperatureSettingsButtons stateButtonPressed happens",
+              "TriggerComponent": "heaterTemperatureSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "HeaterStateScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "HeaterStateScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "heaterStateSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "HeaterStateSettingsButtons"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "heaterStateSelector",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "HeaterStateSelector"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 198,
+            "Y": 25,
+            "Width": 85,
+            "Height": 30,
+            "TextId": "__SingleUse_IUBX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StateOffButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "HeaterStateSelector StateOffButtonPressed happens",
+              "TriggerComponent": "heaterStateSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "stateOffButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "StateOnButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "HeaterStateSelector StateOnButtonPressed happens",
+              "TriggerComponent": "heaterStateSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "stateOnButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "GoToHeaterTemperature",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "HeaterStateSettingsButtons temperatureButtonPressed happens",
+              "TriggerComponent": "heaterStateSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "HeaterTemperatureScreen"
             }
           }
         ]
@@ -3203,6 +3260,472 @@
           },
           {
             "Name": "decreaseButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "RotationDirectionSelector",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 800,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "directionButtonContainer",
+            "X": 159,
+            "Y": 400,
+            "Width": 162,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "directionButtonShadow",
+                "Width": 162,
+                "Height": 165,
+                "Alpha": 50
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "counterClockwiseButton",
+                "Width": 157,
+                "Height": 160,
+                "Visible": false,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 80,
+                    "TextId": "__SingleUse_JSQV",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 50,
+                    "Y": 20,
+                    "IconReleased": "__generated\\icon_theme_images_image_rotate_left_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_image_rotate_left_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 157,
+                    "Height": 160,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "clockwiseButton",
+                "Width": 157,
+                "Height": 160,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 100,
+                    "TextId": "__SingleUse_5SAV",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 50,
+                    "Y": 20,
+                    "IconReleased": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 157,
+                    "Height": 160,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Box",
+                "Name": "directionButtonUnderline",
+                "Y": 155,
+                "Width": 157,
+                "Height": 5,
+                "Color": {
+                  "Red": 250,
+                  "Green": 179,
+                  "Blue": 135
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ClockwiseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "clockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationDirectionSelector ClockwiseButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "HideClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "clockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "clockwiseButton"
+            }
+          },
+          {
+            "InteractionName": "ShowCounterClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "clockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "counterClockwiseButton"
+            }
+          },
+          {
+            "InteractionName": "CounterClockwiseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "counterClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationDirectionSelector CounterClockwiseButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "HideCounterClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "counterClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "counterClockwiseButton"
+            }
+          },
+          {
+            "InteractionName": "ShowClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "counterClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "clockwiseButton"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "ClockwiseButtonPressed"
+          },
+          {
+            "Name": "CounterClockwiseButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "HeaterStateSelector",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 800,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "stateButtonContainer",
+            "X": 159,
+            "Y": 400,
+            "Width": 162,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "stateButtonShadow",
+                "Width": 162,
+                "Height": 165,
+                "Alpha": 50
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "stateOnButton",
+                "Width": 157,
+                "Height": 160,
+                "Visible": false,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 100,
+                    "TextId": "__SingleUse_VRO9",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 50,
+                    "Y": 20,
+                    "IconReleased": "__generated\\icon_theme_images_toggle_radio_button_checked_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_toggle_radio_button_checked_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 157,
+                    "Height": 160,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "stateOffButton",
+                "Width": 157,
+                "Height": 160,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 100,
+                    "TextId": "__SingleUse_22RH",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 50,
+                    "Y": 20,
+                    "IconReleased": "__generated\\icon_theme_images_toggle_radio_button_unchecked_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_toggle_radio_button_unchecked_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 157,
+                    "Height": 160,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Box",
+                "Name": "stateButtonUnderline",
+                "Y": 155,
+                "Width": 157,
+                "Height": 5,
+                "Color": {
+                  "Red": 250,
+                  "Green": 179,
+                  "Blue": 135
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StateOnButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateOnButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "HeaterStateSelector StateOnButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "HideStateOnButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateOnButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "stateOnButton"
+            }
+          },
+          {
+            "InteractionName": "ShowStateOffButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateOnButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "stateOffButton"
+            }
+          },
+          {
+            "InteractionName": "StateOffButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateOffButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "HeaterStateSelector StateOffButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "HideStateOffButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateOffButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "stateOffButton"
+            }
+          },
+          {
+            "InteractionName": "ShowStateOnButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateOffButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "stateOnButton"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "StateOnButtonPressed"
+          },
+          {
+            "Name": "StateOffButtonPressed"
           }
         ]
       },
@@ -4439,7 +4962,7 @@
                         "X": 55,
                         "Y": 20,
                         "IconReleased": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_50_50_E8F6FB.svg.png"
+                        "IconPressed": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -4683,7 +5206,7 @@
                         "X": 55,
                         "Y": 20,
                         "IconReleased": "__generated\\icon_theme_images_image_rotate_right_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png"
+                        "IconPressed": "__generated\\icon_theme_images_image_rotate_right_50_50_E8F6FB.svg.png"
                       },
                       {
                         "Type": "TextButtonStyle",
@@ -5234,6 +5757,496 @@
           },
           {
             "Name": "rotationTimeButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "HeaterTemperatureSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "stateButtonContainer",
+                "X": 243,
+                "Width": 238,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "stateButtonShadow",
+                    "Y": 120,
+                    "Width": 238,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "stateButton",
+                    "Width": 238,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_KJZR",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 238,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "stateButtonUnderline",
+                    "Y": 115,
+                    "Width": 238,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "temperatureButtonContainer",
+                "Width": 243,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "temperatureButtonShadow",
+                    "Width": 243,
+                    "Height": 165,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "temperatureButton",
+                    "Width": 238,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_4A2K",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 95,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_device_thermostat_50_50_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_device_thermostat_50_50_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 238,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "temperatureButtonUnderline",
+                    "Y": 155,
+                    "Width": 238,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "TemperatureButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "temperatureButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "HeaterTemperatureSettingsButtons temperatureButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "StateButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "HeaterTemperatureSettingsButtons stateButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "temperatureButtonPressed"
+          },
+          {
+            "Name": "stateButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "HeaterStateSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "stateButtonContainer",
+                "X": 243,
+                "Width": 238,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "stateButtonShadow",
+                    "Y": 160,
+                    "Width": 238,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "stateButton",
+                    "Width": 238,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 95,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_toggle_radio_button_checked_50_50_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_toggle_radio_button_checked_50_50_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_58ST",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 238,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "stateButtonUnderline",
+                    "Y": 155,
+                    "Width": 238,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "temperatureButtonContainer",
+                "Width": 243,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "temperatureButtonShadow",
+                    "Width": 243,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "temperatureButton",
+                    "Width": 238,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_6PUQ",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 238,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "temperatureButtonUnderline",
+                    "Y": 115,
+                    "Width": 238,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "TemperatureButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "temperatureButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "HeaterStateSettingsButtons temperatureButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "StateButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "stateButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "HeaterStateSettingsButtons stateButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "temperatureButtonPressed"
+          },
+          {
+            "Name": "stateButtonPressed"
           }
         ]
       }

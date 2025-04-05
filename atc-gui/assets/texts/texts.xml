@@ -5,11 +5,35 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_YU9A" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_VRO9" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">On</Translation>
+      </Text>
+      <Text Id="__SingleUse_22RH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Off</Translation>
+      </Text>
+      <Text Id="__SingleUse_5SAV" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Clockwise</Translation>
       </Text>
-      <Text Id="__SingleUse_BXI5" Alignment="Center" TypographyId="Default">
+      <Text Id="__SingleUse_JSQV" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Counter&#10;Clockwise</Translation>
+      </Text>
+      <Text Id="__SingleUse_IUBX" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Heater</Translation>
+      </Text>
+      <Text Id="__SingleUse_6PUQ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Temperature</Translation>
+      </Text>
+      <Text Id="__SingleUse_58ST" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">State</Translation>
+      </Text>
+      <Text Id="__SingleUse_4A2K" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Temperature</Translation>
+      </Text>
+      <Text Id="__SingleUse_KJZR" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">State</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZUKI" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Heater</Translation>
       </Text>
       <Text Id="__SingleUse_XVKS" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Rotation</Translation>

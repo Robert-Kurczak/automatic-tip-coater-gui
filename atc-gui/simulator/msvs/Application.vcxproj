@@ -79,6 +79,20 @@
     <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\rotationtimescreen_screen\RotationTimeScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\heaterstatescreen_screen\HeaterStateScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\heaterstatescreen_screen\HeaterStateScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\heaterstatescreen_screen\HeaterStateScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\HeaterStateSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\heatertemperaturescreen_screen\HeaterTemperatureScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\heatertemperaturescreen_screen\HeaterTemperatureScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\heatertemperaturescreen_screen\HeaterTemperatureScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\HeaterTemperatureSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTemperatureSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\RotationDirectionSelector.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationDirectionSelectorBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\HeaterStateSelector.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSelectorBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -287,6 +301,20 @@
     <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationtimescreen_screen\RotationTimeScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heaterstatescreen_screen\HeaterStateScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heaterstatescreen_screen\HeaterStateScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heaterstatescreen_screen\HeaterStateScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterStateSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heatertemperaturescreen_screen\HeaterTemperatureScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heatertemperaturescreen_screen\HeaterTemperatureScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertemperaturescreen_screen\HeaterTemperatureScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterTemperatureSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTemperatureSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSelector.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationDirectionSelectorBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterStateSelector.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSelectorBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
