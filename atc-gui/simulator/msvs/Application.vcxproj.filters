@@ -316,6 +316,42 @@
     <Filter Include="Header Files\generated\gui_generated\zaxisstartscreen_screen">
       <UniqueIdentifier>9F9C479E-3F61-07BF-D229-31801EC41601</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\rotationdirectionscreen_screen">
+      <UniqueIdentifier>21D3B40C-4188-88C5-BAC7-790E9C5D8275</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\rotationdirectionscreen_screen">
+      <UniqueIdentifier>8AFB3C37-D43F-D51C-3481-30DB75601C3D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationdirectionscreen_screen">
+      <UniqueIdentifier>6E9B799D-5B50-1280-C6FB-67612229C5DE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationdirectionscreen_screen">
+      <UniqueIdentifier>7F30753F-73CA-B9EE-65F6-EE42B826E7EB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\rotationtimescreen_screen">
+      <UniqueIdentifier>B4EF63C9-33AD-82C6-4C20-8F3198338526</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\rotationtimescreen_screen">
+      <UniqueIdentifier>4C2D2994-7059-9E77-15BD-225C4410305A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\rotationspeedscreen_screen">
+      <UniqueIdentifier>C0F0D163-0292-4D46-87CB-363F10CC8E21</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\rotationspeedscreen_screen">
+      <UniqueIdentifier>96433693-DF5D-E0B0-4E47-9E68802B691F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationspeedscreen_screen">
+      <UniqueIdentifier>C168582F-DFD4-8F87-B117-6CFC037F8EF5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationspeedscreen_screen">
+      <UniqueIdentifier>A4A7A7A5-195C-5113-998F-BB5EDC885F77</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationtimescreen_screen">
+      <UniqueIdentifier>AAC95FD4-C48D-49C9-A43A-A24FFAA14088</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationtimescreen_screen">
+      <UniqueIdentifier>43A95CF1-FD75-4D38-3CA9-490B181FF140</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -470,6 +506,57 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\zaxisstartscreen_screen\ZAxisStartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationSpeedSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationSpeedSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.cpp">
+      <Filter>Source Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationdirectionscreen_screen\RotationDirectionScreenView.cpp">
+      <Filter>Source Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationdirectionscreen_screen\RotationDirectionScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationdirectionscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SettingsFooter.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SettingsFooterBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationDirectionSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationDirectionSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationspeedscreen_screen\RotationSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\rotationspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationspeedscreen_screen\RotationSpeedScreenView.cpp">
+      <Filter>Source Files\gui\rotationspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationspeedscreen_screen\RotationSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationTimeSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationTimeSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenPresenter.cpp">
+      <Filter>Source Files\gui\rotationtimescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenView.cpp">
+      <Filter>Source Files\gui\rotationtimescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationtimescreen_screen\RotationTimeScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationtimescreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1035,6 +1122,57 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisstartscreen_screen\ZAxisStartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationSpeedSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationSpeedSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.hpp">
+      <Filter>Header Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenView.hpp">
+      <Filter>Header Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationdirectionscreen_screen\RotationDirectionScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationdirectionscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SettingsFooter.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SettingsFooterBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationDirectionSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\rotationspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenView.hpp">
+      <Filter>Header Files\gui\rotationspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationspeedscreen_screen\RotationSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationTimeSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationTimeSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenPresenter.hpp">
+      <Filter>Header Files\gui\rotationtimescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenView.hpp">
+      <Filter>Header Files\gui\rotationtimescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationtimescreen_screen\RotationTimeScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationtimescreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

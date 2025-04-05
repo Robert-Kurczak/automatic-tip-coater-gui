@@ -1004,6 +1004,19 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "ZAxisStartScreen"
             }
+          },
+          {
+            "InteractionName": "GoToRotationSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "rotationButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "RotationSpeedScreen"
+            }
           }
         ]
       },
@@ -1021,6 +1034,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1095,8 +1116,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisStartSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1145,6 +1166,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1219,8 +1248,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisEndSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1269,6 +1298,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1343,8 +1380,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisSpeedSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1393,6 +1430,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1467,8 +1512,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisStartSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1517,6 +1562,15 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "X": -1,
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1591,8 +1645,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisEndSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1641,6 +1695,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1715,8 +1777,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisSpeedSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1765,6 +1827,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1839,8 +1909,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisStartSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -1889,6 +1959,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1963,8 +2041,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisEndSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -2013,6 +2091,14 @@
               "Green": 30,
               "Blue": 46
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -2087,8 +2173,8 @@
             "InteractionName": "SaveButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens",
-              "TriggerComponent": "axisSpeedSelector"
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -2122,9 +2208,783 @@
             }
           }
         ]
+      },
+      {
+        "Name": "RotationSpeedScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "speedSelector",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "ValueSelector"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "rotationSpeedSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "RotationSpeedSettingsButtons"
+          },
+          {
+            "Type": "Box",
+            "Name": "displayedValueUnderline",
+            "X": 55,
+            "Y": 435,
+            "Width": 370,
+            "Height": 5,
+            "Color": {
+              "Red": 243,
+              "Green": 139,
+              "Blue": 168
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 188,
+            "Y": 25,
+            "Width": 104,
+            "Height": 30,
+            "TextId": "__SingleUse_4HL2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IncreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
+              "TriggerComponent": "speedSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "increaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "DecreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
+              "TriggerComponent": "speedSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decreaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "GoToRotationDirection",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationSpeedSettingsButtons directionButtonPressed happens",
+              "TriggerComponent": "rotationSpeedSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationDirectionScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToRotationTime",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationSpeedSettingsButtons rotationTimeButtonPressed happens",
+              "TriggerComponent": "rotationSpeedSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationTimeScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "RotationDirectionScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
+          },
+          {
+            "Type": "Container",
+            "Name": "directionButtonContainer",
+            "X": 159,
+            "Y": 400,
+            "Width": 162,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "directionButtonShadow",
+                "Width": 162,
+                "Height": 165,
+                "Alpha": 50
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "directionCounterClockwiseButton",
+                "Width": 157,
+                "Height": 160,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 80,
+                    "TextId": "__SingleUse_BXI5",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 50,
+                    "Y": 20,
+                    "IconReleased": "__generated\\icon_theme_images_image_rotate_left_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_image_rotate_left_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 157,
+                    "Height": 160,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "directionClockwiseButton",
+                "Width": 157,
+                "Height": 160,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 100,
+                    "TextId": "__SingleUse_YU9A",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 50,
+                    "Y": 20,
+                    "IconReleased": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 157,
+                    "Height": 160,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Box",
+                "Name": "directionButtonUnderline",
+                "Y": 155,
+                "Width": 157,
+                "Height": 5,
+                "Color": {
+                  "Red": 250,
+                  "Green": 179,
+                  "Blue": 135
+                }
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "rotationDirectionSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "RotationDirectionSettingsButtons"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 188,
+            "Y": 25,
+            "Width": 104,
+            "Height": 30,
+            "TextId": "__SingleUse_0FA2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "HideClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "directionClockwiseButton"
+            }
+          },
+          {
+            "InteractionName": "ShowCounterClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "directionCounterClockwiseButton"
+            }
+          },
+          {
+            "InteractionName": "HideCounterClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionCounterClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "directionCounterClockwiseButton"
+            }
+          },
+          {
+            "InteractionName": "ShowClockwiseButton",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionCounterClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "directionClockwiseButton"
+            }
+          },
+          {
+            "InteractionName": "GoToRotationSpeed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationDirectionSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "rotationDirectionSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationSpeedScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToRotationTime",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationDirectionSettingsButtons rotationTimeButtonPressed happens",
+              "TriggerComponent": "rotationDirectionSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationTimeScreen"
+            }
+          },
+          {
+            "InteractionName": "ClockwiseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "clockwiseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "CounterClockwiseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionCounterClockwiseButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "counterClockwiseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "RotationTimeScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingsFooter",
+            "Y": 675,
+            "Width": 480,
+            "Height": 125,
+            "CustomContainerDefinitionName": "SettingsFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "timeSelector",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "ValueSelector"
+          },
+          {
+            "Type": "Box",
+            "Name": "displayedValueUnderline",
+            "X": 55,
+            "Y": 435,
+            "Width": 370,
+            "Height": 5,
+            "Color": {
+              "Red": 166,
+              "Green": 227,
+              "Blue": 161
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "rotationTimeSettingsButtons",
+            "Width": 480,
+            "Height": 245,
+            "CustomContainerDefinitionName": "RotationTimeSettingsButtons"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 188,
+            "Y": 25,
+            "Width": 104,
+            "Height": 30,
+            "TextId": "__SingleUse_XVKS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IncreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens",
+              "TriggerComponent": "timeSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "increaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "DecreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens",
+              "TriggerComponent": "timeSelector"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "decreaseButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens",
+              "TriggerComponent": "settingsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "saveButtonPressed"
+            }
+          },
+          {
+            "InteractionName": "GoToRotationDirection",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationTimeSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "rotationTimeSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationSpeedScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToRotationTime",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "RotationTimeSettingsButtons directionButtonPressed happens",
+              "TriggerComponent": "rotationTimeSettingsButtons"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RotationDirectionScreen"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
+      {
+        "Name": "SettingsFooter",
+        "X": 160,
+        "Y": 515,
+        "Width": 480,
+        "Height": 125,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "saveButtonContainer",
+            "X": 243,
+            "Y": 40,
+            "Width": 238,
+            "Height": 125,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "saveButtonShadow",
+                "Width": 238,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "saveButton",
+                "Y": 5,
+                "Width": 238,
+                "Height": 120,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 80,
+                    "TextId": "__SingleUse_K3R6",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 95,
+                    "Y": 15,
+                    "IconReleased": "__generated\\icon_theme_images_content_save_50_50_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_content_save_50_50_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 238,
+                    "Height": 120,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "backButtonContainer",
+            "Y": 40,
+            "Width": 243,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "backButtonShadow",
+                "Width": 242,
+                "Height": 85,
+                "Alpha": 50
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "backButton",
+                "Y": 5,
+                "Width": 238,
+                "Height": 80,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 90,
+                    "Y": 10,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 238,
+                    "Height": 80,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GoBackToSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "backButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "SettingsScreen"
+            }
+          },
+          {
+            "InteractionName": "ExpandSaveButton",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "saveButton"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "X": 243,
+              "Easing": "Elastic",
+              "EasingOption": "Out",
+              "Duration": 1000,
+              "ActionComponent": "saveButtonContainer"
+            }
+          },
+          {
+            "InteractionName": "RetractSaveButton",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "ExpandSaveButton"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "X": 243,
+              "Y": 40,
+              "Easing": "Back",
+              "EasingOption": "In",
+              "Duration": 500,
+              "ActionComponent": "saveButtonContainer"
+            }
+          },
+          {
+            "InteractionName": "SaveButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "saveButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "SettingsFooter saveButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "saveButtonPressed"
+          }
+        ]
+      },
       {
         "Name": "ValueSelector",
         "X": 160,
@@ -2133,152 +2993,6 @@
         "Height": 800,
         "Includes": "",
         "Components": [
-          {
-            "Type": "Container",
-            "Name": "footerContainer",
-            "Y": 675,
-            "Width": 480,
-            "Height": 125,
-            "Components": [
-              {
-                "Type": "Container",
-                "Name": "saveButtonContainer",
-                "X": 243,
-                "Y": 40,
-                "Width": 238,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "saveButtonShadow",
-                    "Width": 238,
-                    "Height": 5,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "saveButton",
-                    "Y": 5,
-                    "Width": 238,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "TextButtonStyle",
-                        "Y": 80,
-                        "TextId": "__SingleUse_L3KM",
-                        "TextRotation": "0",
-                        "ColorReleased": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        },
-                        "ColorPressed": {
-                          "Red": 205,
-                          "Green": 214,
-                          "Blue": 244
-                        }
-                      },
-                      {
-                        "Type": "IconButtonStyle",
-                        "X": 95,
-                        "Y": 15,
-                        "IconReleased": "__generated\\icon_theme_images_content_save_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_content_save_50_50_E8F6FB.svg.png"
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 238,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "backButtonContainer",
-                "Y": 40,
-                "Width": 243,
-                "Height": 85,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "backButtonShadow",
-                    "Width": 242,
-                    "Height": 85,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "backButton",
-                    "Y": 5,
-                    "Width": 238,
-                    "Height": 80,
-                    "ButtonTrigger": {
-                      "Type": "ClickButtonTrigger"
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "IconButtonStyle",
-                        "X": 90,
-                        "Y": 10,
-                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 238,
-                        "Height": 80,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "Type": "Container",
             "Name": "selectorContainer",
@@ -2481,62 +3195,6 @@
               "Type": "ActionEmit",
               "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens"
             }
-          },
-          {
-            "InteractionName": "SaveButtonPressed",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "saveButton"
-            },
-            "Action": {
-              "Type": "ActionEmit",
-              "TriggerCustomTypeName": "ValueSelector saveButtonPressed happens"
-            }
-          },
-          {
-            "InteractionName": "GoBackToSettings",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "backButton"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "SettingsScreen"
-            }
-          },
-          {
-            "InteractionName": "ExpandSaveButton",
-            "HasCompletedTrigger": true,
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "saveButton"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 243,
-              "Easing": "Elastic",
-              "EasingOption": "Out",
-              "Duration": 1000,
-              "ActionComponent": "saveButtonContainer"
-            }
-          },
-          {
-            "InteractionName": "RetractSaveButton",
-            "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "ExpandSaveButton"
-            },
-            "Action": {
-              "Type": "ActionMove",
-              "X": 243,
-              "Y": 40,
-              "Easing": "Back",
-              "EasingOption": "In",
-              "Duration": 500,
-              "ActionComponent": "saveButtonContainer"
-            }
           }
         ],
         "CustomTriggers": [
@@ -2545,9 +3203,6 @@
           },
           {
             "Name": "decreaseButtonPressed"
-          },
-          {
-            "Name": "saveButtonPressed"
           }
         ]
       },
@@ -2563,7 +3218,7 @@
             "Name": "buttons",
             "Y": 80,
             "Width": 480,
-            "Height": 160,
+            "Height": 165,
             "Components": [
               {
                 "Type": "Container",
@@ -2901,7 +3556,7 @@
             "Name": "buttons",
             "Y": 80,
             "Width": 480,
-            "Height": 160,
+            "Height": 165,
             "Components": [
               {
                 "Type": "Container",
@@ -3239,7 +3894,7 @@
             "Name": "buttons",
             "Y": 80,
             "Width": 480,
-            "Height": 160,
+            "Height": 165,
             "Components": [
               {
                 "Type": "Container",
@@ -3562,6 +4217,1023 @@
           },
           {
             "Name": "speedButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "RotationSpeedSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "rotationTimeButtonContainer",
+                "X": 324,
+                "Width": 157,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "rotationTimeButtonShadow",
+                    "Y": 120,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "rotationTimeButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_QWR3",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "rotationTimeButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 166,
+                      "Green": 227,
+                      "Blue": 161
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "directionButtonContainer",
+                "X": 162,
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "directionButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "directionButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_LNO1",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "directionButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "speedButtonContainer",
+                "Width": 162,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Width": 162,
+                    "Height": 165,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "speedButton",
+                    "Width": 157,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_6Y41",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 55,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_50_50_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonUnderline",
+                    "Y": 155,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SpeedButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "speedButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationSpeedSettingsButtons speedButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "DirectionButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationSpeedSettingsButtons directionButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "RotationTimeButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "rotationTimeButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationSpeedSettingsButtons rotationTimeButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "speedButtonPressed"
+          },
+          {
+            "Name": "directionButtonPressed"
+          },
+          {
+            "Name": "rotationTimeButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "RotationDirectionSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "rotationTimeButtonContainer",
+                "X": 324,
+                "Width": 157,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "rotationTimeButtonShadow",
+                    "Y": 120,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "rotationTimeButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_G6Z6",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "rotationTimeButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 166,
+                      "Green": 227,
+                      "Blue": 161
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "directionButtonContainer",
+                "X": 162,
+                "Width": 162,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "directionButtonShadow",
+                    "Width": 162,
+                    "Height": 165,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "directionButton",
+                    "Width": 157,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 55,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_image_rotate_right_50_50_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_W380",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "directionButtonUnderline",
+                    "Y": 155,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "speedButtonContainer",
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "speedButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_MUYD",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SpeedButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "speedButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationDirectionSettingsButtons speedButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "DirectionButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationDirectionSettingsButtons directionButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "RotationTimeButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "rotationTimeButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationDirectionSettingsButtons rotationTimeButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "speedButtonPressed"
+          },
+          {
+            "Name": "directionButtonPressed"
+          },
+          {
+            "Name": "rotationTimeButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "RotationTimeSettingsButtons",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 245,
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "Y": 80,
+            "Width": 480,
+            "Height": 165,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "rotationTimeButtonContainer",
+                "X": 324,
+                "Width": 157,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "rotationTimeButtonShadow",
+                    "Y": 160,
+                    "Width": 157,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "rotationTimeButton",
+                    "Width": 157,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 55,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_image_timer_50_50_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_image_timer_50_50_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 90,
+                        "TextId": "__SingleUse_YRLG",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "rotationTimeButtonUnderline",
+                    "Y": 155,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 166,
+                      "Green": 227,
+                      "Blue": 161
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "directionButtonContainer",
+                "X": 162,
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "directionButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "directionButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_U75O",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "directionButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "speedButtonContainer",
+                "Width": 162,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonShadow",
+                    "Width": 162,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "speedButton",
+                    "Width": 157,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 45,
+                        "TextId": "__SingleUse_G9WJ",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 157,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "speedButtonUnderline",
+                    "Y": 115,
+                    "Width": 157,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SpeedButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "speedButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationTimeSettingsButtons speedButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "DirectionButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "directionButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationTimeSettingsButtons directionButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "RotationTimeButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "rotationTimeButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "RotationTimeSettingsButtons rotationTimeButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "speedButtonPressed"
+          },
+          {
+            "Name": "directionButtonPressed"
+          },
+          {
+            "Name": "rotationTimeButtonPressed"
           }
         ]
       }

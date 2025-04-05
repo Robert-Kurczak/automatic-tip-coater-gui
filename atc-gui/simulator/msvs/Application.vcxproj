@@ -62,6 +62,23 @@
     <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\zaxisstartscreen_screen\ZAxisStartScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\RotationSpeedSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationSpeedSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationdirectionscreen_screen\RotationDirectionScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationdirectionscreen_screen\RotationDirectionScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SettingsFooter.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SettingsFooterBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\RotationDirectionSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationDirectionSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationspeedscreen_screen\RotationSpeedScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationspeedscreen_screen\RotationSpeedScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationspeedscreen_screen\RotationSpeedScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\RotationTimeSettingsButtons.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationTimeSettingsButtonsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationtimescreen_screen\RotationTimeScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -253,6 +270,23 @@
     <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisstartscreen_screen\ZAxisStartScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationSpeedSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationSpeedSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationdirectionscreen_screen\RotationDirectionScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SettingsFooter.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SettingsFooterBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationDirectionSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationspeedscreen_screen\RotationSpeedScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationTimeSettingsButtons.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationTimeSettingsButtonsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationtimescreen_screen\RotationTimeScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
