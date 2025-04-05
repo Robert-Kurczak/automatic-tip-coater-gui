@@ -352,6 +352,30 @@
     <Filter Include="Header Files\generated\gui_generated\rotationtimescreen_screen">
       <UniqueIdentifier>43A95CF1-FD75-4D38-3CA9-490B181FF140</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\heatertemperaturescreen_screen">
+      <UniqueIdentifier>BDFA7C6B-F969-BACE-8EBF-D0820377B474</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\heatertemperaturescreen_screen">
+      <UniqueIdentifier>1A166BC2-F2B1-A822-7FEF-222425A4884C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\heaterstatescreen_screen">
+      <UniqueIdentifier>7D05D01D-7647-ED89-45B3-D77A36F637BA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\heaterstatescreen_screen">
+      <UniqueIdentifier>23EDCCFA-1FB0-BF2D-1C54-90364CE3E828</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\heatertemperaturescreen_screen">
+      <UniqueIdentifier>508F4F48-82FC-15D6-4B86-4594E5FD6F71</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\heatertemperaturescreen_screen">
+      <UniqueIdentifier>065AD7DD-C586-9B4D-24D5-5AB2A721BC5F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\heaterstatescreen_screen">
+      <UniqueIdentifier>9005B9AF-6145-DAD1-37B3-FACDA76B9A73</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\heaterstatescreen_screen">
+      <UniqueIdentifier>47A30810-5BFE-A41D-7FA1-FEEF9C2F7B27</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -557,6 +581,48 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\rotationtimescreen_screen\RotationTimeScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\rotationtimescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heaterstatescreen_screen\HeaterStateScreenPresenter.cpp">
+      <Filter>Source Files\gui\heaterstatescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heaterstatescreen_screen\HeaterStateScreenView.cpp">
+      <Filter>Source Files\gui\heaterstatescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\heaterstatescreen_screen\HeaterStateScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\heaterstatescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\HeaterStateSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heatertemperaturescreen_screen\HeaterTemperatureScreenPresenter.cpp">
+      <Filter>Source Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heatertemperaturescreen_screen\HeaterTemperatureScreenView.cpp">
+      <Filter>Source Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\heatertemperaturescreen_screen\HeaterTemperatureScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\heatertemperaturescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\HeaterTemperatureSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTemperatureSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationDirectionSelector.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationDirectionSelectorBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\HeaterStateSelector.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSelectorBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1173,6 +1239,48 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationtimescreen_screen\RotationTimeScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\rotationtimescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heaterstatescreen_screen\HeaterStateScreenPresenter.hpp">
+      <Filter>Header Files\gui\heaterstatescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heaterstatescreen_screen\HeaterStateScreenView.hpp">
+      <Filter>Header Files\gui\heaterstatescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heaterstatescreen_screen\HeaterStateScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\heaterstatescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterStateSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heatertemperaturescreen_screen\HeaterTemperatureScreenPresenter.hpp">
+      <Filter>Header Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heatertemperaturescreen_screen\HeaterTemperatureScreenView.hpp">
+      <Filter>Header Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertemperaturescreen_screen\HeaterTemperatureScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\heatertemperaturescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterTemperatureSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTemperatureSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSelector.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationDirectionSelectorBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterStateSelector.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSelectorBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
