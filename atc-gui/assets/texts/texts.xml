@@ -5,6 +5,54 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_YU9A" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Clockwise</Translation>
+      </Text>
+      <Text Id="__SingleUse_BXI5" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Counter&#10;Clockwise</Translation>
+      </Text>
+      <Text Id="__SingleUse_XVKS" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation</Translation>
+      </Text>
+      <Text Id="__SingleUse_G9WJ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_U75O" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Direction</Translation>
+      </Text>
+      <Text Id="__SingleUse_YRLG" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation&#10;time</Translation>
+      </Text>
+      <Text Id="__SingleUse_MUYD" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_W380" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Direction</Translation>
+      </Text>
+      <Text Id="__SingleUse_G6Z6" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation&#10;time</Translation>
+      </Text>
+      <Text Id="__SingleUse_V9QS" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_K3R6" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Saved</Translation>
+      </Text>
+      <Text Id="__SingleUse_0FA2" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation</Translation>
+      </Text>
+      <Text Id="__SingleUse_4HL2" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation</Translation>
+      </Text>
+      <Text Id="__SingleUse_6Y41" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_LNO1" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Direction</Translation>
+      </Text>
+      <Text Id="__SingleUse_QWR3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation&#10;time</Translation>
+      </Text>
       <Text Id="__SingleUse_ES0U" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Z Axis</Translation>
       </Text>
@@ -61,9 +109,6 @@
       </Text>
       <Text Id="__SingleUse_WHJ3" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Settings</Translation>
-      </Text>
-      <Text Id="__SingleUse_L3KM" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Saved</Translation>
       </Text>
       <Text Id="__SingleUse_QSV8" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">0</Translation>
