@@ -12,7 +12,7 @@ void MainScreenView::setupScreen()
     easeInAnimation(startButtonContainer);
     easeInAnimation(calibrateButtonContainer);
     easeInAnimation(settingsButtonContainer);
-    easeInAnimation(infoButtonContainer);
+    easeInAnimation(testsButtonContainer);
 }
 
 void MainScreenView::tearDownScreen()

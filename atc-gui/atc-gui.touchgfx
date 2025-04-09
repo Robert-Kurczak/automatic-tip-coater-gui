@@ -54,7 +54,7 @@
             "Components": [
               {
                 "Type": "Container",
-                "Name": "infoButtonContainer",
+                "Name": "testsButtonContainer",
                 "X": 210,
                 "Y": 210,
                 "Width": 160,
@@ -63,7 +63,7 @@
                 "Components": [
                   {
                     "Type": "FlexButton",
-                    "Name": "infoButton",
+                    "Name": "testsButton",
                     "Width": 160,
                     "Height": 160,
                     "ButtonTrigger": {
@@ -90,8 +90,8 @@
                         "Type": "IconButtonStyle",
                         "X": 50,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_action_info_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_info_60_60_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_communication_list_alt_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_communication_list_alt_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -122,7 +122,7 @@
                   },
                   {
                     "Type": "Box",
-                    "Name": "infoButtonUnderline",
+                    "Name": "testsButtonUnderline",
                     "Y": 155,
                     "Width": 160,
                     "Height": 5,
@@ -418,6 +418,19 @@
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "SettingsScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToTests",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "testsButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "TestsScreen"
             }
           }
         ]
@@ -2830,9 +2843,942 @@
             }
           }
         ]
+      },
+      {
+        "Name": "TestsScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "Container",
+            "Name": "footerContainer",
+            "Y": 715,
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "footerShadow",
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "backButton",
+                "Y": 5,
+                "Width": 480,
+                "Height": 80,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "IconButtonStyle",
+                    "X": 210,
+                    "Y": 10,
+                    "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 480,
+                    "Height": 80,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "buttons",
+            "X": 55,
+            "Y": 110,
+            "Width": 370,
+            "Height": 580,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "heaterButtonContainer",
+                "X": 105,
+                "Y": 420,
+                "Width": 160,
+                "Height": 160,
+                "Components": [
+                  {
+                    "Type": "FlexButton",
+                    "Name": "heaterButton",
+                    "Width": 160,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_EUFV",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_device_thermostat_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_device_thermostat_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "heaterButtonUnderline",
+                    "Y": 155,
+                    "Width": 160,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 137,
+                      "Green": 180,
+                      "Blue": 250
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "rotationButtonContainer",
+                "X": 210,
+                "Y": 210,
+                "Width": 160,
+                "Height": 160,
+                "Components": [
+                  {
+                    "Type": "FlexButton",
+                    "Name": "rotationButton",
+                    "Width": 160,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_8SQU",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_maps_360_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_maps_360_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "rotationButtonUnderline",
+                    "Y": 155,
+                    "Width": 160,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 137,
+                      "Green": 220,
+                      "Blue": 235
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "zAxisButtonContainer",
+                "Y": 210,
+                "Width": 160,
+                "Height": 160,
+                "Components": [
+                  {
+                    "Type": "FlexButton",
+                    "Name": "zAxisButton",
+                    "Width": 160,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_J346",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_navigation_north_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_navigation_north_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "zAxisUnderline",
+                    "Y": 155,
+                    "Width": 160,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 166,
+                      "Green": 227,
+                      "Blue": 161
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "yAxisButtonContainer",
+                "X": 210,
+                "Width": 160,
+                "Height": 160,
+                "Components": [
+                  {
+                    "Type": "FlexButton",
+                    "Name": "yAxisButton",
+                    "Width": 160,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_8WJK",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_navigation_north_west_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_navigation_north_west_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "yAxisUnderline",
+                    "Y": 155,
+                    "Width": 160,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 250,
+                      "Green": 179,
+                      "Blue": 135
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "xAxisButtonContainer",
+                "Width": 165,
+                "Height": 165,
+                "Components": [
+                  {
+                    "Type": "FlexButton",
+                    "Name": "xAxisButton",
+                    "Width": 160,
+                    "Height": 160,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 100,
+                        "TextId": "__SingleUse_ZQCB",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 20,
+                        "IconReleased": "__generated\\icon_theme_images_navigation_west_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_navigation_west_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 160,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "xAxisUnderline",
+                    "Y": 155,
+                    "Width": 160,
+                    "Height": 5,
+                    "Color": {
+                      "Red": 243,
+                      "Green": 139,
+                      "Blue": 168
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 209,
+                "Y": 25,
+                "Width": 63,
+                "Height": 30,
+                "TextId": "__SingleUse_OVSM",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GoBackToMain",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "backButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "MainScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToXAxisTests",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "xAxisButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "XAxisTestsScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToYAxisSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "yAxisButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "YAxisStartScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToZAxisSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "zAxisButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ZAxisStartScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToRotationSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "rotationButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "RotationSpeedScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToHeaterSettings",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "heaterButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HeaterTemperatureScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "XAxisTestsScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "testsFooter",
+            "Y": 680,
+            "Width": 480,
+            "Height": 120,
+            "CustomContainerDefinitionName": "TestsFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "axisTestsResults",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "AxisTestsResults"
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 201,
+                "Y": 25,
+                "Width": 78,
+                "Height": 30,
+                "TextId": "__SingleUse_QTUG",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
+              "TriggerComponent": "testsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "startTest"
+            }
+          },
+          {
+            "InteractionName": "CancelTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
+              "TriggerComponent": "testsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "cancelTest"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
+      {
+        "Name": "ValueSelector",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 800,
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "selectorContainer",
+            "Y": 320,
+            "Width": 480,
+            "Height": 305,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "increaseButtonContainer",
+                "X": 265,
+                "Y": 180,
+                "Width": 165,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "increaseButtonShadow",
+                    "Width": 165,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "increaseButton",
+                    "Width": 160,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "RepeatButtonTrigger",
+                      "Delay": 300,
+                      "Interval": 100
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 30,
+                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "decreaseButtonContainer",
+                "X": 55,
+                "Y": 180,
+                "Width": 165,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "decreaseButtonShadow",
+                    "Width": 165,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "decreaseButton",
+                    "Width": 160,
+                    "Height": 120,
+                    "ButtonTrigger": {
+                      "Type": "RepeatButtonTrigger",
+                      "Delay": 300,
+                      "Interval": 100
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 50,
+                        "Y": 30,
+                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 160,
+                        "Height": 120,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "displayedValueContainer",
+                "X": 55,
+                "Width": 375,
+                "Height": 125,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "displayedValueShadow",
+                    "Width": 375,
+                    "Height": 125,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "displayedValueBackground",
+                    "Width": 370,
+                    "Height": 120,
+                    "Color": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "displayedValue",
+                    "Y": 35,
+                    "Width": 370,
+                    "Height": 50,
+                    "TextId": "displayedValueText",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_QSV8",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "IncreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "increaseButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "DecreaseButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "decreaseButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "increaseButtonPressed"
+          },
+          {
+            "Name": "decreaseButtonPressed"
+          }
+        ]
+      },
       {
         "Name": "SettingsFooter",
         "X": 160,
@@ -3039,227 +3985,6 @@
         "CustomTriggers": [
           {
             "Name": "saveButtonPressed"
-          }
-        ]
-      },
-      {
-        "Name": "ValueSelector",
-        "X": 160,
-        "Y": -160,
-        "Width": 480,
-        "Height": 800,
-        "Includes": "",
-        "Components": [
-          {
-            "Type": "Container",
-            "Name": "selectorContainer",
-            "Y": 320,
-            "Width": 480,
-            "Height": 305,
-            "Components": [
-              {
-                "Type": "Container",
-                "Name": "increaseButtonContainer",
-                "X": 265,
-                "Y": 180,
-                "Width": 165,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "increaseButtonShadow",
-                    "Width": 165,
-                    "Height": 125,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "increaseButton",
-                    "Width": 160,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "RepeatButtonTrigger",
-                      "Delay": 300,
-                      "Interval": 100
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "IconButtonStyle",
-                        "X": 50,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_60_60_E8F6FB.svg.png"
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 160,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "decreaseButtonContainer",
-                "X": 55,
-                "Y": 180,
-                "Width": 165,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "decreaseButtonShadow",
-                    "Width": 165,
-                    "Height": 125,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "FlexButton",
-                    "Name": "decreaseButton",
-                    "Width": 160,
-                    "Height": 120,
-                    "ButtonTrigger": {
-                      "Type": "RepeatButtonTrigger",
-                      "Delay": 300,
-                      "Interval": 100
-                    },
-                    "ButtonStyles": [
-                      {
-                        "Type": "IconButtonStyle",
-                        "X": 50,
-                        "Y": 30,
-                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
-                      },
-                      {
-                        "Type": "BoxWithBorderButtonStyle",
-                        "Width": 160,
-                        "Height": 120,
-                        "LockToFlexButtonSize": true,
-                        "ColorReleased": {
-                          "Red": 17,
-                          "Green": 17,
-                          "Blue": 27
-                        },
-                        "ColorPressed": {
-                          "Red": 24,
-                          "Green": 24,
-                          "Blue": 37
-                        },
-                        "ColorBorderReleased": {
-                          "Green": 51,
-                          "Blue": 102
-                        },
-                        "ColorBorderPressed": {
-                          "Red": 51,
-                          "Green": 102,
-                          "Blue": 153
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "displayedValueContaienr",
-                "X": 55,
-                "Width": 375,
-                "Height": 125,
-                "Components": [
-                  {
-                    "Type": "Box",
-                    "Name": "displayedValueShadow",
-                    "Width": 375,
-                    "Height": 125,
-                    "Alpha": 50
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "displayedValueBackground",
-                    "Width": 370,
-                    "Height": 120,
-                    "Color": {
-                      "Red": 17,
-                      "Green": 17,
-                      "Blue": 27
-                    }
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "displayedValue",
-                    "Y": 35,
-                    "Width": 370,
-                    "Height": 50,
-                    "TextId": "displayedValueText",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    },
-                    "Wildcard1": {
-                      "TextId": "__SingleUse_QSV8",
-                      "UseBuffer": true,
-                      "BufferSize": 10
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "Interactions": [
-          {
-            "InteractionName": "IncreaseButtonPressed",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "increaseButton"
-            },
-            "Action": {
-              "Type": "ActionEmit",
-              "TriggerCustomTypeName": "ValueSelector increaseButtonPressed happens"
-            }
-          },
-          {
-            "InteractionName": "DecreaseButtonPressed",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "decreaseButton"
-            },
-            "Action": {
-              "Type": "ActionEmit",
-              "TriggerCustomTypeName": "ValueSelector decreaseButtonPressed happens"
-            }
-          }
-        ],
-        "CustomTriggers": [
-          {
-            "Name": "increaseButtonPressed"
-          },
-          {
-            "Name": "decreaseButtonPressed"
           }
         ]
       },
@@ -6247,6 +6972,690 @@
           },
           {
             "Name": "stateButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "TestsFooter",
+        "X": 160,
+        "Y": 520,
+        "Width": 480,
+        "Height": 120,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "cancelButtonContainer",
+            "Y": 120,
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "cancelButtonShadow",
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "cancelButton",
+                "Y": 5,
+                "Width": 480,
+                "Height": 80,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 22,
+                    "TextId": "__SingleUse_PZCT",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "ColorPressed": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 480,
+                    "Height": 80,
+                    "LockToFlexButtonSize": true,
+                    "ColorReleased": {
+                      "Red": 17,
+                      "Green": 17,
+                      "Blue": 27
+                    },
+                    "ColorPressed": {
+                      "Red": 24,
+                      "Green": 24,
+                      "Blue": 37
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "startAndBackButtonsContainer",
+            "Y": 35,
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "backButtonContainer",
+                "Width": 243,
+                "Height": 85,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "backButtonShadow",
+                    "Width": 242,
+                    "Height": 85,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "backButton",
+                    "Y": 5,
+                    "Width": 238,
+                    "Height": 80,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "IconButtonStyle",
+                        "X": 90,
+                        "Y": 10,
+                        "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_60_60_E8F6FB.svg.png"
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 238,
+                        "Height": 80,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "startButtonContainer",
+                "X": 243,
+                "Width": 238,
+                "Height": 85,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "startButtonShadow",
+                    "Width": 238,
+                    "Height": 5,
+                    "Alpha": 50
+                  },
+                  {
+                    "Type": "FlexButton",
+                    "Name": "startButton",
+                    "Y": 5,
+                    "Width": 238,
+                    "Height": 80,
+                    "ButtonTrigger": {
+                      "Type": "ClickButtonTrigger"
+                    },
+                    "ButtonStyles": [
+                      {
+                        "Type": "TextButtonStyle",
+                        "Y": 22,
+                        "TextId": "__SingleUse_EMST",
+                        "TextRotation": "0",
+                        "ColorReleased": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "ColorPressed": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        }
+                      },
+                      {
+                        "Type": "BoxWithBorderButtonStyle",
+                        "Width": 238,
+                        "Height": 80,
+                        "LockToFlexButtonSize": true,
+                        "ColorReleased": {
+                          "Red": 17,
+                          "Green": 17,
+                          "Blue": 27
+                        },
+                        "ColorPressed": {
+                          "Red": 24,
+                          "Green": 24,
+                          "Blue": 37
+                        },
+                        "ColorBorderReleased": {
+                          "Green": 51,
+                          "Blue": 102
+                        },
+                        "ColorBorderPressed": {
+                          "Red": 51,
+                          "Green": 102,
+                          "Blue": 153
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "GoBackToTests",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "backButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TestsScreen"
+            }
+          },
+          {
+            "InteractionName": "StartButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "ShowCancelButton",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "HideStartAndBackButtons"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "Y": 35,
+              "Easing": "Elastic",
+              "EasingOption": "Out",
+              "Duration": 1000,
+              "ActionComponent": "cancelButtonContainer"
+            }
+          },
+          {
+            "InteractionName": "HideCancelButton",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cancelButton"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "Y": 120,
+              "Easing": "Back",
+              "EasingOption": "In",
+              "Duration": 500,
+              "ActionComponent": "cancelButtonContainer"
+            }
+          },
+          {
+            "InteractionName": "HideStartAndBackButtons",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButton"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "X": -480,
+              "Y": 35,
+              "Easing": "Back",
+              "EasingOption": "In",
+              "Duration": 500,
+              "ActionComponent": "startAndBackButtonsContainer"
+            }
+          },
+          {
+            "InteractionName": "ShowStartAndBackButtons",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "HideCancelButton"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "Y": 35,
+              "Easing": "Elastic",
+              "EasingOption": "Out",
+              "Duration": 1000,
+              "ActionComponent": "startAndBackButtonsContainer"
+            }
+          },
+          {
+            "InteractionName": "CancelButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cancelButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "startButtonPressed"
+          },
+          {
+            "Name": "cancelButtonPressed"
+          }
+        ]
+      },
+      {
+        "Name": "TestResultIcon",
+        "X": 160,
+        "Y": -160,
+        "Width": 60,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "errorIcon",
+            "Width": 60,
+            "Height": 60,
+            "Visible": false,
+            "RelativeFilename": "__generated\\icon_theme_images_navigation_close_60_60_F38BA8.svg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "successIcon",
+            "Width": 60,
+            "Height": 60,
+            "Visible": false,
+            "RelativeFilename": "__generated\\icon_theme_images_navigation_check_60_60_A6E3A1.svg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "loadingIcon",
+            "Width": 60,
+            "Height": 60,
+            "Visible": false,
+            "RelativeFilename": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "unknownIcon",
+            "Width": 60,
+            "Height": 60,
+            "RelativeFilename": "__generated\\icon_theme_images_action_help_outline_60_60_E8F6FB.svg.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SetUnknownIcon",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call TestResultIcon setErrorIcon"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "unknownIcon.setVisible(true);\r\nloadingIcon.setVisible(false);\r\nsuccessIcon.setVisible(false);\r\nerrorIcon.setVisible(false);\r\n\r\nunknownIcon.invalidate();"
+            }
+          },
+          {
+            "InteractionName": "SetLoadingIcon",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call TestResultIcon setLoadingIcon"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "unknownIcon.setVisible(false);\r\nloadingIcon.setVisible(true);\r\nsuccessIcon.setVisible(false);\r\nerrorIcon.setVisible(false);\r\n\r\nloadingIcon.invalidate();"
+            }
+          },
+          {
+            "InteractionName": "SetSuccessIcon",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call TestResultIcon setSuccessIcon"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "unknownIcon.setVisible(false);\r\nloadingIcon.setVisible(false);\r\nsuccessIcon.setVisible(true);\r\nerrorIcon.setVisible(false);\r\n\r\nsuccessIcon.invalidate();"
+            }
+          },
+          {
+            "InteractionName": "SetErrorIcon",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call TestResultIcon setErrorIcon"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "unknownIcon.setVisible(false);\r\nloadingIcon.setVisible(false);\r\nsuccessIcon.setVisible(false);\r\nerrorIcon.setVisible(true);\r\n\r\nerrorIcon.invalidate();"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "setUnknownIcon"
+          },
+          {
+            "Name": "setLoadingIcon"
+          },
+          {
+            "Name": "setSuccessIcon"
+          },
+          {
+            "Name": "setErrorIcon"
+          }
+        ]
+      },
+      {
+        "Name": "AxisTestsResults",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "resultsBackgroundShadow",
+            "X": 50,
+            "Y": 270,
+            "Width": 385,
+            "Height": 265,
+            "Alpha": 50
+          },
+          {
+            "Type": "Box",
+            "Name": "resultsBackground",
+            "X": 50,
+            "Y": 270,
+            "Width": 380,
+            "Height": 260,
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 27
+            }
+          },
+          {
+            "Type": "ListLayout",
+            "Name": "resultsList",
+            "X": 70,
+            "Y": 290,
+            "Width": 340,
+            "Height": 220,
+            "Direction": "South",
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "startLimitSwitchResult",
+                "Width": 340,
+                "Height": 60,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "startLimitSwitchResultLabel",
+                    "Y": 15,
+                    "Width": 215,
+                    "Height": 30,
+                    "TextId": "__SingleUse_H811",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "startLimitSwitchResultIcon",
+                    "X": 280,
+                    "Width": 60,
+                    "Height": 60,
+                    "CustomContainerDefinitionName": "TestResultIcon"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "divider_1",
+                "Y": 60,
+                "Width": 340,
+                "Height": 20,
+                "Components": []
+              },
+              {
+                "Type": "Container",
+                "Name": "endLimitSwitchResult",
+                "Y": 80,
+                "Width": 340,
+                "Height": 60,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "endLimitSwitchResultLabel",
+                    "Y": 15,
+                    "Width": 215,
+                    "Height": 30,
+                    "TextId": "__SingleUse_WV80",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "endLimitSwitchResultIcon",
+                    "X": 280,
+                    "Width": 60,
+                    "Height": 60,
+                    "CustomContainerDefinitionName": "TestResultIcon"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "divider",
+                "Y": 140,
+                "Width": 340,
+                "Height": 20,
+                "Components": []
+              },
+              {
+                "Type": "Container",
+                "Name": "motorDriverResult",
+                "Y": 160,
+                "Width": 340,
+                "Height": 60,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "motorDriverResultLabel",
+                    "Y": 15,
+                    "Width": 215,
+                    "Height": 30,
+                    "TextId": "__SingleUse_IEQ1",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "motorDriverResultIcon",
+                    "X": 280,
+                    "Width": 60,
+                    "Height": 60,
+                    "CustomContainerDefinitionName": "TestResultIcon"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SetLoadingIcons",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AxisTestsResults setLoadingIcons"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "startLimitSwitchResultIcon.setLoadingIcon();\r\nendLimitSwitchResultIcon.setLoadingIcon();\r\nmotorDriverResultIcon.setLoadingIcon();"
+            }
+          },
+          {
+            "InteractionName": "SetStartLimitSwitchSuccess",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AxisTestsResults setStartLimitSwitchSuccess"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setSuccessIcon",
+              "ActionComponent": "startLimitSwitchResultIcon"
+            }
+          },
+          {
+            "InteractionName": "SetStartLimitSwitchError",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AxisTestsResults setStartLimitSwitchError"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setErrorIcon",
+              "ActionComponent": "startLimitSwitchResultIcon"
+            }
+          },
+          {
+            "InteractionName": "SetEndLimitSwitchSuccess",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AxisTestsResults setEndLimitSwitchSuccess"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setSuccessIcon",
+              "ActionComponent": "endLimitSwitchResultIcon"
+            }
+          },
+          {
+            "InteractionName": "SetEndLimitSwitchError",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AxisTestsResults setEndLimitSwitchError"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setErrorIcon",
+              "ActionComponent": "endLimitSwitchResultIcon"
+            }
+          },
+          {
+            "InteractionName": "SetMotorDriverSuccess",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AxisTestsResults setMotorDriverSuccess"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setSuccessIcon",
+              "ActionComponent": "motorDriverResultIcon"
+            }
+          },
+          {
+            "InteractionName": "SetMotorDriverError",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call AxisTestsResults setMotorDriverError"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setErrorIcon",
+              "ActionComponent": "motorDriverResultIcon"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "setLoadingIcons"
+          },
+          {
+            "Name": "setStartLimitSwitchSuccess"
+          },
+          {
+            "Name": "setStartLimitSwitchError"
+          },
+          {
+            "Name": "setEndLimitSwitchSuccess"
+          },
+          {
+            "Name": "setEndLimitSwitchError"
+          },
+          {
+            "Name": "setMotorDriverSuccess"
+          },
+          {
+            "Name": "setMotorDriverError"
           }
         ]
       }

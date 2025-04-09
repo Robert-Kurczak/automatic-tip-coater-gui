@@ -376,6 +376,30 @@
     <Filter Include="Source Files\generated\gui_generated\heaterstatescreen_screen">
       <UniqueIdentifier>47A30810-5BFE-A41D-7FA1-FEEF9C2F7B27</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\testsscreen_screen">
+      <UniqueIdentifier>145D6627-3A1B-5308-F53D-F13358A5E29A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\testsscreen_screen">
+      <UniqueIdentifier>E902084A-28EA-CCE7-5A8A-F646968EEEE5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\testsscreen_screen">
+      <UniqueIdentifier>8CCF5CC5-D8FD-5501-464D-F48B10098A8D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\testsscreen_screen">
+      <UniqueIdentifier>1EB21BC3-7834-D547-7CD1-EB9267D1DDDA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\xaxistestsscreen_screen">
+      <UniqueIdentifier>B2A2EB8D-855B-03FE-9E2E-D32BE867FC8A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxistestsscreen_screen">
+      <UniqueIdentifier>8B44A6DA-BEFE-81EB-1BA5-67C7432BEB1E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxistestsscreen_screen">
+      <UniqueIdentifier>54516D13-8646-0056-37F3-34E289B10C66</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxistestsscreen_screen">
+      <UniqueIdentifier>B7128A00-E09D-DA31-5BD2-B5709BB5C710</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -622,6 +646,42 @@
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSelectorBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\testsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenView.cpp">
+      <Filter>Source Files\gui\testsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\testsscreen_screen\TestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\testsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\TestsFooter.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TestsFooterBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenView.cpp">
+      <Filter>Source Files\gui\xaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxistestsscreen_screen\XAxisTestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\AxisTestsResults.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisTestsResultsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\TestResultIcon.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TestResultIconBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1280,6 +1340,42 @@
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSelectorBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\testsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenView.hpp">
+      <Filter>Header Files\gui\testsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\testsscreen_screen\TestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\testsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\TestsFooter.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestsFooterBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenView.hpp">
+      <Filter>Header Files\gui\xaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestsscreen_screen\XAxisTestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisTestsResults.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisTestsResultsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\TestResultIcon.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestResultIconBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -93,6 +93,18 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationDirectionSelectorBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\HeaterStateSelector.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSelectorBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\testsscreen_screen\TestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\TestsFooter.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TestsFooterBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxistestsscreen_screen\XAxisTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\AxisTestsResults.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisTestsResultsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\TestResultIcon.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TestResultIconBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -315,6 +327,18 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationDirectionSelectorBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\HeaterStateSelector.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSelectorBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\testsscreen_screen\TestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\TestsFooter.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestsFooterBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestsscreen_screen\XAxisTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisTestsResults.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisTestsResultsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\TestResultIcon.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestResultIconBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

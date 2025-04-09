@@ -5,6 +5,42 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_PZCT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Cancel</Translation>
+      </Text>
+      <Text Id="__SingleUse_IEQ1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Motor driver</Translation>
+      </Text>
+      <Text Id="__SingleUse_H811" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Start limit switch</Translation>
+      </Text>
+      <Text Id="__SingleUse_WV80" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">End limit switch</Translation>
+      </Text>
+      <Text Id="__SingleUse_QTUG" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_EMST" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_OVSM" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Tests</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZQCB" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">X Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_8WJK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Y Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_J346" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Z Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_8SQU" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation</Translation>
+      </Text>
+      <Text Id="__SingleUse_EUFV" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Heater</Translation>
+      </Text>
       <Text Id="__SingleUse_VRO9" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">On</Translation>
       </Text>
@@ -195,7 +231,7 @@
         <Translation Language="GB">Start</Translation>
       </Text>
       <Text Id="__SingleUse_72QC" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Info</Translation>
+        <Translation Language="GB">Tests</Translation>
       </Text>
     </TextGroup>
   </Texts>
