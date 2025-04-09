@@ -3428,7 +3428,7 @@
             }
           },
           {
-            "InteractionName": "GoToRotationSettings",
+            "InteractionName": "GoToRotationTests",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "rotationButton"
@@ -3437,11 +3437,11 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "RotationSpeedScreen"
+              "ActionComponent": "RotationTestsScreen"
             }
           },
           {
-            "InteractionName": "GoToHeaterSettings",
+            "InteractionName": "GoToHeaterTests",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "heaterButton"
@@ -3450,7 +3450,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "HeaterTemperatureScreen"
+              "ActionComponent": "HeaterTestsScreen"
             }
           }
         ]
@@ -3720,6 +3720,208 @@
                 "Width": 78,
                 "Height": 30,
                 "TextId": "__SingleUse_2I3A",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
+              "TriggerComponent": "testsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "startTest"
+            }
+          },
+          {
+            "InteractionName": "CancelTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
+              "TriggerComponent": "testsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "cancelTest"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "RotationTestsScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "testsFooter",
+            "Y": 680,
+            "Width": 480,
+            "Height": 120,
+            "CustomContainerDefinitionName": "TestsFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "rotationTestsResults",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "RotationTestsResults"
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 188,
+                "Y": 25,
+                "Width": 104,
+                "Height": 30,
+                "TextId": "__SingleUse_TOKC",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
+              "TriggerComponent": "testsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "startTest"
+            }
+          },
+          {
+            "InteractionName": "CancelTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
+              "TriggerComponent": "testsFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "cancelTest"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "HeaterTestsScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "testsFooter",
+            "Y": 680,
+            "Width": 480,
+            "Height": 120,
+            "CustomContainerDefinitionName": "TestsFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "heaterTestsResults",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "HeaterTestsResults"
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 188,
+                "Y": 25,
+                "Width": 104,
+                "Height": 30,
+                "TextId": "__SingleUse_M5E3",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 205,
@@ -7608,144 +7810,150 @@
         "Height": 800,
         "Components": [
           {
-            "Type": "Box",
-            "Name": "resultsBackgroundShadow",
+            "Type": "Container",
+            "Name": "resultsContainer",
             "X": 50,
             "Y": 270,
             "Width": 385,
             "Height": 265,
-            "Alpha": 50
-          },
-          {
-            "Type": "Box",
-            "Name": "resultsBackground",
-            "X": 50,
-            "Y": 270,
-            "Width": 380,
-            "Height": 260,
-            "Color": {
-              "Red": 17,
-              "Green": 17,
-              "Blue": 27
-            }
-          },
-          {
-            "Type": "ListLayout",
-            "Name": "resultsList",
-            "X": 70,
-            "Y": 290,
-            "Width": 340,
-            "Height": 220,
-            "Direction": "South",
             "Components": [
               {
-                "Type": "Container",
-                "Name": "startLimitSwitchResult",
+                "Type": "Box",
+                "Name": "resultsBackgroundShadow",
+                "Width": 385,
+                "Height": 265,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "resultsBackground",
+                "Width": 380,
+                "Height": 260,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "resultsList",
+                "X": 20,
+                "Y": 20,
                 "Width": 340,
-                "Height": 60,
+                "Height": 220,
+                "Direction": "South",
                 "Components": [
                   {
-                    "Type": "TextArea",
-                    "Name": "startLimitSwitchResultLabel",
-                    "Y": 15,
-                    "Width": 215,
-                    "Height": 30,
-                    "TextId": "__SingleUse_H811",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    },
-                    "LineSpacing": 1
+                    "Type": "Container",
+                    "Name": "startLimitSwitchResult",
+                    "Width": 340,
+                    "Height": 60,
+                    "Components": [
+                      {
+                        "Type": "TextArea",
+                        "Name": "startLimitSwitchResultLabel",
+                        "Y": 15,
+                        "Width": 215,
+                        "Height": 30,
+                        "TextId": "__SingleUse_H811",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "LineSpacing": 1
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "startLimitSwitchResultIcon",
+                        "X": 280,
+                        "Width": 60,
+                        "Height": 60,
+                        "CustomContainerDefinitionName": "TestResultIcon"
+                      }
+                    ]
                   },
                   {
-                    "Type": "CustomContainerInstance",
-                    "Name": "startLimitSwitchResultIcon",
-                    "X": 280,
-                    "Width": 60,
-                    "Height": 60,
-                    "CustomContainerDefinitionName": "TestResultIcon"
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "divider_1",
-                "Y": 60,
-                "Width": 340,
-                "Height": 20,
-                "Components": []
-              },
-              {
-                "Type": "Container",
-                "Name": "endLimitSwitchResult",
-                "Y": 80,
-                "Width": 340,
-                "Height": 60,
-                "Components": [
-                  {
-                    "Type": "TextArea",
-                    "Name": "endLimitSwitchResultLabel",
-                    "Y": 15,
-                    "Width": 215,
-                    "Height": 30,
-                    "TextId": "__SingleUse_WV80",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    },
-                    "LineSpacing": 1
+                    "Type": "Container",
+                    "Name": "divider_1",
+                    "Y": 60,
+                    "Width": 340,
+                    "Height": 20,
+                    "Components": []
                   },
                   {
-                    "Type": "CustomContainerInstance",
-                    "Name": "endLimitSwitchResultIcon",
-                    "X": 280,
-                    "Width": 60,
+                    "Type": "Container",
+                    "Name": "endLimitSwitchResult",
+                    "Y": 80,
+                    "Width": 340,
                     "Height": 60,
-                    "CustomContainerDefinitionName": "TestResultIcon"
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "divider",
-                "Y": 140,
-                "Width": 340,
-                "Height": 20,
-                "Components": []
-              },
-              {
-                "Type": "Container",
-                "Name": "motorDriverResult",
-                "Y": 160,
-                "Width": 340,
-                "Height": 60,
-                "Components": [
-                  {
-                    "Type": "TextArea",
-                    "Name": "motorDriverResultLabel",
-                    "Y": 15,
-                    "Width": 215,
-                    "Height": 30,
-                    "TextId": "__SingleUse_IEQ1",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 205,
-                      "Green": 214,
-                      "Blue": 244
-                    },
-                    "LineSpacing": 1
+                    "Components": [
+                      {
+                        "Type": "TextArea",
+                        "Name": "endLimitSwitchResultLabel",
+                        "Y": 15,
+                        "Width": 215,
+                        "Height": 30,
+                        "TextId": "__SingleUse_WV80",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "LineSpacing": 1
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "endLimitSwitchResultIcon",
+                        "X": 280,
+                        "Width": 60,
+                        "Height": 60,
+                        "CustomContainerDefinitionName": "TestResultIcon"
+                      }
+                    ]
                   },
                   {
-                    "Type": "CustomContainerInstance",
-                    "Name": "motorDriverResultIcon",
-                    "X": 280,
-                    "Width": 60,
+                    "Type": "Container",
+                    "Name": "divider",
+                    "Y": 140,
+                    "Width": 340,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "motorDriverResult",
+                    "Y": 160,
+                    "Width": 340,
                     "Height": 60,
-                    "CustomContainerDefinitionName": "TestResultIcon"
+                    "Components": [
+                      {
+                        "Type": "TextArea",
+                        "Name": "motorDriverResultLabel",
+                        "Y": 15,
+                        "Width": 215,
+                        "Height": 30,
+                        "TextId": "__SingleUse_IEQ1",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "LineSpacing": 1
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "motorDriverResultIcon",
+                        "X": 280,
+                        "Width": 60,
+                        "Height": 60,
+                        "CustomContainerDefinitionName": "TestResultIcon"
+                      }
+                    ]
                   }
                 ]
               }
@@ -7858,6 +8066,260 @@
           },
           {
             "Name": "setMotorDriverError"
+          }
+        ]
+      },
+      {
+        "Name": "RotationTestsResults",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 800,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "resultsContainer",
+            "X": 48,
+            "Y": 348,
+            "Width": 385,
+            "Height": 105,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "resultsBackgroundShadow",
+                "Width": 385,
+                "Height": 105,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "resultsBackground",
+                "Width": 380,
+                "Height": 100,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "resultsList",
+                "X": 20,
+                "Y": 20,
+                "Width": 340,
+                "Height": 60,
+                "Direction": "South",
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "motorDriverResult",
+                    "Width": 340,
+                    "Height": 60,
+                    "Components": [
+                      {
+                        "Type": "TextArea",
+                        "Name": "motorDriverResultLabel",
+                        "Y": 15,
+                        "Width": 215,
+                        "Height": 30,
+                        "TextId": "__SingleUse_JABV",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "LineSpacing": 1
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "motorDriverResultIcon",
+                        "X": 280,
+                        "Width": 60,
+                        "Height": 60,
+                        "CustomContainerDefinitionName": "TestResultIcon"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SetLoadingIcons",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call RotationTestsResults setLoadingIcons"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "motorDriverResultIcon.setLoadingIcon();"
+            }
+          },
+          {
+            "InteractionName": "SetMotorDriverSuccess",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call RotationTestsResults setMotorDriverSuccess"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setSuccessIcon",
+              "ActionComponent": "motorDriverResultIcon"
+            }
+          },
+          {
+            "InteractionName": "SetMotorDriverError",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call RotationTestsResults setMotorDriverError"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setErrorIcon",
+              "ActionComponent": "motorDriverResultIcon"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "setLoadingIcons"
+          },
+          {
+            "Name": "setMotorDriverSuccess"
+          },
+          {
+            "Name": "setMotorDriverError"
+          }
+        ]
+      },
+      {
+        "Name": "HeaterTestsResults",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 800,
+        "Components": [
+          {
+            "Type": "Container",
+            "Name": "resultsContainer",
+            "X": 48,
+            "Y": 348,
+            "Width": 385,
+            "Height": 105,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "resultsBackgroundShadow",
+                "Width": 385,
+                "Height": 105,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "resultsBackground",
+                "Width": 380,
+                "Height": 100,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "resultsList",
+                "X": 20,
+                "Y": 20,
+                "Width": 340,
+                "Height": 60,
+                "Direction": "South",
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "temperatureResult",
+                    "Width": 340,
+                    "Height": 60,
+                    "Components": [
+                      {
+                        "Type": "TextArea",
+                        "Name": "temperatureResultLabel",
+                        "Y": 15,
+                        "Width": 215,
+                        "Height": 30,
+                        "TextId": "__SingleUse_Z1QF",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 205,
+                          "Green": 214,
+                          "Blue": 244
+                        },
+                        "LineSpacing": 1
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "temperatureResultIcon",
+                        "X": 280,
+                        "Width": 60,
+                        "Height": 60,
+                        "CustomContainerDefinitionName": "TestResultIcon"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "SetLoadingIcons",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call HeaterTestsResults setLoadingIcons"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "temperatureResultIcon.setLoadingIcon();"
+            }
+          },
+          {
+            "InteractionName": "SetTemperatureSuccess",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call HeaterTestsResults setTemperatureSuccess"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setSuccessIcon",
+              "ActionComponent": "temperatureResultIcon"
+            }
+          },
+          {
+            "InteractionName": "SetTemperatureError",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call HeaterTestsResults setTemperatureError"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call TestResultIcon setErrorIcon",
+              "ActionComponent": "temperatureResultIcon"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "setLoadingIcons"
+          },
+          {
+            "Name": "setTemperatureSuccess"
+          },
+          {
+            "Name": "setTemperatureError"
           }
         ]
       }

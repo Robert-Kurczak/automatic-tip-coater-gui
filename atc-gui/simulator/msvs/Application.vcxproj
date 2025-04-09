@@ -111,6 +111,16 @@
     <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\RotationTestsResults.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationTestsResultsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationtestsscreen_screen\RotationTestsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\rotationtestsscreen_screen\RotationTestsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationtestsscreen_screen\RotationTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\HeaterTestsResults.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTestsResultsBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\heatertestsscreen_screen\HeaterTestsScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -351,6 +361,16 @@
     <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationTestsResults.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationTestsResultsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationtestsscreen_screen\RotationTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterTestsResults.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTestsResultsBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestsscreen_screen\HeaterTestsScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

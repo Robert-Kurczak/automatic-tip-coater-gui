@@ -5,6 +5,18 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_M5E3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z1QF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Temperature</Translation>
+      </Text>
+      <Text Id="__SingleUse_TOKC" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Rotation</Translation>
+      </Text>
+      <Text Id="__SingleUse_JABV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Motor driver</Translation>
+      </Text>
       <Text Id="__SingleUse_2I3A" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Z Axis</Translation>
       </Text>
