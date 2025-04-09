@@ -105,6 +105,12 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisTestsResultsBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\TestResultIcon.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\TestResultIconBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxistestsscreen_screen\YAxisTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -339,6 +345,12 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisTestsResultsBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\TestResultIcon.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestResultIconBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxistestsscreen_screen\YAxisTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

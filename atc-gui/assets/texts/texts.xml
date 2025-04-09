@@ -5,6 +5,12 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_2I3A" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Z Axis</Translation>
+      </Text>
+      <Text Id="__SingleUse_7NPR" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Y Axis</Translation>
+      </Text>
       <Text Id="__SingleUse_PZCT" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Cancel</Translation>
       </Text>
