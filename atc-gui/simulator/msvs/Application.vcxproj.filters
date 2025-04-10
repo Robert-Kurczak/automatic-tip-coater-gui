@@ -448,6 +448,30 @@
     <Filter Include="Header Files\generated\gui_generated\heatertestsscreen_screen">
       <UniqueIdentifier>D05E50B7-094A-2AC0-72CF-5227313A4778</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\startscreen_screen">
+      <UniqueIdentifier>09BC454E-ADE3-410E-A591-BC8734DDEAE4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\startscreen_screen">
+      <UniqueIdentifier>765A32D3-5DCB-5635-2D05-B3A37653A2FB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\startscreen_screen">
+      <UniqueIdentifier>1C64AF61-4911-80D5-4366-060802B95C2B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\startscreen_screen">
+      <UniqueIdentifier>F7585C1C-C242-4AAB-50AD-1F316C42C533</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\calibratescreen_screen">
+      <UniqueIdentifier>7F9DD591-0722-2E3E-705A-69C7A58B9656</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\calibratescreen_screen">
+      <UniqueIdentifier>00183DE2-E0C0-4EAF-1653-8AB694E2AFCF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\calibratescreen_screen">
+      <UniqueIdentifier>E103A8C9-4CEC-FEB2-B4CA-4B9301FF434D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\calibratescreen_screen">
+      <UniqueIdentifier>678FC9B1-77B1-9762-0C0E-FB5323C8EDF4</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -705,12 +729,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\testsscreen_screen\TestsScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\testsscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\TestsFooter.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\TestsFooterBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenPresenter.cpp">
       <Filter>Source Files\gui\xaxistestsscreen_screen</Filter>
     </ClCompile>
@@ -779,6 +797,36 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\heatertestsscreen_screen\HeaterTestsScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\heatertestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\StartCancelFooter.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\StartCancelFooterBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenPresenter.cpp">
+      <Filter>Source Files\gui\startscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenView.cpp">
+      <Filter>Source Files\gui\startscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\startscreen_screen\StartScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\startscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SettingDisplay.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SettingDisplayBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\calibratescreen_screen\CalibrateScreenPresenter.cpp">
+      <Filter>Source Files\gui\calibratescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\calibratescreen_screen\CalibrateScreenView.cpp">
+      <Filter>Source Files\gui\calibratescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\calibratescreen_screen\CalibrateScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\calibratescreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1447,12 +1495,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\testsscreen_screen\TestsScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\testsscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\TestsFooter.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestsFooterBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenPresenter.hpp">
       <Filter>Header Files\gui\xaxistestsscreen_screen</Filter>
     </ClInclude>
@@ -1521,6 +1563,36 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestsscreen_screen\HeaterTestsScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\heatertestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\StartCancelFooterBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\StartCancelFooter.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenPresenter.hpp">
+      <Filter>Header Files\gui\startscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenView.hpp">
+      <Filter>Header Files\gui\startscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startscreen_screen\StartScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\startscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SettingDisplay.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SettingDisplayBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\calibratescreen_screen\CalibrateScreenPresenter.hpp">
+      <Filter>Header Files\gui\calibratescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\calibratescreen_screen\CalibrateScreenView.hpp">
+      <Filter>Header Files\gui\calibratescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\calibratescreen_screen\CalibrateScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\calibratescreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

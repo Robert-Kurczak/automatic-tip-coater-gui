@@ -408,7 +408,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "GoToSettings",
+            "InteractionName": "GoToSettingsScreen",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "settingsButton"
@@ -421,7 +421,7 @@
             }
           },
           {
-            "InteractionName": "GoToTests",
+            "InteractionName": "GoToTestsScreen",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "testsButton"
@@ -431,6 +431,262 @@
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "TestsScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToStartScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "StartScreen"
+            }
+          },
+          {
+            "InteractionName": "GoToCalibrateScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "calibrateButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "CalibrateScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "StartScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "startCancelFooter",
+            "Y": 680,
+            "Width": 480,
+            "Height": 120,
+            "CustomContainerDefinitionName": "StartCancelFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingDisplay",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "SettingDisplay"
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 209,
+                "Y": 25,
+                "Width": 63,
+                "Height": 30,
+                "TextId": "__SingleUse_0DYA",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "startTest"
+            }
+          },
+          {
+            "InteractionName": "CancelTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "cancelTest"
+            }
+          },
+          {
+            "InteractionName": "GoBackToMainScreen",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "MainScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "CalibrateScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 480,
+            "Height": 800,
+            "LockPosition": true,
+            "Color": {
+              "Red": 30,
+              "Green": 30,
+              "Blue": 46
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "startCancelFooter",
+            "Y": 680,
+            "Width": 480,
+            "Height": 120,
+            "CustomContainerDefinitionName": "StartCancelFooter"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "settingDisplay",
+            "Width": 480,
+            "Height": 800,
+            "CustomContainerDefinitionName": "SettingDisplay"
+          },
+          {
+            "Type": "Container",
+            "Name": "headerContainer",
+            "Width": 480,
+            "Height": 85,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "headerShadow",
+                "Y": 80,
+                "Width": 480,
+                "Height": 5,
+                "Alpha": 50
+              },
+              {
+                "Type": "Box",
+                "Name": "header",
+                "Width": 480,
+                "Height": 80,
+                "Color": {
+                  "Red": 17,
+                  "Green": 17,
+                  "Blue": 27
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "submenuName",
+                "X": 184,
+                "Y": 25,
+                "Width": 113,
+                "Height": 30,
+                "TextId": "__SingleUse_F9H3",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 205,
+                  "Green": 214,
+                  "Blue": 244
+                },
+                "AutoSize": true
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "StartTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "startTest"
+            }
+          },
+          {
+            "InteractionName": "CancelTest",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "cancelTest"
+            }
+          },
+          {
+            "InteractionName": "GoBackToMainScreen",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "MainScreen"
             }
           }
         ]
@@ -3472,11 +3728,11 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "testsFooter",
+            "Name": "startCancelFooter",
             "Y": 680,
             "Width": 480,
             "Height": 120,
-            "CustomContainerDefinitionName": "TestsFooter"
+            "CustomContainerDefinitionName": "StartCancelFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3534,8 +3790,8 @@
             "InteractionName": "StartTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -3546,12 +3802,26 @@
             "InteractionName": "CancelTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "cancelTest"
+            }
+          },
+          {
+            "InteractionName": "GoBackToTestsScreen",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TestsScreen"
             }
           }
         ]
@@ -3573,11 +3843,11 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "testsFooter",
+            "Name": "startCancelFooter",
             "Y": 680,
             "Width": 480,
             "Height": 120,
-            "CustomContainerDefinitionName": "TestsFooter"
+            "CustomContainerDefinitionName": "StartCancelFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3635,8 +3905,8 @@
             "InteractionName": "StartTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -3647,12 +3917,26 @@
             "InteractionName": "CancelTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "cancelTest"
+            }
+          },
+          {
+            "InteractionName": "GoBackToTestsScreen",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TestsScreen"
             }
           }
         ]
@@ -3678,7 +3962,7 @@
             "Y": 680,
             "Width": 480,
             "Height": 120,
-            "CustomContainerDefinitionName": "TestsFooter"
+            "CustomContainerDefinitionName": "StartCancelFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3736,7 +4020,7 @@
             "InteractionName": "StartTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
               "TriggerComponent": "testsFooter"
             },
             "Action": {
@@ -3748,12 +4032,26 @@
             "InteractionName": "CancelTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
               "TriggerComponent": "testsFooter"
             },
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "cancelTest"
+            }
+          },
+          {
+            "InteractionName": "GoBackToTestsScreen",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens",
+              "TriggerComponent": "testsFooter"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TestsScreen"
             }
           }
         ]
@@ -3775,11 +4073,11 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "testsFooter",
+            "Name": "startCancelFooter",
             "Y": 680,
             "Width": 480,
             "Height": 120,
-            "CustomContainerDefinitionName": "TestsFooter"
+            "CustomContainerDefinitionName": "StartCancelFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3837,8 +4135,8 @@
             "InteractionName": "StartTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -3849,12 +4147,26 @@
             "InteractionName": "CancelTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "cancelTest"
+            }
+          },
+          {
+            "InteractionName": "GoBackToTestsScreen",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TestsScreen"
             }
           }
         ]
@@ -3876,11 +4188,11 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "testsFooter",
+            "Name": "startCancelFooter",
             "Y": 680,
             "Width": 480,
             "Height": 120,
-            "CustomContainerDefinitionName": "TestsFooter"
+            "CustomContainerDefinitionName": "StartCancelFooter"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3917,9 +4229,9 @@
               {
                 "Type": "TextArea",
                 "Name": "submenuName",
-                "X": 188,
+                "X": 198,
                 "Y": 25,
-                "Width": 104,
+                "Width": 85,
                 "Height": 30,
                 "TextId": "__SingleUse_M5E3",
                 "TextRotation": "0",
@@ -3938,8 +4250,8 @@
             "InteractionName": "StartTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -3950,12 +4262,26 @@
             "InteractionName": "CancelTest",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens",
-              "TriggerComponent": "testsFooter"
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
             },
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "cancelTest"
+            }
+          },
+          {
+            "InteractionName": "GoBackToTestsScreen",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens",
+              "TriggerComponent": "startCancelFooter"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "TestsScreen"
             }
           }
         ]
@@ -7380,7 +7706,7 @@
         ]
       },
       {
-        "Name": "TestsFooter",
+        "Name": "StartCancelFooter",
         "X": 160,
         "Y": 520,
         "Width": 480,
@@ -7595,19 +7921,6 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "GoBackToTests",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "backButton"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "West",
-              "ActionComponent": "TestsScreen"
-            }
-          },
-          {
             "InteractionName": "StartButtonPressed",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -7615,7 +7928,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "TestsFooter startButtonPressed happens"
+              "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens"
             }
           },
           {
@@ -7689,7 +8002,18 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "TestsFooter cancelButtonPressed happens"
+              "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens"
+            }
+          },
+          {
+            "InteractionName": "BackButtonPressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "backButton"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens"
             }
           }
         ],
@@ -7699,6 +8023,9 @@
           },
           {
             "Name": "cancelButtonPressed"
+          },
+          {
+            "Name": "backButtonPressed"
           }
         ]
       },
@@ -8322,6 +8649,782 @@
             "Name": "setTemperatureError"
           }
         ]
+      },
+      {
+        "Name": "SettingDisplay",
+        "X": 160,
+        "Y": -160,
+        "Width": 480,
+        "Height": 800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "resultsBackgroundShadow",
+            "Y": 695,
+            "Width": 480,
+            "Height": 5,
+            "Alpha": 50
+          },
+          {
+            "Type": "Box",
+            "Name": "resultsBackground",
+            "Y": 105,
+            "Width": 480,
+            "Height": 590,
+            "Color": {
+              "Red": 17,
+              "Green": 17,
+              "Blue": 27
+            }
+          },
+          {
+            "Type": "ListLayout",
+            "Name": "settingsList",
+            "X": 27,
+            "Y": 125,
+            "Width": 430,
+            "Height": 550,
+            "Direction": "East",
+            "Components": [
+              {
+                "Type": "ListLayout",
+                "Name": "labelsList",
+                "Width": 265,
+                "Height": 550,
+                "Direction": "South",
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "xAxisStartLabel",
+                    "Width": 161,
+                    "Height": 30,
+                    "TextId": "__SingleUse_QS25",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_11",
+                    "Y": 30,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "xAxisEndLabel",
+                    "Y": 40,
+                    "Width": 146,
+                    "Height": 30,
+                    "TextId": "__SingleUse_VVEU",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_10",
+                    "Y": 70,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "xAxisSpeedLabel",
+                    "Y": 80,
+                    "Width": 177,
+                    "Height": 30,
+                    "TextId": "__SingleUse_IKRM",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider_2_1",
+                    "Y": 110,
+                    "Width": 5,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "yAxisStartLabel",
+                    "Y": 130,
+                    "Width": 159,
+                    "Height": 30,
+                    "TextId": "__SingleUse_FSGN",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_8",
+                    "Y": 160,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "yAxisEndLabel",
+                    "Y": 170,
+                    "Width": 144,
+                    "Height": 30,
+                    "TextId": "__SingleUse_TXAE",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_7",
+                    "Y": 200,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "yAxisSpeedLabel",
+                    "Y": 210,
+                    "Width": 175,
+                    "Height": 30,
+                    "TextId": "__SingleUse_EPMV",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider_2",
+                    "Y": 240,
+                    "Width": 5,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "zAxisStartLabel",
+                    "Y": 260,
+                    "Width": 161,
+                    "Height": 30,
+                    "TextId": "__SingleUse_068D",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_5",
+                    "Y": 290,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "zAxisEndLabel",
+                    "Y": 300,
+                    "Width": 146,
+                    "Height": 30,
+                    "TextId": "__SingleUse_1ABR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_4",
+                    "Y": 330,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "zAxisSpeedLabel",
+                    "Y": 340,
+                    "Width": 177,
+                    "Height": 30,
+                    "TextId": "__SingleUse_7GNG",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider_1",
+                    "Y": 370,
+                    "Width": 5,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "rotationSpeedLabel",
+                    "Y": 390,
+                    "Width": 203,
+                    "Height": 30,
+                    "TextId": "__SingleUse_AV61",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_2",
+                    "Y": 420,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "rotationDirectionLabel",
+                    "Y": 430,
+                    "Width": 237,
+                    "Height": 30,
+                    "TextId": "__SingleUse_OYK1",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_1",
+                    "Y": 460,
+                    "Width": 5,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "rotiationTimeLabel",
+                    "Y": 470,
+                    "Width": 185,
+                    "Height": 30,
+                    "TextId": "__SingleUse_LPTK",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider",
+                    "Y": 500,
+                    "Width": 5,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "heaterTemperatureLabel",
+                    "Y": 520,
+                    "Width": 265,
+                    "Height": 30,
+                    "TextId": "__SingleUse_PMN0",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "divider",
+                "X": 265,
+                "Width": 43,
+                "Components": []
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "valuesList",
+                "X": 308,
+                "Width": 122,
+                "Height": 550,
+                "Direction": "South",
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "xAxisStartValue",
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_1XMR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_VR04",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_11_1",
+                    "Y": 30,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "xAxisEndValue",
+                    "Y": 40,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_US11",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_WTU8",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_10_1",
+                    "Y": 70,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "xAxisSpeedValue",
+                    "Y": 80,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_D3HY",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_X7E9",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider_2_1_1",
+                    "Y": 110,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "yAxisStartValue",
+                    "Y": 130,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_S3PD",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_WYR6",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_8_1",
+                    "Y": 160,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "yAxisEndValue",
+                    "Y": 170,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_JU19",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_6MOL",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_7_1",
+                    "Y": 200,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "yAxisSpeedValue",
+                    "Y": 210,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_6VFJ",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_R6S5",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider_2_2",
+                    "Y": 240,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "zAxisStartValue",
+                    "Y": 260,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_70KH",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_KAAJ",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_5_1",
+                    "Y": 290,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "zAxisEndValue",
+                    "Y": 300,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_7QBP",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_UCLR",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_4_1",
+                    "Y": 330,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "zAxisSpeedValue",
+                    "Y": 340,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_F5RK",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_5I9U",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider_1_1",
+                    "Y": 370,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "rotationSpeedValue",
+                    "Y": 390,
+                    "Width": 97,
+                    "Height": 30,
+                    "TextId": "__SingleUse_QUDW",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_4GVK"
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_2_1",
+                    "Y": 420,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "rotationDirectionValue",
+                    "Y": 430,
+                    "Width": 122,
+                    "Height": 30,
+                    "TextId": "__SingleUse_WM2X",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_O6J1",
+                      "UseBuffer": true,
+                      "BufferSize": 17
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "smallDivider_1_1",
+                    "Y": 460,
+                    "Height": 10,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "rotatiomTimeValue",
+                    "Y": 470,
+                    "Width": 62,
+                    "Height": 30,
+                    "TextId": "__SingleUse_YATL",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_17MC",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "bigDivider_3",
+                    "Y": 500,
+                    "Height": 20,
+                    "Components": []
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "heaterTemperatureValue",
+                    "Y": 520,
+                    "Width": 56,
+                    "Height": 30,
+                    "TextId": "__SingleUse_SYAX",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 205,
+                      "Green": 214,
+                      "Blue": 244
+                    },
+                    "AutoSize": true,
+                    "LineSpacing": 1,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_4BKF",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "Box",
+            "Name": "xAxisSectionUnderline",
+            "X": 27,
+            "Y": 243,
+            "Width": 430,
+            "Height": 5,
+            "Color": {
+              "Red": 243,
+              "Green": 139,
+              "Blue": 168
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "yAxisSectionUnderline",
+            "X": 27,
+            "Y": 373,
+            "Width": 430,
+            "Height": 5,
+            "Color": {
+              "Red": 250,
+              "Green": 179,
+              "Blue": 135
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "zAxisSectionUnderline",
+            "X": 27,
+            "Y": 503,
+            "Width": 430,
+            "Height": 5,
+            "Color": {
+              "Red": 166,
+              "Green": 227,
+              "Blue": 161
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "rotationSectionUnderline",
+            "X": 27,
+            "Y": 633,
+            "Width": 430,
+            "Height": 5,
+            "Color": {
+              "Red": 137,
+              "Green": 220,
+              "Blue": 235
+            }
+          }
+        ],
+        "Interactions": []
       }
     ],
     "Name": "atc-gui",
