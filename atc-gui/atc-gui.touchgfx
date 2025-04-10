@@ -4508,8 +4508,6 @@
     "CustomContainerDefinitions": [
       {
         "Name": "ValueSelector",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 800,
         "Includes": "",
@@ -4729,8 +4727,7 @@
       },
       {
         "Name": "SettingsFooter",
-        "X": 160,
-        "Y": 515,
+        "Y": 675,
         "Width": 480,
         "Height": 125,
         "Components": [
@@ -4938,8 +4935,6 @@
       },
       {
         "Name": "RotationDirectionSelector",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -5159,8 +5154,6 @@
       },
       {
         "Name": "HeaterStateSelector",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -5380,8 +5373,6 @@
       },
       {
         "Name": "AxisStartSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Components": [
@@ -5718,8 +5709,6 @@
       },
       {
         "Name": "AxisEndSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Components": [
@@ -6056,8 +6045,6 @@
       },
       {
         "Name": "AxisSpeedSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Components": [
@@ -6394,8 +6381,6 @@
       },
       {
         "Name": "RotationSpeedSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -6733,8 +6718,6 @@
       },
       {
         "Name": "RotationDirectionSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -7072,8 +7055,6 @@
       },
       {
         "Name": "RotationTimeSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -7411,8 +7392,6 @@
       },
       {
         "Name": "HeaterTemperatureSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -7656,8 +7635,6 @@
       },
       {
         "Name": "HeaterStateSettingsButtons",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -7901,8 +7878,7 @@
       },
       {
         "Name": "StartCancelFooter",
-        "X": 160,
-        "Y": 520,
+        "Y": 680,
         "Width": 480,
         "Height": 120,
         "Components": [
@@ -8225,8 +8201,6 @@
       },
       {
         "Name": "TestResultIcon",
-        "X": 160,
-        "Y": -160,
         "Width": 60,
         "Height": 60,
         "Components": [
@@ -8325,8 +8299,6 @@
       },
       {
         "Name": "AxisTestsResults",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -8592,8 +8564,6 @@
       },
       {
         "Name": "RotationTestsResults",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -8719,8 +8689,6 @@
       },
       {
         "Name": "HeaterTestsResults",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -8846,8 +8814,6 @@
       },
       {
         "Name": "SettingDisplay",
-        "X": 160,
-        "Y": -160,
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -9623,8 +9589,8 @@
     ],
     "Name": "atc-gui",
     "Resolution": {
-      "Width": 800,
-      "Height": 480
+      "Width": 480,
+      "Height": 800
     },
     "SelectedColorDepth": 16,
     "StartupScreenName": "MainScreen",
