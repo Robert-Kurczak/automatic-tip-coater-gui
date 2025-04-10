@@ -1354,6 +1354,22 @@
           },
           {
             "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_US5M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
+          },
+          {
+            "Type": "TextArea",
             "Name": "submenuName",
             "X": 201,
             "Y": 25,
@@ -1483,6 +1499,22 @@
               "Green": 179,
               "Blue": 135
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_GCAR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
           },
           {
             "Type": "TextArea",
@@ -1618,6 +1650,22 @@
           },
           {
             "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_7WFT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
+          },
+          {
+            "Type": "TextArea",
             "Name": "submenuName",
             "X": 201,
             "Y": 25,
@@ -1747,6 +1795,22 @@
               "Green": 139,
               "Blue": 168
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_3F1F",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
           },
           {
             "Type": "TextArea",
@@ -1883,6 +1947,22 @@
           },
           {
             "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_7W0H",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
+          },
+          {
+            "Type": "TextArea",
             "Name": "submenuName",
             "X": 201,
             "Y": 25,
@@ -2012,6 +2092,22 @@
               "Green": 227,
               "Blue": 161
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_E6N2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
           },
           {
             "Type": "TextArea",
@@ -2147,6 +2243,22 @@
           },
           {
             "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_EEW2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
+          },
+          {
+            "Type": "TextArea",
             "Name": "submenuName",
             "X": 201,
             "Y": 25,
@@ -2276,6 +2388,22 @@
               "Green": 179,
               "Blue": 135
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_LWGE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
           },
           {
             "Type": "TextArea",
@@ -2411,6 +2539,22 @@
           },
           {
             "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_Y0OH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
+          },
+          {
+            "Type": "TextArea",
             "Name": "submenuName",
             "X": 201,
             "Y": 25,
@@ -2540,6 +2684,22 @@
               "Green": 139,
               "Blue": 168
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_1440",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
           },
           {
             "Type": "TextArea",
@@ -2808,6 +2968,22 @@
           },
           {
             "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_P12O",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
+          },
+          {
+            "Type": "TextArea",
             "Name": "submenuName",
             "X": 188,
             "Y": 25,
@@ -2937,6 +3113,22 @@
             "Width": 480,
             "Height": 245,
             "CustomContainerDefinitionName": "HeaterTemperatureSettingsButtons"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "units",
+            "X": 240,
+            "Y": 363,
+            "Width": 173,
+            "Height": 35,
+            "TextId": "__SingleUse_QCS6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "LineSpacing": 1
           },
           {
             "Type": "TextArea",
@@ -9018,7 +9210,7 @@
                   {
                     "Type": "TextArea",
                     "Name": "xAxisStartValue",
-                    "Width": 97,
+                    "Width": 73,
                     "Height": 30,
                     "TextId": "__SingleUse_1XMR",
                     "TextRotation": "0",
@@ -9046,7 +9238,7 @@
                     "Type": "TextArea",
                     "Name": "xAxisEndValue",
                     "Y": 40,
-                    "Width": 97,
+                    "Width": 73,
                     "Height": 30,
                     "TextId": "__SingleUse_US11",
                     "TextRotation": "0",
@@ -9102,7 +9294,7 @@
                     "Type": "TextArea",
                     "Name": "yAxisStartValue",
                     "Y": 130,
-                    "Width": 97,
+                    "Width": 73,
                     "Height": 30,
                     "TextId": "__SingleUse_S3PD",
                     "TextRotation": "0",
@@ -9130,7 +9322,7 @@
                     "Type": "TextArea",
                     "Name": "yAxisEndValue",
                     "Y": 170,
-                    "Width": 97,
+                    "Width": 73,
                     "Height": 30,
                     "TextId": "__SingleUse_JU19",
                     "TextRotation": "0",
@@ -9186,7 +9378,7 @@
                     "Type": "TextArea",
                     "Name": "zAxisStartValue",
                     "Y": 260,
-                    "Width": 97,
+                    "Width": 73,
                     "Height": 30,
                     "TextId": "__SingleUse_70KH",
                     "TextRotation": "0",
@@ -9214,7 +9406,7 @@
                     "Type": "TextArea",
                     "Name": "zAxisEndValue",
                     "Y": 300,
-                    "Width": 97,
+                    "Width": 73,
                     "Height": 30,
                     "TextId": "__SingleUse_7QBP",
                     "TextRotation": "0",
@@ -9270,7 +9462,7 @@
                     "Type": "TextArea",
                     "Name": "rotationSpeedValue",
                     "Y": 390,
-                    "Width": 97,
+                    "Width": 76,
                     "Height": 30,
                     "TextId": "__SingleUse_QUDW",
                     "TextRotation": "0",

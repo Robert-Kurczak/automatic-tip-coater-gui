@@ -5,6 +5,42 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_QCS6" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_P12O" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_1440" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">rpm</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y0OH" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm/s</Translation>
+      </Text>
+      <Text Id="__SingleUse_LWGE" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_EEW2" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_E6N2" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm/s</Translation>
+      </Text>
+      <Text Id="__SingleUse_7W0H" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_3F1F" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_7WFT" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm/s</Translation>
+      </Text>
+      <Text Id="__SingleUse_GCAR" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_US5M" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">mm</Translation>
+      </Text>
       <Text Id="__SingleUse_F9H3" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Calibrate</Translation>
       </Text>
@@ -57,34 +93,34 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_QUDW" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+        <Translation Language="GB">&lt;value&gt; rpm</Translation>
       </Text>
       <Text Id="__SingleUse_F5RK" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; mm/s</Translation>
       </Text>
       <Text Id="__SingleUse_7QBP" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
       </Text>
       <Text Id="__SingleUse_70KH" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
       </Text>
       <Text Id="__SingleUse_6VFJ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; mm/s</Translation>
       </Text>
       <Text Id="__SingleUse_JU19" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
       </Text>
       <Text Id="__SingleUse_S3PD" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
       </Text>
       <Text Id="__SingleUse_D3HY" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; mm/s</Translation>
       </Text>
       <Text Id="__SingleUse_US11" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
       </Text>
       <Text Id="__SingleUse_1XMR" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
       </Text>
       <Text Id="__SingleUse_PMN0" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Heater Temperature:</Translation>
