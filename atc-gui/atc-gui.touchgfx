@@ -4777,10 +4777,10 @@
                   },
                   {
                     "Type": "IconButtonStyle",
-                    "X": 95,
+                    "X": 90,
                     "Y": 15,
-                    "IconReleased": "__generated\\icon_theme_images_content_save_50_50_E8F6FB.svg.png",
-                    "IconPressed": "__generated\\icon_theme_images_content_save_50_50_E8F6FB.svg.png"
+                    "IconReleased": "__generated\\icon_theme_images_content_save_60_60_E8F6FB.svg.png",
+                    "IconPressed": "__generated\\icon_theme_images_content_save_60_60_E8F6FB.svg.png"
                   },
                   {
                     "Type": "BoxWithBorderButtonStyle",
@@ -5595,8 +5595,8 @@
                         "Type": "IconButtonStyle",
                         "X": 50,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_action_sync_alt_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_sync_alt_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -5854,8 +5854,8 @@
                         "Type": "IconButtonStyle",
                         "X": 50,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_action_compare_arrows_60_60_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_action_sync_alt_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_action_sync_alt_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -6110,10 +6110,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
+                        "X": 50,
                         "Y": 25,
-                        "IconReleased": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_av_fast_forward_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_av_fast_forward_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -6608,10 +6608,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
+                        "X": 50,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_av_fast_forward_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_av_fast_forward_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -6852,10 +6852,10 @@
                     "ButtonStyles": [
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
+                        "X": 50,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_image_rotate_right_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_image_rotate_right_50_50_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_image_rotate_right_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "TextButtonStyle",
@@ -7111,10 +7111,10 @@
                     "ButtonStyles": [
                       {
                         "Type": "IconButtonStyle",
-                        "X": 55,
+                        "X": 50,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_image_timer_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_image_timer_50_50_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_image_timer_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_image_timer_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "TextButtonStyle",
@@ -7545,10 +7545,10 @@
                       },
                       {
                         "Type": "IconButtonStyle",
-                        "X": 95,
+                        "X": 90,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_device_thermostat_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_device_thermostat_50_50_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_device_thermostat_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_device_thermostat_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "BoxWithBorderButtonStyle",
@@ -7695,10 +7695,10 @@
                     "ButtonStyles": [
                       {
                         "Type": "IconButtonStyle",
-                        "X": 95,
+                        "X": 90,
                         "Y": 20,
-                        "IconReleased": "__generated\\icon_theme_images_toggle_radio_button_checked_50_50_E8F6FB.svg.png",
-                        "IconPressed": "__generated\\icon_theme_images_toggle_radio_button_checked_50_50_E8F6FB.svg.png"
+                        "IconReleased": "__generated\\icon_theme_images_toggle_radio_button_checked_60_60_E8F6FB.svg.png",
+                        "IconPressed": "__generated\\icon_theme_images_toggle_radio_button_checked_60_60_E8F6FB.svg.png"
                       },
                       {
                         "Type": "TextButtonStyle",
