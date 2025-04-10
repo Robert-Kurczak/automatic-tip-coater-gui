@@ -96,8 +96,6 @@
     <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\testsscreen_screen\TestsScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\TestsFooter.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\TestsFooterBase.cpp"/>
     <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxistestsscreen_screen\XAxisTestsScreenViewBase.cpp"/>
@@ -121,6 +119,16 @@
     <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\heatertestsscreen_screen\HeaterTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\StartCancelFooter.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\StartCancelFooterBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\startscreen_screen\StartScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SettingDisplay.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SettingDisplayBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\calibratescreen_screen\CalibrateScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\calibratescreen_screen\CalibrateScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\calibratescreen_screen\CalibrateScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -346,8 +354,6 @@
     <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\testsscreen_screen\TestsScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\TestsFooter.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestsFooterBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestsscreen_screen\XAxisTestsScreenViewBase.hpp"/>
@@ -371,6 +377,16 @@
     <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestsscreen_screen\HeaterTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\StartCancelFooterBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\StartCancelFooter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startscreen_screen\StartScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SettingDisplay.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SettingDisplayBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\calibratescreen_screen\CalibrateScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\calibratescreen_screen\CalibrateScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\calibratescreen_screen\CalibrateScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
