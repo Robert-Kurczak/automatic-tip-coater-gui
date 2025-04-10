@@ -2662,6 +2662,19 @@
             "CustomContainerDefinitionName": "RotationDirectionSettingsButtons"
           },
           {
+            "Type": "Box",
+            "Name": "directionButtonUnderline",
+            "X": 159,
+            "Y": 555,
+            "Width": 157,
+            "Height": 5,
+            "Color": {
+              "Red": 250,
+              "Green": 179,
+              "Blue": 135
+            }
+          },
+          {
             "Type": "TextArea",
             "Name": "submenuName",
             "X": 188,
@@ -3030,6 +3043,19 @@
             "Width": 480,
             "Height": 800,
             "CustomContainerDefinitionName": "HeaterStateSelector"
+          },
+          {
+            "Type": "Box",
+            "Name": "stateButtonUnderline",
+            "X": 159,
+            "Y": 555,
+            "Width": 157,
+            "Height": 5,
+            "Color": {
+              "Red": 250,
+              "Green": 179,
+              "Blue": 135
+            }
           },
           {
             "Type": "TextArea",
@@ -4858,18 +4884,6 @@
                     }
                   }
                 ]
-              },
-              {
-                "Type": "Box",
-                "Name": "directionButtonUnderline",
-                "Y": 155,
-                "Width": 157,
-                "Height": 5,
-                "Color": {
-                  "Red": 250,
-                  "Green": 179,
-                  "Blue": 135
-                }
               }
             ]
           }
@@ -5091,18 +5105,6 @@
                     }
                   }
                 ]
-              },
-              {
-                "Type": "Box",
-                "Name": "stateButtonUnderline",
-                "Y": 155,
-                "Width": 157,
-                "Height": 5,
-                "Color": {
-                  "Red": 250,
-                  "Green": 179,
-                  "Blue": 135
-                }
               }
             ]
           }
