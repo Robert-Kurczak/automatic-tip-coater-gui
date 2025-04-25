@@ -1,0 +1,1603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4D1BFFCC-9CEB-4ABF-A951-582870FE71FD}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX">
+      <UniqueIdentifier>{29C60541-803D-4F43-8683-028D9DA5E0CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\common">
+      <UniqueIdentifier>{AF2BF67C-89EC-4545-B0D2-5BD6803628D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\mvp">
+      <UniqueIdentifier>{A8F51E02-A400-49F1-AC86-371872A7E5E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\platform">
+      <UniqueIdentifier>{493CF637-721C-4516-8638-3EE4790FB455}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx">
+      <UniqueIdentifier>{7187028B-6482-4EB3-8556-EECD38E0636B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\platform\driver">
+      <UniqueIdentifier>{D2E6B448-6B79-434F-A8EB-C8F8415957E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\platform\hal">
+      <UniqueIdentifier>{07737357-9365-4A8F-B2F6-908B5FC4E808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\canvas_widget_renderer">
+      <UniqueIdentifier>{085B248B-6BE1-4BF8-9913-35526BAEE4C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\containers">
+      <UniqueIdentifier>{E08C6B18-2F0E-4861-87D5-80FB0411017E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\events">
+      <UniqueIdentifier>{29D72404-E5CB-472C-B00F-3784DF3CCD1E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\hal">
+      <UniqueIdentifier>{09561B72-532B-45EB-8E32-CAA31C349F83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\lcd">
+      <UniqueIdentifier>{A89B6308-CBC1-48EC-BF14-B3C6106FACCE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\mixins">
+      <UniqueIdentifier>{DB82A963-BE52-4494-BD5E-358C5E79C081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\transforms">
+      <UniqueIdentifier>{509E01BB-FBF4-4198-B748-936C1B67839A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\transitions">
+      <UniqueIdentifier>{3F023E56-225A-4D4C-9D20-74447A23BAD9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\widgets">
+      <UniqueIdentifier>{0E9A8FD3-B71B-46B9-B1F6-3A18292FFAC4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\platform\driver\lcd">
+      <UniqueIdentifier>{9B32A742-EBA9-4EBA-832E-0421D7E68BC5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\platform\driver\touch">
+      <UniqueIdentifier>{8C31441B-2191-4B32-869D-7B253AECB28F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\platform\hal\simulator">
+      <UniqueIdentifier>{464CC9FB-AFF6-4FFA-B4D8-BCAC4B2B8898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\containers\clock">
+      <UniqueIdentifier>{B7237C13-DD69-4F78-8446-9A554431E3F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\containers\progress_indicators">
+      <UniqueIdentifier>{5E0E884F-0059-4306-94BA-3197219750E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\touchgfx\widgets\canvas">
+      <UniqueIdentifier>{DBFF640A-BD63-40BC-A0A5-2468BC461037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX\platform\hal\simulator\sdl2">
+      <UniqueIdentifier>{EA3962C0-553C-4CFD-A89B-A116A9493818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated">
+      <UniqueIdentifier>{29C60541-803D-4F44-8783-028D9DA5E0CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator">
+      <UniqueIdentifier>{29C60541-803D-4F43-8683-028D9DA5E0CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{92BBFF14-FBDB-4755-BA47-A830D863D92B}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;ttf;otf;bdf;png;wav;xml;props;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\assets">
+      <UniqueIdentifier>{AF899B0F-78BE-47F9-A912-E92CB9156E40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\config">
+      <UniqueIdentifier>{29E8A9F8-6504-4625-AB47-671A3F665E51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\assets\texts">
+      <UniqueIdentifier>{382278FD-2B19-4E89-AE4F-24AF77E7A270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\config\msvs">
+      <UniqueIdentifier>{C24EAEDB-9A3F-43DC-87FB-C7AC2729A078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2F3FC0AA-97C4-4366-9939-94A0FF4E028C}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX">
+      <UniqueIdentifier>{C07B02A9-A55E-47AA-AD61-59A6AAD754E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX\platform">
+      <UniqueIdentifier>{33EDC2DB-AF72-480C-92E5-2A2833BCAB6F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX\platform\driver">
+      <UniqueIdentifier>{1D8EFD90-430A-4539-9080-16A38861D20A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX\platform\hal">
+      <UniqueIdentifier>{E8DECBF2-0C8E-4397-8603-3101D6F922D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX\platform\driver\touch">
+      <UniqueIdentifier>{40F0D55D-79D9-488A-AF83-ADC96179EADF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX\platform\hal\simulator">
+      <UniqueIdentifier>{3FB50DD5-31DA-4042-B7FD-2151C58CDA80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX\platform\hal\simulator\sdl2">
+      <UniqueIdentifier>{B48CB42B-0F9E-4815-BFE1-1ACC1150ED8A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\simulator">
+      <UniqueIdentifier>{C07B03A9-A55E-47AA-AD61-59A6AAD754E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated">
+      <UniqueIdentifier>{C07B02B9-A55E-47AB-AD61-59A6AAD754E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\simulator">
+      <UniqueIdentifier>{C07B02B9-A55E-47AA-AD61-59A6AAD754E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui">
+      <UniqueIdentifier>8D36225A-9C8C-6407-B8CD-0885C200E47C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui">
+      <UniqueIdentifier>BF5C7D5A-59A7-FF0A-1215-C71554F72FC9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated">
+      <UniqueIdentifier>3C924F22-5966-894A-3807-1A106B54AE9C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated">
+      <UniqueIdentifier>D7DE50C4-8232-C5C4-DC99-3CBD99CE508E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>823D49B7-3CD8-3A90-01ED-DB904F8A403B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zaxistestsscreen_screen">
+      <UniqueIdentifier>7F67F20B-F31C-D2DE-33AF-A7666738C57D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>14AD4B7C-77C0-E18E-497C-3F3B82073D7C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\zaxistestsscreen_screen">
+      <UniqueIdentifier>C27B93AB-54A1-E9D9-F954-2E7637E45948</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>E570CDEC-0035-3C3D-E696-9876F498A3B2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\settingsscreen_screen">
+      <UniqueIdentifier>D8A9B697-ED7A-05DB-AA12-41F9C0654EBC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\startscreen_screen">
+      <UniqueIdentifier>2139C1F3-1FA2-D643-4301-A999571D3449</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\startscreen_screen">
+      <UniqueIdentifier>8E4799EB-1509-6720-DCFF-E018744FAD50</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\zaxisstartscreen_screen">
+      <UniqueIdentifier>268DA39E-4B1C-C113-409C-CABF8E0FDE7E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zaxisstartscreen_screen">
+      <UniqueIdentifier>BF2F7255-6456-0E41-0510-D21567AD6D34</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\testsscreen_screen">
+      <UniqueIdentifier>E7EFDEA2-9E80-F7AE-1519-B522FFC9476A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\testsscreen_screen">
+      <UniqueIdentifier>0AD4322F-1BB1-4C88-6651-A1DEC7697CC7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\rotationtimescreen_screen">
+      <UniqueIdentifier>029FCA1C-D093-3AAC-7DAC-47EA2DFBD06D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\rotationtimescreen_screen">
+      <UniqueIdentifier>1B34C18E-C7EB-E286-246F-D4872AA9DEC0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\rotationtestsscreen_screen">
+      <UniqueIdentifier>B84C039D-6DE4-4E00-3247-C695E551509F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\rotationtestsscreen_screen">
+      <UniqueIdentifier>A3C145EB-FF6E-FDB3-CD79-9752592BA7DC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\calibratescreen_screen">
+      <UniqueIdentifier>C5910890-F032-08A4-2A95-66FAADC9A218</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\calibratescreen_screen">
+      <UniqueIdentifier>81DB4B10-4A6C-C92A-2D9D-645C2A476DCD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\xaxisendscreen_screen">
+      <UniqueIdentifier>68DF7A65-91C5-2AF8-EC8B-E627AD8198A6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxisendscreen_screen">
+      <UniqueIdentifier>13B4C48D-2A64-83F8-F1C5-89107695F5C0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\zaxisspeedscreen_screen">
+      <UniqueIdentifier>71C3E2E4-36EE-DAC4-164C-E94BC1B5DDBE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zaxisspeedscreen_screen">
+      <UniqueIdentifier>12E3EEDE-4608-EF4E-FA43-04665E6B67AC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\rotationspeedscreen_screen">
+      <UniqueIdentifier>B220180A-1CBD-64EF-521F-3D0C4018B961</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\rotationspeedscreen_screen">
+      <UniqueIdentifier>340D3505-026B-F141-3632-0DD9FDA68299</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\xaxisspeedscreen_screen">
+      <UniqueIdentifier>6081FD90-DEBB-B2B9-D31B-8804D36EDC1C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxisspeedscreen_screen">
+      <UniqueIdentifier>799D4467-73B9-F3A3-E2B2-39E123A16F84</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\xaxisstartscreen_screen">
+      <UniqueIdentifier>38974F51-62FE-B4B6-6912-E129147B51C4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxisstartscreen_screen">
+      <UniqueIdentifier>ED7ED061-184C-0155-87B5-C82B48F9F594</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\common">
+      <UniqueIdentifier>C4B0BF0A-3D6F-493D-7F88-1191688BD0DE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\common">
+      <UniqueIdentifier>C095D41C-070E-9DB3-1E03-3BD9ED8EF26B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\rotationdirectionscreen_screen">
+      <UniqueIdentifier>319ADB6D-2617-83CF-C3D3-C2366E0472B7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\rotationdirectionscreen_screen">
+      <UniqueIdentifier>D4D376C7-A1F3-B468-FFD5-22479C89C224</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\model">
+      <UniqueIdentifier>038ED864-76DF-0E54-1C0B-78B469CCD928</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\xaxistestsscreen_screen">
+      <UniqueIdentifier>80F53657-34B3-C99D-D528-8653A95CBEF0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\model">
+      <UniqueIdentifier>CDEBCB06-241C-634B-BDA4-F2BB9D3C3565</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\xaxistestsscreen_screen">
+      <UniqueIdentifier>FCA37BC3-83C5-9B7E-71F8-C5A9B2EA0714</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\zaxisendscreen_screen">
+      <UniqueIdentifier>EDF159B0-8548-9086-A69B-DE32BEFA8268</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zaxisendscreen_screen">
+      <UniqueIdentifier>62FC0588-6D2D-A6CC-0F03-FA80BED509AC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\mainscreen_screen">
+      <UniqueIdentifier>5850444E-52BF-9F03-2CCB-47C9130A216B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\heaterstatescreen_screen">
+      <UniqueIdentifier>3C3812E6-4EAD-7C4E-D2A2-2AF0DCB36F40</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\mainscreen_screen">
+      <UniqueIdentifier>A6EBFC66-5FF6-AFBF-269B-310DC1CC8E72</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\yaxisendscreen_screen">
+      <UniqueIdentifier>CED974AE-19D3-C1C4-E05F-FF36AD9EA278</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\yaxisendscreen_screen">
+      <UniqueIdentifier>6A36DB95-F704-63F0-374C-C1B37F77B28B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\heaterstatescreen_screen">
+      <UniqueIdentifier>23E4BFAF-A915-80CF-97F9-341C2E0F5C7A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\heatertestsscreen_screen">
+      <UniqueIdentifier>86DF135A-8FCA-3764-9B30-5B01C7625837</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\heatertestsscreen_screen">
+      <UniqueIdentifier>80A4C7EA-C625-C921-B73F-22F4D692A2E9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\yaxisspeedscreen_screen">
+      <UniqueIdentifier>26F0A711-0A05-C4D3-BFC4-4B0C5CFBCD86</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\yaxisspeedscreen_screen">
+      <UniqueIdentifier>10407B26-89D7-DA6C-2853-44AD5D556528</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\yaxistestsscreen_screen">
+      <UniqueIdentifier>230E30ED-FE2A-4D16-92CE-45CE4183F09F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\yaxistestsscreen_screen">
+      <UniqueIdentifier>4CCA85DE-003E-EC08-E4EC-CABB675E6E66</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\yaxisstartscreen_screen">
+      <UniqueIdentifier>3050B960-362E-E8E3-F93B-E49729CEF23C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\heatertemperaturescreen_screen">
+      <UniqueIdentifier>050ED9FD-6D1F-5E2C-22E5-F3C191F04134</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\yaxisstartscreen_screen">
+      <UniqueIdentifier>4EF26029-3A72-54B7-D274-3C23900FA9F8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\heatertemperaturescreen_screen">
+      <UniqueIdentifier>D99B95CB-0C30-D87C-639F-E1B2975AD6ED</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\yaxisstartscreen_screen">
+      <UniqueIdentifier>DC3628DB-1C40-1963-3A7D-37D3A795F56A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\yaxisstartscreen_screen">
+      <UniqueIdentifier>A060A406-256C-D9D7-46E1-AC8CDB7F0ADA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>FE1B7162-C427-E426-7461-D35D82B8D5E6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>D0C25E8A-35F8-E539-A229-DEC55FA3B204</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\heatertemperaturescreen_screen">
+      <UniqueIdentifier>E2749101-DF3A-6607-33E1-DB49B47477D8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\yaxisspeedscreen_screen">
+      <UniqueIdentifier>7E0BB154-38C8-8AF4-4491-3BEF5B2C22AE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\heatertemperaturescreen_screen">
+      <UniqueIdentifier>72F46686-19D0-D184-A53D-11BCC68A732F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\heaterstatescreen_screen">
+      <UniqueIdentifier>DAEF525A-E477-50A7-CFCE-B489267E6E70</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\yaxisspeedscreen_screen">
+      <UniqueIdentifier>A9878A21-7264-605E-667D-3644D9915731</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\heaterstatescreen_screen">
+      <UniqueIdentifier>9807DC9E-B57F-FD5A-0310-A4A167E9D331</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\yaxistestsscreen_screen">
+      <UniqueIdentifier>E1608C8E-6233-A9BC-A8D3-6467A2B33F2B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\yaxisendscreen_screen">
+      <UniqueIdentifier>3D41A8E7-121F-CCD2-3549-56599D481ED3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\yaxistestsscreen_screen">
+      <UniqueIdentifier>93750201-98E4-911F-EADE-C80B2527E6FA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\yaxisendscreen_screen">
+      <UniqueIdentifier>04151605-37A5-99DE-F7FD-1B2E52788ACF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\heatertestsscreen_screen">
+      <UniqueIdentifier>21647190-7B3E-2704-8280-7238A6ADBBD1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\heatertestsscreen_screen">
+      <UniqueIdentifier>6067952A-D152-7866-4DAC-657D761977C9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxistestsscreen_screen">
+      <UniqueIdentifier>D394CE3A-3445-6A11-F6BB-B2C2912DB7C5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\common">
+      <UniqueIdentifier>FACC7FF4-D154-CCA7-9C87-5993CE6C6C5D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\simulator\video">
+      <UniqueIdentifier>65EA83F3-FF87-A3B7-D6D2-EA1520F3E976</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxistestsscreen_screen">
+      <UniqueIdentifier>7D9FD53B-0E9E-12A6-0860-547FBEB6A933</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\mainscreen_screen">
+      <UniqueIdentifier>78D47AB7-3166-F14A-37CD-10B9D71DBBFF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\mainscreen_screen">
+      <UniqueIdentifier>3F1185E8-0D69-CA82-3C82-F6E39F5D2385</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include">
+      <UniqueIdentifier>7D790FC1-898C-24BD-9AE5-37C119B081D9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zaxistestsscreen_screen">
+      <UniqueIdentifier>79CA6146-15D1-EBB0-2AE5-C192947AD8EC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\common">
+      <UniqueIdentifier>B842EA14-5732-1DE8-2CF0-9577EC4CFF6C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxisstartscreen_screen">
+      <UniqueIdentifier>32A38DD5-589B-83AB-F5C1-5C914979BBC2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxisstartscreen_screen">
+      <UniqueIdentifier>3641F5C3-94AE-FA92-8ED0-7A60FCE953AA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zaxisendscreen_screen">
+      <UniqueIdentifier>736095BF-1FA9-95DE-72B6-3C249CD3667A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationdirectionscreen_screen">
+      <UniqueIdentifier>E24F88E4-444A-3ECF-8BF0-3DEB38B739BC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationdirectionscreen_screen">
+      <UniqueIdentifier>07C924FF-5405-D2A7-F882-2ED11E9E057B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zaxisendscreen_screen">
+      <UniqueIdentifier>7FAC59B5-498B-D859-0545-2D251344D0E6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxisspeedscreen_screen">
+      <UniqueIdentifier>4F081AF3-3EB9-7948-E1B0-1DE10155841D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxisspeedscreen_screen">
+      <UniqueIdentifier>083D857C-EA33-5E10-4083-633AD37E3A73</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\calibratescreen_screen">
+      <UniqueIdentifier>6156D5A8-6166-4C90-67C5-B48709AB0C4A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\xaxisendscreen_screen">
+      <UniqueIdentifier>64FB756A-1341-D682-1438-E9B9812797E3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationspeedscreen_screen">
+      <UniqueIdentifier>8F1CE486-C6A1-D1F2-B560-B67CAE483E8B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\calibratescreen_screen">
+      <UniqueIdentifier>2CDCFF45-C1C4-E21F-EB20-C1D5C98AFC20</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\xaxisendscreen_screen">
+      <UniqueIdentifier>5D776DF6-0877-F2A1-5733-2990A1D5E515</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationspeedscreen_screen">
+      <UniqueIdentifier>EFE3E925-4EB3-B2E2-E7E7-8401B56900C1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zaxisspeedscreen_screen">
+      <UniqueIdentifier>CF36AB82-B888-019C-3C1F-4DAB9A97E4DF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zaxisspeedscreen_screen">
+      <UniqueIdentifier>9E8F046A-0C2D-D584-697C-9D601ACB1006</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\testsscreen_screen">
+      <UniqueIdentifier>9E6526C7-20A0-E873-7314-C195EB5BDF6D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationtestsscreen_screen">
+      <UniqueIdentifier>E81530B0-89EC-0331-F15A-2DE72BEAEB7B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\testsscreen_screen">
+      <UniqueIdentifier>FFBFCE21-81F3-8FF9-A091-5E153D67A157</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationtestsscreen_screen">
+      <UniqueIdentifier>79ADF576-EF3C-56D2-54FF-79FF6EDF0B0A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\rotationtimescreen_screen">
+      <UniqueIdentifier>48FA296B-5002-0403-812A-4B7E9D809FCE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\rotationtimescreen_screen">
+      <UniqueIdentifier>306A57AE-5E28-0910-70C7-0E56A22CA840</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\startscreen_screen">
+      <UniqueIdentifier>88F5EFC4-AA6D-80C0-0CC0-8A8D1DFC075F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zaxisstartscreen_screen">
+      <UniqueIdentifier>9B245E5B-4DDB-DC81-B952-B51FF7EDF845</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\startscreen_screen">
+      <UniqueIdentifier>1F67179C-E5FB-66E6-C608-4C46AE5BE8A8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zaxisstartscreen_screen">
+      <UniqueIdentifier>6188A13E-3737-0DE2-BDD7-467A62D36E70</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>2A87506F-FAA7-53CE-DF3F-E85026BA13FA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
+      <UniqueIdentifier>22E47F9B-2087-EFD0-D204-0F2771085288</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zaxistestsscreen_screen">
+      <UniqueIdentifier>53C6EC5E-E470-13E4-4A85-1DB045A6B797</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include\simulator">
+      <UniqueIdentifier>22500EB5-0CEB-E374-91A3-38F4E64DB502</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include\simulator\video">
+      <UniqueIdentifier>DB393E0F-CD34-70E0-B934-B44FB4E87A74</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
+      <Filter>Source Files\TouchGFX\platform\driver\touch</Filter>
+    </ClCompile>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2.cpp">
+      <Filter>Source Files\TouchGFX\platform\hal\simulator\sdl2</Filter>
+    </ClCompile>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\HALSDL2_icon.cpp">
+      <Filter>Source Files\TouchGFX\platform\hal\simulator\sdl2</Filter>
+    </ClCompile>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl2\OSWrappers.cpp">
+      <Filter>Source Files\TouchGFX\platform\hal\simulator\sdl2</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ApplicationRoot)\simulator\main.cpp">
+      <Filter>Source Files\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp">
+      <Filter>Source Files\generated\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\AxisEndSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisEndSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\AxisSpeedSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisSpeedSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\AxisStartSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisStartSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\AxisTestsResults.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\AxisTestsResultsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\calibratescreen_screen\CalibrateScreenPresenter.cpp">
+      <Filter>Source Files\gui\calibratescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\calibratescreen_screen\CalibrateScreenView.cpp">
+      <Filter>Source Files\gui\calibratescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\calibratescreen_screen\CalibrateScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\calibratescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
+      <Filter>Source Files\generated\gui_generated\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heaterstatescreen_screen\HeaterStateScreenPresenter.cpp">
+      <Filter>Source Files\gui\heaterstatescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heaterstatescreen_screen\HeaterStateScreenView.cpp">
+      <Filter>Source Files\gui\heaterstatescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\heaterstatescreen_screen\HeaterStateScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\heaterstatescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\HeaterStateSelector.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSelectorBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\HeaterStateSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterStateSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heatertemperaturescreen_screen\HeaterTemperatureScreenPresenter.cpp">
+      <Filter>Source Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heatertemperaturescreen_screen\HeaterTemperatureScreenView.cpp">
+      <Filter>Source Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\heatertemperaturescreen_screen\HeaterTemperatureScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\heatertemperaturescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\HeaterTemperatureSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTemperatureSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\HeaterTestsResults.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTestsResultsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\heatertestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenView.cpp">
+      <Filter>Source Files\gui\heatertestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\heatertestsscreen_screen\HeaterTestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\heatertestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp">
+      <Filter>Source Files\gui\mainscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp">
+      <Filter>Source Files\gui\mainscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\mainscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\model\Model.cpp">
+      <Filter>Source Files\gui\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.cpp">
+      <Filter>Source Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationdirectionscreen_screen\RotationDirectionScreenView.cpp">
+      <Filter>Source Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationdirectionscreen_screen\RotationDirectionScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationdirectionscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationDirectionSelector.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationDirectionSelectorBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationDirectionSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationDirectionSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationspeedscreen_screen\RotationSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\rotationspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationspeedscreen_screen\RotationSpeedScreenView.cpp">
+      <Filter>Source Files\gui\rotationspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationspeedscreen_screen\RotationSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationSpeedSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationSpeedSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationTestsResults.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationTestsResultsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationtestsscreen_screen\RotationTestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\rotationtestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationtestsscreen_screen\RotationTestsScreenView.cpp">
+      <Filter>Source Files\gui\rotationtestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationtestsscreen_screen\RotationTestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationtestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenPresenter.cpp">
+      <Filter>Source Files\gui\rotationtimescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\rotationtimescreen_screen\RotationTimeScreenView.cpp">
+      <Filter>Source Files\gui\rotationtimescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\rotationtimescreen_screen\RotationTimeScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\rotationtimescreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\RotationTimeSettingsButtons.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\RotationTimeSettingsButtonsBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SettingDisplay.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SettingDisplayBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SettingsFooter.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SettingsFooterBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenPresenter.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingsscreen_screen\SettingsScreenView.cpp">
+      <Filter>Source Files\gui\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\settingsscreen_screen\SettingsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
+      <Filter>Source Files\generated\simulator\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\StartCancelFooter.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\StartCancelFooterBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenPresenter.cpp">
+      <Filter>Source Files\gui\startscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\startscreen_screen\StartScreenView.cpp">
+      <Filter>Source Files\gui\startscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\startscreen_screen\StartScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\startscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\TestResultIcon.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TestResultIconBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\testsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\testsscreen_screen\TestsScreenView.cpp">
+      <Filter>Source Files\gui\testsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\testsscreen_screen\TestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\testsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ValueSelector.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ValueSelectorBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisendscreen_screen\XAxisEndScreenView.cpp">
+      <Filter>Source Files\gui\xaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisendscreen_screen\XAxisEndScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisspeedscreen_screen\XAxisSpeedScreenView.cpp">
+      <Filter>Source Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenView.cpp">
+      <Filter>Source Files\gui\xaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_screen\XAxisStartScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenView.cpp">
+      <Filter>Source Files\gui\xaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxistestsscreen_screen\XAxisTestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenView.cpp">
+      <Filter>Source Files\gui\yaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisendscreen_screen\YAxisEndScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisspeedscreen_screen\YAxisSpeedScreenView.cpp">
+      <Filter>Source Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenView.cpp">
+      <Filter>Source Files\gui\yaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxisstartscreen_screen\YAxisStartScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenView.cpp">
+      <Filter>Source Files\gui\yaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxistestsscreen_screen\YAxisTestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenView.cpp">
+      <Filter>Source Files\gui\zaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisendscreen_screen\ZAxisEndScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxisendscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisspeedscreen_screen\ZAxisSpeedScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisspeedscreen_screen\ZAxisSpeedScreenView.cpp">
+      <Filter>Source Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisspeedscreen_screen\ZAxisSpeedScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxisspeedscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenView.cpp">
+      <Filter>Source Files\gui\zaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxisstartscreen_screen\ZAxisStartScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenView.cpp">
+      <Filter>Source Files\gui\zaxistestsscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxistestsscreen_screen</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(ApplicationRoot)\assets\texts\texts.xml">
+      <Filter>Resource Files\assets\texts</Filter>
+    </None>
+    <None Include="$(ApplicationRoot)\config\msvs\Application.props">
+      <Filter>Resource Files\config\msvs</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\common\AbstractPartition.hpp">
+      <Filter>Header Files\TouchGFX\common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\common\Meta.hpp">
+      <Filter>Header Files\TouchGFX\common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\common\Partition.hpp">
+      <Filter>Header Files\TouchGFX\common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\common\TouchGFXInit.hpp">
+      <Filter>Header Files\TouchGFX\common</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\mvp\MVPApplication.hpp">
+      <Filter>Header Files\TouchGFX\mvp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\mvp\MVPHeap.hpp">
+      <Filter>Header Files\TouchGFX\mvp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\mvp\Presenter.hpp">
+      <Filter>Header Files\TouchGFX\mvp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\mvp\View.hpp">
+      <Filter>Header Files\TouchGFX\mvp</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\lcd\LCD16bpp.hpp">
+      <Filter>Header Files\TouchGFX\platform\driver\lcd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\lcd\LCD1bpp.hpp">
+      <Filter>Header Files\TouchGFX\platform\driver\lcd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\lcd\LCD24bpp.hpp">
+      <Filter>Header Files\TouchGFX\platform\driver\lcd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\lcd\LCD2bpp.hpp">
+      <Filter>Header Files\TouchGFX\platform\driver\lcd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\lcd\LCD4bpp.hpp">
+      <Filter>Header Files\TouchGFX\platform\driver\lcd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\touch\SDL2TouchController.hpp">
+      <Filter>Header Files\TouchGFX\platform\driver\touch</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\hal\simulator\sdl2\HALSDL2.hpp">
+      <Filter>Header Files\TouchGFX\platform\hal\simulator\sdl2</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Application.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Bitmap.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Callback.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\CanvasWidgetRenderer.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\Cell.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\Outline.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\Rasterizer.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\Renderer.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\RenderingBuffer.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\RGBA8.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\canvas_widget_renderer\Scanline.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\canvas_widget_renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Color.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\ConstFont.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\clock\AbstractClock.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\clock</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\clock\AnalogClock.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\clock</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\clock\DigitalClock.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\clock</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\Container.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\ListLayout.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\ModalWindow.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\progress_indicators\AbstractDirectionProgress.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\progress_indicators</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\progress_indicators\AbstractProgressIndicator.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\progress_indicators</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\progress_indicators\BoxProgress.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\progress_indicators</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\progress_indicators\CircleProgress.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\progress_indicators</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\progress_indicators\ImageProgress.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\progress_indicators</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\progress_indicators\LineProgress.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\progress_indicators</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\progress_indicators\TextProgress.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers\progress_indicators</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\ScrollableContainer.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\SlideMenu.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\Slider.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\containers\ZoomAnimationImage.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Drawable.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\EasingEquations.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Event.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\events\ClickEvent.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\events\DragEvent.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\events\GestureEvent.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\events</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Font.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\FontManager.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\Atomic.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\BlitOp.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\BoardConfiguration.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\Buttons.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\Config.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\DMA.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\Gestures.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\GPIO.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\HAL.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\LED.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\NoDMA.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\OSWrappers.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\hal\Types.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\InternalFlashFont.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\JSMOCHelper.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\lcd\LCD.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\lcd</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Math3D.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\mixins\ClickListener.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\mixins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\mixins\Draggable.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\mixins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\mixins\FadeAnimator.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\mixins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\mixins\MoveAnimator.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\mixins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\mixins\PreRenderable.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\mixins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\mixins\Snapper.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\mixins</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Screen.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\TextProvider.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Texts.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\TextureMapTypes.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\transforms\DisplayTransformation.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\transforms</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\transforms\TouchCalibration.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\transforms</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\transitions\NoTransition.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\transitions\SlideTransition.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\transitions\Transition.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\transitions</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\TypedText.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\UIEventListener.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Unicode.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\Utils.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\AbstractButton.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\AnimatedImage.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\AnimationTextureMapper.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Box.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Button.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\ButtonWithIcon.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\ButtonWithLabel.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\AbstractPainter.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\AbstractPainterBW.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\AbstractPainterGRAY2.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\AbstractPainterGRAY4.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\AbstractPainterRGB565.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\AbstractPainterRGB888.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\AbstractShape.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\Canvas.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\CanvasWidget.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\Circle.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\CWRUtil.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\Line.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterBW.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterGRAY2.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterGRAY2Bitmap.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterGRAY4.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterGRAY4Bitmap.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterRGB565.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterRGB565Bitmap.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterRGB888.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\PainterRGB888Bitmap.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\canvas\Shape.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets\canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Image.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Keyboard.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\PixelDataWidget.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\RadioButton.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\RadioButtonGroup.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\RepeatButton.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\ScalableImage.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\SnapshotWidget.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TextArea.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TextAreaWithWildcard.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TextureMapper.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TiledImage.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\ToggleButton.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\TouchArea.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\touchgfx\widgets\Widget.hpp">
+      <Filter>Header Files\TouchGFX\touchgfx\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp">
+      <Filter>Header Files\generated\simulator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisEndSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisEndSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisSpeedSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisSpeedSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisStartSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisStartSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\AxisTestsResults.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\AxisTestsResultsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\calibratescreen_screen\CalibrateScreenPresenter.hpp">
+      <Filter>Header Files\gui\calibratescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\calibratescreen_screen\CalibrateScreenView.hpp">
+      <Filter>Header Files\gui\calibratescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\calibratescreen_screen\CalibrateScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\calibratescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heaterstatescreen_screen\HeaterStateScreenPresenter.hpp">
+      <Filter>Header Files\gui\heaterstatescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heaterstatescreen_screen\HeaterStateScreenView.hpp">
+      <Filter>Header Files\gui\heaterstatescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heaterstatescreen_screen\HeaterStateScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\heaterstatescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterStateSelector.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSelectorBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterStateSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterStateSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heatertemperaturescreen_screen\HeaterTemperatureScreenPresenter.hpp">
+      <Filter>Header Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heatertemperaturescreen_screen\HeaterTemperatureScreenView.hpp">
+      <Filter>Header Files\gui\heatertemperaturescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertemperaturescreen_screen\HeaterTemperatureScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\heatertemperaturescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterTemperatureSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTemperatureSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\HeaterTestsResults.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTestsResultsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\heatertestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenView.hpp">
+      <Filter>Header Files\gui\heatertestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestsscreen_screen\HeaterTestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\heatertestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp">
+      <Filter>Header Files\gui\mainscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp">
+      <Filter>Header Files\gui\mainscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\mainscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
+      <Filter>Header Files\gui\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
+      <Filter>Header Files\gui\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.hpp">
+      <Filter>Header Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenView.hpp">
+      <Filter>Header Files\gui\rotationdirectionscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationdirectionscreen_screen\RotationDirectionScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationdirectionscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSelector.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationDirectionSelectorBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationDirectionSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\rotationspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenView.hpp">
+      <Filter>Header Files\gui\rotationspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationspeedscreen_screen\RotationSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationSpeedSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationSpeedSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationTestsResults.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationTestsResultsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\rotationtestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenView.hpp">
+      <Filter>Header Files\gui\rotationtestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationtestsscreen_screen\RotationTestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationtestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenPresenter.hpp">
+      <Filter>Header Files\gui\rotationtimescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenView.hpp">
+      <Filter>Header Files\gui\rotationtimescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\rotationtimescreen_screen\RotationTimeScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\rotationtimescreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\RotationTimeSettingsButtons.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\RotationTimeSettingsButtonsBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SettingDisplay.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SettingDisplayBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SettingsFooter.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SettingsFooterBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenPresenter.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingsscreen_screen\SettingsScreenView.hpp">
+      <Filter>Header Files\gui\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingsscreen_screen\SettingsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\settingsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\StartCancelFooter.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\StartCancelFooterBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenPresenter.hpp">
+      <Filter>Header Files\gui\startscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\startscreen_screen\StartScreenView.hpp">
+      <Filter>Header Files\gui\startscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startscreen_screen\StartScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\startscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\TestResultIcon.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TestResultIconBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\testsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\testsscreen_screen\TestsScreenView.hpp">
+      <Filter>Header Files\gui\testsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\testsscreen_screen\TestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\testsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ValueSelector.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ValueSelectorBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisendscreen_screen\XAxisEndScreenView.hpp">
+      <Filter>Header Files\gui\xaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisendscreen_screen\XAxisEndScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisspeedscreen_screen\XAxisSpeedScreenView.hpp">
+      <Filter>Header Files\gui\xaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisspeedscreen_screen\XAxisSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenView.hpp">
+      <Filter>Header Files\gui\xaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_screen\XAxisStartScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenView.hpp">
+      <Filter>Header Files\gui\xaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestsscreen_screen\XAxisTestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenView.hpp">
+      <Filter>Header Files\gui\yaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisendscreen_screen\YAxisEndScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisspeedscreen_screen\YAxisSpeedScreenView.hpp">
+      <Filter>Header Files\gui\yaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisspeedscreen_screen\YAxisSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenView.hpp">
+      <Filter>Header Files\gui\yaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisstartscreen_screen\YAxisStartScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenView.hpp">
+      <Filter>Header Files\gui\yaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxistestsscreen_screen\YAxisTestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenView.hpp">
+      <Filter>Header Files\gui\zaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisendscreen_screen\ZAxisEndScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxisendscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisspeedscreen_screen\ZAxisSpeedScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisspeedscreen_screen\ZAxisSpeedScreenView.hpp">
+      <Filter>Header Files\gui\zaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisspeedscreen_screen\ZAxisSpeedScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxisspeedscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenView.hpp">
+      <Filter>Header Files\gui\zaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisstartscreen_screen\ZAxisStartScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenView.hpp">
+      <Filter>Header Files\gui\zaxistestsscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxistestsscreen_screen</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
