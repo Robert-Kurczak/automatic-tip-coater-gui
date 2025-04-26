@@ -55,7 +55,8 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void ATC_Init();
+void ATC_Loop();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
