@@ -119,7 +119,7 @@ int main(void)
   MX_SPI1_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-
+  ATC_Init();
   /* USER CODE END 2 */
 
   /* Initialize leds */
@@ -133,7 +133,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
+    ATC_Loop();
     /* USER CODE END WHILE */
 
   MX_TouchGFX_Process();
