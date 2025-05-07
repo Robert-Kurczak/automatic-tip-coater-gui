@@ -939,9 +939,14 @@ void LCD_DrawRectangle(
 }
 
 void ATC_Init() {
+    for (int i = 0; i < 5; i++) {
+        HAL_GPIO_TogglePin(LED1_GPIO_PORT, LED1_PIN);
+        HAL_Delay(1000);
+    }
+
     LCD_IO_Init();
     LCD_DrawRectangle(
-        0x00ff,
+        0x7FFF,
         0,
         0,
         250,
@@ -950,5 +955,6 @@ void ATC_Init() {
 }
 
 void ATC_Loop() {
-
+    HAL_GPIO_TogglePin(LED2_GPIO_PORT, LED2_PIN);
+    HAL_Delay(1000);
 }
