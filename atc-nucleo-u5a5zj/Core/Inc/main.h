@@ -60,6 +60,8 @@ void ATC_Loop();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LCD_RS_Pin GPIO_PIN_4
+#define LCD_RS_GPIO_Port GPIOF
 #define UCPD_FLT_Pin GPIO_PIN_14
 #define UCPD_FLT_GPIO_Port GPIOB
 #define UCPD_DBn_Pin GPIO_PIN_5
