@@ -69,7 +69,6 @@ void HAL_MspInit(void)
 
   __HAL_RCC_PWR_CLK_ENABLE();
   HAL_PWREx_EnableVddUSB();
-  HAL_PWREx_EnableVddIO2();
   HAL_PWREx_EnableVddA();
 
   /* System interrupt init*/
@@ -341,7 +340,7 @@ void HAL_PCD_MspInit(PCD_HandleTypeDef* hpcd)
   /** Initializes the peripherals clock
   */
     PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USBPHY;
-    PeriphClkInit.UsbPhyClockSelection = RCC_USBPHYCLKSOURCE_PLL1;
+    PeriphClkInit.UsbPhyClockSelection = RCC_USBPHYCLKSOURCE_HSE;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
     {
       Error_Handler();
@@ -423,7 +422,7 @@ static void HAL_FMC_MspInit(void){
   __HAL_RCC_FMC_CLK_ENABLE();
 
   /** FMC GPIO Configuration
-  PG1   ------> FMC_A11
+  PF0   ------> FMC_A0
   PE7   ------> FMC_D4
   PE8   ------> FMC_D5
   PE9   ------> FMC_D6
@@ -444,12 +443,12 @@ static void HAL_FMC_MspInit(void){
   PD5   ------> FMC_NWE
   PD7   ------> FMC_NE1
   */
-  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   GPIO_InitStruct.Alternate = GPIO_AF12_FMC;
-  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
   GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10
                           |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14
@@ -498,7 +497,7 @@ static void HAL_FMC_MspDeInit(void){
   __HAL_RCC_FMC_CLK_DISABLE();
 
   /** FMC GPIO Configuration
-  PG1   ------> FMC_A11
+  PF0   ------> FMC_A0
   PE7   ------> FMC_D4
   PE8   ------> FMC_D5
   PE9   ------> FMC_D6
@@ -519,7 +518,7 @@ static void HAL_FMC_MspDeInit(void){
   PD5   ------> FMC_NWE
   PD7   ------> FMC_NE1
   */
-  HAL_GPIO_DeInit(GPIOG, GPIO_PIN_1);
+  HAL_GPIO_DeInit(GPIOF, GPIO_PIN_0);
 
   HAL_GPIO_DeInit(GPIOE, GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10
                           |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14
