@@ -108,7 +108,7 @@ PointerAlignment: Left
 QualifierAlignment: Leave
 # QualifierOrder: []
 # RawStringFormats: 
-ReferenceAlignment: Right
+ReferenceAlignment: Left
 ReflowComments: true
 RemoveBracesLLVM: false
 RemoveParentheses: Leave

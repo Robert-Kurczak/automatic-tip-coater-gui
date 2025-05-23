@@ -8,3 +8,11 @@ FlexibleMemoryController::FlexibleMemoryController(
         reinterpret_cast<volatile uint16_t*>(registerAddress_)
     },
     dataAddress {reinterpret_cast<volatile uint16_t*>(dataAddress_)} {}
+
+void FlexibleMemoryController::writeRegister(const uint16_t value) {
+    *registerAddress = value;
+}
+
+void FlexibleMemoryController::writeData(const uint16_t value) {
+    *dataAddress = value;
+}

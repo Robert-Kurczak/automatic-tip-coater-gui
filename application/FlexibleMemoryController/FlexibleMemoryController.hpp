@@ -12,4 +12,7 @@ public:
         const uintptr_t registerAddress_,
         const uintptr_t dataAddress_
     );
+
+    void writeRegister(const uint16_t value);
+    void writeData(const uint16_t value);
 };
