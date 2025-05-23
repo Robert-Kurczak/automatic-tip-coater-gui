@@ -1,5 +1,7 @@
 #include "main.h"
 
+#include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
+
 #define FMC_BANK1_REG  ((uint16_t *) 0x60000000)
 #define FMC_BANK1_DATA ((uint16_t *) 0x60000002)
 
