@@ -12,4 +12,10 @@ public:
     DisplayWs17143(FlexibleMemoryController& flexibleMemoryController_);
 
     void init();
+    void setWindow(
+        const uint16_t startX,
+        const uint16_t endX,
+        const uint16_t startY,
+        const uint16_t endY
+    );
 };
