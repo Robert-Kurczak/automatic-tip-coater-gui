@@ -75,7 +75,6 @@ DisplayWs17143::DisplayWs17143(
 
 void DisplayWs17143::init() {
     // Add toggling reset pin first
-
     for (const DisplayCommand& command : proprietaryInitCommands) {
         command.execute(flexibleMemoryController);
     }
@@ -86,4 +85,34 @@ void DisplayWs17143::init() {
 
     enableDisplayCommand.execute(flexibleMemoryController);
     // Delay 10 ms
+}
+
+void DisplayWs17143::setWindow(
+    const uint16_t startX,
+    const uint16_t endX,
+    const uint16_t startY,
+    const uint16_t endY
+) {
+    const uint8_t xBytes[] {
+        uint8_t(startX >> 8),
+        uint8_t(startX & 0xFF),
+        uint8_t(endX >> 8),
+        uint8_t(endX & 0xFF)
+    };
+    const uint8_t yBytes[] {
+        uint8_t(startY >> 8),
+        uint8_t(startY & 0xFF),
+        uint8_t(endY >> 8),
+        uint8_t(endY & 0xFF)
+    };
+
+    for (uint8_t i = 0; i < 4; i++) {
+        flexibleMemoryController.writeRegister(0x2A00 + i);
+        flexibleMemoryController.writeData(xBytes[i]);
+    }
+
+    for (uint8_t i = 0; i < 4; i++) {
+        flexibleMemoryController.writeRegister(0x2B00 + i);
+        flexibleMemoryController.writeData(yBytes[i]);
+    }
 }
