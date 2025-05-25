@@ -1,5 +1,6 @@
 #pragma once
 
+#include "application/DelayProvider/DelayProvider.hpp"
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
 
 #include <stdint.h>
@@ -10,9 +11,13 @@ private:
     static const uint16_t HEIGHT = 800;
 
     FlexibleMemoryController& flexibleMemoryController;
+    DelayProvider& delayProvider;
 
 public:
-    DisplayWs17143(FlexibleMemoryController& flexibleMemoryController_);
+    DisplayWs17143(
+        FlexibleMemoryController& flexibleMemoryController_,
+        DelayProvider& delayProvider_
+    );
 
     void init();
     void setWindow(
