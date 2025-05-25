@@ -116,3 +116,23 @@ void DisplayWs17143::setWindow(
         flexibleMemoryController.writeData(yBytes[i]);
     }
 }
+
+void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
+    setWindow(0, WIDTH, 0, HEIGHT);
+    flexibleMemoryController.writeRegister(0x2C00);
+    // Delay 150 ms
+
+    for (uint16_t y = 0; y < HEIGHT; y++) {
+        for (uint16_t x = 0; x < WIDTH; x++) {
+            uint16_t color;
+            if (y < HEIGHT / 3) {
+                color = 0xF800 + colorOffset; // red
+            } else if (y < HEIGHT / 3 * 2) {
+                color = 0x07E0 / colorOffset; // green
+            } else {
+                color = 0x001F - colorOffset; // blue
+            }
+            flexibleMemoryController.writeData(color);
+        }
+    }
+}
