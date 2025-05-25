@@ -13,6 +13,12 @@ private:
     FlexibleMemoryController& flexibleMemoryController;
     DelayProvider& delayProvider;
 
+    void initProprietaryHardwareSettings();
+    void initProprietaryGammaSettings();
+    void initRGB565Format();
+    void exitSleepState();
+    void enableDisplay();
+
 public:
     DisplayWs17143(
         FlexibleMemoryController& flexibleMemoryController_,

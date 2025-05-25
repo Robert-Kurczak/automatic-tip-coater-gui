@@ -2,74 +2,72 @@
 
 #include <array>
 
-// TODO separate DisplayCommands?
-// TODO explicitly define register names?
 // TODO add rgb to rgb565 conversion
-// TODO remove execute function from DisplayCommand struct?
-namespace {
-struct DisplayCommand {
-    const uint16_t reg;
-    const uint16_t data;
 
-    void execute(FlexibleMemoryController& fmc) const {
-        fmc.writeRegister(reg);
-        fmc.writeData(data);
-    }
-};
-
-const std::array proprietaryInitCommands {
+void DisplayWs17143::initProprietaryHardwareSettings() {
     // Manufacturer Page 1 Commands Enable
-    DisplayCommand {.reg = 0xF000, .data = 0x55},
-    DisplayCommand {.reg = 0xF001, .data = 0xAA},
-    DisplayCommand {.reg = 0xF002, .data = 0x52},
-    DisplayCommand {.reg = 0xF003, .data = 0x08},
-    DisplayCommand {.reg = 0xF004, .data = 0x01},
+    flexibleMemoryController.write(0xF000, 0x50);
+    flexibleMemoryController.write(0xF001, 0xAA);
+    flexibleMemoryController.write(0xF002, 0x52);
+    flexibleMemoryController.write(0xF003, 0x08);
+    flexibleMemoryController.write(0xF004, 0x01);
     // AVDD: 5.2V
-    DisplayCommand {.reg = 0xB000, .data = 0x0D},
-    DisplayCommand {.reg = 0xB001, .data = 0x0D},
-    DisplayCommand {.reg = 0xB002, .data = 0x0D},
+    flexibleMemoryController.write(0xB000, 0x0D);
+    flexibleMemoryController.write(0xB001, 0x0D);
+    flexibleMemoryController.write(0xB002, 0x0D);
     // AVEE: -5.2V
-    DisplayCommand {.reg = 0xB100, .data = 0x0D},
-    DisplayCommand {.reg = 0xB101, .data = 0x0D},
-    DisplayCommand {.reg = 0xB102, .data = 0x0D},
+    flexibleMemoryController.write(0xB100, 0x0D);
+    flexibleMemoryController.write(0xB101, 0x0D);
+    flexibleMemoryController.write(0xB102, 0x0D);
     // VCL: -2.5V
-    DisplayCommand {.reg = 0xB200, .data = 0x00},
-    DisplayCommand {.reg = 0xB201, .data = 0x00},
-    DisplayCommand {.reg = 0xB202, .data = 0x00},
+    flexibleMemoryController.write(0xB200, 0x00);
+    flexibleMemoryController.write(0xB201, 0x00);
+    flexibleMemoryController.write(0xB202, 0x00);
     // VGH: 15V
-    DisplayCommand {.reg = 0xB300, .data = 0x05},
-    DisplayCommand {.reg = 0xB301, .data = 0x05},
-    DisplayCommand {.reg = 0xB302, .data = 0x05},
+    flexibleMemoryController.write(0xB300, 0x05);
+    flexibleMemoryController.write(0xB301, 0x05);
+    flexibleMemoryController.write(0xB302, 0x05);
     // VGL: -10V
-    DisplayCommand {.reg = 0xB500, .data = 0x28},
-    DisplayCommand {.reg = 0xB501, .data = 0x28},
-    DisplayCommand {.reg = 0xB502, .data = 0x28},
+    flexibleMemoryController.write(0xB500, 0x28);
+    flexibleMemoryController.write(0xB501, 0x28);
+    flexibleMemoryController.write(0xB502, 0x28);
     // VCOM: -1.375V
-    DisplayCommand {.reg = 0xB600, .data = 0x05},
-    DisplayCommand {.reg = 0xB601, .data = 0x05},
-    DisplayCommand {.reg = 0xB602, .data = 0x05},
-    // Gamma
-    DisplayCommand {.reg = 0xD100, .data = 0x00},
-    DisplayCommand {.reg = 0xD101, .data = 0x00},
-    DisplayCommand {.reg = 0xD102, .data = 0x00},
-    DisplayCommand {.reg = 0xD103, .data = 0x00},
-    DisplayCommand {.reg = 0xD104, .data = 0x00},
-    DisplayCommand {.reg = 0xD105, .data = 0x00},
-    DisplayCommand {.reg = 0xD106, .data = 0x00},
-    DisplayCommand {.reg = 0xD107, .data = 0x00},
-    DisplayCommand {.reg = 0xD108, .data = 0x00},
-    DisplayCommand {.reg = 0xD109, .data = 0x00},
-    DisplayCommand {.reg = 0xD10A, .data = 0x00},
-    DisplayCommand {.reg = 0xD10B, .data = 0x00},
-    DisplayCommand {.reg = 0xD10C, .data = 0x00},
-    DisplayCommand {.reg = 0xD10D, .data = 0x00},
-    DisplayCommand {.reg = 0xD10E, .data = 0x00},
-    DisplayCommand {.reg = 0xD10F, .data = 0x00}
-};
+    flexibleMemoryController.write(0xB600, 0x05);
+    flexibleMemoryController.write(0xB601, 0x05);
+    flexibleMemoryController.write(0xB602, 0x05);
+}
 
-const DisplayCommand formatRGB565Command {.reg = 0x3A00, .data = 0x55};
-const DisplayCommand exitSleepCommand {.reg = 0x1100, .data = 0x00};
-const DisplayCommand enableDisplayCommand {.reg = 2900, .data = 0x00};
+void DisplayWs17143::initProprietaryGammaSettings() {
+    flexibleMemoryController.write(0xD100, 0x00);
+    flexibleMemoryController.write(0xD101, 0x00);
+    flexibleMemoryController.write(0xD102, 0x00);
+    flexibleMemoryController.write(0xD103, 0x00);
+    flexibleMemoryController.write(0xD104, 0x00);
+    flexibleMemoryController.write(0xD105, 0x00);
+    flexibleMemoryController.write(0xD106, 0x00);
+    flexibleMemoryController.write(0xD107, 0x00);
+    flexibleMemoryController.write(0xD108, 0x00);
+    flexibleMemoryController.write(0xD109, 0x00);
+    flexibleMemoryController.write(0xD10A, 0x00);
+    flexibleMemoryController.write(0xD10B, 0x00);
+    flexibleMemoryController.write(0xD10C, 0x00);
+    flexibleMemoryController.write(0xD10D, 0x00);
+    flexibleMemoryController.write(0xD10E, 0x00);
+    flexibleMemoryController.write(0xD10F, 0x00);
+}
+
+void DisplayWs17143::initRGB565Format() {
+    flexibleMemoryController.write(0x3A00, 0x55);
+}
+
+void DisplayWs17143::exitSleepState() {
+    flexibleMemoryController.write(0x1100, 0x00);
+    delayProvider.delayMiliseconds(120);
+}
+
+void DisplayWs17143::enableDisplay() {
+    flexibleMemoryController.write(0x2900, 0x00);
+    delayProvider.delayMiliseconds(10);
 }
 
 DisplayWs17143::DisplayWs17143(
@@ -82,16 +80,11 @@ DisplayWs17143::DisplayWs17143(
 void DisplayWs17143::init() {
     // TODO Add toggling reset pin first
 
-    for (const DisplayCommand& command : proprietaryInitCommands) {
-        command.execute(flexibleMemoryController);
-    }
-
-    formatRGB565Command.execute(flexibleMemoryController);
-    exitSleepCommand.execute(flexibleMemoryController);
-    delayProvider.delayMiliseconds(120);
-
-    enableDisplayCommand.execute(flexibleMemoryController);
-    delayProvider.delayMiliseconds(10);
+    initProprietaryHardwareSettings();
+    initProprietaryGammaSettings();
+    initRGB565Format();
+    exitSleepState();
+    enableDisplay();
 }
 
 void DisplayWs17143::setWindow(
@@ -114,13 +107,11 @@ void DisplayWs17143::setWindow(
     };
 
     for (uint8_t i = 0; i < 4; i++) {
-        flexibleMemoryController.writeRegister(0x2A00 + i);
-        flexibleMemoryController.writeData(xBytes[i]);
+        flexibleMemoryController.write(0x2A00 + i, xBytes[i]);
     }
 
     for (uint8_t i = 0; i < 4; i++) {
-        flexibleMemoryController.writeRegister(0x2B00 + i);
-        flexibleMemoryController.writeData(yBytes[i]);
+        flexibleMemoryController.write(0x2B00 + i, yBytes[i]);
     }
 }
 
