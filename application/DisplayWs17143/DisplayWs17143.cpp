@@ -2,6 +2,10 @@
 
 #include <array>
 
+// TODO separate DisplayCommands?
+// TODO explicitly define register names?
+// TODO add rgb to rgb565 conversion
+// TODO remove execute function from DisplayCommand struct?
 namespace {
 struct DisplayCommand {
     const uint16_t reg;
@@ -69,22 +73,25 @@ const DisplayCommand enableDisplayCommand {.reg = 2900, .data = 0x00};
 }
 
 DisplayWs17143::DisplayWs17143(
-    FlexibleMemoryController& flexibleMemoryController_
+    FlexibleMemoryController& flexibleMemoryController_,
+    DelayProvider& delayProvider_
 ) :
-    flexibleMemoryController(flexibleMemoryController_) {}
+    flexibleMemoryController(flexibleMemoryController_),
+    delayProvider(delayProvider_) {}
 
 void DisplayWs17143::init() {
-    // Add toggling reset pin first
+    // TODO Add toggling reset pin first
+
     for (const DisplayCommand& command : proprietaryInitCommands) {
         command.execute(flexibleMemoryController);
     }
 
     formatRGB565Command.execute(flexibleMemoryController);
     exitSleepCommand.execute(flexibleMemoryController);
-    // Delay 120 ms
+    delayProvider.delayMiliseconds(120);
 
     enableDisplayCommand.execute(flexibleMemoryController);
-    // Delay 10 ms
+    delayProvider.delayMiliseconds(10);
 }
 
 void DisplayWs17143::setWindow(
@@ -120,7 +127,9 @@ void DisplayWs17143::setWindow(
 void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
     setWindow(0, WIDTH, 0, HEIGHT);
     flexibleMemoryController.writeRegister(0x2C00);
-    // Delay 150 ms
+    // TODO test is this delay really neccessary
+    // It's a lot
+    delayProvider.delayMiliseconds(150);
 
     for (uint16_t y = 0; y < HEIGHT; y++) {
         for (uint16_t x = 0; x < WIDTH; x++) {
