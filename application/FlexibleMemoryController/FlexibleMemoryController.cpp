@@ -16,3 +16,21 @@ void FlexibleMemoryController::writeRegister(const uint16_t value) {
 void FlexibleMemoryController::writeData(const uint16_t value) {
     *dataAddress = value;
 }
+
+void FlexibleMemoryController::write(
+    const uint16_t reg,
+    const uint16_t data
+) {
+    *registerAddress = reg;
+    *dataAddress = data;
+}
+
+uint16_t FlexibleMemoryController::readData() const {
+    return *dataAddress;
+}
+
+uint16_t FlexibleMemoryController::read(const uint16_t reg) const {
+    *registerAddress = reg;
+
+    return *dataAddress;
+}
