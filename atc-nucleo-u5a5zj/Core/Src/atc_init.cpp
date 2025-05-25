@@ -1,3 +1,5 @@
+#include "application/DelayProvider/DelayProvider.hpp"
+#include "application/DisplayWs17143/DisplayWs17143.hpp"
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "main.h"
 
@@ -5,6 +7,8 @@ FlexibleMemoryController flexibleMemoryController {
     0x60000000,
     0x60000002
 };
+DelayProvider delayProvider {};
+DisplayWs17143 display {flexibleMemoryController, delayProvider};
 
 void LCD_IO_SetWindow(
     uint16_t x0,
