@@ -6,6 +6,9 @@
 
 class DisplayWs17143 {
 private:
+    static const uint16_t WIDTH = 480;
+    static const uint16_t HEIGHT = 800;
+
     FlexibleMemoryController& flexibleMemoryController;
 
 public:
@@ -18,4 +21,5 @@ public:
         const uint16_t startY,
         const uint16_t endY
     );
+    void drawTestPattern(const uint8_t colorOffset);
 };
