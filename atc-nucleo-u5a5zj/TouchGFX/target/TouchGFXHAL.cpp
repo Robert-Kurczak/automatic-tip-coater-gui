@@ -23,8 +23,22 @@
 #include <TouchGFXHAL.hpp>
 
 /* USER CODE BEGIN TouchGFXHAL.cpp */
+#include <TouchGFXHAL.hpp>
+#include "application/DelayProvider/DelayProvider.hpp"
+#include "application/DisplayWs17143/DisplayWs17143.hpp"
+#include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
+
+// TODO remove when display reset is implemented inside display module
+#include "main.h"
 
 using namespace touchgfx;
+
+FlexibleMemoryController flexibleMemoryController {
+    0x60000000,
+    0x60000002
+};
+DelayProvider delayProvider {};
+DisplayWs17143 display {flexibleMemoryController, delayProvider};
 
 void TouchGFXHAL::initialize()
 {
@@ -33,8 +47,16 @@ void TouchGFXHAL::initialize()
     // To overwrite the generated implementation, omit the call to the parent function
     // and implement the needed functionality here.
     // Please note, HAL::initialize() must be called to initialize the framework.
-
     TouchGFXGeneratedHAL::initialize();
+
+    // TODO move to display module
+    HAL_GPIO_WritePin(LCD_RS_GPIO_Port, LCD_RS_Pin, GPIO_PIN_RESET);
+    HAL_Delay(50);
+    HAL_GPIO_WritePin(LCD_RS_GPIO_Port, LCD_RS_Pin, GPIO_PIN_SET);
+    HAL_Delay(50);
+
+    display.init();
+    display.drawTestPattern(80);
 }
 
 /**
