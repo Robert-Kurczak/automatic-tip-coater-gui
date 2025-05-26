@@ -98,17 +98,13 @@ void TouchGFXHAL::setTFTFrameBuffer(uint16_t* address)
  */
 void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect& rect)
 {
-    // Calling parent implementation of flushFrameBuffer(const touchgfx::Rect& rect).
-    //
-    // To overwrite the generated implementation, omit the call to the parent function
-    // and implement the needed functionality here.
-    // Please note, HAL::flushFrameBuffer(const touchgfx::Rect& rect) must
-    // be called to notify the touchgfx framework that flush has been performed.
-    // To calculate the start address of rect,
-    // use advanceFrameBufferToRect(uint8_t* fbPtr, const touchgfx::Rect& rect)
-    // defined in TouchGFXGeneratedHAL.cpp
+    const std::span<const uint16_t> frameBufferSpan {
+        getClientFrameBuffer(),
+        uint32_t(FRAME_BUFFER_WIDTH * FRAME_BUFFER_HEIGHT)
+    };
+    display.draw(frameBufferSpan);
 
-    TouchGFXGeneratedHAL::flushFrameBuffer(rect);
+    HAL::flushFrameBuffer(rect);
 }
 
 bool TouchGFXHAL::blockCopy(void* RESTRICT dest, const void* RESTRICT src, uint32_t numBytes)
