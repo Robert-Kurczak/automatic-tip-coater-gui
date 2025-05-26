@@ -136,3 +136,18 @@ void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
         }
     }
 }
+
+void DisplayWs17143::draw(const std::span<const uint16_t>& frameBuffer) {
+    setWindow(0, WIDTH, 0, HEIGHT);
+    flexibleMemoryController.writeRegister(0x2C00);
+    // TODO test is this delay really neccessary
+    // It's a lot
+    delayProvider.delayMiliseconds(150);
+
+    for (uint16_t y = 0; y < HEIGHT; y++) {
+        for (uint16_t x = 0; x < WIDTH; x++) {
+            const uint16_t color = frameBuffer[y * WIDTH + x];
+            flexibleMemoryController.writeData(color);
+        }
+    }
+}

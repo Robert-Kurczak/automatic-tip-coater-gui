@@ -4,6 +4,7 @@
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
 
 #include <stdint.h>
+#include <span>
 
 class DisplayWs17143 {
 private:
@@ -33,4 +34,5 @@ public:
         const uint16_t endY
     );
     void drawTestPattern(const uint8_t colorOffset);
+    void draw(const std::span<const uint16_t>& frameBuffer);
 };
