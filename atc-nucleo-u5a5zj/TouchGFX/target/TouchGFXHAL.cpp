@@ -56,7 +56,6 @@ void TouchGFXHAL::initialize()
     HAL_Delay(50);
 
     display.init();
-    display.drawTestPattern(80);
 }
 
 /**
@@ -102,7 +101,7 @@ void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect& rect)
         getClientFrameBuffer(),
         uint32_t(FRAME_BUFFER_WIDTH * FRAME_BUFFER_HEIGHT)
     };
-    display.draw(frameBufferSpan);
+    display.draw(frameBufferSpan, rect.x, rect.right(), rect.y, rect.bottom());
 
     HAL::flushFrameBuffer(rect);
 }
