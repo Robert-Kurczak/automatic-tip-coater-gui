@@ -3,8 +3,8 @@
 #include "application/DelayProvider/DelayProvider.hpp"
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
 
-#include <stdint.h>
 #include <span>
+#include <stdint.h>
 
 class DisplayWs17143 {
 private:
@@ -35,4 +35,11 @@ public:
     );
     void drawTestPattern(const uint8_t colorOffset);
     void draw(const std::span<const uint16_t>& frameBuffer);
+    void draw(
+        const std::span<const uint16_t>& frameBuffer,
+        const uint16_t xStart,
+        const uint16_t xEnd,
+        const uint16_t yStart,
+        const uint16_t yEnd
+    );
 };
