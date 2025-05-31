@@ -2,6 +2,7 @@
 
 #include "application/DelayProvider/DelayProvider.hpp"
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
+#include "application/GpioPin/GpioPin.hpp"
 
 #include <span>
 #include <stdint.h>
@@ -12,8 +13,11 @@ private:
     static const uint16_t HEIGHT = 800;
 
     FlexibleMemoryController& flexibleMemoryController;
+    GpioPin& lcdResetPin;
     DelayProvider& delayProvider;
 
+    void initResetLcdPin();
+    void resetLcd();
     void initProprietaryHardwareSettings();
     void initProprietaryGammaSettings();
     void initRGB565Format();
@@ -23,6 +27,7 @@ private:
 public:
     DisplayWs17143(
         FlexibleMemoryController& flexibleMemoryController_,
+        GpioPin& lcdResetPin_,
         DelayProvider& delayProvider_
     );
 

@@ -4,6 +4,17 @@
 
 // TODO add rgb to rgb565 conversion
 
+void DisplayWs17143::initResetLcdPin() {
+    lcdResetPin.setOutputMode();
+}
+
+void DisplayWs17143::resetLcd() {
+    lcdResetPin.setLow();
+    delayProvider.delayMiliseconds(50);
+    lcdResetPin.setHigh();
+    delayProvider.delayMiliseconds(50);
+}
+
 void DisplayWs17143::initProprietaryHardwareSettings() {
     // Manufacturer Page 1 Commands Enable
     flexibleMemoryController.write(0xF000, 0x50);
@@ -72,13 +83,16 @@ void DisplayWs17143::enableDisplay() {
 
 DisplayWs17143::DisplayWs17143(
     FlexibleMemoryController& flexibleMemoryController_,
+    GpioPin& lcdResetPin_,
     DelayProvider& delayProvider_
 ) :
     flexibleMemoryController(flexibleMemoryController_),
+    lcdResetPin(lcdResetPin_),
     delayProvider(delayProvider_) {}
 
 void DisplayWs17143::init() {
-    // TODO Add toggling reset pin first
+    initResetLcdPin();
+    resetLcd();
 
     initProprietaryHardwareSettings();
     initProprietaryGammaSettings();
@@ -116,7 +130,7 @@ void DisplayWs17143::setWindow(
 }
 
 void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
-    setWindow(0, WIDTH, 0, HEIGHT);
+    setWindow(0, WIDTH - 1, 0, HEIGHT - 1);
     flexibleMemoryController.writeRegister(0x2C00);
     // TODO test is this delay really neccessary
     // It's a lot
