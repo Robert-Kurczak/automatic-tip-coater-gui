@@ -27,6 +27,7 @@
 #include "application/DelayProvider/DelayProvider.hpp"
 #include "application/DisplayWs17143/DisplayWs17143.hpp"
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
+#include "application/GpioPin/GpioPin.hpp"
 
 // TODO remove when display reset is implemented inside display module
 #include "main.h"
@@ -38,7 +39,8 @@ FlexibleMemoryController flexibleMemoryController {
     0x60000002
 };
 DelayProvider delayProvider {};
-DisplayWs17143 display {flexibleMemoryController, delayProvider};
+GpioPin lcdResetPin {*LCD_RS_GPIO_Port, LCD_RS_Pin};
+DisplayWs17143 display {flexibleMemoryController, lcdResetPin, delayProvider};
 
 void TouchGFXHAL::initialize()
 {
@@ -48,12 +50,6 @@ void TouchGFXHAL::initialize()
     // and implement the needed functionality here.
     // Please note, HAL::initialize() must be called to initialize the framework.
     TouchGFXGeneratedHAL::initialize();
-
-    // TODO move to display module
-    HAL_GPIO_WritePin(LCD_RS_GPIO_Port, LCD_RS_Pin, GPIO_PIN_RESET);
-    HAL_Delay(50);
-    HAL_GPIO_WritePin(LCD_RS_GPIO_Port, LCD_RS_Pin, GPIO_PIN_SET);
-    HAL_Delay(50);
 
     display.init();
 }
