@@ -34,6 +34,7 @@
 
 using namespace touchgfx;
 
+// TODO inject display and touch controller objects by ServiceLocator
 FlexibleMemoryController flexibleMemoryController {
     0x60000000,
     0x60000002
