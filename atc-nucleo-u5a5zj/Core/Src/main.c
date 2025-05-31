@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "app_touchgfx.h"
+#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -50,6 +51,8 @@ DMA2D_HandleTypeDef hdma2d;
 
 SPI_HandleTypeDef hspi1;
 
+UART_HandleTypeDef huart1;
+
 PCD_HandleTypeDef hpcd_USB_OTG_HS;
 
 SRAM_HandleTypeDef hsram1;
@@ -69,12 +72,21 @@ static void MX_CRC_Init(void);
 static void MX_DMA2D_Init(void);
 static void MX_FMC_Init(void);
 static void MX_SPI1_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+void debug_print(const char* string)
+{
+    while (*string){
+        while (__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TXE) == RESET);
+        HAL_UART_Transmit(&huart1, &(*string++), 1, HAL_MAX_DELAY);
+      }
+}
 
 /* USER CODE END 0 */
 
@@ -118,6 +130,7 @@ int main(void)
   MX_DMA2D_Init();
   MX_FMC_Init();
   MX_SPI1_Init();
+  MX_USART1_UART_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
@@ -137,6 +150,23 @@ int main(void)
   while (1)
   {
 		ATC_Loop();
+
+    HAL_GPIO_WritePin(TouchPanel_CS_GPIO_Port, TouchPanel_CS_Pin, GPIO_PIN_RESET);
+
+    uint8_t cmd = 0x90;
+    HAL_StatusTypeDef status =  HAL_SPI_Transmit(&hspi1, &cmd, 1, HAL_MAX_DELAY);
+
+    uint8_t recv[2] = {0};
+    HAL_SPI_Receive(&hspi1, recv, 2, HAL_MAX_DELAY);
+
+    HAL_GPIO_WritePin(TouchPanel_CS_GPIO_Port, TouchPanel_CS_Pin, GPIO_PIN_SET);
+
+    uint16_t raw = ((recv[0] << 8) | recv[1]) >> 4;
+
+    char str[10];
+    sprintf(str, "%d\r\n\0", raw);
+    debug_print(str);
+
     /* USER CODE END WHILE */
 
   MX_TouchGFX_Process();
@@ -442,6 +472,54 @@ static void MX_SPI1_Init(void)
   /* USER CODE BEGIN SPI1_Init 2 */
 
   /* USER CODE END SPI1_Init 2 */
+
+}
+
+/**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
+  huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_UARTEx_SetTxFifoThreshold(&huart1, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_UARTEx_SetRxFifoThreshold(&huart1, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_UARTEx_DisableFifoMode(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
 
 }
 
