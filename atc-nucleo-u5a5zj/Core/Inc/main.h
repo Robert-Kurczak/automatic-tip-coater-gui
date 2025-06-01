@@ -62,6 +62,8 @@ void ATC_Loop();
 /* Private defines -----------------------------------------------------------*/
 #define LCD_RS_Pin GPIO_PIN_4
 #define LCD_RS_GPIO_Port GPIOF
+#define TouchPanel_IRQ_Pin GPIO_PIN_4
+#define TouchPanel_IRQ_GPIO_Port GPIOA
 #define TouchPanel_CS_Pin GPIO_PIN_5
 #define TouchPanel_CS_GPIO_Port GPIOA
 #define UCPD_FLT_Pin GPIO_PIN_14

@@ -12,6 +12,7 @@ private:
 
     Spi& spi;
     GpioPin& chipSelectPin;
+    GpioPin& touchInterruptPin;
 
     const uint16_t xPixels;
     const uint16_t yPixels;
@@ -25,6 +26,7 @@ public:
     TouchControllerXpt2046(
         Spi& spi_,
         GpioPin& chipSelectPin_,
+        GpioPin& touchInterruptPin_,
         uint16_t xPixels_,
         uint16_t yPixels_,
         uint16_t maxRawValueX_,
@@ -32,6 +34,8 @@ public:
     );
 
     void init();
+
+    bool isTouched();
 
     uint16_t readRawX();
     uint16_t readRawY();

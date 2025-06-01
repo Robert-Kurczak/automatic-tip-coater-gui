@@ -627,6 +627,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LCD_RS_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : TouchPanel_IRQ_Pin */
+  GPIO_InitStruct.Pin = TouchPanel_IRQ_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(TouchPanel_IRQ_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : TouchPanel_CS_Pin */
   GPIO_InitStruct.Pin = TouchPanel_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;

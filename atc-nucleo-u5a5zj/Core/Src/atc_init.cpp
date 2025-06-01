@@ -12,9 +12,14 @@ GpioPin touchControllerChipSelectPin {
     *TouchPanel_CS_GPIO_Port,
     TouchPanel_CS_Pin
 };
+GpioPin touchControllerInterruptPin {
+    *TouchPanel_IRQ_GPIO_Port,
+    TouchPanel_IRQ_Pin
+};
 TouchControllerXpt2046 touchController {
     spi,
     touchControllerChipSelectPin,
+    touchControllerInterruptPin,
     480,
     800,
     2047,
