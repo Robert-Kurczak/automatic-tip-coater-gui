@@ -3,7 +3,7 @@
 
 Spi::Spi(SPI_HandleTypeDef& spiHandle_) : spiHandle(spiHandle_) {}
 
-void Spi::sendData(const std::span<uint8_t>& data) {
+void Spi::sendData(const std::span<const uint8_t>& data) {
     HAL_SPI_Transmit(&spiHandle, data.data(), data.size(), HAL_MAX_DELAY);
 }
 
