@@ -22,8 +22,10 @@ TouchControllerXpt2046 touchController {
     touchControllerInterruptPin,
     480,
     800,
-    2047,
-    2047
+    130,
+    1900,
+    104,
+    1950
 };
 
 void debug_print(const char* string) {

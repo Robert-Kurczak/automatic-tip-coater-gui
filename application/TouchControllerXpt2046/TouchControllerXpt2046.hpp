@@ -17,7 +17,9 @@ private:
     const uint16_t xPixels;
     const uint16_t yPixels;
 
+    const uint16_t minRawValueX;
     const uint16_t maxRawValueX;
+    const uint16_t minRawValueY;
     const uint16_t maxRawValueY;
 
     uint16_t sendReadCommand(uint8_t command);
@@ -29,7 +31,9 @@ public:
         GpioPin& touchInterruptPin_,
         uint16_t xPixels_,
         uint16_t yPixels_,
+        uint16_t minRawValueX_,
         uint16_t maxRawValueX_,
+        uint16_t minRawValueY_,
         uint16_t maxRawValueY_
     );
 

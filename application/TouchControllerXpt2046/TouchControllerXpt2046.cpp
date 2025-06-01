@@ -19,7 +19,9 @@ TouchControllerXpt2046::TouchControllerXpt2046(
     GpioPin& touchInterruptPin_,
     uint16_t xPixels_,
     uint16_t yPixels_,
+    uint16_t minRawValueX_,
     uint16_t maxRawValueX_,
+    uint16_t minRawValueY_,
     uint16_t maxRawValueY_
 ) :
     spi(spi_),
@@ -27,7 +29,9 @@ TouchControllerXpt2046::TouchControllerXpt2046(
     touchInterruptPin(touchInterruptPin_),
     xPixels(xPixels_),
     yPixels(yPixels_),
+    minRawValueX(minRawValueX_),
     maxRawValueX(maxRawValueX_),
+    minRawValueY(minRawValueY_),
     maxRawValueY(maxRawValueY_) {}
 
 void TouchControllerXpt2046::init() {
@@ -60,11 +64,14 @@ uint16_t TouchControllerXpt2046::readRawY() {
 uint16_t TouchControllerXpt2046::readX() {
     const uint16_t rawXValue = readRawX();
 
-    return rawXValue * xPixels / maxRawValueX;
+    return (rawXValue - minRawValueX) * xPixels /
+           (maxRawValueX - minRawValueX);
 }
 
+// TODO handle underflows when rawValue comes up smaller that minRawValue
 uint16_t TouchControllerXpt2046::readY() {
     const uint16_t rawYValue = readRawY();
 
-    return rawYValue * yPixels / maxRawValueY;
+    return (rawYValue - minRawValueY) * yPixels /
+           (maxRawValueY - minRawValueY);
 }
