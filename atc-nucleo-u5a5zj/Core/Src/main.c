@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "app_touchgfx.h"
-#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -79,14 +78,6 @@ static void MX_USART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-void debug_print(const char* string)
-{
-    while (*string){
-        while (__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TXE) == RESET);
-        HAL_UART_Transmit(&huart1, &(*string++), 1, HAL_MAX_DELAY);
-      }
-}
 
 /* USER CODE END 0 */
 
@@ -150,22 +141,6 @@ int main(void)
   while (1)
   {
 		ATC_Loop();
-
-    HAL_GPIO_WritePin(TouchPanel_CS_GPIO_Port, TouchPanel_CS_Pin, GPIO_PIN_RESET);
-
-    uint8_t cmd = 0x90;
-    HAL_StatusTypeDef status =  HAL_SPI_Transmit(&hspi1, &cmd, 1, HAL_MAX_DELAY);
-
-    uint8_t recv[2] = {0};
-    HAL_SPI_Receive(&hspi1, recv, 2, HAL_MAX_DELAY);
-
-    HAL_GPIO_WritePin(TouchPanel_CS_GPIO_Port, TouchPanel_CS_Pin, GPIO_PIN_SET);
-
-    uint16_t raw = ((recv[0] << 8) | recv[1]) >> 4;
-
-    char str[10];
-    sprintf(str, "%d\r\n\0", raw);
-    debug_print(str);
 
     /* USER CODE END WHILE */
 
