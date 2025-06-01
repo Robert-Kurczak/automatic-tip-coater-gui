@@ -7,8 +7,8 @@
 
 class TouchControllerXpt2046 {
 private:
-    static const uint8_t readXCommand = 0x90;
-    static const uint8_t readYCommand = 0xD0;
+    static const uint8_t readXCommand = 0xD0;
+    static const uint8_t readYCommand = 0x90;
 
     Spi& spi;
     GpioPin& chipSelectPin;
