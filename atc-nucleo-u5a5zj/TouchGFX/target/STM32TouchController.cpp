@@ -78,17 +78,23 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
      */
 
     if (touchController.isTouched()) {
-      x = touchController.readX();
-      y = 800 - touchController.readY();
+      int32_t new_x = 0;
+      int32_t new_y = 0;
+
+      for(int i = 0; i < 10; i++){
+        new_x += touchController.readX();
+        new_y += 800 - touchController.readY();
+      }
+
+      x = new_x / 10;
+      y = new_y / 10;
 
       char str[256];
       sprintf(
           str,
-          "x: %d, y: %d | x: %dpx, y: %dpx\r\n",
-          touchController.readRawX(),
-          touchController.readRawY(),
-          touchController.readX(),
-          touchController.readY()
+          "x: %d, y: %d\r\n",
+          x,
+          y
       );
       debug_print(str);
 
