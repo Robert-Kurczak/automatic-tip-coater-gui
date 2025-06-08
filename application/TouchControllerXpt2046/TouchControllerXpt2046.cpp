@@ -1,5 +1,6 @@
 #include "TouchControllerXpt2046.hpp"
 
+namespace ATC {
 uint16_t TouchControllerXpt2046::sendReadCommand(uint8_t command) {
     chipSelectPin.setLow();
 
@@ -17,22 +18,14 @@ TouchControllerXpt2046::TouchControllerXpt2046(
     Spi& spi_,
     GpioPin& chipSelectPin_,
     GpioPin& touchInterruptPin_,
-    uint16_t xPixels_,
-    uint16_t yPixels_,
-    uint16_t minRawValueX_,
-    uint16_t maxRawValueX_,
-    uint16_t minRawValueY_,
-    uint16_t maxRawValueY_
+    Rectangle rawWorkingArea_,
+    Vector2 pixelResolution_
 ) :
     spi(spi_),
     chipSelectPin(chipSelectPin_),
     touchInterruptPin(touchInterruptPin_),
-    xPixels(xPixels_),
-    yPixels(yPixels_),
-    minRawValueX(minRawValueX_),
-    maxRawValueX(maxRawValueX_),
-    minRawValueY(minRawValueY_),
-    maxRawValueY(maxRawValueY_) {}
+    rawWorkingArea(rawWorkingArea_),
+    pixelResolution(pixelResolution_) {}
 
 void TouchControllerXpt2046::init() {
     touchInterruptPin.setInputMode();
@@ -64,14 +57,15 @@ uint16_t TouchControllerXpt2046::readRawY() {
 uint16_t TouchControllerXpt2046::readX() {
     const uint16_t rawXValue = readRawX();
 
-    return (rawXValue - minRawValueX) * xPixels /
-           (maxRawValueX - minRawValueX);
+    return (rawXValue - rawWorkingArea.xStart) * pixelResolution.x /
+           (rawWorkingArea.xEnd - rawWorkingArea.xStart);
 }
 
 // TODO handle underflows when rawValue comes up smaller that minRawValue
 uint16_t TouchControllerXpt2046::readY() {
     const uint16_t rawYValue = readRawY();
 
-    return (rawYValue - minRawValueY) * yPixels /
-           (maxRawValueY - minRawValueY);
+    return (rawYValue - rawWorkingArea.yStart) * pixelResolution.y /
+           (rawWorkingArea.yEnd - rawWorkingArea.yStart);
+}
 }

@@ -27,6 +27,8 @@
 #include "application/TouchControllerXpt2046/TouchControllerXpt2046.hpp"
 #include "main.h"
 
+using namespace ATC;
+
 extern SPI_HandleTypeDef hspi1;
 extern UART_HandleTypeDef huart1;
 
@@ -43,12 +45,13 @@ TouchControllerXpt2046 touchController {
     spi,
     touchControllerChipSelectPin,
     touchControllerInterruptPin,
-    480,
-    800,
-    130,
-    1900,
-    80,
-    1950
+    Rectangle {
+        .xStart = 130,
+        .xEnd = 1900,
+        .yStart = 80,
+        .yEnd = 1950
+    },
+    Vector2 {.x = 480, .y = 800}
 };
 
 void debug_print(const char* string) {

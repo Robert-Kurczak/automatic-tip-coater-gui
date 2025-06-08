@@ -1,10 +1,12 @@
 #pragma once
 
 #include "application/GpioPin/GpioPin.hpp"
+#include "application/Math/Math.hpp"
 #include "application/Spi/Spi.hpp"
 
 #include <stdint.h>
 
+namespace ATC {
 class TouchControllerXpt2046 {
 private:
     static const uint8_t readXCommand = 0xD0;
@@ -13,14 +15,8 @@ private:
     Spi& spi;
     GpioPin& chipSelectPin;
     GpioPin& touchInterruptPin;
-
-    const uint16_t xPixels;
-    const uint16_t yPixels;
-
-    const uint16_t minRawValueX;
-    const uint16_t maxRawValueX;
-    const uint16_t minRawValueY;
-    const uint16_t maxRawValueY;
+    Rectangle rawWorkingArea;
+    const Vector2 pixelResolution;
 
     uint16_t sendReadCommand(uint8_t command);
 
@@ -29,12 +25,8 @@ public:
         Spi& spi_,
         GpioPin& chipSelectPin_,
         GpioPin& touchInterruptPin_,
-        uint16_t xPixels_,
-        uint16_t yPixels_,
-        uint16_t minRawValueX_,
-        uint16_t maxRawValueX_,
-        uint16_t minRawValueY_,
-        uint16_t maxRawValueY_
+        Rectangle rawWorkingArea_,
+        Vector2 pixelResolution_
     );
 
     void init();
@@ -47,3 +39,4 @@ public:
     uint16_t readX();
     uint16_t readY();
 };
+}
