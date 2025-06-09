@@ -33,6 +33,7 @@
 #include "main.h"
 
 using namespace touchgfx;
+using namespace ATC;
 
 // TODO inject display and touch controller objects by ServiceLocator
 FlexibleMemoryController flexibleMemoryController {
@@ -41,7 +42,12 @@ FlexibleMemoryController flexibleMemoryController {
 };
 DelayProvider delayProvider {};
 GpioPin lcdResetPin {*LCD_RS_GPIO_Port, LCD_RS_Pin};
-DisplayWs17143 display {flexibleMemoryController, lcdResetPin, delayProvider};
+Ws17143Pinout pinout {.lcdResetPin_ = lcdResetPin};
+DisplayWs17143 display {
+    pinout,
+    flexibleMemoryController,
+    delayProvider
+};
 
 void TouchGFXHAL::initialize()
 {
@@ -98,7 +104,17 @@ void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect& rect)
         getClientFrameBuffer(),
         uint32_t(FRAME_BUFFER_WIDTH * FRAME_BUFFER_HEIGHT)
     };
-    display.draw(frameBufferSpan, rect.x, rect.right(), rect.y, rect.bottom());
+    // display.draw(frameBufferSpan, rect.x, rect.right(), rect.y, rect.bottom());
+
+    display.draw(
+        frameBufferSpan,
+        ATC::Rectangle {
+            .xStart_ = uint16_t(rect.x),
+            .xEnd_ = uint16_t(rect.right() - 1),
+            .yStart_ = uint16_t(rect.y),
+            .yEnd_ = uint16_t(rect.bottom() - 1)
+        }
+    );
 
     HAL::flushFrameBuffer(rect);
 }

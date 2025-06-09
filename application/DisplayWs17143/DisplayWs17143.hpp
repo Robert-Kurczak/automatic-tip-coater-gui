@@ -3,17 +3,23 @@
 #include "application/DelayProvider/DelayProvider.hpp"
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/GpioPin/GpioPin.hpp"
+#include "application/Math/Math.hpp"
 
 #include <span>
 #include <stdint.h>
+
+namespace ATC {
+struct Ws17143Pinout {
+    GpioPin& lcdResetPin_;
+};
 
 class DisplayWs17143 {
 private:
     static const uint16_t WIDTH_ = 480;
     static const uint16_t HEIGHT_ = 800;
 
+    Ws17143Pinout& pinout_;
     FlexibleMemoryController& flexibleMemoryController_;
-    GpioPin& lcdResetPin_;
     DelayProvider& delayProvider_;
 
     void initResetLcdPin();
@@ -26,25 +32,18 @@ private:
 
 public:
     DisplayWs17143(
+        Ws17143Pinout& pinout,
         FlexibleMemoryController& flexibleMemoryController,
-        GpioPin& lcdResetPin,
         DelayProvider& delayProvider
     );
 
     void init();
-    void setWindow(
-        const uint16_t startX,
-        const uint16_t endX,
-        const uint16_t startY,
-        const uint16_t endY
-    );
+    void setWindow(const Rectangle& window);
     void drawTestPattern(const uint8_t colorOffset);
     void draw(const std::span<const uint16_t>& frameBuffer);
     void draw(
         const std::span<const uint16_t>& frameBuffer,
-        const uint16_t xStart,
-        const uint16_t xEnd,
-        const uint16_t yStart,
-        const uint16_t yEnd
+        const Rectangle& window
     );
 };
+}

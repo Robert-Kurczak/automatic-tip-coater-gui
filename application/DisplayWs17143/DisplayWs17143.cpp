@@ -5,14 +5,16 @@
 // TODO add rgb to rgb565 conversion
 // TODO remove visible noise on bootup
 
+namespace ATC {
+
 void DisplayWs17143::initResetLcdPin() {
-    lcdResetPin_.setOutputMode();
+    pinout_.lcdResetPin_.setOutputMode();
 }
 
 void DisplayWs17143::resetLcd() {
-    lcdResetPin_.setLow();
+    pinout_.lcdResetPin_.setLow();
     delayProvider_.delayMiliseconds(50);
-    lcdResetPin_.setHigh();
+    pinout_.lcdResetPin_.setHigh();
     delayProvider_.delayMiliseconds(50);
 }
 
@@ -83,12 +85,12 @@ void DisplayWs17143::enableDisplay() {
 }
 
 DisplayWs17143::DisplayWs17143(
+    Ws17143Pinout& pinout,
     FlexibleMemoryController& flexibleMemoryController,
-    GpioPin& lcdResetPin,
     DelayProvider& delayProvider
 ) :
+    pinout_(pinout),
     flexibleMemoryController_(flexibleMemoryController),
-    lcdResetPin_(lcdResetPin),
     delayProvider_(delayProvider) {}
 
 void DisplayWs17143::init() {
@@ -102,23 +104,18 @@ void DisplayWs17143::init() {
     enableDisplay();
 }
 
-void DisplayWs17143::setWindow(
-    const uint16_t startX,
-    const uint16_t endX,
-    const uint16_t startY,
-    const uint16_t endY
-) {
+void DisplayWs17143::setWindow(const Rectangle& window) {
     const uint8_t xBytes[] {
-        uint8_t(startX >> 8),
-        uint8_t(startX & 0xFF),
-        uint8_t(endX >> 8),
-        uint8_t(endX & 0xFF)
+        uint8_t(window.xStart_ >> 8),
+        uint8_t(window.xStart_ & 0xFF),
+        uint8_t(window.xEnd_ >> 8),
+        uint8_t(window.xEnd_ & 0xFF)
     };
     const uint8_t yBytes[] {
-        uint8_t(startY >> 8),
-        uint8_t(startY & 0xFF),
-        uint8_t(endY >> 8),
-        uint8_t(endY & 0xFF)
+        uint8_t(window.yStart_ >> 8),
+        uint8_t(window.yStart_ & 0xFF),
+        uint8_t(window.yEnd_ >> 8),
+        uint8_t(window.yEnd_ & 0xFF)
     };
 
     for (uint8_t i = 0; i < 4; i++) {
@@ -131,7 +128,15 @@ void DisplayWs17143::setWindow(
 }
 
 void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
-    setWindow(0, WIDTH_ - 1, 0, HEIGHT_ - 1);
+    setWindow(
+        Rectangle {
+            .xStart_ = 0,
+            .xEnd_ = WIDTH_ - 1,
+            .yStart_ = 0,
+            .yEnd_ = HEIGHT_ - 1
+        }
+    );
+
     flexibleMemoryController_.writeRegister(0x2C00);
     // TODO test is this delay really neccessary
     // It's a lot
@@ -153,7 +158,15 @@ void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
 }
 
 void DisplayWs17143::draw(const std::span<const uint16_t>& frameBuffer) {
-    setWindow(0, WIDTH_ - 1, 0, HEIGHT_ - 1);
+    setWindow(
+        Rectangle {
+            .xStart_ = 0,
+            .xEnd_ = WIDTH_ - 1,
+            .yStart_ = 0,
+            .yEnd_ = HEIGHT_ - 1
+        }
+    );
+
     flexibleMemoryController_.writeRegister(0x2C00);
 
     for (uint16_t y = 0; y < HEIGHT_; y++) {
@@ -166,19 +179,17 @@ void DisplayWs17143::draw(const std::span<const uint16_t>& frameBuffer) {
 
 void DisplayWs17143::draw(
     const std::span<const uint16_t>& frameBuffer,
-    const uint16_t xStart,
-    const uint16_t xEnd,
-    const uint16_t yStart,
-    const uint16_t yEnd
+    const Rectangle& window
 ) {
-    setWindow(xStart, xEnd - 1, yStart, yEnd - 1);
+    setWindow(window);
+
     flexibleMemoryController_.writeRegister(0x2C00);
 
-    // TODO work on draw area parameters
-    for (uint16_t y = yStart; y < yEnd; y++) {
-        for (uint16_t x = xStart; x < xEnd; x++) {
+    for (uint16_t y = window.yStart_; y <= window.yEnd_; y++) {
+        for (uint16_t x = window.xStart_; x <= window.xEnd_; x++) {
             const uint16_t color = frameBuffer[y * WIDTH_ + x];
             flexibleMemoryController_.writeData(color);
         }
     }
+}
 }
