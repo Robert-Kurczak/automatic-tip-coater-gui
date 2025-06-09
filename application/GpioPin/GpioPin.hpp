@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stm32u5a5xx.h>
 
+namespace ATC {
 class GpioPin {
 private:
     GPIO_TypeDef& port_;
@@ -29,3 +30,4 @@ public:
     void setHigh();
     void setLow();
 };
+}

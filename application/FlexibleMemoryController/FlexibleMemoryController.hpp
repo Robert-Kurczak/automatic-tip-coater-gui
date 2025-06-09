@@ -2,6 +2,7 @@
 
 #include <stdint.h>
 
+namespace ATC {
 class FlexibleMemoryController {
 private:
     volatile uint16_t* registerAddress_;
@@ -20,3 +21,4 @@ public:
     uint16_t readData() const;
     uint16_t read(const uint16_t reg) const;
 };
+}

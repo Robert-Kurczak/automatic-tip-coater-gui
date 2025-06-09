@@ -1,5 +1,6 @@
 #include "FlexibleMemoryController.hpp"
 
+namespace ATC {
 FlexibleMemoryController::FlexibleMemoryController(
     const uintptr_t registerAddress,
     const uintptr_t dataAddress
@@ -33,4 +34,5 @@ uint16_t FlexibleMemoryController::read(const uint16_t reg) const {
     *registerAddress_ = reg;
 
     return *dataAddress_;
+}
 }

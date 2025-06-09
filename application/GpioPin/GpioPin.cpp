@@ -1,7 +1,8 @@
 #include "GpioPin.hpp"
-
 #include "main.h"
 
+
+namespace ATC {
 void GpioPin::setGpioConfig(
     uint32_t mode,
     uint32_t pull,
@@ -48,4 +49,5 @@ void GpioPin::setHigh() {
 
 void GpioPin::setLow() {
     HAL_GPIO_WritePin(&port_, pin_, GPIO_PIN_RESET);
+}
 }
