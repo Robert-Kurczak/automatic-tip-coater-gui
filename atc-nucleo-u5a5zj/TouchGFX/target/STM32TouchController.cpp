@@ -41,10 +41,13 @@ GpioPin touchControllerInterruptPin {
     *TouchPanel_IRQ_GPIO_Port,
     TouchPanel_IRQ_Pin
 };
+Xpt2046Pinout xpt2046Pinout {
+    .chipSelectPin_ = touchControllerChipSelectPin,
+    .touchInterruptPin_ = touchControllerInterruptPin
+};
 TouchControllerXpt2046 touchController {
+    xpt2046Pinout,
     spi,
-    touchControllerChipSelectPin,
-    touchControllerInterruptPin,
     Rectangle {
         .xStart_ = 130,
         .xEnd_ = 1900,
