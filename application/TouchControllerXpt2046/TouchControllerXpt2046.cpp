@@ -2,40 +2,38 @@
 
 namespace ATC {
 uint16_t TouchControllerXpt2046::sendReadCommand(uint8_t command) {
-    chipSelectPin_.setLow();
+    pinout_.chipSelectPin_.setLow();
 
     uint8_t outputBuffer[2];
 
     spi_.sendData({&command, 1});
     spi_.receiveData(outputBuffer);
 
-    chipSelectPin_.setHigh();
+    pinout_.chipSelectPin_.setHigh();
 
     return ((outputBuffer[0] << 8) | outputBuffer[1]) >> 4;
 }
 
 TouchControllerXpt2046::TouchControllerXpt2046(
+    Xpt2046Pinout& pinout,
     Spi& spi,
-    GpioPin& chipSelectPin,
-    GpioPin& touchInterruptPin,
     Rectangle rawWorkingArea,
     Vector2 pixelResolution
 ) :
+    pinout_(pinout),
     spi_(spi),
-    chipSelectPin_(chipSelectPin),
-    touchInterruptPin_(touchInterruptPin),
     rawWorkingArea_(rawWorkingArea),
     pixelResolution_(pixelResolution) {}
 
 void TouchControllerXpt2046::init() {
-    touchInterruptPin_.setInputMode();
+    pinout_.touchInterruptPin_.setInputMode();
 
-    chipSelectPin_.setOutputMode();
-    chipSelectPin_.setHigh();
+    pinout_.chipSelectPin_.setOutputMode();
+    pinout_.chipSelectPin_.setHigh();
 }
 
 bool TouchControllerXpt2046::isTouched() {
-    return !touchInterruptPin_.isHigh();
+    return !pinout_.touchInterruptPin_.isHigh();
 }
 
 uint16_t TouchControllerXpt2046::readRawX() {

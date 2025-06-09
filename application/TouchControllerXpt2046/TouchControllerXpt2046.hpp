@@ -7,14 +7,18 @@
 #include <stdint.h>
 
 namespace ATC {
+struct Xpt2046Pinout {
+    GpioPin& chipSelectPin_;
+    GpioPin& touchInterruptPin_;
+};
+
 class TouchControllerXpt2046 {
 private:
     static const uint8_t readXCommand_ = 0xD0;
     static const uint8_t readYCommand_ = 0x90;
 
+    Xpt2046Pinout& pinout_;
     Spi& spi_;
-    GpioPin& chipSelectPin_;
-    GpioPin& touchInterruptPin_;
     Rectangle rawWorkingArea_;
     const Vector2 pixelResolution_;
 
@@ -22,9 +26,8 @@ private:
 
 public:
     TouchControllerXpt2046(
+        Xpt2046Pinout& pinout,
         Spi& spi,
-        GpioPin& chipSelectPin,
-        GpioPin& touchInterruptPin,
         Rectangle rawWorkingArea,
         Vector2 pixelResolution
     );
