@@ -9,24 +9,24 @@
 namespace ATC {
 class TouchControllerXpt2046 {
 private:
-    static const uint8_t readXCommand = 0xD0;
-    static const uint8_t readYCommand = 0x90;
+    static const uint8_t readXCommand_ = 0xD0;
+    static const uint8_t readYCommand_ = 0x90;
 
-    Spi& spi;
-    GpioPin& chipSelectPin;
-    GpioPin& touchInterruptPin;
-    Rectangle rawWorkingArea;
-    const Vector2 pixelResolution;
+    Spi& spi_;
+    GpioPin& chipSelectPin_;
+    GpioPin& touchInterruptPin_;
+    Rectangle rawWorkingArea_;
+    const Vector2 pixelResolution_;
 
     uint16_t sendReadCommand(uint8_t command);
 
 public:
     TouchControllerXpt2046(
-        Spi& spi_,
-        GpioPin& chipSelectPin_,
-        GpioPin& touchInterruptPin_,
-        Rectangle rawWorkingArea_,
-        Vector2 pixelResolution_
+        Spi& spi,
+        GpioPin& chipSelectPin,
+        GpioPin& touchInterruptPin,
+        Rectangle rawWorkingArea,
+        Vector2 pixelResolution
     );
 
     void init();

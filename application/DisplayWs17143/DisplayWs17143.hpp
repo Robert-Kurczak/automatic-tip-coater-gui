@@ -9,12 +9,12 @@
 
 class DisplayWs17143 {
 private:
-    static const uint16_t WIDTH = 480;
-    static const uint16_t HEIGHT = 800;
+    static const uint16_t WIDTH_ = 480;
+    static const uint16_t HEIGHT_ = 800;
 
-    FlexibleMemoryController& flexibleMemoryController;
-    GpioPin& lcdResetPin;
-    DelayProvider& delayProvider;
+    FlexibleMemoryController& flexibleMemoryController_;
+    GpioPin& lcdResetPin_;
+    DelayProvider& delayProvider_;
 
     void initResetLcdPin();
     void resetLcd();
@@ -26,9 +26,9 @@ private:
 
 public:
     DisplayWs17143(
-        FlexibleMemoryController& flexibleMemoryController_,
-        GpioPin& lcdResetPin_,
-        DelayProvider& delayProvider_
+        FlexibleMemoryController& flexibleMemoryController,
+        GpioPin& lcdResetPin,
+        DelayProvider& delayProvider
     );
 
     void init();

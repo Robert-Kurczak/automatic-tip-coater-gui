@@ -1,5 +1,7 @@
 #include "DelayProvider.hpp"
 
+#include <stdint.h>
+
 // TODO remove this dependency
 #include "../../atc-nucleo-u5a5zj/Core/Inc/main.h"
 

@@ -2,40 +2,40 @@
 
 namespace ATC {
 uint16_t TouchControllerXpt2046::sendReadCommand(uint8_t command) {
-    chipSelectPin.setLow();
+    chipSelectPin_.setLow();
 
     uint8_t outputBuffer[2];
 
-    spi.sendData({&command, 1});
-    spi.receiveData(outputBuffer);
+    spi_.sendData({&command, 1});
+    spi_.receiveData(outputBuffer);
 
-    chipSelectPin.setHigh();
+    chipSelectPin_.setHigh();
 
     return ((outputBuffer[0] << 8) | outputBuffer[1]) >> 4;
 }
 
 TouchControllerXpt2046::TouchControllerXpt2046(
-    Spi& spi_,
-    GpioPin& chipSelectPin_,
-    GpioPin& touchInterruptPin_,
-    Rectangle rawWorkingArea_,
-    Vector2 pixelResolution_
+    Spi& spi,
+    GpioPin& chipSelectPin,
+    GpioPin& touchInterruptPin,
+    Rectangle rawWorkingArea,
+    Vector2 pixelResolution
 ) :
-    spi(spi_),
-    chipSelectPin(chipSelectPin_),
-    touchInterruptPin(touchInterruptPin_),
-    rawWorkingArea(rawWorkingArea_),
-    pixelResolution(pixelResolution_) {}
+    spi_(spi),
+    chipSelectPin_(chipSelectPin),
+    touchInterruptPin_(touchInterruptPin),
+    rawWorkingArea_(rawWorkingArea),
+    pixelResolution_(pixelResolution) {}
 
 void TouchControllerXpt2046::init() {
-    touchInterruptPin.setInputMode();
+    touchInterruptPin_.setInputMode();
 
-    chipSelectPin.setOutputMode();
-    chipSelectPin.setHigh();
+    chipSelectPin_.setOutputMode();
+    chipSelectPin_.setHigh();
 }
 
 bool TouchControllerXpt2046::isTouched() {
-    return !touchInterruptPin.isHigh();
+    return !touchInterruptPin_.isHigh();
 }
 
 uint16_t TouchControllerXpt2046::readRawX() {
@@ -43,7 +43,7 @@ uint16_t TouchControllerXpt2046::readRawX() {
         return UINT16_MAX;
     }
 
-    return sendReadCommand(readXCommand);
+    return sendReadCommand(readXCommand_);
 }
 
 uint16_t TouchControllerXpt2046::readRawY() {
@@ -51,21 +51,21 @@ uint16_t TouchControllerXpt2046::readRawY() {
         return UINT16_MAX;
     }
 
-    return sendReadCommand(readYCommand);
+    return sendReadCommand(readYCommand_);
 }
 
 uint16_t TouchControllerXpt2046::readX() {
     const uint16_t rawXValue = readRawX();
 
-    return (rawXValue - rawWorkingArea.xStart) * pixelResolution.x /
-           (rawWorkingArea.xEnd - rawWorkingArea.xStart);
+    return (rawXValue - rawWorkingArea_.xStart_) * pixelResolution_.x_ /
+           (rawWorkingArea_.xEnd_ - rawWorkingArea_.xStart_);
 }
 
 // TODO handle underflows when rawValue comes up smaller that minRawValue
 uint16_t TouchControllerXpt2046::readY() {
     const uint16_t rawYValue = readRawY();
 
-    return (rawYValue - rawWorkingArea.yStart) * pixelResolution.y /
-           (rawWorkingArea.yEnd - rawWorkingArea.yStart);
+    return (rawYValue - rawWorkingArea_.yStart_) * pixelResolution_.y_ /
+           (rawWorkingArea_.yEnd_ - rawWorkingArea_.yStart_);
 }
 }

@@ -46,12 +46,12 @@ TouchControllerXpt2046 touchController {
     touchControllerChipSelectPin,
     touchControllerInterruptPin,
     Rectangle {
-        .xStart = 130,
-        .xEnd = 1900,
-        .yStart = 80,
-        .yEnd = 1950
+        .xStart_ = 130,
+        .xEnd_ = 1900,
+        .yStart_ = 80,
+        .yEnd_ = 1950
     },
-    Vector2 {.x = 480, .y = 800}
+    Vector2 {.x_ = 480, .y_ = 800}
 };
 
 void debug_print(const char* string) {

@@ -4,14 +4,14 @@
 
 namespace ATC {
 struct Vector2 {
-    uint16_t x;
-    uint16_t y;
+    uint16_t x_;
+    uint16_t y_;
 };
 
 struct Rectangle {
-    uint16_t xStart;
-    uint16_t xEnd;
-    uint16_t yStart;
-    uint16_t yEnd;
+    uint16_t xStart_;
+    uint16_t xEnd_;
+    uint16_t yStart_;
+    uint16_t yEnd_;
 };
 }
