@@ -7,8 +7,8 @@
 
 class GpioPin {
 private:
-    GPIO_TypeDef& port;
-    const uint16_t pin;
+    GPIO_TypeDef& port_;
+    const uint16_t pin_;
 
     void setGpioConfig(
         uint32_t mode = 0,
@@ -18,7 +18,7 @@ private:
     );
 
 public:
-    GpioPin(GPIO_TypeDef& port_, const uint16_t pin_);
+    GpioPin(GPIO_TypeDef& port, const uint16_t pin);
 
     void setInputMode();
     void setInputPullUpMode();

@@ -9,18 +9,18 @@ void GpioPin::setGpioConfig(
     uint32_t alternate
 ) {
     GPIO_InitTypeDef initStruct {0};
-    initStruct.Pin = pin;
+    initStruct.Pin = pin_;
     initStruct.Mode = mode;
     initStruct.Pull = pull;
     initStruct.Speed = speed;
     initStruct.Alternate = alternate;
-    HAL_GPIO_DeInit(&port, pin);
-    HAL_GPIO_Init(&port, &initStruct);
+    HAL_GPIO_DeInit(&port_, pin_);
+    HAL_GPIO_Init(&port_, &initStruct);
 }
 
-GpioPin::GpioPin(GPIO_TypeDef& port_, const uint16_t pin_) :
-    port(port_),
-    pin(pin_) {}
+GpioPin::GpioPin(GPIO_TypeDef& port, const uint16_t pin) :
+    port_(port),
+    pin_(pin) {}
 
 void GpioPin::setInputMode() {
     setGpioConfig(GPIO_MODE_INPUT, GPIO_NOPULL);
@@ -35,7 +35,7 @@ void GpioPin::setInputPullDownMode() {
 }
 
 bool GpioPin::isHigh() {
-    return HAL_GPIO_ReadPin(&port, pin) == GPIO_PIN_SET;
+    return HAL_GPIO_ReadPin(&port_, pin_) == GPIO_PIN_SET;
 }
 
 void GpioPin::setOutputMode() {
@@ -43,9 +43,9 @@ void GpioPin::setOutputMode() {
 }
 
 void GpioPin::setHigh() {
-    HAL_GPIO_WritePin(&port, pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(&port_, pin_, GPIO_PIN_SET);
 }
 
 void GpioPin::setLow() {
-    HAL_GPIO_WritePin(&port, pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(&port_, pin_, GPIO_PIN_RESET);
 }

@@ -4,13 +4,13 @@
 
 class FlexibleMemoryController {
 private:
-    volatile uint16_t* registerAddress;
-    volatile uint16_t* dataAddress;
+    volatile uint16_t* registerAddress_;
+    volatile uint16_t* dataAddress_;
 
 public:
     FlexibleMemoryController(
-        const uintptr_t registerAddress_,
-        const uintptr_t dataAddress_
+        const uintptr_t registerAddress,
+        const uintptr_t dataAddress
     );
 
     void writeRegister(const uint16_t value);
