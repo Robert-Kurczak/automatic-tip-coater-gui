@@ -24,7 +24,7 @@ private:
     Rectangle rawWorkingArea_;
     const Vector2 pixelResolution_;
 
-    uint16_t sendReadCommand(uint8_t command);
+    uint16_t transferReadCommand(uint8_t command);
 
 public:
     TouchControllerXpt2046(

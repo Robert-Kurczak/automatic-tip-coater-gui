@@ -1,7 +1,7 @@
 #include "TouchControllerXpt2046.hpp"
 
 namespace ATC {
-uint16_t TouchControllerXpt2046::sendReadCommand(uint8_t command) {
+uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {
     pinout_.chipSelectPin_.setLow();
 
     uint8_t outputBuffer[2];
@@ -33,7 +33,12 @@ void TouchControllerXpt2046::init() {
 }
 
 bool TouchControllerXpt2046::isTouched() {
-    return !pinout_.touchInterruptPin_.isHigh();
+    static const uint16_t pressureTreshold = 1500;
+
+    const bool isTouchDetected = !pinout_.touchInterruptPin_.isHigh();
+    const bool isPressedEnough = readRawPressure() <= pressureTreshold;
+
+    return isTouchDetected && isPressedEnough;
 }
 
 uint16_t TouchControllerXpt2046::readRawX() {
@@ -41,7 +46,7 @@ uint16_t TouchControllerXpt2046::readRawX() {
         return UINT16_MAX;
     }
 
-    return sendReadCommand(readXCommand_);
+    return transferReadCommand(readXCommand_);
 }
 
 uint16_t TouchControllerXpt2046::readRawY() {
@@ -49,12 +54,12 @@ uint16_t TouchControllerXpt2046::readRawY() {
         return UINT16_MAX;
     }
 
-    return sendReadCommand(readYCommand_);
+    return transferReadCommand(readYCommand_);
 }
 
 uint16_t TouchControllerXpt2046::readRawPressure() {
-    const uint16_t rawZ1Value = sendReadCommand(readZ1Command_);
-    const uint16_t rawZ2Value = sendReadCommand(readZ2Command_);
+    const uint16_t rawZ1Value = transferReadCommand(readZ1Command_);
+    const uint16_t rawZ2Value = transferReadCommand(readZ2Command_);
 
     const uint16_t rawPressure = (rawZ2Value > rawZ1Value)
                                      ? (rawZ2Value - rawZ1Value)
