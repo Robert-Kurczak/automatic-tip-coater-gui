@@ -16,6 +16,8 @@ class TouchControllerXpt2046 {
 private:
     static const uint8_t readXCommand_ = 0xD0;
     static const uint8_t readYCommand_ = 0x90;
+    static const uint8_t readZ1Command_ = 0xB0;
+    static const uint8_t readZ2Command_ = 0xC0;
 
     Xpt2046Pinout& pinout_;
     Spi& spi_;
@@ -38,6 +40,7 @@ public:
 
     uint16_t readRawX();
     uint16_t readRawY();
+    uint16_t readRawPressure();
 
     uint16_t readX();
     uint16_t readY();

@@ -52,6 +52,17 @@ uint16_t TouchControllerXpt2046::readRawY() {
     return sendReadCommand(readYCommand_);
 }
 
+uint16_t TouchControllerXpt2046::readRawPressure() {
+    const uint16_t rawZ1Value = sendReadCommand(readZ1Command_);
+    const uint16_t rawZ2Value = sendReadCommand(readZ2Command_);
+
+    const uint16_t rawPressure = (rawZ2Value > rawZ1Value)
+                                     ? (rawZ2Value - rawZ1Value)
+                                     : (rawZ1Value - rawZ2Value);
+
+    return rawPressure;
+}
+
 uint16_t TouchControllerXpt2046::readX() {
     const uint16_t rawXValue = readRawX();
 
