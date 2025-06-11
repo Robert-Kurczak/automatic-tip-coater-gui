@@ -67,7 +67,7 @@ void debug_print(const char* string) {
 
 void STM32TouchController::init()
 {
-  touchController.init();
+    touchController.init();
 }
 
 bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
@@ -84,27 +84,22 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
      */
 
     if (touchController.isTouched()) {
-      int32_t new_x = 0;
-      int32_t new_y = 0;
+        x = touchController.readX();
+        y = 800 - touchController.readY();
 
-      for(int i = 0; i < 10; i++){
-        new_x += touchController.readX();
-        new_y += 800 - touchController.readY();
-      }
+        char str[2048];
+        sprintf(
+            str,
+            "x: %d, y: %d | raw x: %d, raw y: %d, raw z: %d\r\n",
+            x,
+            y,
+            touchController.readRawX(),
+            touchController.readRawY(),
+            touchController.readRawPressure()
+        );
+        debug_print(str);
 
-      x = new_x / 10;
-      y = new_y / 10;
-
-      char str[256];
-      sprintf(
-          str,
-          "x: %d, y: %d\r\n",
-          x,
-          y
-      );
-      debug_print(str);
-
-      return true;
+        return true;
     }
 
     return false;
