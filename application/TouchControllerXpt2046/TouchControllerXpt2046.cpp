@@ -42,14 +42,19 @@ bool TouchControllerXpt2046::isTouched() {
     const bool isPressedEnough = readRawPressure() <= pressureTreshold;
     const bool isCurrentlyTouched = isTouchDetected && isPressedEnough;
 
+    // TODO abstract out this GetTick
     if (!wasTouched && isCurrentlyTouched) {
-        HAL_Delay(20);
+        if (HAL_GetTick() - debounceStart >= 50) {
+            wasTouched = true;
+        }
     }
     else if (wasTouched && !isCurrentlyTouched) {
-
+        wasTouched = false;
+    }
+    else {
+        debounceStart = HAL_GetTick();
     }
 
-    wasTouched = isCurrentlyTouched;
     return wasTouched;
 }
 
