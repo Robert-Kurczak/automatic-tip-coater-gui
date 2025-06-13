@@ -1,5 +1,5 @@
 #include "TouchControllerXpt2046.hpp"
-
+// TODO average few samples
 namespace ATC {
 uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {
     pinout_.chipSelectPin_.setLow();
@@ -12,6 +12,17 @@ uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {
     pinout_.chipSelectPin_.setHigh();
 
     return ((outputBuffer[0] << 8) | outputBuffer[1]) >> 4;
+}
+
+uint16_t TouchControllerXpt2046::getFilteredReading(uint8_t command) {
+    static const uint8_t SAMPLES_AMOUNT = 5;
+
+    uint16_t average = 0;
+    for (uint8_t i = 0; i < SAMPLES_AMOUNT; i++) {
+        average += transferReadCommand(command);
+    }
+
+    return average / SAMPLES_AMOUNT;
 }
 
 TouchControllerXpt2046::TouchControllerXpt2046(
@@ -47,11 +58,9 @@ bool TouchControllerXpt2046::isTouched() {
         if (HAL_GetTick() - debounceStart >= 50) {
             wasTouched = true;
         }
-    }
-    else if (wasTouched && !isCurrentlyTouched) {
+    } else if (wasTouched && !isCurrentlyTouched) {
         wasTouched = false;
-    }
-    else {
+    } else {
         debounceStart = HAL_GetTick();
     }
 
@@ -63,7 +72,7 @@ uint16_t TouchControllerXpt2046::readRawX() {
         return UINT16_MAX;
     }
 
-    return transferReadCommand(readXCommand_);
+    return getFilteredReading(readXCommand_);
 }
 
 uint16_t TouchControllerXpt2046::readRawY() {
@@ -71,7 +80,7 @@ uint16_t TouchControllerXpt2046::readRawY() {
         return UINT16_MAX;
     }
 
-    return transferReadCommand(readYCommand_);
+    return getFilteredReading(readYCommand_);
 }
 
 uint16_t TouchControllerXpt2046::readRawPressure() {
