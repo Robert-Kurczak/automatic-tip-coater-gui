@@ -33,12 +33,24 @@ void TouchControllerXpt2046::init() {
 }
 
 bool TouchControllerXpt2046::isTouched() {
+    static bool wasTouched = false;
+    static uint32_t debounceStart = 0;
+
     static const uint16_t pressureTreshold = 1500;
 
     const bool isTouchDetected = !pinout_.touchInterruptPin_.isHigh();
     const bool isPressedEnough = readRawPressure() <= pressureTreshold;
+    const bool isCurrentlyTouched = isTouchDetected && isPressedEnough;
 
-    return isTouchDetected && isPressedEnough;
+    if (!wasTouched && isCurrentlyTouched) {
+        HAL_Delay(20);
+    }
+    else if (wasTouched && !isCurrentlyTouched) {
+
+    }
+
+    wasTouched = isCurrentlyTouched;
+    return wasTouched;
 }
 
 uint16_t TouchControllerXpt2046::readRawX() {
