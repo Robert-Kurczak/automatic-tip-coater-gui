@@ -25,6 +25,7 @@ private:
     const Vector2 pixelResolution_;
 
     uint16_t transferReadCommand(uint8_t command);
+    uint16_t getFilteredReading(uint8_t command);
 
 public:
     TouchControllerXpt2046(
