@@ -83,21 +83,11 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
      *
      */
 
-    if (touchController.isTouched()) {
-        x = touchController.readX();
-        y = 800 - touchController.readY();
+    Vector2 position = touchController.readPosition();
 
-        char str[2048];
-        sprintf(
-            str,
-            "x: %d, y: %d | raw x: %d, raw y: %d, raw z: %d\r\n",
-            x,
-            y,
-            touchController.readRawX(),
-            touchController.readRawY(),
-            touchController.readRawPressure()
-        );
-        debug_print(str);
+    if (position.x_ != UINT16_MAX && position.y_ != UINT16_MAX) {
+        x = position.x_;
+        y = 800 - position.y_;
 
         return true;
     }
