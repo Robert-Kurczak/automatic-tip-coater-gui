@@ -1,5 +1,6 @@
 #include "TouchControllerXpt2046.hpp"
-// TODO average few samples
+#include "application/UartLogger/UartLogger.hpp"
+
 namespace ATC {
 uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {
     pinout_.chipSelectPin_.setLow();
@@ -14,15 +15,46 @@ uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {
     return ((outputBuffer[0] << 8) | outputBuffer[1]) >> 4;
 }
 
-uint16_t TouchControllerXpt2046::getFilteredReading(uint8_t command) {
-    static const uint8_t SAMPLES_AMOUNT = 5;
+Vector2 TouchControllerXpt2046::getFilteredRawPosition() {
+    uint8_t samplesTaken = 0;
+    uint32_t averageX = 0;
+    uint32_t averageY = 0;
 
-    uint16_t average = 0;
-    for (uint8_t i = 0; i < SAMPLES_AMOUNT; i++) {
-        average += transferReadCommand(command);
+    while (!pinout_.touchInterruptPin_.isHigh() && samplesTaken < 10) {
+        averageX += transferReadCommand(READ_X_COMMAND_);
+        averageY += transferReadCommand(READ_Y_COMMAND_);
+        samplesTaken++;
     }
 
-    return average / SAMPLES_AMOUNT;
+    averageX /= samplesTaken;
+    averageY /= samplesTaken;
+
+    return Vector2 {.x_ = uint16_t(averageX), .y_ = uint16_t(averageY)};
+}
+
+Vector2 TouchControllerXpt2046::interpolateRawPosition(
+    const Vector2& rawPosition
+) {
+    const uint32_t xNumerator =
+        uint32_t(rawPosition.x_ - rawWorkingArea_.xStart_) *
+        uint32_t(pixelResolution_.x_);
+
+    const uint32_t xDenominator =
+        uint32_t(rawWorkingArea_.xEnd_ - rawWorkingArea_.xStart_);
+
+    const uint32_t yNumerator =
+        uint32_t(rawPosition.y_ - rawWorkingArea_.yStart_) *
+        uint32_t(pixelResolution_.y_);
+
+    const uint32_t yDenominator =
+        uint32_t(rawWorkingArea_.yEnd_ - rawWorkingArea_.yStart_);
+
+    Vector2 interpolatedPosition {
+        .x_ = uint16_t(xNumerator / xDenominator),
+        .y_ = uint16_t(yNumerator / yDenominator)
+    };
+
+    return interpolatedPosition;
 }
 
 TouchControllerXpt2046::TouchControllerXpt2046(
@@ -43,49 +75,39 @@ void TouchControllerXpt2046::init() {
     pinout_.chipSelectPin_.setHigh();
 }
 
-bool TouchControllerXpt2046::isTouched() {
-    static bool wasTouched = false;
-    static uint32_t debounceStart = 0;
-
-    static const uint16_t pressureTreshold = 1500;
-
+bool TouchControllerXpt2046::isPressed() {
     const bool isTouchDetected = !pinout_.touchInterruptPin_.isHigh();
-    const bool isPressedEnough = readRawPressure() <= pressureTreshold;
-    const bool isCurrentlyTouched = isTouchDetected && isPressedEnough;
 
-    // TODO abstract out this GetTick
-    if (!wasTouched && isCurrentlyTouched) {
-        if (HAL_GetTick() - debounceStart >= 50) {
-            wasTouched = true;
+    if (!isTouchDetected) {
+        return false;
+    }
+
+    const bool isPressedEnough = readRawPressure() <= PRESSURE_TRESHOLD_;
+
+    if (!wasTouched && isPressedEnough) {
+        if (!debounceInProgress) {
+            debounceInProgress = true;
+            debounceStartTimestamp = HAL_GetTick();
         }
-    } else if (wasTouched && !isCurrentlyTouched) {
+
+        if (HAL_GetTick() - debounceStartTimestamp >= DEBOUNCE_MS_) {
+            wasTouched = true;
+            debounceInProgress = false;
+        }
+    }
+    else if (wasTouched && !isPressedEnough) {
         wasTouched = false;
-    } else {
-        debounceStart = HAL_GetTick();
+    }
+    else {
+        debounceInProgress = false;
     }
 
     return wasTouched;
 }
 
-uint16_t TouchControllerXpt2046::readRawX() {
-    if (!isTouched()) {
-        return UINT16_MAX;
-    }
-
-    return getFilteredReading(readXCommand_);
-}
-
-uint16_t TouchControllerXpt2046::readRawY() {
-    if (!isTouched()) {
-        return UINT16_MAX;
-    }
-
-    return getFilteredReading(readYCommand_);
-}
-
 uint16_t TouchControllerXpt2046::readRawPressure() {
-    const uint16_t rawZ1Value = transferReadCommand(readZ1Command_);
-    const uint16_t rawZ2Value = transferReadCommand(readZ2Command_);
+    const uint16_t rawZ1Value = transferReadCommand(READ_Z1_COMMAND_);
+    const uint16_t rawZ2Value = transferReadCommand(READ_Z2_COMMAND_);
 
     const uint16_t rawPressure = (rawZ2Value > rawZ1Value)
                                      ? (rawZ2Value - rawZ1Value)
@@ -94,18 +116,12 @@ uint16_t TouchControllerXpt2046::readRawPressure() {
     return rawPressure;
 }
 
-uint16_t TouchControllerXpt2046::readX() {
-    const uint16_t rawXValue = readRawX();
+Vector2 TouchControllerXpt2046::readPosition() {
+    if (!isPressed()) {
+        return Vector2 {.x_ = UINT16_MAX, .y_ = UINT16_MAX};
+    }
 
-    return (rawXValue - rawWorkingArea_.xStart_) * pixelResolution_.x_ /
-           (rawWorkingArea_.xEnd_ - rawWorkingArea_.xStart_);
-}
-
-// TODO handle underflows when rawValue comes up smaller that minRawValue
-uint16_t TouchControllerXpt2046::readY() {
-    const uint16_t rawYValue = readRawY();
-
-    return (rawYValue - rawWorkingArea_.yStart_) * pixelResolution_.y_ /
-           (rawWorkingArea_.yEnd_ - rawWorkingArea_.yStart_);
+    Vector2 rawPosition = getFilteredRawPosition();
+    return interpolateRawPosition(rawPosition);
 }
 }
