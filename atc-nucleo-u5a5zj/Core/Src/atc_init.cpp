@@ -3,6 +3,13 @@
 
 void ATC_Init() {}
 
+
+static uint32_t vSyncStart = 0;
 void ATC_Loop() {
-    touchgfx::OSWrappers::signalVSync();
+    const uint32_t currentTime = HAL_GetTick();
+
+    if(currentTime - vSyncStart >= 17) {
+        touchgfx::OSWrappers::signalVSync();
+        vSyncStart = currentTime;
+    }
 }
