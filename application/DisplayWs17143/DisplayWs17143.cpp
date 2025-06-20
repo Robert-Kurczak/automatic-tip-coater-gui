@@ -25,30 +25,105 @@ void DisplayWs17143::initProprietaryHardwareSettings() {
     flexibleMemoryController_.write(0xF002, 0x52);
     flexibleMemoryController_.write(0xF003, 0x08);
     flexibleMemoryController_.write(0xF004, 0x01);
-    // AVDD: 5.2V
+
     flexibleMemoryController_.write(0xB000, 0x0D);
     flexibleMemoryController_.write(0xB001, 0x0D);
     flexibleMemoryController_.write(0xB002, 0x0D);
-    // AVEE: -5.2V
+
     flexibleMemoryController_.write(0xB100, 0x0D);
     flexibleMemoryController_.write(0xB101, 0x0D);
     flexibleMemoryController_.write(0xB102, 0x0D);
-    // VCL: -2.5V
+
     flexibleMemoryController_.write(0xB200, 0x00);
     flexibleMemoryController_.write(0xB201, 0x00);
     flexibleMemoryController_.write(0xB202, 0x00);
-    // VGH: 15V
+
     flexibleMemoryController_.write(0xB300, 0x05);
     flexibleMemoryController_.write(0xB301, 0x05);
     flexibleMemoryController_.write(0xB302, 0x05);
-    // VGL: -10V
-    flexibleMemoryController_.write(0xB500, 0x28);
-    flexibleMemoryController_.write(0xB501, 0x28);
-    flexibleMemoryController_.write(0xB502, 0x28);
-    // VCOM: -1.375V
-    flexibleMemoryController_.write(0xB600, 0x05);
-    flexibleMemoryController_.write(0xB601, 0x05);
-    flexibleMemoryController_.write(0xB602, 0x05);
+
+    flexibleMemoryController_.write(0xB500, 0x0B);
+    flexibleMemoryController_.write(0xB501, 0x0B);
+    flexibleMemoryController_.write(0xB502, 0x0B);
+
+    flexibleMemoryController_.write(0xB600, 0x34);
+    flexibleMemoryController_.write(0xB601, 0x34);
+    flexibleMemoryController_.write(0xB602, 0x34);
+
+    flexibleMemoryController_.write(0xB701, 0x24);
+    flexibleMemoryController_.write(0xB701, 0x24);
+    flexibleMemoryController_.write(0xB701, 0x24);
+
+    flexibleMemoryController_.write(0xB800, 0x24);
+    flexibleMemoryController_.write(0xB801, 0x24);
+    flexibleMemoryController_.write(0xB802, 0x24);
+
+    flexibleMemoryController_.write(0xB900, 0x24);
+    flexibleMemoryController_.write(0xB901, 0x24);
+    flexibleMemoryController_.write(0xB902, 0x24);
+
+    flexibleMemoryController_.write(0xBA00, 0x34);
+    flexibleMemoryController_.write(0xBA01, 0x34);
+    flexibleMemoryController_.write(0xBA02, 0x34);
+
+    flexibleMemoryController_.write(0xBC00, 0x00);
+    flexibleMemoryController_.write(0xBC01, 0xA3);
+    flexibleMemoryController_.write(0xBC02, 0x00);
+
+    flexibleMemoryController_.write(0xBD00, 0x00);
+    flexibleMemoryController_.write(0xBD01, 0xA3);
+    flexibleMemoryController_.write(0xBD02, 0x00);
+
+    flexibleMemoryController_.write(0xBE00, 0x00);
+    flexibleMemoryController_.write(0xBE01, 0x63);
+
+    // Manufacturer Page 0 Commands Enable
+    flexibleMemoryController_.write(0xF000, 0x55);
+    flexibleMemoryController_.write(0xF001, 0xAA);
+    flexibleMemoryController_.write(0xF002, 0x52);
+    flexibleMemoryController_.write(0xF003, 0x08);
+    flexibleMemoryController_.write(0xF004, 0x00);
+
+    flexibleMemoryController_.write(0x3500, 0x00);
+    flexibleMemoryController_.write(0x3600, 0x00);
+
+    flexibleMemoryController_.write(0xB000, 0x08);
+    flexibleMemoryController_.write(0xB001, 0x05);
+    flexibleMemoryController_.write(0xB002, 0x02);
+    flexibleMemoryController_.write(0xB003, 0x05);
+    flexibleMemoryController_.write(0xB004, 0x02);
+
+    flexibleMemoryController_.write(0xB600, 0x08);
+    flexibleMemoryController_.write(0xB500, 0x50); // 480x800
+
+    flexibleMemoryController_.write(0xB700, 0x00);
+    flexibleMemoryController_.write(0xB701, 0x00);
+    
+    flexibleMemoryController_.write(0xB800, 0x01);
+    flexibleMemoryController_.write(0xB801, 0x05);
+    flexibleMemoryController_.write(0xB802, 0x05);
+    flexibleMemoryController_.write(0xB803, 0x05);
+
+    flexibleMemoryController_.write(0xBA00, 0x01);
+
+    flexibleMemoryController_.write(0xBC00, 0x00);
+    flexibleMemoryController_.write(0xBC01, 0x00);
+    flexibleMemoryController_.write(0xBC02, 0x00);
+
+    flexibleMemoryController_.write(0xBD00, 0x01);
+    flexibleMemoryController_.write(0xBD01, 0x84);
+    flexibleMemoryController_.write(0xBD02, 0x07);
+    flexibleMemoryController_.write(0xBD03, 0x31);
+    flexibleMemoryController_.write(0xBD04, 0x00);
+
+    flexibleMemoryController_.write(0xCC00, 0x03);
+    flexibleMemoryController_.write(0xCC01, 0x00);
+    flexibleMemoryController_.write(0xCC02, 0x00);
+
+    flexibleMemoryController_.write(0xFF00, 0xAA);
+    flexibleMemoryController_.write(0xFF01, 0x55);
+    flexibleMemoryController_.write(0xFF02, 0x25);
+    flexibleMemoryController_.write(0xFF03, 0x01);
 }
 
 void DisplayWs17143::initProprietaryGammaSettings() {
