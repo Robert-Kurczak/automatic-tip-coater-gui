@@ -29,6 +29,8 @@ private:
     void initRGB565Format();
     void exitSleepState();
     void enableDisplay();
+    void setAllPixelsOff();
+    void displayFramebuffer();
 
 public:
     DisplayWs17143(
@@ -40,10 +42,14 @@ public:
     void init();
     void setWindow(const Rectangle& window);
     void drawTestPattern(const uint8_t colorOffset);
-    void draw(const std::span<const uint16_t>& frameBuffer);
     void draw(
         const std::span<const uint16_t>& frameBuffer,
-        const Rectangle& window
+        const Rectangle& window = {
+            .xStart_ = 0,
+            .xEnd_ = WIDTH_ - 1,
+            .yStart_ = 0,
+            .yEnd_ = HEIGHT_ - 1
+        }
     );
 };
 }

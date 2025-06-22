@@ -2,9 +2,6 @@
 
 #include <array>
 
-// TODO add rgb to rgb565 conversion
-// TODO remove visible noise on bootup
-
 namespace ATC {
 
 void DisplayWs17143::initResetLcdPin() {
@@ -98,7 +95,7 @@ void DisplayWs17143::initProprietaryHardwareSettings() {
 
     flexibleMemoryController_.write(0xB700, 0x00);
     flexibleMemoryController_.write(0xB701, 0x00);
-    
+
     flexibleMemoryController_.write(0xB800, 0x01);
     flexibleMemoryController_.write(0xB801, 0x05);
     flexibleMemoryController_.write(0xB802, 0x05);
@@ -460,6 +457,14 @@ void DisplayWs17143::enableDisplay() {
     delayProvider_.delayMiliseconds(10);
 }
 
+void DisplayWs17143::setAllPixelsOff() {
+    flexibleMemoryController_.write(0x2200, 0x00);
+}
+
+void DisplayWs17143::displayFramebuffer() {
+    flexibleMemoryController_.write(0x1300, 0x00);
+}
+
 DisplayWs17143::DisplayWs17143(
     Ws17143Pinout& pinout,
     FlexibleMemoryController& flexibleMemoryController,
@@ -478,6 +483,7 @@ void DisplayWs17143::init() {
     initRGB565Format();
     exitSleepState();
     enableDisplay();
+    setAllPixelsOff();
 }
 
 void DisplayWs17143::setWindow(const Rectangle& window) {
@@ -514,9 +520,6 @@ void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
     );
 
     flexibleMemoryController_.writeRegister(0x2C00);
-    // TODO test is this delay really neccessary
-    // It's a lot
-    delayProvider_.delayMiliseconds(150);
 
     for (uint16_t y = 0; y < HEIGHT_; y++) {
         for (uint16_t x = 0; x < WIDTH_; x++) {
@@ -528,26 +531,6 @@ void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
             } else {
                 color = 0x001F - colorOffset; // blue
             }
-            flexibleMemoryController_.writeData(color);
-        }
-    }
-}
-
-void DisplayWs17143::draw(const std::span<const uint16_t>& frameBuffer) {
-    setWindow(
-        Rectangle {
-            .xStart_ = 0,
-            .xEnd_ = WIDTH_ - 1,
-            .yStart_ = 0,
-            .yEnd_ = HEIGHT_ - 1
-        }
-    );
-
-    flexibleMemoryController_.writeRegister(0x2C00);
-
-    for (uint16_t y = 0; y < HEIGHT_; y++) {
-        for (uint16_t x = 0; x < WIDTH_; x++) {
-            const uint16_t color = frameBuffer[y * WIDTH_ + x];
             flexibleMemoryController_.writeData(color);
         }
     }
@@ -567,5 +550,7 @@ void DisplayWs17143::draw(
             flexibleMemoryController_.writeData(color);
         }
     }
+
+    displayFramebuffer();
 }
 }

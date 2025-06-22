@@ -35,7 +35,6 @@ void GpioPin::setInputPullDownMode() {
     setGpioConfig(GPIO_MODE_INPUT, GPIO_PULLDOWN);
 }
 
-// TODO add isLow (?)
 bool GpioPin::isHigh() {
     return HAL_GPIO_ReadPin(&port_, pin_) == GPIO_PIN_SET;
 }
