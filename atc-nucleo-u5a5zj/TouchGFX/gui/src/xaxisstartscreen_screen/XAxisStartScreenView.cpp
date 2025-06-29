@@ -20,11 +20,13 @@ void XAxisStartScreenView::tearDownScreen()
 
 void XAxisStartScreenView::increaseButtonPressed()
 {
-    if (startPosition <= maxPosition - positionIncrement)
-    {
-        startPosition += positionIncrement;
-        axisStartSelector.setDisplayedValue(startPosition);
-    }
+    // if (startPosition <= maxPosition - positionIncrement)
+    // {
+    //     startPosition += positionIncrement;
+    //     axisStartSelector.setDisplayedValue(startPosition);
+    // }
+
+    presenter->increaseButtonPressed();
 }
 
 void XAxisStartScreenView::decreaseButtonPressed()

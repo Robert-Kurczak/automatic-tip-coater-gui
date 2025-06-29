@@ -27,6 +27,8 @@ public:
 
     virtual ~XAxisStartScreenPresenter() {}
 
+    void increaseButtonPressed();
+
 private:
     XAxisStartScreenPresenter();
 
