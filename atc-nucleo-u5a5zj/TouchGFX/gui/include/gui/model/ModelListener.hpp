@@ -3,17 +3,16 @@
 
 #include <gui/model/Model.hpp>
 
-class ModelListener
-{
+class ModelListener {
 public:
     ModelListener() : model(0) {}
-    
+
     virtual ~ModelListener() {}
 
-    void bind(Model* m)
-    {
+    void bind(Model* m) {
         model = m;
     }
+
 protected:
     Model* model;
 };
