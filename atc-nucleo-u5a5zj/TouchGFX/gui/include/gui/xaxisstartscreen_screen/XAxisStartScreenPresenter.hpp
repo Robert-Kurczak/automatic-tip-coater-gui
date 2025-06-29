@@ -28,6 +28,10 @@ public:
     virtual ~XAxisStartScreenPresenter() {}
 
     void increaseButtonPressed();
+    void decreaseButtonPressed();
+    void saveButtonPressed();
+
+    uint32_t getXAxisStart();
 
 private:
     XAxisStartScreenPresenter();
