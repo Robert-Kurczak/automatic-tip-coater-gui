@@ -1,7 +1,7 @@
+#include "application/UartLogger/UartLogger.hpp"
+
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
-
-#include "application/UartLogger/UartLogger.hpp"
 
 Model::Model() : modelListener(0) {}
 
@@ -44,6 +44,11 @@ void Model::decreaseXAxisStart() {
     // TODO implement
 }
 
+void Model::saveXAxisStart() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
 uint32_t Model::getXAxisStart() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
@@ -56,6 +61,11 @@ void Model::increaseXAxisEnd() {
 }
 
 void Model::decreaseXAxisEnd() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Model::saveXAxisEnd() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
 }
@@ -76,6 +86,11 @@ void Model::decreaseXAxisSpeed() {
     // TODO implement
 }
 
+void Model::saveXAxisSpeed() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
 uint32_t Model::getXAxisSpeed() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
@@ -88,6 +103,11 @@ void Model::increaseYAxisStart() {
 }
 
 void Model::decreaseYAxisStart() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Model::saveYAxisStart() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
 }
@@ -108,6 +128,11 @@ void Model::decreaseYAxisEnd() {
     // TODO implement
 }
 
+void Model::saveYAxisEnd() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
 uint32_t Model::getYAxisEnd() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
@@ -120,6 +145,11 @@ void Model::increaseYAxisSpeed() {
 }
 
 void Model::decreaseYAxisSpeed() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Model::saveYAxisSpeed() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
 }
@@ -140,6 +170,11 @@ void Model::decreaseZAxisStart() {
     // TODO implement
 }
 
+void Model::saveZAxisStart() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
 uint32_t Model::getZAxisStart() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
@@ -152,6 +187,11 @@ void Model::increaseZAxisEnd() {
 }
 
 void Model::decreaseZAxisEnd() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Model::saveZAxisEnd() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
 }
@@ -172,6 +212,11 @@ void Model::decreaseZAxisSpeed() {
     // TODO implement
 }
 
+void Model::saveZAxisSpeed() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
 uint32_t Model::getZAxisSpeed() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
@@ -188,6 +233,11 @@ void Model::decreaseRotationSpeed() {
     // TODO implement
 }
 
+void Model::saveRotationSpeed() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
 uint32_t Model::getRotationSpeed() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
@@ -200,6 +250,11 @@ void Model::setClockwiseRotation() {
 }
 
 void Model::setCounterClockwiseRotation() {
+    UartLogger::debugPrint("Model::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Model::saveRotationDirection() {
     UartLogger::debugPrint("Model::%s not implemented", __func__);
     // TODO implement
 }

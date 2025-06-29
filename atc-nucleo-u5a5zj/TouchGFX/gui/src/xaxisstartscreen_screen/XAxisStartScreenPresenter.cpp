@@ -13,3 +13,15 @@ void XAxisStartScreenPresenter::deactivate() {}
 void XAxisStartScreenPresenter::increaseButtonPressed() {
     model->increaseXAxisStart();
 }
+
+void XAxisStartScreenPresenter::decreaseButtonPressed() {
+    model->decreaseXAxisStart();
+}
+
+void XAxisStartScreenPresenter::saveButtonPressed() {
+    model->saveXAxisStart();
+}
+
+uint32_t XAxisStartScreenPresenter::getXAxisStart() {
+    return model->getXAxisStart();
+}
