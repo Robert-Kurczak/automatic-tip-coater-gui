@@ -1,7 +1,10 @@
 #include "main.h"
 #include "touchgfx/hal/OSWrappers.hpp"
+#include "TargetBoard.hpp"
 
-void ATC_Init() {}
+void ATC_Init() {
+    ATC::TargetBoard::getBoard().init();
+}
 
 
 static uint32_t vSyncStart = 0;

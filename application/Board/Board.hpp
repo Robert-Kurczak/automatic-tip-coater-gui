@@ -1,20 +1,26 @@
 #pragma once
 
-#include "application/Axes/XAxis/XAxis.hpp"
-#include "application/Axes/YAxis/YAxis.hpp"
-#include "application/Axes/ZAxis/ZAxis.hpp"
+#include "BoardDevices.hpp"
+#include "application/Math/Math.hpp"
 
 #include <stdint.h>
 
 namespace ATC {
 class Board {
 private:
-    XAxis& xAxis_;
-    YAxis& yAxis_;
-    ZAxis& zAxis_;
+    BoardDevices& devices_;
 
 public:
-    Board(XAxis& xAxis, YAxis& yAxis, ZAxis& zAxis);
+    Board(BoardDevices& devices);
+
+    void init();
+
+    void drawOnDisplay(
+        const std::span<const uint16_t>& frameBuffer,
+        const Rectangle& window
+    );
+
+    Vector2 readTouchScreenPosition();
 
     void cancelCurrentTask();
 

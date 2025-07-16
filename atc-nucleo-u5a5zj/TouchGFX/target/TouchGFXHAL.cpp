@@ -23,31 +23,11 @@
 #include <TouchGFXHAL.hpp>
 
 /* USER CODE BEGIN TouchGFXHAL.cpp */
-#include <TouchGFXHAL.hpp>
-#include "application/DelayProvider/DelayProvider.hpp"
-#include "application/DisplayWs17143/DisplayWs17143.hpp"
-#include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
-#include "application/GpioPin/GpioPin.hpp"
-
-// TODO remove when display reset is implemented inside display module
-#include "main.h"
+#include "TargetBoard.hpp"
 
 using namespace touchgfx;
-using namespace ATC;
 
-// TODO inject display and touch controller objects by ServiceLocator
-FlexibleMemoryController flexibleMemoryController {
-    0x60000000,
-    0x60000002
-};
-DelayProvider delayProvider {};
-GpioPin lcdResetPin {*LCD_RS_GPIO_Port, LCD_RS_Pin};
-Ws17143Pinout pinout {.lcdResetPin_ = lcdResetPin};
-DisplayWs17143 display {
-    pinout,
-    flexibleMemoryController,
-    delayProvider
-};
+static ATC::TargetBoard targetBoard = ATC::TargetBoard::getBoard();
 
 void TouchGFXHAL::initialize()
 {
@@ -57,8 +37,6 @@ void TouchGFXHAL::initialize()
     // and implement the needed functionality here.
     // Please note, HAL::initialize() must be called to initialize the framework.
     TouchGFXGeneratedHAL::initialize();
-
-    display.init();
 }
 
 /**
@@ -105,7 +83,7 @@ void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect& rect)
         uint32_t(FRAME_BUFFER_WIDTH * FRAME_BUFFER_HEIGHT)
     };
 
-    display.draw(
+    targetBoard.drawOnDisplay(
         frameBufferSpan,
         ATC::Rectangle {
             .xStart_ = uint16_t(rect.x),
