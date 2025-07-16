@@ -2,10 +2,23 @@
 #include "application/UartLogger/UartLogger.hpp"
 
 namespace ATC {
-Board::Board(XAxis& xAxis, YAxis& yAxis, ZAxis& zAxis) :
-    xAxis_(xAxis),
-    yAxis_(yAxis),
-    zAxis_(zAxis) {}
+Board::Board(BoardDevices& devices) : devices_(devices) {}
+
+void Board::init() {
+    devices_.display.init();
+    devices_.touchController.init();
+}
+
+void Board::drawOnDisplay(
+    const std::span<const uint16_t>& frameBuffer,
+    const Rectangle& window
+) {
+    devices_.display.draw(frameBuffer, window);
+}
+
+Vector2 Board::readTouchScreenPosition() {
+    return devices_.touchController.readPosition();
+}
 
 void Board::cancelCurrentTask() {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
@@ -35,147 +48,147 @@ bool Board::isCalibrationFinished() {
 }
 
 void Board::increaseXAxisStart() {
-    xAxis_.increaseStartPosition();
+    devices_.xAxis.increaseStartPosition();
 }
 
 void Board::decreaseXAxisStart() {
-    xAxis_.decreaseStartPosition();
+    devices_.xAxis.decreaseStartPosition();
 }
 
 void Board::saveXAxisStart() {
-    xAxis_.saveStartPosition();
+    devices_.xAxis.saveStartPosition();
 }
 
 uint32_t Board::getXAxisStart() {
-    return xAxis_.getStartPosition();
+    return devices_.xAxis.getStartPosition();
 }
 
 void Board::increaseXAxisEnd() {
-    xAxis_.increaseEndPosition();
+    devices_.xAxis.increaseEndPosition();
 }
 
 void Board::decreaseXAxisEnd() {
-    xAxis_.decreaseEndPosition();
+    devices_.xAxis.decreaseEndPosition();
 }
 
 void Board::saveXAxisEnd() {
-    xAxis_.saveEndPosition();
+    devices_.xAxis.saveEndPosition();
 }
 
 uint32_t Board::getXAxisEnd() {
-    return xAxis_.getEndPosition();
+    return devices_.xAxis.getEndPosition();
 }
 
 void Board::increaseXAxisSpeed() {
-    xAxis_.increaseSpeed();
+    devices_.xAxis.increaseSpeed();
 }
 
 void Board::decreaseXAxisSpeed() {
-    xAxis_.decreaseSpeed();
+    devices_.xAxis.decreaseSpeed();
 }
 
 void Board::saveXAxisSpeed() {
-    xAxis_.saveSpeed();
+    devices_.xAxis.saveSpeed();
 }
 
 uint32_t Board::getXAxisSpeed() {
-    return xAxis_.getSpeed();
+    return devices_.xAxis.getSpeed();
 }
 
 void Board::increaseYAxisStart() {
-    yAxis_.increaseStartPosition();
+    devices_.yAxis.increaseStartPosition();
 }
 
 void Board::decreaseYAxisStart() {
-    yAxis_.decreaseStartPosition();
+    devices_.yAxis.decreaseStartPosition();
 }
 
 void Board::saveYAxisStart() {
-    yAxis_.saveStartPosition();
+    devices_.yAxis.saveStartPosition();
 }
 
 uint32_t Board::getYAxisStart() {
-    return yAxis_.getStartPosition();
+    return devices_.yAxis.getStartPosition();
 }
 
 void Board::increaseYAxisEnd() {
-    yAxis_.increaseEndPosition();
+    devices_.yAxis.increaseEndPosition();
 }
 
 void Board::decreaseYAxisEnd() {
-    yAxis_.decreaseEndPosition();
+    devices_.yAxis.decreaseEndPosition();
 }
 
 void Board::saveYAxisEnd() {
-    yAxis_.saveEndPosition();
+    devices_.yAxis.saveEndPosition();
 }
 
 uint32_t Board::getYAxisEnd() {
-    return yAxis_.getEndPosition();
+    return devices_.yAxis.getEndPosition();
 }
 
 void Board::increaseYAxisSpeed() {
-    yAxis_.increaseSpeed();
+    devices_.yAxis.increaseSpeed();
 }
 
 void Board::decreaseYAxisSpeed() {
-    yAxis_.decreaseSpeed();
+    devices_.yAxis.decreaseSpeed();
 }
 
 void Board::saveYAxisSpeed() {
-    yAxis_.saveSpeed();
+    devices_.yAxis.saveSpeed();
 }
 
 uint32_t Board::getYAxisSpeed() {
-    return yAxis_.getSpeed();
+    return devices_.yAxis.getSpeed();
 }
 
 void Board::increaseZAxisStart() {
-    zAxis_.increaseStartPosition();
+    devices_.zAxis.increaseStartPosition();
 }
 
 void Board::decreaseZAxisStart() {
-    zAxis_.decreaseStartPosition();
+    devices_.zAxis.decreaseStartPosition();
 }
 
 void Board::saveZAxisStart() {
-    zAxis_.saveStartPosition();
+    devices_.zAxis.saveStartPosition();
 }
 
 uint32_t Board::getZAxisStart() {
-    return zAxis_.getStartPosition();
+    return devices_.zAxis.getStartPosition();
 }
 
 void Board::increaseZAxisEnd() {
-    zAxis_.increaseEndPosition();
+    devices_.zAxis.increaseEndPosition();
 }
 
 void Board::decreaseZAxisEnd() {
-    zAxis_.decreaseEndPosition();
+    devices_.zAxis.decreaseEndPosition();
 }
 
 void Board::saveZAxisEnd() {
-    zAxis_.saveEndPosition();
+    devices_.zAxis.saveEndPosition();
 }
 
 uint32_t Board::getZAxisEnd() {
-    return zAxis_.getEndPosition();
+    return devices_.zAxis.getEndPosition();
 }
 
 void Board::increaseZAxisSpeed() {
-    zAxis_.increaseSpeed();
+    devices_.zAxis.increaseSpeed();
 }
 
 void Board::decreaseZAxisSpeed() {
-    zAxis_.decreaseSpeed();
+    devices_.zAxis.decreaseSpeed();
 }
 
 void Board::saveZAxisSpeed() {
-    zAxis_.saveSpeed();
+    devices_.zAxis.saveSpeed();
 }
 
 uint32_t Board::getZAxisSpeed() {
-    return zAxis_.getSpeed();
+    return devices_.zAxis.getSpeed();
 }
 
 void Board::increaseRotationSpeed() {
