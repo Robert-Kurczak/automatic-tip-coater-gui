@@ -206,14 +206,20 @@ bool Model::isRotationClockwise() {
 }
 
 void Model::increaseRotationTime() {
-    
+    targetBoard_.increaseRotationTime();
 }
 
-void Model::decreaseRotationTime() {}
+void Model::decreaseRotationTime() {
+    targetBoard_.decreaseRotationTime();
+}
 
-void Model::saveRotationTime() {}
+void Model::saveRotationTime() {
+    targetBoard_.saveRotationTime();
+}
 
-uint32_t Model::getRotationTime() {}
+uint32_t Model::getRotationTime() {
+    return targetBoard_.getRotationTime();
+}
 
 void Model::setHeaterOn() {
     targetBoard_.setHeaterOn();
