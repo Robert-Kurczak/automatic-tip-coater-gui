@@ -30,22 +30,11 @@ void Board::startCoatingSequence() {
     // TODO implement
 }
 
-bool Board::isCoatingSequenceFinished() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    return true;
-}
-
 void Board::calibrate() {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
     // TODO implement
 }
 
-bool Board::isCalibrationFinished() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    return true;
-}
 
 void Board::increaseXAxisStart() {
     devices_.xAxis.increaseStartPosition();

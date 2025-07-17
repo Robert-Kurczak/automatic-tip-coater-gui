@@ -537,7 +537,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "StartTest",
+            "InteractionName": "StartCoating",
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
@@ -545,11 +545,11 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "startTest"
+              "FunctionName": "startCoating"
             }
           },
           {
-            "InteractionName": "CancelTest",
+            "InteractionName": "CancelCoating",
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
@@ -557,7 +557,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "cancelTest"
+              "FunctionName": "cancelCoating"
             }
           },
           {
@@ -652,7 +652,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "StartTest",
+            "InteractionName": "StartCalibration",
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "StartCancelFooter startButtonPressed happens",
@@ -660,11 +660,11 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "startTest"
+              "FunctionName": "startCalibration"
             }
           },
           {
-            "InteractionName": "CancelTest",
+            "InteractionName": "CancelCalibration",
             "Trigger": {
               "Type": "TriggerCustom",
               "TriggerCustomTypeName": "StartCancelFooter cancelButtonPressed happens",
@@ -672,7 +672,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "cancelTest"
+              "FunctionName": "cancelCalibration"
             }
           },
           {

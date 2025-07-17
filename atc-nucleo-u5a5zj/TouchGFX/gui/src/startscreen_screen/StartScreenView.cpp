@@ -1,16 +1,19 @@
 #include <gui/startscreen_screen/StartScreenView.hpp>
 
-StartScreenView::StartScreenView()
-{
+StartScreenView::StartScreenView() {}
 
-}
-
-void StartScreenView::setupScreen()
-{
+void StartScreenView::setupScreen() {
     StartScreenViewBase::setupScreen();
 }
 
-void StartScreenView::tearDownScreen()
-{
+void StartScreenView::tearDownScreen() {
     StartScreenViewBase::tearDownScreen();
+}
+
+void StartScreenView::startCoating() {
+    presenter->startButtonPressed();
+}
+
+void StartScreenView::cancelCoating() {
+    presenter->cancelButtonPressed();
 }

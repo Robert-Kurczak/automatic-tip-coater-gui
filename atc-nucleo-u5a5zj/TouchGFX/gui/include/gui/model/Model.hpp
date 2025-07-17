@@ -18,10 +18,8 @@ public:
     void cancelCurrentTask();
 
     void startCoatingSequence();
-    bool isCoatingSequenceFinished();
 
     void calibrate();
-    bool isCalibrationFinished();
 
     void increaseXAxisStart();
     void decreaseXAxisStart();
