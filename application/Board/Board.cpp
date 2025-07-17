@@ -294,4 +294,9 @@ void Board::testHeater() {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
     // TODO implement
 }
+
+void Board::testRotation() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
 }

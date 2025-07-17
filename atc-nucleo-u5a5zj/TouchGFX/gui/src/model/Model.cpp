@@ -252,3 +252,7 @@ void Model::testZAxis() {
 void Model::testHeater() {
     targetBoard_.testHeater();
 }
+
+void Model::testRotation() {
+    targetBoard_.testRotation();
+}

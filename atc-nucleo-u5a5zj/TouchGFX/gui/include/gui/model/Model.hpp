@@ -87,12 +87,12 @@ public:
     void setHeaterOff();
     void saveHeaterState();
     bool isHeaterOn();
-    
 
     void testXAxis();
     void testYAxis();
     void testZAxis();
     void testHeater();
+    void testRotation();
 
 protected:
     ModelListener* modelListener;

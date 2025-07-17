@@ -1,18 +1,19 @@
-#include <gui/zaxistestsscreen_screen/ZAxisTestsScreenView.hpp>
 #include <gui/zaxistestsscreen_screen/ZAxisTestsScreenPresenter.hpp>
+#include <gui/zaxistestsscreen_screen/ZAxisTestsScreenView.hpp>
 
-ZAxisTestsScreenPresenter::ZAxisTestsScreenPresenter(ZAxisTestsScreenView& v)
-    : view(v)
-{
+ZAxisTestsScreenPresenter::ZAxisTestsScreenPresenter(
+    ZAxisTestsScreenView& v
+) :
+    view(v) {}
 
+void ZAxisTestsScreenPresenter::activate() {}
+
+void ZAxisTestsScreenPresenter::deactivate() {}
+
+void ZAxisTestsScreenPresenter::startButtonPressed() {
+    model->testZAxis();
 }
 
-void ZAxisTestsScreenPresenter::activate()
-{
-
-}
-
-void ZAxisTestsScreenPresenter::deactivate()
-{
-
+void ZAxisTestsScreenPresenter::cancelButtonPressed() {
+    model->cancelCurrentTask();
 }

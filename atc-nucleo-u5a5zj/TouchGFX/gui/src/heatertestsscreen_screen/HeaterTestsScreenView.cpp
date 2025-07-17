@@ -1,26 +1,23 @@
 #include <gui/heatertestsscreen_screen/HeaterTestsScreenView.hpp>
 
-HeaterTestsScreenView::HeaterTestsScreenView()
-{
+HeaterTestsScreenView::HeaterTestsScreenView() {}
 
-}
-
-void HeaterTestsScreenView::setupScreen()
-{
+void HeaterTestsScreenView::setupScreen() {
     HeaterTestsScreenViewBase::setupScreen();
 }
 
-void HeaterTestsScreenView::tearDownScreen()
-{
+void HeaterTestsScreenView::tearDownScreen() {
     HeaterTestsScreenViewBase::tearDownScreen();
 }
 
-void HeaterTestsScreenView::startTest()
-{
+void HeaterTestsScreenView::startTest() {
     heaterTestsResults.setLoadingIcons();
+
+    presenter->startButtonPressed();
 }
 
-void HeaterTestsScreenView::cancelTest()
-{
+void HeaterTestsScreenView::cancelTest() {
     heaterTestsResults.setTemperatureError();
+
+    presenter->cancelButtonPressed();
 }
