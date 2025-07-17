@@ -1,42 +1,31 @@
 #include <gui/yaxisstartscreen_screen/YAxisStartScreenView.hpp>
 
-static uint16_t savedStartPosition = 0;
-
-YAxisStartScreenView::YAxisStartScreenView()
-{
-    startPosition = savedStartPosition;
-    axisStartSelector.setDisplayedValue(startPosition);
+void YAxisStartScreenView::updateDisplayedValue() {
+    const uint32_t position = presenter->getYAxisStart();
+    axisStartSelector.setDisplayedValue(position);
 }
 
-void YAxisStartScreenView::setupScreen()
-{
+YAxisStartScreenView::YAxisStartScreenView() {}
+
+void YAxisStartScreenView::setupScreen() {
     YAxisStartScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void YAxisStartScreenView::tearDownScreen()
-{
+void YAxisStartScreenView::tearDownScreen() {
     YAxisStartScreenViewBase::tearDownScreen();
 }
 
-void YAxisStartScreenView::increaseButtonPressed()
-{
-    if (startPosition <= maxPosition - positionIncrement)
-    {
-        startPosition += positionIncrement;
-        axisStartSelector.setDisplayedValue(startPosition);
-    }
+void YAxisStartScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void YAxisStartScreenView::decreaseButtonPressed()
-{
-    if (startPosition >= positionIncrement)
-    {
-        startPosition -= positionIncrement;
-        axisStartSelector.setDisplayedValue(startPosition);
-    }
+void YAxisStartScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void YAxisStartScreenView::saveButtonPressed()
-{
-    savedStartPosition = startPosition;
+void YAxisStartScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }

@@ -1,43 +1,31 @@
 #include <gui/yaxisendscreen_screen/YAxisEndScreenView.hpp>
 
-static uint16_t savedEndPosition = 0;
-
-YAxisEndScreenView::YAxisEndScreenView()
-{
-    endPosition = savedEndPosition;
-    axisEndSelector.setDisplayedValue(savedEndPosition);
+void YAxisEndScreenView::updateDisplayedValue() {
+    const uint32_t position = presenter->getYAxisEnd();
+    axisEndSelector.setDisplayedValue(position);
 }
 
-void YAxisEndScreenView::setupScreen()
-{
+YAxisEndScreenView::YAxisEndScreenView() {}
+
+void YAxisEndScreenView::setupScreen() {
     YAxisEndScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void YAxisEndScreenView::tearDownScreen()
-{
+void YAxisEndScreenView::tearDownScreen() {
     YAxisEndScreenViewBase::tearDownScreen();
 }
 
-
-void YAxisEndScreenView::increaseButtonPressed()
-{
-    if (endPosition <= maxPosition - positionIncrement)
-    {
-        endPosition += positionIncrement;
-        axisEndSelector.setDisplayedValue(endPosition);
-    }
+void YAxisEndScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void YAxisEndScreenView::decreaseButtonPressed()
-{
-    if (endPosition >= positionIncrement)
-    {
-        endPosition -= positionIncrement;
-        axisEndSelector.setDisplayedValue(endPosition);
-    }
+void YAxisEndScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void YAxisEndScreenView::saveButtonPressed()
-{
-    savedEndPosition = endPosition;
+void YAxisEndScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }

@@ -1,18 +1,27 @@
-#include <gui/xaxisspeedscreen_screen/XAxisSpeedScreenView.hpp>
 #include <gui/xaxisspeedscreen_screen/XAxisSpeedScreenPresenter.hpp>
+#include <gui/xaxisspeedscreen_screen/XAxisSpeedScreenView.hpp>
 
-XAxisSpeedScreenPresenter::XAxisSpeedScreenPresenter(XAxisSpeedScreenView& v)
-    : view(v)
-{
+XAxisSpeedScreenPresenter::XAxisSpeedScreenPresenter(
+    XAxisSpeedScreenView& v
+) :
+    view(v) {}
 
+void XAxisSpeedScreenPresenter::activate() {}
+
+void XAxisSpeedScreenPresenter::deactivate() {}
+
+void XAxisSpeedScreenPresenter::increaseButtonPressed() {
+    model->increaseXAxisSpeed();
 }
 
-void XAxisSpeedScreenPresenter::activate()
-{
-
+void XAxisSpeedScreenPresenter::decreaseButtonPressed() {
+    model->decreaseXAxisSpeed();
 }
 
-void XAxisSpeedScreenPresenter::deactivate()
-{
+void XAxisSpeedScreenPresenter::saveButtonPressed() {
+    model->saveXAxisSpeed();
+}
 
+uint32_t XAxisSpeedScreenPresenter::getXAxisSpeed() {
+    return model->getXAxisSpeed();
 }

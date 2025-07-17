@@ -1,11 +1,10 @@
 #ifndef ZAXISENDSCREENVIEW_HPP
 #define ZAXISENDSCREENVIEW_HPP
 
-#include <gui_generated/zaxisendscreen_screen/ZAxisEndScreenViewBase.hpp>
 #include <gui/zaxisendscreen_screen/ZAxisEndScreenPresenter.hpp>
+#include <gui_generated/zaxisendscreen_screen/ZAxisEndScreenViewBase.hpp>
 
-class ZAxisEndScreenView : public ZAxisEndScreenViewBase
-{
+class ZAxisEndScreenView : public ZAxisEndScreenViewBase {
 public:
     ZAxisEndScreenView();
     virtual ~ZAxisEndScreenView() {}
@@ -18,11 +17,7 @@ protected:
     virtual void saveButtonPressed() override;
 
 private:
-    static const uint16_t minPosition = 0;
-    static const uint16_t maxPosition = 65000;
-    static const uint8_t positionIncrement = 10;
-
-    uint16_t endPosition = 0;
+    void updateDisplayedValue();
 };
 
 #endif // ZAXISENDSCREENVIEW_HPP

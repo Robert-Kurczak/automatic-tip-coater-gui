@@ -1,42 +1,31 @@
 #include <gui/zaxisspeedscreen_screen/ZAxisSpeedScreenView.hpp>
 
-static uint8_t savedSpeed = 0;
-
-ZAxisSpeedScreenView::ZAxisSpeedScreenView()
-{
-    speed = savedSpeed;
-    axisSpeedSelector.setDisplayedValue(savedSpeed);
+void ZAxisSpeedScreenView::updateDisplayedValue() {
+    const uint32_t speed = presenter->getZAxisSpeed();
+    axisSpeedSelector.setDisplayedValue(speed);
 }
 
-void ZAxisSpeedScreenView::setupScreen()
-{
+ZAxisSpeedScreenView::ZAxisSpeedScreenView() {}
+
+void ZAxisSpeedScreenView::setupScreen() {
     ZAxisSpeedScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void ZAxisSpeedScreenView::tearDownScreen()
-{
+void ZAxisSpeedScreenView::tearDownScreen() {
     ZAxisSpeedScreenViewBase::tearDownScreen();
 }
 
-void ZAxisSpeedScreenView::increaseButtonPressed()
-{
-    if (speed <= maxSpeed - speedIncrement)
-    {
-        speed += speedIncrement;
-        axisSpeedSelector.setDisplayedValue(speed);
-    }
+void ZAxisSpeedScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void ZAxisSpeedScreenView::decreaseButtonPressed()
-{
-    if (speed >= speedIncrement)
-    {
-        speed -= speedIncrement;
-        axisSpeedSelector.setDisplayedValue(speed);
-    }
+void ZAxisSpeedScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void ZAxisSpeedScreenView::saveButtonPressed()
-{
-    savedSpeed = speed;
+void ZAxisSpeedScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }

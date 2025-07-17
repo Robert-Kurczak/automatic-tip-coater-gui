@@ -18,11 +18,7 @@ protected:
     virtual void saveButtonPressed() override;
 
 private:
-    static const uint16_t minPosition = 0;
-    static const uint16_t maxPosition = 65000;
-    static const uint8_t positionIncrement = 10;
-
-    uint16_t startPosition = 0;
+    void updateDisplayedValue();
 };
 
 #endif // ZAXISSTARTSCREENVIEW_HPP

@@ -1,42 +1,31 @@
 #include <gui/zaxisendscreen_screen/ZAxisEndScreenView.hpp>
 
-static uint16_t savedEndPosition = 0;
-
-ZAxisEndScreenView::ZAxisEndScreenView()
-{
-    endPosition = savedEndPosition;
-    axisEndSelector.setDisplayedValue(savedEndPosition);
+void ZAxisEndScreenView::updateDisplayedValue() {
+    const uint32_t position = presenter->getZAxisEnd();
+    axisEndSelector.setDisplayedValue(position);
 }
 
-void ZAxisEndScreenView::setupScreen()
-{
+ZAxisEndScreenView::ZAxisEndScreenView() {}
+
+void ZAxisEndScreenView::setupScreen() {
     ZAxisEndScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void ZAxisEndScreenView::tearDownScreen()
-{
+void ZAxisEndScreenView::tearDownScreen() {
     ZAxisEndScreenViewBase::tearDownScreen();
 }
 
-void ZAxisEndScreenView::increaseButtonPressed()
-{
-    if (endPosition <= maxPosition - positionIncrement)
-    {
-        endPosition += positionIncrement;
-        axisEndSelector.setDisplayedValue(endPosition);
-    }
+void ZAxisEndScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void ZAxisEndScreenView::decreaseButtonPressed()
-{
-    if (endPosition >= positionIncrement)
-    {
-        endPosition -= positionIncrement;
-        axisEndSelector.setDisplayedValue(endPosition);
-    }
+void ZAxisEndScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void ZAxisEndScreenView::saveButtonPressed()
-{
-    savedEndPosition = endPosition;
+void ZAxisEndScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }
