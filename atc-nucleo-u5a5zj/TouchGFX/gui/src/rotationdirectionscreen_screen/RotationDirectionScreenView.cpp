@@ -1,35 +1,31 @@
 #include <gui/rotationdirectionscreen_screen/RotationDirectionScreenView.hpp>
 
-static bool savedClockwise = true;
-
-RotationDirectionScreenView::RotationDirectionScreenView()
-{
-    clockwise = savedClockwise;
-
-    rotationDirectionSelector.setClockwiseState(clockwise);
+void RotationDirectionScreenView::updateDisplayedValue() {
+    const bool isClockwise = presenter->isRotationClockwise();
+    rotationDirectionSelector.setClockwiseState(isClockwise);
 }
 
-void RotationDirectionScreenView::setupScreen()
-{
+RotationDirectionScreenView::RotationDirectionScreenView() {}
+
+void RotationDirectionScreenView::setupScreen() {
     RotationDirectionScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void RotationDirectionScreenView::tearDownScreen()
-{
+void RotationDirectionScreenView::tearDownScreen() {
     RotationDirectionScreenViewBase::tearDownScreen();
 }
 
-void RotationDirectionScreenView::clockwiseButtonPressed()
-{
-    clockwise = false;
+void RotationDirectionScreenView::clockwiseButtonPressed() {
+    presenter->clockwiseButtonPressed();
+    updateDisplayedValue();
 }
 
-void RotationDirectionScreenView::counterClockwiseButtonPressed()
-{
-    clockwise = true;
+void RotationDirectionScreenView::counterClockwiseButtonPressed() {
+    presenter->counterClockwiseButtonPressed();
+    updateDisplayedValue();
 }
 
-void RotationDirectionScreenView::saveButtonPressed()
-{
-    savedClockwise = clockwise;
+void RotationDirectionScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }

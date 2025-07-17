@@ -78,6 +78,17 @@ public:
     void saveRotationDirection();
     bool isRotationClockwise();
 
+    void increaseRotationTime();
+    void decreaseRotationTime();
+    void saveRotationTime();
+    uint32_t getRotationTime();
+
+    void setHeaterOn();
+    void setHeaterOff();
+    void saveHeaterState();
+    bool isHeaterOn();
+    
+
     void testXAxis();
     void testYAxis();
     void testZAxis();

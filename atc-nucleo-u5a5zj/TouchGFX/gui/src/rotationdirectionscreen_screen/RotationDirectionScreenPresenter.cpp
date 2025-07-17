@@ -1,18 +1,27 @@
-#include <gui/rotationdirectionscreen_screen/RotationDirectionScreenView.hpp>
 #include <gui/rotationdirectionscreen_screen/RotationDirectionScreenPresenter.hpp>
+#include <gui/rotationdirectionscreen_screen/RotationDirectionScreenView.hpp>
 
-RotationDirectionScreenPresenter::RotationDirectionScreenPresenter(RotationDirectionScreenView& v)
-    : view(v)
-{
+RotationDirectionScreenPresenter::RotationDirectionScreenPresenter(
+    RotationDirectionScreenView& v
+) :
+    view(v) {}
 
+void RotationDirectionScreenPresenter::activate() {}
+
+void RotationDirectionScreenPresenter::deactivate() {}
+
+bool RotationDirectionScreenPresenter::isRotationClockwise() {
+    return model->isRotationClockwise();
 }
 
-void RotationDirectionScreenPresenter::activate()
-{
-
+void RotationDirectionScreenPresenter::clockwiseButtonPressed() {
+    model->setCounterClockwiseRotation();
 }
 
-void RotationDirectionScreenPresenter::deactivate()
-{
+void RotationDirectionScreenPresenter::counterClockwiseButtonPressed() {
+    model->setClockwiseRotation();
+}
 
+void RotationDirectionScreenPresenter::saveButtonPressed() {
+    model->saveRotationDirection();
 }

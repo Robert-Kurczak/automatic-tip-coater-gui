@@ -1,42 +1,31 @@
 #include <gui/rotationtimescreen_screen/RotationTimeScreenView.hpp>
 
-static uint16_t savedTimeMs = 0;
-
-RotationTimeScreenView::RotationTimeScreenView()
-{
-    timeMs = savedTimeMs;
-    timeSelector.setDisplayedValue(savedTimeMs);
+void RotationTimeScreenView::updateDisplayedValue() {
+    const uint32_t time = presenter->getRotationTime();
+    timeSelector.setDisplayedValue(time);
 }
 
-void RotationTimeScreenView::setupScreen()
-{
+RotationTimeScreenView::RotationTimeScreenView() {}
+
+void RotationTimeScreenView::setupScreen() {
     RotationTimeScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void RotationTimeScreenView::tearDownScreen()
-{
+void RotationTimeScreenView::tearDownScreen() {
     RotationTimeScreenViewBase::tearDownScreen();
 }
 
-void RotationTimeScreenView::increaseButtonPressed()
-{
-    if (timeMs <= maxTimeMs - timeIncrement)
-    {
-        timeMs += timeIncrement;
-        timeSelector.setDisplayedValue(timeMs);
-    }
+void RotationTimeScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void RotationTimeScreenView::decreaseButtonPressed()
-{
-    if (timeMs >= timeIncrement)
-    {
-        timeMs -= timeIncrement;
-        timeSelector.setDisplayedValue(timeMs);
-    }
+void RotationTimeScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void RotationTimeScreenView::saveButtonPressed()
-{
-    savedTimeMs = timeMs;
+void RotationTimeScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }
