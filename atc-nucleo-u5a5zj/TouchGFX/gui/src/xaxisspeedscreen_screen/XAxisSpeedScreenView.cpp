@@ -1,42 +1,31 @@
 #include <gui/xaxisspeedscreen_screen/XAxisSpeedScreenView.hpp>
 
-static uint8_t savedSpeed = 0;
-
-XAxisSpeedScreenView::XAxisSpeedScreenView()
-{
-    speed = savedSpeed;
-    axisSpeedSelector.setDisplayedValue(savedSpeed);
+void XAxisSpeedScreenView::updateDisplayedValue() {
+    const uint32_t speed = presenter->getXAxisSpeed();
+    axisSpeedSelector.setDisplayedValue(speed);
 }
 
-void XAxisSpeedScreenView::setupScreen()
-{
+XAxisSpeedScreenView::XAxisSpeedScreenView() {}
+
+void XAxisSpeedScreenView::setupScreen() {
     XAxisSpeedScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void XAxisSpeedScreenView::tearDownScreen()
-{
+void XAxisSpeedScreenView::tearDownScreen() {
     XAxisSpeedScreenViewBase::tearDownScreen();
 }
 
-void XAxisSpeedScreenView::increaseButtonPressed()
-{
-    if (speed <= maxSpeed - speedIncrement)
-    {
-        speed += speedIncrement;
-        axisSpeedSelector.setDisplayedValue(speed);
-    }
+void XAxisSpeedScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void XAxisSpeedScreenView::decreaseButtonPressed()
-{
-    if (speed >= speedIncrement)
-    {
-        speed -= speedIncrement;
-        axisSpeedSelector.setDisplayedValue(speed);
-    }
+void XAxisSpeedScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void XAxisSpeedScreenView::saveButtonPressed()
-{
-    savedSpeed = speed;
+void XAxisSpeedScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }
