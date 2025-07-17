@@ -18,7 +18,7 @@ protected:
     virtual void saveButtonPressed() override;
 
 private:
-    bool stateOn = false;
+    void updateDisplayedValue();
 };
 
 #endif // HEATERSTATESCREENVIEW_HPP

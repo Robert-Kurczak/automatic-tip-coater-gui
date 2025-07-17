@@ -1,34 +1,31 @@
 #include <gui/heaterstatescreen_screen/HeaterStateScreenView.hpp>
 
-static bool savedStateOn = false;
-
-HeaterStateScreenView::HeaterStateScreenView()
-{
-    stateOn = savedStateOn;
-    heaterStateSelector.setStateOn(stateOn);
+void HeaterStateScreenView::updateDisplayedValue() {
+    const uint32_t isOn = presenter->isHeaterOn();
+    heaterStateSelector.setStateOn(isOn);
 }
 
-void HeaterStateScreenView::setupScreen()
-{
+HeaterStateScreenView::HeaterStateScreenView() {}
+
+void HeaterStateScreenView::setupScreen() {
     HeaterStateScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void HeaterStateScreenView::tearDownScreen()
-{
+void HeaterStateScreenView::tearDownScreen() {
     HeaterStateScreenViewBase::tearDownScreen();
 }
 
-void HeaterStateScreenView::stateOffButtonPressed()
-{
-    stateOn = true;
+void HeaterStateScreenView::stateOffButtonPressed() {
+    presenter->offButtonPressed();
+    updateDisplayedValue();
 }
 
-void HeaterStateScreenView::stateOnButtonPressed()
-{
-    stateOn = false;
+void HeaterStateScreenView::stateOnButtonPressed() {
+    presenter->onButtonPressed();
+    updateDisplayedValue();
 }
 
-void HeaterStateScreenView::saveButtonPressed()
-{
-    savedStateOn = stateOn;
+void HeaterStateScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }
