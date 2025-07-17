@@ -1,28 +1,25 @@
 #include <gui/zaxistestsscreen_screen/ZAxisTestsScreenView.hpp>
 
-ZAxisTestsScreenView::ZAxisTestsScreenView()
-{
+ZAxisTestsScreenView::ZAxisTestsScreenView() {}
 
-}
-
-void ZAxisTestsScreenView::setupScreen()
-{
+void ZAxisTestsScreenView::setupScreen() {
     ZAxisTestsScreenViewBase::setupScreen();
 }
 
-void ZAxisTestsScreenView::tearDownScreen()
-{
+void ZAxisTestsScreenView::tearDownScreen() {
     ZAxisTestsScreenViewBase::tearDownScreen();
 }
 
-void ZAxisTestsScreenView::startTest()
-{
+void ZAxisTestsScreenView::startTest() {
     axisTestsResults.setLoadingIcons();
+
+    presenter->startButtonPressed();
 }
 
-void ZAxisTestsScreenView::cancelTest()
-{
+void ZAxisTestsScreenView::cancelTest() {
     axisTestsResults.setStartLimitSwitchError();
     axisTestsResults.setEndLimitSwitchError();
     axisTestsResults.setMotorDriverError();
+
+    presenter->cancelButtonPressed();
 }

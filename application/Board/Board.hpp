@@ -99,5 +99,6 @@ public:
     void testYAxis();
     void testZAxis();
     void testHeater();
+    void testRotation();
 };
 }

@@ -1,28 +1,25 @@
 #include <gui/xaxistestsscreen_screen/XAxisTestsScreenView.hpp>
 
-XAxisTestsScreenView::XAxisTestsScreenView()
-{
+XAxisTestsScreenView::XAxisTestsScreenView() {}
 
-}
-
-void XAxisTestsScreenView::setupScreen()
-{
+void XAxisTestsScreenView::setupScreen() {
     XAxisTestsScreenViewBase::setupScreen();
 }
 
-void XAxisTestsScreenView::tearDownScreen()
-{
+void XAxisTestsScreenView::tearDownScreen() {
     XAxisTestsScreenViewBase::tearDownScreen();
 }
 
-void XAxisTestsScreenView::startTest()
-{
+void XAxisTestsScreenView::startTest() {
     axisTestsResults.setLoadingIcons();
+
+    presenter->startButtonPressed();
 }
 
-void XAxisTestsScreenView::cancelTest()
-{
+void XAxisTestsScreenView::cancelTest() {
     axisTestsResults.setStartLimitSwitchError();
     axisTestsResults.setEndLimitSwitchError();
     axisTestsResults.setMotorDriverError();
+
+    presenter->cancelButtonPressed();
 }

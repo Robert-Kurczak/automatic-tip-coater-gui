@@ -27,6 +27,9 @@ public:
 
     virtual ~ZAxisTestsScreenPresenter() {}
 
+    void startButtonPressed();
+    void cancelButtonPressed();
+
 private:
     ZAxisTestsScreenPresenter();
 
