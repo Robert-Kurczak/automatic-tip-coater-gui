@@ -17,16 +17,8 @@ void Model::startCoatingSequence() {
     targetBoard_.startCoatingSequence();
 }
 
-bool Model::isCoatingSequenceFinished() {
-    return targetBoard_.isCoatingSequenceFinished();
-}
-
 void Model::calibrate() {
     targetBoard_.calibrate();
-}
-
-bool Model::isCalibrationFinished() {
-    return targetBoard_.isCalibrationFinished();
 }
 
 void Model::increaseXAxisStart() {

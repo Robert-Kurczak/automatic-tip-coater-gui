@@ -11,6 +11,9 @@ public:
     virtual ~CalibrateScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void startCalibration() override;
+    virtual void cancelCalibration() override;
 protected:
 };
 
