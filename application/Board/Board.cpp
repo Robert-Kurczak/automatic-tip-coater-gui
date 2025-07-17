@@ -233,6 +233,48 @@ bool Board::isRotationClockwise() {
     return true;
 }
 
+void Board::increaseRotationTime() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Board::decreaseRotationTime() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Board::saveRotationTime() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+uint32_t Board::getRotationTime() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    return 3;
+}
+
+void Board::setHeaterOn() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Board::setHeaterOff() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Board::saveHeaterState() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+bool Board::isHeaterOn() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    return false;
+}
+
 void Board::testXAxis() {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
     // TODO implement

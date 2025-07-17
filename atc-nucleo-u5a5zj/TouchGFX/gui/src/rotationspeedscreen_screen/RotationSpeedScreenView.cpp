@@ -1,42 +1,31 @@
 #include <gui/rotationspeedscreen_screen/RotationSpeedScreenView.hpp>
 
-static uint8_t savedSpeed = 0;
-
-RotationSpeedScreenView::RotationSpeedScreenView()
-{
-    speed = savedSpeed;
-    speedSelector.setDisplayedValue(savedSpeed);
+void RotationSpeedScreenView::updateDisplayedValue() {
+    const uint32_t speed = presenter->getRotationSpeed();
+    speedSelector.setDisplayedValue(speed);
 }
 
-void RotationSpeedScreenView::setupScreen()
-{
+RotationSpeedScreenView::RotationSpeedScreenView() {}
+
+void RotationSpeedScreenView::setupScreen() {
     RotationSpeedScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void RotationSpeedScreenView::tearDownScreen()
-{
+void RotationSpeedScreenView::tearDownScreen() {
     RotationSpeedScreenViewBase::tearDownScreen();
 }
 
-void RotationSpeedScreenView::increaseButtonPressed()
-{
-    if (speed <= maxSpeed - speedIncrement)
-    {
-        speed += speedIncrement;
-        speedSelector.setDisplayedValue(speed);
-    }
+void RotationSpeedScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void RotationSpeedScreenView::decreaseButtonPressed()
-{
-    if (speed >= speedIncrement)
-    {
-        speed -= speedIncrement;
-        speedSelector.setDisplayedValue(speed);
-    }
+void RotationSpeedScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
 }
 
-void RotationSpeedScreenView::saveButtonPressed()
-{
-    savedSpeed = speed;
+void RotationSpeedScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }

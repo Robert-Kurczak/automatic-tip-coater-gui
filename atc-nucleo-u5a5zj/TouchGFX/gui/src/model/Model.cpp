@@ -205,6 +205,32 @@ bool Model::isRotationClockwise() {
     return targetBoard_.isRotationClockwise();
 }
 
+void Model::increaseRotationTime() {
+    
+}
+
+void Model::decreaseRotationTime() {}
+
+void Model::saveRotationTime() {}
+
+uint32_t Model::getRotationTime() {}
+
+void Model::setHeaterOn() {
+    targetBoard_.setHeaterOn();
+}
+
+void Model::setHeaterOff() {
+    targetBoard_.setHeaterOff();
+}
+
+void Model::saveHeaterState() {
+    targetBoard_.saveHeaterState();
+}
+
+bool Model::isHeaterOn() {
+    return targetBoard_.isHeaterOn();
+}
+
 void Model::testXAxis() {
     targetBoard_.testXAxis();
 }

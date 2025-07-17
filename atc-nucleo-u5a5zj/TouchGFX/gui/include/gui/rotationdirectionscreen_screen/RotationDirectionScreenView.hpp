@@ -1,11 +1,11 @@
 #ifndef ROTATIONDIRECTIONSCREENVIEW_HPP
 #define ROTATIONDIRECTIONSCREENVIEW_HPP
 
-#include <gui_generated/rotationdirectionscreen_screen/RotationDirectionScreenViewBase.hpp>
 #include <gui/rotationdirectionscreen_screen/RotationDirectionScreenPresenter.hpp>
+#include <gui_generated/rotationdirectionscreen_screen/RotationDirectionScreenViewBase.hpp>
 
-class RotationDirectionScreenView : public RotationDirectionScreenViewBase
-{
+class RotationDirectionScreenView :
+    public RotationDirectionScreenViewBase {
 public:
     RotationDirectionScreenView();
     virtual ~RotationDirectionScreenView() {}
@@ -18,7 +18,7 @@ protected:
     virtual void saveButtonPressed() override;
 
 private:
-    bool clockwise = true;
+    void updateDisplayedValue();
 };
 
 #endif // ROTATIONDIRECTIONSCREENVIEW_HPP

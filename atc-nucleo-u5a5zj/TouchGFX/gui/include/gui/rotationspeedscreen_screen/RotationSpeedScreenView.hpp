@@ -18,11 +18,7 @@ protected:
     virtual void saveButtonPressed() override;
 
 private:
-    static const uint8_t minSpeed = 0;
-    static const uint8_t maxSpeed = 255;
-    static const uint8_t speedIncrement = 1;
-
-    uint16_t speed = 0;
+    void updateDisplayedValue();
 };
 
 #endif // ROTATIONSPEEDSCREENVIEW_HPP
