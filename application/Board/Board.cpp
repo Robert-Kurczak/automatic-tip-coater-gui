@@ -35,7 +35,6 @@ void Board::calibrate() {
     // TODO implement
 }
 
-
 void Board::increaseXAxisStart() {
     devices_.xAxis.increaseStartPosition();
 }
@@ -262,6 +261,26 @@ bool Board::isHeaterOn() {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
     // TODO implement
     return false;
+}
+
+void Board::increaseHeaterTemperature() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Board::decreaseHeaterTemperature() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+void Board::saveHeaterTemperature() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+}
+
+uint32_t Board::getHeaterTemperature() {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
 }
 
 void Board::testXAxis() {
