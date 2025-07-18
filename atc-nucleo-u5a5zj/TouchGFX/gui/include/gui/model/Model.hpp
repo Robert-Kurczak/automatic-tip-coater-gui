@@ -86,6 +86,11 @@ public:
     void saveHeaterState();
     bool isHeaterOn();
 
+    void increaseHeaterTemperature();
+    void decreaseHeaterTemperature();
+    void saveHeaterTemperature();
+    uint32_t getHeaterTemperature();
+
     void testXAxis();
     void testYAxis();
     void testZAxis();

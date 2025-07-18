@@ -229,6 +229,22 @@ bool Model::isHeaterOn() {
     return targetBoard_.isHeaterOn();
 }
 
+void Model::increaseHeaterTemperature() {
+    targetBoard_.increaseHeaterTemperature();
+}
+
+void Model::decreaseHeaterTemperature() {
+    targetBoard_.decreaseHeaterTemperature();
+}
+
+void Model::saveHeaterTemperature() {
+    targetBoard_.saveHeaterTemperature();
+}
+
+uint32_t Model::getHeaterTemperature() {
+    return targetBoard_.getHeaterTemperature();
+}
+
 void Model::testXAxis() {
     targetBoard_.testXAxis();
 }
