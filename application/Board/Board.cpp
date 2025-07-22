@@ -9,6 +9,8 @@ void Board::init() {
     devices_.touchController.init();
 }
 
+void Board::tick() {}
+
 void Board::startCoatingTask(TaskCallback callback) {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
     // TODO implement
