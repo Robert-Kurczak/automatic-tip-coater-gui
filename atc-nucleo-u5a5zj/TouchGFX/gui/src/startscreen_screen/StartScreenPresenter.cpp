@@ -8,6 +8,10 @@ void StartScreenPresenter::activate() {}
 
 void StartScreenPresenter::deactivate() {}
 
+void StartScreenPresenter::handleCoatingTaskFinish(bool wasSuccessful) {
+    view.resetFooterButtons();
+}
+
 void StartScreenPresenter::startButtonPressed() {
     model->startCoatingTask();
 }

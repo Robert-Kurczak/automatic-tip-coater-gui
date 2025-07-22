@@ -13,6 +13,8 @@ public:
         model = m;
     }
 
+    virtual void handleCoatingTaskFinish(bool wasSuccessful) {}
+
 protected:
     Model* model;
 };

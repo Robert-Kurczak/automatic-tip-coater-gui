@@ -15,6 +15,8 @@ public:
     virtual void startCoating() override;
     virtual void cancelCoating() override;
 
+    void resetFooterButtons();
+
 protected:
 };
 
