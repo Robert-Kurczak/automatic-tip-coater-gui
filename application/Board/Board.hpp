@@ -17,6 +17,7 @@ public:
     Board(BoardDevices& devices);
 
     void init();
+    void tick();
 
     void startCoatingTask(TaskCallback callback = [](bool) {});
     void startCalibrationTask(TaskCallback callback = [](bool) {});
