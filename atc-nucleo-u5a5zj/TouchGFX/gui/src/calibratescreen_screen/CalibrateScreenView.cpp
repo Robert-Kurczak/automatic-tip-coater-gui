@@ -17,3 +17,7 @@ void CalibrateScreenView::startCalibration() {
 void CalibrateScreenView::cancelCalibration() {
     presenter->cancelButtonPressed();
 }
+
+void CalibrateScreenView::resetFooterButtons() {
+    startCancelFooter.resetState();
+}

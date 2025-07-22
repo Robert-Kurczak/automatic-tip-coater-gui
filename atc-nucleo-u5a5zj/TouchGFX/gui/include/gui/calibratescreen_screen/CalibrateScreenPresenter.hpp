@@ -30,6 +30,8 @@ public:
 
     virtual ~CalibrateScreenPresenter() {}
 
+    virtual void handleCalibrationTaskFinish(bool wasSuccessful) override;
+
     void startButtonPressed();
     void cancelButtonPressed();
 

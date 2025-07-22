@@ -19,8 +19,11 @@ void Model::startCoatingTask() {
 }
 
 void Model::startCalibrationTask() {
-    targetBoard_.startCalibrationTask();
-    // TODO hookup view callback
+    auto callback = [this](bool wasSuccessful) {
+        modelListener->handleCalibrationTaskFinish(wasSuccessful);
+    };
+
+    targetBoard_.startCalibrationTask(callback);
 }
 
 void Model::startXAxisTestTask() {

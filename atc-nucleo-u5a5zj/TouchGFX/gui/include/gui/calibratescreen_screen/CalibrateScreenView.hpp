@@ -14,6 +14,8 @@ public:
 
     virtual void startCalibration() override;
     virtual void cancelCalibration() override;
+
+    void resetFooterButtons();
 protected:
 };
 

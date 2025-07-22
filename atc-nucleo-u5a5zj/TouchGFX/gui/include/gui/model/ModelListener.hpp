@@ -14,6 +14,7 @@ public:
     }
 
     virtual void handleCoatingTaskFinish(bool wasSuccessful) {}
+    virtual void handleCalibrationTaskFinish(bool wasSuccessful) {}
 
 protected:
     Model* model;
