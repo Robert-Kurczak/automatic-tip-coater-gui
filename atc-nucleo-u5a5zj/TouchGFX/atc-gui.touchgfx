@@ -8120,8 +8120,8 @@
             "InteractionName": "HideCancelButton",
             "HasCompletedTrigger": true,
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "cancelButton"
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call StartCancelFooter resetState"
             },
             "Action": {
               "Type": "ActionMove",
@@ -8185,6 +8185,18 @@
               "Type": "ActionEmit",
               "TriggerCustomTypeName": "StartCancelFooter backButtonPressed happens"
             }
+          },
+          {
+            "InteractionName": "ResetState",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "cancelButton"
+            },
+            "Action": {
+              "Type": "ActionCustom2",
+              "ActionCustomTypeName": "Call StartCancelFooter resetState",
+              "ActionComponent": "StartCancelFooter"
+            }
           }
         ],
         "CustomTriggers": [
@@ -8196,6 +8208,11 @@
           },
           {
             "Name": "backButtonPressed"
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "resetState"
           }
         ]
       },

@@ -3,6 +3,7 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
+// TODO abstract it out and create a fake for Host
 static ATC::TargetBoard targetBoard_ = ATC::TargetBoard::getBoard();
 
 Model::Model() : modelListener(0) {}
@@ -10,39 +11,41 @@ Model::Model() : modelListener(0) {}
 void Model::tick() {}
 
 void Model::startCoatingTask() {
-    targetBoard_.startCoatingTask(
-    );
-    //TODO hookup view callback
+    auto callback = [this](bool wasSuccessful) {
+        modelListener->handleCoatingTaskFinish(wasSuccessful);
+    };
+
+    targetBoard_.startCoatingTask(callback);
 }
 
 void Model::startCalibrationTask() {
     targetBoard_.startCalibrationTask();
-    //TODO hookup view callback
+    // TODO hookup view callback
 }
 
 void Model::startXAxisTestTask() {
     targetBoard_.startXAxisTestTask();
-    //TODO hookup view callback
+    // TODO hookup view callback
 }
 
 void Model::startYAxisTestTask() {
     targetBoard_.startYAxisTestTask();
-    //TODO hookup view callback
+    // TODO hookup view callback
 }
 
 void Model::startZAxisTestTask() {
     targetBoard_.startZAxisTestTask();
-    //TODO hookup view callback
+    // TODO hookup view callback
 }
 
 void Model::startHeaterTestTask() {
     targetBoard_.startHeaterTestTask();
-    //TODO hookup view callback
+    // TODO hookup view callback
 }
 
 void Model::startRotationTestTask() {
     targetBoard_.startRotationTestTask();
-    //TODO hookup view callback
+    // TODO hookup view callback
 }
 
 void Model::cancelCurrentTask() {

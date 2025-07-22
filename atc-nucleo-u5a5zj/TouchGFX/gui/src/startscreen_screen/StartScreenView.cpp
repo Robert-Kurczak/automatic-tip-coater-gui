@@ -17,3 +17,7 @@ void StartScreenView::startCoating() {
 void StartScreenView::cancelCoating() {
     presenter->cancelButtonPressed();
 }
+
+void StartScreenView::resetFooterButtons() {
+    startCancelFooter.resetState();
+}
