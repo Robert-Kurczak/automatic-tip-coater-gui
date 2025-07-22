@@ -15,11 +15,16 @@ public:
 
     void tick();
 
+    void startCoatingTask();
+    void startCalibrationTask();
+
+    void startXAxisTestTask();
+    void startYAxisTestTask();
+    void startZAxisTestTask();
+    void startHeaterTestTask();
+    void startRotationTestTask();
+
     void cancelCurrentTask();
-
-    void startCoatingSequence();
-
-    void calibrate();
 
     void increaseXAxisStart();
     void decreaseXAxisStart();
@@ -90,12 +95,6 @@ public:
     void decreaseHeaterTemperature();
     void saveHeaterTemperature();
     uint32_t getHeaterTemperature();
-
-    void testXAxis();
-    void testYAxis();
-    void testZAxis();
-    void testHeater();
-    void testRotation();
 
 protected:
     ModelListener* modelListener;

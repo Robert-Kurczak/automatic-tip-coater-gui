@@ -9,28 +9,49 @@ void Board::init() {
     devices_.touchController.init();
 }
 
-void Board::drawOnDisplay(
-    const std::span<const uint16_t>& frameBuffer,
-    const Rectangle& window
-) {
-    devices_.display.draw(frameBuffer, window);
+void Board::startCoatingTask(TaskCallback callback) {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    callback(false);
 }
 
-Vector2 Board::readTouchScreenPosition() {
-    return devices_.touchController.readPosition();
+void Board::startCalibrationTask(TaskCallback callback) {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    callback(false);
+}
+
+void Board::startXAxisTestTask(TaskCallback callback) {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    callback(false);
+}
+
+void Board::startYAxisTestTask(TaskCallback callback) {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    callback(false);
+}
+
+void Board::startZAxisTestTask(TaskCallback callback) {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    callback(false);
+}
+
+void Board::startHeaterTestTask(TaskCallback callback) {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    callback(false);
+}
+
+void Board::startRotationTestTask(TaskCallback callback) {
+    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    // TODO implement
+    callback(false);
 }
 
 void Board::cancelCurrentTask() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-}
-
-void Board::startCoatingSequence() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-}
-
-void Board::calibrate() {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
     // TODO implement
 }
@@ -281,30 +302,17 @@ void Board::saveHeaterTemperature() {
 uint32_t Board::getHeaterTemperature() {
     UartLogger::debugPrint("Board::%s not implemented", __func__);
     // TODO implement
+    return 100;
 }
 
-void Board::testXAxis() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+void Board::drawOnDisplay(
+    const std::span<const uint16_t>& frameBuffer,
+    const Rectangle& window
+) {
+    devices_.display.draw(frameBuffer, window);
 }
 
-void Board::testYAxis() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-}
-
-void Board::testZAxis() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-}
-
-void Board::testHeater() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-}
-
-void Board::testRotation() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+Vector2 Board::readTouchScreenPosition() {
+    return devices_.touchController.readPosition();
 }
 }

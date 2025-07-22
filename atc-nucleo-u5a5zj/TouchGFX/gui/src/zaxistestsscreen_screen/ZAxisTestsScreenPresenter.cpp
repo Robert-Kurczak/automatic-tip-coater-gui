@@ -11,7 +11,7 @@ void ZAxisTestsScreenPresenter::activate() {}
 void ZAxisTestsScreenPresenter::deactivate() {}
 
 void ZAxisTestsScreenPresenter::startButtonPressed() {
-    model->testZAxis();
+    model->startZAxisTestTask();
 }
 
 void ZAxisTestsScreenPresenter::cancelButtonPressed() {

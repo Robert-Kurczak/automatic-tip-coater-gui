@@ -9,16 +9,44 @@ Model::Model() : modelListener(0) {}
 
 void Model::tick() {}
 
+void Model::startCoatingTask() {
+    targetBoard_.startCoatingTask(
+    );
+    //TODO hookup view callback
+}
+
+void Model::startCalibrationTask() {
+    targetBoard_.startCalibrationTask();
+    //TODO hookup view callback
+}
+
+void Model::startXAxisTestTask() {
+    targetBoard_.startXAxisTestTask();
+    //TODO hookup view callback
+}
+
+void Model::startYAxisTestTask() {
+    targetBoard_.startYAxisTestTask();
+    //TODO hookup view callback
+}
+
+void Model::startZAxisTestTask() {
+    targetBoard_.startZAxisTestTask();
+    //TODO hookup view callback
+}
+
+void Model::startHeaterTestTask() {
+    targetBoard_.startHeaterTestTask();
+    //TODO hookup view callback
+}
+
+void Model::startRotationTestTask() {
+    targetBoard_.startRotationTestTask();
+    //TODO hookup view callback
+}
+
 void Model::cancelCurrentTask() {
     targetBoard_.cancelCurrentTask();
-}
-
-void Model::startCoatingSequence() {
-    targetBoard_.startCoatingSequence();
-}
-
-void Model::calibrate() {
-    targetBoard_.calibrate();
 }
 
 void Model::increaseXAxisStart() {
@@ -243,24 +271,4 @@ void Model::saveHeaterTemperature() {
 
 uint32_t Model::getHeaterTemperature() {
     return targetBoard_.getHeaterTemperature();
-}
-
-void Model::testXAxis() {
-    targetBoard_.testXAxis();
-}
-
-void Model::testYAxis() {
-    targetBoard_.testYAxis();
-}
-
-void Model::testZAxis() {
-    targetBoard_.testZAxis();
-}
-
-void Model::testHeater() {
-    targetBoard_.testHeater();
-}
-
-void Model::testRotation() {
-    targetBoard_.testRotation();
 }

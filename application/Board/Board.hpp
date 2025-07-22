@@ -3,9 +3,12 @@
 #include "BoardDevices.hpp"
 #include "application/Math/Math.hpp"
 
+#include <functional>
 #include <stdint.h>
 
 namespace ATC {
+using TaskCallback = std::function<void(bool wasSuccessful)>;
+
 class Board {
 private:
     BoardDevices& devices_;
@@ -15,18 +18,16 @@ public:
 
     void init();
 
-    void drawOnDisplay(
-        const std::span<const uint16_t>& frameBuffer,
-        const Rectangle& window
-    );
+    void startCoatingTask(TaskCallback callback = [](bool) {});
+    void startCalibrationTask(TaskCallback callback = [](bool) {});
 
-    Vector2 readTouchScreenPosition();
+    void startXAxisTestTask(TaskCallback callback = [](bool) {});
+    void startYAxisTestTask(TaskCallback callback = [](bool) {});
+    void startZAxisTestTask(TaskCallback callback = [](bool) {});
+    void startHeaterTestTask(TaskCallback callback = [](bool) {});
+    void startRotationTestTask(TaskCallback callback = [](bool) {});
 
     void cancelCurrentTask();
-
-    void startCoatingSequence();
-
-    void calibrate();
 
     void increaseXAxisStart();
     void decreaseXAxisStart();
@@ -98,10 +99,11 @@ public:
     void saveHeaterTemperature();
     uint32_t getHeaterTemperature();
 
-    void testXAxis();
-    void testYAxis();
-    void testZAxis();
-    void testHeater();
-    void testRotation();
+    void drawOnDisplay(
+        const std::span<const uint16_t>& frameBuffer,
+        const Rectangle& window
+    );
+
+    Vector2 readTouchScreenPosition();
 };
 }

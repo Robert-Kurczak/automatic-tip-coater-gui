@@ -11,7 +11,7 @@ void HeaterTestsScreenPresenter::activate() {}
 void HeaterTestsScreenPresenter::deactivate() {}
 
 void HeaterTestsScreenPresenter::startButtonPressed() {
-    model->testHeater();
+    model->startHeaterTestTask();
 }
 
 void HeaterTestsScreenPresenter::cancelButtonPressed() {
