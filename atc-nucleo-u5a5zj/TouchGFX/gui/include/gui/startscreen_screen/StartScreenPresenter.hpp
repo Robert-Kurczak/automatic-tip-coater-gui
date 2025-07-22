@@ -29,7 +29,7 @@ public:
     virtual void deactivate();
 
     virtual ~StartScreenPresenter() {}
-    
+
     virtual void handleCoatingTaskFinish(bool wasSuccessful) override;
 
     void startButtonPressed();
