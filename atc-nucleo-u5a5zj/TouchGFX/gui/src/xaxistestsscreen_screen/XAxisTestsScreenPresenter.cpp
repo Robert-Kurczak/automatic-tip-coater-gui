@@ -11,7 +11,7 @@ void XAxisTestsScreenPresenter::activate() {}
 void XAxisTestsScreenPresenter::deactivate() {}
 
 void XAxisTestsScreenPresenter::startButtonPressed() {
-    model->testXAxis();
+    model->startXAxisTestTask();
 }
 
 void XAxisTestsScreenPresenter::cancelButtonPressed() {

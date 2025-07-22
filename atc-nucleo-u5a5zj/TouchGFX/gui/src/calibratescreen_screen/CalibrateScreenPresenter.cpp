@@ -11,7 +11,7 @@ void CalibrateScreenPresenter::activate() {}
 void CalibrateScreenPresenter::deactivate() {}
 
 void CalibrateScreenPresenter::startButtonPressed() {
-    model->calibrate();
+    model->startCalibrationTask();
 }
 
 void CalibrateScreenPresenter::cancelButtonPressed() {

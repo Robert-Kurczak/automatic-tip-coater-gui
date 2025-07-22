@@ -11,7 +11,7 @@ void YAxisTestsScreenPresenter::activate() {}
 void YAxisTestsScreenPresenter::deactivate() {}
 
 void YAxisTestsScreenPresenter::startButtonPressed() {
-    model->testYAxis();
+    model->startYAxisTestTask();
 }
 
 void YAxisTestsScreenPresenter::cancelButtonPressed() {

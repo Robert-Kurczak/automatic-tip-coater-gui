@@ -9,7 +9,7 @@ void StartScreenPresenter::activate() {}
 void StartScreenPresenter::deactivate() {}
 
 void StartScreenPresenter::startButtonPressed() {
-    model->startCoatingSequence();
+    model->startCoatingTask();
 }
 
 void StartScreenPresenter::cancelButtonPressed() {

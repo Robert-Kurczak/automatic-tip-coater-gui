@@ -11,7 +11,7 @@ void RotationTestsScreenPresenter::activate() {}
 void RotationTestsScreenPresenter::deactivate() {}
 
 void RotationTestsScreenPresenter::startButtonPressed() {
-    model->testRotation();
+    model->startRotationTestTask();
 }
 
 void RotationTestsScreenPresenter::cancelButtonPressed() {
