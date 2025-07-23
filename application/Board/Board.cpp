@@ -202,67 +202,53 @@ uint32_t Board::getZAxisSpeed() {
     return devices_.zAxis.getSpeed();
 }
 
+// TODO change "Rotation" to "Rotator"
 void Board::increaseRotationSpeed() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.rotator.increaseSpeed();
 }
 
 void Board::decreaseRotationSpeed() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.rotator.decreaseSpeed();
 }
 
 void Board::saveRotationSpeed() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.rotator.saveSpeed();
 }
 
 uint32_t Board::getRotationSpeed() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    return 100;
+    return devices_.rotator.getSpeed();
 }
 
 void Board::setClockwiseRotation() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.rotator.setDirectionClockwise();
 }
 
 void Board::setCounterClockwiseRotation() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.rotator.setDirectionCounterClockwise();
 }
 
 void Board::saveRotationDirection() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.rotator.setDirectionClockwise();
 }
 
 bool Board::isRotationClockwise() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    return true;
+    return devices_.rotator.isDirectionClockwise();
 }
 
 void Board::increaseRotationTime() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    return devices_.rotator.increaseRotationTime();
 }
 
 void Board::decreaseRotationTime() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    return devices_.rotator.decreaseRotationTime();
 }
 
 void Board::saveRotationTime() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    return devices_.rotator.saveRotationTime();
 }
 
 uint32_t Board::getRotationTime() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    return 3;
+    return devices_.rotator.getRotationTime();
 }
 
 void Board::setHeaterOn() {
