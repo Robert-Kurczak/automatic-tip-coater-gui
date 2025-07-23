@@ -3,6 +3,7 @@
 #include "application/Board/Board.hpp"
 #include "application/Board/BoardDevices.hpp"
 #include "application/GpioPin/GpioPin.hpp"
+#include "application/Rotator/Rotator.hpp"
 #include "application/Spi/Spi.hpp"
 #include "application/TouchControllerXpt2046/TouchControllerXpt2046.hpp"
 #include "main.h"
@@ -17,6 +18,7 @@ private:
     XAxis xAxis_ {};
     YAxis yAxis_ {};
     ZAxis zAxis_ {};
+    Rotator rotator_ {};
 
     FlexibleMemoryController flexibleMemoryController_ {
         0x60000000,
@@ -60,6 +62,7 @@ private:
         .xAxis = xAxis_,
         .yAxis = yAxis_,
         .zAxis = zAxis_,
+        .rotator = rotator_,
         .display = display_,
         .touchController = touchController_
     };
