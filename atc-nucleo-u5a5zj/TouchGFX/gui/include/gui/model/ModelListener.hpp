@@ -1,6 +1,8 @@
 #ifndef MODELLISTENER_HPP
 #define MODELLISTENER_HPP
 
+#include "application/Axes/XAxis/XAxisTestResults.hpp"
+
 #include <gui/model/Model.hpp>
 
 class ModelListener {
@@ -15,6 +17,9 @@ public:
 
     virtual void handleCoatingTaskFinish(bool wasSuccessful) {}
     virtual void handleCalibrationTaskFinish(bool wasSuccessful) {}
+    virtual void handleXAxisTestTaskFinish(
+        ATC::XAxisTestResults results
+    ) {}
 
 protected:
     Model* model;

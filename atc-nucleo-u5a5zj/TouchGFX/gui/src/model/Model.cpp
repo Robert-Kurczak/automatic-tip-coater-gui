@@ -1,4 +1,5 @@
 #include "TargetBoard.hpp"
+#include "application/Axes/XAxis/XAxisTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
@@ -27,8 +28,11 @@ void Model::startCalibrationTask() {
 }
 
 void Model::startXAxisTestTask() {
-    targetBoard_.startXAxisTestTask();
-    // TODO hookup view callback
+    auto callback = [this](ATC::XAxisTestResults results) {
+        modelListener->handleXAxisTestTaskFinish(results);
+    };
+
+    targetBoard_.startXAxisTestTask(callback);
 }
 
 void Model::startYAxisTestTask() {

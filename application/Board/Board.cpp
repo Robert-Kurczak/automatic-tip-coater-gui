@@ -28,10 +28,8 @@ void Board::startCalibrationTask(TaskCallback callback) {
     callback(false);
 }
 
-void Board::startXAxisTestTask(TaskCallback callback) {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    callback(false);
+void Board::startXAxisTestTask(XAxisTestTaskCallback callback) {
+    devices_.xAxis.startTestTask(callback);
 }
 
 void Board::startYAxisTestTask(TaskCallback callback) {
