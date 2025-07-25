@@ -5,6 +5,11 @@ namespace ATC {
 Board::Board(BoardDevices& devices) : devices_(devices) {}
 
 void Board::init() {
+    devices_.xAxis.init();
+    devices_.yAxis.init();
+    devices_.zAxis.init();
+    devices_.rotator.init();
+    devices_.heater.init();
     devices_.display.init();
     devices_.touchController.init();
 }
@@ -252,45 +257,35 @@ uint32_t Board::getRotationTime() {
 }
 
 void Board::setHeaterOn() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.heater.setOn();
 }
 
 void Board::setHeaterOff() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.heater.setOff();
 }
 
 void Board::saveHeaterState() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.heater.saveState();
 }
 
 bool Board::isHeaterOn() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    return false;
+    return devices_.heater.isOn();
 }
 
 void Board::increaseHeaterTemperature() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.heater.increaseTemperature();
 }
 
 void Board::decreaseHeaterTemperature() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.heater.decreaseTemperature();
 }
 
 void Board::saveHeaterTemperature() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
+    devices_.heater.saveTemperature();
 }
 
 uint32_t Board::getHeaterTemperature() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    return 100;
+    return devices_.heater.getTemperature();
 }
 
 void Board::drawOnDisplay(

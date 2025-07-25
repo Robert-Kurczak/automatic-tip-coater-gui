@@ -7,6 +7,8 @@ class ZAxis {
 private:
 
 public:
+    void init();
+
     void increaseStartPosition();
     void decreaseStartPosition();
     void saveStartPosition();

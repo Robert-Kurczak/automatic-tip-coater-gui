@@ -1,8 +1,10 @@
 #include "ZAxis.hpp"
-
 #include "application/UartLogger/UartLogger.hpp"
 
+
 namespace ATC {
+void ZAxis::init() {}
+
 void ZAxis::increaseStartPosition() {
     UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
     // TODO implement

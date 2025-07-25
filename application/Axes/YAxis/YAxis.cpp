@@ -1,8 +1,10 @@
 #include "YAxis.hpp"
-
 #include "application/UartLogger/UartLogger.hpp"
 
+
 namespace ATC {
+void YAxis::init() {}
+
 void YAxis::increaseStartPosition() {
     UartLogger::debugPrint("YAxis::%s not implemented", __func__);
     // TODO implement
