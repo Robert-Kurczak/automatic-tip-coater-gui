@@ -1,6 +1,8 @@
 #ifndef HEATERTESTSSCREENPRESENTER_HPP
 #define HEATERTESTSSCREENPRESENTER_HPP
 
+#include "application/Heater/HeaterTestResults.hpp"
+
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
@@ -29,6 +31,10 @@ public:
     virtual void deactivate();
 
     virtual ~HeaterTestsScreenPresenter() {}
+
+    virtual void handleHeaterTestTaskFinish(
+        ATC::HeaterTestResults results
+    ) override;
 
     void startButtonPressed();
     void cancelButtonPressed();

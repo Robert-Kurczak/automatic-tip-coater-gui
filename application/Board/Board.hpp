@@ -34,7 +34,10 @@ public:
         ZAxisTestTaskCallback callback = [](ZAxisTestResults) {}
     );
 
-    void startHeaterTestTask(TaskCallback callback = [](bool) {});
+    void startHeaterTestTask(
+        HeaterTestTaskCallback callback = [](HeaterTestResults) {}
+    );
+
     void startRotationTestTask(TaskCallback callback = [](bool) {});
 
     void cancelCurrentTask();

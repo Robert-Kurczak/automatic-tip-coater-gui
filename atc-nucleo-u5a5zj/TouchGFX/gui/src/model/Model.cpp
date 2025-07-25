@@ -52,8 +52,11 @@ void Model::startZAxisTestTask() {
 }
 
 void Model::startHeaterTestTask() {
-    targetBoard_.startHeaterTestTask();
-    // TODO hookup view callback
+    auto callback = [this](ATC::HeaterTestResults results) {
+        modelListener->handleHeaterTestTaskFinish(results);
+    };
+
+    targetBoard_.startHeaterTestTask(callback);
 }
 
 void Model::startRotationTestTask() {

@@ -2,6 +2,7 @@
 
 #include "ZAxisTestResults.hpp"
 
+#include <functional>
 #include <stdint.h>
 
 namespace ATC {
