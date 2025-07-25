@@ -30,6 +30,10 @@ public:
 
     virtual ~RotationTestsScreenPresenter() {}
 
+    virtual void handleRotatorTestTaskFinish(
+        ATC::RotatorTestResults results
+    ) override;
+
     void startButtonPressed();
     void cancelButtonPressed();
 

@@ -10,6 +10,16 @@ void RotationTestsScreenView::tearDownScreen() {
     RotationTestsScreenViewBase::tearDownScreen();
 }
 
+void RotationTestsScreenView::showTestResults(
+    ATC::RotatorTestResults results
+) {
+    if (results.motorDriverSuccess) {
+        rotationTestsResults.setMotorDriverSuccess();
+    } else {
+        rotationTestsResults.setMotorDriverError();
+    }
+}
+
 void RotationTestsScreenView::startTest() {
     rotationTestsResults.setLoadingIcons();
 

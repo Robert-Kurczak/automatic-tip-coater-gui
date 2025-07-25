@@ -40,14 +40,12 @@ void Board::startZAxisTestTask(ZAxisTestTaskCallback callback) {
     devices_.zAxis.startTestTask(callback);
 }
 
-void Board::startHeaterTestTask(HeaterTestTaskCallback callback) {
-    devices_.heater.startTestTask(callback);
+void Board::startRotationTestTask(RotatorTestTaskCallback callback) {
+    devices_.rotator.startTestTask(callback);
 }
 
-void Board::startRotationTestTask(TaskCallback callback) {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    callback(false);
+void Board::startHeaterTestTask(HeaterTestTaskCallback callback) {
+    devices_.heater.startTestTask(callback);
 }
 
 void Board::cancelCurrentTask() {

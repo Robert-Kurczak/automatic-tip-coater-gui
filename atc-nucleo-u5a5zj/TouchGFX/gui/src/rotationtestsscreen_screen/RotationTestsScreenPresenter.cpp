@@ -10,6 +10,12 @@ void RotationTestsScreenPresenter::activate() {}
 
 void RotationTestsScreenPresenter::deactivate() {}
 
+void RotationTestsScreenPresenter::handleRotatorTestTaskFinish(
+    ATC::RotatorTestResults results
+) {
+    view.showTestResults(results);
+}
+
 void RotationTestsScreenPresenter::startButtonPressed() {
     model->startRotationTestTask();
 }

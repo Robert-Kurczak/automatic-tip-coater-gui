@@ -1,12 +1,22 @@
 #pragma once
+
+#include "RotatorTestResults.hpp"
+
+#include <functional>
 #include <stdint.h>
 
 namespace ATC {
+using RotatorTestTaskCallback =
+    std::function<void(RotatorTestResults results)>;
+
 class Rotator {
 private:
 
 public:
     void init();
+    void tick();
+
+    void startTestTask(RotatorTestTaskCallback callback);
 
     void increaseSpeed();
     void decreaseSpeed();
