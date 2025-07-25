@@ -1,8 +1,10 @@
 #include "XAxis.hpp"
-
 #include "application/UartLogger/UartLogger.hpp"
 
+
 namespace ATC {
+void XAxis::init() {}
+
 void XAxis::increaseStartPosition() {
     UartLogger::debugPrint("XAxis::%s not implemented", __func__);
     // TODO implement
