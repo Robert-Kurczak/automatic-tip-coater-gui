@@ -2,9 +2,17 @@
 #include "application/UartLogger/UartLogger.hpp"
 
 namespace ATC {
-void Rotator::init() {
+void Rotator::init() {}
+
+void Rotator::tick() {}
+
+void Rotator::startTestTask(RotatorTestTaskCallback callback) {
     UartLogger::debugPrint("Rotator::%s not implemented", __func__);
     // TODO implement
+
+    RotatorTestResults results {.motorDriverSuccess = false};
+
+    callback(results);
 }
 
 void Rotator::increaseSpeed() {
@@ -67,5 +75,6 @@ void Rotator::saveRotationTime() {
 uint32_t Rotator::getRotationTime() {
     UartLogger::debugPrint("Rotator::%s not implemented", __func__);
     // TODO implement
+    return 5;
 }
 }

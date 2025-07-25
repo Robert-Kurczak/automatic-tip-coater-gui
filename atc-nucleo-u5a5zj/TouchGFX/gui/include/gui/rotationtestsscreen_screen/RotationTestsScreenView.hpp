@@ -12,6 +12,8 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void showTestResults(ATC::RotatorTestResults results);
+
 protected:
     virtual void startTest() override;
     virtual void cancelTest() override;
