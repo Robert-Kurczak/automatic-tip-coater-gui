@@ -1,16 +1,19 @@
 #ifndef XAXISTESTSSCREENVIEW_HPP
 #define XAXISTESTSSCREENVIEW_HPP
 
-#include <gui_generated/xaxistestsscreen_screen/XAxisTestsScreenViewBase.hpp>
-#include <gui/xaxistestsscreen_screen/XAxisTestsScreenPresenter.hpp>
+#include "application/Axes/XAxis/XAxisTestResults.hpp"
 
-class XAxisTestsScreenView : public XAxisTestsScreenViewBase
-{
+#include <gui/xaxistestsscreen_screen/XAxisTestsScreenPresenter.hpp>
+#include <gui_generated/xaxistestsscreen_screen/XAxisTestsScreenViewBase.hpp>
+
+class XAxisTestsScreenView : public XAxisTestsScreenViewBase {
 public:
     XAxisTestsScreenView();
     virtual ~XAxisTestsScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    void showTestResults(ATC::XAxisTestResults results);
 
 protected:
     virtual void startTest() override;

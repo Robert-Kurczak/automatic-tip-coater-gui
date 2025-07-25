@@ -5,6 +5,21 @@
 namespace ATC {
 void XAxis::init() {}
 
+void XAxis::tick() {}
+
+void XAxis::startTestTask(XAxisTestTaskCallback callback) {
+    UartLogger::debugPrint("XAxis::%s not implemented", __func__);
+    // TODO implement
+
+    XAxisTestResults results {
+        .startLimitSwitchSuccess = false,
+        .endLimitSwitchSuccess = false,
+        .motorDriverSuccess = false
+    };
+
+    callback(results);
+}
+
 void XAxis::increaseStartPosition() {
     UartLogger::debugPrint("XAxis::%s not implemented", __func__);
     // TODO implement

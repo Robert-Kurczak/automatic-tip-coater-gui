@@ -22,7 +22,10 @@ public:
     void startCoatingTask(TaskCallback callback = [](bool) {});
     void startCalibrationTask(TaskCallback callback = [](bool) {});
 
-    void startXAxisTestTask(TaskCallback callback = [](bool) {});
+    void startXAxisTestTask(
+        XAxisTestTaskCallback callback = [](XAxisTestResults) {}
+    );
+
     void startYAxisTestTask(TaskCallback callback = [](bool) {});
     void startZAxisTestTask(TaskCallback callback = [](bool) {});
     void startHeaterTestTask(TaskCallback callback = [](bool) {});

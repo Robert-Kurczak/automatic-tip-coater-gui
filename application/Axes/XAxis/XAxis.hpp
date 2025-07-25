@@ -1,13 +1,22 @@
 #pragma once
 
+#include "XAxisTestResults.hpp"
+
+#include <functional>
 #include <stdint.h>
 
 namespace ATC {
+using XAxisTestTaskCallback =
+    std::function<void(XAxisTestResults results)>;
+
 class XAxis {
 private:
 
 public:
     void init();
+    void tick();
+
+    void startTestTask(XAxisTestTaskCallback callback);
 
     void increaseStartPosition();
     void decreaseStartPosition();

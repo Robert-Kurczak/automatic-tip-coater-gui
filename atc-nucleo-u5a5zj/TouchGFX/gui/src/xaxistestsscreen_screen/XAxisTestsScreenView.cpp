@@ -1,5 +1,6 @@
 #include <gui/xaxistestsscreen_screen/XAxisTestsScreenView.hpp>
 
+// TODO change "Tests" to "Test"
 XAxisTestsScreenView::XAxisTestsScreenView() {}
 
 void XAxisTestsScreenView::setupScreen() {
@@ -22,4 +23,26 @@ void XAxisTestsScreenView::cancelTest() {
     axisTestsResults.setMotorDriverError();
 
     presenter->cancelButtonPressed();
+}
+
+void XAxisTestsScreenView::showTestResults(
+    ATC::XAxisTestResults results
+) {
+    if (results.startLimitSwitchSuccess) {
+        axisTestsResults.setStartLimitSwitchSuccess();
+    } else {
+        axisTestsResults.setStartLimitSwitchError();
+    }
+
+    if (results.endLimitSwitchSuccess) {
+        axisTestsResults.setEndLimitSwitchSuccess();
+    } else {
+        axisTestsResults.setEndLimitSwitchError();
+    }
+
+    if (results.motorDriverSuccess) {
+        axisTestsResults.setMotorDriverSuccess();
+    } else {
+        axisTestsResults.setMotorDriverError();
+    }
 }

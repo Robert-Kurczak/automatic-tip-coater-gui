@@ -10,6 +10,12 @@ void XAxisTestsScreenPresenter::activate() {}
 
 void XAxisTestsScreenPresenter::deactivate() {}
 
+void XAxisTestsScreenPresenter::handleXAxisTestTaskFinish(
+    ATC::XAxisTestResults results
+) {
+    view.showTestResults(results);
+}
+
 void XAxisTestsScreenPresenter::startButtonPressed() {
     model->startXAxisTestTask();
 }
