@@ -10,6 +10,12 @@ void YAxisTestsScreenPresenter::activate() {}
 
 void YAxisTestsScreenPresenter::deactivate() {}
 
+void YAxisTestsScreenPresenter::handleYAxisTestTaskFinish(
+    ATC::YAxisTestResults results
+) {
+    view.showTestResults(results);
+}
+
 void YAxisTestsScreenPresenter::startButtonPressed() {
     model->startYAxisTestTask();
 }

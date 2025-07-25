@@ -2,6 +2,7 @@
 #define MODELLISTENER_HPP
 
 #include "application/Axes/XAxis/XAxisTestResults.hpp"
+#include "application/Axes/YAxis/YAxisTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 
@@ -19,6 +20,9 @@ public:
     virtual void handleCalibrationTaskFinish(bool wasSuccessful) {}
     virtual void handleXAxisTestTaskFinish(
         ATC::XAxisTestResults results
+    ) {}
+    virtual void handleYAxisTestTaskFinish(
+        ATC::YAxisTestResults results
     ) {}
 
 protected:

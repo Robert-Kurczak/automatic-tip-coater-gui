@@ -1,9 +1,23 @@
 #include "YAxis.hpp"
 #include "application/UartLogger/UartLogger.hpp"
 
-
 namespace ATC {
 void YAxis::init() {}
+
+void YAxis::tick() {}
+
+void YAxis::startTestTask(YAxisTestTaskCallback callback) {
+    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    // TODO implement
+
+    YAxisTestResults results {
+        .startLimitSwitchSuccess = false,
+        .endLimitSwitchSuccess = false,
+        .motorDriverSuccess = false
+    };
+
+    callback(results);
+}
 
 void YAxis::increaseStartPosition() {
     UartLogger::debugPrint("YAxis::%s not implemented", __func__);

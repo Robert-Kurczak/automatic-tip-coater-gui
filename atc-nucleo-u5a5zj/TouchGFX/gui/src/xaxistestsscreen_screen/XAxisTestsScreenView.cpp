@@ -11,20 +11,6 @@ void XAxisTestsScreenView::tearDownScreen() {
     XAxisTestsScreenViewBase::tearDownScreen();
 }
 
-void XAxisTestsScreenView::startTest() {
-    axisTestsResults.setLoadingIcons();
-
-    presenter->startButtonPressed();
-}
-
-void XAxisTestsScreenView::cancelTest() {
-    axisTestsResults.setStartLimitSwitchError();
-    axisTestsResults.setEndLimitSwitchError();
-    axisTestsResults.setMotorDriverError();
-
-    presenter->cancelButtonPressed();
-}
-
 void XAxisTestsScreenView::showTestResults(
     ATC::XAxisTestResults results
 ) {
@@ -45,4 +31,18 @@ void XAxisTestsScreenView::showTestResults(
     } else {
         axisTestsResults.setMotorDriverError();
     }
+}
+
+void XAxisTestsScreenView::startTest() {
+    axisTestsResults.setLoadingIcons();
+
+    presenter->startButtonPressed();
+}
+
+void XAxisTestsScreenView::cancelTest() {
+    axisTestsResults.setStartLimitSwitchError();
+    axisTestsResults.setEndLimitSwitchError();
+    axisTestsResults.setMotorDriverError();
+
+    presenter->cancelButtonPressed();
 }
