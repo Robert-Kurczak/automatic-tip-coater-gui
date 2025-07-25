@@ -10,6 +10,28 @@ void YAxisTestsScreenView::tearDownScreen() {
     YAxisTestsScreenViewBase::tearDownScreen();
 }
 
+void YAxisTestsScreenView::showTestResults(
+    ATC::YAxisTestResults results
+) {
+    if (results.startLimitSwitchSuccess) {
+        axisTestsResults.setStartLimitSwitchSuccess();
+    } else {
+        axisTestsResults.setStartLimitSwitchError();
+    }
+
+    if (results.endLimitSwitchSuccess) {
+        axisTestsResults.setEndLimitSwitchSuccess();
+    } else {
+        axisTestsResults.setEndLimitSwitchError();
+    }
+
+    if (results.motorDriverSuccess) {
+        axisTestsResults.setMotorDriverSuccess();
+    } else {
+        axisTestsResults.setMotorDriverError();
+    }
+}
+
 void YAxisTestsScreenView::startTest() {
     axisTestsResults.setLoadingIcons();
 

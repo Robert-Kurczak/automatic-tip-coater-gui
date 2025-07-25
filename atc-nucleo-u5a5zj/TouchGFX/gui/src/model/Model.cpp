@@ -36,8 +36,11 @@ void Model::startXAxisTestTask() {
 }
 
 void Model::startYAxisTestTask() {
-    targetBoard_.startYAxisTestTask();
-    // TODO hookup view callback
+    auto callback = [this](ATC::YAxisTestResults results) {
+        modelListener->handleYAxisTestTaskFinish(results);
+    };
+
+    targetBoard_.startYAxisTestTask(callback);
 }
 
 void Model::startZAxisTestTask() {

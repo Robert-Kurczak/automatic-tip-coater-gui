@@ -1,13 +1,22 @@
 #pragma once
 
+#include "YAxisTestResults.hpp"
+
+#include <functional>
 #include <stdint.h>
 
 namespace ATC {
+using YAxisTestTaskCallback =
+    std::function<void(YAxisTestResults results)>;
+
 class YAxis {
 private:
 
 public:
     void init();
+    void tick();
+
+    void startTestTask(YAxisTestTaskCallback callback);
 
     void increaseStartPosition();
     void decreaseStartPosition();

@@ -32,10 +32,8 @@ void Board::startXAxisTestTask(XAxisTestTaskCallback callback) {
     devices_.xAxis.startTestTask(callback);
 }
 
-void Board::startYAxisTestTask(TaskCallback callback) {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
-    // TODO implement
-    callback(false);
+void Board::startYAxisTestTask(YAxisTestTaskCallback callback) {
+    devices_.yAxis.startTestTask(callback);
 }
 
 void Board::startZAxisTestTask(TaskCallback callback) {
