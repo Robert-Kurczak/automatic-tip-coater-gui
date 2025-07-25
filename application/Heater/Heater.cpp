@@ -4,6 +4,17 @@
 namespace ATC {
 void Heater::init() {}
 
+void Heater::tick() {}
+
+void Heater::startTestTask(HeaterTestTaskCallback callback) {
+    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    // TODO implement
+
+    HeaterTestResults results {.temperatureSuccess = true};
+
+    callback(results);
+}
+
 void Heater::setOn() {
     UartLogger::debugPrint("Heater::%s not implemented", __func__);
     // TODO implement

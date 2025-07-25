@@ -10,6 +10,12 @@ void HeaterTestsScreenPresenter::activate() {}
 
 void HeaterTestsScreenPresenter::deactivate() {}
 
+void HeaterTestsScreenPresenter::handleHeaterTestTaskFinish(
+    ATC::HeaterTestResults results
+) {
+    view.showTestResults(results);
+}
+
 void HeaterTestsScreenPresenter::startButtonPressed() {
     model->startHeaterTestTask();
 }

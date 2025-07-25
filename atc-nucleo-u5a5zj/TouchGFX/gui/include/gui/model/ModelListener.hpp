@@ -4,6 +4,7 @@
 #include "application/Axes/XAxis/XAxisTestResults.hpp"
 #include "application/Axes/YAxis/YAxisTestResults.hpp"
 #include "application/Axes/ZAxis/ZAxisTestResults.hpp"
+#include "application/Heater/HeaterTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 
@@ -27,6 +28,9 @@ public:
     ) {}
     virtual void handleZAxisTestTaskFinish(
         ATC::ZAxisTestResults results
+    ) {}
+    virtual void handleHeaterTestTaskFinish(
+        ATC::HeaterTestResults results
     ) {}
 
 protected:
