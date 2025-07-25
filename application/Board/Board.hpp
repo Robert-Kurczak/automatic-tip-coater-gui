@@ -30,7 +30,10 @@ public:
         YAxisTestTaskCallback callback = [](YAxisTestResults) {}
     );
 
-    void startZAxisTestTask(TaskCallback callback = [](bool) {});
+    void startZAxisTestTask(
+        ZAxisTestTaskCallback callback = [](ZAxisTestResults) {}
+    );
+
     void startHeaterTestTask(TaskCallback callback = [](bool) {});
     void startRotationTestTask(TaskCallback callback = [](bool) {});
 

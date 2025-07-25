@@ -1,13 +1,21 @@
 #pragma once
 
+#include "ZAxisTestResults.hpp"
+
 #include <stdint.h>
 
 namespace ATC {
+using ZAxisTestTaskCallback =
+    std::function<void(ZAxisTestResults results)>;
+
 class ZAxis {
 private:
 
 public:
     void init();
+    void tick();
+
+    void startTestTask(ZAxisTestTaskCallback callback);
 
     void increaseStartPosition();
     void decreaseStartPosition();

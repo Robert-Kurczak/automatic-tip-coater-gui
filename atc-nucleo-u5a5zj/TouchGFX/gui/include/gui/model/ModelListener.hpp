@@ -3,6 +3,7 @@
 
 #include "application/Axes/XAxis/XAxisTestResults.hpp"
 #include "application/Axes/YAxis/YAxisTestResults.hpp"
+#include "application/Axes/ZAxis/ZAxisTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 
@@ -23,6 +24,9 @@ public:
     ) {}
     virtual void handleYAxisTestTaskFinish(
         ATC::YAxisTestResults results
+    ) {}
+    virtual void handleZAxisTestTaskFinish(
+        ATC::ZAxisTestResults results
     ) {}
 
 protected:
