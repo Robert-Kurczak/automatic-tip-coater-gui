@@ -1,9 +1,23 @@
 #include "ZAxis.hpp"
 #include "application/UartLogger/UartLogger.hpp"
 
-
 namespace ATC {
 void ZAxis::init() {}
+
+void ZAxis::tick() {}
+
+void ZAxis::startTestTask(ZAxisTestTaskCallback callback) {
+    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    // TODO implement
+
+    ZAxisTestResults results {
+        .startLimitSwitchSuccess = false,
+        .endLimitSwitchSuccess = false,
+        .motorDriverSuccess = false
+    };
+
+    callback(results);
+}
 
 void ZAxis::increaseStartPosition() {
     UartLogger::debugPrint("ZAxis::%s not implemented", __func__);

@@ -10,6 +10,12 @@ void ZAxisTestsScreenPresenter::activate() {}
 
 void ZAxisTestsScreenPresenter::deactivate() {}
 
+void ZAxisTestsScreenPresenter::handleZAxisTestTaskFinish(
+    ATC::ZAxisTestResults results
+) {
+    view.showTestResults(results);
+}
+
 void ZAxisTestsScreenPresenter::startButtonPressed() {
     model->startZAxisTestTask();
 }
