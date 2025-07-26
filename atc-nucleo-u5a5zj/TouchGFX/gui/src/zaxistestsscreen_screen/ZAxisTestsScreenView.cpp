@@ -11,7 +11,7 @@ void ZAxisTestsScreenView::tearDownScreen() {
 }
 
 void ZAxisTestsScreenView::showTestResults(
-    ATC::ZAxisTestResults results
+    ATC::AxisTestResults results
 ) {
     if (results.startLimitSwitchSuccess) {
         axisTestsResults.setStartLimitSwitchSuccess();

@@ -28,15 +28,15 @@ void Board::startCalibrationTask(TaskCallback callback) {
     callback(false);
 }
 
-void Board::startXAxisTestTask(XAxisTestTaskCallback callback) {
+void Board::startXAxisTestTask(AxisTestTaskCallback callback) {
     devices_.xAxis.startTestTask(callback);
 }
 
-void Board::startYAxisTestTask(YAxisTestTaskCallback callback) {
+void Board::startYAxisTestTask(AxisTestTaskCallback callback) {
     devices_.yAxis.startTestTask(callback);
 }
 
-void Board::startZAxisTestTask(ZAxisTestTaskCallback callback) {
+void Board::startZAxisTestTask(AxisTestTaskCallback callback) {
     devices_.zAxis.startTestTask(callback);
 }
 

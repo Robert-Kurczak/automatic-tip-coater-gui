@@ -10,9 +10,7 @@ void YAxisTestsScreenView::tearDownScreen() {
     YAxisTestsScreenViewBase::tearDownScreen();
 }
 
-void YAxisTestsScreenView::showTestResults(
-    ATC::YAxisTestResults results
-) {
+void YAxisTestsScreenView::showTestResults(ATC::AxisTestResults results) {
     if (results.startLimitSwitchSuccess) {
         axisTestsResults.setStartLimitSwitchSuccess();
     } else {

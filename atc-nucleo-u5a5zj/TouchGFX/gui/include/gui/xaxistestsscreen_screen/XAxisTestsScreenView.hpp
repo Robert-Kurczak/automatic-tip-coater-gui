@@ -1,7 +1,7 @@
 #ifndef XAXISTESTSSCREENVIEW_HPP
 #define XAXISTESTSSCREENVIEW_HPP
 
-#include "application/Axes/XAxis/XAxisTestResults.hpp"
+#include "application/Hardware/Axes/AxisTestResults.hpp"
 
 #include <gui/xaxistestsscreen_screen/XAxisTestsScreenPresenter.hpp>
 #include <gui_generated/xaxistestsscreen_screen/XAxisTestsScreenViewBase.hpp>
@@ -13,7 +13,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void showTestResults(ATC::XAxisTestResults results);
+    void showTestResults(ATC::AxisTestResults results);
 
 protected:
     virtual void startTest() override;

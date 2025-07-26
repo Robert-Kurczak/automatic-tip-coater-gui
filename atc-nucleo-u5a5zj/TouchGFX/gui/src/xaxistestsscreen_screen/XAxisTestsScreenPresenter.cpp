@@ -11,7 +11,7 @@ void XAxisTestsScreenPresenter::activate() {}
 void XAxisTestsScreenPresenter::deactivate() {}
 
 void XAxisTestsScreenPresenter::handleXAxisTestTaskFinish(
-    ATC::XAxisTestResults results
+    ATC::AxisTestResults results
 ) {
     view.showTestResults(results);
 }

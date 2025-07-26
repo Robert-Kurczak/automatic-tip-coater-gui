@@ -1,8 +1,8 @@
 #pragma once
 
-#include "application/Axes/XAxis/XAxis.hpp"
-#include "application/Axes/YAxis/YAxis.hpp"
-#include "application/Axes/ZAxis/ZAxis.hpp"
+#include "application/Hardware/Axes/XAxis/IXAxis.hpp"
+#include "application/Hardware/Axes/YAxis/IYAxis.hpp"
+#include "application/Hardware/Axes/ZAxis/IZAxis.hpp"
 #include "application/DisplayWs17143/DisplayWs17143.hpp"
 #include "application/Heater/Heater.hpp"
 #include "application/Rotator/Rotator.hpp"
@@ -11,9 +11,9 @@
 // TODO relay on interfaces
 namespace ATC {
 struct BoardDevices {
-    XAxis& xAxis;
-    YAxis& yAxis;
-    ZAxis& zAxis;
+    IXAxis& xAxis;
+    IYAxis& yAxis;
+    IZAxis& zAxis;
     Rotator& rotator;
     Heater& heater;
     DisplayWs17143& display;

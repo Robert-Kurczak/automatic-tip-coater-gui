@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BoardDevices.hpp"
+#include "application/Hardware/Axes/IAxis.hpp"
 #include "application/Math/Math.hpp"
 
 #include <functional>
@@ -22,25 +23,11 @@ public:
     void startCoatingTask(TaskCallback callback = [](bool) {});
     void startCalibrationTask(TaskCallback callback = [](bool) {});
 
-    void startXAxisTestTask(
-        XAxisTestTaskCallback callback = [](XAxisTestResults) {}
-    );
-
-    void startYAxisTestTask(
-        YAxisTestTaskCallback callback = [](YAxisTestResults) {}
-    );
-
-    void startZAxisTestTask(
-        ZAxisTestTaskCallback callback = [](ZAxisTestResults) {}
-    );
-
-    void startRotationTestTask(
-        RotatorTestTaskCallback callback = [](RotatorTestResults) {}
-    );
-
-    void startHeaterTestTask(
-        HeaterTestTaskCallback callback = [](HeaterTestResults) {}
-    );
+    void startXAxisTestTask(AxisTestTaskCallback callback);
+    void startYAxisTestTask(AxisTestTaskCallback callback);
+    void startZAxisTestTask(AxisTestTaskCallback callback);
+    void startRotationTestTask(RotatorTestTaskCallback callback);
+    void startHeaterTestTask(HeaterTestTaskCallback callback);
 
     void cancelCurrentTask();
 

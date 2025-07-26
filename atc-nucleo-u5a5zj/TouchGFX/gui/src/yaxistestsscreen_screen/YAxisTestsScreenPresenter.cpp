@@ -11,7 +11,7 @@ void YAxisTestsScreenPresenter::activate() {}
 void YAxisTestsScreenPresenter::deactivate() {}
 
 void YAxisTestsScreenPresenter::handleYAxisTestTaskFinish(
-    ATC::YAxisTestResults results
+    ATC::AxisTestResults results
 ) {
     view.showTestResults(results);
 }

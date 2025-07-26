@@ -6,11 +6,11 @@ void ZAxis::init() {}
 
 void ZAxis::tick() {}
 
-void ZAxis::startTestTask(ZAxisTestTaskCallback callback) {
+void ZAxis::startTestTask(AxisTestTaskCallback callback) {
     UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
     // TODO implement
 
-    ZAxisTestResults results {
+    AxisTestResults results {
         .startLimitSwitchSuccess = false,
         .endLimitSwitchSuccess = false,
         .motorDriverSuccess = false

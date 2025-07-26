@@ -1,17 +1,16 @@
 #include "XAxis.hpp"
 #include "application/UartLogger/UartLogger.hpp"
 
-
 namespace ATC {
 void XAxis::init() {}
 
 void XAxis::tick() {}
 
-void XAxis::startTestTask(XAxisTestTaskCallback callback) {
+void XAxis::startTestTask(AxisTestTaskCallback callback) {
     UartLogger::debugPrint("XAxis::%s not implemented", __func__);
     // TODO implement
 
-    XAxisTestResults results {
+    AxisTestResults results {
         .startLimitSwitchSuccess = false,
         .endLimitSwitchSuccess = false,
         .motorDriverSuccess = false

@@ -12,7 +12,7 @@ void XAxisTestsScreenView::tearDownScreen() {
 }
 
 void XAxisTestsScreenView::showTestResults(
-    ATC::XAxisTestResults results
+    ATC::AxisTestResults results
 ) {
     if (results.startLimitSwitchSuccess) {
         axisTestsResults.setStartLimitSwitchSuccess();
