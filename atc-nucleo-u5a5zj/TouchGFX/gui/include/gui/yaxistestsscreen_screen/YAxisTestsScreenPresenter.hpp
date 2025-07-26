@@ -31,7 +31,7 @@ public:
     virtual ~YAxisTestsScreenPresenter() {}
 
     virtual void handleYAxisTestTaskFinish(
-        ATC::YAxisTestResults results
+        ATC::AxisTestResults results
     ) override;
 
     void startButtonPressed();

@@ -6,11 +6,11 @@ void YAxis::init() {}
 
 void YAxis::tick() {}
 
-void YAxis::startTestTask(YAxisTestTaskCallback callback) {
+void YAxis::startTestTask(AxisTestTaskCallback callback) {
     UartLogger::debugPrint("YAxis::%s not implemented", __func__);
     // TODO implement
 
-    YAxisTestResults results {
+    AxisTestResults results {
         .startLimitSwitchSuccess = false,
         .endLimitSwitchSuccess = false,
         .motorDriverSuccess = false

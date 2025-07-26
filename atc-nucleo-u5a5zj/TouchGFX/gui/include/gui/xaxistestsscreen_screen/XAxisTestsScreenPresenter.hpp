@@ -31,7 +31,7 @@ public:
     virtual ~XAxisTestsScreenPresenter() {}
 
     virtual void handleXAxisTestTaskFinish(
-        ATC::XAxisTestResults results
+        ATC::AxisTestResults results
     ) override;
 
     void startButtonPressed();

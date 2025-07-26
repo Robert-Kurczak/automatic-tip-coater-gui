@@ -11,7 +11,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void showTestResults(ATC::ZAxisTestResults results);
+    void showTestResults(ATC::AxisTestResults results);
 
 protected:
     virtual void startTest() override;

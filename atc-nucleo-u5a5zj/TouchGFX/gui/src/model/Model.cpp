@@ -1,8 +1,9 @@
 #include "TargetBoard.hpp"
-#include "application/Axes/XAxis/XAxisTestResults.hpp"
+#include "application/Hardware/Axes/AxisTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
+
 
 // TODO abstract it out and create a fake for Host
 static ATC::TargetBoard targetBoard_ = ATC::TargetBoard::getBoard();
@@ -28,7 +29,7 @@ void Model::startCalibrationTask() {
 }
 
 void Model::startXAxisTestTask() {
-    auto callback = [this](ATC::XAxisTestResults results) {
+    auto callback = [this](ATC::AxisTestResults results) {
         modelListener->handleXAxisTestTaskFinish(results);
     };
 
@@ -36,7 +37,7 @@ void Model::startXAxisTestTask() {
 }
 
 void Model::startYAxisTestTask() {
-    auto callback = [this](ATC::YAxisTestResults results) {
+    auto callback = [this](ATC::AxisTestResults results) {
         modelListener->handleYAxisTestTaskFinish(results);
     };
 
@@ -44,7 +45,7 @@ void Model::startYAxisTestTask() {
 }
 
 void Model::startZAxisTestTask() {
-    auto callback = [this](ATC::ZAxisTestResults results) {
+    auto callback = [this](ATC::AxisTestResults results) {
         modelListener->handleZAxisTestTaskFinish(results);
     };
 

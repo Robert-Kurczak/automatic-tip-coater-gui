@@ -1,7 +1,7 @@
 #pragma once
 
 namespace ATC {
-struct XAxisTestResults {
+struct AxisTestResults {
     bool startLimitSwitchSuccess;
     bool endLimitSwitchSuccess;
     bool motorDriverSuccess;
