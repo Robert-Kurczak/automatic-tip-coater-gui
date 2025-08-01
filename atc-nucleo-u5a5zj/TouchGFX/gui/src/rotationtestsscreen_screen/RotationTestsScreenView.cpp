@@ -10,6 +10,10 @@ void RotationTestsScreenView::tearDownScreen() {
     RotationTestsScreenViewBase::tearDownScreen();
 }
 
+void RotationTestsScreenView::resetFooterButtons() {
+    startCancelFooter.resetState();
+}
+
 void RotationTestsScreenView::showTestResults(
     ATC::RotatorTestResults results
 ) {

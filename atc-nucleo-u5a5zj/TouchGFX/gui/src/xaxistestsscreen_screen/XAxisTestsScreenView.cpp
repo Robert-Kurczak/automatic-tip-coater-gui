@@ -11,9 +11,11 @@ void XAxisTestsScreenView::tearDownScreen() {
     XAxisTestsScreenViewBase::tearDownScreen();
 }
 
-void XAxisTestsScreenView::showTestResults(
-    ATC::AxisTestResults results
-) {
+void XAxisTestsScreenView::resetFooterButtons() {
+    startCancelFooter.resetState();
+}
+
+void XAxisTestsScreenView::showTestResults(ATC::AxisTestResults results) {
     if (results.startLimitSwitchSuccess) {
         axisTestsResults.setStartLimitSwitchSuccess();
     } else {

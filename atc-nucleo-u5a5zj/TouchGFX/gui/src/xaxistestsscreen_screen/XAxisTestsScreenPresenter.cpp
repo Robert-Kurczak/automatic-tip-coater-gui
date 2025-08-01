@@ -13,6 +13,7 @@ void XAxisTestsScreenPresenter::deactivate() {}
 void XAxisTestsScreenPresenter::handleXAxisTestTaskFinish(
     ATC::AxisTestResults results
 ) {
+    view.resetFooterButtons();
     view.showTestResults(results);
 }
 

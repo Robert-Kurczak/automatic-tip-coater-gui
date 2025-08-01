@@ -10,9 +10,11 @@ void ZAxisTestsScreenView::tearDownScreen() {
     ZAxisTestsScreenViewBase::tearDownScreen();
 }
 
-void ZAxisTestsScreenView::showTestResults(
-    ATC::AxisTestResults results
-) {
+void ZAxisTestsScreenView::resetFooterButtons() {
+    startCancelFooter.resetState();
+}
+
+void ZAxisTestsScreenView::showTestResults(ATC::AxisTestResults results) {
     if (results.startLimitSwitchSuccess) {
         axisTestsResults.setStartLimitSwitchSuccess();
     } else {

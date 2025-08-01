@@ -14,6 +14,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void resetFooterButtons();
     void showTestResults(ATC::HeaterTestResults results);
 
 protected:

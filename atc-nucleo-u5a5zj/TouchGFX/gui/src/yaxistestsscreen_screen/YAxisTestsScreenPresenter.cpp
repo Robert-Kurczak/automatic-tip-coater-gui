@@ -13,6 +13,7 @@ void YAxisTestsScreenPresenter::deactivate() {}
 void YAxisTestsScreenPresenter::handleYAxisTestTaskFinish(
     ATC::AxisTestResults results
 ) {
+    view.resetFooterButtons();
     view.showTestResults(results);
 }
 
