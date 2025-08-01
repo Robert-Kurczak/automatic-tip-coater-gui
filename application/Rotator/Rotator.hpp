@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RotatorTestResults.hpp"
+#include "application/Logger/ILogger.hpp"
 
 #include <functional>
 #include <stdint.h>
@@ -11,8 +12,11 @@ using RotatorTestTaskCallback =
 
 class Rotator {
 private:
+    ILogger& logger_;
 
 public:
+    Rotator(ILogger& logger);
+
     void init();
     void tick();
 

@@ -1,8 +1,11 @@
 #include "Board.hpp"
-#include "application/UartLogger/UartLogger.hpp"
+#include "application/Logger/ILogger.hpp"
+#include <source_location>
 
 namespace ATC {
-Board::Board(BoardDevices& devices) : devices_(devices) {}
+Board::Board(BoardDevices& devices, ILogger& logger) :
+    devices_(devices),
+    logger_(logger) {}
 
 void Board::init() {
     devices_.xAxis.init();
@@ -17,13 +20,21 @@ void Board::init() {
 void Board::tick() {}
 
 void Board::startCoatingTask(TaskCallback callback) {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     callback(false);
 }
 
 void Board::startCalibrationTask(TaskCallback callback) {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     callback(false);
 }
@@ -49,7 +60,11 @@ void Board::startHeaterTestTask(HeaterTestTaskCallback callback) {
 }
 
 void Board::cancelCurrentTask() {
-    UartLogger::debugPrint("Board::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 

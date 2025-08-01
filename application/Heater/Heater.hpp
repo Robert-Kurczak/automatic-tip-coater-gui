@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HeaterTestResults.hpp"
+#include "application/Logger/ILogger.hpp"
 
 #include <functional>
 #include <stdint.h>
@@ -11,8 +12,11 @@ using HeaterTestTaskCallback =
 
 class Heater {
 private:
+    ILogger& logger_;
 
 public:
+    Heater(ILogger& logger);
+
     void init();
     void tick();
 

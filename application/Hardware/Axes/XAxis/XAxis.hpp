@@ -1,12 +1,15 @@
 #pragma once
 
 #include "IXAxis.hpp"
+#include "application/Logger/ILogger.hpp"
 
 namespace ATC {
 class XAxis : public IXAxis {
 private:
-
+    ILogger& logger_;
 public:
+    XAxis(ILogger& logger);
+
     virtual void init() override;
     virtual void tick() override;
 

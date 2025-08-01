@@ -2,6 +2,7 @@
 
 #include "BoardDevices.hpp"
 #include "application/Hardware/Axes/IAxis.hpp"
+#include "application/Logger/ILogger.hpp"
 #include "application/Math/Math.hpp"
 
 #include <functional>
@@ -13,9 +14,10 @@ using TaskCallback = std::function<void(bool wasSuccessful)>;
 class Board {
 private:
     BoardDevices& devices_;
+    ILogger& logger_;
 
 public:
-    Board(BoardDevices& devices);
+    Board(BoardDevices& devices, ILogger& logger);
 
     void init();
     void tick();

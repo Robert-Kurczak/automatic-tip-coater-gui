@@ -1,13 +1,20 @@
 #include "ZAxis.hpp"
-#include "application/UartLogger/UartLogger.hpp"
+
+#include <source_location>
 
 namespace ATC {
+ZAxis::ZAxis(ILogger& logger) : logger_(logger) {}
+
 void ZAxis::init() {}
 
 void ZAxis::tick() {}
 
 void ZAxis::startTestTask(AxisTestTaskCallback callback) {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 
     AxisTestResults results {
@@ -20,64 +27,112 @@ void ZAxis::startTestTask(AxisTestTaskCallback callback) {
 }
 
 void ZAxis::increaseStartPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void ZAxis::decreaseStartPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void ZAxis::saveStartPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t ZAxis::getStartPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 0;
 }
 
 void ZAxis::increaseEndPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void ZAxis::decreaseEndPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void ZAxis::saveEndPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t ZAxis::getEndPosition() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 1000;
 }
 
 void ZAxis::increaseSpeed() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void ZAxis::decreaseSpeed() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void ZAxis::saveSpeed() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t ZAxis::getSpeed() {
-    UartLogger::debugPrint("ZAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 100;
 }
