@@ -13,6 +13,7 @@ void RotationTestsScreenPresenter::deactivate() {}
 void RotationTestsScreenPresenter::handleRotatorTestTaskFinish(
     ATC::RotatorTestResults results
 ) {
+    view.resetFooterButtons();
     view.showTestResults(results);
 }
 

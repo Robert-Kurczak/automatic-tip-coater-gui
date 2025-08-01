@@ -10,11 +10,17 @@ void HeaterTestsScreenView::tearDownScreen() {
     HeaterTestsScreenViewBase::tearDownScreen();
 }
 
+void HeaterTestsScreenView::resetFooterButtons() {
+    startCancelFooter.resetState();
+}
+
 void HeaterTestsScreenView::showTestResults(
     ATC::HeaterTestResults results
 ) {
     if (results.temperatureSuccess) {
         heaterTestsResults.setTemperatureSuccess();
+    } else {
+        heaterTestsResults.setTemperatureError();
     }
 }
 

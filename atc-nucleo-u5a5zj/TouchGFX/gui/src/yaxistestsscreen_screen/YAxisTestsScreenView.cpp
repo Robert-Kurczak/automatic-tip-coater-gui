@@ -10,6 +10,10 @@ void YAxisTestsScreenView::tearDownScreen() {
     YAxisTestsScreenViewBase::tearDownScreen();
 }
 
+void YAxisTestsScreenView::resetFooterButtons() {
+    startCancelFooter.resetState();
+}
+
 void YAxisTestsScreenView::showTestResults(ATC::AxisTestResults results) {
     if (results.startLimitSwitchSuccess) {
         axisTestsResults.setStartLimitSwitchSuccess();

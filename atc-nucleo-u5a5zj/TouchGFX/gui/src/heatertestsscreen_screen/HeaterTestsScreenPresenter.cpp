@@ -13,6 +13,7 @@ void HeaterTestsScreenPresenter::deactivate() {}
 void HeaterTestsScreenPresenter::handleHeaterTestTaskFinish(
     ATC::HeaterTestResults results
 ) {
+    view.resetFooterButtons();
     view.showTestResults(results);
 }
 

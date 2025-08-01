@@ -11,6 +11,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void resetFooterButtons();
     void showTestResults(ATC::AxisTestResults results);
 
 protected:
