@@ -1,13 +1,20 @@
 #include "Rotator.hpp"
-#include "application/UartLogger/UartLogger.hpp"
+
+#include <source_location>
 
 namespace ATC {
+Rotator::Rotator(ILogger& logger) : logger_(logger) {}
+
 void Rotator::init() {}
 
 void Rotator::tick() {}
 
 void Rotator::startTestTask(RotatorTestTaskCallback callback) {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 
     RotatorTestResults results {.motorDriverSuccess = false};
@@ -16,64 +23,112 @@ void Rotator::startTestTask(RotatorTestTaskCallback callback) {
 }
 
 void Rotator::increaseSpeed() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Rotator::decreaseSpeed() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Rotator::saveSpeed() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t Rotator::getSpeed() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 10;
 }
 
 void Rotator::setDirectionClockwise() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Rotator::setDirectionCounterClockwise() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Rotator::saveDirection() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 bool Rotator::isDirectionClockwise() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return true;
 }
 
 void Rotator::increaseRotationTime() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Rotator::decreaseRotationTime() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Rotator::saveRotationTime() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t Rotator::getRotationTime() {
-    UartLogger::debugPrint("Rotator::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 5;
 }

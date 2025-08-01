@@ -1,5 +1,4 @@
 #include "TouchControllerXpt2046.hpp"
-#include "application/UartLogger/UartLogger.hpp"
 
 namespace ATC {
 uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {

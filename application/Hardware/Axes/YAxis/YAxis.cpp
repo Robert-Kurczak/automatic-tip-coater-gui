@@ -1,13 +1,20 @@
 #include "YAxis.hpp"
-#include "application/UartLogger/UartLogger.hpp"
+
+#include <source_location>
 
 namespace ATC {
+YAxis::YAxis(ILogger& logger) : logger_(logger) {}
+
 void YAxis::init() {}
 
 void YAxis::tick() {}
 
 void YAxis::startTestTask(AxisTestTaskCallback callback) {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 
     AxisTestResults results {
@@ -20,66 +27,113 @@ void YAxis::startTestTask(AxisTestTaskCallback callback) {
 }
 
 void YAxis::increaseStartPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void YAxis::decreaseStartPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void YAxis::saveStartPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t YAxis::getStartPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 0;
 }
 
 void YAxis::increaseEndPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void YAxis::decreaseEndPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void YAxis::saveEndPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t YAxis::getEndPosition() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 1000;
 }
 
 void YAxis::increaseSpeed() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void YAxis::decreaseSpeed() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void YAxis::saveSpeed() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t YAxis::getSpeed() {
-    UartLogger::debugPrint("YAxis::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 100;
 }
-
 }

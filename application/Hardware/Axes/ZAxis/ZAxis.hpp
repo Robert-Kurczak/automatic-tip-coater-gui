@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IZAxis.hpp"
+#include "application/Logger/ILogger.hpp"
 
 #include <functional>
 #include <stdint.h>
@@ -8,8 +9,11 @@
 namespace ATC {
 class ZAxis : public IZAxis {
 private:
+    ILogger& logger_;
 
 public:
+    ZAxis(ILogger& logger);
+
     virtual void init() override;
     virtual void tick() override;
 

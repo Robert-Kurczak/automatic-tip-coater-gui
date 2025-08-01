@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IYAxis.hpp"
+#include "application/Logger/ILogger.hpp"
 
 #include <functional>
 #include <stdint.h>
@@ -8,8 +9,11 @@
 namespace ATC {
 class YAxis : public IYAxis {
 private:
+    ILogger& logger_;
 
 public:
+    YAxis(ILogger& logger);
+
     virtual void init() override;
     virtual void tick() override;
 

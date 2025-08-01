@@ -1,13 +1,20 @@
 #include "Heater.hpp"
-#include "application/UartLogger/UartLogger.hpp"
+
+#include <source_location>
 
 namespace ATC {
+Heater::Heater(ILogger& logger) : logger_(logger) {}
+
 void Heater::init() {}
 
 void Heater::tick() {}
 
 void Heater::startTestTask(HeaterTestTaskCallback callback) {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 
     HeaterTestResults results {.temperatureSuccess = true};
@@ -16,43 +23,75 @@ void Heater::startTestTask(HeaterTestTaskCallback callback) {
 }
 
 void Heater::setOn() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Heater::setOff() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Heater::saveState() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 bool Heater::isOn() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return false;
 }
 
 void Heater::increaseTemperature() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Heater::decreaseTemperature() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 void Heater::saveTemperature() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
 }
 
 uint32_t Heater::getTemperature() {
-    UartLogger::debugPrint("Heater::%s not implemented", __func__);
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
     // TODO implement
     return 200;
 }
