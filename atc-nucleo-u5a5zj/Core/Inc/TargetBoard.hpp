@@ -9,8 +9,8 @@
 #include "application/Hardware/Axes/ZAxis/ZAxis.hpp"
 #include "application/Hardware/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
 #include "application/Hardware/Heater/ThermistorHeater/ThermistorHeater.hpp"
+#include "application/Hardware/Rotator/DcMotorRotator/DcMotorRotator.hpp"
 #include "application/Logger/UartLogger/UartLogger.hpp"
-#include "application/Rotator/Rotator.hpp"
 #include "application/Spi/Spi.hpp"
 #include "application/TouchControllerXpt2046/TouchControllerXpt2046.hpp"
 #include "main.h"
@@ -27,7 +27,7 @@ private:
     XAxis xAxis_ {uartLogger};
     YAxis yAxis_ {uartLogger};
     ZAxis zAxis_ {uartLogger};
-    Rotator rotator_ {uartLogger};
+    DcMotorRotator rotator_ {uartLogger};
     ThermistorHeater heater_ {uartLogger};
 
     FlexibleMemoryController flexibleMemoryController_ {

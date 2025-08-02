@@ -1,7 +1,7 @@
 #include "TargetBoard.hpp"
 #include "application/Hardware/Axes/AxisTestResults.hpp"
 #include "application/Hardware/Heater/HeaterTestResults.hpp"
-#include "application/Rotator/RotatorTestResults.hpp"
+#include "application/Hardware/Rotator/RotatorTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
