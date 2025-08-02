@@ -1,15 +1,15 @@
-#include "Rotator.hpp"
+#include "DcMotorRotator.hpp"
 
 #include <source_location>
 
 namespace ATC {
-Rotator::Rotator(ILogger& logger) : logger_(logger) {}
+DcMotorRotator::DcMotorRotator(ILogger& logger) : logger_(logger) {}
 
-void Rotator::init() {}
+void DcMotorRotator::init() {}
 
-void Rotator::tick() {}
+void DcMotorRotator::tick() {}
 
-void Rotator::startTestTask(RotatorTestTaskCallback callback) {
+void DcMotorRotator::startTestTask(RotatorTestTaskCallback callback) {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -22,7 +22,7 @@ void Rotator::startTestTask(RotatorTestTaskCallback callback) {
     callback(results);
 }
 
-void Rotator::increaseSpeed() {
+void DcMotorRotator::increaseSpeed() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -31,7 +31,7 @@ void Rotator::increaseSpeed() {
     // TODO implement
 }
 
-void Rotator::decreaseSpeed() {
+void DcMotorRotator::decreaseSpeed() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -40,7 +40,7 @@ void Rotator::decreaseSpeed() {
     // TODO implement
 }
 
-void Rotator::saveSpeed() {
+void DcMotorRotator::saveSpeed() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -49,7 +49,7 @@ void Rotator::saveSpeed() {
     // TODO implement
 }
 
-uint32_t Rotator::getSpeed() {
+uint32_t DcMotorRotator::getSpeed() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -59,7 +59,7 @@ uint32_t Rotator::getSpeed() {
     return 10;
 }
 
-void Rotator::setDirectionClockwise() {
+void DcMotorRotator::setDirectionClockwise() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -68,7 +68,7 @@ void Rotator::setDirectionClockwise() {
     // TODO implement
 }
 
-void Rotator::setDirectionCounterClockwise() {
+void DcMotorRotator::setDirectionCounterClockwise() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -77,7 +77,7 @@ void Rotator::setDirectionCounterClockwise() {
     // TODO implement
 }
 
-void Rotator::saveDirection() {
+void DcMotorRotator::saveDirection() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -86,7 +86,7 @@ void Rotator::saveDirection() {
     // TODO implement
 }
 
-bool Rotator::isDirectionClockwise() {
+bool DcMotorRotator::isDirectionClockwise() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -96,7 +96,7 @@ bool Rotator::isDirectionClockwise() {
     return true;
 }
 
-void Rotator::increaseRotationTime() {
+void DcMotorRotator::increaseRotationTime() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -105,7 +105,7 @@ void Rotator::increaseRotationTime() {
     // TODO implement
 }
 
-void Rotator::decreaseRotationTime() {
+void DcMotorRotator::decreaseRotationTime() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -114,7 +114,7 @@ void Rotator::decreaseRotationTime() {
     // TODO implement
 }
 
-void Rotator::saveRotationTime() {
+void DcMotorRotator::saveRotationTime() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -123,7 +123,7 @@ void Rotator::saveRotationTime() {
     // TODO implement
 }
 
-uint32_t Rotator::getRotationTime() {
+uint32_t DcMotorRotator::getRotationTime() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
