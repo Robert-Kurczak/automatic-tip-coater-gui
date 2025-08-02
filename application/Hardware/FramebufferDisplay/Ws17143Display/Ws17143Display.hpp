@@ -1,16 +1,16 @@
 #pragma once
 
 #include "../IFramebufferDisplay.hpp"
-#include "application/GpioPin/GpioPin.hpp"
 #include "application/Hardware/FlexibleMemoryController/IFlexibleMemoryController.hpp"
 #include "application/Ports/IDelayProvider.hpp"
+#include "application/Ports/IGpioPin.hpp"
 
 #include <span>
 #include <stdint.h>
 
 namespace ATC {
 struct Ws17143DisplayPinout {
-    GpioPin& lcdResetPin_;
+    IGpioPin& lcdResetPin_;
 };
 
 class Ws17143Display : public IFramebufferDisplay {

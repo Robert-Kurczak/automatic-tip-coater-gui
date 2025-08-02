@@ -1,10 +1,10 @@
 #pragma once
 
 #include "Adapters/DelayProvider/DelayProvider.hpp"
+#include "Adapters/GpioPin/GpioPin.hpp"
 #include "Adapters/Uart/Uart.hpp"
 #include "application/Board/Board.hpp"
 #include "application/Board/BoardDevices.hpp"
-#include "application/GpioPin/GpioPin.hpp"
 #include "application/Hardware/Axes/XAxis/XAxis.hpp"
 #include "application/Hardware/Axes/YAxis/YAxis.hpp"
 #include "application/Hardware/Axes/ZAxis/ZAxis.hpp"
