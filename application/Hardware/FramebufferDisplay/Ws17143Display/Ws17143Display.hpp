@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../IFramebufferDisplay.hpp"
-#include "application/DelayProvider/DelayProvider.hpp"
 #include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/GpioPin/GpioPin.hpp"
+#include "application/Ports/IDelayProvider.hpp"
 
 #include <span>
 #include <stdint.h>
@@ -20,7 +20,7 @@ private:
 
     const Ws17143DisplayPinout& pinout_;
     FlexibleMemoryController& flexibleMemoryController_;
-    DelayProvider& delayProvider_;
+    IDelayProvider& delayProvider_;
 
     void setWindow(const Rectangle& window);
 
@@ -38,7 +38,7 @@ public:
     Ws17143Display(
         const Ws17143DisplayPinout& pinout,
         FlexibleMemoryController& flexibleMemoryController,
-        DelayProvider& delayProvider
+        IDelayProvider& delayProvider
     );
 
     virtual void init() override;

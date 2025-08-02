@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Adapters/Uart/Uart.hpp"
+#include "Adapters/DelayProvider/DelayProvider.hpp"
 #include "application/Board/Board.hpp"
 #include "application/Board/BoardDevices.hpp"
 #include "application/GpioPin/GpioPin.hpp"
