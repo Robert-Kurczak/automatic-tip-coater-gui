@@ -1,13 +1,13 @@
 #pragma once
 
 #include "../ITouchController.hpp"
-#include "application/GpioPin/GpioPin.hpp"
+#include "application/Ports/IGpioPin.hpp"
 #include "application/Spi/Spi.hpp"
 
 namespace ATC {
 struct Xpt2046TouchControllerPinout {
-    GpioPin& chipSelectPin_;
-    GpioPin& touchInterruptPin_;
+    IGpioPin& chipSelectPin_;
+    IGpioPin& touchInterruptPin_;
 };
 
 class Xpt2046TouchController : public ITouchController {
