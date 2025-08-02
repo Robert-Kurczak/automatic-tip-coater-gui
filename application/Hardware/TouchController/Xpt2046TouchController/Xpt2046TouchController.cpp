@@ -58,12 +58,14 @@ Vector2 Xpt2046TouchController::interpolateRawPosition(
 
 Xpt2046TouchController::Xpt2046TouchController(
     Xpt2046TouchControllerPinout& pinout,
-    Spi& spi,
+    ISpi& spi,
+    ISystemClock& systemClock,
     Rectangle rawWorkingArea,
     Vector2 pixelResolution
 ) :
     pinout_(pinout),
     spi_(spi),
+    systemClock_(systemClock),
     rawWorkingArea_(rawWorkingArea),
     pixelResolution_(pixelResolution) {}
 
@@ -86,10 +88,13 @@ bool Xpt2046TouchController::isPressed() {
     if (!wasTouched && isPressedEnough) {
         if (!debounceInProgress) {
             debounceInProgress = true;
-            debounceStartTimestamp = HAL_GetTick();
+            debounceStartTimestamp =
+                systemClock_.getMillisecondsSinceStart();
         }
 
-        if (HAL_GetTick() - debounceStartTimestamp >= DEBOUNCE_MS_) {
+        if (systemClock_.getMillisecondsSinceStart() -
+                debounceStartTimestamp >=
+            DEBOUNCE_MS_) {
             wasTouched = true;
             debounceInProgress = false;
         }

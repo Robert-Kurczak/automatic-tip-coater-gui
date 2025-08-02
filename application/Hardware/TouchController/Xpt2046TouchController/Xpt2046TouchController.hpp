@@ -2,7 +2,8 @@
 
 #include "../ITouchController.hpp"
 #include "application/Ports/IGpioPin.hpp"
-#include "application/Spi/Spi.hpp"
+#include "application/Ports/ISpi.hpp"
+#include "application/Ports/ISystemClock.hpp"
 
 namespace ATC {
 struct Xpt2046TouchControllerPinout {
@@ -21,7 +22,8 @@ private:
     static constexpr uint8_t DEBOUNCE_MS_ = 20;
 
     Xpt2046TouchControllerPinout& pinout_;
-    Spi& spi_;
+    ISpi& spi_;
+    ISystemClock& systemClock_;
     Rectangle rawWorkingArea_;
     const Vector2 pixelResolution_;
 
@@ -36,7 +38,8 @@ private:
 public:
     Xpt2046TouchController(
         Xpt2046TouchControllerPinout& pinout,
-        Spi& spi,
+        ISpi& spi,
+        ISystemClock& systemClock,
         Rectangle rawWorkingArea,
         Vector2 pixelResolution
     );
