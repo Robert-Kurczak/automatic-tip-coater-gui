@@ -33,9 +33,9 @@ void Ws17143Display::initResetLcdPin() {
 
 void Ws17143Display::resetLcd() {
     pinout_.lcdResetPin_.setLow();
-    delayProvider_.delayMiliseconds(50);
+    systemClock_.delayMiliseconds(50);
     pinout_.lcdResetPin_.setHigh();
-    delayProvider_.delayMiliseconds(50);
+    systemClock_.delayMiliseconds(50);
 }
 
 void Ws17143Display::initProprietaryHardwareSettings() {
@@ -472,12 +472,12 @@ void Ws17143Display::initRGB565Format() {
 
 void Ws17143Display::exitSleepState() {
     flexibleMemoryController_.write(0x1100, 0x00);
-    delayProvider_.delayMiliseconds(120);
+    systemClock_.delayMiliseconds(120);
 }
 
 void Ws17143Display::enableDisplay() {
     flexibleMemoryController_.write(0x2900, 0x00);
-    delayProvider_.delayMiliseconds(10);
+    systemClock_.delayMiliseconds(10);
 }
 
 void Ws17143Display::setAllPixelsOff() {
@@ -491,11 +491,11 @@ void Ws17143Display::displayFramebuffer() {
 Ws17143Display::Ws17143Display(
     const Ws17143DisplayPinout& pinout,
     IFlexibleMemoryController& flexibleMemoryController,
-    IDelayProvider& delayProvider
+    ISystemClock& systemClock
 ) :
     pinout_(pinout),
     flexibleMemoryController_(flexibleMemoryController),
-    delayProvider_(delayProvider) {}
+    systemClock_(systemClock) {}
 
 void Ws17143Display::init() {
     initResetLcdPin();

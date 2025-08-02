@@ -2,8 +2,8 @@
 
 #include "../IFramebufferDisplay.hpp"
 #include "application/Hardware/FlexibleMemoryController/IFlexibleMemoryController.hpp"
-#include "application/Ports/IDelayProvider.hpp"
 #include "application/Ports/IGpioPin.hpp"
+#include "application/Ports/ISystemClock.hpp"
 
 #include <span>
 #include <stdint.h>
@@ -20,7 +20,7 @@ private:
 
     const Ws17143DisplayPinout& pinout_;
     IFlexibleMemoryController& flexibleMemoryController_;
-    IDelayProvider& delayProvider_;
+    ISystemClock& systemClock_;
 
     void setWindow(const Rectangle& window);
 
@@ -38,7 +38,7 @@ public:
     Ws17143Display(
         const Ws17143DisplayPinout& pinout,
         IFlexibleMemoryController& flexibleMemoryController,
-        IDelayProvider& delayProvider
+        ISystemClock& systemClock
     );
 
     virtual void init() override;

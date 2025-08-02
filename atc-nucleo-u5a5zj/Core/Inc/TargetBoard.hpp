@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Adapters/DelayProvider/DelayProvider.hpp"
 #include "Adapters/GpioPin/GpioPin.hpp"
+#include "Adapters/Spi/Spi.hpp"
+#include "Adapters/SystemClock/SystemClock.hpp"
 #include "Adapters/Uart/Uart.hpp"
 #include "application/Board/Board.hpp"
 #include "application/Board/BoardDevices.hpp"
@@ -14,7 +15,6 @@
 #include "application/Hardware/Rotator/DcMotorRotator/DcMotorRotator.hpp"
 #include "application/Hardware/TouchController/Xpt2046TouchController/Xpt2046TouchController.hpp"
 #include "application/Logger/UartLogger/UartLogger.hpp"
-#include "application/Spi/Spi.hpp"
 #include "main.h"
 
 extern SPI_HandleTypeDef hspi1;
@@ -36,13 +36,13 @@ private:
         0x60000000,
         0x60000002
     };
-    DelayProvider delayProvider_ {};
+    SystemClock systemClock_ {};
     GpioPin lcdResetPin_ {*LCD_RS_GPIO_Port, LCD_RS_Pin};
     Ws17143DisplayPinout pinout_ {.lcdResetPin_ = lcdResetPin_};
     Ws17143Display display_ {
         pinout_,
         flexibleMemoryController_,
-        delayProvider_
+        systemClock_
     };
 
     Spi spi_ {hspi1};
@@ -61,6 +61,7 @@ private:
     Xpt2046TouchController touchController_ {
         xpt2046Pinout_,
         spi_,
+        systemClock_,
         Rectangle {
                    .xStart_ = 130,
                    .xEnd_ = 1900,

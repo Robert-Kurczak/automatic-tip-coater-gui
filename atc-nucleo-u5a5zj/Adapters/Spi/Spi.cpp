@@ -1,5 +1,4 @@
 #include "Spi.hpp"
-#include "main.h"
 
 namespace ATC {
 Spi::Spi(SPI_HandleTypeDef& spiHandle) : spiHandle_(spiHandle) {}
