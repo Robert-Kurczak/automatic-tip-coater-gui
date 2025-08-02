@@ -490,7 +490,7 @@ void Ws17143Display::displayFramebuffer() {
 
 Ws17143Display::Ws17143Display(
     const Ws17143DisplayPinout& pinout,
-    FlexibleMemoryController& flexibleMemoryController,
+    IFlexibleMemoryController& flexibleMemoryController,
     IDelayProvider& delayProvider
 ) :
     pinout_(pinout),

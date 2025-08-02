@@ -1,13 +1,14 @@
 #pragma once
 
-#include "Adapters/Uart/Uart.hpp"
 #include "Adapters/DelayProvider/DelayProvider.hpp"
+#include "Adapters/Uart/Uart.hpp"
 #include "application/Board/Board.hpp"
 #include "application/Board/BoardDevices.hpp"
 #include "application/GpioPin/GpioPin.hpp"
 #include "application/Hardware/Axes/XAxis/XAxis.hpp"
 #include "application/Hardware/Axes/YAxis/YAxis.hpp"
 #include "application/Hardware/Axes/ZAxis/ZAxis.hpp"
+#include "application/Hardware/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/Hardware/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
 #include "application/Hardware/Heater/ThermistorHeater/ThermistorHeater.hpp"
 #include "application/Hardware/Rotator/DcMotorRotator/DcMotorRotator.hpp"
