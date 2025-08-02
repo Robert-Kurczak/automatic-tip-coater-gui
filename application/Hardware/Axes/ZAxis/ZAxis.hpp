@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IZAxis.hpp"
-#include "application/Logger/ILogger.hpp"
+#include "application/System/Logger/ILogger.hpp"
 
 #include <functional>
 #include <stdint.h>

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../IHeater.hpp"
-#include "application/Logger/ILogger.hpp"
+#include "application/System/Logger/ILogger.hpp"
 
 namespace ATC {
 class ThermistorHeater : public IHeater {

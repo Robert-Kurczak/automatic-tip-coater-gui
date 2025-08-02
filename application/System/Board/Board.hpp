@@ -2,8 +2,8 @@
 
 #include "BoardDevices.hpp"
 #include "application/Hardware/Axes/IAxis.hpp"
-#include "application/Logger/ILogger.hpp"
 #include "application/Math/Math.hpp"
+#include "application/System/Logger/ILogger.hpp"
 
 #include <functional>
 #include <stdint.h>
