@@ -7,6 +7,7 @@
 #include "application/Hardware/Axes/XAxis/XAxis.hpp"
 #include "application/Hardware/Axes/YAxis/YAxis.hpp"
 #include "application/Hardware/Axes/ZAxis/ZAxis.hpp"
+#include "application/Hardware/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
 #include "application/Heater/Heater.hpp"
 #include "application/Logger/UartLogger/UartLogger.hpp"
 #include "application/Rotator/Rotator.hpp"
@@ -16,8 +17,8 @@
 
 extern SPI_HandleTypeDef hspi1;
 extern UART_HandleTypeDef huart1;
-namespace ATC {
 
+namespace ATC {
 class TargetBoard : public Board {
 private:
     Uart uart {huart1};
@@ -35,8 +36,8 @@ private:
     };
     DelayProvider delayProvider_ {};
     GpioPin lcdResetPin_ {*LCD_RS_GPIO_Port, LCD_RS_Pin};
-    Ws17143Pinout pinout_ {.lcdResetPin_ = lcdResetPin_};
-    DisplayWs17143 display_ {
+    Ws17143DisplayPinout pinout_ {.lcdResetPin_ = lcdResetPin_};
+    Ws17143Display display_ {
         pinout_,
         flexibleMemoryController_,
         delayProvider_
