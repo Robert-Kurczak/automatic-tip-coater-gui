@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../IFramebufferDisplay.hpp"
-#include "application/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/GpioPin/GpioPin.hpp"
+#include "application/Hardware/FlexibleMemoryController/IFlexibleMemoryController.hpp"
 #include "application/Ports/IDelayProvider.hpp"
 
 #include <span>
@@ -19,7 +19,7 @@ private:
     static const uint16_t HEIGHT_ = 800;
 
     const Ws17143DisplayPinout& pinout_;
-    FlexibleMemoryController& flexibleMemoryController_;
+    IFlexibleMemoryController& flexibleMemoryController_;
     IDelayProvider& delayProvider_;
 
     void setWindow(const Rectangle& window);
@@ -37,7 +37,7 @@ private:
 public:
     Ws17143Display(
         const Ws17143DisplayPinout& pinout,
-        FlexibleMemoryController& flexibleMemoryController,
+        IFlexibleMemoryController& flexibleMemoryController,
         IDelayProvider& delayProvider
     );
 
