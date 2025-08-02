@@ -1,6 +1,6 @@
 #pragma once
 
-#include "application/Ports/Uart/IUart.hpp"
+#include "application/Ports/IUart.hpp"
 #include "main.h"
 
 namespace ATC {

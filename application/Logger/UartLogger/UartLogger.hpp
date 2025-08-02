@@ -1,6 +1,6 @@
 #pragma once
 #include "../ILogger.hpp"
-#include "application/Ports/Uart/IUart.hpp"
+#include "application/Ports/IUart.hpp"
 
 #include <stdint.h>
 #include <stdio.h>
