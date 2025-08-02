@@ -6,9 +6,8 @@
 #include "application/Hardware/FramebufferDisplay/IFramebufferDisplay.hpp"
 #include "application/Hardware/Heater/IHeater.hpp"
 #include "application/Hardware/Rotator/IRotator.hpp"
-#include "application/TouchControllerXpt2046/TouchControllerXpt2046.hpp"
+#include "application/Hardware/TouchController/ITouchController.hpp"
 
-// TODO relay on interfaces
 namespace ATC {
 struct BoardDevices {
     IXAxis& xAxis;
@@ -17,6 +16,6 @@ struct BoardDevices {
     IRotator& rotator;
     IHeater& heater;
     IFramebufferDisplay& display;
-    TouchControllerXpt2046& touchController;
+    ITouchController& touchController;
 };
 }

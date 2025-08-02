@@ -1,7 +1,7 @@
-#include "TouchControllerXpt2046.hpp"
+#include "Xpt2046TouchController.hpp"
 
 namespace ATC {
-uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {
+uint16_t Xpt2046TouchController::transferReadCommand(uint8_t command) {
     pinout_.chipSelectPin_.setLow();
 
     uint8_t outputBuffer[2];
@@ -14,7 +14,7 @@ uint16_t TouchControllerXpt2046::transferReadCommand(uint8_t command) {
     return ((outputBuffer[0] << 8) | outputBuffer[1]) >> 4;
 }
 
-Vector2 TouchControllerXpt2046::getFilteredRawPosition() {
+Vector2 Xpt2046TouchController::getFilteredRawPosition() {
     uint8_t samplesTaken = 0;
     uint32_t averageX = 0;
     uint32_t averageY = 0;
@@ -31,7 +31,7 @@ Vector2 TouchControllerXpt2046::getFilteredRawPosition() {
     return Vector2 {.x_ = uint16_t(averageX), .y_ = uint16_t(averageY)};
 }
 
-Vector2 TouchControllerXpt2046::interpolateRawPosition(
+Vector2 Xpt2046TouchController::interpolateRawPosition(
     const Vector2& rawPosition
 ) {
     const uint32_t xNumerator =
@@ -56,8 +56,8 @@ Vector2 TouchControllerXpt2046::interpolateRawPosition(
     return interpolatedPosition;
 }
 
-TouchControllerXpt2046::TouchControllerXpt2046(
-    Xpt2046Pinout& pinout,
+Xpt2046TouchController::Xpt2046TouchController(
+    Xpt2046TouchControllerPinout& pinout,
     Spi& spi,
     Rectangle rawWorkingArea,
     Vector2 pixelResolution
@@ -67,14 +67,14 @@ TouchControllerXpt2046::TouchControllerXpt2046(
     rawWorkingArea_(rawWorkingArea),
     pixelResolution_(pixelResolution) {}
 
-void TouchControllerXpt2046::init() {
+void Xpt2046TouchController::init() {
     pinout_.touchInterruptPin_.setInputMode();
 
     pinout_.chipSelectPin_.setOutputMode();
     pinout_.chipSelectPin_.setHigh();
 }
 
-bool TouchControllerXpt2046::isPressed() {
+bool Xpt2046TouchController::isPressed() {
     const bool isTouchDetected = !pinout_.touchInterruptPin_.isHigh();
 
     if (!isTouchDetected) {
@@ -93,18 +93,16 @@ bool TouchControllerXpt2046::isPressed() {
             wasTouched = true;
             debounceInProgress = false;
         }
-    }
-    else if (wasTouched && !isPressedEnough) {
+    } else if (wasTouched && !isPressedEnough) {
         wasTouched = false;
-    }
-    else {
+    } else {
         debounceInProgress = false;
     }
 
     return wasTouched;
 }
 
-uint16_t TouchControllerXpt2046::readRawPressure() {
+uint16_t Xpt2046TouchController::readRawPressure() {
     const uint16_t rawZ1Value = transferReadCommand(READ_Z1_COMMAND_);
     const uint16_t rawZ2Value = transferReadCommand(READ_Z2_COMMAND_);
 
@@ -115,7 +113,7 @@ uint16_t TouchControllerXpt2046::readRawPressure() {
     return rawPressure;
 }
 
-Vector2 TouchControllerXpt2046::readPosition() {
+Vector2 Xpt2046TouchController::readPosition() {
     if (!isPressed()) {
         return Vector2 {.x_ = UINT16_MAX, .y_ = UINT16_MAX};
     }
