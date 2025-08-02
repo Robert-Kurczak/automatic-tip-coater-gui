@@ -1,7 +1,7 @@
 #ifndef HEATERTESTSSCREENPRESENTER_HPP
 #define HEATERTESTSSCREENPRESENTER_HPP
 
-#include "application/Heater/HeaterTestResults.hpp"
+#include "application/Hardware/Heater/HeaterTestResults.hpp"
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>

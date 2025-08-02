@@ -2,7 +2,7 @@
 #define MODELLISTENER_HPP
 
 #include "application/Hardware/Axes/AxisTestResults.hpp"
-#include "application/Heater/HeaterTestResults.hpp"
+#include "application/Hardware/Heater/HeaterTestResults.hpp"
 #include "application/Rotator/RotatorTestResults.hpp"
 
 #include <gui/model/Model.hpp>

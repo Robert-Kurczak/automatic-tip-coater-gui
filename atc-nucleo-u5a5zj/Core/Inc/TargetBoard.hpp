@@ -8,7 +8,7 @@
 #include "application/Hardware/Axes/YAxis/YAxis.hpp"
 #include "application/Hardware/Axes/ZAxis/ZAxis.hpp"
 #include "application/Hardware/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
-#include "application/Heater/Heater.hpp"
+#include "application/Hardware/Heater/ThermistorHeater/ThermistorHeater.hpp"
 #include "application/Logger/UartLogger/UartLogger.hpp"
 #include "application/Rotator/Rotator.hpp"
 #include "application/Spi/Spi.hpp"
@@ -28,7 +28,7 @@ private:
     YAxis yAxis_ {uartLogger};
     ZAxis zAxis_ {uartLogger};
     Rotator rotator_ {uartLogger};
-    Heater heater_ {uartLogger};
+    ThermistorHeater heater_ {uartLogger};
 
     FlexibleMemoryController flexibleMemoryController_ {
         0x60000000,
