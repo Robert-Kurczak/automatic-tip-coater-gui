@@ -1,15 +1,15 @@
-#include "Heater.hpp"
+#include "ThermistorHeater.hpp"
 
 #include <source_location>
 
 namespace ATC {
-Heater::Heater(ILogger& logger) : logger_(logger) {}
+ThermistorHeater::ThermistorHeater(ILogger& logger) : logger_(logger) {}
 
-void Heater::init() {}
+void ThermistorHeater::init() {}
 
-void Heater::tick() {}
+void ThermistorHeater::tick() {}
 
-void Heater::startTestTask(HeaterTestTaskCallback callback) {
+void ThermistorHeater::startTestTask(HeaterTestTaskCallback callback) {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -22,7 +22,7 @@ void Heater::startTestTask(HeaterTestTaskCallback callback) {
     callback(results);
 }
 
-void Heater::setOn() {
+void ThermistorHeater::setOn() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -31,7 +31,7 @@ void Heater::setOn() {
     // TODO implement
 }
 
-void Heater::setOff() {
+void ThermistorHeater::setOff() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -40,7 +40,7 @@ void Heater::setOff() {
     // TODO implement
 }
 
-void Heater::saveState() {
+void ThermistorHeater::saveState() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -49,7 +49,7 @@ void Heater::saveState() {
     // TODO implement
 }
 
-bool Heater::isOn() {
+bool ThermistorHeater::isOn() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -59,7 +59,7 @@ bool Heater::isOn() {
     return false;
 }
 
-void Heater::increaseTemperature() {
+void ThermistorHeater::increaseTemperature() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -68,7 +68,7 @@ void Heater::increaseTemperature() {
     // TODO implement
 }
 
-void Heater::decreaseTemperature() {
+void ThermistorHeater::decreaseTemperature() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -77,7 +77,7 @@ void Heater::decreaseTemperature() {
     // TODO implement
 }
 
-void Heater::saveTemperature() {
+void ThermistorHeater::saveTemperature() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -86,7 +86,7 @@ void Heater::saveTemperature() {
     // TODO implement
 }
 
-uint32_t Heater::getTemperature() {
+uint32_t ThermistorHeater::getTemperature() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),

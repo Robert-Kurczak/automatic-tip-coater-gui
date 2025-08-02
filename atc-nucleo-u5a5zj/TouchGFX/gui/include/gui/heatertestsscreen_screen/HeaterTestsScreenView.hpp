@@ -1,13 +1,12 @@
 #ifndef HEATERTESTSSCREENVIEW_HPP
 #define HEATERTESTSSCREENVIEW_HPP
 
-#include "application/Heater/HeaterTestResults.hpp"
+#include "application/Hardware/Heater/HeaterTestResults.hpp"
 
-#include <gui_generated/heatertestsscreen_screen/HeaterTestsScreenViewBase.hpp>
 #include <gui/heatertestsscreen_screen/HeaterTestsScreenPresenter.hpp>
+#include <gui_generated/heatertestsscreen_screen/HeaterTestsScreenViewBase.hpp>
 
-class HeaterTestsScreenView : public HeaterTestsScreenViewBase
-{
+class HeaterTestsScreenView : public HeaterTestsScreenViewBase {
 public:
     HeaterTestsScreenView();
     virtual ~HeaterTestsScreenView() {}

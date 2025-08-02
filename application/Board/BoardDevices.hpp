@@ -4,7 +4,7 @@
 #include "application/Hardware/Axes/YAxis/IYAxis.hpp"
 #include "application/Hardware/Axes/ZAxis/IZAxis.hpp"
 #include "application/Hardware/FramebufferDisplay/IFramebufferDisplay.hpp"
-#include "application/Heater/Heater.hpp"
+#include "application/Hardware/Heater/IHeater.hpp"
 #include "application/Rotator/Rotator.hpp"
 #include "application/TouchControllerXpt2046/TouchControllerXpt2046.hpp"
 
@@ -15,7 +15,7 @@ struct BoardDevices {
     IYAxis& yAxis;
     IZAxis& zAxis;
     Rotator& rotator;
-    Heater& heater;
+    IHeater& heater;
     IFramebufferDisplay& display;
     TouchControllerXpt2046& touchController;
 };
