@@ -1,18 +1,16 @@
 #pragma once
 
+#include "../ITouchController.hpp"
 #include "application/GpioPin/GpioPin.hpp"
-#include "application/Math/Math.hpp"
 #include "application/Spi/Spi.hpp"
 
-#include <stdint.h>
-
 namespace ATC {
-struct Xpt2046Pinout {
+struct Xpt2046TouchControllerPinout {
     GpioPin& chipSelectPin_;
     GpioPin& touchInterruptPin_;
 };
 
-class TouchControllerXpt2046 {
+class Xpt2046TouchController : public ITouchController {
 private:
     static constexpr uint8_t READ_X_COMMAND_ = 0xD0;
     static constexpr uint8_t READ_Y_COMMAND_ = 0x90;
@@ -22,7 +20,7 @@ private:
     static constexpr uint16_t PRESSURE_TRESHOLD_ = 1300;
     static constexpr uint8_t DEBOUNCE_MS_ = 20;
 
-    Xpt2046Pinout& pinout_;
+    Xpt2046TouchControllerPinout& pinout_;
     Spi& spi_;
     Rectangle rawWorkingArea_;
     const Vector2 pixelResolution_;
@@ -36,17 +34,17 @@ private:
     Vector2 interpolateRawPosition(const Vector2& rawPosition);
 
 public:
-    TouchControllerXpt2046(
-        Xpt2046Pinout& pinout,
+    Xpt2046TouchController(
+        Xpt2046TouchControllerPinout& pinout,
         Spi& spi,
         Rectangle rawWorkingArea,
         Vector2 pixelResolution
     );
 
-    void init();
+    virtual void init() override;
 
-    bool isPressed();
-    uint16_t readRawPressure();
-    Vector2 readPosition();
+    virtual bool isPressed() override;
+    virtual uint16_t readRawPressure() override;
+    virtual Vector2 readPosition() override;
 };
 }
