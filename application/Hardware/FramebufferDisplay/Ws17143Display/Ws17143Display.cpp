@@ -1,21 +1,44 @@
-#include "DisplayWs17143.hpp"
+#include "Ws17143Display.hpp"
 
 #include <array>
 
 namespace ATC {
 
-void DisplayWs17143::initResetLcdPin() {
+void Ws17143Display::setWindow(const Rectangle& window) {
+    const uint8_t xBytes[] {
+        uint8_t(window.xStart_ >> 8),
+        uint8_t(window.xStart_ & 0xFF),
+        uint8_t(window.xEnd_ >> 8),
+        uint8_t(window.xEnd_ & 0xFF)
+    };
+    const uint8_t yBytes[] {
+        uint8_t(window.yStart_ >> 8),
+        uint8_t(window.yStart_ & 0xFF),
+        uint8_t(window.yEnd_ >> 8),
+        uint8_t(window.yEnd_ & 0xFF)
+    };
+
+    for (uint8_t i = 0; i < 4; i++) {
+        flexibleMemoryController_.write(0x2A00 + i, xBytes[i]);
+    }
+
+    for (uint8_t i = 0; i < 4; i++) {
+        flexibleMemoryController_.write(0x2B00 + i, yBytes[i]);
+    }
+}
+
+void Ws17143Display::initResetLcdPin() {
     pinout_.lcdResetPin_.setOutputMode();
 }
 
-void DisplayWs17143::resetLcd() {
+void Ws17143Display::resetLcd() {
     pinout_.lcdResetPin_.setLow();
     delayProvider_.delayMiliseconds(50);
     pinout_.lcdResetPin_.setHigh();
     delayProvider_.delayMiliseconds(50);
 }
 
-void DisplayWs17143::initProprietaryHardwareSettings() {
+void Ws17143Display::initProprietaryHardwareSettings() {
     // Manufacturer Page 1 Commands Enable
     flexibleMemoryController_.write(0xF000, 0x50);
     flexibleMemoryController_.write(0xF001, 0xAA);
@@ -123,7 +146,7 @@ void DisplayWs17143::initProprietaryHardwareSettings() {
     flexibleMemoryController_.write(0xFF03, 0x01);
 }
 
-void DisplayWs17143::initProprietaryGammaSettings() {
+void Ws17143Display::initProprietaryGammaSettings() {
     // Red +
     flexibleMemoryController_.write(0xD100, 0x00);
     flexibleMemoryController_.write(0xD101, 0x37);
@@ -443,30 +466,30 @@ void DisplayWs17143::initProprietaryGammaSettings() {
     flexibleMemoryController_.write(0xD633, 0xC1);
 }
 
-void DisplayWs17143::initRGB565Format() {
+void Ws17143Display::initRGB565Format() {
     flexibleMemoryController_.write(0x3A00, 0x55);
 }
 
-void DisplayWs17143::exitSleepState() {
+void Ws17143Display::exitSleepState() {
     flexibleMemoryController_.write(0x1100, 0x00);
     delayProvider_.delayMiliseconds(120);
 }
 
-void DisplayWs17143::enableDisplay() {
+void Ws17143Display::enableDisplay() {
     flexibleMemoryController_.write(0x2900, 0x00);
     delayProvider_.delayMiliseconds(10);
 }
 
-void DisplayWs17143::setAllPixelsOff() {
+void Ws17143Display::setAllPixelsOff() {
     flexibleMemoryController_.write(0x2200, 0x00);
 }
 
-void DisplayWs17143::displayFramebuffer() {
+void Ws17143Display::displayFramebuffer() {
     flexibleMemoryController_.write(0x1300, 0x00);
 }
 
-DisplayWs17143::DisplayWs17143(
-    Ws17143Pinout& pinout,
+Ws17143Display::Ws17143Display(
+    const Ws17143DisplayPinout& pinout,
     FlexibleMemoryController& flexibleMemoryController,
     DelayProvider& delayProvider
 ) :
@@ -474,7 +497,7 @@ DisplayWs17143::DisplayWs17143(
     flexibleMemoryController_(flexibleMemoryController),
     delayProvider_(delayProvider) {}
 
-void DisplayWs17143::init() {
+void Ws17143Display::init() {
     initResetLcdPin();
     resetLcd();
 
@@ -486,30 +509,7 @@ void DisplayWs17143::init() {
     setAllPixelsOff();
 }
 
-void DisplayWs17143::setWindow(const Rectangle& window) {
-    const uint8_t xBytes[] {
-        uint8_t(window.xStart_ >> 8),
-        uint8_t(window.xStart_ & 0xFF),
-        uint8_t(window.xEnd_ >> 8),
-        uint8_t(window.xEnd_ & 0xFF)
-    };
-    const uint8_t yBytes[] {
-        uint8_t(window.yStart_ >> 8),
-        uint8_t(window.yStart_ & 0xFF),
-        uint8_t(window.yEnd_ >> 8),
-        uint8_t(window.yEnd_ & 0xFF)
-    };
-
-    for (uint8_t i = 0; i < 4; i++) {
-        flexibleMemoryController_.write(0x2A00 + i, xBytes[i]);
-    }
-
-    for (uint8_t i = 0; i < 4; i++) {
-        flexibleMemoryController_.write(0x2B00 + i, yBytes[i]);
-    }
-}
-
-void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
+void Ws17143Display::drawTestPattern(const uint8_t colorOffset) {
     setWindow(
         Rectangle {
             .xStart_ = 0,
@@ -536,7 +536,7 @@ void DisplayWs17143::drawTestPattern(const uint8_t colorOffset) {
     }
 }
 
-void DisplayWs17143::draw(
+void Ws17143Display::draw(
     const std::span<const uint16_t>& frameBuffer,
     const Rectangle& window
 ) {
@@ -552,5 +552,16 @@ void DisplayWs17143::draw(
     }
 
     displayFramebuffer();
+}
+
+void Ws17143Display::draw(const std::span<const uint16_t>& framebuffer) {
+    const Rectangle fullWindow {
+        .xStart_ = 0,
+        .xEnd_ = WIDTH_ - 1,
+        .yStart_ = 0,
+        .yEnd_ = HEIGHT_ - 1
+    };
+
+    draw(framebuffer, fullWindow);
 }
 }
