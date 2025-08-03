@@ -36,7 +36,7 @@
 		<link>
 			<name>application</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/application</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/application</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
