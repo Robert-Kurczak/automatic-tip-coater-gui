@@ -9651,7 +9651,7 @@
     "SubFamily": "STM32U595/5A5",
     "Toolchain": "STM32CubeIDE",
     "Platform": "m33",
-    "ProjectFile": "../atc-nucleo-u5a5zj.ioc",
+    "ProjectFile": "../nucleo-u5a5zj.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [],
     "AdditionalFeatures": []
