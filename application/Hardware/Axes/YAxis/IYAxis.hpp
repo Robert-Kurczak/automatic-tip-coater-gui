@@ -8,7 +8,11 @@
 namespace ATC {
 class IYAxis : public IAxis {
 public:
-    // TODO declare Y axis specific funtionality
+    virtual void detectTip() = 0;
+    virtual bool tipDetected() = 0;
+
+    virtual void moveTowardsCoatingPosition() = 0;
+    virtual bool isAtCoatingPosition() = 0;
 
     virtual ~IYAxis() {};
 };

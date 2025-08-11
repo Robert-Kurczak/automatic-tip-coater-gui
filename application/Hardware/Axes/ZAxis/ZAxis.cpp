@@ -9,6 +9,44 @@ void ZAxis::init() {}
 
 void ZAxis::tick() {}
 
+void ZAxis::moveTowardsStartPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool ZAxis::isAtStartPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void ZAxis::moveTowardsEndPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool ZAxis::isAtEndPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
 void ZAxis::startTestTask(AxisTestTaskCallback callback) {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,

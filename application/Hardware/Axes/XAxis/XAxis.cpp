@@ -9,6 +9,44 @@ void XAxis::init() {}
 
 void XAxis::tick() {}
 
+void XAxis::moveTowardsStartPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool XAxis::isAtStartPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void XAxis::moveTowardsEndPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool XAxis::isAtEndPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
 void XAxis::startTestTask(AxisTestTaskCallback callback) {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
@@ -135,6 +173,25 @@ uint32_t XAxis::getSpeed() {
     );
     // TODO implement
     return 100;
+}
+
+void XAxis::moveTowardsHeaterFrontPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool XAxis::isAtHeaterFrontPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
 }
 
 }

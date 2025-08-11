@@ -9,6 +9,43 @@ void DcMotorRotator::init() {}
 
 void DcMotorRotator::tick() {}
 
+void DcMotorRotator::startRotation() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+void DcMotorRotator::stopRotation() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+void DcMotorRotator::startTimedRotation() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool DcMotorRotator::timedRotationFinished() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
 void DcMotorRotator::startTestTask(RotatorTestTaskCallback callback) {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,

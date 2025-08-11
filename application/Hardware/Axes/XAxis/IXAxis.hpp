@@ -8,8 +8,9 @@
 namespace ATC {
 class IXAxis : public IAxis {
 public:
-    // TODO declare X axis specific funtionality
-
+    virtual void moveTowardsHeaterFrontPosition() = 0;
+    virtual bool isAtHeaterFrontPosition() = 0;
+    
     virtual ~IXAxis() {};
 };
 }

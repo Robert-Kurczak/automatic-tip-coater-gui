@@ -17,6 +17,12 @@ public:
     virtual void init() override;
     virtual void tick() override;
 
+    virtual void moveTowardsStartPosition() override;
+    virtual bool isAtStartPosition() override;
+
+    virtual void moveTowardsEndPosition() override;
+    virtual bool isAtEndPosition() override;
+
     virtual void startTestTask(AxisTestTaskCallback callback) override;
 
     virtual void increaseStartPosition() override;

@@ -14,6 +14,12 @@ public:
     virtual void tick() = 0;
     virtual void init() = 0;
 
+    virtual void startRotation() = 0;
+    virtual void stopRotation() = 0;
+
+    virtual void startTimedRotation() = 0;
+    virtual bool timedRotationFinished() = 0;
+
     virtual void startTestTask(RotatorTestTaskCallback callback) = 0;
 
     virtual void increaseSpeed() = 0;

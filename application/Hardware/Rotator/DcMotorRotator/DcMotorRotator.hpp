@@ -14,6 +14,12 @@ public:
     virtual void init() override;
     virtual void tick() override;
 
+    virtual void startRotation() override;
+    virtual void stopRotation() override;
+
+    virtual void startTimedRotation() override;
+    virtual bool timedRotationFinished() override;
+
     virtual void startTestTask(RotatorTestTaskCallback callback) override;
 
     virtual void increaseSpeed() override;
