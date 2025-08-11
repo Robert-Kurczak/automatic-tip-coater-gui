@@ -17,6 +17,12 @@ public:
     virtual void init() override;
     virtual void tick() override;
 
+    virtual void moveTowardsStartPosition() override;
+    virtual bool isAtStartPosition() override;
+
+    virtual void moveTowardsEndPosition() override;
+    virtual bool isAtEndPosition() override;
+
     virtual void startTestTask(AxisTestTaskCallback callback) override;
 
     virtual void increaseStartPosition() override;
@@ -33,5 +39,11 @@ public:
     virtual void decreaseSpeed() override;
     virtual void saveSpeed() override;
     virtual uint32_t getSpeed() override;
+
+    virtual void detectTip() override;
+    virtual bool tipDetected() override;
+
+    virtual void moveTowardsCoatingPosition() override;
+    virtual bool isAtCoatingPosition() override;
 };
 }

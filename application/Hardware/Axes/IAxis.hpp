@@ -2,8 +2,9 @@
 
 #include "AxisTestResults.hpp"
 
-#include <stdint.h>
 #include <functional>
+#include <stdint.h>
+
 
 namespace ATC {
 using AxisTestTaskCallback = std::function<void(AxisTestResults results)>;
@@ -12,6 +13,12 @@ class IAxis {
 public:
     virtual void init() = 0;
     virtual void tick() = 0;
+
+    virtual void moveTowardsStartPosition() = 0;
+    virtual bool isAtStartPosition() = 0;
+
+    virtual void moveTowardsEndPosition() = 0;
+    virtual bool isAtEndPosition() = 0;
 
     virtual void startTestTask(AxisTestTaskCallback callback) = 0;
 

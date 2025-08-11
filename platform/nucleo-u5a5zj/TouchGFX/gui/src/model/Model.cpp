@@ -6,7 +6,6 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
-
 // TODO abstract it out and create a fake for Host
 static ATC::TargetBoard targetBoard_ = ATC::TargetBoard::getBoard();
 
