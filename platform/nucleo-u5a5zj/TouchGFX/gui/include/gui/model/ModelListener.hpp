@@ -20,6 +20,7 @@ public:
     virtual void handleCoatingTaskFinish(bool wasSuccessful) {}
     virtual void handleCalibrationTaskFinish(bool wasSuccessful) {}
 
+    // TODO only one handler for axes results?
     virtual void handleXAxisTestTaskFinish(
         ATC::AxisTestResults results
     ) {}

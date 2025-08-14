@@ -6,6 +6,17 @@
 class ModelListener;
 
 class Model {
+private:
+    ModelListener* modelListener;
+
+    void pollCoatingTask();
+    void pollCalibrationTask();
+    void pollXAxisTestTask();
+    void pollYAxisTestTask();
+    void pollZAxisTestTask();
+    void pollRotatorTestTask();
+    void pollHeaterTestTask();
+
 public:
     Model();
 
@@ -95,9 +106,6 @@ public:
     void decreaseHeaterTemperature();
     void saveHeaterTemperature();
     uint32_t getHeaterTemperature();
-
-protected:
-    ModelListener* modelListener;
 };
 
 #endif // MODEL_HPP

@@ -9,8 +9,7 @@
 #include <stdint.h>
 
 namespace ATC {
-using TaskCallback = std::function<void(bool wasSuccessful)>;
-
+// TODO Refactor god class
 class Board {
 private:
     BoardDevices& devices_;
@@ -22,14 +21,33 @@ public:
     void init();
     void tick();
 
-    void startCoatingTask(TaskCallback callback = [](bool) {});
-    void startCalibrationTask(TaskCallback callback = [](bool) {});
+    void startCoatingTask();
+    bool isCoatingTaskDone();
+    bool consumeCoatingTaskResult();
 
-    void startXAxisTestTask(AxisTestTaskCallback callback);
-    void startYAxisTestTask(AxisTestTaskCallback callback);
-    void startZAxisTestTask(AxisTestTaskCallback callback);
-    void startRotationTestTask(RotatorTestTaskCallback callback);
-    void startHeaterTestTask(HeaterTestTaskCallback callback);
+    void startCalibrationTask();
+    bool isCalibrationTaskDone();
+    bool consumeCalibrationTaskResult();
+
+    void startXAxisTestTask();
+    bool isXAxisTestTaskDone();
+    AxisTestResults consumeXAxisTestTaskResult();
+
+    void startYAxisTestTask();
+    bool isYAxisTestTaskDone();
+    AxisTestResults consumeYAxisTestTaskResult();
+
+    void startZAxisTestTask();
+    bool isZAxisTestTaskDone();
+    AxisTestResults consumeZAxisTestTaskResult();
+
+    void startRotatorTestTask();
+    bool isRotatorTestTaskDone();
+    RotatorTestResults consumeRotatorTestTaskResult();
+
+    void startHeaterTestTask();
+    bool isHeaterTestTaskDone();
+    HeaterTestResults consumeHeaterTestTaskResult();
 
     void cancelCurrentTask();
 
