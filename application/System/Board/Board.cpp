@@ -1,5 +1,6 @@
 #include "Board.hpp"
 #include "application/System/Logger/ILogger.hpp"
+
 #include <source_location>
 
 namespace ATC {
@@ -19,44 +20,219 @@ void Board::init() {
 
 void Board::tick() {}
 
-void Board::startCoatingTask(TaskCallback callback) {
+void Board::startCoatingTask() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
         "Not implemented"
     );
     // TODO implement
-    callback(false);
 }
 
-void Board::startCalibrationTask(TaskCallback callback) {
+bool Board::isCoatingTaskDone() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
         "Not implemented"
     );
     // TODO implement
-    callback(false);
+    return true;
 }
 
-void Board::startXAxisTestTask(AxisTestTaskCallback callback) {
-    devices_.xAxis.startTestTask(callback);
+bool Board::consumeCoatingTaskResult() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
 }
 
-void Board::startYAxisTestTask(AxisTestTaskCallback callback) {
-    devices_.yAxis.startTestTask(callback);
+void Board::startCalibrationTask() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
-void Board::startZAxisTestTask(AxisTestTaskCallback callback) {
-    devices_.zAxis.startTestTask(callback);
+bool Board::isCalibrationTaskDone() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
 }
 
-void Board::startRotationTestTask(RotatorTestTaskCallback callback) {
-    devices_.rotator.startTestTask(callback);
+bool Board::consumeCalibrationTaskResult() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
 }
 
-void Board::startHeaterTestTask(HeaterTestTaskCallback callback) {
-    devices_.heater.startTestTask(callback);
+void Board::startXAxisTestTask() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool Board::isXAxisTestTaskDone() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
+AxisTestResults Board::consumeXAxisTestTaskResult() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return AxisTestResults {
+        .startLimitSwitchSuccess = true,
+        .endLimitSwitchSuccess = false,
+        .motorDriverSuccess = true
+    };
+}
+
+void Board::startYAxisTestTask() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool Board::isYAxisTestTaskDone() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
+AxisTestResults Board::consumeYAxisTestTaskResult() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return AxisTestResults {
+        .startLimitSwitchSuccess = true,
+        .endLimitSwitchSuccess = false,
+        .motorDriverSuccess = true
+    };
+}
+
+void Board::startZAxisTestTask() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool Board::isZAxisTestTaskDone() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
+AxisTestResults Board::consumeZAxisTestTaskResult() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return AxisTestResults {
+        .startLimitSwitchSuccess = true,
+        .endLimitSwitchSuccess = false,
+        .motorDriverSuccess = true
+    };
+}
+
+void Board::startRotatorTestTask() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool Board::isRotatorTestTaskDone() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
+RotatorTestResults Board::consumeRotatorTestTaskResult() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return RotatorTestResults {.motorDriverSuccess = true};
+}
+
+void Board::startHeaterTestTask() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool Board::isHeaterTestTaskDone() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
+HeaterTestResults Board::consumeHeaterTestTaskResult() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return HeaterTestResults {.temperatureSuccess = true};
 }
 
 void Board::cancelCurrentTask() {

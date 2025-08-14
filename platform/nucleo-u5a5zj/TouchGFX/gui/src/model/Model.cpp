@@ -9,64 +9,100 @@
 // TODO abstract it out and create a fake for Host
 static ATC::TargetBoard targetBoard_ = ATC::TargetBoard::getBoard();
 
+void Model::pollCoatingTask() {
+    if (targetBoard_.isCoatingTaskDone()) {
+        const bool wasSuccessful =
+            targetBoard_.consumeCoatingTaskResult();
+        modelListener->handleCoatingTaskFinish(wasSuccessful);
+    }
+}
+
+void Model::pollCalibrationTask() {
+    if (targetBoard_.isCalibrationTaskDone()) {
+        const bool wasSuccessful =
+            targetBoard_.consumeCalibrationTaskResult();
+        modelListener->handleCalibrationTaskFinish(wasSuccessful);
+    }
+}
+
+void Model::pollXAxisTestTask() {
+    if (targetBoard_.isXAxisTestTaskDone()) {
+        const ATC::AxisTestResults results =
+            targetBoard_.consumeXAxisTestTaskResult();
+        modelListener->handleXAxisTestTaskFinish(results);
+    }
+}
+
+void Model::pollYAxisTestTask() {
+    if (targetBoard_.isYAxisTestTaskDone()) {
+        const ATC::AxisTestResults results =
+            targetBoard_.consumeYAxisTestTaskResult();
+        modelListener->handleYAxisTestTaskFinish(results);
+    }
+}
+
+void Model::pollZAxisTestTask() {
+    if (targetBoard_.isZAxisTestTaskDone()) {
+        const ATC::AxisTestResults results =
+            targetBoard_.consumeZAxisTestTaskResult();
+        modelListener->handleZAxisTestTaskFinish(results);
+    }
+}
+
+void Model::pollRotatorTestTask() {
+    if (targetBoard_.isRotatorTestTaskDone()) {
+        const ATC::RotatorTestResults results =
+            targetBoard_.consumeRotatorTestTaskResult();
+        modelListener->handleRotatorTestTaskFinish(results);
+    }
+}
+
+void Model::pollHeaterTestTask() {
+    if (targetBoard_.isHeaterTestTaskDone()) {
+        const ATC::HeaterTestResults results =
+            targetBoard_.consumeHeaterTestTaskResult();
+        modelListener->handleHeaterTestTaskFinish(results);
+    }
+}
+
 Model::Model() : modelListener(0) {}
 
-void Model::tick() {}
+void Model::tick() {
+    pollCoatingTask();
+    pollCalibrationTask();
+    pollXAxisTestTask();
+    pollYAxisTestTask();
+    pollZAxisTestTask();
+    pollRotatorTestTask();
+    pollHeaterTestTask();
+}
 
 void Model::startCoatingTask() {
-    auto callback = [this](bool wasSuccessful) {
-        modelListener->handleCoatingTaskFinish(wasSuccessful);
-    };
-
-    targetBoard_.startCoatingTask(callback);
+    targetBoard_.startCoatingTask();
 }
 
 void Model::startCalibrationTask() {
-    auto callback = [this](bool wasSuccessful) {
-        modelListener->handleCalibrationTaskFinish(wasSuccessful);
-    };
-
-    targetBoard_.startCalibrationTask(callback);
+    targetBoard_.startCalibrationTask();
 }
 
 void Model::startXAxisTestTask() {
-    auto callback = [this](ATC::AxisTestResults results) {
-        modelListener->handleXAxisTestTaskFinish(results);
-    };
-
-    targetBoard_.startXAxisTestTask(callback);
+    targetBoard_.startXAxisTestTask();
 }
 
 void Model::startYAxisTestTask() {
-    auto callback = [this](ATC::AxisTestResults results) {
-        modelListener->handleYAxisTestTaskFinish(results);
-    };
-
-    targetBoard_.startYAxisTestTask(callback);
+    targetBoard_.startYAxisTestTask();
 }
 
 void Model::startZAxisTestTask() {
-    auto callback = [this](ATC::AxisTestResults results) {
-        modelListener->handleZAxisTestTaskFinish(results);
-    };
-
-    targetBoard_.startZAxisTestTask(callback);
+    targetBoard_.startZAxisTestTask();
 }
 
 void Model::startRotationTestTask() {
-    auto callback = [this](ATC::RotatorTestResults results) {
-        modelListener->handleRotatorTestTaskFinish(results);
-    };
-
-    targetBoard_.startRotationTestTask(callback);
+    targetBoard_.startRotatorTestTask();
 }
 
 void Model::startHeaterTestTask() {
-    auto callback = [this](ATC::HeaterTestResults results) {
-        modelListener->handleHeaterTestTaskFinish(results);
-    };
-
-    targetBoard_.startHeaterTestTask(callback);
+    targetBoard_.startHeaterTestTask();
 }
 
 void Model::cancelCurrentTask() {
