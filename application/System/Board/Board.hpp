@@ -1,9 +1,9 @@
 #pragma once
 
 #include "BoardDevices.hpp"
-#include "application/Hardware/Axes/IAxis.hpp"
 #include "application/Math/Math.hpp"
 #include "application/System/Logger/ILogger.hpp"
+#include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
 
 #include <functional>
 #include <stdint.h>

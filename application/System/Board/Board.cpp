@@ -9,9 +9,9 @@ Board::Board(BoardDevices& devices, ILogger& logger) :
     logger_(logger) {}
 
 void Board::init() {
-    devices_.xAxis.init();
-    devices_.yAxis.init();
-    devices_.zAxis.init();
+    devices_.xAxisController.init();
+    devices_.yAxisController.init();
+    devices_.zAxisController.init();
     devices_.rotator.init();
     devices_.heater.init();
     devices_.display.init();
@@ -245,147 +245,282 @@ void Board::cancelCurrentTask() {
 }
 
 void Board::increaseXAxisStart() {
-    devices_.xAxis.increaseStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseXAxisStart() {
-    devices_.xAxis.decreaseStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveXAxisStart() {
-    devices_.xAxis.saveStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getXAxisStart() {
-    return devices_.xAxis.getStartPosition();
+    return devices_.xAxisController.getStartPosition();
 }
 
 void Board::increaseXAxisEnd() {
-    devices_.xAxis.increaseEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseXAxisEnd() {
-    devices_.xAxis.decreaseEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveXAxisEnd() {
-    devices_.xAxis.saveEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getXAxisEnd() {
-    return devices_.xAxis.getEndPosition();
+    return devices_.xAxisController.getEndPosition();
 }
 
 void Board::increaseXAxisSpeed() {
-    devices_.xAxis.increaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseXAxisSpeed() {
-    devices_.xAxis.decreaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveXAxisSpeed() {
-    devices_.xAxis.saveSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getXAxisSpeed() {
-    return devices_.xAxis.getSpeed();
+    return devices_.xAxisController.getSpeed();
 }
 
 void Board::increaseYAxisStart() {
-    devices_.yAxis.increaseStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseYAxisStart() {
-    devices_.yAxis.decreaseStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveYAxisStart() {
-    devices_.yAxis.saveStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getYAxisStart() {
-    return devices_.yAxis.getStartPosition();
+    return devices_.yAxisController.getStartPosition();
 }
 
 void Board::increaseYAxisEnd() {
-    devices_.yAxis.increaseEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseYAxisEnd() {
-    devices_.yAxis.decreaseEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveYAxisEnd() {
-    devices_.yAxis.saveEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getYAxisEnd() {
-    return devices_.yAxis.getEndPosition();
+    return devices_.yAxisController.getEndPosition();
 }
 
 void Board::increaseYAxisSpeed() {
-    devices_.yAxis.increaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseYAxisSpeed() {
-    devices_.yAxis.decreaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveYAxisSpeed() {
-    devices_.yAxis.saveSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getYAxisSpeed() {
-    return devices_.yAxis.getSpeed();
+    return devices_.yAxisController.getSpeed();
 }
 
 void Board::increaseZAxisStart() {
-    devices_.zAxis.increaseStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseZAxisStart() {
-    devices_.zAxis.decreaseStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveZAxisStart() {
-    devices_.zAxis.saveStartPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getZAxisStart() {
-    return devices_.zAxis.getStartPosition();
+    return devices_.zAxisController.getStartPosition();
 }
 
 void Board::increaseZAxisEnd() {
-    devices_.zAxis.increaseEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseZAxisEnd() {
-    devices_.zAxis.decreaseEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveZAxisEnd() {
-    devices_.zAxis.saveEndPosition();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getZAxisEnd() {
-    return devices_.zAxis.getEndPosition();
+    return devices_.zAxisController.getEndPosition();
 }
 
 void Board::increaseZAxisSpeed() {
-    devices_.zAxis.increaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseZAxisSpeed() {
-    devices_.zAxis.decreaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveZAxisSpeed() {
-    devices_.zAxis.saveSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getZAxisSpeed() {
-    return devices_.zAxis.getSpeed();
+    return devices_.zAxisController.getSpeed();
 }
 
 // TODO change "Rotation" to "Rotator"

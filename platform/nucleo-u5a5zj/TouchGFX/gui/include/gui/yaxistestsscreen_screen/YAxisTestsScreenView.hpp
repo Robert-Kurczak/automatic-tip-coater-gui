@@ -1,7 +1,7 @@
 #ifndef YAXISTESTSSCREENVIEW_HPP
 #define YAXISTESTSSCREENVIEW_HPP
 
-#include "application/Hardware/Axes/AxisTestResults.hpp"
+#include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
 
 #include <gui/yaxistestsscreen_screen/YAxisTestsScreenPresenter.hpp>
 #include <gui_generated/yaxistestsscreen_screen/YAxisTestsScreenViewBase.hpp>

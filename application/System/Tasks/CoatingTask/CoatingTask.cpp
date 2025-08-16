@@ -10,20 +10,19 @@ void CoatingTask::resetStates() {
 }
 
 void CoatingTask::moveAxesToInitialPosition() {
-    const bool xAxisAtPosition = devices_.xAxis.isAtHeaterFrontPosition();
-    if (!xAxisAtPosition) {
-        devices_.xAxis.moveTowardsHeaterFrontPosition();
-    }
+    devices_.xAxisController.moveToHeaterFrontPosition();
+    devices_.yAxisController.moveToStartPosition();
+    devices_.zAxisController.moveToStartPosition();
+    currentStage_++;
+}
 
-    const bool yAxisAtPosition = devices_.xAxis.isAtHeaterFrontPosition();
-    if (!yAxisAtPosition) {
-        devices_.yAxis.moveTowardsStartPosition();
-    }
-
-    const bool zAxisAtPosition = devices_.xAxis.isAtHeaterFrontPosition();
-    if (!zAxisAtPosition) {
-        devices_.zAxis.moveTowardsStartPosition();
-    }
+void CoatingTask::waitForAxesAtInitialPosition() {
+    const bool xAxisAtPosition =
+        devices_.xAxisController.isAtHeaterFrontPosition();
+    const bool yAxisAtPosition =
+        devices_.yAxisController.isAtStartPosition();
+    const bool zAxisAtPosition =
+        devices_.zAxisController.isAtStartPosition();
 
     const bool axesAtPosition =
         xAxisAtPosition && yAxisAtPosition && zAxisAtPosition;
@@ -34,41 +33,56 @@ void CoatingTask::moveAxesToInitialPosition() {
 }
 
 void CoatingTask::moveZAxisToEndPosition() {
-    devices_.zAxis.moveTowardsEndPosition();
+    devices_.zAxisController.moveToEndPosition();
+    currentStage_++;
+}
 
-    if (devices_.zAxis.isAtEndPosition()) {
+void CoatingTask::waitForZAxisAtEndPosition() {
+    if (devices_.zAxisController.isAtEndPosition()) {
         currentStage_++;
     }
 }
 
 void CoatingTask::detectTipWithYAxis() {
-    devices_.yAxis.detectTip();
+    devices_.yAxisController.moveToDetectTip();
+    currentStage_++;
+}
 
-    if (devices_.yAxis.tipDetected()) {
+void CoatingTask::waitForTipDetection() {
+    if (devices_.yAxisController.isTipDetected()) {
         currentStage_++;
     }
 }
 
 void CoatingTask::moveYAxisToCoatingPosition() {
-    devices_.yAxis.moveTowardsCoatingPosition();
+    devices_.yAxisController.moveToCoatingPosition();
+    currentStage_++;
+}
 
-    if (devices_.yAxis.isAtCoatingPosition()) {
+void CoatingTask::waitForYAxisAtCoatingPosition() {
+    if (devices_.yAxisController.isAtCoatingPosition()) {
         currentStage_++;
     }
 }
 
 void CoatingTask::moveZAxisToStartPosition() {
-    devices_.zAxis.moveTowardsStartPosition();
+    devices_.zAxisController.moveToStartPosition();
+    currentStage_++;
+}
 
-    if (devices_.zAxis.isAtStartPosition()) {
+void CoatingTask::waitForZAxisAtStartPosition() {
+    if (devices_.zAxisController.isAtStartPosition()) {
         currentStage_++;
     }
 }
 
 void CoatingTask::moveXAxisToEndPosition() {
-    devices_.xAxis.moveTowardsEndPosition();
+    devices_.xAxisController.moveToEndPosition();
+    currentStage_++;
+}
 
-    if (devices_.zAxis.isAtEndPosition()) {
+void CoatingTask::waitForXAxisAtEndPosition() {
+    if (devices_.zAxisController.isAtEndPosition()) {
         currentStage_++;
     }
 }
@@ -78,10 +92,13 @@ void CoatingTask::startRotation() {
     currentStage_++;
 }
 
-void CoatingTask::moveXAxisToHeaterFront() {
-    devices_.xAxis.moveTowardsHeaterFrontPosition();
+void CoatingTask::moveXAxisToHeaterFrontPosition() {
+    devices_.xAxisController.moveToHeaterFrontPosition();
+    currentStage_++;
+}
 
-    if (devices_.xAxis.isAtHeaterFrontPosition()) {
+void CoatingTask::waitForXAxisAtHeaterFrontPosition() {
+    if (devices_.xAxisController.isAtHeaterFrontPosition()) {
         currentStage_++;
     }
 }
@@ -98,9 +115,12 @@ void CoatingTask::waitForTimedRotationToFinish() {
 }
 
 void CoatingTask::moveXAxisToStartPosition() {
-    devices_.xAxis.moveTowardsStartPosition();
+    devices_.xAxisController.moveToStartPosition();
+    currentStage_++;
+}
 
-    if (devices_.xAxis.isAtStartPosition()) {
+void CoatingTask::waitForXAxisAtStartPosition() {
+    if (devices_.xAxisController.isAtStartPosition()) {
         currentStage_++;
     }
 }

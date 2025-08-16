@@ -1,8 +1,8 @@
 #pragma once
 
-#include "application/Hardware/Axes/XAxis/IXAxis.hpp"
-#include "application/Hardware/Axes/YAxis/IYAxis.hpp"
-#include "application/Hardware/Axes/ZAxis/IZAxis.hpp"
+#include "application/Controllers/AxisControllers/XAxisController/IXAxisController.hpp"
+#include "application/Controllers/AxisControllers/YAxisController/IYAxisController.hpp"
+#include "application/Controllers/AxisControllers/ZAxisController/IZAxisController.hpp"
 #include "application/Hardware/FramebufferDisplay/IFramebufferDisplay.hpp"
 #include "application/Hardware/Heater/IHeater.hpp"
 #include "application/Hardware/Rotator/IRotator.hpp"
@@ -10,9 +10,9 @@
 
 namespace ATC {
 struct BoardDevices {
-    IXAxis& xAxis;
-    IYAxis& yAxis;
-    IZAxis& zAxis;
+    IXAxisController& xAxisController;
+    IYAxisController& yAxisController;
+    IZAxisController& zAxisController;
     IRotator& rotator;
     IHeater& heater;
     IFramebufferDisplay& display;
