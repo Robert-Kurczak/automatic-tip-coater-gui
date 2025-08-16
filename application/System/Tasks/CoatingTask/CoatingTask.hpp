@@ -16,36 +16,77 @@ private:
     void resetStates();
 
     void moveAxesToInitialPosition();
+    void waitForAxesAtInitialPosition();
+
     void moveZAxisToEndPosition();
+    void waitForZAxisAtEndPosition();
+
     void detectTipWithYAxis();
+    void waitForTipDetection();
+
     void moveYAxisToCoatingPosition();
+    void waitForYAxisAtCoatingPosition();
+
     void moveZAxisToStartPosition();
+    void waitForZAxisAtStartPosition();
+
     void moveXAxisToEndPosition();
+    void waitForXAxisAtEndPosition();
+
     void startRotation();
-    void moveXAxisToHeaterFront();
+
+    void moveXAxisToHeaterFrontPosition();
+    void waitForXAxisAtHeaterFrontPosition();
+
     void startTimedRotationInHeaterFront();
     void waitForTimedRotationToFinish();
+
     void moveXAxisToStartPosition();
+    void waitForXAxisAtStartPosition();
+
     void stopRotation();
     void finishTask();
 
     using stageMethod = void (CoatingTask::*)();
-
-    static constexpr std::array<stageMethod, 15> stages_ {
+    
+    static constexpr std::array<stageMethod, 25> stages_ {
         &CoatingTask::moveAxesToInitialPosition,
+        &CoatingTask::waitForAxesAtInitialPosition,
+
         &CoatingTask::moveZAxisToEndPosition,
+        &CoatingTask::waitForZAxisAtEndPosition,
+
         &CoatingTask::detectTipWithYAxis,
+        &CoatingTask::waitForTipDetection,
+
         &CoatingTask::moveYAxisToCoatingPosition,
+        &CoatingTask::waitForYAxisAtCoatingPosition,
+
         &CoatingTask::moveZAxisToStartPosition,
+        &CoatingTask::waitForZAxisAtStartPosition,
+
         &CoatingTask::moveXAxisToEndPosition,
+        &CoatingTask::waitForXAxisAtEndPosition,
+
         &CoatingTask::moveZAxisToEndPosition,
+        &CoatingTask::waitForZAxisAtEndPosition,
+
         &CoatingTask::startRotation,
-        &CoatingTask::moveXAxisToHeaterFront,
+
+        &CoatingTask::moveXAxisToHeaterFrontPosition,
+        &CoatingTask::waitForXAxisAtHeaterFrontPosition,
+
         &CoatingTask::startTimedRotationInHeaterFront,
         &CoatingTask::waitForTimedRotationToFinish,
+
         &CoatingTask::moveXAxisToStartPosition,
+        &CoatingTask::waitForXAxisAtStartPosition,
+
         &CoatingTask::stopRotation,
+
         &CoatingTask::moveZAxisToStartPosition,
+        &CoatingTask::waitForZAxisAtEndPosition,
+
         &CoatingTask::finishTask
     };
 

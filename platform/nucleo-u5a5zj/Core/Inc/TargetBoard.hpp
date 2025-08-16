@@ -4,9 +4,9 @@
 #include "Adapters/Spi/Spi.hpp"
 #include "Adapters/SystemClock/SystemClock.hpp"
 #include "Adapters/Uart/Uart.hpp"
-#include "application/Hardware/Axes/XAxis/XAxis.hpp"
-#include "application/Hardware/Axes/YAxis/YAxis.hpp"
-#include "application/Hardware/Axes/ZAxis/ZAxis.hpp"
+#include "application/Controllers/AxisControllers/XAxisController/XAxisController.hpp"
+#include "application/Controllers/AxisControllers/YAxisController/YAxisController.hpp"
+#include "application/Controllers/AxisControllers/ZAxisController/ZAxisController.hpp"
 #include "application/Hardware/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/Hardware/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
 #include "application/Hardware/Heater/ThermistorHeater/ThermistorHeater.hpp"
@@ -26,9 +26,9 @@ private:
     Uart uart {huart1};
     UartLogger uartLogger {uart};
 
-    XAxis xAxis_ {uartLogger};
-    YAxis yAxis_ {uartLogger};
-    ZAxis zAxis_ {uartLogger};
+    XAxisController xAxisController_ {uartLogger};
+    YAxisController yAxisController_ {uartLogger};
+    ZAxisController zAxisController_ {uartLogger};
     DcMotorRotator rotator_ {uartLogger};
     ThermistorHeater heater_ {uartLogger};
 
@@ -72,9 +72,9 @@ private:
     };
 
     BoardDevices targetDevices_ {
-        .xAxis = xAxis_,
-        .yAxis = yAxis_,
-        .zAxis = zAxis_,
+        .xAxisController = xAxisController_,
+        .yAxisController = yAxisController_,
+        .zAxisController = zAxisController_,
         .rotator = rotator_,
         .heater = heater_,
         .display = display_,

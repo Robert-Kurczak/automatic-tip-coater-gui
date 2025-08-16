@@ -1,5 +1,5 @@
 #include "TargetBoard.hpp"
-#include "application/Hardware/Axes/AxisTestResults.hpp"
+#include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
 #include "application/Hardware/Heater/HeaterTestResults.hpp"
 #include "application/Hardware/Rotator/RotatorTestResults.hpp"
 
