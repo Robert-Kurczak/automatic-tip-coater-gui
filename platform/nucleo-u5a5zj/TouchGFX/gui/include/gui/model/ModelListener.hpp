@@ -1,9 +1,9 @@
 #ifndef MODELLISTENER_HPP
 #define MODELLISTENER_HPP
 
-#include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
-#include "application/Hardware/Heater/HeaterTestResults.hpp"
 #include "application/Hardware/Rotator/RotatorTestResults.hpp"
+#include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
+#include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 
@@ -21,17 +21,14 @@ public:
     virtual void handleCalibrationTaskFinish(bool wasSuccessful) {}
 
     // TODO only one handler for axes results?
-    virtual void handleXAxisTestTaskFinish(
-        ATC::AxisTestResults results
-    ) {}
+    virtual void handleXAxisTestTaskFinish(ATC::AxisTestResults results) {
+    }
 
-    virtual void handleYAxisTestTaskFinish(
-        ATC::AxisTestResults results
-    ) {}
+    virtual void handleYAxisTestTaskFinish(ATC::AxisTestResults results) {
+    }
 
-    virtual void handleZAxisTestTaskFinish(
-        ATC::AxisTestResults results
-    ) {}
+    virtual void handleZAxisTestTaskFinish(ATC::AxisTestResults results) {
+    }
 
     virtual void handleRotatorTestTaskFinish(
         ATC::RotatorTestResults results

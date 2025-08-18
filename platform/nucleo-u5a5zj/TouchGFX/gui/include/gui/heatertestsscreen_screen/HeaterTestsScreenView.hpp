@@ -1,7 +1,7 @@
 #ifndef HEATERTESTSSCREENVIEW_HPP
 #define HEATERTESTSSCREENVIEW_HPP
 
-#include "application/Hardware/Heater/HeaterTestResults.hpp"
+#include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
 
 #include <gui/heatertestsscreen_screen/HeaterTestsScreenPresenter.hpp>
 #include <gui_generated/heatertestsscreen_screen/HeaterTestsScreenViewBase.hpp>

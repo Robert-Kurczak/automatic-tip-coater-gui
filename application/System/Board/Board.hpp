@@ -4,6 +4,7 @@
 #include "application/Math/Math.hpp"
 #include "application/System/Logger/ILogger.hpp"
 #include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
+#include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
 
 #include <functional>
 #include <stdint.h>

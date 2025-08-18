@@ -13,7 +13,7 @@ void Board::init() {
     devices_.yAxisController.init();
     devices_.zAxisController.init();
     devices_.rotator.init();
-    devices_.heater.init();
+    devices_.heaterController.init();
     devices_.display.init();
     devices_.touchController.init();
 }
@@ -573,35 +573,77 @@ uint32_t Board::getRotationTime() {
 }
 
 void Board::setHeaterOn() {
-    devices_.heater.setOn();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::setHeaterOff() {
-    devices_.heater.setOff();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveHeaterState() {
-    devices_.heater.saveState();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 bool Board::isHeaterOn() {
-    return devices_.heater.isOn();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
 }
 
 void Board::increaseHeaterTemperature() {
-    devices_.heater.increaseTemperature();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseHeaterTemperature() {
-    devices_.heater.decreaseTemperature();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveHeaterTemperature() {
-    devices_.heater.saveTemperature();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getHeaterTemperature() {
-    return devices_.heater.getTemperature();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return 100;
 }
 
 void Board::drawOnDisplay(
