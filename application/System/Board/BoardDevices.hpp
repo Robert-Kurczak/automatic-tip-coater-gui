@@ -3,8 +3,8 @@
 #include "application/Controllers/AxisControllers/XAxisController/IXAxisController.hpp"
 #include "application/Controllers/AxisControllers/YAxisController/IYAxisController.hpp"
 #include "application/Controllers/AxisControllers/ZAxisController/IZAxisController.hpp"
+#include "application/Controllers/HeaterController/IHeaterController.hpp"
 #include "application/Hardware/FramebufferDisplay/IFramebufferDisplay.hpp"
-#include "application/Hardware/Heater/IHeater.hpp"
 #include "application/Hardware/Rotator/IRotator.hpp"
 #include "application/Hardware/TouchController/ITouchController.hpp"
 
@@ -14,7 +14,7 @@ struct BoardDevices {
     IYAxisController& yAxisController;
     IZAxisController& zAxisController;
     IRotator& rotator;
-    IHeater& heater;
+    IHeaterController& heaterController;
     IFramebufferDisplay& display;
     ITouchController& touchController;
 };

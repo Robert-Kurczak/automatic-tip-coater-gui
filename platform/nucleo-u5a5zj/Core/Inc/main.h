@@ -68,6 +68,8 @@ void ATC_Loop();
 #define TouchPanel_CS_GPIO_Port GPIOA
 #define UCPD_FLT_Pin GPIO_PIN_14
 #define UCPD_FLT_GPIO_Port GPIOB
+#define Heater_EN_Pin GPIO_PIN_3
+#define Heater_EN_GPIO_Port GPIOG
 #define UCPD_DBn_Pin GPIO_PIN_5
 #define UCPD_DBn_GPIO_Port GPIOB
 
