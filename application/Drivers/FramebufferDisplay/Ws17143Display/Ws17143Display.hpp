@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../IFramebufferDisplay.hpp"
-#include "application/Hardware/FlexibleMemoryController/IFlexibleMemoryController.hpp"
+#include "application/Drivers/FlexibleMemoryController/IFlexibleMemoryController.hpp"
 #include "application/Ports/IGpioPin.hpp"
 #include "application/Ports/ISystemClock.hpp"
 
