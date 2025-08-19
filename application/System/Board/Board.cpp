@@ -15,7 +15,7 @@ void Board::init() {
     devices_.rotator.init();
     devices_.heaterController.init();
     devices_.display.init();
-    devices_.touchController.init();
+    devices_.touchPanelController.init();
 }
 
 void Board::tick() {}
@@ -654,6 +654,6 @@ void Board::drawOnDisplay(
 }
 
 Vector2 Board::readTouchScreenPosition() {
-    return devices_.touchController.readPosition();
+    return devices_.touchPanelController.readPosition();
 }
 }

@@ -8,12 +8,13 @@
 #include "application/Controllers/AxisControllers/YAxisController/YAxisController.hpp"
 #include "application/Controllers/AxisControllers/ZAxisController/ZAxisController.hpp"
 #include "application/Controllers/HeaterController/HysteresisHeaterController/HysteresisHeaterController.hpp"
+#include "application/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
+#include "application/Drivers/FlexibleMemoryController/FlexibleMemoryController.hpp"
+#include "application/Drivers/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
+#include "application/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
 #include "application/Drivers/Switch/GpioActiveHighSwitch/GpioActiveHighSwitch.hpp"
 #include "application/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
-#include "application/Hardware/FlexibleMemoryController/FlexibleMemoryController.hpp"
-#include "application/Hardware/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
 #include "application/Hardware/Rotator/DcMotorRotator/DcMotorRotator.hpp"
-#include "application/Hardware/TouchController/Xpt2046TouchController/Xpt2046TouchController.hpp"
 #include "application/System/Board/Board.hpp"
 #include "application/System/Board/BoardDevices.hpp"
 #include "application/System/Logger/UartLogger/UartLogger.hpp"
@@ -56,21 +57,23 @@ private:
     };
 
     Spi spi_ {hspi1};
-    GpioPin touchControllerChipSelectPin_ {
+    GpioPin touchPanelChipSelectPin_ {
         *TouchPanel_CS_GPIO_Port,
         TouchPanel_CS_Pin
     };
-    GpioPin touchControllerInterruptPin_ {
+    GpioPin touchPanelInterruptPin_ {
         *TouchPanel_IRQ_GPIO_Port,
         TouchPanel_IRQ_Pin
     };
-    Xpt2046TouchControllerPinout xpt2046Pinout_ {
-        .chipSelectPin_ = touchControllerChipSelectPin_,
-        .touchInterruptPin_ = touchControllerInterruptPin_
+    Xpt2046TouchPanelPinout xpt2046TouchPanelPinout_ {
+        .chipSelectPin = touchPanelChipSelectPin_,
+        .touchInterruptPin = touchPanelInterruptPin_
     };
-    Xpt2046TouchController touchController_ {
-        xpt2046Pinout_,
-        spi_,
+
+    Xpt2046TouchPanel touchPanel_ {xpt2046TouchPanelPinout_, spi_};
+
+    ResistiveTouchPanelController touchPanelController_ {
+        touchPanel_,
         systemClock_,
         Rectangle {
                    .xStart_ = 130,
@@ -78,7 +81,8 @@ private:
                    .yStart_ = 80,
                    .yEnd_ = 1950
         },
-        Vector2 {.x_ = 480, .y_ = 800}
+        Vector2 {.x_ = 480, .y_ = 800},
+        1300
     };
 
     BoardDevices targetDevices_ {
@@ -88,7 +92,7 @@ private:
         .rotator = rotator_,
         .heaterController = heaterController_,
         .display = display_,
-        .touchController = touchController_
+        .touchPanelController = touchPanelController_
     };
 
     TargetBoard();
