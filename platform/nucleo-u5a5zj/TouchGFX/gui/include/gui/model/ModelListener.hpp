@@ -1,7 +1,7 @@
 #ifndef MODELLISTENER_HPP
 #define MODELLISTENER_HPP
 
-#include "application/Hardware/Rotator/RotatorTestResults.hpp"
+#include "application/System/Tasks/SpindleTestTask/SpindleTestResults.hpp"
 #include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
 #include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
 
@@ -31,7 +31,7 @@ public:
     }
 
     virtual void handleRotatorTestTaskFinish(
-        ATC::RotatorTestResults results
+        ATC::SpindleTestResults results
     ) {}
 
     virtual void handleHeaterTestTaskFinish(

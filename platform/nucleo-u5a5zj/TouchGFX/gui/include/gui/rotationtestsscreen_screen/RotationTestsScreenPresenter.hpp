@@ -31,7 +31,7 @@ public:
     virtual ~RotationTestsScreenPresenter() {}
 
     virtual void handleRotatorTestTaskFinish(
-        ATC::RotatorTestResults results
+        ATC::SpindleTestResults results
     ) override;
 
     void startButtonPressed();

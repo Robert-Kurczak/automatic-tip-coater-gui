@@ -51,6 +51,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -60,6 +62,10 @@ void ATC_Loop();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define Spindle_DIR_Pin GPIO_PIN_2
+#define Spindle_DIR_GPIO_Port GPIOE
+#define Spindle_SPEED_Pin GPIO_PIN_3
+#define Spindle_SPEED_GPIO_Port GPIOE
 #define LCD_RS_Pin GPIO_PIN_4
 #define LCD_RS_GPIO_Port GPIOF
 #define TouchPanel_IRQ_Pin GPIO_PIN_4
