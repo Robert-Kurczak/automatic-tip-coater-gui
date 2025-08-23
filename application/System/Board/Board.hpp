@@ -5,6 +5,7 @@
 #include "application/System/Logger/ILogger.hpp"
 #include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
 #include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
+#include "application/System/Tasks/SpindleTestTask/SpindleTestResults.hpp"
 
 #include <functional>
 #include <stdint.h>
@@ -44,7 +45,7 @@ public:
 
     void startRotatorTestTask();
     bool isRotatorTestTaskDone();
-    RotatorTestResults consumeRotatorTestTaskResult();
+    SpindleTestResults consumeRotatorTestTaskResult();
 
     void startHeaterTestTask();
     bool isHeaterTestTaskDone();

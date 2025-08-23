@@ -4,16 +4,16 @@
 #include "application/Controllers/AxisControllers/YAxisController/IYAxisController.hpp"
 #include "application/Controllers/AxisControllers/ZAxisController/IZAxisController.hpp"
 #include "application/Controllers/HeaterController/IHeaterController.hpp"
+#include "application/Controllers/SpindleController/ISpindleController.hpp"
 #include "application/Controllers/TouchPanelController/ITouchPanelController.hpp"
 #include "application/Drivers/FramebufferDisplay/IFramebufferDisplay.hpp"
-#include "application/Hardware/Rotator/IRotator.hpp"
 
 namespace ATC {
 struct BoardDevices {
     IXAxisController& xAxisController;
     IYAxisController& yAxisController;
     IZAxisController& zAxisController;
-    IRotator& rotator;
+    ISpindleController& spindleController;
     IHeaterController& heaterController;
     IFramebufferDisplay& display;
     ITouchPanelController& touchPanelController;

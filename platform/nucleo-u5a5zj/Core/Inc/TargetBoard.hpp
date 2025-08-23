@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Adapters/GpioPin/GpioPin.hpp"
+#include "Adapters/PwmPin/PwmPin.hpp"
 #include "Adapters/Spi/Spi.hpp"
 #include "Adapters/SystemClock/SystemClock.hpp"
 #include "Adapters/Uart/Uart.hpp"
@@ -8,13 +9,14 @@
 #include "application/Controllers/AxisControllers/YAxisController/YAxisController.hpp"
 #include "application/Controllers/AxisControllers/ZAxisController/ZAxisController.hpp"
 #include "application/Controllers/HeaterController/HysteresisHeaterController/HysteresisHeaterController.hpp"
+#include "application/Controllers/SpindleController/SpindleController.hpp"
 #include "application/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
 #include "application/Drivers/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/Drivers/FramebufferDisplay/Ws17143Display/Ws17143Display.hpp"
+#include "application/Drivers/Motor/PwmDcMotor/PwmDcMotor.hpp"
 #include "application/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
 #include "application/Drivers/Switch/GpioActiveHighSwitch/GpioActiveHighSwitch.hpp"
 #include "application/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
-#include "application/Hardware/Rotator/DcMotorRotator/DcMotorRotator.hpp"
 #include "application/System/Board/Board.hpp"
 #include "application/System/Board/BoardDevices.hpp"
 #include "application/System/Logger/UartLogger/UartLogger.hpp"
@@ -22,6 +24,7 @@
 
 extern SPI_HandleTypeDef hspi1;
 extern UART_HandleTypeDef huart1;
+extern TIM_HandleTypeDef htim3;
 
 namespace ATC {
 class TargetBoard : public Board {
@@ -32,7 +35,18 @@ private:
     XAxisController xAxisController_ {uartLogger};
     YAxisController yAxisController_ {uartLogger};
     ZAxisController zAxisController_ {uartLogger};
-    DcMotorRotator rotator_ {uartLogger};
+
+    PwmPin dcMotorPwmPin_ {htim3, TIM_CHANNEL_1};
+    GpioPin dcMotorDirectionPin_ {
+        *Spindle_DIR_GPIO_Port,
+        Spindle_DIR_Pin
+    };
+    PwmDcMotorPinout pwmDcMotorPinout_ {
+        .speedPwmPin = dcMotorPwmPin_,
+        .directionPin = dcMotorDirectionPin_
+    };
+    PwmDcMotor pwmDcMotor_ {pwmDcMotorPinout_};
+    SpindleController spindleController_ {uartLogger, pwmDcMotor_};
 
     GpioPin heaterTogglePin_ {*Heater_EN_GPIO_Port, Heater_EN_Pin};
     GpioActiveHighSwitch heaterSwitch_ {heaterTogglePin_};
@@ -89,7 +103,7 @@ private:
         .xAxisController = xAxisController_,
         .yAxisController = yAxisController_,
         .zAxisController = zAxisController_,
-        .rotator = rotator_,
+        .spindleController = spindleController_,
         .heaterController = heaterController_,
         .display = display_,
         .touchPanelController = touchPanelController_

@@ -88,7 +88,7 @@ void CoatingTask::waitForXAxisAtEndPosition() {
 }
 
 void CoatingTask::startRotation() {
-    devices_.rotator.startRotation();
+    devices_.spindleController.startRotation();
     currentStage_++;
 }
 
@@ -104,12 +104,12 @@ void CoatingTask::waitForXAxisAtHeaterFrontPosition() {
 }
 
 void CoatingTask::startTimedRotationInHeaterFront() {
-    devices_.rotator.startTimedRotation();
+    devices_.spindleController.startRotation();
     currentStage_++;
 }
 
 void CoatingTask::waitForTimedRotationToFinish() {
-    if (devices_.rotator.timedRotationFinished()) {
+    if (devices_.spindleController.isTimedRotationFinished()) {
         currentStage_++;
     }
 }
@@ -126,7 +126,7 @@ void CoatingTask::waitForXAxisAtStartPosition() {
 }
 
 void CoatingTask::stopRotation() {
-    devices_.rotator.stopRotation();
+    devices_.spindleController.stopRotation();
     currentStage_++;
 }
 

@@ -11,7 +11,7 @@ void RotationTestsScreenPresenter::activate() {}
 void RotationTestsScreenPresenter::deactivate() {}
 
 void RotationTestsScreenPresenter::handleRotatorTestTaskFinish(
-    ATC::RotatorTestResults results
+    ATC::SpindleTestResults results
 ) {
     view.resetFooterButtons();
     view.showTestResults(results);

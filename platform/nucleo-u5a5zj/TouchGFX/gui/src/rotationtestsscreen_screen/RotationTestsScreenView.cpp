@@ -15,7 +15,7 @@ void RotationTestsScreenView::resetFooterButtons() {
 }
 
 void RotationTestsScreenView::showTestResults(
-    ATC::RotatorTestResults results
+    ATC::SpindleTestResults results
 ) {
     if (results.motorDriverSuccess) {
         rotationTestsResults.setMotorDriverSuccess();

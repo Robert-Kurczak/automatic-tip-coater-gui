@@ -1,5 +1,6 @@
 #include "TargetBoard.hpp"
-#include "application/Hardware/Rotator/RotatorTestResults.hpp"
+
+#include "application/System/Tasks/SpindleTestTask/SpindleTestResults.hpp"
 #include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
 #include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
 
@@ -51,7 +52,7 @@ void Model::pollZAxisTestTask() {
 
 void Model::pollRotatorTestTask() {
     if (targetBoard_.isRotatorTestTaskDone()) {
-        const ATC::RotatorTestResults results =
+        const ATC::SpindleTestResults results =
             targetBoard_.consumeRotatorTestTaskResult();
         modelListener->handleRotatorTestTaskFinish(results);
     }

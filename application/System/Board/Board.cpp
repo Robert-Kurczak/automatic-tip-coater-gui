@@ -12,7 +12,7 @@ void Board::init() {
     devices_.xAxisController.init();
     devices_.yAxisController.init();
     devices_.zAxisController.init();
-    devices_.rotator.init();
+    devices_.spindleController.init();
     devices_.heaterController.init();
     devices_.display.init();
     devices_.touchPanelController.init();
@@ -196,14 +196,14 @@ bool Board::isRotatorTestTaskDone() {
     return true;
 }
 
-RotatorTestResults Board::consumeRotatorTestTaskResult() {
+SpindleTestResults Board::consumeRotatorTestTaskResult() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
         "Not implemented"
     );
     // TODO implement
-    return RotatorTestResults {.motorDriverSuccess = true};
+    return SpindleTestResults {.motorDriverSuccess = true};
 }
 
 void Board::startHeaterTestTask() {
@@ -525,51 +525,114 @@ uint32_t Board::getZAxisSpeed() {
 
 // TODO change "Rotation" to "Rotator"
 void Board::increaseRotationSpeed() {
-    devices_.rotator.increaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseRotationSpeed() {
-    devices_.rotator.decreaseSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveRotationSpeed() {
-    devices_.rotator.saveSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getRotationSpeed() {
-    return devices_.rotator.getSpeed();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return 100;
 }
 
 void Board::setClockwiseRotation() {
-    devices_.rotator.setDirectionClockwise();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::setCounterClockwiseRotation() {
-    devices_.rotator.setDirectionCounterClockwise();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveRotationDirection() {
-    devices_.rotator.setDirectionClockwise();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 bool Board::isRotationClockwise() {
-    return devices_.rotator.isDirectionClockwise();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
 }
 
 void Board::increaseRotationTime() {
-    return devices_.rotator.increaseRotationTime();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::decreaseRotationTime() {
-    return devices_.rotator.decreaseRotationTime();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 void Board::saveRotationTime() {
-    return devices_.rotator.saveRotationTime();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
 }
 
 uint32_t Board::getRotationTime() {
-    return devices_.rotator.getRotationTime();
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return 10;
 }
 
 void Board::setHeaterOn() {

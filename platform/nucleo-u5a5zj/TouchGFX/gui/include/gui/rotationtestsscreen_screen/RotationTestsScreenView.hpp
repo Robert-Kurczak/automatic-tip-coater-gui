@@ -12,7 +12,7 @@ public:
     virtual void tearDownScreen();
 
     void resetFooterButtons();
-    void showTestResults(ATC::RotatorTestResults results);
+    void showTestResults(ATC::SpindleTestResults results);
 
 protected:
     virtual void startTest() override;

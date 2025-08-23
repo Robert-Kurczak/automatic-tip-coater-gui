@@ -1,7 +1,7 @@
 #pragma once
 
 namespace ATC {
-struct RotatorTestResults {
+struct SpindleTestResults {
     bool motorDriverSuccess;
 };
 }
