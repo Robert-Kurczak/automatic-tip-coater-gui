@@ -5,6 +5,129 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_4BKF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_SYAX" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; °C</Translation>
+      </Text>
+      <Text Id="__SingleUse_17MC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_YATL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; ms</Translation>
+      </Text>
+      <Text Id="__SingleUse_O6J1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Clockwise</Translation>
+      </Text>
+      <Text Id="__SingleUse_WM2X" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4GVK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_QUDW" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; rpm</Translation>
+      </Text>
+      <Text Id="__SingleUse_5I9U" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_F5RK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+      </Text>
+      <Text Id="__SingleUse_UCLR" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_7QBP" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_KAAJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_70KH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_R6S5" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_6VFJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+      </Text>
+      <Text Id="__SingleUse_6MOL" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_JU19" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_WYR6" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_S3PD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_X7E9" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_D3HY" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
+      </Text>
+      <Text Id="__SingleUse_WTU8" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_US11" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_VR04" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_1XMR" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt; mm</Translation>
+      </Text>
+      <Text Id="__SingleUse_PMN0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Heater Temperature:</Translation>
+      </Text>
+      <Text Id="__SingleUse_LPTK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Spindle Rotation Time:</Translation>
+      </Text>
+      <Text Id="__SingleUse_OYK1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Spindle Direction:</Translation>
+      </Text>
+      <Text Id="__SingleUse_AV61" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Spindle Speed:</Translation>
+      </Text>
+      <Text Id="__SingleUse_7GNG" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Z Axis Speed:</Translation>
+      </Text>
+      <Text Id="__SingleUse_1ABR" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Z Axis End:</Translation>
+      </Text>
+      <Text Id="__SingleUse_068D" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Z Axis Start:</Translation>
+      </Text>
+      <Text Id="__SingleUse_EPMV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Y Axis Speed:</Translation>
+      </Text>
+      <Text Id="__SingleUse_TXAE" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Y Axis End:</Translation>
+      </Text>
+      <Text Id="__SingleUse_FSGN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Y Axis Start:</Translation>
+      </Text>
+      <Text Id="__SingleUse_IKRM" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">X Axis Speed:</Translation>
+      </Text>
+      <Text Id="__SingleUse_VVEU" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">X Axis End:</Translation>
+      </Text>
+      <Text Id="__SingleUse_QS25" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">X Axis Start:</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q915" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Spindle</Translation>
+      </Text>
+      <Text Id="__SingleUse_10IH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Spindle</Translation>
+      </Text>
       <Text Id="__SingleUse_QCS6" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">°C</Translation>
       </Text>
@@ -12,7 +135,7 @@
         <Translation Language="GB">ms</Translation>
       </Text>
       <Text Id="__SingleUse_1440" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">rpm</Translation>
+        <Translation Language="GB">%</Translation>
       </Text>
       <Text Id="__SingleUse_Y0OH" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">mm/s</Translation>
@@ -44,123 +167,6 @@
       <Text Id="__SingleUse_F9H3" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Calibrate</Translation>
       </Text>
-      <Text Id="__SingleUse_VR04" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_WTU8" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_X7E9" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_WYR6" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_6MOL" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_R6S5" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_KAAJ" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_UCLR" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_5I9U" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_4GVK" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_O6J1" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Clockwise</Translation>
-      </Text>
-      <Text Id="__SingleUse_17MC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_4BKF" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_SYAX" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; °C</Translation>
-      </Text>
-      <Text Id="__SingleUse_YATL" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; ms</Translation>
-      </Text>
-      <Text Id="__SingleUse_WM2X" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_QUDW" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; rpm</Translation>
-      </Text>
-      <Text Id="__SingleUse_F5RK" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
-      </Text>
-      <Text Id="__SingleUse_7QBP" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
-      </Text>
-      <Text Id="__SingleUse_70KH" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
-      </Text>
-      <Text Id="__SingleUse_6VFJ" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
-      </Text>
-      <Text Id="__SingleUse_JU19" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
-      </Text>
-      <Text Id="__SingleUse_S3PD" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
-      </Text>
-      <Text Id="__SingleUse_D3HY" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm/s</Translation>
-      </Text>
-      <Text Id="__SingleUse_US11" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
-      </Text>
-      <Text Id="__SingleUse_1XMR" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
-      </Text>
-      <Text Id="__SingleUse_PMN0" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Heater Temperature:</Translation>
-      </Text>
-      <Text Id="__SingleUse_AV61" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Rotation Speed:</Translation>
-      </Text>
-      <Text Id="__SingleUse_OYK1" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Rotation Direction:</Translation>
-      </Text>
-      <Text Id="__SingleUse_LPTK" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Rotation Time:</Translation>
-      </Text>
-      <Text Id="__SingleUse_068D" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Z Axis Start:</Translation>
-      </Text>
-      <Text Id="__SingleUse_1ABR" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Z Axis End:</Translation>
-      </Text>
-      <Text Id="__SingleUse_7GNG" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Z Axis Speed:</Translation>
-      </Text>
-      <Text Id="__SingleUse_EPMV" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Y Axis Speed:</Translation>
-      </Text>
-      <Text Id="__SingleUse_TXAE" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Y Axis End:</Translation>
-      </Text>
-      <Text Id="__SingleUse_FSGN" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Y Axis Start:</Translation>
-      </Text>
-      <Text Id="__SingleUse_IKRM" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">X Axis Speed:</Translation>
-      </Text>
-      <Text Id="__SingleUse_VVEU" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">X Axis End:</Translation>
-      </Text>
-      <Text Id="__SingleUse_QS25" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">X Axis Start:</Translation>
-      </Text>
       <Text Id="__SingleUse_0DYA" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Start</Translation>
       </Text>
@@ -169,9 +175,6 @@
       </Text>
       <Text Id="__SingleUse_Z1QF" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Temperature</Translation>
-      </Text>
-      <Text Id="__SingleUse_TOKC" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Rotation</Translation>
       </Text>
       <Text Id="__SingleUse_JABV" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Motor driver</Translation>
@@ -248,9 +251,6 @@
       <Text Id="__SingleUse_ZUKI" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Heater</Translation>
       </Text>
-      <Text Id="__SingleUse_XVKS" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Rotation</Translation>
-      </Text>
       <Text Id="__SingleUse_G9WJ" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Speed</Translation>
       </Text>
@@ -276,10 +276,10 @@
         <Translation Language="GB">Saved</Translation>
       </Text>
       <Text Id="__SingleUse_0FA2" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Rotation</Translation>
+        <Translation Language="GB">Spindle</Translation>
       </Text>
       <Text Id="__SingleUse_4HL2" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Rotation</Translation>
+        <Translation Language="GB">Spindle</Translation>
       </Text>
       <Text Id="__SingleUse_6Y41" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Speed</Translation>

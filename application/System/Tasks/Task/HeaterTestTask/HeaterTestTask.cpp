@@ -6,7 +6,7 @@ HeaterTestTask::HeaterTestTask(
     IHeaterController& heaterController
 ) :
     logger_(logger),
-    heaterController_(heaterController_) {}
+    heaterController_(heaterController) {}
 
 void HeaterTestTask::start() {
     logger_.log(
@@ -52,6 +52,6 @@ HeaterTestResults HeaterTestTask::consumeResult() {
         "Not implemented"
     );
     // TODO implement
-    return {.temperatureSuccess = true};
+    return HeaterTestResults {.temperatureSuccess = true};
 }
 };

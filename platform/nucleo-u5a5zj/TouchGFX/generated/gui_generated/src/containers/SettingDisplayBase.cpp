@@ -18,7 +18,7 @@ SettingDisplayBase::SettingDisplayBase()
     resultsBackground.setColor(touchgfx::Color::getColorFromRGB(17, 17, 27));
     add(resultsBackground);
 
-    settingsList.setXY(27, 125);
+    settingsList.setXY(13, 125);
     settingsList.setDirection(touchgfx::EAST);
     labelsList.setDirection(touchgfx::SOUTH);
     xAxisStartLabel.setWidth(161);
@@ -120,34 +120,34 @@ SettingDisplayBase::SettingDisplayBase()
     bigDivider_1.setHeight(20);
     labelsList.add(bigDivider_1);
 
-    rotationSpeedLabel.setWidth(203);
-    rotationSpeedLabel.setHeight(30);
-    rotationSpeedLabel.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
-    rotationSpeedLabel.setLinespacing(1);
-    rotationSpeedLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AV61));
-    labelsList.add(rotationSpeedLabel);
+    spindleSpeedLabel.setWidth(193);
+    spindleSpeedLabel.setHeight(30);
+    spindleSpeedLabel.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
+    spindleSpeedLabel.setLinespacing(1);
+    spindleSpeedLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AV61));
+    labelsList.add(spindleSpeedLabel);
 
     smallDivider_2.setWidth(5);
     smallDivider_2.setHeight(10);
     labelsList.add(smallDivider_2);
 
-    rotationDirectionLabel.setWidth(237);
-    rotationDirectionLabel.setHeight(30);
-    rotationDirectionLabel.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
-    rotationDirectionLabel.setLinespacing(1);
-    rotationDirectionLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OYK1));
-    labelsList.add(rotationDirectionLabel);
+    SpindleDirectionLabel.setWidth(227);
+    SpindleDirectionLabel.setHeight(30);
+    SpindleDirectionLabel.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
+    SpindleDirectionLabel.setLinespacing(1);
+    SpindleDirectionLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OYK1));
+    labelsList.add(SpindleDirectionLabel);
 
     smallDivider_1.setWidth(5);
     smallDivider_1.setHeight(10);
     labelsList.add(smallDivider_1);
 
-    rotiationTimeLabel.setWidth(185);
-    rotiationTimeLabel.setHeight(30);
-    rotiationTimeLabel.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
-    rotiationTimeLabel.setLinespacing(1);
-    rotiationTimeLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LPTK));
-    labelsList.add(rotiationTimeLabel);
+    spindleRotiationTimeLabel.setWidth(291);
+    spindleRotiationTimeLabel.setHeight(30);
+    spindleRotiationTimeLabel.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
+    spindleRotiationTimeLabel.setLinespacing(1);
+    spindleRotiationTimeLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LPTK));
+    labelsList.add(spindleRotiationTimeLabel);
 
     bigDivider.setWidth(5);
     bigDivider.setHeight(20);
@@ -348,19 +348,19 @@ SettingDisplayBase::SettingDisplayBase()
 
     add(settingsList);
 
-    xAxisSectionUnderline.setPosition(27, 243, 430, 5);
+    xAxisSectionUnderline.setPosition(13, 243, 454, 5);
     xAxisSectionUnderline.setColor(touchgfx::Color::getColorFromRGB(243, 139, 168));
     add(xAxisSectionUnderline);
 
-    yAxisSectionUnderline.setPosition(27, 373, 430, 5);
+    yAxisSectionUnderline.setPosition(13, 373, 454, 5);
     yAxisSectionUnderline.setColor(touchgfx::Color::getColorFromRGB(250, 179, 135));
     add(yAxisSectionUnderline);
 
-    zAxisSectionUnderline.setPosition(27, 503, 430, 5);
+    zAxisSectionUnderline.setPosition(13, 503, 454, 5);
     zAxisSectionUnderline.setColor(touchgfx::Color::getColorFromRGB(166, 227, 161));
     add(zAxisSectionUnderline);
 
-    rotationSectionUnderline.setPosition(27, 633, 430, 5);
+    rotationSectionUnderline.setPosition(13, 633, 454, 5);
     rotationSectionUnderline.setColor(touchgfx::Color::getColorFromRGB(137, 220, 235));
     add(rotationSectionUnderline);
 }

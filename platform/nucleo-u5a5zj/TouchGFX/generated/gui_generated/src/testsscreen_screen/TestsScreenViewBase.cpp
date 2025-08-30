@@ -194,9 +194,9 @@ void TestsScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButt
     if (&src == &rotationButton)
     {
         //GoToRotationTests
-        //When rotationButton clicked change screen to RotationTestsScreen
-        //Go to RotationTestsScreen with screen transition towards East
-        application().gotoRotationTestsScreenScreenWipeTransitionEast();
+        //When rotationButton clicked change screen to SpindleTestsScreen
+        //Go to SpindleTestsScreen with screen transition towards East
+        application().gotoSpindleTestsScreenScreenWipeTransitionEast();
     }
     if (&src == &heaterButton)
     {

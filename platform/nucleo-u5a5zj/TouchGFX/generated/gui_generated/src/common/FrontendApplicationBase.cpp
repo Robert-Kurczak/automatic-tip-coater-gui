@@ -35,12 +35,12 @@
 #include <gui/zaxisendscreen_screen/ZAxisEndScreenPresenter.hpp>
 #include <gui/zaxisspeedscreen_screen/ZAxisSpeedScreenView.hpp>
 #include <gui/zaxisspeedscreen_screen/ZAxisSpeedScreenPresenter.hpp>
-#include <gui/rotationspeedscreen_screen/RotationSpeedScreenView.hpp>
-#include <gui/rotationspeedscreen_screen/RotationSpeedScreenPresenter.hpp>
-#include <gui/rotationdirectionscreen_screen/RotationDirectionScreenView.hpp>
-#include <gui/rotationdirectionscreen_screen/RotationDirectionScreenPresenter.hpp>
-#include <gui/rotationtimescreen_screen/RotationTimeScreenView.hpp>
-#include <gui/rotationtimescreen_screen/RotationTimeScreenPresenter.hpp>
+#include <gui/spindlespeedscreen_screen/SpindleSpeedScreenView.hpp>
+#include <gui/spindlespeedscreen_screen/SpindleSpeedScreenPresenter.hpp>
+#include <gui/spindledirectionscreen_screen/SpindleDirectionScreenView.hpp>
+#include <gui/spindledirectionscreen_screen/SpindleDirectionScreenPresenter.hpp>
+#include <gui/spindlerotationtimescreen_screen/SpindleRotationTimeScreenView.hpp>
+#include <gui/spindlerotationtimescreen_screen/SpindleRotationTimeScreenPresenter.hpp>
 #include <gui/heatertemperaturescreen_screen/HeaterTemperatureScreenView.hpp>
 #include <gui/heatertemperaturescreen_screen/HeaterTemperatureScreenPresenter.hpp>
 #include <gui/heaterstatescreen_screen/HeaterStateScreenView.hpp>
@@ -53,8 +53,8 @@
 #include <gui/yaxistestsscreen_screen/YAxisTestsScreenPresenter.hpp>
 #include <gui/zaxistestsscreen_screen/ZAxisTestsScreenView.hpp>
 #include <gui/zaxistestsscreen_screen/ZAxisTestsScreenPresenter.hpp>
-#include <gui/rotationtestsscreen_screen/RotationTestsScreenView.hpp>
-#include <gui/rotationtestsscreen_screen/RotationTestsScreenPresenter.hpp>
+#include <gui/spindletestsscreen_screen/SpindleTestsScreenView.hpp>
+#include <gui/spindletestsscreen_screen/SpindleTestsScreenPresenter.hpp>
 #include <gui/heatertestsscreen_screen/HeaterTestsScreenView.hpp>
 #include <gui/heatertestsscreen_screen/HeaterTestsScreenPresenter.hpp>
 
@@ -312,54 +312,54 @@ void FrontendApplicationBase::gotoZAxisSpeedScreenScreenNoTransitionImpl()
     touchgfx::makeTransition<ZAxisSpeedScreenView, ZAxisSpeedScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// RotationSpeedScreen
+// SpindleSpeedScreen
 
-void FrontendApplicationBase::gotoRotationSpeedScreenScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoSpindleSpeedScreenScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoRotationSpeedScreenScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSpindleSpeedScreenScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoRotationSpeedScreenScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoSpindleSpeedScreenScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<RotationSpeedScreenView, RotationSpeedScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SpindleSpeedScreenView, SpindleSpeedScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-void FrontendApplicationBase::gotoRotationSpeedScreenScreenNoTransition()
+void FrontendApplicationBase::gotoSpindleSpeedScreenScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoRotationSpeedScreenScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSpindleSpeedScreenScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoRotationSpeedScreenScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoSpindleSpeedScreenScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<RotationSpeedScreenView, RotationSpeedScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SpindleSpeedScreenView, SpindleSpeedScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// RotationDirectionScreen
+// SpindleDirectionScreen
 
-void FrontendApplicationBase::gotoRotationDirectionScreenScreenNoTransition()
+void FrontendApplicationBase::gotoSpindleDirectionScreenScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoRotationDirectionScreenScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSpindleDirectionScreenScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoRotationDirectionScreenScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoSpindleDirectionScreenScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<RotationDirectionScreenView, RotationDirectionScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SpindleDirectionScreenView, SpindleDirectionScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// RotationTimeScreen
+// SpindleRotationTimeScreen
 
-void FrontendApplicationBase::gotoRotationTimeScreenScreenNoTransition()
+void FrontendApplicationBase::gotoSpindleRotationTimeScreenScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoRotationTimeScreenScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSpindleRotationTimeScreenScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoRotationTimeScreenScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoSpindleRotationTimeScreenScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<RotationTimeScreenView, RotationTimeScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SpindleRotationTimeScreenView, SpindleRotationTimeScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // HeaterTemperatureScreen
@@ -462,17 +462,17 @@ void FrontendApplicationBase::gotoZAxisTestsScreenScreenWipeTransitionEastImpl()
     touchgfx::makeTransition<ZAxisTestsScreenView, ZAxisTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// RotationTestsScreen
+// SpindleTestsScreen
 
-void FrontendApplicationBase::gotoRotationTestsScreenScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoSpindleTestsScreenScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoRotationTestsScreenScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSpindleTestsScreenScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoRotationTestsScreenScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoSpindleTestsScreenScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<RotationTestsScreenView, RotationTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SpindleTestsScreenView, SpindleTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // HeaterTestsScreen
