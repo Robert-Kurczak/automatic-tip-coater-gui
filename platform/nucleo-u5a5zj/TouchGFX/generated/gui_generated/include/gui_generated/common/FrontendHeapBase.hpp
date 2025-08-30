@@ -40,12 +40,12 @@
 #include <gui/zaxisendscreen_screen/ZAxisEndScreenPresenter.hpp>
 #include <gui/zaxisspeedscreen_screen/ZAxisSpeedScreenView.hpp>
 #include <gui/zaxisspeedscreen_screen/ZAxisSpeedScreenPresenter.hpp>
-#include <gui/rotationspeedscreen_screen/RotationSpeedScreenView.hpp>
-#include <gui/rotationspeedscreen_screen/RotationSpeedScreenPresenter.hpp>
-#include <gui/rotationdirectionscreen_screen/RotationDirectionScreenView.hpp>
-#include <gui/rotationdirectionscreen_screen/RotationDirectionScreenPresenter.hpp>
-#include <gui/rotationtimescreen_screen/RotationTimeScreenView.hpp>
-#include <gui/rotationtimescreen_screen/RotationTimeScreenPresenter.hpp>
+#include <gui/spindlespeedscreen_screen/SpindleSpeedScreenView.hpp>
+#include <gui/spindlespeedscreen_screen/SpindleSpeedScreenPresenter.hpp>
+#include <gui/spindledirectionscreen_screen/SpindleDirectionScreenView.hpp>
+#include <gui/spindledirectionscreen_screen/SpindleDirectionScreenPresenter.hpp>
+#include <gui/spindlerotationtimescreen_screen/SpindleRotationTimeScreenView.hpp>
+#include <gui/spindlerotationtimescreen_screen/SpindleRotationTimeScreenPresenter.hpp>
 #include <gui/heatertemperaturescreen_screen/HeaterTemperatureScreenView.hpp>
 #include <gui/heatertemperaturescreen_screen/HeaterTemperatureScreenPresenter.hpp>
 #include <gui/heaterstatescreen_screen/HeaterStateScreenView.hpp>
@@ -58,8 +58,8 @@
 #include <gui/yaxistestsscreen_screen/YAxisTestsScreenPresenter.hpp>
 #include <gui/zaxistestsscreen_screen/ZAxisTestsScreenView.hpp>
 #include <gui/zaxistestsscreen_screen/ZAxisTestsScreenPresenter.hpp>
-#include <gui/rotationtestsscreen_screen/RotationTestsScreenView.hpp>
-#include <gui/rotationtestsscreen_screen/RotationTestsScreenPresenter.hpp>
+#include <gui/spindletestsscreen_screen/SpindleTestsScreenView.hpp>
+#include <gui/spindletestsscreen_screen/SpindleTestsScreenPresenter.hpp>
 #include <gui/heatertestsscreen_screen/HeaterTestsScreenView.hpp>
 #include <gui/heatertestsscreen_screen/HeaterTestsScreenPresenter.hpp>
 
@@ -97,16 +97,16 @@ public:
             touchgfx::meta::TypeList< ZAxisStartScreenView,
             touchgfx::meta::TypeList< ZAxisEndScreenView,
             touchgfx::meta::TypeList< ZAxisSpeedScreenView,
-            touchgfx::meta::TypeList< RotationSpeedScreenView,
-            touchgfx::meta::TypeList< RotationDirectionScreenView,
-            touchgfx::meta::TypeList< RotationTimeScreenView,
+            touchgfx::meta::TypeList< SpindleSpeedScreenView,
+            touchgfx::meta::TypeList< SpindleDirectionScreenView,
+            touchgfx::meta::TypeList< SpindleRotationTimeScreenView,
             touchgfx::meta::TypeList< HeaterTemperatureScreenView,
             touchgfx::meta::TypeList< HeaterStateScreenView,
             touchgfx::meta::TypeList< TestsScreenView,
             touchgfx::meta::TypeList< XAxisTestsScreenView,
             touchgfx::meta::TypeList< YAxisTestsScreenView,
             touchgfx::meta::TypeList< ZAxisTestsScreenView,
-            touchgfx::meta::TypeList< RotationTestsScreenView,
+            touchgfx::meta::TypeList< SpindleTestsScreenView,
             touchgfx::meta::TypeList< HeaterTestsScreenView,
             touchgfx::meta::Nil > > > > > > > > > > > > > > > > > > > > > > >
             > GeneratedViewTypes;
@@ -133,16 +133,16 @@ public:
             touchgfx::meta::TypeList< ZAxisStartScreenPresenter,
             touchgfx::meta::TypeList< ZAxisEndScreenPresenter,
             touchgfx::meta::TypeList< ZAxisSpeedScreenPresenter,
-            touchgfx::meta::TypeList< RotationSpeedScreenPresenter,
-            touchgfx::meta::TypeList< RotationDirectionScreenPresenter,
-            touchgfx::meta::TypeList< RotationTimeScreenPresenter,
+            touchgfx::meta::TypeList< SpindleSpeedScreenPresenter,
+            touchgfx::meta::TypeList< SpindleDirectionScreenPresenter,
+            touchgfx::meta::TypeList< SpindleRotationTimeScreenPresenter,
             touchgfx::meta::TypeList< HeaterTemperatureScreenPresenter,
             touchgfx::meta::TypeList< HeaterStateScreenPresenter,
             touchgfx::meta::TypeList< TestsScreenPresenter,
             touchgfx::meta::TypeList< XAxisTestsScreenPresenter,
             touchgfx::meta::TypeList< YAxisTestsScreenPresenter,
             touchgfx::meta::TypeList< ZAxisTestsScreenPresenter,
-            touchgfx::meta::TypeList< RotationTestsScreenPresenter,
+            touchgfx::meta::TypeList< SpindleTestsScreenPresenter,
             touchgfx::meta::TypeList< HeaterTestsScreenPresenter,
             touchgfx::meta::Nil > > > > > > > > > > > > > > > > > > > > > > >
             > GeneratedPresenterTypes;

@@ -71,16 +71,16 @@ public:
     // ZAxisSpeedScreen
     void gotoZAxisSpeedScreenScreenNoTransition();
 
-    // RotationSpeedScreen
-    void gotoRotationSpeedScreenScreenWipeTransitionEast();
+    // SpindleSpeedScreen
+    void gotoSpindleSpeedScreenScreenWipeTransitionEast();
 
-    void gotoRotationSpeedScreenScreenNoTransition();
+    void gotoSpindleSpeedScreenScreenNoTransition();
 
-    // RotationDirectionScreen
-    void gotoRotationDirectionScreenScreenNoTransition();
+    // SpindleDirectionScreen
+    void gotoSpindleDirectionScreenScreenNoTransition();
 
-    // RotationTimeScreen
-    void gotoRotationTimeScreenScreenNoTransition();
+    // SpindleRotationTimeScreen
+    void gotoSpindleRotationTimeScreenScreenNoTransition();
 
     // HeaterTemperatureScreen
     void gotoHeaterTemperatureScreenScreenWipeTransitionEast();
@@ -104,8 +104,8 @@ public:
     // ZAxisTestsScreen
     void gotoZAxisTestsScreenScreenWipeTransitionEast();
 
-    // RotationTestsScreen
-    void gotoRotationTestsScreenScreenWipeTransitionEast();
+    // SpindleTestsScreen
+    void gotoSpindleTestsScreenScreenWipeTransitionEast();
 
     // HeaterTestsScreen
     void gotoHeaterTestsScreenScreenWipeTransitionEast();
@@ -166,16 +166,16 @@ protected:
     // ZAxisSpeedScreen
     void gotoZAxisSpeedScreenScreenNoTransitionImpl();
 
-    // RotationSpeedScreen
-    void gotoRotationSpeedScreenScreenWipeTransitionEastImpl();
+    // SpindleSpeedScreen
+    void gotoSpindleSpeedScreenScreenWipeTransitionEastImpl();
 
-    void gotoRotationSpeedScreenScreenNoTransitionImpl();
+    void gotoSpindleSpeedScreenScreenNoTransitionImpl();
 
-    // RotationDirectionScreen
-    void gotoRotationDirectionScreenScreenNoTransitionImpl();
+    // SpindleDirectionScreen
+    void gotoSpindleDirectionScreenScreenNoTransitionImpl();
 
-    // RotationTimeScreen
-    void gotoRotationTimeScreenScreenNoTransitionImpl();
+    // SpindleRotationTimeScreen
+    void gotoSpindleRotationTimeScreenScreenNoTransitionImpl();
 
     // HeaterTemperatureScreen
     void gotoHeaterTemperatureScreenScreenWipeTransitionEastImpl();
@@ -199,8 +199,8 @@ protected:
     // ZAxisTestsScreen
     void gotoZAxisTestsScreenScreenWipeTransitionEastImpl();
 
-    // RotationTestsScreen
-    void gotoRotationTestsScreenScreenWipeTransitionEastImpl();
+    // SpindleTestsScreen
+    void gotoSpindleTestsScreenScreenWipeTransitionEastImpl();
 
     // HeaterTestsScreen
     void gotoHeaterTestsScreenScreenWipeTransitionEastImpl();

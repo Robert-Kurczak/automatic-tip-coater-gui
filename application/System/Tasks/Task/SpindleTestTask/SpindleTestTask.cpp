@@ -42,6 +42,7 @@ bool SpindleTestTask::isFinished() const {
         "Not implemented"
     );
     // TODO implement
+    return true;
 }
 
 SpindleTestResults SpindleTestTask::consumeResult() {
@@ -51,6 +52,7 @@ SpindleTestResults SpindleTestTask::consumeResult() {
         "Not implemented"
     );
     // TODO implement
+    return SpindleTestResults{.motorDriverSuccess = true};
 }
 
 }

@@ -194,9 +194,9 @@ void SettingsScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractB
     if (&src == &rotationButton)
     {
         //GoToRotationSettings
-        //When rotationButton clicked change screen to RotationSpeedScreen
-        //Go to RotationSpeedScreen with screen transition towards East
-        application().gotoRotationSpeedScreenScreenWipeTransitionEast();
+        //When rotationButton clicked change screen to SpindleSpeedScreen
+        //Go to SpindleSpeedScreen with screen transition towards East
+        application().gotoSpindleSpeedScreenScreenWipeTransitionEast();
     }
     if (&src == &heaterButton)
     {

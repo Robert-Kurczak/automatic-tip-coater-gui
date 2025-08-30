@@ -1284,7 +1284,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "RotationSpeedScreen"
+              "ActionComponent": "SpindleSpeedScreen"
             }
           },
           {
@@ -2636,7 +2636,7 @@
         ]
       },
       {
-        "Name": "RotationSpeedScreen",
+        "Name": "SpindleSpeedScreen",
         "Components": [
           {
             "Type": "Box",
@@ -2667,10 +2667,10 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "rotationSpeedSettingsButtons",
+            "Name": "spindleSpeedSettingsButtons",
             "Width": 480,
             "Height": 245,
-            "CustomContainerDefinitionName": "RotationSpeedSettingsButtons"
+            "CustomContainerDefinitionName": "SpindleSpeedSettingsButtons"
           },
           {
             "Type": "Box",
@@ -2704,9 +2704,9 @@
           {
             "Type": "TextArea",
             "Name": "submenuName",
-            "X": 188,
+            "X": 193,
             "Y": 25,
-            "Width": 104,
+            "Width": 94,
             "Height": 30,
             "TextId": "__SingleUse_4HL2",
             "TextRotation": "0",
@@ -2756,35 +2756,35 @@
             }
           },
           {
-            "InteractionName": "GoToRotationDirection",
+            "InteractionName": "GoToSpindleDirection",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationSpeedSettingsButtons directionButtonPressed happens",
-              "TriggerComponent": "rotationSpeedSettingsButtons"
+              "TriggerCustomTypeName": "SpindleSpeedSettingsButtons directionButtonPressed happens",
+              "TriggerComponent": "spindleSpeedSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "RotationDirectionScreen"
+              "ActionComponent": "SpindleDirectionScreen"
             }
           },
           {
-            "InteractionName": "GoToRotationTime",
+            "InteractionName": "GoToSpindleRotationTime",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationSpeedSettingsButtons rotationTimeButtonPressed happens",
-              "TriggerComponent": "rotationSpeedSettingsButtons"
+              "TriggerCustomTypeName": "SpindleSpeedSettingsButtons rotationTimeButtonPressed happens",
+              "TriggerComponent": "spindleSpeedSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "RotationTimeScreen"
+              "ActionComponent": "SpindleRotationTimeScreen"
             }
           }
         ]
       },
       {
-        "Name": "RotationDirectionScreen",
+        "Name": "SpindleDirectionScreen",
         "Components": [
           {
             "Type": "Box",
@@ -2808,18 +2808,18 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "rotationDirectionSelector",
+            "Name": "spindleDirectionSelector",
             "X": -3,
             "Width": 480,
             "Height": 800,
-            "CustomContainerDefinitionName": "RotationDirectionSelector"
+            "CustomContainerDefinitionName": "SpindleDirectionSelector"
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "rotationDirectionSettingsButtons",
+            "Name": "spindleDirectionSettingsButtons",
             "Width": 480,
             "Height": 245,
-            "CustomContainerDefinitionName": "RotationDirectionSettingsButtons"
+            "CustomContainerDefinitionName": "SpindleDirectionSettingsButtons"
           },
           {
             "Type": "Box",
@@ -2837,9 +2837,9 @@
           {
             "Type": "TextArea",
             "Name": "submenuName",
-            "X": 188,
+            "X": 193,
             "Y": 25,
-            "Width": 104,
+            "Width": 94,
             "Height": 30,
             "TextId": "__SingleUse_0FA2",
             "TextRotation": "0",
@@ -2853,37 +2853,37 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "GoToRotationSpeed",
+            "InteractionName": "GoToSpindleSpeed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationDirectionSettingsButtons speedButtonPressed happens",
-              "TriggerComponent": "rotationDirectionSettingsButtons"
+              "TriggerCustomTypeName": "SpindleDirectionSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "spindleDirectionSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "RotationSpeedScreen"
+              "ActionComponent": "SpindleSpeedScreen"
             }
           },
           {
-            "InteractionName": "GoToRotationTime",
+            "InteractionName": "GoToSpindleRotationTime",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationDirectionSettingsButtons rotationTimeButtonPressed happens",
-              "TriggerComponent": "rotationDirectionSettingsButtons"
+              "TriggerCustomTypeName": "SpindleDirectionSettingsButtons rotationTimeButtonPressed happens",
+              "TriggerComponent": "spindleDirectionSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "RotationTimeScreen"
+              "ActionComponent": "SpindleRotationTimeScreen"
             }
           },
           {
             "InteractionName": "ClockwiseButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationDirectionSelector ClockwiseButtonPressed happens",
-              "TriggerComponent": "rotationDirectionSelector"
+              "TriggerCustomTypeName": "SpindleDirectionSelector ClockwiseButtonPressed happens",
+              "TriggerComponent": "spindleDirectionSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -2894,8 +2894,8 @@
             "InteractionName": "CounterClockwiseButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationDirectionSelector ClockwiseButtonPressed happens",
-              "TriggerComponent": "rotationDirectionSelector"
+              "TriggerCustomTypeName": "SpindleDirectionSelector ClockwiseButtonPressed happens",
+              "TriggerComponent": "spindleDirectionSelector"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -2917,7 +2917,7 @@
         ]
       },
       {
-        "Name": "RotationTimeScreen",
+        "Name": "SpindleRotationTimeScreen",
         "Components": [
           {
             "Type": "Box",
@@ -2961,10 +2961,10 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "rotationTimeSettingsButtons",
+            "Name": "spindleRotationTimeSettingsButtons",
             "Width": 480,
             "Height": 245,
-            "CustomContainerDefinitionName": "RotationTimeSettingsButtons"
+            "CustomContainerDefinitionName": "SpindleRotationTimeSettingsButtons"
           },
           {
             "Type": "TextArea",
@@ -2985,11 +2985,11 @@
           {
             "Type": "TextArea",
             "Name": "submenuName",
-            "X": 188,
+            "X": 193,
             "Y": 25,
-            "Width": 104,
+            "Width": 94,
             "Height": 30,
-            "TextId": "__SingleUse_XVKS",
+            "TextId": "__SingleUse_10IH",
             "TextRotation": "0",
             "Color": {
               "Red": 205,
@@ -3037,29 +3037,29 @@
             }
           },
           {
-            "InteractionName": "GoToRotationDirection",
+            "InteractionName": "GoToSpindleDirection",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationTimeSettingsButtons speedButtonPressed happens",
-              "TriggerComponent": "rotationTimeSettingsButtons"
+              "TriggerCustomTypeName": "SpindleRotationTimeSettingsButtons speedButtonPressed happens",
+              "TriggerComponent": "spindleRotationTimeSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "RotationSpeedScreen"
+              "ActionComponent": "SpindleSpeedScreen"
             }
           },
           {
-            "InteractionName": "GoToRotationTime",
+            "InteractionName": "GoToSpindleRotationTime",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "RotationTimeSettingsButtons directionButtonPressed happens",
-              "TriggerComponent": "rotationTimeSettingsButtons"
+              "TriggerCustomTypeName": "SpindleRotationTimeSettingsButtons directionButtonPressed happens",
+              "TriggerComponent": "spindleRotationTimeSettingsButtons"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "RotationDirectionScreen"
+              "ActionComponent": "SpindleDirectionScreen"
             }
           }
         ]
@@ -3911,7 +3911,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "RotationTestsScreen"
+              "ActionComponent": "SpindleTestsScreen"
             }
           },
           {
@@ -4275,7 +4275,7 @@
         ]
       },
       {
-        "Name": "RotationTestsScreen",
+        "Name": "SpindleTestsScreen",
         "Components": [
           {
             "Type": "Box",
@@ -4299,10 +4299,10 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "rotationTestsResults",
+            "Name": "spindleTestsResults",
             "Width": 480,
             "Height": 800,
-            "CustomContainerDefinitionName": "RotationTestsResults"
+            "CustomContainerDefinitionName": "SpindleTestsResults"
           },
           {
             "Type": "Container",
@@ -4328,24 +4328,24 @@
                   "Green": 17,
                   "Blue": 27
                 }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "submenuName",
-                "X": 188,
-                "Y": 25,
-                "Width": 104,
-                "Height": 30,
-                "TextId": "__SingleUse_TOKC",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 205,
-                  "Green": 214,
-                  "Blue": 244
-                },
-                "AutoSize": true
               }
             ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "submenuName",
+            "X": 193,
+            "Y": 25,
+            "Width": 94,
+            "Height": 30,
+            "TextId": "__SingleUse_Q915",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 205,
+              "Green": 214,
+              "Blue": 244
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -4934,7 +4934,7 @@
         ]
       },
       {
-        "Name": "RotationDirectionSelector",
+        "Name": "SpindleDirectionSelector",
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -5084,7 +5084,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationDirectionSelector ClockwiseButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleDirectionSelector ClockwiseButtonPressed happens"
             }
           },
           {
@@ -5117,7 +5117,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationDirectionSelector CounterClockwiseButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleDirectionSelector CounterClockwiseButtonPressed happens"
             }
           },
           {
@@ -6380,7 +6380,7 @@
         ]
       },
       {
-        "Name": "RotationSpeedSettingsButtons",
+        "Name": "SpindleSpeedSettingsButtons",
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -6678,7 +6678,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationSpeedSettingsButtons speedButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleSpeedSettingsButtons speedButtonPressed happens"
             }
           },
           {
@@ -6689,7 +6689,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationSpeedSettingsButtons directionButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleSpeedSettingsButtons directionButtonPressed happens"
             }
           },
           {
@@ -6700,7 +6700,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationSpeedSettingsButtons rotationTimeButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleSpeedSettingsButtons rotationTimeButtonPressed happens"
             }
           }
         ],
@@ -6717,7 +6717,7 @@
         ]
       },
       {
-        "Name": "RotationDirectionSettingsButtons",
+        "Name": "SpindleDirectionSettingsButtons",
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -7015,7 +7015,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationDirectionSettingsButtons speedButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleDirectionSettingsButtons speedButtonPressed happens"
             }
           },
           {
@@ -7026,7 +7026,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationDirectionSettingsButtons directionButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleDirectionSettingsButtons directionButtonPressed happens"
             }
           },
           {
@@ -7037,7 +7037,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationDirectionSettingsButtons rotationTimeButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleDirectionSettingsButtons rotationTimeButtonPressed happens"
             }
           }
         ],
@@ -7054,7 +7054,7 @@
         ]
       },
       {
-        "Name": "RotationTimeSettingsButtons",
+        "Name": "SpindleRotationTimeSettingsButtons",
         "Width": 480,
         "Height": 245,
         "Includes": "",
@@ -7352,7 +7352,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationTimeSettingsButtons speedButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleRotationTimeSettingsButtons speedButtonPressed happens"
             }
           },
           {
@@ -7363,7 +7363,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationTimeSettingsButtons directionButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleRotationTimeSettingsButtons directionButtonPressed happens"
             }
           },
           {
@@ -7374,7 +7374,7 @@
             },
             "Action": {
               "Type": "ActionEmit",
-              "TriggerCustomTypeName": "RotationTimeSettingsButtons rotationTimeButtonPressed happens"
+              "TriggerCustomTypeName": "SpindleRotationTimeSettingsButtons rotationTimeButtonPressed happens"
             }
           }
         ],
@@ -8580,7 +8580,7 @@
         ]
       },
       {
-        "Name": "RotationTestsResults",
+        "Name": "SpindleTestsResults",
         "Width": 480,
         "Height": 800,
         "Components": [
@@ -8660,7 +8660,7 @@
             "InteractionName": "SetLoadingIcons",
             "Trigger": {
               "Type": "TriggerWhen",
-              "ActionCustomTypeName": "Call RotationTestsResults setLoadingIcons"
+              "ActionCustomTypeName": "Call SpindleTestsResults setLoadingIcons"
             },
             "Action": {
               "Type": "ActionExecuteCode",
@@ -8671,7 +8671,7 @@
             "InteractionName": "SetMotorDriverSuccess",
             "Trigger": {
               "Type": "TriggerWhen",
-              "ActionCustomTypeName": "Call RotationTestsResults setMotorDriverSuccess"
+              "ActionCustomTypeName": "Call SpindleTestsResults setMotorDriverSuccess"
             },
             "Action": {
               "Type": "ActionCustom2",
@@ -8683,7 +8683,7 @@
             "InteractionName": "SetMotorDriverError",
             "Trigger": {
               "Type": "TriggerWhen",
-              "ActionCustomTypeName": "Call RotationTestsResults setMotorDriverError"
+              "ActionCustomTypeName": "Call SpindleTestsResults setMotorDriverError"
             },
             "Action": {
               "Type": "ActionCustom2",
@@ -8857,16 +8857,16 @@
           {
             "Type": "ListLayout",
             "Name": "settingsList",
-            "X": 27,
+            "X": 13,
             "Y": 125,
-            "Width": 430,
+            "Width": 454,
             "Height": 550,
             "Direction": "East",
             "Components": [
               {
                 "Type": "ListLayout",
                 "Name": "labelsList",
-                "Width": 265,
+                "Width": 291,
                 "Height": 550,
                 "Direction": "South",
                 "Components": [
@@ -9087,9 +9087,9 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "rotationSpeedLabel",
+                    "Name": "spindleSpeedLabel",
                     "Y": 390,
-                    "Width": 203,
+                    "Width": 193,
                     "Height": 30,
                     "TextId": "__SingleUse_AV61",
                     "TextRotation": "0",
@@ -9111,9 +9111,9 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "rotationDirectionLabel",
+                    "Name": "SpindleDirectionLabel",
                     "Y": 430,
-                    "Width": 237,
+                    "Width": 227,
                     "Height": 30,
                     "TextId": "__SingleUse_OYK1",
                     "TextRotation": "0",
@@ -9135,9 +9135,9 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "rotiationTimeLabel",
+                    "Name": "spindleRotiationTimeLabel",
                     "Y": 470,
-                    "Width": 185,
+                    "Width": 291,
                     "Height": 30,
                     "TextId": "__SingleUse_LPTK",
                     "TextRotation": "0",
@@ -9146,7 +9146,6 @@
                       "Green": 214,
                       "Blue": 244
                     },
-                    "AutoSize": true,
                     "LineSpacing": 1
                   },
                   {
@@ -9178,14 +9177,14 @@
               {
                 "Type": "Container",
                 "Name": "divider",
-                "X": 265,
+                "X": 278,
                 "Width": 43,
                 "Components": []
               },
               {
                 "Type": "ListLayout",
                 "Name": "valuesList",
-                "X": 308,
+                "X": 321,
                 "Width": 122,
                 "Height": 550,
                 "Direction": "South",
@@ -9551,9 +9550,9 @@
           {
             "Type": "Box",
             "Name": "xAxisSectionUnderline",
-            "X": 27,
+            "X": 13,
             "Y": 243,
-            "Width": 430,
+            "Width": 454,
             "Height": 5,
             "Color": {
               "Red": 243,
@@ -9564,9 +9563,9 @@
           {
             "Type": "Box",
             "Name": "yAxisSectionUnderline",
-            "X": 27,
+            "X": 13,
             "Y": 373,
-            "Width": 430,
+            "Width": 454,
             "Height": 5,
             "Color": {
               "Red": 250,
@@ -9577,9 +9576,9 @@
           {
             "Type": "Box",
             "Name": "zAxisSectionUnderline",
-            "X": 27,
+            "X": 13,
             "Y": 503,
-            "Width": 430,
+            "Width": 454,
             "Height": 5,
             "Color": {
               "Red": 166,
@@ -9590,9 +9589,9 @@
           {
             "Type": "Box",
             "Name": "rotationSectionUnderline",
-            "X": 27,
+            "X": 13,
             "Y": 633,
-            "Width": 430,
+            "Width": 454,
             "Height": 5,
             "Color": {
               "Red": 137,

@@ -48,11 +48,11 @@ protected:
     touchgfx::Container smallDivider_4;
     touchgfx::TextArea zAxisSpeedLabel;
     touchgfx::Container bigDivider_1;
-    touchgfx::TextArea rotationSpeedLabel;
+    touchgfx::TextArea spindleSpeedLabel;
     touchgfx::Container smallDivider_2;
-    touchgfx::TextArea rotationDirectionLabel;
+    touchgfx::TextArea SpindleDirectionLabel;
     touchgfx::Container smallDivider_1;
-    touchgfx::TextArea rotiationTimeLabel;
+    touchgfx::TextArea spindleRotiationTimeLabel;
     touchgfx::Container bigDivider;
     touchgfx::TextArea heaterTemperatureLabel;
     touchgfx::Container divider;
