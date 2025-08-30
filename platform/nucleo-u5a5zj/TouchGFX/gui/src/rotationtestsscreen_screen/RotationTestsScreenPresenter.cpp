@@ -6,7 +6,9 @@ RotationTestsScreenPresenter::RotationTestsScreenPresenter(
 ) :
     view(v) {}
 
-void RotationTestsScreenPresenter::activate() {}
+void RotationTestsScreenPresenter::activate() {
+    spindleTestTask = &model->getSystemApi().tasks.spindleTestTask;
+}
 
 void RotationTestsScreenPresenter::deactivate() {}
 
@@ -18,9 +20,9 @@ void RotationTestsScreenPresenter::handleRotatorTestTaskFinish(
 }
 
 void RotationTestsScreenPresenter::startButtonPressed() {
-    model->startRotationTestTask();
+    spindleTestTask->schedule();
 }
 
 void RotationTestsScreenPresenter::cancelButtonPressed() {
-    model->cancelCurrentTask();
+    model->getSystemApi().tasks.taskControl.cancelAll();
 }

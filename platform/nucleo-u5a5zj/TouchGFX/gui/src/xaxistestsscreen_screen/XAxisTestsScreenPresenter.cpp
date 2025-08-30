@@ -6,7 +6,9 @@ XAxisTestsScreenPresenter::XAxisTestsScreenPresenter(
 ) :
     view(v) {}
 
-void XAxisTestsScreenPresenter::activate() {}
+void XAxisTestsScreenPresenter::activate() {
+    xAxisTestTask = &model->getSystemApi().tasks.xAxisTestTask;
+}
 
 void XAxisTestsScreenPresenter::deactivate() {}
 
@@ -18,9 +20,9 @@ void XAxisTestsScreenPresenter::handleXAxisTestTaskFinish(
 }
 
 void XAxisTestsScreenPresenter::startButtonPressed() {
-    model->startXAxisTestTask();
+    xAxisTestTask->schedule();
 }
 
 void XAxisTestsScreenPresenter::cancelButtonPressed() {
-    model->cancelCurrentTask();
+    model->getSystemApi().tasks.taskControl.cancelAll();
 }

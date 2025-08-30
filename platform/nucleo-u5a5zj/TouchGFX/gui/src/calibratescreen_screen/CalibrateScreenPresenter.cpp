@@ -6,7 +6,9 @@ CalibrateScreenPresenter::CalibrateScreenPresenter(
 ) :
     view(v) {}
 
-void CalibrateScreenPresenter::activate() {}
+void CalibrateScreenPresenter::activate() {
+    calibrationTask = &model->getSystemApi().tasks.calibrationTask;
+}
 
 void CalibrateScreenPresenter::deactivate() {}
 
@@ -17,9 +19,9 @@ void CalibrateScreenPresenter::handleCalibrationTaskFinish(
 }
 
 void CalibrateScreenPresenter::startButtonPressed() {
-    model->startCalibrationTask();
+    calibrationTask->schedule();
 }
 
 void CalibrateScreenPresenter::cancelButtonPressed() {
-    model->cancelCurrentTask();
+    model->getSystemApi().tasks.taskControl.cancelAll();
 }

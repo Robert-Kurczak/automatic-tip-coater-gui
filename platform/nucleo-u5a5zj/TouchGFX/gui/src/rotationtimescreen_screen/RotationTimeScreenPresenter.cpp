@@ -6,22 +6,25 @@ RotationTimeScreenPresenter::RotationTimeScreenPresenter(
 ) :
     view(v) {}
 
-void RotationTimeScreenPresenter::activate() {}
+void RotationTimeScreenPresenter::activate() {
+    spindleConfigurator =
+        &model->getSystemApi().configurators.spindleConfigurator;
+}
 
 void RotationTimeScreenPresenter::deactivate() {}
 
 void RotationTimeScreenPresenter::increaseButtonPressed() {
-    model->increaseRotationTime();
+    spindleConfigurator->increaseRotationTime();
 }
 
 void RotationTimeScreenPresenter::decreaseButtonPressed() {
-    model->decreaseRotationTime();
+    spindleConfigurator->decreaseRotationTime();
 }
 
 void RotationTimeScreenPresenter::saveButtonPressed() {
-    model->saveRotationTime();
+    spindleConfigurator->saveRotationTime();
 }
 
 uint32_t RotationTimeScreenPresenter::getRotationTime() {
-    return model->getRotationTime();
+    return spindleConfigurator->getRotationTimeMillis();
 }

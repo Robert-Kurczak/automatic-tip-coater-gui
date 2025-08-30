@@ -1,7 +1,7 @@
 #pragma once
 
 #include "main.h"
-#include "application/Ports/IPwmPin.hpp"
+#include "application/System/Ports/IPwmPin.hpp"
 
 namespace ATC {
 class PwmPin : public IPwmPin {

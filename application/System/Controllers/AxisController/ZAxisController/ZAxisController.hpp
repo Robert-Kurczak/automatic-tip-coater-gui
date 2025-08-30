@@ -1,0 +1,38 @@
+#pragma once
+
+#include "IZAxisController.hpp"
+#include "application/System/Drivers/Logger/ILogger.hpp"
+
+#include <stdint.h>
+
+namespace ATC {
+class ZAxisController : public IZAxisController {
+private:
+    ILogger& logger_;
+
+    uint32_t startPosition_;
+    uint32_t endPosition_;
+    uint32_t speed_;
+
+public:
+    ZAxisController(ILogger& logger);
+
+    virtual void init() override;
+    virtual void tick() override;
+
+    virtual void moveToStartPosition() override;
+    virtual bool isAtStartPosition() const override;
+
+    virtual void moveToEndPosition() override;
+    virtual bool isAtEndPosition() const override;
+
+    virtual void setStartPosition(uint32_t value) override;
+    virtual uint32_t getStartPosition() const override;
+
+    virtual void setEndPosition(uint32_t value) override;
+    virtual uint32_t getEndPosition() const override;
+
+    virtual void setSpeed(uint32_t value) override;
+    virtual uint32_t getSpeed() const override;
+};
+}

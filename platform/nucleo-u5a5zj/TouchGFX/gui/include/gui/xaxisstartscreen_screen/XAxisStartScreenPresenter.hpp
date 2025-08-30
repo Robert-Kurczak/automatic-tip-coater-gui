@@ -37,6 +37,7 @@ private:
     XAxisStartScreenPresenter();
 
     XAxisStartScreenView& view;
+    ATC::IAxisConfiguratorService* configuratorService;
 };
 
 #endif // XAXISSTARTSCREENPRESENTER_HPP

@@ -23,11 +23,12 @@
 #include <TouchGFXHAL.hpp>
 
 /* USER CODE BEGIN TouchGFXHAL.cpp */
-#include "TargetBoard.hpp"
+#include "TargetSystemRoot.hpp"
 
 using namespace touchgfx;
 
-static ATC::TargetBoard targetBoard = ATC::TargetBoard::getBoard();
+static ATC::IDisplayService& systemDisplay =
+    ATC::TargetSystemRoot::getSystemRoot().getSystemApi().peripherals.display;
 
 void TouchGFXHAL::initialize()
 {
@@ -83,7 +84,7 @@ void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect& rect)
         uint32_t(FRAME_BUFFER_WIDTH * FRAME_BUFFER_HEIGHT)
     };
 
-    targetBoard.drawOnDisplay(
+    systemDisplay.draw(
         frameBufferSpan,
         ATC::Rectangle {
             .xStart_ = uint16_t(rect.x),

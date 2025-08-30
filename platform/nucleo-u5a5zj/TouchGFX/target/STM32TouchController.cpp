@@ -24,9 +24,10 @@
 
 #include <STM32TouchController.hpp>
 #include <stdio.h>
-#include "TargetBoard.hpp"
+#include "TargetSystemRoot.hpp"
 
-static ATC::TargetBoard targetBoard_ = ATC::TargetBoard::getBoard();
+static ATC::ITouchPanelService& systemTouchPanel =
+  ATC::TargetSystemRoot::getSystemRoot().getSystemApi().peripherals.touchPanel;
 
 void STM32TouchController::init() {}
 
@@ -43,11 +44,11 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
      *
      */
 
-    ATC::Vector2 position = targetBoard_.readTouchScreenPosition();
+    ATC::Vector2 position = systemTouchPanel.readPosition();
 
     if (position.x_ != UINT16_MAX && position.y_ != UINT16_MAX) {
         x = position.x_;
-        y = 800 - position.y_;
+        y = 800 - position.y_; // TODO move it to the display module
 
         return true;
     }

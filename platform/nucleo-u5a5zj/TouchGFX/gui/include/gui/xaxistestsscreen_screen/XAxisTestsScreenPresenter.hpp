@@ -41,6 +41,7 @@ private:
     XAxisTestsScreenPresenter();
 
     XAxisTestsScreenView& view;
+    ATC::IConsumableTaskService<ATC::AxisTestResults>* xAxisTestTask;
 };
 
 #endif // XAXISTESTSSCREENPRESENTER_HPP

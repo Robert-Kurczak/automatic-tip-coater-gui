@@ -1,28 +1,30 @@
 #include <gui/rotationspeedscreen_screen/RotationSpeedScreenPresenter.hpp>
 #include <gui/rotationspeedscreen_screen/RotationSpeedScreenView.hpp>
 
-
 RotationSpeedScreenPresenter::RotationSpeedScreenPresenter(
     RotationSpeedScreenView& v
 ) :
     view(v) {}
 
-void RotationSpeedScreenPresenter::activate() {}
+void RotationSpeedScreenPresenter::activate() {
+    spindleConfigurator =
+        &model->getSystemApi().configurators.spindleConfigurator;
+}
 
 void RotationSpeedScreenPresenter::deactivate() {}
 
 void RotationSpeedScreenPresenter::increaseButtonPressed() {
-    model->increaseRotationSpeed();
+    spindleConfigurator->increaseSpeedPercent();
 }
 
 void RotationSpeedScreenPresenter::decreaseButtonPressed() {
-    model->decreaseRotationSpeed();
+    spindleConfigurator->decreaseSpeedPercent();
 }
 
 void RotationSpeedScreenPresenter::saveButtonPressed() {
-    model->saveRotationSpeed();
+    spindleConfigurator->saveSpeedPercent();
 }
 
 uint32_t RotationSpeedScreenPresenter::getRotationSpeed() {
-    return model->getRotationSpeed();
+    return spindleConfigurator->getSpeedPercent();
 }
