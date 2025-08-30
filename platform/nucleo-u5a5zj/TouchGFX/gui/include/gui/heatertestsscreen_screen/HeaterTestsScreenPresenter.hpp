@@ -1,7 +1,7 @@
 #ifndef HEATERTESTSSCREENPRESENTER_HPP
 #define HEATERTESTSSCREENPRESENTER_HPP
 
-#include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
+#include "application/System/Tasks/Task/HeaterTestTask/HeaterTestResults.hpp"
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
@@ -43,6 +43,7 @@ private:
     HeaterTestsScreenPresenter();
 
     HeaterTestsScreenView& view;
+    ATC::IConsumableTaskService<ATC::HeaterTestResults>* heaterTestTask;
 };
 
 #endif // HEATERTESTSSCREENPRESENTER_HPP

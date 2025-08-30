@@ -41,6 +41,7 @@ private:
     YAxisTestsScreenPresenter();
 
     YAxisTestsScreenView& view;
+    ATC::IConsumableTaskService<ATC::AxisTestResults>* yAxisTestTask;
 };
 
 #endif // YAXISTESTSSCREENPRESENTER_HPP

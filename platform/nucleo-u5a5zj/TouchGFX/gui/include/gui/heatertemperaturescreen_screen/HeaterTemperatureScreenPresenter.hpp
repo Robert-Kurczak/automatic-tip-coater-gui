@@ -40,6 +40,7 @@ private:
     HeaterTemperatureScreenPresenter();
 
     HeaterTemperatureScreenView& view;
+    ATC::IHeaterConfiguratorService* heaterConfigurator;
 };
 
 #endif // HEATERTEMPERATURESCREENPRESENTER_HPP

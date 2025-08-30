@@ -18,9 +18,9 @@ void HeaterTestsScreenPresenter::handleHeaterTestTaskFinish(
 }
 
 void HeaterTestsScreenPresenter::startButtonPressed() {
-    model->startHeaterTestTask();
+    heaterTestTask->schedule();
 }
 
 void HeaterTestsScreenPresenter::cancelButtonPressed() {
-    model->cancelCurrentTask();
+    model->getSystemApi().tasks.taskControl.cancelAll();
 }

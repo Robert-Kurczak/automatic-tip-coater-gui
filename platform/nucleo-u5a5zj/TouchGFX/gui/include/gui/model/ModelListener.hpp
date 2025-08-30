@@ -1,9 +1,9 @@
 #ifndef MODELLISTENER_HPP
 #define MODELLISTENER_HPP
 
-#include "application/System/Tasks/SpindleTestTask/SpindleTestResults.hpp"
-#include "application/System/Tasks/AxisTestTasks/AxisTestResults.hpp"
-#include "application/System/Tasks/HeaterTestTask/HeaterTestResults.hpp"
+#include "application/System/Tasks/Task/AxisTestTask/AxisTestResults.hpp"
+#include "application/System/Tasks/Task/HeaterTestTask/HeaterTestResults.hpp"
+#include "application/System/Tasks/Task/SpindleTestTask/SpindleTestResults.hpp"
 
 #include <gui/model/Model.hpp>
 

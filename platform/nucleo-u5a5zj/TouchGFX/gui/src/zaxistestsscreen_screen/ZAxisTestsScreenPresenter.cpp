@@ -6,7 +6,9 @@ ZAxisTestsScreenPresenter::ZAxisTestsScreenPresenter(
 ) :
     view(v) {}
 
-void ZAxisTestsScreenPresenter::activate() {}
+void ZAxisTestsScreenPresenter::activate() {
+    zAxisTestTask = &model->getSystemApi().tasks.zAxisTestTask;
+}
 
 void ZAxisTestsScreenPresenter::deactivate() {}
 
@@ -18,9 +20,9 @@ void ZAxisTestsScreenPresenter::handleZAxisTestTaskFinish(
 }
 
 void ZAxisTestsScreenPresenter::startButtonPressed() {
-    model->startZAxisTestTask();
+    zAxisTestTask->schedule();
 }
 
 void ZAxisTestsScreenPresenter::cancelButtonPressed() {
-    model->cancelCurrentTask();
+    model->getSystemApi().tasks.taskControl.cancelAll();
 }

@@ -39,6 +39,7 @@ private:
     CalibrateScreenPresenter();
 
     CalibrateScreenView& view;
+    ATC::IConsumableTaskService<bool>* calibrationTask;
 };
 
 #endif // CALIBRATESCREENPRESENTER_HPP

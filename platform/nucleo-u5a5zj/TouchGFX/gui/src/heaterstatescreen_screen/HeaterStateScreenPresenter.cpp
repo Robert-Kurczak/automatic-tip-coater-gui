@@ -6,22 +6,25 @@ HeaterStateScreenPresenter::HeaterStateScreenPresenter(
 ) :
     view(v) {}
 
-void HeaterStateScreenPresenter::activate() {}
+void HeaterStateScreenPresenter::activate() {
+    heaterConfigurator =
+        &model->getSystemApi().configurators.heaterConfigurator;
+}
 
 void HeaterStateScreenPresenter::deactivate() {}
 
 void HeaterStateScreenPresenter::onButtonPressed() {
-    model->setHeaterOff();
+    heaterConfigurator->turnOff();
 }
 
 void HeaterStateScreenPresenter::offButtonPressed() {
-    model->setHeaterOn();
+    heaterConfigurator->turnOn();
 }
 
 void HeaterStateScreenPresenter::saveButtonPressed() {
-    model->saveHeaterState();
+    // TODO implement or remove
 }
 
 bool HeaterStateScreenPresenter::isHeaterOn() {
-    return model->isHeaterOn();
+    return heaterConfigurator->isOn();
 }

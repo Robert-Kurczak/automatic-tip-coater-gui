@@ -1,6 +1,6 @@
 #pragma once
 
-#include "application/Ports/IGpioPin.hpp"
+#include "application/System/Ports/IGpioPin.hpp"
 
 #include <stdint.h>
 #include <stm32u5a5xx.h>

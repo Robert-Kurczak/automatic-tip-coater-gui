@@ -6,22 +6,25 @@ RotationDirectionScreenPresenter::RotationDirectionScreenPresenter(
 ) :
     view(v) {}
 
-void RotationDirectionScreenPresenter::activate() {}
+void RotationDirectionScreenPresenter::activate() {
+    spindleConfigurator =
+        &model->getSystemApi().configurators.spindleConfigurator;
+}
 
 void RotationDirectionScreenPresenter::deactivate() {}
 
 bool RotationDirectionScreenPresenter::isRotationClockwise() {
-    return model->isRotationClockwise();
+    return spindleConfigurator->isDirectionClockwise();
 }
 
 void RotationDirectionScreenPresenter::clockwiseButtonPressed() {
-    model->setCounterClockwiseRotation();
+    spindleConfigurator->setDirectionCounterClockwise();
 }
 
 void RotationDirectionScreenPresenter::counterClockwiseButtonPressed() {
-    model->setClockwiseRotation();
+    spindleConfigurator->setDirectionClockwise();
 }
 
 void RotationDirectionScreenPresenter::saveButtonPressed() {
-    model->saveRotationDirection();
+    spindleConfigurator->saveDirection();
 }

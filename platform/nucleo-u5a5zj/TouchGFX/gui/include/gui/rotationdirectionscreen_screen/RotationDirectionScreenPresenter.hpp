@@ -39,6 +39,7 @@ private:
     RotationDirectionScreenPresenter();
 
     RotationDirectionScreenView& view;
+    ATC::ISpindleConfiguratorService* spindleConfigurator;
 };
 
 #endif // ROTATIONDIRECTIONSCREENPRESENTER_HPP

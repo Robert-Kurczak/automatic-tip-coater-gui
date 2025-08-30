@@ -6,22 +6,25 @@ HeaterTemperatureScreenPresenter::HeaterTemperatureScreenPresenter(
 ) :
     view(v) {}
 
-void HeaterTemperatureScreenPresenter::activate() {}
+void HeaterTemperatureScreenPresenter::activate() {
+    heaterConfigurator =
+        &model->getSystemApi().configurators.heaterConfigurator;
+}
 
 void HeaterTemperatureScreenPresenter::deactivate() {}
 
 void HeaterTemperatureScreenPresenter::increaseButtonPressed() {
-    model->increaseHeaterTemperature();
+    heaterConfigurator->increaseTemperatureInCelsius();
 }
 
 void HeaterTemperatureScreenPresenter::decreaseButtonPressed() {
-    model->decreaseHeaterTemperature();
+    heaterConfigurator->decreaseTemperatureInCelsius();
 }
 
 void HeaterTemperatureScreenPresenter::saveButtonPressed() {
-    model->saveHeaterTemperature();
+    heaterConfigurator->saveTemperatureInCelsius();
 }
 
 uint32_t HeaterTemperatureScreenPresenter::getHeaterTemperature() {
-    return model->getHeaterTemperature();
+    return heaterConfigurator->getTemperatureInCelsius();
 }

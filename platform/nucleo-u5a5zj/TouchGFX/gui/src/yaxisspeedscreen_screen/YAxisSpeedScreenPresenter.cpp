@@ -6,22 +6,25 @@ YAxisSpeedScreenPresenter::YAxisSpeedScreenPresenter(
 ) :
     view(v) {}
 
-void YAxisSpeedScreenPresenter::activate() {}
+void YAxisSpeedScreenPresenter::activate() {
+    axisConfigurator =
+        &model->getSystemApi().configurators.yAxisConfigurator;
+}
 
 void YAxisSpeedScreenPresenter::deactivate() {}
 
 void YAxisSpeedScreenPresenter::increaseButtonPressed() {
-    model->increaseYAxisSpeed();
+    axisConfigurator->increaseSpeed();
 }
 
 void YAxisSpeedScreenPresenter::decreaseButtonPressed() {
-    model->decreaseYAxisSpeed();
+    axisConfigurator->decreaseSpeed();
 }
 
 void YAxisSpeedScreenPresenter::saveButtonPressed() {
-    model->saveYAxisSpeed();
+    axisConfigurator->saveSpeed();
 }
 
 uint32_t YAxisSpeedScreenPresenter::getYAxisSpeed() {
-    return model->getYAxisSpeed();
+    return axisConfigurator->getSpeed();
 }

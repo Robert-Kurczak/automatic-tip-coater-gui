@@ -40,6 +40,7 @@ private:
     ZAxisEndScreenPresenter();
 
     ZAxisEndScreenView& view;
+    ATC::IAxisConfiguratorService* axisConfigurator;
 };
 
 #endif // ZAXISENDSCREENPRESENTER_HPP

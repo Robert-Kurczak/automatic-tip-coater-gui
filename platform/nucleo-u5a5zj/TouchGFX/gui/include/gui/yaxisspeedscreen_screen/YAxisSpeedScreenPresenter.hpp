@@ -40,6 +40,7 @@ private:
     YAxisSpeedScreenPresenter();
 
     YAxisSpeedScreenView& view;
+    ATC::IAxisConfiguratorService* axisConfigurator;
 };
 
 #endif // YAXISSPEEDSCREENPRESENTER_HPP

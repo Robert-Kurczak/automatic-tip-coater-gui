@@ -40,6 +40,7 @@ private:
     RotationTimeScreenPresenter();
 
     RotationTimeScreenView& view;
+    ATC::ISpindleConfiguratorService* spindleConfigurator;
 };
 
 #endif // ROTATIONTIMESCREENPRESENTER_HPP

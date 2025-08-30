@@ -40,6 +40,7 @@ private:
     RotationSpeedScreenPresenter();
 
     RotationSpeedScreenView& view;
+    ATC::ISpindleConfiguratorService* spindleConfigurator;
 };
 
 #endif // ROTATIONSPEEDSCREENPRESENTER_HPP

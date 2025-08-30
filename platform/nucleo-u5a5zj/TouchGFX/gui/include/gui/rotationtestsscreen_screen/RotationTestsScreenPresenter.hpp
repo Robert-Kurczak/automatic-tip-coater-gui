@@ -41,6 +41,7 @@ private:
     RotationTestsScreenPresenter();
 
     RotationTestsScreenView& view;
+    ATC::IConsumableTaskService<ATC::SpindleTestResults>* spindleTestTask;
 };
 
 #endif // ROTATIONTESTSSCREENPRESENTER_HPP
