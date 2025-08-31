@@ -40,7 +40,6 @@ private:
     ZAxisStartScreenPresenter();
 
     ZAxisStartScreenView& view;
-    ATC::IAxisConfiguratorService* axisConfigurator;
 };
 
 #endif // ZAXISSTARTSCREENPRESENTER_HPP

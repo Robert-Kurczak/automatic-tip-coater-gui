@@ -41,7 +41,6 @@ private:
     ZAxisTestsScreenPresenter();
 
     ZAxisTestsScreenView& view;
-    ATC::IConsumableTaskService<ATC::AxisTestResults>* zAxisTestTask;
 };
 
 #endif // ZAXISTESTSSCREENPRESENTER_HPP

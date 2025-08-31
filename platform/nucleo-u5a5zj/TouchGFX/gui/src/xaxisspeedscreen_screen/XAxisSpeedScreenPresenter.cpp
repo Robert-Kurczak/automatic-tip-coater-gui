@@ -6,25 +6,34 @@ XAxisSpeedScreenPresenter::XAxisSpeedScreenPresenter(
 ) :
     view(v) {}
 
-void XAxisSpeedScreenPresenter::activate() {
-    axisConfigurator =
-        &model->getSystemApi().configurators.xAxisConfigurator;
-}
+void XAxisSpeedScreenPresenter::activate() {}
 
 void XAxisSpeedScreenPresenter::deactivate() {}
 
 void XAxisSpeedScreenPresenter::increaseButtonPressed() {
-    axisConfigurator->increaseSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    axisConfigurator.increaseSpeed();
 }
 
 void XAxisSpeedScreenPresenter::decreaseButtonPressed() {
-    axisConfigurator->decreaseSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    axisConfigurator.decreaseSpeed();
 }
 
 void XAxisSpeedScreenPresenter::saveButtonPressed() {
-    axisConfigurator->saveSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    axisConfigurator.saveSpeed();
 }
 
 uint32_t XAxisSpeedScreenPresenter::getXAxisSpeed() {
-    return axisConfigurator->getSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    return axisConfigurator.getSpeed();
 }

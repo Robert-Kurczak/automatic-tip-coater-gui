@@ -6,9 +6,7 @@ XAxisTestsScreenPresenter::XAxisTestsScreenPresenter(
 ) :
     view(v) {}
 
-void XAxisTestsScreenPresenter::activate() {
-    xAxisTestTask = &model->getSystemApi().tasks.xAxisTestTask;
-}
+void XAxisTestsScreenPresenter::activate() {}
 
 void XAxisTestsScreenPresenter::deactivate() {}
 
@@ -20,9 +18,15 @@ void XAxisTestsScreenPresenter::handleXAxisTestTaskFinish(
 }
 
 void XAxisTestsScreenPresenter::startButtonPressed() {
-    xAxisTestTask->schedule();
+    ATC::IConsumableTaskService<ATC::AxisTestResults>& xAxisTestTask =
+        model->getSystemApi().tasks.xAxisTestTask;
+
+    xAxisTestTask.schedule();
 }
 
 void XAxisTestsScreenPresenter::cancelButtonPressed() {
-    model->getSystemApi().tasks.taskControl.cancelAll();
+    ATC::ITaskControlService& taskControl =
+        model->getSystemApi().tasks.taskControl;
+
+    taskControl.cancelAll();
 }

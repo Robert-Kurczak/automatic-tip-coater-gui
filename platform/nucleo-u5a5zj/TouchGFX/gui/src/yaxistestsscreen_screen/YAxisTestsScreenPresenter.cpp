@@ -6,9 +6,7 @@ YAxisTestsScreenPresenter::YAxisTestsScreenPresenter(
 ) :
     view(v) {}
 
-void YAxisTestsScreenPresenter::activate() {
-    yAxisTestTask = &model->getSystemApi().tasks.yAxisTestTask;
-}
+void YAxisTestsScreenPresenter::activate() {}
 
 void YAxisTestsScreenPresenter::deactivate() {}
 
@@ -20,9 +18,15 @@ void YAxisTestsScreenPresenter::handleYAxisTestTaskFinish(
 }
 
 void YAxisTestsScreenPresenter::startButtonPressed() {
-    yAxisTestTask->schedule();
+    ATC::IConsumableTaskService<ATC::AxisTestResults>& yAxisTestTask =
+        model->getSystemApi().tasks.yAxisTestTask;
+
+    yAxisTestTask.schedule();
 }
 
 void YAxisTestsScreenPresenter::cancelButtonPressed() {
-    model->getSystemApi().tasks.taskControl.cancelAll();
+    ATC::ITaskControlService& taskControl =
+        model->getSystemApi().tasks.taskControl;
+
+    taskControl.cancelAll();
 }

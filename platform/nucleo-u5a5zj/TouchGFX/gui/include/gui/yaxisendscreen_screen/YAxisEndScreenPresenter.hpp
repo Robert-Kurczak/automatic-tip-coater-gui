@@ -40,7 +40,6 @@ private:
     YAxisEndScreenPresenter();
 
     YAxisEndScreenView& view;
-    ATC::IAxisConfiguratorService* axisConfigurator;
 };
 
 #endif // YAXISENDSCREENPRESENTER_HPP

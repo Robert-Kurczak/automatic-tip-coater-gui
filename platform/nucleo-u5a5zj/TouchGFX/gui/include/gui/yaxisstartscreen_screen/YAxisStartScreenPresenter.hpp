@@ -40,7 +40,6 @@ private:
     YAxisStartScreenPresenter();
 
     YAxisStartScreenView& view;
-    ATC::IAxisConfiguratorService* axisConfigurator;
 };
 
 #endif // YAXISSTARTSCREENPRESENTER_HPP

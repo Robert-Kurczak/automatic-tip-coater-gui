@@ -39,7 +39,6 @@ private:
     StartScreenPresenter();
 
     StartScreenView& view;
-    ATC::IConsumableTaskService<bool>* coatingTask;
 };
 
 #endif // STARTSCREENPRESENTER_HPP
