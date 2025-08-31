@@ -24,6 +24,7 @@ void SystemRoot::tick() {
     systemComponents_.zAxisController.tick();
     systemComponents_.spindleController.tick();
     systemComponents_.heaterController.tick();
+    systemComponents_.taskScheduler.tick();
 }
 
 SystemApi& SystemRoot::getSystemApi() {
