@@ -66,7 +66,7 @@ private:
     GpioActiveHighSwitch heaterSwitch_ {heaterTogglePin_};
     Thermistor heaterThermistor_ {logger_};
     HysteresisHeaterController heaterController_ {
-    	logger_,
+        logger_,
         heaterSwitch_,
         heaterThermistor_
     };
@@ -113,6 +113,8 @@ private:
         1300
     };
 
+    SingleTaskScheduler taskScheduler_ {};
+
     SystemComponents targetComponents_ {
         .xAxisController = xAxisController_,
         .yAxisController = yAxisController_,
@@ -120,7 +122,8 @@ private:
         .spindleController = spindleController_,
         .heaterController = heaterController_,
         .display = display_,
-        .touchPanelController = touchPanelController_
+        .touchPanelController = touchPanelController_,
+        .taskScheduler = taskScheduler_
     };
 
     DisplayService displayService_ {display_};
@@ -156,8 +159,6 @@ private:
         .spindleConfigurator = spindleConfiguratorService_,
         .heaterConfigurator = heaterConfiguratorService_
     };
-
-    SingleTaskScheduler taskScheduler_ {};
 
     CoatingTask coatingTask_ {
         xAxisController_,
@@ -198,7 +199,7 @@ private:
     SpindleTestTask spindleTestTask {logger_, spindleController_};
     ConsumableTaskService<SpindleTestResults> spindleTestTaskService_ {
         taskScheduler_,
-		spindleTestTask
+        spindleTestTask
     };
 
     HeaterTestTask heaterTestTask_ {logger_, heaterController_};
