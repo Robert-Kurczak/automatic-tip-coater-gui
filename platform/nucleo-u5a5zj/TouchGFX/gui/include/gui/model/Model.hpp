@@ -18,7 +18,7 @@ private:
     void pollXAxisTestTask();
     void pollYAxisTestTask();
     void pollZAxisTestTask();
-    void pollRotatorTestTask();
+    void pollSpindleTestTask();
     void pollHeaterTestTask();
 
 public:
