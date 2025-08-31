@@ -18,9 +18,15 @@ void HeaterTestsScreenPresenter::handleHeaterTestTaskFinish(
 }
 
 void HeaterTestsScreenPresenter::startButtonPressed() {
-    heaterTestTask->schedule();
+    ATC::IConsumableTaskService<ATC::HeaterTestResults>& heaterTestTask =
+        model->getSystemApi().tasks.heaterTestTask;
+
+    heaterTestTask.schedule();
 }
 
 void HeaterTestsScreenPresenter::cancelButtonPressed() {
-    model->getSystemApi().tasks.taskControl.cancelAll();
+    ATC::ITaskControlService& taskControl =
+        model->getSystemApi().tasks.taskControl;
+
+    taskControl.cancelAll();
 }

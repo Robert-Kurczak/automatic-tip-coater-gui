@@ -38,7 +38,6 @@ public:
 
 private:
     XAxisEndScreenPresenter();
-    ATC::IAxisConfiguratorService* axisConfigurator;
 
     XAxisEndScreenView& view;
 };

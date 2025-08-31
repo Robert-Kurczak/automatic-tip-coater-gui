@@ -6,25 +6,34 @@ ZAxisSpeedScreenPresenter::ZAxisSpeedScreenPresenter(
 ) :
     view(v) {}
 
-void ZAxisSpeedScreenPresenter::activate() {
-    axisConfigurator =
-        &model->getSystemApi().configurators.zAxisConfigurator;
-}
+void ZAxisSpeedScreenPresenter::activate() {}
 
 void ZAxisSpeedScreenPresenter::deactivate() {}
 
 void ZAxisSpeedScreenPresenter::increaseButtonPressed() {
-    axisConfigurator->increaseSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.increaseSpeed();
 }
 
 void ZAxisSpeedScreenPresenter::decreaseButtonPressed() {
-    axisConfigurator->decreaseSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.decreaseSpeed();
 }
 
 void ZAxisSpeedScreenPresenter::saveButtonPressed() {
-    axisConfigurator->saveSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.saveSpeed();
 }
 
 uint32_t ZAxisSpeedScreenPresenter::getZAxisSpeed() {
-    return axisConfigurator->getSpeed();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    return axisConfigurator.getSpeed();
 }

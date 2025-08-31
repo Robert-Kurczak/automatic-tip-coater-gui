@@ -6,25 +6,34 @@ ZAxisStartScreenPresenter::ZAxisStartScreenPresenter(
 ) :
     view(v) {}
 
-void ZAxisStartScreenPresenter::activate() {
-    axisConfigurator =
-        &model->getSystemApi().configurators.zAxisConfigurator;
-}
+void ZAxisStartScreenPresenter::activate() {}
 
 void ZAxisStartScreenPresenter::deactivate() {}
 
 void ZAxisStartScreenPresenter::increaseButtonPressed() {
-    axisConfigurator->increaseStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.increaseStartPosition();
 }
 
 void ZAxisStartScreenPresenter::decreaseButtonPressed() {
-    axisConfigurator->decreaseStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.decreaseStartPosition();
 }
 
 void ZAxisStartScreenPresenter::saveButtonPressed() {
-    axisConfigurator->saveStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.saveStartPosition();
 }
 
 uint32_t ZAxisStartScreenPresenter::getZAxisStart() {
-    return axisConfigurator->getStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    return axisConfigurator.getStartPosition();
 }

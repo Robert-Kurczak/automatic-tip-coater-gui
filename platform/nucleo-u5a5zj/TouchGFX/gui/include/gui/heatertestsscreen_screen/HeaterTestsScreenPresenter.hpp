@@ -43,7 +43,6 @@ private:
     HeaterTestsScreenPresenter();
 
     HeaterTestsScreenView& view;
-    ATC::IConsumableTaskService<ATC::HeaterTestResults>* heaterTestTask;
 };
 
 #endif // HEATERTESTSSCREENPRESENTER_HPP

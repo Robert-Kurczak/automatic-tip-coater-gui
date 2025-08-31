@@ -6,25 +6,34 @@ YAxisStartScreenPresenter::YAxisStartScreenPresenter(
 ) :
     view(v) {}
 
-void YAxisStartScreenPresenter::activate() {
-    axisConfigurator =
-        &model->getSystemApi().configurators.yAxisConfigurator;
-}
+void YAxisStartScreenPresenter::activate() {}
 
 void YAxisStartScreenPresenter::deactivate() {}
 
 void YAxisStartScreenPresenter::increaseButtonPressed() {
-    axisConfigurator->increaseStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.yAxisConfigurator;
+
+    axisConfigurator.increaseStartPosition();
 }
 
 void YAxisStartScreenPresenter::decreaseButtonPressed() {
-    axisConfigurator->decreaseStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.yAxisConfigurator;
+
+    axisConfigurator.decreaseStartPosition();
 }
 
 void YAxisStartScreenPresenter::saveButtonPressed() {
-    axisConfigurator->saveStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.yAxisConfigurator;
+
+    axisConfigurator.saveStartPosition();
 }
 
 uint32_t YAxisStartScreenPresenter::getYAxisStart() {
-    return axisConfigurator->getStartPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.yAxisConfigurator;
+
+    return axisConfigurator.getStartPosition();
 }

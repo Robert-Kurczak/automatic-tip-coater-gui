@@ -4,9 +4,7 @@
 StartScreenPresenter::StartScreenPresenter(StartScreenView& v) :
     view(v) {}
 
-void StartScreenPresenter::activate() {
-    coatingTask = &model->getSystemApi().tasks.coatingTask;
-}
+void StartScreenPresenter::activate() {}
 
 void StartScreenPresenter::deactivate() {}
 
@@ -15,9 +13,15 @@ void StartScreenPresenter::handleCoatingTaskFinish(bool wasSuccessful) {
 }
 
 void StartScreenPresenter::startButtonPressed() {
-    coatingTask->schedule();
+    ATC::IConsumableTaskService<bool>& coatingTask =
+        model->getSystemApi().tasks.coatingTask;
+
+    coatingTask.schedule();
 }
 
 void StartScreenPresenter::cancelButtonPressed() {
-    model->getSystemApi().tasks.taskControl.cancelAll();
+    ATC::ITaskControlService& taskControl =
+        model->getSystemApi().tasks.taskControl;
+
+    taskControl.cancelAll();
 }

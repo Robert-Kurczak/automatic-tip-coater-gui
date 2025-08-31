@@ -4,25 +4,34 @@
 YAxisEndScreenPresenter::YAxisEndScreenPresenter(YAxisEndScreenView& v) :
     view(v) {}
 
-void YAxisEndScreenPresenter::activate() {
-    axisConfigurator =
-        &model->getSystemApi().configurators.xAxisConfigurator;
-}
+void YAxisEndScreenPresenter::activate() {}
 
 void YAxisEndScreenPresenter::deactivate() {}
 
 void YAxisEndScreenPresenter::increaseButtonPressed() {
-    axisConfigurator->increaseEndPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    axisConfigurator.increaseEndPosition();
 }
 
 void YAxisEndScreenPresenter::decreaseButtonPressed() {
-    axisConfigurator->decreaseEndPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    axisConfigurator.decreaseEndPosition();
 }
 
 void YAxisEndScreenPresenter::saveButtonPressed() {
-    axisConfigurator->saveEndPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    axisConfigurator.saveEndPosition();
 }
 
 uint32_t YAxisEndScreenPresenter::getYAxisEnd() {
-    return axisConfigurator->getEndPosition();
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    return axisConfigurator.getEndPosition();
 }

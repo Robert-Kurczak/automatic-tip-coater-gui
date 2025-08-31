@@ -6,25 +6,34 @@ HeaterTemperatureScreenPresenter::HeaterTemperatureScreenPresenter(
 ) :
     view(v) {}
 
-void HeaterTemperatureScreenPresenter::activate() {
-    heaterConfigurator =
-        &model->getSystemApi().configurators.heaterConfigurator;
-}
+void HeaterTemperatureScreenPresenter::activate() {}
 
 void HeaterTemperatureScreenPresenter::deactivate() {}
 
 void HeaterTemperatureScreenPresenter::increaseButtonPressed() {
-    heaterConfigurator->increaseTemperatureInCelsius();
+    ATC::IHeaterConfiguratorService& heaterConfigurator =
+        model->getSystemApi().configurators.heaterConfigurator;
+
+    heaterConfigurator.increaseTemperatureInCelsius();
 }
 
 void HeaterTemperatureScreenPresenter::decreaseButtonPressed() {
-    heaterConfigurator->decreaseTemperatureInCelsius();
+    ATC::IHeaterConfiguratorService& heaterConfigurator =
+        model->getSystemApi().configurators.heaterConfigurator;
+
+    heaterConfigurator.decreaseTemperatureInCelsius();
 }
 
 void HeaterTemperatureScreenPresenter::saveButtonPressed() {
-    heaterConfigurator->saveTemperatureInCelsius();
+    ATC::IHeaterConfiguratorService& heaterConfigurator =
+        model->getSystemApi().configurators.heaterConfigurator;
+
+    heaterConfigurator.saveTemperatureInCelsius();
 }
 
 uint32_t HeaterTemperatureScreenPresenter::getHeaterTemperature() {
-    return heaterConfigurator->getTemperatureInCelsius();
+    ATC::IHeaterConfiguratorService& heaterConfigurator =
+        model->getSystemApi().configurators.heaterConfigurator;
+
+    return heaterConfigurator.getTemperatureInCelsius();
 }
