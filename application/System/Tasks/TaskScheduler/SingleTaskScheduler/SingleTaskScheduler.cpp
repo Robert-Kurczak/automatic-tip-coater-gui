@@ -1,30 +1,28 @@
 #include "SingleTaskScheduler.hpp"
 
 namespace ATC {
-// TODO replace nullptr with Null Object?
+SingleTaskScheduler::SingleTaskScheduler(ITask& nullTask) :
+    nullTask_(nullTask),
+    currentTask_(&nullTask_) {}
+
 void SingleTaskScheduler::schedule(ITask& task) {
-    if (currentTask_) {
-        currentTask_->reset();
-    }
+    currentTask_->reset();
 
     currentTask_ = &task;
     currentTask_->start();
 }
 
 void SingleTaskScheduler::tick() {
-    if (currentTask_ && currentTask_->isFinished()) {
+    if (currentTask_->isFinished()) {
         currentTask_->reset();
-        currentTask_ = nullptr;
-    } else if (currentTask_) {
+        currentTask_ = &nullTask_;
+    } else {
         currentTask_->tick();
     }
 }
 
 void SingleTaskScheduler::cancelAll() {
-    if (currentTask_) {
-        currentTask_->reset();
-    }
-
-    currentTask_ = nullptr;
+    currentTask_->reset();
+    currentTask_ = &nullTask_;
 }
 }
