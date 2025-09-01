@@ -32,6 +32,7 @@
 #include "application/System/Tasks/Task/CalibrationTask/CalibrationTask.hpp"
 #include "application/System/Tasks/Task/CoatingTask/CoatingTask.hpp"
 #include "application/System/Tasks/Task/HeaterTestTask/HeaterTestTask.hpp"
+#include "application/System/Tasks/Task/NullTask/NullTask.hpp"
 #include "application/System/Tasks/Task/SpindleTestTask/SpindleTestTask.hpp"
 #include "application/System/Tasks/TaskScheduler/SingleTaskScheduler/SingleTaskScheduler.hpp"
 #include "main.h"
@@ -113,7 +114,8 @@ private:
         1300
     };
 
-    SingleTaskScheduler taskScheduler_ {};
+    NullTask nullTask_ {};
+    SingleTaskScheduler taskScheduler_ {nullTask_};
 
     SystemComponents targetComponents_ {
         .xAxisController = xAxisController_,
