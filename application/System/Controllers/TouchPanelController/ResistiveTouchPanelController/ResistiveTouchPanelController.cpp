@@ -48,13 +48,15 @@ ResistiveTouchPanelController::ResistiveTouchPanelController(
     ISystemClock& systemClock,
     Rectangle rawWorkingArea,
     Vector2 pixelResolution,
-    uint16_t pressureTreshold
+    uint16_t pressureTreshold,
+    bool invertYAxis
 ) :
     resistiveTouchPanel_(resistiveTouchPanel),
     systemClock_(systemClock),
     rawWorkingArea_(rawWorkingArea),
     pixelResolution_(pixelResolution),
-    pressureTreshold_(pressureTreshold) {}
+    pressureTreshold_(pressureTreshold),
+    invertYAxis_(invertYAxis) {}
 
 void ResistiveTouchPanelController::init() {
     resistiveTouchPanel_.init();
@@ -97,7 +99,13 @@ Vector2 ResistiveTouchPanelController::readPosition() {
         return Vector2 {.x_ = UINT16_MAX, .y_ = UINT16_MAX};
     }
 
-    Vector2 rawPosition = getFilteredRawPosition();
-    return interpolateRawPosition(rawPosition);
+    Vector2 position = getFilteredRawPosition();
+    position = interpolateRawPosition(position);
+
+    if (invertYAxis_) {
+        position.y_ = pixelResolution_.y_ - position.y_;
+    }
+
+    return position;
 }
 }

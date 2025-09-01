@@ -48,7 +48,7 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 
     if (position.x_ != UINT16_MAX && position.y_ != UINT16_MAX) {
         x = position.x_;
-        y = 800 - position.y_; // TODO move it to the display module
+        y = position.y_;
 
         return true;
     }
