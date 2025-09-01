@@ -52,16 +52,16 @@
 #include <gui/heaterstatescreen_screen/HeaterStateScreenPresenter.hpp>
 #include <gui/testsscreen_screen/TestsScreenView.hpp>
 #include <gui/testsscreen_screen/TestsScreenPresenter.hpp>
-#include <gui/xaxistestsscreen_screen/XAxisTestsScreenView.hpp>
-#include <gui/xaxistestsscreen_screen/XAxisTestsScreenPresenter.hpp>
-#include <gui/yaxistestsscreen_screen/YAxisTestsScreenView.hpp>
-#include <gui/yaxistestsscreen_screen/YAxisTestsScreenPresenter.hpp>
-#include <gui/zaxistestsscreen_screen/ZAxisTestsScreenView.hpp>
-#include <gui/zaxistestsscreen_screen/ZAxisTestsScreenPresenter.hpp>
-#include <gui/spindletestsscreen_screen/SpindleTestsScreenView.hpp>
-#include <gui/spindletestsscreen_screen/SpindleTestsScreenPresenter.hpp>
-#include <gui/heatertestsscreen_screen/HeaterTestsScreenView.hpp>
-#include <gui/heatertestsscreen_screen/HeaterTestsScreenPresenter.hpp>
+#include <gui/xaxistestscreen_screen/XAxisTestScreenView.hpp>
+#include <gui/xaxistestscreen_screen/XAxisTestScreenPresenter.hpp>
+#include <gui/yaxistestscreen_screen/YAxisTestScreenView.hpp>
+#include <gui/yaxistestscreen_screen/YAxisTestScreenPresenter.hpp>
+#include <gui/zaxistestscreen_screen/ZAxisTestScreenView.hpp>
+#include <gui/zaxistestscreen_screen/ZAxisTestScreenPresenter.hpp>
+#include <gui/spindletestscreen_screen/SpindleTestScreenView.hpp>
+#include <gui/spindletestscreen_screen/SpindleTestScreenPresenter.hpp>
+#include <gui/heatertestscreen_screen/HeaterTestScreenView.hpp>
+#include <gui/heatertestscreen_screen/HeaterTestScreenPresenter.hpp>
 
 
 /**
@@ -103,11 +103,11 @@ public:
             touchgfx::meta::TypeList< HeaterTemperatureScreenView,
             touchgfx::meta::TypeList< HeaterStateScreenView,
             touchgfx::meta::TypeList< TestsScreenView,
-            touchgfx::meta::TypeList< XAxisTestsScreenView,
-            touchgfx::meta::TypeList< YAxisTestsScreenView,
-            touchgfx::meta::TypeList< ZAxisTestsScreenView,
-            touchgfx::meta::TypeList< SpindleTestsScreenView,
-            touchgfx::meta::TypeList< HeaterTestsScreenView,
+            touchgfx::meta::TypeList< XAxisTestScreenView,
+            touchgfx::meta::TypeList< YAxisTestScreenView,
+            touchgfx::meta::TypeList< ZAxisTestScreenView,
+            touchgfx::meta::TypeList< SpindleTestScreenView,
+            touchgfx::meta::TypeList< HeaterTestScreenView,
             touchgfx::meta::Nil > > > > > > > > > > > > > > > > > > > > > > >
             > GeneratedViewTypes;
 
@@ -139,11 +139,11 @@ public:
             touchgfx::meta::TypeList< HeaterTemperatureScreenPresenter,
             touchgfx::meta::TypeList< HeaterStateScreenPresenter,
             touchgfx::meta::TypeList< TestsScreenPresenter,
-            touchgfx::meta::TypeList< XAxisTestsScreenPresenter,
-            touchgfx::meta::TypeList< YAxisTestsScreenPresenter,
-            touchgfx::meta::TypeList< ZAxisTestsScreenPresenter,
-            touchgfx::meta::TypeList< SpindleTestsScreenPresenter,
-            touchgfx::meta::TypeList< HeaterTestsScreenPresenter,
+            touchgfx::meta::TypeList< XAxisTestScreenPresenter,
+            touchgfx::meta::TypeList< YAxisTestScreenPresenter,
+            touchgfx::meta::TypeList< ZAxisTestScreenPresenter,
+            touchgfx::meta::TypeList< SpindleTestScreenPresenter,
+            touchgfx::meta::TypeList< HeaterTestScreenPresenter,
             touchgfx::meta::Nil > > > > > > > > > > > > > > > > > > > > > > >
             > GeneratedPresenterTypes;
 

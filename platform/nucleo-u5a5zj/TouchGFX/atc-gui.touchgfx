@@ -3872,7 +3872,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "XAxisTestsScreen"
+              "ActionComponent": "XAxisTestScreen"
             }
           },
           {
@@ -3885,7 +3885,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "YAxisTestsScreen"
+              "ActionComponent": "YAxisTestScreen"
             }
           },
           {
@@ -3898,7 +3898,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "ZAxisTestsScreen"
+              "ActionComponent": "ZAxisTestScreen"
             }
           },
           {
@@ -3911,7 +3911,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "SpindleTestsScreen"
+              "ActionComponent": "SpindleTestScreen"
             }
           },
           {
@@ -3924,13 +3924,13 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionWipe",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "HeaterTestsScreen"
+              "ActionComponent": "HeaterTestScreen"
             }
           }
         ]
       },
       {
-        "Name": "XAxisTestsScreen",
+        "Name": "XAxisTestScreen",
         "Components": [
           {
             "Type": "Box",
@@ -4045,7 +4045,7 @@
         ]
       },
       {
-        "Name": "YAxisTestsScreen",
+        "Name": "YAxisTestScreen",
         "Components": [
           {
             "Type": "Box",
@@ -4160,7 +4160,7 @@
         ]
       },
       {
-        "Name": "ZAxisTestsScreen",
+        "Name": "ZAxisTestScreen",
         "Components": [
           {
             "Type": "Box",
@@ -4275,7 +4275,7 @@
         ]
       },
       {
-        "Name": "SpindleTestsScreen",
+        "Name": "SpindleTestScreen",
         "Components": [
           {
             "Type": "Box",
@@ -4390,7 +4390,7 @@
         ]
       },
       {
-        "Name": "HeaterTestsScreen",
+        "Name": "HeaterTestScreen",
         "Components": [
           {
             "Type": "Box",

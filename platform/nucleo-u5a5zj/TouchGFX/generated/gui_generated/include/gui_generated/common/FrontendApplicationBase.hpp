@@ -95,20 +95,20 @@ public:
 
     void gotoTestsScreenScreenWipeTransitionWest();
 
-    // XAxisTestsScreen
-    void gotoXAxisTestsScreenScreenWipeTransitionEast();
+    // XAxisTestScreen
+    void gotoXAxisTestScreenScreenWipeTransitionEast();
 
-    // YAxisTestsScreen
-    void gotoYAxisTestsScreenScreenWipeTransitionEast();
+    // YAxisTestScreen
+    void gotoYAxisTestScreenScreenWipeTransitionEast();
 
-    // ZAxisTestsScreen
-    void gotoZAxisTestsScreenScreenWipeTransitionEast();
+    // ZAxisTestScreen
+    void gotoZAxisTestScreenScreenWipeTransitionEast();
 
-    // SpindleTestsScreen
-    void gotoSpindleTestsScreenScreenWipeTransitionEast();
+    // SpindleTestScreen
+    void gotoSpindleTestScreenScreenWipeTransitionEast();
 
-    // HeaterTestsScreen
-    void gotoHeaterTestsScreenScreenWipeTransitionEast();
+    // HeaterTestScreen
+    void gotoHeaterTestScreenScreenWipeTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -190,20 +190,20 @@ protected:
 
     void gotoTestsScreenScreenWipeTransitionWestImpl();
 
-    // XAxisTestsScreen
-    void gotoXAxisTestsScreenScreenWipeTransitionEastImpl();
+    // XAxisTestScreen
+    void gotoXAxisTestScreenScreenWipeTransitionEastImpl();
 
-    // YAxisTestsScreen
-    void gotoYAxisTestsScreenScreenWipeTransitionEastImpl();
+    // YAxisTestScreen
+    void gotoYAxisTestScreenScreenWipeTransitionEastImpl();
 
-    // ZAxisTestsScreen
-    void gotoZAxisTestsScreenScreenWipeTransitionEastImpl();
+    // ZAxisTestScreen
+    void gotoZAxisTestScreenScreenWipeTransitionEastImpl();
 
-    // SpindleTestsScreen
-    void gotoSpindleTestsScreenScreenWipeTransitionEastImpl();
+    // SpindleTestScreen
+    void gotoSpindleTestScreenScreenWipeTransitionEastImpl();
 
-    // HeaterTestsScreen
-    void gotoHeaterTestsScreenScreenWipeTransitionEastImpl();
+    // HeaterTestScreen
+    void gotoHeaterTestScreenScreenWipeTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

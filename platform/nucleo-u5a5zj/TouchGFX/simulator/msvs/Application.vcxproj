@@ -44,9 +44,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTemperatureSettingsButtonsBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\HeaterTestsResults.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTestsResultsBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\heatertestsscreen_screen\HeaterTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\heatertestscreen_screen\HeaterTestScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\heatertestscreen_screen\HeaterTestScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\heatertestscreen_screen\HeaterTestScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\MainScreenViewBase.cpp"/>
@@ -80,9 +80,9 @@
     <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\xaxisstartscreen_screen\XAxisStartScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_screen\XAxisStartScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\xaxistestsscreen_screen\XAxisTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxistestscreen_screen\XAxisTestScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\xaxistestscreen_screen\XAxisTestScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxistestscreen_screen\XAxisTestScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\yaxisendscreen_screen\YAxisEndScreenViewBase.cpp"/>
@@ -92,9 +92,9 @@
     <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\yaxisstartscreen_screen\YAxisStartScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\yaxisstartscreen_screen\YAxisStartScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\yaxistestsscreen_screen\YAxisTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxistestscreen_screen\YAxisTestScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\yaxistestscreen_screen\YAxisTestScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxistestscreen_screen\YAxisTestScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\zaxisendscreen_screen\ZAxisEndScreenViewBase.cpp"/>
@@ -104,9 +104,9 @@
     <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\zaxisstartscreen_screen\ZAxisStartScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\zaxisstartscreen_screen\ZAxisStartScreenViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxistestscreen_screen\ZAxisTestScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\zaxistestscreen_screen\ZAxisTestScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxistestscreen_screen\ZAxisTestScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\spindledirectionscreen_screen\SpindleDirectionScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\spindledirectionscreen_screen\SpindleDirectionScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\spindledirectionscreen_screen\SpindleDirectionScreenViewBase.cpp"/>
@@ -126,9 +126,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SpindleSpeedSettingsButtonsBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\SpindleTestsResults.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SpindleTestsResultsBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\spindletestsscreen_screen\SpindleTestsScreenPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\spindletestsscreen_screen\SpindleTestsScreenView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\spindletestsscreen_screen\SpindleTestsScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\spindletestscreen_screen\SpindleTestScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\spindletestscreen_screen\SpindleTestScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\spindletestscreen_screen\SpindleTestScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -299,9 +299,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTemperatureSettingsButtonsBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\HeaterTestsResults.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTestsResultsBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestsscreen_screen\HeaterTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heatertestscreen_screen\HeaterTestScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\heatertestscreen_screen\HeaterTestScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestscreen_screen\HeaterTestScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainscreen_screen\MainScreenViewBase.hpp"/>
@@ -339,9 +339,9 @@
     <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\xaxisstartscreen_screen\XAxisStartScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_screen\XAxisStartScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestsscreen_screen\XAxisTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestscreen_screen\XAxisTestScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestscreen_screen\XAxisTestScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestscreen_screen\XAxisTestScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisendscreen_screen\YAxisEndScreenViewBase.hpp"/>
@@ -351,9 +351,9 @@
     <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\yaxisstartscreen_screen\YAxisStartScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisstartscreen_screen\YAxisStartScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxistestsscreen_screen\YAxisTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestscreen_screen\YAxisTestScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestscreen_screen\YAxisTestScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxistestscreen_screen\YAxisTestScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisendscreen_screen\ZAxisEndScreenViewBase.hpp"/>
@@ -363,9 +363,9 @@
     <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zaxisstartscreen_screen\ZAxisStartScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisstartscreen_screen\ZAxisStartScreenViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestscreen_screen\ZAxisTestScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestscreen_screen\ZAxisTestScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxistestscreen_screen\ZAxisTestScreenViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\spindledirectionscreen_screen\SpindleDirectionScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\spindledirectionscreen_screen\SpindleDirectionScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\spindledirectionscreen_screen\SpindleDirectionScreenViewBase.hpp"/>
@@ -385,9 +385,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SpindleSpeedSettingsButtonsBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\SpindleTestsResults.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SpindleTestsResultsBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\spindletestsscreen_screen\SpindleTestsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\spindletestsscreen_screen\SpindleTestsScreenView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\spindletestsscreen_screen\SpindleTestsScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\spindletestscreen_screen\SpindleTestScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\spindletestscreen_screen\SpindleTestScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\spindletestscreen_screen\SpindleTestScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
