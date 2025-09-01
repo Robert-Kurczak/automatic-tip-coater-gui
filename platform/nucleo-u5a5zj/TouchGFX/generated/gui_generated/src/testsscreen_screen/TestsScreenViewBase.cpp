@@ -173,36 +173,36 @@ void TestsScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButt
     if (&src == &xAxisButton)
     {
         //GoToXAxisTests
-        //When xAxisButton clicked change screen to XAxisTestsScreen
-        //Go to XAxisTestsScreen with screen transition towards East
-        application().gotoXAxisTestsScreenScreenWipeTransitionEast();
+        //When xAxisButton clicked change screen to XAxisTestScreen
+        //Go to XAxisTestScreen with screen transition towards East
+        application().gotoXAxisTestScreenScreenWipeTransitionEast();
     }
     if (&src == &yAxisButton)
     {
         //GoToYAxisTests
-        //When yAxisButton clicked change screen to YAxisTestsScreen
-        //Go to YAxisTestsScreen with screen transition towards East
-        application().gotoYAxisTestsScreenScreenWipeTransitionEast();
+        //When yAxisButton clicked change screen to YAxisTestScreen
+        //Go to YAxisTestScreen with screen transition towards East
+        application().gotoYAxisTestScreenScreenWipeTransitionEast();
     }
     if (&src == &zAxisButton)
     {
         //GoToZAxisTests
-        //When zAxisButton clicked change screen to ZAxisTestsScreen
-        //Go to ZAxisTestsScreen with screen transition towards East
-        application().gotoZAxisTestsScreenScreenWipeTransitionEast();
+        //When zAxisButton clicked change screen to ZAxisTestScreen
+        //Go to ZAxisTestScreen with screen transition towards East
+        application().gotoZAxisTestScreenScreenWipeTransitionEast();
     }
     if (&src == &spindleButton)
     {
         //GoToRotationTests
-        //When spindleButton clicked change screen to SpindleTestsScreen
-        //Go to SpindleTestsScreen with screen transition towards East
-        application().gotoSpindleTestsScreenScreenWipeTransitionEast();
+        //When spindleButton clicked change screen to SpindleTestScreen
+        //Go to SpindleTestScreen with screen transition towards East
+        application().gotoSpindleTestScreenScreenWipeTransitionEast();
     }
     if (&src == &heaterButton)
     {
         //GoToHeaterTests
-        //When heaterButton clicked change screen to HeaterTestsScreen
-        //Go to HeaterTestsScreen with screen transition towards East
-        application().gotoHeaterTestsScreenScreenWipeTransitionEast();
+        //When heaterButton clicked change screen to HeaterTestScreen
+        //Go to HeaterTestScreen with screen transition towards East
+        application().gotoHeaterTestScreenScreenWipeTransitionEast();
     }
 }

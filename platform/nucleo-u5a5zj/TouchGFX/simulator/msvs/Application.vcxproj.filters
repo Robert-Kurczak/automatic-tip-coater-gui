@@ -145,13 +145,13 @@
     <Filter Include="Source Files\gui\containers">
       <UniqueIdentifier>823D49B7-3CD8-3A90-01ED-DB904F8A403B</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\zaxistestsscreen_screen">
+    <Filter Include="Source Files\gui\zaxistestscreen_screen">
       <UniqueIdentifier>7F67F20B-F31C-D2DE-33AF-A7666738C57D</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\containers">
       <UniqueIdentifier>14AD4B7C-77C0-E18E-497C-3F3B82073D7C</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\zaxistestsscreen_screen">
+    <Filter Include="Header Files\gui\zaxistestscreen_screen">
       <UniqueIdentifier>C27B93AB-54A1-E9D9-F954-2E7637E45948</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\settingsscreen_screen">
@@ -217,13 +217,13 @@
     <Filter Include="Header Files\gui\model">
       <UniqueIdentifier>038ED864-76DF-0E54-1C0B-78B469CCD928</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\xaxistestsscreen_screen">
+    <Filter Include="Source Files\gui\xaxistestscreen_screen">
       <UniqueIdentifier>80F53657-34B3-C99D-D528-8653A95CBEF0</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\model">
       <UniqueIdentifier>CDEBCB06-241C-634B-BDA4-F2BB9D3C3565</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\xaxistestsscreen_screen">
+    <Filter Include="Header Files\gui\xaxistestscreen_screen">
       <UniqueIdentifier>FCA37BC3-83C5-9B7E-71F8-C5A9B2EA0714</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\zaxisendscreen_screen">
@@ -250,10 +250,10 @@
     <Filter Include="Header Files\gui\heaterstatescreen_screen">
       <UniqueIdentifier>23E4BFAF-A915-80CF-97F9-341C2E0F5C7A</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\heatertestsscreen_screen">
+    <Filter Include="Header Files\gui\heatertestscreen_screen">
       <UniqueIdentifier>86DF135A-8FCA-3764-9B30-5B01C7625837</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\heatertestsscreen_screen">
+    <Filter Include="Source Files\gui\heatertestscreen_screen">
       <UniqueIdentifier>80A4C7EA-C625-C921-B73F-22F4D692A2E9</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\yaxisspeedscreen_screen">
@@ -262,10 +262,10 @@
     <Filter Include="Header Files\gui\yaxisspeedscreen_screen">
       <UniqueIdentifier>10407B26-89D7-DA6C-2853-44AD5D556528</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\yaxistestsscreen_screen">
+    <Filter Include="Header Files\gui\yaxistestscreen_screen">
       <UniqueIdentifier>230E30ED-FE2A-4D16-92CE-45CE4183F09F</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\yaxistestsscreen_screen">
+    <Filter Include="Source Files\gui\yaxistestscreen_screen">
       <UniqueIdentifier>4CCA85DE-003E-EC08-E4EC-CABB675E6E66</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\yaxisstartscreen_screen">
@@ -310,25 +310,25 @@
     <Filter Include="Source Files\generated\gui_generated\heaterstatescreen_screen">
       <UniqueIdentifier>9807DC9E-B57F-FD5A-0310-A4A167E9D331</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\yaxistestsscreen_screen">
+    <Filter Include="Source Files\generated\gui_generated\yaxistestscreen_screen">
       <UniqueIdentifier>E1608C8E-6233-A9BC-A8D3-6467A2B33F2B</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\yaxisendscreen_screen">
       <UniqueIdentifier>3D41A8E7-121F-CCD2-3549-56599D481ED3</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\yaxistestsscreen_screen">
+    <Filter Include="Header Files\generated\gui_generated\yaxistestscreen_screen">
       <UniqueIdentifier>93750201-98E4-911F-EADE-C80B2527E6FA</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\yaxisendscreen_screen">
       <UniqueIdentifier>04151605-37A5-99DE-F7FD-1B2E52788ACF</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\heatertestsscreen_screen">
+    <Filter Include="Source Files\generated\gui_generated\heatertestscreen_screen">
       <UniqueIdentifier>21647190-7B3E-2704-8280-7238A6ADBBD1</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\heatertestsscreen_screen">
+    <Filter Include="Header Files\generated\gui_generated\heatertestscreen_screen">
       <UniqueIdentifier>6067952A-D152-7866-4DAC-657D761977C9</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\xaxistestsscreen_screen">
+    <Filter Include="Header Files\generated\gui_generated\xaxistestscreen_screen">
       <UniqueIdentifier>D394CE3A-3445-6A11-F6BB-B2C2912DB7C5</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\common">
@@ -337,7 +337,7 @@
     <Filter Include="Source Files\generated\simulator\video">
       <UniqueIdentifier>65EA83F3-FF87-A3B7-D6D2-EA1520F3E976</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\xaxistestsscreen_screen">
+    <Filter Include="Source Files\generated\gui_generated\xaxistestscreen_screen">
       <UniqueIdentifier>7D9FD53B-0E9E-12A6-0860-547FBEB6A933</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\mainscreen_screen">
@@ -349,7 +349,7 @@
     <Filter Include="Header Files\generated\simulator\include">
       <UniqueIdentifier>7D790FC1-898C-24BD-9AE5-37C119B081D9</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\zaxistestsscreen_screen">
+    <Filter Include="Source Files\generated\gui_generated\zaxistestscreen_screen">
       <UniqueIdentifier>79CA6146-15D1-EBB0-2AE5-C192947AD8EC</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\common">
@@ -415,7 +415,7 @@
     <Filter Include="Header Files\generated\gui_generated\settingsscreen_screen">
       <UniqueIdentifier>22E47F9B-2087-EFD0-D204-0F2771085288</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\zaxistestsscreen_screen">
+    <Filter Include="Header Files\generated\gui_generated\zaxistestscreen_screen">
       <UniqueIdentifier>53C6EC5E-E470-13E4-4A85-1DB045A6B797</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\simulator\include\simulator">
@@ -424,10 +424,10 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>DB393E0F-CD34-70E0-B934-B44FB4E87A74</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\spindletestsscreen_screen">
+    <Filter Include="Source Files\gui\spindletestscreen_screen">
       <UniqueIdentifier>2C522DD2-168B-DEA1-0D94-819CCB6E54DD</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\spindletestsscreen_screen">
+    <Filter Include="Header Files\gui\spindletestscreen_screen">
       <UniqueIdentifier>A592657F-10AF-AEB9-134E-807276918A2B</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\spindlespeedscreen_screen">
@@ -448,10 +448,10 @@
     <Filter Include="Source Files\gui\spindledirectionscreen_screen">
       <UniqueIdentifier>A575521E-2D76-C93C-338A-AE5D7ECCE2FE</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\spindletestsscreen_screen">
+    <Filter Include="Header Files\generated\gui_generated\spindletestscreen_screen">
       <UniqueIdentifier>6BF8A182-1633-29EC-7178-959312DE6BFF</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\spindletestsscreen_screen">
+    <Filter Include="Source Files\generated\gui_generated\spindletestscreen_screen">
       <UniqueIdentifier>D358D6FB-93EA-4674-A368-3D9D62C477AB</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\spindlespeedscreen_screen">
@@ -573,14 +573,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\HeaterTestsResultsBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenPresenter.cpp">
-      <Filter>Source Files\gui\heatertestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\heatertestscreen_screen\HeaterTestScreenPresenter.cpp">
+      <Filter>Source Files\gui\heatertestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\heatertestsscreen_screen\HeaterTestsScreenView.cpp">
-      <Filter>Source Files\gui\heatertestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\heatertestscreen_screen\HeaterTestScreenView.cpp">
+      <Filter>Source Files\gui\heatertestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\heatertestsscreen_screen\HeaterTestsScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\heatertestsscreen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\heatertestscreen_screen\HeaterTestScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\heatertestscreen_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\mainscreen_screen\MainScreenPresenter.cpp">
       <Filter>Source Files\gui\mainscreen_screen</Filter>
@@ -681,14 +681,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\xaxisstartscreen_screen\XAxisStartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenPresenter.cpp">
-      <Filter>Source Files\gui\xaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\xaxistestscreen_screen\XAxisTestScreenPresenter.cpp">
+      <Filter>Source Files\gui\xaxistestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\xaxistestsscreen_screen\XAxisTestsScreenView.cpp">
-      <Filter>Source Files\gui\xaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\xaxistestscreen_screen\XAxisTestScreenView.cpp">
+      <Filter>Source Files\gui\xaxistestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\xaxistestsscreen_screen\XAxisTestsScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\xaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\xaxistestscreen_screen\XAxisTestScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\xaxistestscreen_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\yaxisendscreen_screen\YAxisEndScreenPresenter.cpp">
       <Filter>Source Files\gui\yaxisendscreen_screen</Filter>
@@ -717,14 +717,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\yaxisstartscreen_screen\YAxisStartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\yaxisstartscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenPresenter.cpp">
-      <Filter>Source Files\gui\yaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\yaxistestscreen_screen\YAxisTestScreenPresenter.cpp">
+      <Filter>Source Files\gui\yaxistestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\yaxistestsscreen_screen\YAxisTestsScreenView.cpp">
-      <Filter>Source Files\gui\yaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\yaxistestscreen_screen\YAxisTestScreenView.cpp">
+      <Filter>Source Files\gui\yaxistestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\yaxistestsscreen_screen\YAxisTestsScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\yaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\yaxistestscreen_screen\YAxisTestScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\yaxistestscreen_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\zaxisendscreen_screen\ZAxisEndScreenPresenter.cpp">
       <Filter>Source Files\gui\zaxisendscreen_screen</Filter>
@@ -753,14 +753,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\zaxisstartscreen_screen\ZAxisStartScreenViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.cpp">
-      <Filter>Source Files\gui\zaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\zaxistestscreen_screen\ZAxisTestScreenPresenter.cpp">
+      <Filter>Source Files\gui\zaxistestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\zaxistestsscreen_screen\ZAxisTestsScreenView.cpp">
-      <Filter>Source Files\gui\zaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\zaxistestscreen_screen\ZAxisTestScreenView.cpp">
+      <Filter>Source Files\gui\zaxistestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\zaxistestsscreen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\zaxistestscreen_screen\ZAxisTestScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zaxistestscreen_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\spindledirectionscreen_screen\SpindleDirectionScreenPresenter.cpp">
       <Filter>Source Files\gui\spindledirectionscreen_screen</Filter>
@@ -819,14 +819,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SpindleTestsResultsBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\spindletestsscreen_screen\SpindleTestsScreenPresenter.cpp">
-      <Filter>Source Files\gui\spindletestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\spindletestscreen_screen\SpindleTestScreenPresenter.cpp">
+      <Filter>Source Files\gui\spindletestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\spindletestsscreen_screen\SpindleTestsScreenView.cpp">
-      <Filter>Source Files\gui\spindletestsscreen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\spindletestscreen_screen\SpindleTestScreenView.cpp">
+      <Filter>Source Files\gui\spindletestscreen_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\spindletestsscreen_screen\SpindleTestsScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\spindletestsscreen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\spindletestscreen_screen\SpindleTestScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\spindletestscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1330,14 +1330,14 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\HeaterTestsResultsBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenPresenter.hpp">
-      <Filter>Header Files\gui\heatertestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\heatertestscreen_screen\HeaterTestScreenPresenter.hpp">
+      <Filter>Header Files\gui\heatertestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\heatertestsscreen_screen\HeaterTestsScreenView.hpp">
-      <Filter>Header Files\gui\heatertestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\heatertestscreen_screen\HeaterTestScreenView.hpp">
+      <Filter>Header Files\gui\heatertestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestsscreen_screen\HeaterTestsScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\heatertestsscreen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\heatertestscreen_screen\HeaterTestScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\heatertestscreen_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\mainscreen_screen\MainScreenPresenter.hpp">
       <Filter>Header Files\gui\mainscreen_screen</Filter>
@@ -1450,14 +1450,14 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxisstartscreen_screen\XAxisStartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\xaxisstartscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenPresenter.hpp">
-      <Filter>Header Files\gui\xaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestscreen_screen\XAxisTestScreenPresenter.hpp">
+      <Filter>Header Files\gui\xaxistestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\xaxistestsscreen_screen\XAxisTestsScreenView.hpp">
-      <Filter>Header Files\gui\xaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\xaxistestscreen_screen\XAxisTestScreenView.hpp">
+      <Filter>Header Files\gui\xaxistestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestsscreen_screen\XAxisTestsScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\xaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\xaxistestscreen_screen\XAxisTestScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\xaxistestscreen_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\yaxisendscreen_screen\YAxisEndScreenPresenter.hpp">
       <Filter>Header Files\gui\yaxisendscreen_screen</Filter>
@@ -1486,14 +1486,14 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxisstartscreen_screen\YAxisStartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\yaxisstartscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenPresenter.hpp">
-      <Filter>Header Files\gui\yaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestscreen_screen\YAxisTestScreenPresenter.hpp">
+      <Filter>Header Files\gui\yaxistestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\yaxistestsscreen_screen\YAxisTestsScreenView.hpp">
-      <Filter>Header Files\gui\yaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\yaxistestscreen_screen\YAxisTestScreenView.hpp">
+      <Filter>Header Files\gui\yaxistestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxistestsscreen_screen\YAxisTestsScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\yaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\yaxistestscreen_screen\YAxisTestScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\yaxistestscreen_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\zaxisendscreen_screen\ZAxisEndScreenPresenter.hpp">
       <Filter>Header Files\gui\zaxisendscreen_screen</Filter>
@@ -1522,14 +1522,14 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxisstartscreen_screen\ZAxisStartScreenViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\zaxisstartscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenPresenter.hpp">
-      <Filter>Header Files\gui\zaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestscreen_screen\ZAxisTestScreenPresenter.hpp">
+      <Filter>Header Files\gui\zaxistestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\zaxistestsscreen_screen\ZAxisTestsScreenView.hpp">
-      <Filter>Header Files\gui\zaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\zaxistestscreen_screen\ZAxisTestScreenView.hpp">
+      <Filter>Header Files\gui\zaxistestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxistestsscreen_screen\ZAxisTestsScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\zaxistestsscreen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zaxistestscreen_screen\ZAxisTestScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zaxistestscreen_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\spindledirectionscreen_screen\SpindleDirectionScreenPresenter.hpp">
       <Filter>Header Files\gui\spindledirectionscreen_screen</Filter>
@@ -1588,14 +1588,14 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SpindleTestsResultsBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\spindletestsscreen_screen\SpindleTestsScreenPresenter.hpp">
-      <Filter>Header Files\gui\spindletestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\spindletestscreen_screen\SpindleTestScreenPresenter.hpp">
+      <Filter>Header Files\gui\spindletestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\spindletestsscreen_screen\SpindleTestsScreenView.hpp">
-      <Filter>Header Files\gui\spindletestsscreen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\spindletestscreen_screen\SpindleTestScreenView.hpp">
+      <Filter>Header Files\gui\spindletestscreen_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\spindletestsscreen_screen\SpindleTestsScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\spindletestsscreen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\spindletestscreen_screen\SpindleTestScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\spindletestscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

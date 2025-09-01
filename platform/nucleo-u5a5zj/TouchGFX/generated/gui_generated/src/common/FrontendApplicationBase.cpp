@@ -47,16 +47,16 @@
 #include <gui/heaterstatescreen_screen/HeaterStateScreenPresenter.hpp>
 #include <gui/testsscreen_screen/TestsScreenView.hpp>
 #include <gui/testsscreen_screen/TestsScreenPresenter.hpp>
-#include <gui/xaxistestsscreen_screen/XAxisTestsScreenView.hpp>
-#include <gui/xaxistestsscreen_screen/XAxisTestsScreenPresenter.hpp>
-#include <gui/yaxistestsscreen_screen/YAxisTestsScreenView.hpp>
-#include <gui/yaxistestsscreen_screen/YAxisTestsScreenPresenter.hpp>
-#include <gui/zaxistestsscreen_screen/ZAxisTestsScreenView.hpp>
-#include <gui/zaxistestsscreen_screen/ZAxisTestsScreenPresenter.hpp>
-#include <gui/spindletestsscreen_screen/SpindleTestsScreenView.hpp>
-#include <gui/spindletestsscreen_screen/SpindleTestsScreenPresenter.hpp>
-#include <gui/heatertestsscreen_screen/HeaterTestsScreenView.hpp>
-#include <gui/heatertestsscreen_screen/HeaterTestsScreenPresenter.hpp>
+#include <gui/xaxistestscreen_screen/XAxisTestScreenView.hpp>
+#include <gui/xaxistestscreen_screen/XAxisTestScreenPresenter.hpp>
+#include <gui/yaxistestscreen_screen/YAxisTestScreenView.hpp>
+#include <gui/yaxistestscreen_screen/YAxisTestScreenPresenter.hpp>
+#include <gui/zaxistestscreen_screen/ZAxisTestScreenView.hpp>
+#include <gui/zaxistestscreen_screen/ZAxisTestScreenPresenter.hpp>
+#include <gui/spindletestscreen_screen/SpindleTestScreenView.hpp>
+#include <gui/spindletestscreen_screen/SpindleTestScreenPresenter.hpp>
+#include <gui/heatertestscreen_screen/HeaterTestScreenView.hpp>
+#include <gui/heatertestscreen_screen/HeaterTestScreenPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -423,67 +423,67 @@ void FrontendApplicationBase::gotoTestsScreenScreenWipeTransitionWestImpl()
     touchgfx::makeTransition<TestsScreenView, TestsScreenPresenter, touchgfx::WipeTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// XAxisTestsScreen
+// XAxisTestScreen
 
-void FrontendApplicationBase::gotoXAxisTestsScreenScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoXAxisTestScreenScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoXAxisTestsScreenScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoXAxisTestScreenScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoXAxisTestsScreenScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoXAxisTestScreenScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<XAxisTestsScreenView, XAxisTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<XAxisTestScreenView, XAxisTestScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// YAxisTestsScreen
+// YAxisTestScreen
 
-void FrontendApplicationBase::gotoYAxisTestsScreenScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoYAxisTestScreenScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoYAxisTestsScreenScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoYAxisTestScreenScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoYAxisTestsScreenScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoYAxisTestScreenScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<YAxisTestsScreenView, YAxisTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<YAxisTestScreenView, YAxisTestScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// ZAxisTestsScreen
+// ZAxisTestScreen
 
-void FrontendApplicationBase::gotoZAxisTestsScreenScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoZAxisTestScreenScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoZAxisTestsScreenScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoZAxisTestScreenScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoZAxisTestsScreenScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoZAxisTestScreenScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<ZAxisTestsScreenView, ZAxisTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<ZAxisTestScreenView, ZAxisTestScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// SpindleTestsScreen
+// SpindleTestScreen
 
-void FrontendApplicationBase::gotoSpindleTestsScreenScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoSpindleTestScreenScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSpindleTestsScreenScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoSpindleTestScreenScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoSpindleTestsScreenScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoSpindleTestScreenScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<SpindleTestsScreenView, SpindleTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SpindleTestScreenView, SpindleTestScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// HeaterTestsScreen
+// HeaterTestScreen
 
-void FrontendApplicationBase::gotoHeaterTestsScreenScreenWipeTransitionEast()
+void FrontendApplicationBase::gotoHeaterTestScreenScreenWipeTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoHeaterTestsScreenScreenWipeTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoHeaterTestScreenScreenWipeTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoHeaterTestsScreenScreenWipeTransitionEastImpl()
+void FrontendApplicationBase::gotoHeaterTestScreenScreenWipeTransitionEastImpl()
 {
-    touchgfx::makeTransition<HeaterTestsScreenView, HeaterTestsScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<HeaterTestScreenView, HeaterTestScreenPresenter, touchgfx::WipeTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
