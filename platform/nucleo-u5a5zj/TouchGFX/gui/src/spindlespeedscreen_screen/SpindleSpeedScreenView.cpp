@@ -1,16 +1,31 @@
 #include <gui/spindlespeedscreen_screen/SpindleSpeedScreenView.hpp>
 
-SpindleSpeedScreenView::SpindleSpeedScreenView()
-{
-
+void SpindleSpeedScreenView::updateDisplayedValue() {
+    const uint8_t speedPercent = presenter->getSpindleSpeedPercent();
+    speedSelector.setDisplayedValue(speedPercent);
 }
 
-void SpindleSpeedScreenView::setupScreen()
-{
+SpindleSpeedScreenView::SpindleSpeedScreenView() {}
+
+void SpindleSpeedScreenView::setupScreen() {
     SpindleSpeedScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void SpindleSpeedScreenView::tearDownScreen()
-{
+void SpindleSpeedScreenView::tearDownScreen() {
     SpindleSpeedScreenViewBase::tearDownScreen();
+}
+
+void SpindleSpeedScreenView::increaseButtonPressed() {
+    presenter->increaseButtonPressed();
+    updateDisplayedValue();
+}
+
+void SpindleSpeedScreenView::decreaseButtonPressed() {
+    presenter->decreaseButtonPressed();
+    updateDisplayedValue();
+}
+
+void SpindleSpeedScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }

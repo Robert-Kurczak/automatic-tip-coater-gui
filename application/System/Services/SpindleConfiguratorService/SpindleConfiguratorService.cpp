@@ -64,19 +64,21 @@ bool SpindleConfiguratorService::isDirectionClockwise() const {
     return spindleController_.isDirectionClockwise();
 }
 
-void SpindleConfiguratorService::increaseRotationTime() {
-    spindleController_.setRotationTimeMillis(
-        spindleController_.getRotationTimeMillis() + rotationTimeStepInMillis_
+void SpindleConfiguratorService::increaseRotationTimeInMillis() {
+    spindleController_.setRotationTimeInMillis(
+        spindleController_.getRotationTimeInMillis() +
+        rotationTimeStepInMillis_
     );
 }
 
-void SpindleConfiguratorService::decreaseRotationTime() {
-    spindleController_.setRotationTimeMillis(
-        spindleController_.getRotationTimeMillis() - rotationTimeStepInMillis_
+void SpindleConfiguratorService::decreaseRotationTimeInMillis() {
+    spindleController_.setRotationTimeInMillis(
+        spindleController_.getRotationTimeInMillis() -
+        rotationTimeStepInMillis_
     );
 }
 
-void SpindleConfiguratorService::saveRotationTime() {
+void SpindleConfiguratorService::saveRotationTimeInMillis() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
@@ -85,7 +87,7 @@ void SpindleConfiguratorService::saveRotationTime() {
     // TODO implement
 }
 
-uint32_t SpindleConfiguratorService::getRotationTimeMillis() const {
-    return spindleController_.getRotationTimeMillis();
+uint32_t SpindleConfiguratorService::getRotationTimeInMillis() const {
+    return spindleController_.getRotationTimeInMillis();
 }
 }

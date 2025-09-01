@@ -36,9 +36,9 @@ protected:
     touchgfx::Container heaterButtonContainer;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  >  heaterButton;
     touchgfx::Box heaterButtonUnderline;
-    touchgfx::Container rotationButtonContainer;
-    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  >  rotationButton;
-    touchgfx::Box rotationButtonUnderline;
+    touchgfx::Container spindleButtonContainer;
+    touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  >  spindleButton;
+    touchgfx::Box spindleButtonUnderline;
     touchgfx::Container zAxisButtonContainer;
     touchgfx::TextButtonStyle< touchgfx::IconButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  >  zAxisButton;
     touchgfx::Box zAxisUnderline;

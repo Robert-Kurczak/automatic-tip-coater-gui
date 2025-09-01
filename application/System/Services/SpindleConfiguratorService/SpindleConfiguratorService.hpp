@@ -11,7 +11,7 @@ private:
     ISpindleController& spindleController_;
     const uint32_t showcaseRotationTimeInMillis_;
     const uint8_t speedPercentStep_;
-    const uint8_t rotationTimeStepInMillis_;
+    const uint32_t rotationTimeStepInMillis_;
 
 public:
     SpindleConfiguratorService(
@@ -34,9 +34,9 @@ public:
     virtual void saveDirection() override;
     virtual bool isDirectionClockwise() const override;
 
-    virtual void increaseRotationTime() override;
-    virtual void decreaseRotationTime() override;
-    virtual void saveRotationTime() override;
-    virtual uint32_t getRotationTimeMillis() const override;
+    virtual void increaseRotationTimeInMillis() override;
+    virtual void decreaseRotationTimeInMillis() override;
+    virtual void saveRotationTimeInMillis() override;
+    virtual uint32_t getRotationTimeInMillis() const override;
 };
 }

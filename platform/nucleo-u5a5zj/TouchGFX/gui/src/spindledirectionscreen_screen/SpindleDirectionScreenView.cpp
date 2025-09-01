@@ -1,16 +1,32 @@
 #include <gui/spindledirectionscreen_screen/SpindleDirectionScreenView.hpp>
 
-SpindleDirectionScreenView::SpindleDirectionScreenView()
-{
+void SpindleDirectionScreenView::updateDisplayedValue() {
+    const bool isClockwise = presenter->isSpindleDirectionClockwise();
 
+    spindleDirectionSelector.setClockwiseState(isClockwise);
 }
 
-void SpindleDirectionScreenView::setupScreen()
-{
+SpindleDirectionScreenView::SpindleDirectionScreenView() {}
+
+void SpindleDirectionScreenView::setupScreen() {
     SpindleDirectionScreenViewBase::setupScreen();
+    updateDisplayedValue();
 }
 
-void SpindleDirectionScreenView::tearDownScreen()
-{
+void SpindleDirectionScreenView::tearDownScreen() {
     SpindleDirectionScreenViewBase::tearDownScreen();
+}
+
+void SpindleDirectionScreenView::clockwiseButtonPressed() {
+    presenter->clockwiseButtonPressed();
+    updateDisplayedValue();
+}
+
+void SpindleDirectionScreenView::counterClockwiseButtonPressed() {
+    presenter->counterClockwiseButtonPressed();
+    updateDisplayedValue();
+}
+
+void SpindleDirectionScreenView::saveButtonPressed() {
+    presenter->saveButtonPressed();
 }

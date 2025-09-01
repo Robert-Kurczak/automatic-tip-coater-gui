@@ -25,7 +25,7 @@ void SpindleController::startTimedRotation(uint32_t rotationMillis) {
 }
 
 void SpindleController::startTimedRotation() {
-    startTimedRotation(rotationTimeMillis_);
+    startTimedRotation(rotationTimeInMillis_);
 }
 
 void SpindleController::stopRotation() {
@@ -62,9 +62,11 @@ uint8_t SpindleController::getSpeedPercent() const {
     return speedPercent_;
 }
 
-void SpindleController::setRotationTimeMillis(uint32_t value) {}
+void SpindleController::setRotationTimeInMillis(uint32_t value) {
+    rotationTimeInMillis_ = value;
+}
 
-uint32_t SpindleController::getRotationTimeMillis() const {
-    return rotationTimeMillis_;
+uint32_t SpindleController::getRotationTimeInMillis() const {
+    return rotationTimeInMillis_;
 }
 }

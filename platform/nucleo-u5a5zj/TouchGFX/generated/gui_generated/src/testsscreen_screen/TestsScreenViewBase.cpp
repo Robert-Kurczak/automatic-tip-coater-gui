@@ -54,24 +54,24 @@ TestsScreenViewBase::TestsScreenViewBase() :
 
     buttons.add(heaterButtonContainer);
 
-    rotationButtonContainer.setPosition(210, 210, 160, 160);
-    rotationButton.setBoxWithBorderPosition(0, 0, 160, 160);
-    rotationButton.setBorderSize(0);
-    rotationButton.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(17, 17, 27), touchgfx::Color::getColorFromRGB(24, 24, 37), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    rotationButton.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_360_60_60_E8F6FB_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_360_60_60_E8F6FB_SVG_ID));
-    rotationButton.setIconXY(50, 20);
-    rotationButton.setText(TypedText(T___SINGLEUSE_8SQU));
-    rotationButton.setTextPosition(0, 100, 160, 160);
-    rotationButton.setTextColors(touchgfx::Color::getColorFromRGB(205, 214, 244), touchgfx::Color::getColorFromRGB(205, 214, 244));
-    rotationButton.setAction(flexButtonCallback);
-    rotationButton.setPosition(0, 0, 160, 160);
-    rotationButtonContainer.add(rotationButton);
+    spindleButtonContainer.setPosition(210, 210, 160, 160);
+    spindleButton.setBoxWithBorderPosition(0, 0, 160, 160);
+    spindleButton.setBorderSize(0);
+    spindleButton.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(17, 17, 27), touchgfx::Color::getColorFromRGB(24, 24, 37), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    spindleButton.setIconBitmaps(Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_360_60_60_E8F6FB_SVG_ID), Bitmap(BITMAP_ICON_THEME_IMAGES_MAPS_360_60_60_E8F6FB_SVG_ID));
+    spindleButton.setIconXY(50, 20);
+    spindleButton.setText(TypedText(T___SINGLEUSE_8SQU));
+    spindleButton.setTextPosition(0, 100, 160, 160);
+    spindleButton.setTextColors(touchgfx::Color::getColorFromRGB(205, 214, 244), touchgfx::Color::getColorFromRGB(205, 214, 244));
+    spindleButton.setAction(flexButtonCallback);
+    spindleButton.setPosition(0, 0, 160, 160);
+    spindleButtonContainer.add(spindleButton);
 
-    rotationButtonUnderline.setPosition(0, 155, 160, 5);
-    rotationButtonUnderline.setColor(touchgfx::Color::getColorFromRGB(137, 220, 235));
-    rotationButtonContainer.add(rotationButtonUnderline);
+    spindleButtonUnderline.setPosition(0, 155, 160, 5);
+    spindleButtonUnderline.setColor(touchgfx::Color::getColorFromRGB(137, 220, 235));
+    spindleButtonContainer.add(spindleButtonUnderline);
 
-    buttons.add(rotationButtonContainer);
+    buttons.add(spindleButtonContainer);
 
     zAxisButtonContainer.setPosition(0, 210, 160, 160);
     zAxisButton.setBoxWithBorderPosition(0, 0, 160, 160);
@@ -191,10 +191,10 @@ void TestsScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButt
         //Go to ZAxisTestsScreen with screen transition towards East
         application().gotoZAxisTestsScreenScreenWipeTransitionEast();
     }
-    if (&src == &rotationButton)
+    if (&src == &spindleButton)
     {
         //GoToRotationTests
-        //When rotationButton clicked change screen to SpindleTestsScreen
+        //When spindleButton clicked change screen to SpindleTestsScreen
         //Go to SpindleTestsScreen with screen transition towards East
         application().gotoSpindleTestsScreenScreenWipeTransitionEast();
     }

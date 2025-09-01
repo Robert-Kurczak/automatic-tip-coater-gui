@@ -42,7 +42,7 @@ bool SpindleTestTask::isFinished() const {
         "Not implemented"
     );
     // TODO implement
-    return true;
+    return false;
 }
 
 SpindleTestResults SpindleTestTask::consumeResult() {

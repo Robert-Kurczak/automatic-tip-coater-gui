@@ -1,23 +1,15 @@
 #include <gui/containers/ValueSelector.hpp>
 
-ValueSelector::ValueSelector()
-{
+ValueSelector::ValueSelector() {}
 
-}
-
-void ValueSelector::initialize()
-{
+void ValueSelector::initialize() {
     ValueSelectorBase::initialize();
 }
 
-void ValueSelector::setDisplayedValue(const uint16_t value)
-{
+void ValueSelector::setDisplayedValue(const uint32_t value) {
     Unicode::snprintf(
-        displayedValueBuffer,
-        DISPLAYEDVALUE_SIZE,
-        "%d",
-        value
+        displayedValueBuffer, DISPLAYEDVALUE_SIZE, "%d", value
     );
 
-	displayedValue.invalidate();
+    displayedValue.invalidate();
 }

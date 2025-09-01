@@ -3,13 +3,15 @@
 
 #include <gui_generated/containers/SpindleDirectionSelectorBase.hpp>
 
-class SpindleDirectionSelector : public SpindleDirectionSelectorBase
-{
+class SpindleDirectionSelector : public SpindleDirectionSelectorBase {
 public:
     SpindleDirectionSelector();
     virtual ~SpindleDirectionSelector() {}
 
     virtual void initialize();
+
+    void setClockwiseState(const bool isClockwise);
+
 protected:
 };
 
