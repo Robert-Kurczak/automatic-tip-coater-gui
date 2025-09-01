@@ -111,7 +111,8 @@ private:
                    .yEnd_ = 1950
         },
         Vector2 {.x_ = 480, .y_ = 800},
-        1300
+        1300,
+        true
     };
 
     NullTask nullTask_ {};

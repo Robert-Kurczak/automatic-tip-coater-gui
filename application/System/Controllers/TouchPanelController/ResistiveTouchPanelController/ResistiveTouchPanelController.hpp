@@ -14,6 +14,7 @@ private:
     Rectangle rawWorkingArea_;
     const Vector2 pixelResolution_;
     const uint16_t pressureTreshold_;
+    const bool invertYAxis_;
 
     bool wasTouched_ = false;
     bool debounceInProgress_ = false;
@@ -29,7 +30,8 @@ public:
         ISystemClock& systemClock,
         Rectangle rawWorkingArea,
         Vector2 pixelResolution,
-        uint16_t pressureTreshold
+        uint16_t pressureTreshold,
+        bool invertYAxis = false
     );
 
     virtual void init() override;
