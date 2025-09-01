@@ -13,7 +13,7 @@ private:
     IMotor& motor_;
 
     uint8_t speedPercent_ = 50;
-    uint32_t rotationTimeMillis_ = 3000;
+    uint32_t rotationTimeInMillis_ = 3000;
 
 public:
     SpindleController(ILogger& logger, IMotor& motor);
@@ -36,7 +36,7 @@ public:
     virtual void setSpeedPercent(uint8_t value) override;
     virtual uint8_t getSpeedPercent() const override;
 
-    virtual void setRotationTimeMillis(uint32_t value) override;
-    virtual uint32_t getRotationTimeMillis() const override;
+    virtual void setRotationTimeInMillis(uint32_t value) override;
+    virtual uint32_t getRotationTimeInMillis() const override;
 };
 }

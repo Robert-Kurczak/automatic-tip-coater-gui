@@ -216,7 +216,7 @@
         <Translation Language="GB">Z Axis</Translation>
       </Text>
       <Text Id="__SingleUse_8SQU" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Rotation</Translation>
+        <Translation Language="GB">Spindle</Translation>
       </Text>
       <Text Id="__SingleUse_EUFV" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Heater</Translation>
@@ -384,7 +384,7 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_GK8B" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Rotation</Translation>
+        <Translation Language="GB">Spindle</Translation>
       </Text>
       <Text Id="__SingleUse_EM0R" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">X Axis</Translation>

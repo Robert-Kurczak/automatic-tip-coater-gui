@@ -308,15 +308,7 @@
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenView.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSelector.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenView.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenView.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenView.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\SettingDisplay.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SettingDisplayBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\SettingsFooter.hpp"/>

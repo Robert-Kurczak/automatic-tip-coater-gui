@@ -3484,7 +3484,7 @@
               },
               {
                 "Type": "Container",
-                "Name": "rotationButtonContainer",
+                "Name": "spindleButtonContainer",
                 "X": 210,
                 "Y": 210,
                 "Width": 160,
@@ -3492,7 +3492,7 @@
                 "Components": [
                   {
                     "Type": "FlexButton",
-                    "Name": "rotationButton",
+                    "Name": "spindleButton",
                     "Width": 160,
                     "Height": 160,
                     "ButtonTrigger": {
@@ -3551,7 +3551,7 @@
                   },
                   {
                     "Type": "Box",
-                    "Name": "rotationButtonUnderline",
+                    "Name": "spindleButtonUnderline",
                     "Y": 155,
                     "Width": 160,
                     "Height": 5,
@@ -3905,7 +3905,7 @@
             "InteractionName": "GoToRotationTests",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "rotationButton"
+              "TriggerComponent": "spindleButton"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -8859,7 +8859,7 @@
             "Name": "settingsList",
             "X": 13,
             "Y": 125,
-            "Width": 454,
+            "Width": 456,
             "Height": 550,
             "Direction": "East",
             "Components": [
@@ -9177,14 +9177,14 @@
               {
                 "Type": "Container",
                 "Name": "divider",
-                "X": 278,
+                "X": 291,
                 "Width": 43,
                 "Components": []
               },
               {
                 "Type": "ListLayout",
                 "Name": "valuesList",
-                "X": 321,
+                "X": 334,
                 "Width": 122,
                 "Height": 550,
                 "Direction": "South",

@@ -19,9 +19,9 @@ public:
     virtual void saveDirection() = 0;
     virtual bool isDirectionClockwise() const = 0;
 
-    virtual void increaseRotationTime() = 0;
-    virtual void decreaseRotationTime() = 0;
-    virtual void saveRotationTime() = 0;
-    virtual uint32_t getRotationTimeMillis() const = 0;
+    virtual void increaseRotationTimeInMillis() = 0;
+    virtual void decreaseRotationTimeInMillis() = 0;
+    virtual void saveRotationTimeInMillis() = 0;
+    virtual uint32_t getRotationTimeInMillis() const = 0;
 };
 }

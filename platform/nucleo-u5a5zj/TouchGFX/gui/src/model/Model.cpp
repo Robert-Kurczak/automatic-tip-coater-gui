@@ -61,7 +61,7 @@ void Model::pollSpindleTestTask() {
 
     if (task.isFinished()) {
         const ATC::SpindleTestResults results = task.consumeResult();
-        modelListener->handleRotatorTestTaskFinish(results);
+        modelListener->handleSpindleTestTaskFinish(results);
     }
 }
 

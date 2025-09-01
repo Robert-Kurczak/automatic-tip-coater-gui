@@ -178,12 +178,6 @@
     <Filter Include="Header Files\gui\testsscreen_screen">
       <UniqueIdentifier>0AD4322F-1BB1-4C88-6651-A1DEC7697CC7</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\rotationtimescreen_screen">
-      <UniqueIdentifier>029FCA1C-D093-3AAC-7DAC-47EA2DFBD06D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\rotationtestsscreen_screen">
-      <UniqueIdentifier>B84C039D-6DE4-4E00-3247-C695E551509F</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\calibratescreen_screen">
       <UniqueIdentifier>C5910890-F032-08A4-2A95-66FAADC9A218</UniqueIdentifier>
     </Filter>
@@ -202,9 +196,6 @@
     <Filter Include="Source Files\gui\zaxisspeedscreen_screen">
       <UniqueIdentifier>12E3EEDE-4608-EF4E-FA43-04665E6B67AC</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\rotationspeedscreen_screen">
-      <UniqueIdentifier>B220180A-1CBD-64EF-521F-3D0C4018B961</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\xaxisspeedscreen_screen">
       <UniqueIdentifier>6081FD90-DEBB-B2B9-D31B-8804D36EDC1C</UniqueIdentifier>
     </Filter>
@@ -222,9 +213,6 @@
     </Filter>
     <Filter Include="Header Files\gui\common">
       <UniqueIdentifier>C095D41C-070E-9DB3-1E03-3BD9ED8EF26B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\rotationdirectionscreen_screen">
-      <UniqueIdentifier>319ADB6D-2617-83CF-C3D3-C2366E0472B7</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\model">
       <UniqueIdentifier>038ED864-76DF-0E54-1C0B-78B469CCD928</UniqueIdentifier>
@@ -1369,32 +1357,8 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
       <Filter>Header Files\gui\model</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenPresenter.hpp">
-      <Filter>Header Files\gui\rotationdirectionscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationdirectionscreen_screen\RotationDirectionScreenView.hpp">
-      <Filter>Header Files\gui\rotationdirectionscreen_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\RotationDirectionSelector.hpp">
       <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenPresenter.hpp">
-      <Filter>Header Files\gui\rotationspeedscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationspeedscreen_screen\RotationSpeedScreenView.hpp">
-      <Filter>Header Files\gui\rotationspeedscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenPresenter.hpp">
-      <Filter>Header Files\gui\rotationtestsscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationtestsscreen_screen\RotationTestsScreenView.hpp">
-      <Filter>Header Files\gui\rotationtestsscreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenPresenter.hpp">
-      <Filter>Header Files\gui\rotationtimescreen_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\rotationtimescreen_screen\RotationTimeScreenView.hpp">
-      <Filter>Header Files\gui\rotationtimescreen_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\SettingDisplay.hpp">
       <Filter>Header Files\gui\containers</Filter>

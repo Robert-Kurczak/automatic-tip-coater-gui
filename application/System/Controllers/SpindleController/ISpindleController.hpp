@@ -24,7 +24,7 @@ public:
     virtual void setSpeedPercent(uint8_t value) = 0;
     virtual uint8_t getSpeedPercent() const = 0;
 
-    virtual void setRotationTimeMillis(uint32_t value) = 0;
-    virtual uint32_t getRotationTimeMillis() const = 0;
+    virtual void setRotationTimeInMillis(uint32_t value) = 0;
+    virtual uint32_t getRotationTimeInMillis() const = 0;
 };
 }
