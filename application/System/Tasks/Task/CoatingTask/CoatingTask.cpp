@@ -11,13 +11,13 @@ void CoatingTask::moveAxesToInitialPosition() {
 }
 
 void CoatingTask::waitForAxesAtInitialPosition() {
-    const bool xAxisAtPosition =
+    const bool isXAxisAtPosition =
         xAxisController_.isAtHeaterFrontPosition();
-    const bool yAxisAtPosition = yAxisController_.isAtStartPosition();
-    const bool zAxisAtPosition = zAxisController_.isAtStartPosition();
+    const bool isYAxisAtPosition = yAxisController_.isAtStartPosition();
+    const bool isZAxisAtPosition = zAxisController_.isAtStartPosition();
 
     const bool axesAtPosition =
-        xAxisAtPosition && yAxisAtPosition && zAxisAtPosition;
+        isXAxisAtPosition && isYAxisAtPosition && isZAxisAtPosition;
 
     if (axesAtPosition) {
         currentStage_++;

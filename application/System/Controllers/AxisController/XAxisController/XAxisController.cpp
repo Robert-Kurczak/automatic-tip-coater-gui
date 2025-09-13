@@ -9,6 +9,25 @@ void XAxisController::init() {}
 
 void XAxisController::tick() {}
 
+void XAxisController::moveToHomePosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool XAxisController::isAtHomePosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
 void XAxisController::moveToStartPosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,

@@ -9,6 +9,25 @@ void ZAxisController::init() {}
 
 void ZAxisController::tick() {}
 
+void ZAxisController::moveToHomePosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool ZAxisController::isAtHomePosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
 void ZAxisController::moveToStartPosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,

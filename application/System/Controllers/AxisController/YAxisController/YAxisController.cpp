@@ -9,6 +9,25 @@ void YAxisController::init() {}
 
 void YAxisController::tick() {}
 
+void YAxisController::moveToHomePosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool YAxisController::isAtHomePosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return true;
+}
+
 void YAxisController::moveToStartPosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
