@@ -20,6 +20,7 @@ private:
 
     TaskState state_ = TaskState::IDLE;
     bool wasSuccessful_ = false;
+    uint8_t currentStage_ = 0;
 
     void moveAxesToInitialPosition();
     void waitForAxesAtInitialPosition();
@@ -95,8 +96,6 @@ private:
 
         &CoatingTask::finishTask
     };
-
-    uint8_t currentStage_ = 0;
 
 public:
     CoatingTask(

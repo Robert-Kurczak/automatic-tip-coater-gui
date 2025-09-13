@@ -10,6 +10,9 @@ public:
     virtual void init() = 0;
     virtual void tick() = 0;
 
+    virtual void moveToHomePosition() = 0;
+    virtual bool isAtHomePosition() = 0;
+
     virtual void moveToStartPosition() = 0;
     virtual bool isAtStartPosition() const = 0;
 

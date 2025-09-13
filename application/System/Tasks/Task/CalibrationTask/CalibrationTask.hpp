@@ -1,15 +1,43 @@
 #pragma once
 
 #include "../IConsumableTask.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
+#include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
+#include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
 
 namespace ATC {
 class CalibrationTask : public IConsumableTask<bool> {
 private:
-    ILogger& logger_;
+    IXAxisController& xAxisController_;
+    IYAxisController& yAxisController_;
+    IZAxisController& zAxisController_;
+
+    TaskState state_ = TaskState::IDLE;
+    bool wasSuccessful_ = false;
+    uint8_t currentStage_ = 0;
+
+    void moveAxesToHomePosition();
+    void waitForAxesAtHomePosition();
+
+    void moveAxesToStartPosition();
+    void waitForAxesAtStartPosition();
+
+    void finishTask();
+
+    using stageMethod = void (CalibrationTask::*)();
+
+    static constexpr std::array<stageMethod, 3> stages_ {
+        &CalibrationTask::moveAxesToHomePosition,
+        &CalibrationTask::moveAxesToStartPosition,
+        &CalibrationTask::finishTask
+    };
 
 public:
-    CalibrationTask(ILogger& logger);
+    CalibrationTask(
+        IXAxisController& xAxisController,
+        IYAxisController& yAxisController,
+        IZAxisController& zAxisController
+    );
 
     virtual void start() override;
     virtual void reset() override;

@@ -175,7 +175,11 @@ private:
         coatingTask_
     };
 
-    CalibrationTask calibrationTask_ {logger_};
+    CalibrationTask calibrationTask_ {
+        xAxisController_,
+        yAxisController_,
+        zAxisController_
+    };
     ConsumableTaskService<bool> calibrationTaskService_ {
         taskScheduler_,
         calibrationTask_

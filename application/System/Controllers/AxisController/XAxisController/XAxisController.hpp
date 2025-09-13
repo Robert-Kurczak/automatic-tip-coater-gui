@@ -18,6 +18,9 @@ public:
     virtual void init() override;
     virtual void tick() override;
 
+    virtual void moveToHomePosition() override;
+    virtual bool isAtHomePosition() override;
+
     virtual void moveToStartPosition() override;
     virtual bool isAtStartPosition() const override;
 
