@@ -9,6 +9,54 @@ void YAxisController::init() {}
 
 void YAxisController::tick() {}
 
+bool YAxisController::wasFaultReported() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void YAxisController::moveToMinLimitPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool YAxisController::isAtMinLimitPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void YAxisController::moveToMaxLimitPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool YAxisController::isAtMaxLimitPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
 void YAxisController::moveToHomePosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
@@ -18,7 +66,7 @@ void YAxisController::moveToHomePosition() {
     // TODO implement
 }
 
-bool YAxisController::isAtHomePosition() {
+bool YAxisController::isAtHomePosition() const {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),

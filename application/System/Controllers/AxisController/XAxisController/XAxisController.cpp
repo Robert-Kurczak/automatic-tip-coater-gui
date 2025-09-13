@@ -9,6 +9,54 @@ void XAxisController::init() {}
 
 void XAxisController::tick() {}
 
+bool XAxisController::wasFaultReported() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void XAxisController::moveToMinLimitPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool XAxisController::isAtMinLimitPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void XAxisController::moveToMaxLimitPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool XAxisController::isAtMaxLimitPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
 void XAxisController::moveToHomePosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
@@ -18,7 +66,7 @@ void XAxisController::moveToHomePosition() {
     // TODO implement
 }
 
-bool XAxisController::isAtHomePosition() {
+bool XAxisController::isAtHomePosition() const {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),

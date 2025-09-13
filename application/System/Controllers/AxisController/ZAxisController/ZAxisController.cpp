@@ -9,6 +9,54 @@ void ZAxisController::init() {}
 
 void ZAxisController::tick() {}
 
+bool ZAxisController::wasFaultReported() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void ZAxisController::moveToMinLimitPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool ZAxisController::isAtMinLimitPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
+void ZAxisController::moveToMaxLimitPosition() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+bool ZAxisController::isAtMaxLimitPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
 void ZAxisController::moveToHomePosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
@@ -18,7 +66,7 @@ void ZAxisController::moveToHomePosition() {
     // TODO implement
 }
 
-bool ZAxisController::isAtHomePosition() {
+bool ZAxisController::isAtHomePosition() const {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
         std::source_location::current(),
