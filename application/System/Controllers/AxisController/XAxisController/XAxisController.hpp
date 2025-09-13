@@ -18,8 +18,16 @@ public:
     virtual void init() override;
     virtual void tick() override;
 
+    virtual bool wasFaultReported() const override;
+
+    virtual void moveToMinLimitPosition() override;
+    virtual bool isAtMinLimitPosition() const override;
+
+    virtual void moveToMaxLimitPosition() override;
+    virtual bool isAtMaxLimitPosition() const override;
+
     virtual void moveToHomePosition() override;
-    virtual bool isAtHomePosition() override;
+    virtual bool isAtHomePosition() const override;
 
     virtual void moveToStartPosition() override;
     virtual bool isAtStartPosition() const override;

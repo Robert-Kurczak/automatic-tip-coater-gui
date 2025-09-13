@@ -64,6 +64,7 @@ void CalibrationTask::start() {
 void CalibrationTask::reset() {
     state_ = TaskState::IDLE;
     currentStage_ = 0;
+    wasSuccessful_ = false;
 }
 
 void CalibrationTask::tick() {

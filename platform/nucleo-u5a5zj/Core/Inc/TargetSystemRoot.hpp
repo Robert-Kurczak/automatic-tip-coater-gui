@@ -26,9 +26,7 @@
 #include "application/System/Services/SpindleConfiguratorService/SpindleConfiguratorService.hpp"
 #include "application/System/Services/TaskControlService/TaskControlService.hpp"
 #include "application/System/Services/TouchPanelService/TouchPanelService.hpp"
-#include "application/System/Tasks/Task/AxisTestTask/XAxisTestTask/XAxisTestTask.hpp"
-#include "application/System/Tasks/Task/AxisTestTask/YAxisTestTask/YAxisTestTask.hpp"
-#include "application/System/Tasks/Task/AxisTestTask/ZAxisTestTask/ZAxisTestTask.hpp"
+#include "application/System/Tasks/Task/AxisTestTask/AxisTestTask.hpp"
 #include "application/System/Tasks/Task/CalibrationTask/CalibrationTask.hpp"
 #include "application/System/Tasks/Task/CoatingTask/CoatingTask.hpp"
 #include "application/System/Tasks/Task/HeaterTestTask/HeaterTestTask.hpp"
@@ -185,19 +183,19 @@ private:
         calibrationTask_
     };
 
-    XAxisTestTask xAxisTestTask_ {logger_};
+    AxisTestTask xAxisTestTask_ {xAxisController_, systemClock_, 10000};
     ConsumableTaskService<AxisTestResults> xAxisTestTaskService_ {
         taskScheduler_,
         xAxisTestTask_
     };
 
-    YAxisTestTask yAxisTestTask_ {logger_};
+    AxisTestTask yAxisTestTask_ {yAxisController_, systemClock_, 50000};
     ConsumableTaskService<AxisTestResults> yAxisTestTaskService_ {
         taskScheduler_,
         yAxisTestTask_
     };
 
-    ZAxisTestTask zAxisTestTask_ {logger_};
+    AxisTestTask zAxisTestTask_ {xAxisController_, systemClock_, 30000};
     ConsumableTaskService<AxisTestResults> zAxisTestTaskService_ {
         taskScheduler_,
         zAxisTestTask_
