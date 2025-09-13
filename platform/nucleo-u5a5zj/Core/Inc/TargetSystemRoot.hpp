@@ -207,7 +207,11 @@ private:
         spindleTestTask
     };
 
-    HeaterTestTask heaterTestTask_ {logger_, heaterController_};
+    HeaterTestTask heaterTestTask_ {
+        heaterController_,
+        systemClock_,
+        30000
+    };
     ConsumableTaskService<HeaterTestResults> heaterTestTaskService_ {
         taskScheduler_,
         heaterTestTask_

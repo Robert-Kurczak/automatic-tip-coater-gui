@@ -55,9 +55,10 @@ void AxisTestTask::waitForAxisAtMaxLimitPosition() {
 }
 
 void AxisTestTask::finishTask() {
-    state_ = TaskState::FINISHED;
     testResults_.endLimitSwitchSuccess =
         !axisController_.wasFaultReported();
+
+    state_ = TaskState::FINISHED;
 }
 
 AxisTestTask::AxisTestTask(
