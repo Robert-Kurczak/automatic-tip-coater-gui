@@ -11,6 +11,16 @@ void SpindleController::init() {
     motor_.init();
 }
 
+bool SpindleController::wasFaultReported() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return false;
+}
+
 void SpindleController::startRotation() {
     motor_.startRotation(speedPercent_);
 }

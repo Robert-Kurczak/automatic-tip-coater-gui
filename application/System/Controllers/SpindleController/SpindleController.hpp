@@ -21,6 +21,8 @@ public:
     virtual void tick() override;
     virtual void init() override;
 
+    virtual bool wasFaultReported() override;
+
     virtual void startRotation() override;
     virtual void startTimedRotation(uint32_t rotationMillis) override;
     virtual void startTimedRotation() override;

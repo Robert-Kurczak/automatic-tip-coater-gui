@@ -1,58 +1,69 @@
 #include "SpindleTestTask.hpp"
 
+#include <functional>
+
 namespace ATC {
+void SpindleTestTask::startSpindle() {
+    spindleController_.startTimedRotation(rotationDurationInMillis_);
+
+    currentStage_++;
+}
+
+void SpindleTestTask::waitForRotationToFinish() {
+    const bool isRotationFinished =
+        spindleController_.isTimedRotationFinished();
+
+    if (isRotationFinished) {
+        currentStage_++;
+    }
+}
+
+void SpindleTestTask::finishTask() {
+    testResults_.motorDriverSuccess =
+        !spindleController_.wasFaultReported();
+
+    state_ = TaskState::FINISHED;
+}
+
 SpindleTestTask::SpindleTestTask(
-    ILogger& logger,
-    ISpindleController& spindleController
+    ISpindleController& spindleController,
+    uint32_t rotationDurationInMillis
 ) :
-    logger_(logger),
-    spindleController_(spindleController) {}
+    spindleController_(spindleController),
+    rotationDurationInMillis_(rotationDurationInMillis) {}
 
 void SpindleTestTask::start() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
-    );
-    // TODO implement
+    state_ = TaskState::RUNNING;
 }
 
 void SpindleTestTask::reset() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
-    );
-    // TODO implement
+    state_ = TaskState::IDLE;
+    currentStage_ = 0;
+
+    testResults_.motorDriverSuccess = false;
 }
 
 void SpindleTestTask::tick() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
-    );
-    // TODO implement
+    if (state_ != TaskState::RUNNING) {
+        return;
+    }
+
+    std::invoke(stages_[currentStage_], this);
 }
 
 bool SpindleTestTask::isFinished() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
-    );
-    // TODO implement
-    return false;
+    return state_ == TaskState::FINISHED;
 }
 
 SpindleTestResults SpindleTestTask::consumeResult() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
-    );
-    // TODO implement
-    return SpindleTestResults{.motorDriverSuccess = true};
+    if (state_ != TaskState::FINISHED) {
+        return SpindleTestResults {.motorDriverSuccess = false};
+    }
+
+    const SpindleTestResults result = testResults_;
+    reset();
+
+    return result;
 }
 
 }

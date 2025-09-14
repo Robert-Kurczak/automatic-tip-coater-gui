@@ -14,10 +14,8 @@ private:
     ISystemClock& systemClock_;
     const uint32_t axisMoveTimeoutInMillis_;
 
-    uint32_t axisMoveStartTimestampInMillis_ = 0;
-
     TaskState state_ = TaskState::IDLE;
-
+    uint32_t axisMoveStartTimestampInMillis_ = 0;
     AxisTestResults testResults_ {
         .startLimitSwitchSuccess = false,
         .endLimitSwitchSuccess = false,
