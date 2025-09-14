@@ -8,6 +8,8 @@ public:
     virtual void tick() = 0;
     virtual void init() = 0;
 
+    virtual bool wasFaultReported() = 0;
+
     virtual void startRotation() = 0;
 
     virtual void startTimedRotation(uint32_t rotationMillis) = 0;

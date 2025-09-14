@@ -201,10 +201,10 @@ private:
         zAxisTestTask_
     };
 
-    SpindleTestTask spindleTestTask {logger_, spindleController_};
+    SpindleTestTask spindleTestTask_ {spindleController_, 10000};
     ConsumableTaskService<SpindleTestResults> spindleTestTaskService_ {
         taskScheduler_,
-        spindleTestTask
+        spindleTestTask_
     };
 
     HeaterTestTask heaterTestTask_ {

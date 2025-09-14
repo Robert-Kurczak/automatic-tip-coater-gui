@@ -3,18 +3,38 @@
 #include "../IConsumableTask.hpp"
 #include "SpindleTestResults.hpp"
 #include "application/System/Controllers/SpindleController/ISpindleController.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Ports/ISystemClock.hpp"
+
+#include <array>
 
 namespace ATC {
 class SpindleTestTask : public IConsumableTask<SpindleTestResults> {
 private:
-    ILogger& logger_;
     ISpindleController& spindleController_;
+    const uint32_t rotationDurationInMillis_;
+
+    TaskState state_ = TaskState::IDLE;
+    SpindleTestResults testResults_ {.motorDriverSuccess = false};
+
+    uint8_t currentStage_ = 0;
+
+    void startSpindle();
+    void waitForRotationToFinish();
+
+    void finishTask();
+
+    using stageMethod = void (SpindleTestTask::*)();
+
+    static constexpr std::array<stageMethod, 3> stages_ {
+        &SpindleTestTask::startSpindle,
+        &SpindleTestTask::waitForRotationToFinish,
+        &SpindleTestTask::finishTask
+    };
 
 public:
     SpindleTestTask(
-        ILogger& logger_,
-        ISpindleController& spindleController
+        ISpindleController& spindleController,
+        uint32_t rotationDurationInMillis
     );
 
     virtual void start() override;

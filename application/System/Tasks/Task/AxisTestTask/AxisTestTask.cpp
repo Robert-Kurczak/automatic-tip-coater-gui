@@ -55,7 +55,7 @@ void AxisTestTask::waitForAxisAtMaxLimitPosition() {
 }
 
 void AxisTestTask::finishTask() {
-    testResults_.endLimitSwitchSuccess =
+    testResults_.motorDriverSuccess =
         !axisController_.wasFaultReported();
 
     state_ = TaskState::FINISHED;
