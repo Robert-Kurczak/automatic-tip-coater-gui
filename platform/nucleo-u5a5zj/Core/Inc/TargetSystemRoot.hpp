@@ -161,7 +161,18 @@ private:
         .heaterConfigurator = heaterConfiguratorService_
     };
 
+    CalibrationTask calibrationTask_ {
+        xAxisController_,
+        yAxisController_,
+        zAxisController_
+    };
+    ConsumableTaskService<bool> calibrationTaskService_ {
+        taskScheduler_,
+        calibrationTask_
+    };
+
     CoatingTask coatingTask_ {
+        calibrationTask_,
         xAxisController_,
         yAxisController_,
         zAxisController_,
@@ -173,29 +184,34 @@ private:
         coatingTask_
     };
 
-    CalibrationTask calibrationTask_ {
+    AxisTestTask xAxisTestTask_ {
+        calibrationTask_,
         xAxisController_,
-        yAxisController_,
-        zAxisController_
+        systemClock_,
+        10000
     };
-    ConsumableTaskService<bool> calibrationTaskService_ {
-        taskScheduler_,
-        calibrationTask_
-    };
-
-    AxisTestTask xAxisTestTask_ {xAxisController_, systemClock_, 10000};
     ConsumableTaskService<AxisTestResults> xAxisTestTaskService_ {
         taskScheduler_,
         xAxisTestTask_
     };
 
-    AxisTestTask yAxisTestTask_ {yAxisController_, systemClock_, 50000};
+    AxisTestTask yAxisTestTask_ {
+        calibrationTask_,
+        yAxisController_,
+        systemClock_,
+        50000
+    };
     ConsumableTaskService<AxisTestResults> yAxisTestTaskService_ {
         taskScheduler_,
         yAxisTestTask_
     };
 
-    AxisTestTask zAxisTestTask_ {xAxisController_, systemClock_, 30000};
+    AxisTestTask zAxisTestTask_ {
+        calibrationTask_,
+        xAxisController_,
+        systemClock_,
+        30000
+    };
     ConsumableTaskService<AxisTestResults> zAxisTestTaskService_ {
         taskScheduler_,
         zAxisTestTask_

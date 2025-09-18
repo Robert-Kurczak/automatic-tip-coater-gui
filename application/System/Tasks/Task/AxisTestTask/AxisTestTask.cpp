@@ -3,6 +3,24 @@
 #include <functional>
 
 namespace ATC {
+void AxisTestTask::calibrateAxes() {
+    calibrationTask_.start();
+}
+
+void AxisTestTask::waitForCalibrationFinish() {
+    calibrationTask_.tick();
+
+    if (calibrationTask_.isFinished()) {
+        const bool wasCalibrationSuccessful =
+            calibrationTask_.consumeResult();
+
+        if (wasCalibrationSuccessful) {
+            currentStage_++;
+        } else {
+            state_ = TaskState::FINISHED;
+        }
+    }
+}
 
 void AxisTestTask::moveAxisToMinLimitPosition() {
     axisController_.moveToMinLimitPosition();
@@ -55,17 +73,18 @@ void AxisTestTask::waitForAxisAtMaxLimitPosition() {
 }
 
 void AxisTestTask::finishTask() {
-    testResults_.motorDriverSuccess =
-        !axisController_.wasFaultReported();
+    testResults_.motorDriverSuccess = !axisController_.wasFaultReported();
 
     state_ = TaskState::FINISHED;
 }
 
 AxisTestTask::AxisTestTask(
+    IConsumableTask<bool>& calibrationTask,
     IAxisController& axisController,
     ISystemClock& systemClock,
     uint32_t axisMoveTimeoutInMillis
 ) :
+    calibrationTask_(calibrationTask),
     axisController_(axisController),
     systemClock_(systemClock),
     axisMoveTimeoutInMillis_(axisMoveTimeoutInMillis) {}

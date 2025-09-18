@@ -3,6 +3,25 @@
 #include <functional>
 
 namespace ATC {
+void CoatingTask::calibrateAxes() {
+    calibrationTask_.start();
+}
+
+void CoatingTask::waitForCalibrationFinish() {
+    calibrationTask_.tick();
+
+    if (calibrationTask_.isFinished()) {
+        const bool wasCalibrationSuccessful =
+            calibrationTask_.consumeResult();
+
+        if (wasCalibrationSuccessful) {
+            currentStage_++;
+        } else {
+            state_ = TaskState::FINISHED;
+        }
+    }
+}
+
 void CoatingTask::moveAxesToInitialPosition() {
     xAxisController_.moveToHeaterFrontPosition();
     yAxisController_.moveToStartPosition();
@@ -128,12 +147,14 @@ void CoatingTask::finishTask() {
 }
 
 CoatingTask::CoatingTask(
+    IConsumableTask<bool>& calibrationTask,
     IXAxisController& xAxisController,
     IYAxisController& yAxisController,
     IZAxisController& zAxisController,
     ISpindleController& spindleController,
     IHeaterController& heaterController
 ) :
+    calibrationTask_(calibrationTask),
     xAxisController_(xAxisController),
     yAxisController_(yAxisController),
     zAxisController_(zAxisController),
