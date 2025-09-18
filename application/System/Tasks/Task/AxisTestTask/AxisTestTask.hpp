@@ -10,6 +10,7 @@
 namespace ATC {
 class AxisTestTask : public IConsumableTask<AxisTestResults> {
 private:
+    IConsumableTask<bool>& calibrationTask_;
     IAxisController& axisController_;
     ISystemClock& systemClock_;
     const uint32_t axisMoveTimeoutInMillis_;
@@ -24,6 +25,9 @@ private:
 
     uint8_t currentStage_ = 0;
 
+    void calibrateAxes();
+    void waitForCalibrationFinish();
+
     void moveAxisToMinLimitPosition();
     void waitForAxisAtMinLimitPosition();
 
@@ -34,7 +38,9 @@ private:
 
     using stageMethod = void (AxisTestTask::*)();
 
-    static constexpr std::array<stageMethod, 5> stages_ {
+    static constexpr std::array<stageMethod, 7> stages_ {
+        &AxisTestTask::calibrateAxes,
+        &AxisTestTask::waitForCalibrationFinish,
         &AxisTestTask::moveAxisToMinLimitPosition,
         &AxisTestTask::waitForAxisAtMinLimitPosition,
         &AxisTestTask::moveAxisToMaxLimitPosition,
@@ -44,6 +50,7 @@ private:
 
 public:
     AxisTestTask(
+        IConsumableTask<bool>& calibrationTask,
         IAxisController& axisController,
         ISystemClock& systemClock,
         uint32_t axisMoveTimeoutInMillis

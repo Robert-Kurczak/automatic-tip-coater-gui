@@ -12,6 +12,7 @@
 namespace ATC {
 class CoatingTask : public IConsumableTask<bool> {
 private:
+    IConsumableTask<bool>& calibrationTask_;
     IXAxisController& xAxisController_;
     IYAxisController& yAxisController_;
     IZAxisController& zAxisController_;
@@ -21,6 +22,9 @@ private:
     TaskState state_ = TaskState::IDLE;
     bool wasSuccessful_ = false;
     uint8_t currentStage_ = 0;
+
+    void calibrateAxes();
+    void waitForCalibrationFinish();
 
     void moveAxesToInitialPosition();
     void waitForAxesAtInitialPosition();
@@ -99,6 +103,7 @@ private:
 
 public:
     CoatingTask(
+        IConsumableTask<bool>& calibrationTask,
         IXAxisController& xAxisController,
         IYAxisController& yAxisController,
         IZAxisController& zAxisController,
