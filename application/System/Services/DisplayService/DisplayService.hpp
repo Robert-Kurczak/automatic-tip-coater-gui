@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IDisplayService.hpp"
-#include "application/system/Drivers/Display/IDisplay.hpp"
+#include "application/System/Drivers/Display/IDisplay.hpp"
 
 namespace ATC {
 class DisplayService : public IDisplayService {
