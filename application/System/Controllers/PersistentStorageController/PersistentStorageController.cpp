@@ -1,23 +1,35 @@
 #include "PersistentStorageController.hpp"
+
 #include "application/Utils/Byte.hpp"
 
 namespace ATC {
 uint32_t PersistentStorageController::calculateDataChecksum(
-    const PersistentData& data
-) {
-    // TODO implement
-    return 0;
+    PersistentData data
+) const {
+    data.checksum = 0;
+
+    uint32_t calculatedChecksum = 0;
+    for (const uint8_t byte : toByteSpan(data)) {
+        calculatedChecksum += byte;
+    }
+
+    return calculatedChecksum;
 }
 
 void PersistentStorageController::createDefaultData() {
-    PersistentData defaultData {};
-
-    //
+    PersistentData defaultData {
+        .xAxisConfig = AxisPersistentConfig::defaultXAxisConfig(),
+        .yAxisConfig = AxisPersistentConfig::defaultYAxisConfig(),
+        .zAxisConfig = AxisPersistentConfig::defaultZAxisConfig(),
+        .spindleConfig = SpindlePersistentConfig::defaultConfig(),
+        .heaterConfig = HeaterPersistentConfig::defaultConfig(),
+        .signature = PersistentData::EXPECTED_SIGNATURE,
+        .checksum = 0,
+    };
     defaultData.checksum = calculateDataChecksum(defaultData);
 
-    // TODO implement
-    storedData_ = defaultData;
     persistentStorage_.write(0, toByteSpan(defaultData));
+    storedData_ = defaultData;
 }
 
 void PersistentStorageController::loadData() {
@@ -38,11 +50,17 @@ void PersistentStorageController::updateStoredChecksum() {
 }
 
 void PersistentStorageController::validateStoredData() {
-    uint32_t calculatedChecksum = calculateDataChecksum(storedData_);
+    const bool isSignatureValid =
+        storedData_.signature == PersistentData::EXPECTED_SIGNATURE;
 
-    if (calculatedChecksum != storedData_.checksum) {
-        createDefaultData();
+    const bool isChecksumValid =
+        storedData_.checksum == calculateDataChecksum(storedData_);
+
+    if (isSignatureValid && isChecksumValid) {
+        return;
     }
+
+    createDefaultData();
 }
 
 PersistentStorageController::PersistentStorageController(
