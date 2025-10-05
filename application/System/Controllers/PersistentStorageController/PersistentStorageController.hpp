@@ -7,19 +7,22 @@ namespace ATC {
 class PersistentStorageController : public IPersistentStorageController {
 private:
     struct PersistentData {
-        uint32_t checksum;
+        static constexpr uint32_t EXPECTED_SIGNATURE = 0xDEADBEEF;
+
         AxisPersistentConfig xAxisConfig;
         AxisPersistentConfig yAxisConfig;
         AxisPersistentConfig zAxisConfig;
         SpindlePersistentConfig spindleConfig;
         HeaterPersistentConfig heaterConfig;
+        uint32_t signature;
+        uint32_t checksum;
     };
 
     IPersistentStorage& persistentStorage_;
 
     PersistentData storedData_;
 
-    uint32_t calculateDataChecksum(const PersistentData& data);
+    uint32_t calculateDataChecksum(PersistentData data) const;
     void createDefaultData();
     void updateStoredChecksum();
     void loadData();
