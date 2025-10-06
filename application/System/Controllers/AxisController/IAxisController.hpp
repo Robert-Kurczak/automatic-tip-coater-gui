@@ -12,6 +12,9 @@ public:
 
     virtual bool wasFaultReported() const = 0;
 
+    virtual void moveToPosition(uint32_t position) = 0;
+    virtual uint32_t getCurrentPosition() const = 0;
+
     virtual void moveToMinLimitPosition() = 0;
     virtual bool isAtMinLimitPosition() const = 0;
 

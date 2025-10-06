@@ -4,6 +4,7 @@
 #include "application/System/Controllers/AxisController/YAxisController/IYAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/IZAxisController.hpp"
 #include "application/System/Controllers/HeaterController/IHeaterController.hpp"
+#include "application/System/Controllers/PersistentStorageController/IPersistentStorageController.hpp"
 #include "application/System/Controllers/SpindleController/ISpindleController.hpp"
 #include "application/System/Controllers/TouchPanelController/ITouchPanelController.hpp"
 #include "application/System/Drivers/Display/IDisplay.hpp"
@@ -11,6 +12,7 @@
 
 namespace ATC {
 struct SystemComponents {
+    IPersistentStorageController& persistentStorageController;
     IXAxisController& xAxisController;
     IYAxisController& yAxisController;
     IZAxisController& zAxisController;

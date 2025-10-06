@@ -7,6 +7,8 @@ class IAxisConfiguratorService {
 public:
     virtual ~IAxisConfiguratorService() = default;
 
+    virtual void resetBufferedConfig() = 0;
+
     virtual void showcaseStartPosition() = 0;
     virtual void increaseStartPosition() = 0;
     virtual void decreaseStartPosition() = 0;

@@ -7,6 +7,8 @@
 namespace ATC {
 class IPersistentStorageController {
 public:
+    virtual ~IPersistentStorageController() = default;
+
     virtual void init() = 0;
 
     virtual void saveXAxisConfig(const AxisPersistentConfig& config) = 0;

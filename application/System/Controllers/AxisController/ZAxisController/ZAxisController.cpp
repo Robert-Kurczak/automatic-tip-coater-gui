@@ -19,6 +19,25 @@ bool ZAxisController::wasFaultReported() const {
     return false;
 }
 
+void ZAxisController::moveToPosition(uint32_t position) {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+uint32_t ZAxisController::getCurrentPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return 0;
+}
+
 void ZAxisController::moveToMinLimitPosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,

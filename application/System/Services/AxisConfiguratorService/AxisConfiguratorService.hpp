@@ -2,24 +2,37 @@
 
 #include "IAxisConfiguratorService.hpp"
 #include "application/System/Controllers/AxisController/IAxisController.hpp"
+#include "application/System/Controllers/PersistentStorageController/IPersistentStorageController.hpp"
 #include "application/System/Drivers/Logger/ILogger.hpp"
 
 namespace ATC {
 class AxisConfiguratorService : public IAxisConfiguratorService {
+protected:
+    IPersistentStorageController& persistentStorageController_;
+
+    uint32_t bufferedStartPosition_ = 0;
+    uint32_t bufferedEndPosition_ = 0;
+    uint32_t bufferedSpeed_ = 0;
+
+    virtual void saveConfigToPersistentMemory() = 0;
+
 private:
-    ILogger& logger_;
     IAxisController& axisController_;
 
     const uint8_t positionStep_;
     const uint8_t speedStep_;
+    const uint32_t speedShowcasePosition_;
 
 public:
     AxisConfiguratorService(
-        ILogger& logger,
+        IPersistentStorageController& persistentStorageController,
         IAxisController& axisController,
         uint8_t positionStep,
-        uint8_t speedStep
+        uint8_t speedStep,
+        uint32_t speedShowcasePosition
     );
+
+    virtual void resetBufferedConfig() override;
 
     virtual void showcaseStartPosition() override;
     virtual void increaseStartPosition() override;
