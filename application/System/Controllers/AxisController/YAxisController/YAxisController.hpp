@@ -23,6 +23,9 @@ public:
 
     virtual bool wasFaultReported() const override;
 
+    virtual void moveToPosition(uint32_t position) override;
+    virtual uint32_t getCurrentPosition() const override;
+
     virtual void moveToMinLimitPosition() override;
     virtual bool isAtMinLimitPosition() const override;
 

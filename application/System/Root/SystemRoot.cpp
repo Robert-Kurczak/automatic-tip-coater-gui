@@ -9,6 +9,7 @@ SystemRoot::SystemRoot(
     systemApi_(systemApi) {}
 
 void SystemRoot::init() {
+    systemComponents_.persistentStorageController.init();
     systemComponents_.xAxisController.init();
     systemComponents_.yAxisController.init();
     systemComponents_.zAxisController.init();

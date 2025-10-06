@@ -9,17 +9,21 @@
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
 #include "application/System/Controllers/HeaterController/HysteresisHeaterController/HysteresisHeaterController.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentStorageController.hpp"
 #include "application/System/Controllers/SpindleController/SpindleController.hpp"
 #include "application/System/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
 #include "application/System/Drivers/Display/Ws17143Display/Ws17143Display.hpp"
 #include "application/System/Drivers/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/System/Drivers/Logger/UartLogger/UartLogger.hpp"
 #include "application/System/Drivers/Motor/PwmDcMotor/PwmDcMotor.hpp"
+#include "application/System/Drivers/PersistentStorage/Eeprom/Eeprom.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
 #include "application/System/Drivers/Switch/GpioActiveHighSwitch/GpioActiveHighSwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
 #include "application/System/Root/SystemRoot.hpp"
-#include "application/System/Services/AxisConfiguratorService/AxisConfiguratorService.hpp"
+#include "application/System/Services/AxisConfiguratorService/XAxisConfiguratorService/XAxisConfiguratorService.hpp"
+#include "application/System/Services/AxisConfiguratorService/YAxisConfiguratorService/YAxisConfiguratorService.hpp"
+#include "application/System/Services/AxisConfiguratorService/ZAxisConfiguratorService/ZAxisConfiguratorService.hpp"
 #include "application/System/Services/ConsumableTaskService/ConsumableTaskService.hpp"
 #include "application/System/Services/DisplayService/DisplayService.hpp"
 #include "application/System/Services/HeaterConfiguratorService/HeaterConfiguratorService.hpp"
@@ -44,6 +48,9 @@ class TargetSystemRoot : public SystemRoot {
 private:
     Uart uart_ {huart1};
     UartLogger logger_ {uart_};
+
+    Eeprom eeprom_ {logger_};
+    PersistentStorageController persistentStorageController_ {eeprom_};
 
     XAxisController xAxisController_ {logger_};
     YAxisController yAxisController_ {logger_};
@@ -117,6 +124,7 @@ private:
     SingleTaskScheduler taskScheduler_ {nullTask_};
 
     SystemComponents targetComponents_ {
+        .persistentStorageController = persistentStorageController_,
         .xAxisController = xAxisController_,
         .yAxisController = yAxisController_,
         .zAxisController = zAxisController_,
@@ -134,12 +142,27 @@ private:
         .touchPanel = touchPanelService_
     };
 
-    AxisConfiguratorService
-        xAxisConfiguratorService_ {logger_, xAxisController_, 100, 5};
-    AxisConfiguratorService
-        yAxisConfiguratorService_ {logger_, yAxisController_, 100, 5};
-    AxisConfiguratorService
-        zAxisConfiguratorService_ {logger_, zAxisController_, 100, 5};
+    XAxisConfiguratorService xAxisConfiguratorService_ {
+        persistentStorageController_,
+        xAxisController_,
+        100,
+        5,
+        1000
+    };
+    YAxisConfiguratorService yAxisConfiguratorService_ {
+        persistentStorageController_,
+        yAxisController_,
+        100,
+        5,
+        1000
+    };
+    ZAxisConfiguratorService zAxisConfiguratorService_ {
+        persistentStorageController_,
+        zAxisController_,
+        100,
+        5,
+        1000
+    };
     SpindleConfiguratorService spindleConfiguratorService_ {
         logger_,
         spindleController_,

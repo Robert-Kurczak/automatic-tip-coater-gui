@@ -19,6 +19,25 @@ bool YAxisController::wasFaultReported() const {
     return false;
 }
 
+void YAxisController::moveToPosition(uint32_t position) {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+uint32_t YAxisController::getCurrentPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return 0;
+}
+
 void YAxisController::moveToMinLimitPosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,

@@ -19,6 +19,25 @@ bool XAxisController::wasFaultReported() const {
     return false;
 }
 
+void XAxisController::moveToPosition(uint32_t position) {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
+uint32_t XAxisController::getCurrentPosition() const {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+    return 0;
+}
+
 void XAxisController::moveToMinLimitPosition() {
     logger_.log(
         LOG_LEVEL::ERROR_LOG,
