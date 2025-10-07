@@ -22,6 +22,8 @@ public:
         uint32_t rotationTimeStepInMillis
     );
 
+    virtual void resetBufferedConfig() override;
+
     virtual void showcaseRotation() override;
 
     virtual void increaseSpeedPercent() override;

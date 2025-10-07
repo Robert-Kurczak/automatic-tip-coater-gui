@@ -19,6 +19,7 @@ public:
     SpindleSpeedScreenViewBase();
     virtual ~SpindleSpeedScreenViewBase();
     virtual void setupScreen();
+    virtual void transitionBegins();
 
     /*
      * Virtual Action Handlers
@@ -32,6 +33,10 @@ public:
         // Override and implement this function in SpindleSpeedScreen
     }
     virtual void saveButtonPressed()
+    {
+        // Override and implement this function in SpindleSpeedScreen
+    }
+    virtual void resetConfigurator()
     {
         // Override and implement this function in SpindleSpeedScreen
     }

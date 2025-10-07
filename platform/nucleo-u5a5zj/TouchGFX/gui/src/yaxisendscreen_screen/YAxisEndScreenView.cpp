@@ -16,6 +16,10 @@ void YAxisEndScreenView::tearDownScreen() {
     YAxisEndScreenViewBase::tearDownScreen();
 }
 
+void YAxisEndScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void YAxisEndScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

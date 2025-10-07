@@ -10,6 +10,13 @@ void YAxisSpeedScreenPresenter::activate() {}
 
 void YAxisSpeedScreenPresenter::deactivate() {}
 
+void YAxisSpeedScreenPresenter::resetConfigurator() {
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.yAxisConfigurator;
+
+    axisConfigurator.resetBufferedConfig();
+}
+
 void YAxisSpeedScreenPresenter::increaseButtonPressed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.yAxisConfigurator;

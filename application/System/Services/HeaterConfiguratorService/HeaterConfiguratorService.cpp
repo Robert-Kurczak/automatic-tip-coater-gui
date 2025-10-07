@@ -10,6 +10,15 @@ HeaterConfiguratorService::HeaterConfiguratorService(
     heaterController_(heaterController),
     temperatureInCelsiusStep_(temperatureCelsiusStep) {}
 
+void HeaterConfiguratorService::resetBufferedConfig() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
 void HeaterConfiguratorService::increaseTemperatureInCelsius() {
     heaterController_.setTargetTemperatureInCelsius(
         heaterController_.getTargetTemperatureInCelsius() +

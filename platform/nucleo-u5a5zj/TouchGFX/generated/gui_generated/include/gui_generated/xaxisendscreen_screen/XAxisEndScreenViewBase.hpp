@@ -19,6 +19,7 @@ public:
     XAxisEndScreenViewBase();
     virtual ~XAxisEndScreenViewBase();
     virtual void setupScreen();
+    virtual void transitionBegins();
 
     /*
      * Virtual Action Handlers
@@ -32,6 +33,10 @@ public:
         // Override and implement this function in XAxisEndScreen
     }
     virtual void saveButtonPressed()
+    {
+        // Override and implement this function in XAxisEndScreen
+    }
+    virtual void resetConfigurator()
     {
         // Override and implement this function in XAxisEndScreen
     }

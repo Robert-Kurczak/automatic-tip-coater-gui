@@ -8,6 +8,13 @@ void YAxisEndScreenPresenter::activate() {}
 
 void YAxisEndScreenPresenter::deactivate() {}
 
+void YAxisEndScreenPresenter::resetConfigurator() {
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.xAxisConfigurator;
+
+    axisConfigurator.resetBufferedConfig();
+}
+
 void YAxisEndScreenPresenter::increaseButtonPressed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.xAxisConfigurator;

@@ -19,6 +19,8 @@ public:
         uint8_t temperatureCelsiusStep
     );
 
+    virtual void resetBufferedConfig() override;
+
     virtual void increaseTemperatureInCelsius() override;
     virtual void decreaseTemperatureInCelsius() override;
     virtual uint32_t getTemperatureInCelsius() const override;

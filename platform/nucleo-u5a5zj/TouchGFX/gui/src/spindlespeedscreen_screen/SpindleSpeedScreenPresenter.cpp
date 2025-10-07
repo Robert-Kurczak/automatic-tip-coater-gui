@@ -10,11 +10,18 @@ void SpindleSpeedScreenPresenter::activate() {}
 
 void SpindleSpeedScreenPresenter::deactivate() {}
 
-void SpindleSpeedScreenPresenter::increaseButtonPressed() {
+void SpindleSpeedScreenPresenter::resetConfigurator() {
     ATC::ISpindleConfiguratorService& spindleConfigurator =
         model->getSystemApi().configurators.spindleConfigurator;
 
     spindleConfigurator.increaseSpeedPercent();
+}
+
+void SpindleSpeedScreenPresenter::increaseButtonPressed() {
+    ATC::ISpindleConfiguratorService& spindleConfigurator =
+        model->getSystemApi().configurators.spindleConfigurator;
+
+    spindleConfigurator.resetBufferedConfig();
 }
 
 void SpindleSpeedScreenPresenter::decreaseButtonPressed() {

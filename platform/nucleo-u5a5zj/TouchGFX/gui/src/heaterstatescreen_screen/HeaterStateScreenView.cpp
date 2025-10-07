@@ -16,6 +16,10 @@ void HeaterStateScreenView::tearDownScreen() {
     HeaterStateScreenViewBase::tearDownScreen();
 }
 
+void HeaterStateScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void HeaterStateScreenView::stateOffButtonPressed() {
     presenter->offButtonPressed();
     updateDisplayedValue();

@@ -16,6 +16,10 @@ void SpindleSpeedScreenView::tearDownScreen() {
     SpindleSpeedScreenViewBase::tearDownScreen();
 }
 
+void SpindleSpeedScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void SpindleSpeedScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

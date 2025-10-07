@@ -61,6 +61,7 @@ void XAxisStartScreenViewBase::setupScreen()
     settingsFooter.initialize();
     axisStartSelector.initialize();
     axisStartSettingsButtons.initialize();
+    transitionBegins();
 }
 
 void XAxisStartScreenViewBase::axisStartSelectorIncreaseButtonPressedCallbackHandler()
@@ -101,4 +102,12 @@ void XAxisStartScreenViewBase::axisStartSettingsButtonsSpeedButtonPressedCallbac
     //When axisStartSettingsButtons speedButtonPressed change screen to XAxisSpeedScreen
     //Go to XAxisSpeedScreen with no screen transition
     application().gotoXAxisSpeedScreenScreenNoTransition();
+}
+
+void XAxisStartScreenViewBase::transitionBegins()
+{
+    //ResetConfigurator
+    //When screen transition begins call virtual function
+    //Call resetConfigurator
+    resetConfigurator();
 }

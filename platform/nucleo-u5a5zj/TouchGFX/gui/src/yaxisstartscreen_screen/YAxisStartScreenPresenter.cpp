@@ -10,6 +10,13 @@ void YAxisStartScreenPresenter::activate() {}
 
 void YAxisStartScreenPresenter::deactivate() {}
 
+void YAxisStartScreenPresenter::resetConfigurator() {
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.yAxisConfigurator;
+
+    axisConfigurator.resetBufferedConfig();
+}
+
 void YAxisStartScreenPresenter::increaseButtonPressed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.yAxisConfigurator;

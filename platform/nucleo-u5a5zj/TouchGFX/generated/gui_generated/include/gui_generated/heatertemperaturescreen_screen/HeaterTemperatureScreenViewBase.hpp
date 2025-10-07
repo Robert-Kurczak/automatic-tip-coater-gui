@@ -19,6 +19,7 @@ public:
     HeaterTemperatureScreenViewBase();
     virtual ~HeaterTemperatureScreenViewBase();
     virtual void setupScreen();
+    virtual void transitionBegins();
 
     /*
      * Virtual Action Handlers
@@ -32,6 +33,10 @@ public:
         // Override and implement this function in HeaterTemperatureScreen
     }
     virtual void saveButtonPressed()
+    {
+        // Override and implement this function in HeaterTemperatureScreen
+    }
+    virtual void resetConfigurator()
     {
         // Override and implement this function in HeaterTemperatureScreen
     }

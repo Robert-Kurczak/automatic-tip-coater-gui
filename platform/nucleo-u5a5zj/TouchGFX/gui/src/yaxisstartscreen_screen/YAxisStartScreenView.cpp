@@ -16,6 +16,10 @@ void YAxisStartScreenView::tearDownScreen() {
     YAxisStartScreenViewBase::tearDownScreen();
 }
 
+void YAxisStartScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void YAxisStartScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

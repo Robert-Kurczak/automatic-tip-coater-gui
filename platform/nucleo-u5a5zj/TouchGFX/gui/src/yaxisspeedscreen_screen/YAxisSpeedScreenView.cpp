@@ -16,6 +16,10 @@ void YAxisSpeedScreenView::tearDownScreen() {
     YAxisSpeedScreenViewBase::tearDownScreen();
 }
 
+void YAxisSpeedScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void YAxisSpeedScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

@@ -16,6 +16,10 @@ void ZAxisSpeedScreenView::tearDownScreen() {
     ZAxisSpeedScreenViewBase::tearDownScreen();
 }
 
+void ZAxisSpeedScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void ZAxisSpeedScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

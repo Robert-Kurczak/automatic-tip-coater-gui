@@ -8,6 +8,13 @@ void ZAxisEndScreenPresenter::activate() {}
 
 void ZAxisEndScreenPresenter::deactivate() {}
 
+void ZAxisEndScreenPresenter::resetConfigurator() {
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.resetBufferedConfig();
+}
+
 void ZAxisEndScreenPresenter::increaseButtonPressed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.zAxisConfigurator;

@@ -10,6 +10,13 @@ void ZAxisStartScreenPresenter::activate() {}
 
 void ZAxisStartScreenPresenter::deactivate() {}
 
+void ZAxisStartScreenPresenter::resetConfigurator() {
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.resetBufferedConfig();
+}
+
 void ZAxisStartScreenPresenter::increaseButtonPressed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.zAxisConfigurator;

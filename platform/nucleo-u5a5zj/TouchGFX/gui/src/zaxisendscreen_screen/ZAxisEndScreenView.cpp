@@ -16,6 +16,10 @@ void ZAxisEndScreenView::tearDownScreen() {
     ZAxisEndScreenViewBase::tearDownScreen();
 }
 
+void ZAxisEndScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void ZAxisEndScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

@@ -10,6 +10,13 @@ void SpindleDirectionScreenPresenter::activate() {}
 
 void SpindleDirectionScreenPresenter::deactivate() {}
 
+void SpindleDirectionScreenPresenter::resetConfigurator() {
+    ATC::ISpindleConfiguratorService& spindleConfigurator =
+        model->getSystemApi().configurators.spindleConfigurator;
+
+    spindleConfigurator.resetBufferedConfig();
+}
+
 void SpindleDirectionScreenPresenter::clockwiseButtonPressed() {
     ATC::ISpindleConfiguratorService& spindleConfigurator =
         model->getSystemApi().configurators.spindleConfigurator;

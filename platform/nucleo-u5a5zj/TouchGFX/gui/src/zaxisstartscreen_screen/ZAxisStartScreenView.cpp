@@ -16,6 +16,10 @@ void ZAxisStartScreenView::tearDownScreen() {
     ZAxisStartScreenViewBase::tearDownScreen();
 }
 
+void ZAxisStartScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void ZAxisStartScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();
