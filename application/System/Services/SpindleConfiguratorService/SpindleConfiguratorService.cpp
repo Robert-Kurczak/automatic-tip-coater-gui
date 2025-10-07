@@ -14,6 +14,15 @@ SpindleConfiguratorService::SpindleConfiguratorService(
     speedPercentStep_(speedPercentStep),
     rotationTimeStepInMillis_(rotationTimeStepInMillis) {}
 
+void SpindleConfiguratorService::resetBufferedConfig() {
+    logger_.log(
+        LOG_LEVEL::ERROR_LOG,
+        std::source_location::current(),
+        "Not implemented"
+    );
+    // TODO implement
+}
+
 void SpindleConfiguratorService::showcaseRotation() {
     spindleController_.startTimedRotation(showcaseRotationTimeInMillis_);
 }

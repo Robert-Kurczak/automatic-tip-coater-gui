@@ -18,6 +18,10 @@ void SpindleRotationTimeScreenView::tearDownScreen() {
     SpindleRotationTimeScreenViewBase::tearDownScreen();
 }
 
+void SpindleRotationTimeScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void SpindleRotationTimeScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

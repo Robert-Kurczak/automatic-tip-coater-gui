@@ -10,6 +10,13 @@ void SpindleRotationTimeScreenPresenter::activate() {}
 
 void SpindleRotationTimeScreenPresenter::deactivate() {}
 
+void SpindleRotationTimeScreenPresenter::resetConfigurator() {
+    ATC::ISpindleConfiguratorService& spindleConfigurator =
+        model->getSystemApi().configurators.spindleConfigurator;
+
+    spindleConfigurator.resetBufferedConfig();
+}
+
 void SpindleRotationTimeScreenPresenter::increaseButtonPressed() {
     ATC::ISpindleConfiguratorService& spindleConfigurator =
         model->getSystemApi().configurators.spindleConfigurator;

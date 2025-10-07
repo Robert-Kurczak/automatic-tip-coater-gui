@@ -61,6 +61,7 @@ void YAxisEndScreenViewBase::setupScreen()
     settingsFooter.initialize();
     axisEndSelector.initialize();
     axisEndSettingsButtons.initialize();
+    transitionBegins();
 }
 
 void YAxisEndScreenViewBase::axisEndSelectorIncreaseButtonPressedCallbackHandler()
@@ -101,4 +102,12 @@ void YAxisEndScreenViewBase::axisEndSettingsButtonsSpeedButtonPressedCallbackHan
     //When axisEndSettingsButtons speedButtonPressed change screen to YAxisSpeedScreen
     //Go to YAxisSpeedScreen with no screen transition
     application().gotoYAxisSpeedScreenScreenNoTransition();
+}
+
+void YAxisEndScreenViewBase::transitionBegins()
+{
+    //ResetConfigurator
+    //When screen transition begins call virtual function
+    //Call resetConfigurator
+    resetConfigurator();
 }

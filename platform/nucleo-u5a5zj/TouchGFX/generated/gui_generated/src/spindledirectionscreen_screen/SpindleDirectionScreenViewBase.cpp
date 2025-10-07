@@ -53,6 +53,7 @@ void SpindleDirectionScreenViewBase::setupScreen()
     settingsFooter.initialize();
     spindleDirectionSelector.initialize();
     spindleDirectionSettingsButtons.initialize();
+    transitionBegins();
 }
 
 void SpindleDirectionScreenViewBase::spindleDirectionSettingsButtonsSpeedButtonPressedCallbackHandler()
@@ -89,4 +90,12 @@ void SpindleDirectionScreenViewBase::settingsFooterSaveButtonPressedCallbackHand
     //When settingsFooter saveButtonPressed call virtual function
     //Call saveButtonPressed
     saveButtonPressed();
+}
+
+void SpindleDirectionScreenViewBase::transitionBegins()
+{
+    //ResetConfigurator
+    //When screen transition begins call virtual function
+    //Call resetConfigurator
+    resetConfigurator();
 }

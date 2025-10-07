@@ -61,6 +61,7 @@ void SpindleRotationTimeScreenViewBase::setupScreen()
     settingsFooter.initialize();
     timeSelector.initialize();
     spindleRotationTimeSettingsButtons.initialize();
+    transitionBegins();
 }
 
 void SpindleRotationTimeScreenViewBase::timeSelectorIncreaseButtonPressedCallbackHandler()
@@ -101,4 +102,12 @@ void SpindleRotationTimeScreenViewBase::spindleRotationTimeSettingsButtonsDirect
     //When spindleRotationTimeSettingsButtons directionButtonPressed change screen to SpindleDirectionScreen
     //Go to SpindleDirectionScreen with no screen transition
     application().gotoSpindleDirectionScreenScreenNoTransition();
+}
+
+void SpindleRotationTimeScreenViewBase::transitionBegins()
+{
+    //ResetConfigurator
+    //When screen transition begins call virtual function
+    //Call resetConfigurator
+    resetConfigurator();
 }

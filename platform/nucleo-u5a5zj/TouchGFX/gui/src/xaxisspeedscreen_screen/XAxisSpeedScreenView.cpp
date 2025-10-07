@@ -16,6 +16,11 @@ void XAxisSpeedScreenView::tearDownScreen() {
     XAxisSpeedScreenViewBase::tearDownScreen();
 }
 
+void XAxisSpeedScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
+
 void XAxisSpeedScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

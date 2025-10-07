@@ -7,6 +7,8 @@ class ISpindleConfiguratorService {
 public:
     virtual ~ISpindleConfiguratorService() = default;
 
+    virtual void resetBufferedConfig() = 0;
+
     virtual void showcaseRotation() = 0;
 
     virtual void increaseSpeedPercent() = 0;

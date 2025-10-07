@@ -17,6 +17,10 @@ void SpindleDirectionScreenView::tearDownScreen() {
     SpindleDirectionScreenViewBase::tearDownScreen();
 }
 
+void SpindleDirectionScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void SpindleDirectionScreenView::clockwiseButtonPressed() {
     presenter->clockwiseButtonPressed();
     updateDisplayedValue();

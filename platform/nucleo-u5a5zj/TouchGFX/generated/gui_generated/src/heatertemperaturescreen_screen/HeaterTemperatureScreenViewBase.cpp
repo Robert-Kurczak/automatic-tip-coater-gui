@@ -59,6 +59,7 @@ void HeaterTemperatureScreenViewBase::setupScreen()
     settingsFooter.initialize();
     temperatureSelector.initialize();
     heaterTemperatureSettingsButtons.initialize();
+    transitionBegins();
 }
 
 void HeaterTemperatureScreenViewBase::temperatureSelectorIncreaseButtonPressedCallbackHandler()
@@ -91,4 +92,12 @@ void HeaterTemperatureScreenViewBase::heaterTemperatureSettingsButtonsStateButto
     //When heaterTemperatureSettingsButtons stateButtonPressed change screen to HeaterStateScreen
     //Go to HeaterStateScreen with no screen transition
     application().gotoHeaterStateScreenScreenNoTransition();
+}
+
+void HeaterTemperatureScreenViewBase::transitionBegins()
+{
+    //ResetConfigurator
+    //When screen transition begins call virtual function
+    //Call resetConfigurator
+    resetConfigurator();
 }

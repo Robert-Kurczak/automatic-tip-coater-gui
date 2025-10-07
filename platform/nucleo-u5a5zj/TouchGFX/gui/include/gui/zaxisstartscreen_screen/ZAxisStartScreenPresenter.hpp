@@ -30,6 +30,7 @@ public:
 
     virtual ~ZAxisStartScreenPresenter() {}
 
+    void resetConfigurator();
     void increaseButtonPressed();
     void decreaseButtonPressed();
     void saveButtonPressed();

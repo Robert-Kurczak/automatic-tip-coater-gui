@@ -10,6 +10,13 @@ void ZAxisSpeedScreenPresenter::activate() {}
 
 void ZAxisSpeedScreenPresenter::deactivate() {}
 
+void ZAxisSpeedScreenPresenter::resetConfigurator() {
+    ATC::IAxisConfiguratorService& axisConfigurator =
+        model->getSystemApi().configurators.zAxisConfigurator;
+
+    axisConfigurator.resetBufferedConfig();
+}
+
 void ZAxisSpeedScreenPresenter::increaseButtonPressed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.zAxisConfigurator;

@@ -19,6 +19,7 @@ public:
     YAxisStartScreenViewBase();
     virtual ~YAxisStartScreenViewBase();
     virtual void setupScreen();
+    virtual void transitionBegins();
 
     /*
      * Virtual Action Handlers
@@ -32,6 +33,10 @@ public:
         // Override and implement this function in YAxisStartScreen
     }
     virtual void saveButtonPressed()
+    {
+        // Override and implement this function in YAxisStartScreen
+    }
+    virtual void resetConfigurator()
     {
         // Override and implement this function in YAxisStartScreen
     }

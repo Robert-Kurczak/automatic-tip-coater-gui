@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
 
 protected:
+    virtual void resetConfigurator() override;
     virtual void stateOffButtonPressed() override;
     virtual void stateOnButtonPressed() override;
     virtual void saveButtonPressed() override;

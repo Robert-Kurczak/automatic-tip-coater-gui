@@ -10,6 +10,13 @@ void HeaterTemperatureScreenPresenter::activate() {}
 
 void HeaterTemperatureScreenPresenter::deactivate() {}
 
+void HeaterTemperatureScreenPresenter::resetConfigurator() {
+    ATC::IHeaterConfiguratorService& heaterConfigurator =
+        model->getSystemApi().configurators.heaterConfigurator;
+
+    heaterConfigurator.resetBufferedConfig();
+}
+
 void HeaterTemperatureScreenPresenter::increaseButtonPressed() {
     ATC::IHeaterConfiguratorService& heaterConfigurator =
         model->getSystemApi().configurators.heaterConfigurator;

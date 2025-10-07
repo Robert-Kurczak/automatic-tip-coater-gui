@@ -30,6 +30,7 @@ public:
 
     virtual ~HeaterStateScreenPresenter() {}
 
+    void resetConfigurator();
     void onButtonPressed();
     void offButtonPressed();
     void saveButtonPressed();

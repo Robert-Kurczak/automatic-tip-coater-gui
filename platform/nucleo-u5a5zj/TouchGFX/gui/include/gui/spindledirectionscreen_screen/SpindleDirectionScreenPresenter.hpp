@@ -30,6 +30,7 @@ public:
 
     virtual ~SpindleDirectionScreenPresenter() {}
 
+    void resetConfigurator();
     void clockwiseButtonPressed();
     void counterClockwiseButtonPressed();
     void saveButtonPressed();

@@ -61,6 +61,7 @@ void SpindleSpeedScreenViewBase::setupScreen()
     settingsFooter.initialize();
     speedSelector.initialize();
     spindleSpeedSettingsButtons.initialize();
+    transitionBegins();
 }
 
 void SpindleSpeedScreenViewBase::speedSelectorIncreaseButtonPressedCallbackHandler()
@@ -101,4 +102,12 @@ void SpindleSpeedScreenViewBase::spindleSpeedSettingsButtonsRotationTimeButtonPr
     //When spindleSpeedSettingsButtons rotationTimeButtonPressed change screen to SpindleRotationTimeScreen
     //Go to SpindleRotationTimeScreen with no screen transition
     application().gotoSpindleRotationTimeScreenScreenNoTransition();
+}
+
+void SpindleSpeedScreenViewBase::transitionBegins()
+{
+    //ResetConfigurator
+    //When screen transition begins call virtual function
+    //Call resetConfigurator
+    resetConfigurator();
 }

@@ -16,6 +16,10 @@ void XAxisStartScreenView::tearDownScreen() {
     XAxisStartScreenViewBase::tearDownScreen();
 }
 
+void XAxisStartScreenView::resetConfigurator() {
+    presenter->resetConfigurator();
+}
+
 void XAxisStartScreenView::increaseButtonPressed() {
     presenter->increaseButtonPressed();
     updateDisplayedValue();

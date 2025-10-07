@@ -30,6 +30,7 @@ public:
 
     virtual ~XAxisEndScreenPresenter() {}
 
+    void resetConfigurator();
     void increaseButtonPressed();
     void decreaseButtonPressed();
     void saveButtonPressed();
