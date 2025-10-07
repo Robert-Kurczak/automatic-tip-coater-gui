@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IAxisConfiguratorService.hpp"
+#include "application/System/Controllers/AxisController/AxisConfig.hpp"
 #include "application/System/Controllers/AxisController/IAxisController.hpp"
 #include "application/System/Controllers/PersistentStorageController/IPersistentStorageController.hpp"
 #include "application/System/Drivers/Logger/ILogger.hpp"
@@ -10,9 +11,11 @@ class AxisConfiguratorService : public IAxisConfiguratorService {
 protected:
     IPersistentStorageController& persistentStorageController_;
 
-    uint32_t bufferedStartPosition_ = 0;
-    uint32_t bufferedEndPosition_ = 0;
-    uint32_t bufferedSpeed_ = 0;
+    AxisConfig bufferedConfig_ {
+        .startPosition = 0,
+        .endPosition = 0,
+        .speed = 0
+    };
 
     virtual void saveConfigToPersistentMemory() = 0;
 
