@@ -2,59 +2,57 @@
 
 namespace ATC {
 HeaterConfiguratorService::HeaterConfiguratorService(
-    ILogger& logger,
+    IPersistentStorageController& persistentStorageController,
     IHeaterController& heaterController,
-    uint8_t temperatureCelsiusStep
+    uint8_t temperatureInCelsiusStep
 ) :
-    logger_(logger),
+    persistentStorageController_(persistentStorageController),
     heaterController_(heaterController),
-    temperatureInCelsiusStep_(temperatureCelsiusStep) {}
+    temperatureInCelsiusStep_(temperatureInCelsiusStep) {}
 
 void HeaterConfiguratorService::resetBufferedConfig() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
-    );
-    // TODO implement
+    bufferedHeaterOn_ = heaterController_.isOn();
+    bufferedPersistentConfig_.targetTemperatureInCelsius =
+        heaterController_.getTargetTemperatureInCelsius();
 }
 
 void HeaterConfiguratorService::increaseTemperatureInCelsius() {
-    heaterController_.setTargetTemperatureInCelsius(
-        heaterController_.getTargetTemperatureInCelsius() +
-        temperatureInCelsiusStep_
-    );
+    bufferedPersistentConfig_.targetTemperatureInCelsius +=
+        temperatureInCelsiusStep_;
 }
 
 void HeaterConfiguratorService::decreaseTemperatureInCelsius() {
-    heaterController_.setTargetTemperatureInCelsius(
-        heaterController_.getTargetTemperatureInCelsius() -
-        temperatureInCelsiusStep_
-    );
+    bufferedPersistentConfig_.targetTemperatureInCelsius -=
+        temperatureInCelsiusStep_;
 }
 
 uint32_t HeaterConfiguratorService::getTemperatureInCelsius() const {
-    return heaterController_.getTargetTemperatureInCelsius();
+    return bufferedPersistentConfig_.targetTemperatureInCelsius;
 }
 
 void HeaterConfiguratorService::saveTemperatureInCelsius() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
+    persistentStorageController_.saveHeaterConfig(
+        bufferedPersistentConfig_
     );
-    // TODO implement
 }
 
 void HeaterConfiguratorService::turnOn() {
-    heaterController_.turnOn();
+    bufferedHeaterOn_ = true;
 }
 
 void HeaterConfiguratorService::turnOff() {
-    heaterController_.turnOff();
+    bufferedHeaterOn_ = false;
 }
 
 bool HeaterConfiguratorService::isOn() const {
-    return heaterController_.isOn();
+    return bufferedHeaterOn_;
+}
+
+void HeaterConfiguratorService::saveHeaterState() {
+    if (bufferedHeaterOn_) {
+        heaterController_.turnOn();
+    } else {
+        heaterController_.turnOff();
+    }
 }
 }

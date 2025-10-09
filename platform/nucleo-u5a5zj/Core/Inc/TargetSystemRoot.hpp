@@ -164,14 +164,14 @@ private:
         1000
     };
     SpindleConfiguratorService spindleConfiguratorService_ {
-        logger_,
+        persistentStorageController_,
         spindleController_,
         3000,
         1,
         500
     };
     HeaterConfiguratorService heaterConfiguratorService_ {
-        logger_,
+        persistentStorageController_,
         heaterController_,
         1
     };

@@ -2,25 +2,27 @@
 
 namespace ATC {
 SpindleConfiguratorService::SpindleConfiguratorService(
-    ILogger& logger,
+    IPersistentStorageController& persistentStorageController,
     ISpindleController& spindleController,
     uint32_t showcaseRotationTimeInMillis,
     uint8_t speedPercentStep,
     uint32_t rotationTimeStepInMillis
 ) :
-    logger_(logger),
+    persistentStorageController_(persistentStorageController),
     spindleController_(spindleController),
     showcaseRotationTimeInMillis_(showcaseRotationTimeInMillis),
     speedPercentStep_(speedPercentStep),
     rotationTimeStepInMillis_(rotationTimeStepInMillis) {}
 
 void SpindleConfiguratorService::resetBufferedConfig() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
-    );
-    // TODO implement
+    bufferedPersistentConfig_.speedPercentage =
+        spindleController_.getSpeedPercent();
+
+    bufferedPersistentConfig_.isDirectionClockwise =
+        spindleController_.isDirectionClockwise();
+
+    bufferedPersistentConfig_.timedRotationInMillis =
+        spindleController_.getRotationTimeInMillis();
 }
 
 void SpindleConfiguratorService::showcaseRotation() {
@@ -28,75 +30,72 @@ void SpindleConfiguratorService::showcaseRotation() {
 }
 
 void SpindleConfiguratorService::increaseSpeedPercent() {
-    spindleController_.setSpeedPercent(
-        spindleController_.getSpeedPercent() + speedPercentStep_
-    );
+    bufferedPersistentConfig_.speedPercentage += speedPercentStep_;
 }
 
 void SpindleConfiguratorService::decreaseSpeedPercent() {
-    spindleController_.setSpeedPercent(
-        spindleController_.getSpeedPercent() - speedPercentStep_
-    );
+    bufferedPersistentConfig_.speedPercentage -= speedPercentStep_;
 }
 
 void SpindleConfiguratorService::saveSpeedPercent() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
+    spindleController_.setSpeedPercent(
+        bufferedPersistentConfig_.speedPercentage
     );
-    // TODO implement
+
+    persistentStorageController_.saveSpindleConfig(
+        bufferedPersistentConfig_
+    );
 }
 
 uint8_t SpindleConfiguratorService::getSpeedPercent() const {
-    return spindleController_.getSpeedPercent();
+    return bufferedPersistentConfig_.speedPercentage;
 }
 
 void SpindleConfiguratorService::setDirectionClockwise() {
-    spindleController_.setDirectionClockwise();
+    bufferedPersistentConfig_.isDirectionClockwise = true;
 }
 
 void SpindleConfiguratorService::setDirectionCounterClockwise() {
-    spindleController_.setDirectionCounterClockwise();
+    bufferedPersistentConfig_.isDirectionClockwise = false;
 }
 
 void SpindleConfiguratorService::saveDirection() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
+    if (bufferedPersistentConfig_.isDirectionClockwise) {
+        spindleController_.setDirectionClockwise();
+    } else {
+        spindleController_.setDirectionCounterClockwise();
+    }
+
+    persistentStorageController_.saveSpindleConfig(
+        bufferedPersistentConfig_
     );
-    // TODO implement
 }
 
 bool SpindleConfiguratorService::isDirectionClockwise() const {
-    return spindleController_.isDirectionClockwise();
+    return bufferedPersistentConfig_.isDirectionClockwise;
 }
 
 void SpindleConfiguratorService::increaseRotationTimeInMillis() {
-    spindleController_.setRotationTimeInMillis(
-        spindleController_.getRotationTimeInMillis() +
-        rotationTimeStepInMillis_
-    );
+    bufferedPersistentConfig_.timedRotationInMillis +=
+        rotationTimeStepInMillis_;
 }
 
 void SpindleConfiguratorService::decreaseRotationTimeInMillis() {
-    spindleController_.setRotationTimeInMillis(
-        spindleController_.getRotationTimeInMillis() -
-        rotationTimeStepInMillis_
-    );
+    bufferedPersistentConfig_.timedRotationInMillis -=
+        rotationTimeStepInMillis_;
 }
 
 void SpindleConfiguratorService::saveRotationTimeInMillis() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
-        std::source_location::current(),
-        "Not implemented"
+    spindleController_.setRotationTimeInMillis(
+        bufferedPersistentConfig_.timedRotationInMillis
     );
-    // TODO implement
+
+    persistentStorageController_.saveSpindleConfig(
+        bufferedPersistentConfig_
+    );
 }
 
 uint32_t SpindleConfiguratorService::getRotationTimeInMillis() const {
-    return spindleController_.getRotationTimeInMillis();
+    return bufferedPersistentConfig_.timedRotationInMillis;
 }
 }

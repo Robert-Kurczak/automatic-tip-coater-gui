@@ -15,55 +15,61 @@ AxisConfiguratorService::AxisConfiguratorService(
     speedShowcasePosition_(speedShowcasePosition) {}
 
 void AxisConfiguratorService::resetBufferedConfig() {
-    bufferedConfig_.startPosition = axisController_.getStartPosition();
-    bufferedConfig_.endPosition = axisController_.getEndPosition();
-    bufferedConfig_.speed = axisController_.getSpeed();
+    bufferedPersistentConfig_.startPosition =
+        axisController_.getStartPosition();
+    bufferedPersistentConfig_.endPosition =
+        axisController_.getEndPosition();
+    bufferedPersistentConfig_.speed = axisController_.getSpeed();
 }
 
 void AxisConfiguratorService::showcaseStartPosition() {
-    axisController_.moveToPosition(bufferedConfig_.startPosition);
+    axisController_.moveToPosition(
+        bufferedPersistentConfig_.startPosition
+    );
 }
 
 void AxisConfiguratorService::increaseStartPosition() {
-    bufferedConfig_.startPosition += positionStep_;
+    bufferedPersistentConfig_.startPosition += positionStep_;
     showcaseStartPosition();
 }
 
 void AxisConfiguratorService::decreaseStartPosition() {
-    bufferedConfig_.startPosition -= positionStep_;
+    bufferedPersistentConfig_.startPosition -= positionStep_;
     showcaseStartPosition();
 }
 
 void AxisConfiguratorService::saveStartPosition() {
-    axisController_.setStartPosition(bufferedConfig_.startPosition);
+    axisController_.setStartPosition(
+        bufferedPersistentConfig_.startPosition
+    );
     saveConfigToPersistentMemory();
 }
 
 uint32_t AxisConfiguratorService::getStartPosition() const {
-    return bufferedConfig_.startPosition;
+    return bufferedPersistentConfig_.startPosition;
 }
 
 void AxisConfiguratorService::showcaseEndPosition() {
-    axisController_.moveToPosition(bufferedConfig_.endPosition);
+    axisController_.moveToPosition(bufferedPersistentConfig_.endPosition);
 }
 
 void AxisConfiguratorService::increaseEndPosition() {
-    bufferedConfig_.endPosition += positionStep_;
+    bufferedPersistentConfig_.endPosition += positionStep_;
     showcaseEndPosition();
 }
 
 void AxisConfiguratorService::decreaseEndPosition() {
-    bufferedConfig_.endPosition -= positionStep_;
+    bufferedPersistentConfig_.endPosition -= positionStep_;
     showcaseEndPosition();
 }
 
 void AxisConfiguratorService::saveEndPosition() {
-    axisController_.setEndPosition(bufferedConfig_.endPosition);
+    axisController_.setEndPosition(bufferedPersistentConfig_.endPosition);
     saveConfigToPersistentMemory();
 }
 
 uint32_t AxisConfiguratorService::getEndPosition() const {
-    return bufferedConfig_.endPosition;
+    return bufferedPersistentConfig_.endPosition;
 }
 
 void AxisConfiguratorService::showcaseSpeed() {
@@ -82,20 +88,20 @@ void AxisConfiguratorService::showcaseSpeed() {
 }
 
 void AxisConfiguratorService::increaseSpeed() {
-    bufferedConfig_.speed += speedStep_;
+    bufferedPersistentConfig_.speed += speedStep_;
 }
 
 void AxisConfiguratorService::decreaseSpeed() {
-    bufferedConfig_.speed -= speedStep_;
+    bufferedPersistentConfig_.speed -= speedStep_;
 }
 
 void AxisConfiguratorService::saveSpeed() {
-    axisController_.setSpeed(bufferedConfig_.speed);
+    axisController_.setSpeed(bufferedPersistentConfig_.speed);
     showcaseSpeed();
     saveConfigToPersistentMemory();
 }
 
 uint32_t AxisConfiguratorService::getSpeed() const {
-    return bufferedConfig_.speed;
+    return bufferedPersistentConfig_.speed;
 }
 }
