@@ -2,6 +2,8 @@
 
 namespace ATC {
 void YAxisConfiguratorService::saveConfigToPersistentMemory() {
-    persistentStorageController_.saveXAxisConfig(bufferedConfig_);
+    persistentStorageController_.saveXAxisConfig(
+        bufferedPersistentConfig_
+    );
 }
 }

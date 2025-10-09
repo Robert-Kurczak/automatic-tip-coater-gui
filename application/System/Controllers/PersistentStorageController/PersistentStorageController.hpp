@@ -1,6 +1,9 @@
 #pragma once
 
 #include "IPersistentStorageController.hpp"
+#include "PersistentData/AxisPersistentConfig.hpp"
+#include "PersistentData/HeaterPersistentConfig.hpp"
+#include "PersistentData/SpindlePersistentConfig.hpp"
 #include "application/System/Drivers/PersistentStorage/IPersistentStorage.hpp"
 
 namespace ATC {
@@ -9,11 +12,11 @@ private:
     struct PersistentData {
         static constexpr uint32_t EXPECTED_SIGNATURE = 0xDEADBEEF;
 
-        AxisConfig xAxisConfig;
-        AxisConfig yAxisConfig;
-        AxisConfig zAxisConfig;
-        SpindleConfig spindleConfig;
-        HeaterConfig heaterConfig;
+        AxisPersistentConfig xAxisConfig;
+        AxisPersistentConfig yAxisConfig;
+        AxisPersistentConfig zAxisConfig;
+        SpindlePersistentConfig spindleConfig;
+        HeaterPersistentConfig heaterConfig;
         uint32_t signature;
         uint32_t checksum;
     };
@@ -33,10 +36,20 @@ public:
 
     virtual void init() override;
 
-    virtual void saveXAxisConfig(const AxisConfig& config) override;
-    virtual void saveYAxisConfig(const AxisConfig& config) override;
-    virtual void saveZAxisConfig(const AxisConfig& config) override;
-    virtual void saveSpindleConfig(const SpindleConfig& config) override;
-    virtual void saveHeaterConfig(const HeaterConfig& config) override;
+    virtual void saveXAxisConfig(
+        const AxisPersistentConfig& config
+    ) override;
+    virtual void saveYAxisConfig(
+        const AxisPersistentConfig& config
+    ) override;
+    virtual void saveZAxisConfig(
+        const AxisPersistentConfig& config
+    ) override;
+    virtual void saveSpindleConfig(
+        const SpindlePersistentConfig& config
+    ) override;
+    virtual void saveHeaterConfig(
+        const HeaterPersistentConfig& config
+    ) override;
 };
 }

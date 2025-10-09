@@ -1,22 +1,28 @@
 #pragma once
 
 #include "IHeaterConfiguratorService.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
 #include "application/System/Controllers/HeaterController/IHeaterController.hpp"
+#include "application/System/Controllers/PersistentStorageController/IPersistentStorageController.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
 
 namespace ATC {
 class HeaterConfiguratorService : public IHeaterConfiguratorService {
 private:
-    ILogger& logger_;
+    IPersistentStorageController& persistentStorageController_;
     IHeaterController& heaterController_;
 
     const uint8_t temperatureInCelsiusStep_;
 
+    bool bufferedHeaterOn_ = false;
+    HeaterPersistentConfig bufferedPersistentConfig_ {
+        .targetTemperatureInCelsius = 0
+    };
+
 public:
     HeaterConfiguratorService(
-        ILogger& logger,
+        IPersistentStorageController& persistentStorageController,
         IHeaterController& heaterController,
-        uint8_t temperatureCelsiusStep
+        uint8_t temperatureInCelsiusStep
     );
 
     virtual void resetBufferedConfig() override;
@@ -29,5 +35,6 @@ public:
     virtual void turnOn() override;
     virtual void turnOff() override;
     virtual bool isOn() const override;
+    virtual void saveHeaterState() override;
 };
 }

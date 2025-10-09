@@ -1,6 +1,5 @@
 #include "PersistentStorageController.hpp"
 
-#include "DefaultPersistentConfigProvider.hpp"
 #include "application/Utils/Byte.hpp"
 
 namespace ATC {
@@ -19,13 +18,11 @@ uint32_t PersistentStorageController::calculateDataChecksum(
 
 void PersistentStorageController::createDefaultData() {
     PersistentData defaultData {
-        .xAxisConfig = DefaultPersistentConfigProvider::getXAxisConfig(),
-        .yAxisConfig = DefaultPersistentConfigProvider::getYAxisConfig(),
-        .zAxisConfig = DefaultPersistentConfigProvider::getZAxisConfig(),
-        .spindleConfig =
-            DefaultPersistentConfigProvider::getSpindleConfig(),
-        .heaterConfig =
-            DefaultPersistentConfigProvider::getHeaterConfig(),
+        .xAxisConfig = AxisPersistentConfig::getDefaultXAxisConfig(),
+        .yAxisConfig = AxisPersistentConfig::getDefaultYAxisConfig(),
+        .zAxisConfig = AxisPersistentConfig::getDefaultZAxisConfig(),
+        .spindleConfig = SpindlePersistentConfig::getDefaultConfig(),
+        .heaterConfig = HeaterPersistentConfig::getDefaultConfig(),
         .signature = PersistentData::EXPECTED_SIGNATURE,
         .checksum = 0,
     };
@@ -77,7 +74,7 @@ void PersistentStorageController::init() {
 }
 
 void PersistentStorageController::saveXAxisConfig(
-    const AxisConfig& config
+    const AxisPersistentConfig& config
 ) {
     if (areBytesEqual(config, storedData_.xAxisConfig)) {
         return;
@@ -93,7 +90,7 @@ void PersistentStorageController::saveXAxisConfig(
 }
 
 void PersistentStorageController::saveYAxisConfig(
-    const AxisConfig& config
+    const AxisPersistentConfig& config
 ) {
     if (areBytesEqual(config, storedData_.yAxisConfig)) {
         return;
@@ -109,7 +106,7 @@ void PersistentStorageController::saveYAxisConfig(
 }
 
 void PersistentStorageController::saveZAxisConfig(
-    const AxisConfig& config
+    const AxisPersistentConfig& config
 ) {
     if (areBytesEqual(config, storedData_.zAxisConfig)) {
         return;
@@ -125,7 +122,7 @@ void PersistentStorageController::saveZAxisConfig(
 }
 
 void PersistentStorageController::saveSpindleConfig(
-    const SpindleConfig& config
+    const SpindlePersistentConfig& config
 ) {
     if (areBytesEqual(config, storedData_.spindleConfig)) {
         return;
@@ -141,7 +138,7 @@ void PersistentStorageController::saveSpindleConfig(
 }
 
 void PersistentStorageController::saveHeaterConfig(
-    const HeaterConfig& config
+    const HeaterPersistentConfig& config
 ) {
     if (areBytesEqual(config, storedData_.heaterConfig)) {
         return;

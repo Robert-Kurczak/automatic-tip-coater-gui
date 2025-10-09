@@ -1,21 +1,29 @@
 #pragma once
 
 #include "ISpindleConfiguratorService.hpp"
+#include "application/System/Controllers/PersistentStorageController/IPersistentStorageController.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
 #include "application/System/Controllers/SpindleController/ISpindleController.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
 
 namespace ATC {
 class SpindleConfiguratorService : public ISpindleConfiguratorService {
 private:
-    ILogger& logger_;
+    IPersistentStorageController& persistentStorageController_;
     ISpindleController& spindleController_;
+
     const uint32_t showcaseRotationTimeInMillis_;
     const uint8_t speedPercentStep_;
     const uint32_t rotationTimeStepInMillis_;
 
+    SpindlePersistentConfig bufferedPersistentConfig_ {
+        .speedPercentage = 0,
+        .isDirectionClockwise = false,
+        .timedRotationInMillis = 0
+    };
+
 public:
     SpindleConfiguratorService(
-        ILogger& logger,
+        IPersistentStorageController& persistentStorageController,
         ISpindleController& spindleController,
         uint32_t showcaseRotationTimeInMillis,
         uint8_t speedPercentStep,

@@ -31,13 +31,16 @@ void HeaterStateScreenPresenter::offButtonPressed() {
     heaterConfigurator.turnOn();
 }
 
-void HeaterStateScreenPresenter::saveButtonPressed() {
-    // TODO implement or remove
-}
-
 bool HeaterStateScreenPresenter::isHeaterOn() {
     ATC::IHeaterConfiguratorService& heaterConfigurator =
         model->getSystemApi().configurators.heaterConfigurator;
 
     return heaterConfigurator.isOn();
+}
+
+void HeaterStateScreenPresenter::saveButtonPressed() {
+    ATC::IHeaterConfiguratorService& heaterConfigurator =
+        model->getSystemApi().configurators.heaterConfigurator;
+
+    heaterConfigurator.turnOn();
 }

@@ -1,17 +1,16 @@
 #pragma once
 
 #include "IAxisConfiguratorService.hpp"
-#include "application/System/Controllers/AxisController/AxisConfig.hpp"
 #include "application/System/Controllers/AxisController/IAxisController.hpp"
 #include "application/System/Controllers/PersistentStorageController/IPersistentStorageController.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
 
 namespace ATC {
 class AxisConfiguratorService : public IAxisConfiguratorService {
 protected:
     IPersistentStorageController& persistentStorageController_;
 
-    AxisConfig bufferedConfig_ {
+    AxisPersistentConfig bufferedPersistentConfig_ {
         .startPosition = 0,
         .endPosition = 0,
         .speed = 0
