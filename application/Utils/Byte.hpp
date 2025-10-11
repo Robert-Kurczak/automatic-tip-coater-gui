@@ -10,7 +10,7 @@ std::span<const uint8_t> toByteSpan(const Type& data) {
     static_assert(std::is_trivially_copyable<Type>::value);
 
     return std::span<const uint8_t> {
-        reinterpret_cast<const uint8_t*>(&data), sizeof(data)
+        reinterpret_cast<const uint8_t*>(&data), sizeof(Type)
     };
 }
 

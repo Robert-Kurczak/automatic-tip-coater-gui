@@ -3,7 +3,6 @@
 #include "IYAxisController.hpp"
 #include "application/System/Drivers/Logger/ILogger.hpp"
 
-#include <functional>
 #include <stdint.h>
 
 namespace ATC {
@@ -18,7 +17,7 @@ private:
 public:
     YAxisController(ILogger& logger);
 
-    virtual void init() override;
+    virtual void init(const AxisPersistentConfig& config) override;
     virtual void tick() override;
 
     virtual bool wasFaultReported() const override;

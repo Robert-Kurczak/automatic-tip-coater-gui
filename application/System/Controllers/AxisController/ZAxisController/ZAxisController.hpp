@@ -17,7 +17,7 @@ private:
 public:
     ZAxisController(ILogger& logger);
 
-    virtual void init() override;
+    virtual void init(const AxisPersistentConfig& config) override;
     virtual void tick() override;
 
     virtual bool wasFaultReported() const override;

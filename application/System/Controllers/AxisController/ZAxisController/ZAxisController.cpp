@@ -5,7 +5,11 @@
 namespace ATC {
 ZAxisController::ZAxisController(ILogger& logger) : logger_(logger) {}
 
-void ZAxisController::init() {}
+void ZAxisController::init(const AxisPersistentConfig& config) {
+    startPosition_ = config.startPosition;
+    endPosition_ = config.endPosition;
+    speed_ = config.speed;
+}
 
 void ZAxisController::tick() {}
 

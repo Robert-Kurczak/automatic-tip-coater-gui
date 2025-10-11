@@ -1,5 +1,7 @@
 #include "HeaterTestTask.hpp"
 
+#include <functional>
+
 namespace ATC {
 void HeaterTestTask::turnHeaterOn() {
     heaterController_.turnOn();

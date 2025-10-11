@@ -19,7 +19,7 @@ public:
     SpindleController(ILogger& logger, IMotor& motor);
 
     virtual void tick() override;
-    virtual void init() override;
+    virtual void init(const SpindlePersistentConfig& config) override;
 
     virtual bool wasFaultReported() override;
 

@@ -10,11 +10,27 @@ SystemRoot::SystemRoot(
 
 void SystemRoot::init() {
     systemComponents_.persistentStorageController.init();
-    systemComponents_.xAxisController.init();
-    systemComponents_.yAxisController.init();
-    systemComponents_.zAxisController.init();
-    systemComponents_.spindleController.init();
-    systemComponents_.heaterController.init();
+
+    systemComponents_.xAxisController.init(
+        systemComponents_.persistentStorageController.loadXAxisConfig()
+    );
+
+    systemComponents_.yAxisController.init(
+        systemComponents_.persistentStorageController.loadYAxisConfig()
+    );
+
+    systemComponents_.zAxisController.init(
+        systemComponents_.persistentStorageController.loadZAxisConfig()
+    );
+
+    systemComponents_.spindleController.init(
+        systemComponents_.persistentStorageController.loadSpindleConfig()
+    );
+
+    systemComponents_.heaterController.init(
+        systemComponents_.persistentStorageController.loadHeaterConfig()
+    );
+
     systemComponents_.display.init();
     systemComponents_.touchPanelController.init();
 }

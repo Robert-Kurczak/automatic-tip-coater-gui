@@ -10,7 +10,11 @@ HysteresisHeaterController::HysteresisHeaterController(
     heaterSwitch_(heaterSwitch),
     temperatureSensor_(temperatureSensor) {}
 
-void HysteresisHeaterController::init() {
+void HysteresisHeaterController::init(
+    const HeaterPersistentConfig& config
+) {
+    targetTemperatureInCelsius_ = config.targetTemperatureInCelsius;
+
     heaterSwitch_.init();
     temperatureSensor_.init();
 }

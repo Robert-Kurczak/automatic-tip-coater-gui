@@ -1,5 +1,7 @@
 #pragma once
 
+#include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
+
 #include <stdint.h>
 
 namespace ATC {
@@ -7,7 +9,7 @@ class IAxisController {
 public:
     virtual ~IAxisController() = default;
 
-    virtual void init() = 0;
+    virtual void init(const AxisPersistentConfig& config) = 0;
     virtual void tick() = 0;
 
     virtual bool wasFaultReported() const = 0;
