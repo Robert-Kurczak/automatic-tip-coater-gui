@@ -51,5 +51,11 @@ public:
     virtual void saveHeaterConfig(
         const HeaterPersistentConfig& config
     ) override;
+
+    virtual AxisPersistentConfig loadXAxisConfig() override;
+    virtual AxisPersistentConfig loadYAxisConfig() override;
+    virtual AxisPersistentConfig loadZAxisConfig() override;
+    virtual SpindlePersistentConfig loadSpindleConfig() override;
+    virtual HeaterPersistentConfig loadHeaterConfig() override;
 };
 }

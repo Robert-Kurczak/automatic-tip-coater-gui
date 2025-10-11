@@ -5,6 +5,8 @@
 #include "application/System/Controllers/HeaterController/IHeaterController.hpp"
 #include "application/System/Ports/ISystemClock.hpp"
 
+#include <array>
+
 namespace ATC {
 class HeaterTestTask : public IConsumableTask<HeaterTestResults> {
 private:

@@ -21,7 +21,7 @@ public:
         ITemperatureSensor& temperatureSensor
     );
 
-    virtual void init() override;
+    virtual void init(const HeaterPersistentConfig& config) override;
     virtual void tick() override;
 
     virtual void turnOn() override;

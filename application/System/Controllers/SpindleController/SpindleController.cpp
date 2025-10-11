@@ -5,11 +5,14 @@ SpindleController::SpindleController(ILogger& logger, IMotor& motor) :
     logger_(logger),
     motor_(motor) {}
 
-void SpindleController::tick() {}
+void SpindleController::init(const SpindlePersistentConfig& config) {
+    speedPercent_ = config.speedPercentage;
+    rotationTimeInMillis_ = config.timedRotationInMillis;
 
-void SpindleController::init() {
     motor_.init();
 }
+
+void SpindleController::tick() {}
 
 bool SpindleController::wasFaultReported() {
     logger_.log(

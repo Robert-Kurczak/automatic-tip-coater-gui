@@ -1,12 +1,14 @@
 #pragma once
 
+#include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
+
 #include <stdint.h>
 
 namespace ATC {
 class ISpindleController {
 public:
+    virtual void init(const SpindlePersistentConfig& config) = 0;
     virtual void tick() = 0;
-    virtual void init() = 0;
 
     virtual bool wasFaultReported() = 0;
 

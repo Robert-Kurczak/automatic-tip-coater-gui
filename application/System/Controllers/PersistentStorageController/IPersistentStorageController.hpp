@@ -20,5 +20,11 @@ public:
     virtual void saveHeaterConfig(
         const HeaterPersistentConfig& config
     ) = 0;
+
+    virtual AxisPersistentConfig loadXAxisConfig() = 0;
+    virtual AxisPersistentConfig loadYAxisConfig() = 0;
+    virtual AxisPersistentConfig loadZAxisConfig() = 0;
+    virtual SpindlePersistentConfig loadSpindleConfig() = 0;
+    virtual HeaterPersistentConfig loadHeaterConfig() = 0;
 };
 }

@@ -5,7 +5,11 @@
 namespace ATC {
 YAxisController::YAxisController(ILogger& logger) : logger_(logger) {}
 
-void YAxisController::init() {}
+void YAxisController::init(const AxisPersistentConfig& config) {
+    startPosition_ = config.startPosition;
+    endPosition_ = config.endPosition;
+    speed_ = config.speed;
+}
 
 void YAxisController::tick() {}
 

@@ -152,4 +152,54 @@ void PersistentStorageController::saveHeaterConfig(
 
     updateStoredChecksum();
 }
+
+AxisPersistentConfig PersistentStorageController::loadXAxisConfig() {
+    std::array<uint8_t, sizeof(AxisPersistentConfig)> buffer {};
+
+    persistentStorage_.read(
+        offsetof(PersistentData, xAxisConfig), buffer
+    );
+
+    return fromByteSpan<AxisPersistentConfig>(buffer);
+}
+
+AxisPersistentConfig PersistentStorageController::loadYAxisConfig() {
+    std::array<uint8_t, sizeof(AxisPersistentConfig)> buffer {};
+
+    persistentStorage_.read(
+        offsetof(PersistentData, yAxisConfig), buffer
+    );
+
+    return fromByteSpan<AxisPersistentConfig>(buffer);
+}
+
+AxisPersistentConfig PersistentStorageController::loadZAxisConfig() {
+    std::array<uint8_t, sizeof(AxisPersistentConfig)> buffer {};
+
+    persistentStorage_.read(
+        offsetof(PersistentData, zAxisConfig), buffer
+    );
+
+    return fromByteSpan<AxisPersistentConfig>(buffer);
+}
+
+SpindlePersistentConfig PersistentStorageController::loadSpindleConfig() {
+    std::array<uint8_t, sizeof(SpindlePersistentConfig)> buffer {};
+
+    persistentStorage_.read(
+        offsetof(PersistentData, spindleConfig), buffer
+    );
+
+    return fromByteSpan<SpindlePersistentConfig>(buffer);
+}
+
+HeaterPersistentConfig PersistentStorageController::loadHeaterConfig() {
+    std::array<uint8_t, sizeof(HeaterPersistentConfig)> buffer {};
+
+    persistentStorage_.read(
+        offsetof(PersistentData, heaterConfig), buffer
+    );
+
+    return fromByteSpan<HeaterPersistentConfig>(buffer);
+}
 }

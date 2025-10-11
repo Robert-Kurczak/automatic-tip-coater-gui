@@ -1,6 +1,7 @@
 #pragma once
 
-#include <functional>
+#include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
+
 #include <stdint.h>
 
 namespace ATC {
@@ -8,7 +9,7 @@ class IHeaterController {
 public:
     virtual ~IHeaterController() = default;
 
-    virtual void init() = 0;
+    virtual void init(const HeaterPersistentConfig& config) = 0;
     virtual void tick() = 0;
 
     virtual void turnOn() = 0;

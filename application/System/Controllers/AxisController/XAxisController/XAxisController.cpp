@@ -5,7 +5,11 @@
 namespace ATC {
 XAxisController::XAxisController(ILogger& logger) : logger_(logger) {}
 
-void XAxisController::init() {}
+void XAxisController::init(const AxisPersistentConfig& config) {
+    startPosition_ = config.startPosition;
+    endPosition_ = config.endPosition;
+    speed_ = config.speed;
+}
 
 void XAxisController::tick() {}
 
