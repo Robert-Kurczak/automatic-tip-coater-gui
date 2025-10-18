@@ -5,4 +5,4 @@ touchgfx_path := ../Middlewares/ST/touchgfx
 # Location of the TouchGFX Environment
 touchgfx_env := ../../../../../Programs/TouchGfx/env
 # Optional additional compiler flags
-user_cflags := -DUSE_BPP=16
+user_cflags := -DUSE_BPP=16 -std=gnu++20
