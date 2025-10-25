@@ -1,7 +1,7 @@
 #pragma once
 
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 #include "application/System/Drivers/PersistentStorage/IPersistentStorage.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
 
 #include <filesystem>
 #include <stdint.h>
@@ -9,13 +9,13 @@
 namespace ATC {
 class FakePersistentStorage : public IPersistentStorage {
 private:
-    ILogger& logger_;
+    ILoggerSink& loggerSink_;
     const std::filesystem::path storageFilePath_;
     const uint32_t storageSize_;
 
 public:
     FakePersistentStorage(
-        ILogger& logger,
+        ILoggerSink& loggerSink,
         const std::filesystem::path& storageFilePath,
         const uint32_t storageSize
     );

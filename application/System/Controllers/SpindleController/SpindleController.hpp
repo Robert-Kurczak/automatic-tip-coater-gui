@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ISpindleController.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 #include "application/System/Drivers/Motor/IMotor.hpp"
 
 #include <stdint.h>
@@ -9,14 +9,14 @@
 namespace ATC {
 class SpindleController : public ISpindleController {
 private:
-    ILogger& logger_;
+    ILoggerSink& loggerSink_;
     IMotor& motor_;
 
     uint8_t speedPercent_ = 50;
     uint32_t rotationTimeInMillis_ = 3000;
 
 public:
-    SpindleController(ILogger& logger, IMotor& motor);
+    SpindleController(ILoggerSink& loggerSink, IMotor& motor);
 
     virtual void tick() override;
     virtual void init(const SpindlePersistentConfig& config) override;

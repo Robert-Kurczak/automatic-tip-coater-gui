@@ -1,9 +1,12 @@
 #include "XAxisController.hpp"
 
+#include "application/Utils/Logger.hpp"
+
 #include <source_location>
 
 namespace ATC {
-XAxisController::XAxisController(ILogger& logger) : logger_(logger) {}
+XAxisController::XAxisController(ILoggerSink& loggerSink) :
+    loggerSink_(loggerSink) {}
 
 void XAxisController::init(const AxisPersistentConfig& config) {
     startPosition_ = config.startPosition;
@@ -14,144 +17,129 @@ void XAxisController::init(const AxisPersistentConfig& config) {
 void XAxisController::tick() {}
 
 bool XAxisController::wasFaultReported() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void XAxisController::moveToPosition(uint32_t position) {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 uint32_t XAxisController::getCurrentPosition() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return 0;
 }
 
 void XAxisController::moveToMinLimitPosition() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool XAxisController::isAtMinLimitPosition() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void XAxisController::moveToMaxLimitPosition() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool XAxisController::isAtMaxLimitPosition() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void XAxisController::moveToHomePosition() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool XAxisController::isAtHomePosition() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return true;
 }
 
 void XAxisController::moveToStartPosition() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool XAxisController::isAtStartPosition() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void XAxisController::moveToEndPosition() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool XAxisController::isAtEndPosition() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void XAxisController::moveToHeaterFrontPosition() {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool XAxisController::isAtHeaterFrontPosition() const {
-    logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+    log(loggerSink_,
+        LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }

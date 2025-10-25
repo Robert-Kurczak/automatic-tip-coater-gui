@@ -1,6 +1,6 @@
 #pragma once
 
-#include "FakeDrivers/FakeLogger/FakeLogger.hpp"
+#include "FakeDrivers/FakeLoggerSink/FakeLoggerSink.hpp"
 #include "FakeDrivers/FakeMotor/FakeMotor.hpp"
 #include "FakeDrivers/FakePersistentStorage/FakePersistentStorage.hpp"
 #include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
@@ -13,9 +13,9 @@
 namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
-    FakeLogger logger_ {};
+    FakeLoggerSink loggerSink_ {};
     FakePersistentStorage persistentStorage_ {
-        logger_,
+        loggerSink_,
         "atc-storage.bin",
         4096
     };
@@ -23,12 +23,12 @@ private:
         persistentStorage_
     };
 
-    XAxisController xAxisController_ {logger_};
-    YAxisController yAxisController_ {logger_};
-    ZAxisController zAxisController_ {logger_};
+    XAxisController xAxisController_ {loggerSink_};
+    YAxisController yAxisController_ {loggerSink_};
+    ZAxisController zAxisController_ {loggerSink_};
 
-    FakeMotor spindleMotor_ {"Spindle Motor", logger_};
-    SpindleController spindleController_ {logger_, spindleMotor_};
+    FakeMotor spindleMotor_ {loggerSink_, "Spindle Motor"};
+    SpindleController spindleController_ {loggerSink_, spindleMotor_};
 
     SystemComponents targetComponents_ {
         .persistentStorageController = persistentStorageController_,

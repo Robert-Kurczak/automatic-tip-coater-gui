@@ -1,21 +1,21 @@
 #pragma once
 
 #include "IYAxisController.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
 #include <stdint.h>
 
 namespace ATC {
 class YAxisController : public IYAxisController {
 private:
-    ILogger& logger_;
+    ILoggerSink& loggerSink_;
 
     uint32_t startPosition_;
     uint32_t endPosition_;
     uint32_t speed_;
 
 public:
-    YAxisController(ILogger& logger);
+    YAxisController(ILoggerSink& loggerSink);
 
     virtual void init(const AxisPersistentConfig& config) override;
     virtual void tick() override;

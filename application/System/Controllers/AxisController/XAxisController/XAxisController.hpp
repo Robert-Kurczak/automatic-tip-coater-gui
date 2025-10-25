@@ -1,19 +1,19 @@
 #pragma once
 
 #include "IXAxisController.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
 namespace ATC {
 class XAxisController : public IXAxisController {
 private:
-    ILogger& logger_;
+    ILoggerSink& loggerSink_;
 
     uint32_t startPosition_;
     uint32_t endPosition_;
     uint32_t speed_;
 
 public:
-    XAxisController(ILogger& logger);
+    XAxisController(ILoggerSink& loggerSink);
 
     virtual void init(const AxisPersistentConfig& config) override;
     virtual void tick() override;

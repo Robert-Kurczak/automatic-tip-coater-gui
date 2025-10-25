@@ -1,15 +1,15 @@
 #pragma once
 
 #include "../IPersistentStorage.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
 namespace ATC {
 class Eeprom : public IPersistentStorage {
 private:
-    ILogger& logger_;
+    ILoggerSink& loggerSink_;
 
 public:
-    Eeprom(ILogger& logger);
+    Eeprom(ILoggerSink& loggerSink);
 
     virtual void read(
         uint32_t address,
