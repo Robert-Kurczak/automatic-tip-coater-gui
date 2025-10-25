@@ -3,7 +3,7 @@
 #include <source_location>
 
 namespace ATC {
-YAxisController::YAxisController(ILogger& logger) : logger_(logger) {}
+YAxisController::YAxisController(ILoggerSink& loggerSink) : loggerSink_(loggerSink) {}
 
 void YAxisController::init(const AxisPersistentConfig& config) {
     startPosition_ = config.startPosition;
@@ -15,7 +15,7 @@ void YAxisController::tick() {}
 
 bool YAxisController::wasFaultReported() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -25,7 +25,7 @@ bool YAxisController::wasFaultReported() const {
 
 void YAxisController::moveToPosition(uint32_t position) {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -34,7 +34,7 @@ void YAxisController::moveToPosition(uint32_t position) {
 
 uint32_t YAxisController::getCurrentPosition() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -44,7 +44,7 @@ uint32_t YAxisController::getCurrentPosition() const {
 
 void YAxisController::moveToMinLimitPosition() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -53,7 +53,7 @@ void YAxisController::moveToMinLimitPosition() {
 
 bool YAxisController::isAtMinLimitPosition() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -63,7 +63,7 @@ bool YAxisController::isAtMinLimitPosition() const {
 
 void YAxisController::moveToMaxLimitPosition() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -72,7 +72,7 @@ void YAxisController::moveToMaxLimitPosition() {
 
 bool YAxisController::isAtMaxLimitPosition() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -82,7 +82,7 @@ bool YAxisController::isAtMaxLimitPosition() const {
 
 void YAxisController::moveToHomePosition() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -91,7 +91,7 @@ void YAxisController::moveToHomePosition() {
 
 bool YAxisController::isAtHomePosition() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -101,7 +101,7 @@ bool YAxisController::isAtHomePosition() const {
 
 void YAxisController::moveToStartPosition() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -110,7 +110,7 @@ void YAxisController::moveToStartPosition() {
 
 bool YAxisController::isAtStartPosition() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -120,7 +120,7 @@ bool YAxisController::isAtStartPosition() const {
 
 void YAxisController::moveToEndPosition() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -129,7 +129,7 @@ void YAxisController::moveToEndPosition() {
 
 bool YAxisController::isAtEndPosition() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -139,7 +139,7 @@ bool YAxisController::isAtEndPosition() const {
 
 void YAxisController::moveToDetectTip() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -148,7 +148,7 @@ void YAxisController::moveToDetectTip() {
 
 bool YAxisController::isTipDetected() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -158,7 +158,7 @@ bool YAxisController::isTipDetected() const {
 
 void YAxisController::moveToCoatingPosition() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -167,7 +167,7 @@ void YAxisController::moveToCoatingPosition() {
 
 bool YAxisController::isAtCoatingPosition() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );

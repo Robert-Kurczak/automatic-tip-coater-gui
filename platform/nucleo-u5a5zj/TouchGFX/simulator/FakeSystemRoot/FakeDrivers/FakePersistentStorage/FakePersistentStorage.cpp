@@ -1,15 +1,18 @@
 #include "FakePersistentStorage.hpp"
 
+#include "application/Utils/Logger.hpp"
+
 #include <fstream>
+#include <source_location>
 #include <vector>
 
 namespace ATC {
 FakePersistentStorage::FakePersistentStorage(
-    ILogger& logger,
+    ILoggerSink& loggerSink,
     const std::filesystem::path& storageFilePath,
     const uint32_t storageSize
 ) :
-    logger_(logger),
+    loggerSink_(loggerSink),
     storageFilePath_(storageFilePath),
     storageSize_(storageSize) {}
 
@@ -29,11 +32,10 @@ void FakePersistentStorage::read(
     const std::span<uint8_t>& outputBuffer
 ) {
     if (address + outputBuffer.size() > storageSize_) {
-        logger_.log(
-            LOG_LEVEL::ERROR_LOG,
+        log(loggerSink_,
+            LogLevel::Error,
             std::source_location::current(),
-            "Memory capacity exceeded while reading"
-        );
+            "Memory capacity exceeded while reading");
 
         return;
     };
@@ -51,11 +53,10 @@ void FakePersistentStorage::write(
     const std::span<const uint8_t>& data
 ) {
     if (address + data.size() > storageSize_) {
-        logger_.log(
-            LOG_LEVEL::ERROR_LOG,
+        log(loggerSink_,
+            LogLevel::Error,
             std::source_location::current(),
-            "Memory capacity exceeded while writing"
-        );
+            "Memory capacity exceeded while writing");
 
         return;
     }

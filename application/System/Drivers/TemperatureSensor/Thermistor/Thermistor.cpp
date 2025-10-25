@@ -1,11 +1,11 @@
 #include "Thermistor.hpp"
 
 namespace ATC {
-Thermistor::Thermistor(ILogger& logger) : logger_(logger) {}
+Thermistor::Thermistor(ILoggerSink& loggerSink) : loggerSink_(loggerSink) {}
 
 void Thermistor::init() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -14,7 +14,7 @@ void Thermistor::init() {
 
 uint32_t Thermistor::getCelsius() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );

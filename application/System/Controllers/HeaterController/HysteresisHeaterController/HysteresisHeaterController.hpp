@@ -1,14 +1,14 @@
 #pragma once
 
 #include "../IHeaterController.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 #include "application/System/Drivers/Switch/ISwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/ITemperatureSensor.hpp"
 
 namespace ATC {
 class HysteresisHeaterController : public IHeaterController {
 private:
-    ILogger& logger_;
+    ILoggerSink& loggerSink_;
     ISwitch& heaterSwitch_;
     ITemperatureSensor& temperatureSensor_;
 
@@ -16,7 +16,7 @@ private:
 
 public:
     HysteresisHeaterController(
-        ILogger& logger,
+        ILoggerSink& loggerSink,
         ISwitch& heaterSwitch,
         ITemperatureSensor& temperatureSensor
     );

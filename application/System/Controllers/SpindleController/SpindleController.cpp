@@ -1,8 +1,8 @@
 #include "SpindleController.hpp"
 
 namespace ATC {
-SpindleController::SpindleController(ILogger& logger, IMotor& motor) :
-    logger_(logger),
+SpindleController::SpindleController(ILoggerSink& loggerSink, IMotor& motor) :
+    loggerSink_(loggerSink),
     motor_(motor) {}
 
 void SpindleController::init(const SpindlePersistentConfig& config) {
@@ -16,7 +16,7 @@ void SpindleController::tick() {}
 
 bool SpindleController::wasFaultReported() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -30,7 +30,7 @@ void SpindleController::startRotation() {
 
 void SpindleController::startTimedRotation(uint32_t rotationMillis) {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -47,7 +47,7 @@ void SpindleController::stopRotation() {
 
 bool SpindleController::isTimedRotationFinished() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );

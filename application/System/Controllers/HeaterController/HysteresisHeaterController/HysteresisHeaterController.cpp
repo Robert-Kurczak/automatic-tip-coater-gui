@@ -2,11 +2,11 @@
 
 namespace ATC {
 HysteresisHeaterController::HysteresisHeaterController(
-    ILogger& logger,
+    ILoggerSink& loggerSink,
     ISwitch& heaterSwitch,
     ITemperatureSensor& temperatureSensor
 ) :
-    logger_(logger),
+    loggerSink_(loggerSink),
     heaterSwitch_(heaterSwitch),
     temperatureSensor_(temperatureSensor) {}
 
@@ -23,7 +23,7 @@ void HysteresisHeaterController::tick() {}
 
 void HysteresisHeaterController::turnOn() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -32,7 +32,7 @@ void HysteresisHeaterController::turnOn() {
 
 void HysteresisHeaterController::turnOff() {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );
@@ -41,7 +41,7 @@ void HysteresisHeaterController::turnOff() {
 
 bool HysteresisHeaterController::isOn() const {
     logger_.log(
-        LOG_LEVEL::ERROR_LOG,
+        LogLevel::Error,
         std::source_location::current(),
         "Not implemented"
     );

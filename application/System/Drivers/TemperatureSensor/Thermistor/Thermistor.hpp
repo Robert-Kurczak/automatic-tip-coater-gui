@@ -1,15 +1,15 @@
 #pragma once
 
 #include "../ITemperatureSensor.hpp"
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
 namespace ATC {
 class Thermistor : public ITemperatureSensor {
 private:
-    ILogger& logger_;
+    ILoggerSink& loggerSink_;
 
 public:
-    Thermistor(ILogger& logger);
+    Thermistor(ILoggerSink& loggerSink);
 
     virtual void init() override;
 

@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 import argparse
 
-IMAGE_NAME = "touchgfx-simulator-builder"
+IMAGE_NAME = "atc-stm32-builder"
 
 ROOT_PROJECT_DIR = Path(__file__).parent.parent.parent.parent
 

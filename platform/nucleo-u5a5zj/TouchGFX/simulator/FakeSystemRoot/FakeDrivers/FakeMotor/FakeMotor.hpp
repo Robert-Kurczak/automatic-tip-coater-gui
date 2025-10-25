@@ -1,6 +1,6 @@
 #pragma once
 
-#include "application/System/Drivers/Logger/ILogger.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 #include "application/System/Drivers/Motor/IMotor.hpp"
 
 #include <string>
@@ -8,13 +8,13 @@
 namespace ATC {
 class FakeMotor : public IMotor {
 private:
+    ILoggerSink& loggerSink_;
     const std::string name_;
-    ILogger& logger_;
 
     bool isDirectionClockwise_ = true;
 
 public:
-    FakeMotor(std::string&& name, ILogger& logger);
+    FakeMotor(ILoggerSink& loggerSink, std::string&& name);
 
     virtual void init() override;
 

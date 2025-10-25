@@ -6,6 +6,8 @@
 namespace ATC {
 class IPersistentStorage {
 public:
+    virtual ~IPersistentStorage() = default;
+
     virtual void init() = 0;
 
     virtual void read(
