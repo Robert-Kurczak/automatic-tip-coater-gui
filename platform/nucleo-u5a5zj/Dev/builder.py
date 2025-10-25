@@ -56,7 +56,7 @@ def build_touchgfx_simulator():
                 "--volume", f"{STM32_PROJECT_DIR}:{STM32_PROJECT_MOUNT_PATH}:Z",
                 "--volume", f"{APPLICATION_PROJECT_DIR}:/{APPLICATION_PROJECT_MOUNT_PATH}:Z",
                 IMAGE_NAME,
-                "make", "-f", f"{STM32_PROJECT_MOUNT_PATH}/TouchGFX/simulator/gcc/Makefile"
+                "make", "-f", f"{STM32_PROJECT_MOUNT_PATH}/TouchGFX/simulator/gcc/Makefile", "-j16"
             ],
             check=True
         )
