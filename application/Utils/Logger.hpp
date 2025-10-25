@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+#include <cstdio>
 #include <source_location>
 #include <stdint.h>
 
