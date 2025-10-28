@@ -1,11 +1,7 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
-#ifdef SIMULATOR
-    #include "FakeSystemRoot.hpp"
-#else
-    #include "TargetSystemRoot.hpp"
-#endif
+#include "FakeSystemRoot.hpp"
 
 #include <stdint.h>
 

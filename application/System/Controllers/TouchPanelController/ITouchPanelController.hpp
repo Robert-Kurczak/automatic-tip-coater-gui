@@ -7,6 +7,8 @@
 namespace ATC {
 class ITouchPanelController {
 public:
+    virtual ~ITouchPanelController() = default;
+
     virtual void init() = 0;
 
     virtual Vector2 readPosition() = 0;

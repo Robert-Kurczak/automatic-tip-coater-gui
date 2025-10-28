@@ -1,5 +1,7 @@
 #include "HysteresisHeaterController.hpp"
 
+#include "application/Utils/Logger.hpp"
+
 namespace ATC {
 HysteresisHeaterController::HysteresisHeaterController(
     ILoggerSink& loggerSink,
@@ -22,29 +24,26 @@ void HysteresisHeaterController::init(
 void HysteresisHeaterController::tick() {}
 
 void HysteresisHeaterController::turnOn() {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 void HysteresisHeaterController::turnOff() {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool HysteresisHeaterController::isOn() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 };

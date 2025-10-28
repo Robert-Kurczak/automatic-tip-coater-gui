@@ -8,13 +8,16 @@ import argparse
 
 IMAGE_NAME = "atc-stm32-builder"
 
-ROOT_PROJECT_DIR = Path(__file__).parent.parent.parent.parent
+PROJECT_ROOT_DIR = Path(__file__).parent.parent.parent.parent
+PROJECT_ROOT_MOUNT_PATH = Path("/project")
 
-APPLICATION_PROJECT_DIR = ROOT_PROJECT_DIR.joinpath("application")
-APPLICATION_PROJECT_MOUNT_PATH = "/usr/include/application"
+APPLICATION_MOUNT_PATH = PROJECT_ROOT_MOUNT_PATH.joinpath(
+    "application/"
+)
 
-STM32_PROJECT_DIR = ROOT_PROJECT_DIR.joinpath("platform/nucleo-u5a5zj")
-STM32_PROJECT_MOUNT_PATH = "/platform"
+SIMULATOR_MAKEFILE_MOUNT_PATH = PROJECT_ROOT_MOUNT_PATH.joinpath(
+    "platform/nucleo-u5a5zj/TouchGFX/simulator/gcc/Makefile"
+)
 
 DOCKERFILE_PATH = Path(__file__).parent.joinpath("Dockerfile")
 
@@ -53,10 +56,11 @@ def build_touchgfx_simulator():
             [
                 "docker", "run", "--rm", "-it",
                 "-u", f"{os.getuid()}:{os.getgid()}",
-                "--volume", f"{STM32_PROJECT_DIR}:{STM32_PROJECT_MOUNT_PATH}:Z",
-                "--volume", f"{APPLICATION_PROJECT_DIR}:/{APPLICATION_PROJECT_MOUNT_PATH}:Z",
+                "--volume", f"{PROJECT_ROOT_DIR}:{PROJECT_ROOT_MOUNT_PATH}:Z",
+                "--env", f"ADDITIONAL_SOURCES_DIR={APPLICATION_MOUNT_PATH}",
+                "--env", f"ADDITIONAL_INCLUDE_DIR={PROJECT_ROOT_MOUNT_PATH}",
                 IMAGE_NAME,
-                "make", "-f", f"{STM32_PROJECT_MOUNT_PATH}/TouchGFX/simulator/gcc/Makefile", "-j16"
+                "make", "-f", SIMULATOR_MAKEFILE_MOUNT_PATH, "-j16"
             ],
             check=True
         )

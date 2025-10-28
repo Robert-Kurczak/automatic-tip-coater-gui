@@ -25,14 +25,7 @@ private:
     void finishTask();
 
     using stageMethod = void (CalibrationTask::*)();
-
-    static constexpr std::array<stageMethod, 5> stages_ {
-        &CalibrationTask::moveAxesToHomePosition,
-        &CalibrationTask::waitForAxesAtHomePosition,
-        &CalibrationTask::moveAxesToStartPosition,
-        &CalibrationTask::waitForAxesAtStartPosition,
-        &CalibrationTask::finishTask
-    };
+    static const std::array<stageMethod, 5> stages_;
 
 public:
     CalibrationTask(

@@ -7,6 +7,8 @@
 namespace ATC {
 class ISpindleController {
 public:
+    virtual ~ISpindleController() = default;
+
     virtual void init(const SpindlePersistentConfig& config) = 0;
     virtual void tick() = 0;
 

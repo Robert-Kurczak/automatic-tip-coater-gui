@@ -1,7 +1,7 @@
 #pragma once
 
 #include <array>
-#include <cstdio>
+#include <format>
 #include <source_location>
 #include <stdint.h>
 
@@ -12,18 +12,24 @@ inline constexpr uint32_t LOG_BUFFER_SIZE = 1024;
 enum class LogLevel { Error, Debug, Info };
 
 template<typename SinkType, typename... Args>
-void logFormat(SinkType& sink, const char* format, Args&&... args) {
+void logFormat(
+    SinkType& sink,
+    std::format_string<Args...> format,
+    Args&&... args
+) {
     if constexpr (!LOGGER_ENABLED) {
         return;
     }
 
     std::array<char, LOG_BUFFER_SIZE> formatBuffer;
-    snprintf(
-        formatBuffer.data(),
-        formatBuffer.size(),
+
+    const std::format_to_n_result result = std::format_to_n(
+        formatBuffer.begin(),
+        formatBuffer.size() - 1,
         format,
         std::forward<Args>(args)...
     );
+    *result.out = '\0';
 
     sink << formatBuffer.data();
 }
@@ -42,7 +48,7 @@ void logLevelLabel(SinkType& sink, LogLevel logLevel) {
     const char* logLevelString =
         enumNamesArray[static_cast<uint8_t>(logLevel)];
 
-    logFormat(sink, "[%s] ", logLevelString);
+    logFormat(sink, "[{}] ", logLevelString);
 }
 
 template<typename SinkType>
@@ -52,7 +58,7 @@ void logSourceLocationLabels(
 ) {
     logFormat(
         sink,
-        "[%s][%u] ",
+        "[{}][{}] ",
         sourceLocation.function_name(),
         sourceLocation.line()
     );
@@ -63,7 +69,7 @@ void log(
     SinkType& sink,
     LogLevel logLevel,
     const std::source_location& sourceLocation,
-    const char* format,
+    std::format_string<Args...> format,
     Args&&... args
 ) {
     if constexpr (!LOGGER_ENABLED) {
@@ -80,7 +86,7 @@ template<typename SinkType, typename... Args>
 void log(
     SinkType& sink,
     LogLevel logLevel,
-    const char* format,
+    std::format_string<Args...> format,
     Args&&... args
 ) {
     if constexpr (!LOGGER_ENABLED) {
