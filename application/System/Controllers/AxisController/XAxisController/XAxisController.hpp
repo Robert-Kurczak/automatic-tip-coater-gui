@@ -3,6 +3,8 @@
 #include "IXAxisController.hpp"
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
+#include <stdint.h>
+
 namespace ATC {
 class XAxisController : public IXAxisController {
 private:

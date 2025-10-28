@@ -20,8 +20,8 @@ all clean assets:
 $(error Spaces not allowed in path)
 else
 
-ADDITIONAL_SOURCES :=  $(wildcard $(makefile_path)../FakeSystemRoot/*.cpp)
-ADDITIONAL_INCLUDE_PATHS := $(wildcard $(makefile_path)../FakeSystemRoot)
+ADDITIONAL_SOURCES := $(shell find $(ADDITIONAL_SOURCES_DIR) -name "*.cpp")
+ADDITIONAL_INCLUDE_PATHS := $(makefile_path)../FakeSystemRoot $(ADDITIONAL_INCLUDE_DIR)
 ADDITIONAL_LIBRARY_PATHS := 
 ADDITIONAL_LIBRARIES :=
 export ADDITIONAL_SOURCES ADDITIONAL_INCLUDE_PATHS ADDITIONAL_LIBRARY_PATHS ADDITIONAL_LIBRARIES

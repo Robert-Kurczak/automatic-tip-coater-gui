@@ -1,9 +1,12 @@
 #include "ZAxisController.hpp"
 
+#include "application/Utils/Logger.hpp"
+
 #include <source_location>
 
 namespace ATC {
-ZAxisController::ZAxisController(ILoggerSink& loggerSink) : loggerSink_(loggerSink) {}
+ZAxisController::ZAxisController(ILoggerSink& loggerSink) :
+    loggerSink_(loggerSink) {}
 
 void ZAxisController::init(const AxisPersistentConfig& config) {
     startPosition_ = config.startPosition;
@@ -14,125 +17,112 @@ void ZAxisController::init(const AxisPersistentConfig& config) {
 void ZAxisController::tick() {}
 
 bool ZAxisController::wasFaultReported() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void ZAxisController::moveToPosition(uint32_t position) {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 uint32_t ZAxisController::getCurrentPosition() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return 0;
 }
 
 void ZAxisController::moveToMinLimitPosition() {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool ZAxisController::isAtMinLimitPosition() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void ZAxisController::moveToMaxLimitPosition() {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool ZAxisController::isAtMaxLimitPosition() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void ZAxisController::moveToHomePosition() {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool ZAxisController::isAtHomePosition() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return true;
 }
 
 void ZAxisController::moveToStartPosition() {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool ZAxisController::isAtStartPosition() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }
 
 void ZAxisController::moveToEndPosition() {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
 }
 
 bool ZAxisController::isAtEndPosition() const {
-    logger_.log(
+    log(loggerSink_,
         LogLevel::Error,
         std::source_location::current(),
-        "Not implemented"
-    );
+        "Not implemented");
     // TODO implement
     return false;
 }

@@ -1,5 +1,7 @@
 #include "CalibrationTask.hpp"
 
+#include <functional>
+
 namespace ATC {
 void CalibrationTask::moveAxesToHomePosition() {
     xAxisController_.moveToHomePosition();
@@ -47,6 +49,15 @@ void CalibrationTask::finishTask() {
     state_ = TaskState::FINISHED;
     wasSuccessful_ = true;
 }
+
+const std::array<CalibrationTask::stageMethod, 5>
+    CalibrationTask::stages_ {
+        &CalibrationTask::moveAxesToHomePosition,
+        &CalibrationTask::waitForAxesAtHomePosition,
+        &CalibrationTask::moveAxesToStartPosition,
+        &CalibrationTask::waitForAxesAtStartPosition,
+        &CalibrationTask::finishTask
+    };
 
 CalibrationTask::CalibrationTask(
     IXAxisController& xAxisController,
