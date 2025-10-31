@@ -11,7 +11,7 @@ FakeTemperatureSensor::FakeTemperatureSensor(
     name_(name) {}
 
 void FakeTemperatureSensor::init() {
-    log(loggerSink_, LogLevel::Debug, "%s initialized", name_);
+    log(loggerSink_, LogLevel::Debug, "{} initialized", name_);
 };
 
 uint32_t FakeTemperatureSensor::getCelsius() {
