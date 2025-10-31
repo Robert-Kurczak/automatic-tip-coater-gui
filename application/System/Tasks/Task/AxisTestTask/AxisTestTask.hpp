@@ -37,16 +37,7 @@ private:
     void finishTask();
 
     using stageMethod = void (AxisTestTask::*)();
-
-    static constexpr std::array<stageMethod, 7> stages_ {
-        &AxisTestTask::calibrateAxes,
-        &AxisTestTask::waitForCalibrationFinish,
-        &AxisTestTask::moveAxisToMinLimitPosition,
-        &AxisTestTask::waitForAxisAtMinLimitPosition,
-        &AxisTestTask::moveAxisToMaxLimitPosition,
-        &AxisTestTask::waitForAxisAtMaxLimitPosition,
-        &AxisTestTask::finishTask
-    };
+    static const std::array<stageMethod, 7> stages_;
 
 public:
     AxisTestTask(

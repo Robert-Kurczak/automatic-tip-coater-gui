@@ -146,6 +146,47 @@ void CoatingTask::finishTask() {
     wasSuccessful_ = true;
 }
 
+const std::array<CoatingTask::stageMethod, 25> CoatingTask::stages_ {
+    &CoatingTask::moveAxesToInitialPosition,
+    &CoatingTask::waitForAxesAtInitialPosition,
+
+    &CoatingTask::moveZAxisToEndPosition,
+    &CoatingTask::waitForZAxisAtEndPosition,
+
+    &CoatingTask::detectTipWithYAxis,
+    &CoatingTask::waitForTipDetection,
+
+    &CoatingTask::moveYAxisToCoatingPosition,
+    &CoatingTask::waitForYAxisAtCoatingPosition,
+
+    &CoatingTask::moveZAxisToStartPosition,
+    &CoatingTask::waitForZAxisAtStartPosition,
+
+    &CoatingTask::moveXAxisToEndPosition,
+    &CoatingTask::waitForXAxisAtEndPosition,
+
+    &CoatingTask::moveZAxisToEndPosition,
+    &CoatingTask::waitForZAxisAtEndPosition,
+
+    &CoatingTask::startRotation,
+
+    &CoatingTask::moveXAxisToHeaterFrontPosition,
+    &CoatingTask::waitForXAxisAtHeaterFrontPosition,
+
+    &CoatingTask::startTimedRotationInHeaterFront,
+    &CoatingTask::waitForTimedRotationToFinish,
+
+    &CoatingTask::moveXAxisToStartPosition,
+    &CoatingTask::waitForXAxisAtStartPosition,
+
+    &CoatingTask::stopRotation,
+
+    &CoatingTask::moveZAxisToStartPosition,
+    &CoatingTask::waitForZAxisAtEndPosition,
+
+    &CoatingTask::finishTask
+};
+
 CoatingTask::CoatingTask(
     IConsumableTask<bool>& calibrationTask,
     IXAxisController& xAxisController,

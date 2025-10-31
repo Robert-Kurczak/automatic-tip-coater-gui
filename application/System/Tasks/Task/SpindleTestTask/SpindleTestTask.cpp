@@ -25,6 +25,13 @@ void SpindleTestTask::finishTask() {
     state_ = TaskState::FINISHED;
 }
 
+const std::array<SpindleTestTask::stageMethod, 3>
+    SpindleTestTask::stages_ {
+        &SpindleTestTask::startSpindle,
+        &SpindleTestTask::waitForRotationToFinish,
+        &SpindleTestTask::finishTask
+    };
+
 SpindleTestTask::SpindleTestTask(
     ISpindleController& spindleController,
     uint32_t rotationDurationInMillis

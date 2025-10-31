@@ -24,12 +24,7 @@ private:
     void finishTask();
 
     using stageMethod = void (SpindleTestTask::*)();
-
-    static constexpr std::array<stageMethod, 3> stages_ {
-        &SpindleTestTask::startSpindle,
-        &SpindleTestTask::waitForRotationToFinish,
-        &SpindleTestTask::finishTask
-    };
+    static const std::array<stageMethod, 3> stages_;
 
 public:
     SpindleTestTask(

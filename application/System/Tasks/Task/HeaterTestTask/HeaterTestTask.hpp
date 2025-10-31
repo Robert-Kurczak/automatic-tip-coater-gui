@@ -26,12 +26,7 @@ private:
     void finishTask();
 
     using stageMethod = void (HeaterTestTask::*)();
-
-    static constexpr std::array<stageMethod, 3> stages_ {
-        &HeaterTestTask::turnHeaterOn,
-        &HeaterTestTask::waitForTargetTemperature,
-        &HeaterTestTask::finishTask
-    };
+    static const std::array<stageMethod, 3> stages_;
 
 public:
     HeaterTestTask(

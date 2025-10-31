@@ -1,10 +1,12 @@
 #include "AxisTestTask.hpp"
 
 #include <functional>
+#include <touchgfx/Utils.hpp>
 
 namespace ATC {
 void AxisTestTask::calibrateAxes() {
     calibrationTask_.start();
+    currentStage_++;
 }
 
 void AxisTestTask::waitForCalibrationFinish() {
@@ -77,6 +79,16 @@ void AxisTestTask::finishTask() {
 
     state_ = TaskState::FINISHED;
 }
+
+const std::array<AxisTestTask::stageMethod, 7> AxisTestTask::stages_ {
+    &AxisTestTask::calibrateAxes,
+    &AxisTestTask::waitForCalibrationFinish,
+    &AxisTestTask::moveAxisToMinLimitPosition,
+    &AxisTestTask::waitForAxisAtMinLimitPosition,
+    &AxisTestTask::moveAxisToMaxLimitPosition,
+    &AxisTestTask::waitForAxisAtMaxLimitPosition,
+    &AxisTestTask::finishTask
+};
 
 AxisTestTask::AxisTestTask(
     IConsumableTask<bool>& calibrationTask,
