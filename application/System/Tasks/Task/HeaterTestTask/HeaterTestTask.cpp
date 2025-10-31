@@ -36,6 +36,12 @@ void HeaterTestTask::finishTask() {
     state_ = TaskState::FINISHED;
 }
 
+const std::array<HeaterTestTask::stageMethod, 3> HeaterTestTask::stages_ {
+    &HeaterTestTask::turnHeaterOn,
+    &HeaterTestTask::waitForTargetTemperature,
+    &HeaterTestTask::finishTask
+};
+
 HeaterTestTask::HeaterTestTask(
     IHeaterController& heaterController,
     ISystemClock& systemClock,

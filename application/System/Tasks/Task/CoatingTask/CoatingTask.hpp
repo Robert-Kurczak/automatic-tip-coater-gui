@@ -59,47 +59,7 @@ private:
     void finishTask();
 
     using stageMethod = void (CoatingTask::*)();
-
-    static constexpr std::array<stageMethod, 25> stages_ {
-        &CoatingTask::moveAxesToInitialPosition,
-        &CoatingTask::waitForAxesAtInitialPosition,
-
-        &CoatingTask::moveZAxisToEndPosition,
-        &CoatingTask::waitForZAxisAtEndPosition,
-
-        &CoatingTask::detectTipWithYAxis,
-        &CoatingTask::waitForTipDetection,
-
-        &CoatingTask::moveYAxisToCoatingPosition,
-        &CoatingTask::waitForYAxisAtCoatingPosition,
-
-        &CoatingTask::moveZAxisToStartPosition,
-        &CoatingTask::waitForZAxisAtStartPosition,
-
-        &CoatingTask::moveXAxisToEndPosition,
-        &CoatingTask::waitForXAxisAtEndPosition,
-
-        &CoatingTask::moveZAxisToEndPosition,
-        &CoatingTask::waitForZAxisAtEndPosition,
-
-        &CoatingTask::startRotation,
-
-        &CoatingTask::moveXAxisToHeaterFrontPosition,
-        &CoatingTask::waitForXAxisAtHeaterFrontPosition,
-
-        &CoatingTask::startTimedRotationInHeaterFront,
-        &CoatingTask::waitForTimedRotationToFinish,
-
-        &CoatingTask::moveXAxisToStartPosition,
-        &CoatingTask::waitForXAxisAtStartPosition,
-
-        &CoatingTask::stopRotation,
-
-        &CoatingTask::moveZAxisToStartPosition,
-        &CoatingTask::waitForZAxisAtEndPosition,
-
-        &CoatingTask::finishTask
-    };
+    static const std::array<stageMethod, 25> stages_;
 
 public:
     CoatingTask(
