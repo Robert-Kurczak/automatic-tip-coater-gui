@@ -8,14 +8,14 @@ FakeMotor::FakeMotor(ILoggerSink& loggerSink, std::string&& name) :
     name_(std::move(name)) {}
 
 void FakeMotor::init() {
-    log(loggerSink_, LogLevel::Debug, "%s initialized", name_);
+    log(loggerSink_, LogLevel::Debug, "{} initialized", name_);
 }
 
 void FakeMotor::startRotation(uint8_t speedPercent) {
-    log(loggerSink_, LogLevel::Debug, "%s started", name_);
+    log(loggerSink_, LogLevel::Debug, "{} started", name_);
 }
 void FakeMotor::stopRotation() {
-    log(loggerSink_, LogLevel::Debug, "%s stopped", name_);
+    log(loggerSink_, LogLevel::Debug, "{} stopped", name_);
 }
 
 void FakeMotor::setDirectionClockwise() {
@@ -23,7 +23,7 @@ void FakeMotor::setDirectionClockwise() {
 
     log(loggerSink_,
         LogLevel::Debug,
-        "Clockwise direction set for %s",
+        "Clockwise direction set for {}",
         name_);
 }
 
@@ -32,7 +32,7 @@ void FakeMotor::setDirectionCounterClockwise() {
 
     log(loggerSink_,
         LogLevel::Debug,
-        "Counter clockwise direction set for %s",
+        "Counter clockwise direction set for {}",
         name_);
 }
 

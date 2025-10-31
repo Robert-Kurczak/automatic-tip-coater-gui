@@ -12,7 +12,7 @@ void FakeDisplay::init() {
 }
 
 void FakeDisplay::drawTestPattern(uint8_t seed) {
-    log(loggerSink_, LogLevel::Debug, "Displat test: [%u]", seed);
+    log(loggerSink_, LogLevel::Debug, "Displat test: {}", seed);
 }
 
 void FakeDisplay::draw(
