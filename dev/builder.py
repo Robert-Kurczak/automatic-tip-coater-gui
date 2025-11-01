@@ -132,7 +132,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     choosen_target = args.build_target_name
-    build_target = BUILD_TARGETS.get(args.build_target_name)
+    build_target = BUILD_TARGETS.get(choosen_target)
 
     if build_target is None:
         print(f"Target '{choosen_target}' not found")
