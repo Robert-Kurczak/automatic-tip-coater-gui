@@ -2,50 +2,21 @@
 
 import sys
 import subprocess
-from pathlib import Path
 import argparse
-
-REPOSITORY_ROOT_DIR = Path(__file__).parent.parent
-
-TOUCHGFX_DIR_PATH = REPOSITORY_ROOT_DIR.joinpath(
-    "platform/nucleo-u5a5zj/TouchGFX"
-)
-
-TOUCHGFX_SIMULATOR_PATH = TOUCHGFX_DIR_PATH.joinpath(
-    "build/bin/simulator.out"
-)
-
-def log_info(message):
-    bold_font_start = "\x1b[1;39;49m"
-    bold_font_stop = "\x1b[0m"
-
-    print(bold_font_start + message + bold_font_stop)
-
-
-def log_error(message):
-    red_color_start = "\x1b[1;31;49m"
-    red_color_stop = "\x1b[0m"
-
-    print(red_color_start + message + red_color_stop)
-
-def log_success(message):
-    green_color_start = "\x1b[1;32;49m"
-    green_color_end = "\x1b[0m"
-
-    print(green_color_start + message + green_color_end)
-
+from dev import common
+from dev import paths
 
 def run_touchgfx_simulator():
     try:
         subprocess.run(
-            [TOUCHGFX_SIMULATOR_PATH],
+            [paths.TOUCHGFX_SIMULATOR_PATH],
             check=True
         )
     except subprocess.CalledProcessError:
-        log_error("=== Run failed ===")
+        common.log_error("=== Run failed ===")
         sys.exit(1)
 
-    log_success("=== Run succeed ===")
+    common.log_success("=== Run succeed ===")
 
 
 RUN_TARGETS = {
