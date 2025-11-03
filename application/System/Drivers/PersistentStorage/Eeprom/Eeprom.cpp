@@ -5,6 +5,8 @@
 namespace ATC {
 Eeprom::Eeprom(ILoggerSink& loggerSink) : loggerSink_(loggerSink) {}
 
+void Eeprom::init() {}
+
 void Eeprom::read(
     uint32_t address,
     const std::span<uint8_t>& outputBuffer

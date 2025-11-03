@@ -14,7 +14,7 @@
 #include "application/System/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
 #include "application/System/Drivers/Display/Ws17143Display/Ws17143Display.hpp"
 #include "application/System/Drivers/FlexibleMemoryController/FlexibleMemoryController.hpp"
-#include "application/System/Drivers/Logger/UartLogger/UartLogger.hpp"
+#include "application/System/Drivers/LoggerSink/UartLoggerSink/UartLoggerSink.hpp"
 #include "application/System/Drivers/Motor/PwmDcMotor/PwmDcMotor.hpp"
 #include "application/System/Drivers/PersistentStorage/Eeprom/Eeprom.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
@@ -47,14 +47,14 @@ namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
     Uart uart_ {huart1};
-    UartLogger logger_ {uart_};
+    UartLoggerSink loggerSink_ {uart_};
 
-    Eeprom eeprom_ {logger_};
+    Eeprom eeprom_ {loggerSink_};
     PersistentStorageController persistentStorageController_ {eeprom_};
 
-    XAxisController xAxisController_ {logger_};
-    YAxisController yAxisController_ {logger_};
-    ZAxisController zAxisController_ {logger_};
+    XAxisController xAxisController_ {loggerSink_};
+    YAxisController yAxisController_ {loggerSink_};
+    ZAxisController zAxisController_ {loggerSink_};
 
     PwmPin dcMotorPwmPin_ {htim3, TIM_CHANNEL_1};
     GpioPin dcMotorDirectionPin_ {
@@ -66,13 +66,13 @@ private:
         .directionPin = dcMotorDirectionPin_
     };
     PwmDcMotor pwmDcMotor_ {pwmDcMotorPinout_};
-    SpindleController spindleController_ {logger_, pwmDcMotor_};
+    SpindleController spindleController_ {loggerSink_, pwmDcMotor_};
 
     GpioPin heaterTogglePin_ {*Heater_EN_GPIO_Port, Heater_EN_Pin};
     GpioActiveHighSwitch heaterSwitch_ {heaterTogglePin_};
-    Thermistor heaterThermistor_ {logger_};
+    Thermistor heaterThermistor_ {loggerSink_};
     HysteresisHeaterController heaterController_ {
-        logger_,
+        loggerSink_,
         heaterSwitch_,
         heaterThermistor_
     };
