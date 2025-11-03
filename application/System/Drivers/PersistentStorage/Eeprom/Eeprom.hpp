@@ -11,6 +11,8 @@ private:
 public:
     Eeprom(ILoggerSink& loggerSink);
 
+    virtual void init() override;
+
     virtual void read(
         uint32_t address,
         const std::span<uint8_t>& outputBuffer

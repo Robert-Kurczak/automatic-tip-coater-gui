@@ -5,6 +5,8 @@
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
 
+#include <array>
+
 namespace ATC {
 class CalibrationTask : public IConsumableTask<bool> {
 private:
