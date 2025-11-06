@@ -21,9 +21,7 @@ STM32_BUILDER_DOCKERFILE_PATH = DOCKERFILES_DIRECTORY_PATH.joinpath(
 
 # === Docker volumes ===
 REPOSITORY_ROOT_MOUNT_PATH = Path("/atc")
-APPLICATION_DIR_MOUNT_PATH = REPOSITORY_ROOT_MOUNT_PATH.joinpath(
-    "application"
-)
+
 MOUNTED_TOUCHGFX_SIMULATOR_MAKEFILE_PATH = REPOSITORY_ROOT_MOUNT_PATH.joinpath(
     "platform/nucleo-u5a5zj/TouchGFX/simulator/gcc/Makefile"
 )

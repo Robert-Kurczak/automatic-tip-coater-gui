@@ -48,8 +48,6 @@ def build_touchgfx_simulator(clean):
                 "docker", "run", "--rm", "-it",
                 "-u", f"{os.getuid()}:{os.getgid()}",
                 "--volume", f"{paths.REPOSITORY_ROOT_PATH}:{paths.REPOSITORY_ROOT_MOUNT_PATH}:Z",
-                "--env", f"ADDITIONAL_SOURCES_DIR={paths.APPLICATION_DIR_MOUNT_PATH}",
-                "--env", f"ADDITIONAL_INCLUDE_DIR={paths.REPOSITORY_ROOT_MOUNT_PATH}",
                 paths.STM32_BUILDER_IMAGE_NAME,
                 *build_command.split()
             ],
