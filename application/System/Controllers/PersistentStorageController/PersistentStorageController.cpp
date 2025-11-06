@@ -1,8 +1,66 @@
 #include "PersistentStorageController.hpp"
 
 #include "application/Utils/Byte.hpp"
+#include "application/Utils/Logger.hpp"
 
 namespace ATC {
+void PersistentStorageController::logAxisConfig(
+    const AxisPersistentConfig& config,
+    std::string_view axisName
+) {
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== {} axis config ===\n"
+        "\tstart position: {}\n"
+        "\tend position: {}\n"
+        "\tspeed: {}\n",
+        axisName,
+        config.startPosition,
+        config.endPosition,
+        config.speed);
+}
+
+void PersistentStorageController::logSpindleConfig(
+    const SpindlePersistentConfig& config
+) {
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Spindle config ===\n"
+        "\tspeed [%]: {}\n"
+        "\tclockwise: {}\n"
+        "\ttimed rotation [ms]: {}\n",
+        config.speedPercentage,
+        config.isDirectionClockwise,
+        config.timedRotationInMillis);
+}
+
+void PersistentStorageController::logHeaterConfig(
+    const HeaterPersistentConfig& config
+) {
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Heater config ===\n"
+        "\ttarget temperature [°C]: {}\n",
+        config.targetTemperatureInCelsius);
+}
+
+void PersistentStorageController::logPersistentData(
+    const PersistentData& data
+) {
+    logAxisConfig(data.xAxisConfig, "X");
+    logAxisConfig(data.yAxisConfig, "Y");
+    logAxisConfig(data.zAxisConfig, "Z");
+    logSpindleConfig(data.spindleConfig);
+    logHeaterConfig(data.heaterConfig);
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Metadata ===\n"
+        "\tsignature: {}\n"
+        "\tchecksum: {}\n",
+        data.signature,
+        data.checksum);
+}
+
 uint32_t PersistentStorageController::calculateDataChecksum(
     PersistentData data
 ) const {
@@ -37,15 +95,29 @@ void PersistentStorageController::loadData() {
     persistentStorage_.read(0, rawDataBuffer);
 
     storedData_ = fromByteSpan<PersistentData>(rawDataBuffer);
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Loaded persistent storage  ===");
+    logPersistentData(storedData_);
 }
 
 void PersistentStorageController::updateStoredChecksum() {
+    const uint32_t checksumAddress = offsetof(PersistentData, checksum);
     const uint32_t updatedChecksum = calculateDataChecksum(storedData_);
 
     storedData_.checksum = updatedChecksum;
 
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Updating persistent storage checksum ===\n"
+        "\taddress: {}\n"
+        "\tnew checksum: {}\n",
+        checksumAddress,
+        updatedChecksum);
+
     persistentStorage_.write(
-        offsetof(PersistentData, checksum), toByteSpan(updatedChecksum)
+        checksumAddress, toByteSpan(updatedChecksum)
     );
 }
 
@@ -53,8 +125,28 @@ void PersistentStorageController::validateStoredData() {
     const bool isSignatureValid =
         storedData_.signature == PersistentData::EXPECTED_SIGNATURE;
 
-    const bool isChecksumValid =
-        storedData_.checksum == calculateDataChecksum(storedData_);
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Validating persistent storage signature ===\n"
+        "\tstored signature: {}\n"
+        "\texpected signature {}\n"
+        "\tmatch: {}\n",
+        storedData_.signature,
+        PersistentData::EXPECTED_SIGNATURE,
+        isSignatureValid);
+
+    const uint32_t expectedChecksum = calculateDataChecksum(storedData_);
+    const bool isChecksumValid = storedData_.checksum == expectedChecksum;
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Validating persistent storage checksum ===\n"
+        "\tstored checksum: {}\n"
+        "\texpected checksum {}\n"
+        "\tmatch: {}\n",
+        storedData_.checksum,
+        expectedChecksum,
+        isChecksumValid);
 
     if (isSignatureValid && isChecksumValid) {
         return;
@@ -64,8 +156,10 @@ void PersistentStorageController::validateStoredData() {
 }
 
 PersistentStorageController::PersistentStorageController(
+    ILoggerSink& loggerSink,
     IPersistentStorage& persistentStorage
 ) :
+    loggerSink_(loggerSink),
     persistentStorage_(persistentStorage) {}
 
 void PersistentStorageController::init() {
@@ -80,13 +174,18 @@ void PersistentStorageController::saveXAxisConfig(
         return;
     }
 
+    const uint32_t address = offsetof(PersistentData, xAxisConfig);
     storedData_.xAxisConfig = config;
-
-    persistentStorage_.write(
-        offsetof(PersistentData, xAxisConfig), toByteSpan(config)
-    );
+    persistentStorage_.write(address, toByteSpan(config));
 
     updateStoredChecksum();
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Saved X axis config ===\n"
+        "\taddress: {}\n",
+        address);
+    logAxisConfig(config, "X");
 }
 
 void PersistentStorageController::saveYAxisConfig(
@@ -96,13 +195,18 @@ void PersistentStorageController::saveYAxisConfig(
         return;
     }
 
+    const uint32_t address = offsetof(PersistentData, yAxisConfig);
     storedData_.yAxisConfig = config;
-
-    persistentStorage_.write(
-        offsetof(PersistentData, yAxisConfig), toByteSpan(config)
-    );
+    persistentStorage_.write(address, toByteSpan(config));
 
     updateStoredChecksum();
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Saved Y axis config ===\n"
+        "\taddress: {}\n",
+        address);
+    logAxisConfig(config, "Y");
 }
 
 void PersistentStorageController::saveZAxisConfig(
@@ -112,13 +216,17 @@ void PersistentStorageController::saveZAxisConfig(
         return;
     }
 
+    const uint32_t address = offsetof(PersistentData, zAxisConfig);
     storedData_.zAxisConfig = config;
-
-    persistentStorage_.write(
-        offsetof(PersistentData, zAxisConfig), toByteSpan(config)
-    );
-
+    persistentStorage_.write(address, toByteSpan(config));
     updateStoredChecksum();
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Saved Z axis config ===\n"
+        "\taddress: {}\n",
+        address);
+    logAxisConfig(config, "Z");
 }
 
 void PersistentStorageController::saveSpindleConfig(
@@ -128,13 +236,18 @@ void PersistentStorageController::saveSpindleConfig(
         return;
     }
 
+    const uint32_t address = offsetof(PersistentData, spindleConfig);
     storedData_.spindleConfig = config;
-
-    persistentStorage_.write(
-        offsetof(PersistentData, spindleConfig), toByteSpan(config)
-    );
+    persistentStorage_.write(address, toByteSpan(config));
 
     updateStoredChecksum();
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Saved spindle config ===\n"
+        "\taddress: {}\n",
+        address);
+    logSpindleConfig(config);
 }
 
 void PersistentStorageController::saveHeaterConfig(
@@ -144,13 +257,18 @@ void PersistentStorageController::saveHeaterConfig(
         return;
     }
 
+    const uint32_t address = offsetof(PersistentData, heaterConfig);
     storedData_.heaterConfig = config;
-
-    persistentStorage_.write(
-        offsetof(PersistentData, heaterConfig), toByteSpan(config)
-    );
+    persistentStorage_.write(address, toByteSpan(config));
 
     updateStoredChecksum();
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Saved heater config ===\n"
+        "\taddress: {}\n",
+        address);
+    logHeaterConfig(config);
 }
 
 AxisPersistentConfig PersistentStorageController::loadXAxisConfig() {

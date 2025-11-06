@@ -44,6 +44,7 @@ private:
         4096
     };
     PersistentStorageController persistentStorageController_ {
+        loggerSink_,
         persistentStorage_
     };
 

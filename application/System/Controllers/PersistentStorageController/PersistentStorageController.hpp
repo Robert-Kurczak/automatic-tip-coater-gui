@@ -4,7 +4,10 @@
 #include "PersistentData/AxisPersistentConfig.hpp"
 #include "PersistentData/HeaterPersistentConfig.hpp"
 #include "PersistentData/SpindlePersistentConfig.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 #include "application/System/Drivers/PersistentStorage/IPersistentStorage.hpp"
+
+#include <string_view>
 
 namespace ATC {
 class PersistentStorageController : public IPersistentStorageController {
@@ -21,9 +24,18 @@ private:
         uint32_t checksum;
     };
 
+    ILoggerSink& loggerSink_;
     IPersistentStorage& persistentStorage_;
 
     PersistentData storedData_;
+
+    void logAxisConfig(
+        const AxisPersistentConfig& config,
+        std::string_view axisName
+    );
+    void logSpindleConfig(const SpindlePersistentConfig& config);
+    void logHeaterConfig(const HeaterPersistentConfig& config);
+    void logPersistentData(const PersistentData& data);
 
     uint32_t calculateDataChecksum(PersistentData data) const;
     void createDefaultData();
@@ -32,7 +44,10 @@ private:
     void validateStoredData();
 
 public:
-    PersistentStorageController(IPersistentStorage& persistentStorage);
+    PersistentStorageController(
+        ILoggerSink& loggerSink,
+        IPersistentStorage& persistentStorage
+    );
 
     virtual void init() override;
 
