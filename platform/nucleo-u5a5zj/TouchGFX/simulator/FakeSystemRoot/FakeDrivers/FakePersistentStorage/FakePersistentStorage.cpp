@@ -40,7 +40,9 @@ void FakePersistentStorage::read(
         return;
     };
 
-    std::ifstream binaryStream {storageFilePath_, std::ios::binary};
+    std::ifstream binaryStream(
+        storageFilePath_, std::ios::binary | std::ios::in
+    );
 
     binaryStream.seekg(address);
     binaryStream.read(
@@ -61,7 +63,10 @@ void FakePersistentStorage::write(
         return;
     }
 
-    std::ofstream binaryStream {storageFilePath_, std::ios::binary};
+    std::ofstream binaryStream {
+        storageFilePath_,
+        std::ios::binary | std::ios::in | std::ios::out | std::ios::ate
+    };
 
     binaryStream.seekp(address);
     binaryStream.write(
