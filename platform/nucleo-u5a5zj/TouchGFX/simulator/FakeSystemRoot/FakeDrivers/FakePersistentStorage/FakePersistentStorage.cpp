@@ -21,10 +21,17 @@ void FakePersistentStorage::init() {
         return;
     }
 
-    std::vector<uint8_t> initialContent(storageSize_, 1);
+    log(loggerSink_, LogLevel::Debug, "Creating new storage file");
 
-    std::filesystem::create_directories(storageFilePath_.parent_path());
-    write(0, initialContent);
+    const auto parentDirectory = storageFilePath_.parent_path();
+    if (!parentDirectory.empty()) {
+        std::filesystem::create_directories(parentDirectory);
+    }
+
+    const std::vector<char> initialContent(storageSize_, 1);
+
+    std::ofstream binaryStream {storageFilePath_, std::ios::binary};
+    binaryStream.write(initialContent.data(), initialContent.size());
 }
 
 void FakePersistentStorage::read(
