@@ -1,14 +1,13 @@
 #pragma once
 
+#include "application/System/Config/Config.hpp"
+
 #include <array>
 #include <format>
 #include <source_location>
 #include <stdint.h>
 
 namespace ATC {
-inline constexpr bool LOGGER_ENABLED = true;
-inline constexpr uint32_t LOG_BUFFER_SIZE = 1024;
-
 enum class LogLevel { Error, Debug, Info };
 
 template<typename SinkType, typename... Args>

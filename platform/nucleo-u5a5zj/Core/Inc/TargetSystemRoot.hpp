@@ -50,7 +50,7 @@ private:
     UartLoggerSink loggerSink_ {uart_};
 
     Eeprom eeprom_ {loggerSink_};
-    PersistentStorageController persistentStorageController_ {eeprom_};
+    PersistentStorageController persistentStorageController_ {loggerSink_, eeprom_};
 
     XAxisController xAxisController_ {loggerSink_};
     YAxisController yAxisController_ {loggerSink_};
