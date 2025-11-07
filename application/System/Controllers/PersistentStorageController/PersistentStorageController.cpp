@@ -88,6 +88,11 @@ void PersistentStorageController::createDefaultData() {
 
     persistentStorage_.write(0, toByteSpan(defaultData));
     storedData_ = defaultData;
+
+    log(loggerSink_,
+        LogLevel::Debug,
+        "=== Created default persistent storage data ===");
+    logPersistentData(storedData_);
 }
 
 void PersistentStorageController::loadData() {
@@ -163,6 +168,8 @@ PersistentStorageController::PersistentStorageController(
     persistentStorage_(persistentStorage) {}
 
 void PersistentStorageController::init() {
+    persistentStorage_.init();
+
     loadData();
     validateStoredData();
 }
