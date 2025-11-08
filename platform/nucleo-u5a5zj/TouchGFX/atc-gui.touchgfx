@@ -2994,7 +2994,7 @@
             "InteractionName": "CounterClockwiseButtonPressed",
             "Trigger": {
               "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "SpindleDirectionSelector ClockwiseButtonPressed happens",
+              "TriggerCustomTypeName": "SpindleDirectionSelector CounterClockwiseButtonPressed happens",
               "TriggerComponent": "spindleDirectionSelector"
             },
             "Action": {

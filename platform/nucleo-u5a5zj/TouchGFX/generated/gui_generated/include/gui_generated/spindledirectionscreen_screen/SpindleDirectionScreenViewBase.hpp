@@ -65,6 +65,7 @@ private:
     touchgfx::Callback<SpindleDirectionScreenViewBase> spindleDirectionSettingsButtonsSpeedButtonPressedCallback;
     touchgfx::Callback<SpindleDirectionScreenViewBase> spindleDirectionSettingsButtonsRotationTimeButtonPressedCallback;
     touchgfx::Callback<SpindleDirectionScreenViewBase> spindleDirectionSelectorClockwiseButtonPressedCallback;
+    touchgfx::Callback<SpindleDirectionScreenViewBase> spindleDirectionSelectorCounterClockwiseButtonPressedCallback;
     touchgfx::Callback<SpindleDirectionScreenViewBase> settingsFooterSaveButtonPressedCallback;
 
     /*
@@ -73,6 +74,7 @@ private:
     void spindleDirectionSettingsButtonsSpeedButtonPressedCallbackHandler();
     void spindleDirectionSettingsButtonsRotationTimeButtonPressedCallbackHandler();
     void spindleDirectionSelectorClockwiseButtonPressedCallbackHandler();
+    void spindleDirectionSelectorCounterClockwiseButtonPressedCallbackHandler();
     void settingsFooterSaveButtonPressedCallbackHandler();
 
 };

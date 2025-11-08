@@ -9,6 +9,7 @@ SpindleDirectionScreenViewBase::SpindleDirectionScreenViewBase() :
     spindleDirectionSettingsButtonsSpeedButtonPressedCallback(this, &SpindleDirectionScreenViewBase::spindleDirectionSettingsButtonsSpeedButtonPressedCallbackHandler),
     spindleDirectionSettingsButtonsRotationTimeButtonPressedCallback(this, &SpindleDirectionScreenViewBase::spindleDirectionSettingsButtonsRotationTimeButtonPressedCallbackHandler),
     spindleDirectionSelectorClockwiseButtonPressedCallback(this, &SpindleDirectionScreenViewBase::spindleDirectionSelectorClockwiseButtonPressedCallbackHandler),
+    spindleDirectionSelectorCounterClockwiseButtonPressedCallback(this, &SpindleDirectionScreenViewBase::spindleDirectionSelectorCounterClockwiseButtonPressedCallbackHandler),
     settingsFooterSaveButtonPressedCallback(this, &SpindleDirectionScreenViewBase::settingsFooterSaveButtonPressedCallbackHandler)
 {
     __background.setPosition(0, 0, 480, 800);
@@ -25,6 +26,7 @@ SpindleDirectionScreenViewBase::SpindleDirectionScreenViewBase() :
 
     spindleDirectionSelector.setXY(-3, 0);
     spindleDirectionSelector.setClockwiseButtonPressedCallback(spindleDirectionSelectorClockwiseButtonPressedCallback);
+    spindleDirectionSelector.setCounterClockwiseButtonPressedCallback(spindleDirectionSelectorCounterClockwiseButtonPressedCallback);
     add(spindleDirectionSelector);
 
     spindleDirectionSettingsButtons.setXY(0, 0);
@@ -77,9 +79,13 @@ void SpindleDirectionScreenViewBase::spindleDirectionSelectorClockwiseButtonPres
     //ClockwiseButtonPressed
     //When spindleDirectionSelector ClockwiseButtonPressed call virtual function
     //Call clockwiseButtonPressed
-    clockwiseButtonPressed();
+    clockwiseButtonPressed();
+}
+
+void SpindleDirectionScreenViewBase::spindleDirectionSelectorCounterClockwiseButtonPressedCallbackHandler()
+{
     //CounterClockwiseButtonPressed
-    //When spindleDirectionSelector ClockwiseButtonPressed call virtual function
+    //When spindleDirectionSelector CounterClockwiseButtonPressed call virtual function
     //Call counterClockwiseButtonPressed
     counterClockwiseButtonPressed();
 }
