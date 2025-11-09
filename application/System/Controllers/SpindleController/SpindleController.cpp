@@ -15,6 +15,12 @@ void SpindleController::init(const SpindlePersistentConfig& config) {
     rotationTimeInMillis_ = config.timedRotationInMillis;
 
     motor_.init();
+
+    if (config.isDirectionClockwise) {
+        motor_.setDirectionClockwise();
+    } else {
+        motor_.setDirectionCounterClockwise();
+    }
 }
 
 void SpindleController::tick() {}
