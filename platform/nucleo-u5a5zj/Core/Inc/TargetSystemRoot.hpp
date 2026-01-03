@@ -46,8 +46,9 @@ extern TIM_HandleTypeDef htim3;
 namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
-    Uart uart_ {huart1};
+    SystemClock systemClock_ {};
     UartLoggerSink loggerSink_ {uart_};
+    Uart uart_ {huart1};
 
     Eeprom eeprom_ {loggerSink_};
     PersistentStorageController persistentStorageController_ {
@@ -74,7 +75,11 @@ private:
         .faultPin = dcMotorFaultPin_
     };
     PwmDcMotor pwmDcMotor_ {pwmDcMotorPinout_};
-    SpindleController spindleController_ {loggerSink_, pwmDcMotor_};
+    SpindleController spindleController_ {
+        loggerSink_,
+        systemClock_,
+        pwmDcMotor_
+    };
 
     GpioPin heaterTogglePin_ {*Heater_EN_GPIO_Port, Heater_EN_Pin};
     GpioActiveHighSwitch heaterSwitch_ {heaterTogglePin_};
@@ -89,7 +94,6 @@ private:
         0x60000000,
         0x60000002
     };
-    SystemClock systemClock_ {};
     GpioPin lcdResetPin_ {*LCD_RS_GPIO_Port, LCD_RS_Pin};
     Ws17143DisplayPinout pinout_ {.lcdResetPin_ = lcdResetPin_};
     Ws17143Display display_ {
