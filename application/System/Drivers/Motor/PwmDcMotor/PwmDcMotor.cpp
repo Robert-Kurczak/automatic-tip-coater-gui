@@ -27,4 +27,8 @@ void PwmDcMotor::setDirectionCounterClockwise() {
 bool PwmDcMotor::isDirectionClockwise() const {
     return pinout_.directionPin.isHigh();
 }
+
+bool PwmDcMotor::isFaultDetected() {
+    return !pinout_.faultPin.isHigh();
+}
 }

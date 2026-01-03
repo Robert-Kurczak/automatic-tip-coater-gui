@@ -15,5 +15,7 @@ public:
     virtual void setDirectionClockwise() = 0;
     virtual void setDirectionCounterClockwise() = 0;
     virtual bool isDirectionClockwise() const = 0;
+
+    virtual bool isFaultDetected() = 0;
 };
 }

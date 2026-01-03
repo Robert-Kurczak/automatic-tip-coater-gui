@@ -698,6 +698,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(Spindle_DIR_GPIO_Port, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : Spindle_FAULT_Pin */
+  GPIO_InitStruct.Pin = Spindle_FAULT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(Spindle_FAULT_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : LCD_RS_Pin */
   GPIO_InitStruct.Pin = LCD_RS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;

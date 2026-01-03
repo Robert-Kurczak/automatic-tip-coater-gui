@@ -37,7 +37,9 @@
 namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
+    FakeSystemClock systemClock_ {};
     FakeLoggerSink loggerSink_ {};
+
     FakePersistentStorage persistentStorage_ {
         loggerSink_,
         "atc-storage.bin",
@@ -53,7 +55,11 @@ private:
     ZAxisController zAxisController_ {loggerSink_};
 
     FakeMotor spindleMotor_ {loggerSink_, "Spindle Motor"};
-    SpindleController spindleController_ {loggerSink_, spindleMotor_};
+    SpindleController spindleController_ {
+        loggerSink_,
+        systemClock_,
+        spindleMotor_
+    };
 
     FakeSwitch fakeSwitch_ {loggerSink_, "Heater switch"};
     FakeTemperatureSensor temperatureSensor_ {
@@ -69,7 +75,6 @@ private:
     FakeDisplay display_ {loggerSink_};
 
     FakeResistiveTouchPanel resistiveTouchPanel_ {loggerSink_};
-    FakeSystemClock systemClock_ {};
     ResistiveTouchPanelController touchPanelController_ {
         resistiveTouchPanel_,
         systemClock_,

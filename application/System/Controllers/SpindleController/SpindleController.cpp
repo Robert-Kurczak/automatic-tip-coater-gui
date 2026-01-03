@@ -5,10 +5,32 @@
 namespace ATC {
 SpindleController::SpindleController(
     ILoggerSink& loggerSink,
+    ISystemClock& systemClock,
     IMotor& motor
 ) :
     loggerSink_(loggerSink),
+    systemClock_(systemClock),
     motor_(motor) {}
+
+void SpindleController::checkMotorFault() {
+    if (!wasFaultReported_ && motor_.isFaultDetected()) {
+        wasFaultReported_ = true;
+    }
+}
+
+void SpindleController::checkTimedRotation() {
+    if (!timedRotationStarted_) {
+        return;
+    }
+
+    const uint32_t currentTimestampMillis =
+        systemClock_.getMillisecondsSinceStart();
+
+    if (currentTimestampMillis >= timedRotationEndTimestamp_) {
+        timedRotationStarted_ = false;
+        stopRotation();
+    }
+}
 
 void SpindleController::init(const SpindlePersistentConfig& config) {
     speedPercent_ = config.speedPercentage;
@@ -23,15 +45,13 @@ void SpindleController::init(const SpindlePersistentConfig& config) {
     }
 }
 
-void SpindleController::tick() {}
+void SpindleController::tick() {
+    checkMotorFault();
+    checkTimedRotation();
+}
 
 bool SpindleController::wasFaultReported() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return wasFaultReported_;
 }
 
 void SpindleController::startRotation() {
@@ -39,11 +59,11 @@ void SpindleController::startRotation() {
 }
 
 void SpindleController::startTimedRotation(uint32_t rotationMillis) {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    timedRotationEndTimestamp_ =
+        systemClock_.getMillisecondsSinceStart() + rotationMillis;
+    timedRotationStarted_ = true;
+
+    motor_.startRotation(speedPercent_);
 }
 
 void SpindleController::startTimedRotation() {
@@ -55,12 +75,7 @@ void SpindleController::stopRotation() {
 }
 
 bool SpindleController::isTimedRotationFinished() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return true;
+    return !timedRotationStarted_;
 }
 
 void SpindleController::setDirectionClockwise() {

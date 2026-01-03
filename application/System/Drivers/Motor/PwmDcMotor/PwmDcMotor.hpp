@@ -8,6 +8,7 @@ namespace ATC {
 struct PwmDcMotorPinout {
     IPwmPin& speedPwmPin;
     IGpioPin& directionPin;
+    IGpioPin& faultPin;
 };
 
 class PwmDcMotor : public IMotor {
@@ -27,5 +28,7 @@ public:
     virtual void setDirectionClockwise() override;
     virtual void setDirectionCounterClockwise() override;
     virtual bool isDirectionClockwise() const override;
+
+    virtual bool isFaultDetected() override;
 };
 }
