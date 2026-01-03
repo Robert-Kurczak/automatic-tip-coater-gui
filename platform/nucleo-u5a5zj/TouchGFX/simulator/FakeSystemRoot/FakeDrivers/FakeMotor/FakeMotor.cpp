@@ -39,4 +39,20 @@ void FakeMotor::setDirectionCounterClockwise() {
 bool FakeMotor::isDirectionClockwise() const {
     return isDirectionClockwise_;
 }
+
+bool FakeMotor::isFaultDetected() {
+    static uint16_t methodCalls = 0;
+    methodCalls++;
+
+    if (methodCalls >= 1000) {
+        log(loggerSink_,
+            LogLevel::Debug,
+            "Reporting {} motor fault",
+            name_);
+
+        return true;
+    }
+
+    return false;
+}
 }

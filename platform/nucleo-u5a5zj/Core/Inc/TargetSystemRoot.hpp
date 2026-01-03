@@ -50,7 +50,10 @@ private:
     UartLoggerSink loggerSink_ {uart_};
 
     Eeprom eeprom_ {loggerSink_};
-    PersistentStorageController persistentStorageController_ {loggerSink_, eeprom_};
+    PersistentStorageController persistentStorageController_ {
+        loggerSink_,
+        eeprom_
+    };
 
     XAxisController xAxisController_ {loggerSink_};
     YAxisController yAxisController_ {loggerSink_};
@@ -61,9 +64,14 @@ private:
         *Spindle_DIR_GPIO_Port,
         Spindle_DIR_Pin
     };
+    GpioPin dcMotorFaultPin_ {
+        *Spindle_FAULT_GPIO_Port,
+        Spindle_FAULT_Pin
+    };
     PwmDcMotorPinout pwmDcMotorPinout_ {
         .speedPwmPin = dcMotorPwmPin_,
-        .directionPin = dcMotorDirectionPin_
+        .directionPin = dcMotorDirectionPin_,
+        .faultPin = dcMotorFaultPin_
     };
     PwmDcMotor pwmDcMotor_ {pwmDcMotorPinout_};
     SpindleController spindleController_ {loggerSink_, pwmDcMotor_};

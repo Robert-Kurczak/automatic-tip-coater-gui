@@ -24,5 +24,7 @@ public:
     virtual void setDirectionClockwise() override;
     virtual void setDirectionCounterClockwise() override;
     virtual bool isDirectionClockwise() const override;
+
+    virtual bool isFaultDetected() override;
 };
 }

@@ -66,6 +66,8 @@ void ATC_Loop();
 #define Spindle_DIR_GPIO_Port GPIOE
 #define Spindle_SPEED_Pin GPIO_PIN_3
 #define Spindle_SPEED_GPIO_Port GPIOE
+#define Spindle_FAULT_Pin GPIO_PIN_4
+#define Spindle_FAULT_GPIO_Port GPIOE
 #define LCD_RS_Pin GPIO_PIN_4
 #define LCD_RS_GPIO_Port GPIOF
 #define TouchPanel_IRQ_Pin GPIO_PIN_4
