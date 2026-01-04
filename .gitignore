@@ -1,3 +1,4 @@
-.vscode
+.vscode/*
+!.vscode/settings.json
 __pycache__
 atc-storage.bin

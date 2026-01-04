@@ -1,0 +1,11 @@
+---
+Checks: >
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  bugprone-*,
+
+  -modernize-use-trailing-return-type
+HeaderFilterRegex: "application/.*"

@@ -38,7 +38,9 @@ def build_docker_image():
 
 def build_touchgfx_simulator(clean):
     try:
-        build_command = f"make -f {paths.MOUNTED_TOUCHGFX_SIMULATOR_MAKEFILE_PATH} -j16"
+        build_command = f"bear  --output {paths.MOUNTED_COMPILE_COMMANDS_PATH} -- "
+        build_command += f"make -f {paths.MOUNTED_TOUCHGFX_SIMULATOR_MAKEFILE_PATH} -j16"
+
         if clean:
             build_command += " clean"
         build_command += " all"
