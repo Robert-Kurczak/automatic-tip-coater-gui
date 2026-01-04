@@ -27,7 +27,7 @@ private:
     ILoggerSink& loggerSink_;
     IPersistentStorage& persistentStorage_;
 
-    PersistentData storedData_;
+    PersistentData storedData_ {};
 
     void logAxisConfig(
         const AxisPersistentConfig& config,
