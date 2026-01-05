@@ -26,7 +26,7 @@ MOUNTED_TOUCHGFX_SIMULATOR_MAKEFILE_PATH = REPOSITORY_ROOT_MOUNT_PATH.joinpath(
     "platform/nucleo-u5a5zj/TouchGFX/simulator/gcc/Makefile"
 )
 
-MOUNTED_COMPILE_COMMANDS_PATH = REPOSITORY_ROOT_MOUNT_PATH.joinpath(
-    ".vscode/compile_commands.json"
+MOUNTED_COMPILE_COMMANDS_PATH = REPOSITORY_ROOT_PATH.joinpath(
+    "application/compile_commands.json"
 )
 # ===
