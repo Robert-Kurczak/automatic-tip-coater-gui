@@ -6,10 +6,19 @@ RUN apt-get update && apt-get install -y \
     rbenv \
     bear \
     make \
+    python3-venv \
+    clang-tidy \
     g++ \
     libsdl2-dev \
     libsdl2-image-dev \
     && apt-get clean
+
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+RUN pip install --no-cache-dir \
+    clang-html \
+    pyyaml
 
 ENV RBENV_ROOT=/usr/share/rbenv
 ENV PATH="$RBENV_ROOT/shims:$RBENV_ROOT/bin:$PATH"
