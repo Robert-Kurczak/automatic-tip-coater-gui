@@ -91,8 +91,8 @@ private:
     };
 
     FlexibleMemoryController flexibleMemoryController_ {
-        0x60000000,
-        0x60000002
+        RegisterAddress {0x60000000},
+        DataAddress {0x60000002}
     };
     GpioPin lcdResetPin_ {*LCD_RS_GPIO_Port, LCD_RS_Pin};
     Ws17143DisplayPinout pinout_ {.lcdResetPin_ = lcdResetPin_};
