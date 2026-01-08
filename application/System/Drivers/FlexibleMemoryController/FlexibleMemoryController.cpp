@@ -2,37 +2,39 @@
 
 namespace ATC {
 FlexibleMemoryController::FlexibleMemoryController(
-    const uintptr_t registerAddress,
-    const uintptr_t dataAddress
+    RegisterAddress registerAddress,
+    DataAddress dataAddress
 ) :
-    registerAddress_ {
-        reinterpret_cast<volatile uint16_t*>(registerAddress)
-    },
-    dataAddress_ {reinterpret_cast<volatile uint16_t*>(dataAddress)} {}
+    registerAddress_(registerAddress),
+    dataAddress_(dataAddress) {}
 
-void FlexibleMemoryController::writeRegister(const uint16_t value) {
-    *registerAddress_ = value;
+void FlexibleMemoryController::writeRegister(
+    RegisterNumber registerNumber
+) {
+    *registerAddress_.value = registerNumber.value;
 }
 
-void FlexibleMemoryController::writeData(const uint16_t value) {
-    *dataAddress_ = value;
+void FlexibleMemoryController::writeData(Data data) {
+    *dataAddress_.value = data.value;
 }
 
 void FlexibleMemoryController::write(
-    const uint16_t reg,
-    const uint16_t data
+    RegisterNumber registerNumber,
+    Data data
 ) {
-    *registerAddress_ = reg;
-    *dataAddress_ = data;
+    *registerAddress_.value = registerNumber.value;
+    *dataAddress_.value = data.value;
 }
 
 uint16_t FlexibleMemoryController::readData() const {
-    return *dataAddress_;
+    return *dataAddress_.value;
 }
 
-uint16_t FlexibleMemoryController::read(const uint16_t reg) const {
-    *registerAddress_ = reg;
+uint16_t FlexibleMemoryController::read(
+    RegisterNumber registerNumber
+) const {
+    *registerAddress_.value = registerNumber.value;
 
-    return *dataAddress_;
+    return *dataAddress_.value;
 }
 }

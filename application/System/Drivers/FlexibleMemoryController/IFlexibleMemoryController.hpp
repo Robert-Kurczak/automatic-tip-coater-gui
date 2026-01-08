@@ -1,17 +1,49 @@
 #pragma once
 
-#include <stdint.h>
+#include "application/Utils/TaggedType.hpp"
+
+#include <cstdint>
 
 namespace ATC {
 class IFlexibleMemoryController {
+private:
+    struct RegisterAddressTag {};
+    struct DataAddressTag {};
+
+    struct RegisterNumberTag {};
+    struct DataTag {};
+
 public:
+    using RegisterAddress =
+        TaggedType<RegisterAddressTag, volatile uint16_t*>;
+    using DataAddress = TaggedType<DataAddressTag, volatile uint16_t*>;
+
+    using RegisterNumber = TaggedType<RegisterNumberTag, uint16_t>;
+    using Data = TaggedType<DataTag, uint16_t>;
+
+    IFlexibleMemoryController() = default;
+
+    IFlexibleMemoryController(const IFlexibleMemoryController&) = delete;
+
+    IFlexibleMemoryController& operator=(
+        const IFlexibleMemoryController&
+    ) = delete;
+
+    IFlexibleMemoryController(IFlexibleMemoryController&& other) = delete;
+
+    IFlexibleMemoryController& operator=(
+        IFlexibleMemoryController&& other
+    ) = delete;
+
     virtual ~IFlexibleMemoryController() = default;
 
-    virtual void writeRegister(const uint16_t value) = 0;
-    virtual void writeData(const uint16_t value) = 0;
-    virtual void write(const uint16_t reg, const uint16_t data) = 0;
+    virtual void writeRegister(RegisterNumber registerNumber) = 0;
+    virtual void writeData(Data data) = 0;
+    virtual void write(RegisterNumber registerNumber, Data data) = 0;
 
-    virtual uint16_t readData() const = 0;
-    virtual uint16_t read(const uint16_t reg) const = 0;
+    [[nodiscard]] virtual uint16_t readData() const = 0;
+    [[nodiscard]] virtual uint16_t read(
+        RegisterNumber registerNumber
+    ) const = 0;
 };
 }
