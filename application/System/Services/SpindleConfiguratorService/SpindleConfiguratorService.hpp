@@ -8,12 +8,12 @@
 namespace ATC {
 class SpindleConfiguratorService : public ISpindleConfiguratorService {
 private:
+    static constexpr uint32_t SHOWCASE_ROTATION_TIME_MILLIS_ = 3000;
+    static constexpr uint8_t SPEED_PERCENT_STEP_ = 1;
+    static constexpr uint32_t ROTATION_TIME_STEP_MILLIS_ = 500;
+
     IPersistentStorageController& persistentStorageController_;
     ISpindleController& spindleController_;
-
-    const uint32_t showcaseRotationTimeInMillis_;
-    const uint8_t speedPercentStep_;
-    const uint32_t rotationTimeStepInMillis_;
 
     SpindlePersistentConfig bufferedPersistentConfig_ {
         .speedPercentage = 0,
@@ -24,29 +24,42 @@ private:
 public:
     SpindleConfiguratorService(
         IPersistentStorageController& persistentStorageController,
-        ISpindleController& spindleController,
-        uint32_t showcaseRotationTimeInMillis,
-        uint8_t speedPercentStep,
-        uint32_t rotationTimeStepInMillis
+        ISpindleController& spindleController
     );
 
-    virtual void resetBufferedConfig() override;
+    SpindleConfiguratorService(const SpindleConfiguratorService&) =
+        delete;
 
-    virtual void showcaseRotation() override;
+    SpindleConfiguratorService& operator=(
+        const SpindleConfiguratorService&
+    ) = delete;
 
-    virtual void increaseSpeedPercent() override;
-    virtual void decreaseSpeedPercent() override;
-    virtual void saveSpeedPercent() override;
-    virtual uint8_t getSpeedPercent() const override;
+    SpindleConfiguratorService(SpindleConfiguratorService&& other) =
+        delete;
 
-    virtual void setDirectionClockwise() override;
-    virtual void setDirectionCounterClockwise() override;
-    virtual void saveDirection() override;
-    virtual bool isDirectionClockwise() const override;
+    SpindleConfiguratorService& operator=(
+        SpindleConfiguratorService&& other
+    ) = delete;
 
-    virtual void increaseRotationTimeInMillis() override;
-    virtual void decreaseRotationTimeInMillis() override;
-    virtual void saveRotationTimeInMillis() override;
-    virtual uint32_t getRotationTimeInMillis() const override;
+    ~SpindleConfiguratorService() = default;
+
+    void resetBufferedConfig() override;
+
+    void showcaseRotation() override;
+
+    void increaseSpeedPercent() override;
+    void decreaseSpeedPercent() override;
+    void saveSpeedPercent() override;
+    [[nodiscard]] uint8_t getSpeedPercent() const override;
+
+    void setDirectionClockwise() override;
+    void setDirectionCounterClockwise() override;
+    void saveDirection() override;
+    [[nodiscard]] bool isDirectionClockwise() const override;
+
+    void increaseRotationTimeInMillis() override;
+    void decreaseRotationTimeInMillis() override;
+    void saveRotationTimeInMillis() override;
+    [[nodiscard]] uint32_t getRotationTimeInMillis() const override;
 };
 }

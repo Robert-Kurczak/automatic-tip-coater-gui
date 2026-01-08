@@ -3,16 +3,10 @@
 namespace ATC {
 SpindleConfiguratorService::SpindleConfiguratorService(
     IPersistentStorageController& persistentStorageController,
-    ISpindleController& spindleController,
-    uint32_t showcaseRotationTimeInMillis,
-    uint8_t speedPercentStep,
-    uint32_t rotationTimeStepInMillis
+    ISpindleController& spindleController
 ) :
     persistentStorageController_(persistentStorageController),
-    spindleController_(spindleController),
-    showcaseRotationTimeInMillis_(showcaseRotationTimeInMillis),
-    speedPercentStep_(speedPercentStep),
-    rotationTimeStepInMillis_(rotationTimeStepInMillis) {}
+    spindleController_(spindleController) {}
 
 void SpindleConfiguratorService::resetBufferedConfig() {
     bufferedPersistentConfig_.speedPercentage =
@@ -26,15 +20,15 @@ void SpindleConfiguratorService::resetBufferedConfig() {
 }
 
 void SpindleConfiguratorService::showcaseRotation() {
-    spindleController_.startTimedRotation(showcaseRotationTimeInMillis_);
+    spindleController_.startTimedRotation(SHOWCASE_ROTATION_TIME_MILLIS_);
 }
 
 void SpindleConfiguratorService::increaseSpeedPercent() {
-    bufferedPersistentConfig_.speedPercentage += speedPercentStep_;
+    bufferedPersistentConfig_.speedPercentage += SPEED_PERCENT_STEP_;
 }
 
 void SpindleConfiguratorService::decreaseSpeedPercent() {
-    bufferedPersistentConfig_.speedPercentage -= speedPercentStep_;
+    bufferedPersistentConfig_.speedPercentage -= SPEED_PERCENT_STEP_;
 }
 
 void SpindleConfiguratorService::saveSpeedPercent() {
@@ -77,12 +71,12 @@ bool SpindleConfiguratorService::isDirectionClockwise() const {
 
 void SpindleConfiguratorService::increaseRotationTimeInMillis() {
     bufferedPersistentConfig_.timedRotationInMillis +=
-        rotationTimeStepInMillis_;
+        ROTATION_TIME_STEP_MILLIS_;
 }
 
 void SpindleConfiguratorService::decreaseRotationTimeInMillis() {
     bufferedPersistentConfig_.timedRotationInMillis -=
-        rotationTimeStepInMillis_;
+        ROTATION_TIME_STEP_MILLIS_;
 }
 
 void SpindleConfiguratorService::saveRotationTimeInMillis() {
