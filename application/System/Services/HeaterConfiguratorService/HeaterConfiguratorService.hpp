@@ -25,16 +25,16 @@ public:
         uint8_t temperatureInCelsiusStep
     );
 
-    virtual void resetBufferedConfig() override;
+    void resetBufferedConfig() override;
 
-    virtual void increaseTemperatureInCelsius() override;
-    virtual void decreaseTemperatureInCelsius() override;
-    virtual uint32_t getTemperatureInCelsius() const override;
-    virtual void saveTemperatureInCelsius() override;
+    void increaseTemperatureInCelsius() override;
+    void decreaseTemperatureInCelsius() override;
+    [[nodiscard]] uint32_t getTemperatureInCelsius() const override;
+    void saveTemperatureInCelsius() override;
 
-    virtual void turnOn() override;
-    virtual void turnOff() override;
-    virtual bool isOn() const override;
-    virtual void saveHeaterState() override;
+    void turnOn() override;
+    void turnOff() override;
+    [[nodiscard]] bool isOn() const override;
+    void saveHeaterState() override;
 };
 }
