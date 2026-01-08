@@ -1,5 +1,6 @@
 #pragma once
 
+#include "AxisConfiguratorParameters.hpp"
 #include "IAxisConfiguratorService.hpp"
 #include "application/System/Controllers/AxisController/IAxisController.hpp"
 #include "application/System/Controllers/PersistentStorageController/IPersistentStorageController.hpp"
@@ -8,7 +9,16 @@
 namespace ATC {
 class AxisConfiguratorService : public IAxisConfiguratorService {
 protected:
+    virtual void saveConfigToPersistentMemory() = 0;
+
+    IPersistentStorageController& getPersistentStorageController();
+    AxisPersistentConfig& getBufferedPersistentConfig();
+
+private:
     IPersistentStorageController& persistentStorageController_;
+    IAxisController& axisController_;
+
+    const AxisConfiguratorParameters parameters_;
 
     AxisPersistentConfig bufferedPersistentConfig_ {
         .startPosition = 0,
@@ -16,42 +26,43 @@ protected:
         .speed = 0
     };
 
-    virtual void saveConfigToPersistentMemory() = 0;
-
-private:
-    IAxisController& axisController_;
-
-    const uint8_t positionStep_;
-    const uint8_t speedStep_;
-    const uint32_t speedShowcasePosition_;
-
 public:
     AxisConfiguratorService(
         IPersistentStorageController& persistentStorageController,
         IAxisController& axisController,
-        uint8_t positionStep,
-        uint8_t speedStep,
-        uint32_t speedShowcasePosition
+        const AxisConfiguratorParameters& parameters
     );
 
-    virtual void resetBufferedConfig() override;
+    AxisConfiguratorService(const AxisConfiguratorService&) = delete;
 
-    virtual void showcaseStartPosition() override;
-    virtual void increaseStartPosition() override;
-    virtual void decreaseStartPosition() override;
-    virtual void saveStartPosition() override;
-    virtual uint32_t getStartPosition() const override;
+    AxisConfiguratorService& operator=(const AxisConfiguratorService&) =
+        delete;
 
-    virtual void showcaseEndPosition() override;
-    virtual void increaseEndPosition() override;
-    virtual void decreaseEndPosition() override;
-    virtual void saveEndPosition() override;
-    virtual uint32_t getEndPosition() const override;
+    AxisConfiguratorService(AxisConfiguratorService&& other) = delete;
 
-    virtual void showcaseSpeed() override;
-    virtual void increaseSpeed() override;
-    virtual void decreaseSpeed() override;
-    virtual void saveSpeed() override;
-    virtual uint32_t getSpeed() const override;
+    AxisConfiguratorService& operator=(AxisConfiguratorService&& other) =
+        delete;
+
+    ~AxisConfiguratorService() = default;
+
+    void resetBufferedConfig() override;
+
+    void showcaseStartPosition() override;
+    void increaseStartPosition() override;
+    void decreaseStartPosition() override;
+    void saveStartPosition() override;
+    [[nodiscard]] uint32_t getStartPosition() const override;
+
+    void showcaseEndPosition() override;
+    void increaseEndPosition() override;
+    void decreaseEndPosition() override;
+    void saveEndPosition() override;
+    [[nodiscard]] uint32_t getEndPosition() const override;
+
+    void showcaseSpeed() override;
+    void increaseSpeed() override;
+    void decreaseSpeed() override;
+    void saveSpeed() override;
+    [[nodiscard]] uint32_t getSpeed() const override;
 };
 }

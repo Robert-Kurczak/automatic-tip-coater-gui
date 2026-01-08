@@ -2,8 +2,8 @@
 
 namespace ATC {
 void XAxisConfiguratorService::saveConfigToPersistentMemory() {
-    persistentStorageController_.saveXAxisConfig(
-        bufferedPersistentConfig_
+    getPersistentStorageController().saveXAxisConfig(
+        getBufferedPersistentConfig()
     );
 }
 }
