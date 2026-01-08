@@ -2,8 +2,7 @@
 #include "main.h"
 #include "touchgfx/hal/OSWrappers.hpp"
 
-static ATC::TargetSystemRoot targetSystemRoot =
-    ATC::TargetSystemRoot::getSystemRoot();
+static ATC::TargetSystemRoot& targetSystemRoot = ATC::TargetSystemRoot::getSystemRoot();
 
 static uint32_t vSyncStart = 0;
 

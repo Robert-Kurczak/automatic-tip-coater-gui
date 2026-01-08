@@ -133,10 +133,7 @@ private:
     };
     SpindleConfiguratorService spindleConfiguratorService_ {
         persistentStorageController_,
-        spindleController_,
-        3000,
-        1,
-        500
+        spindleController_
     };
     HeaterConfiguratorService heaterConfiguratorService_ {
         persistentStorageController_,
