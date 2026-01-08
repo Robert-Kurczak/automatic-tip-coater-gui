@@ -5,3 +5,5 @@ atc-storage.bin
 .cache
 compile_commands.json
 CompileDB*
+clang-tidy-report.html
+clang-tidy-checks.py
