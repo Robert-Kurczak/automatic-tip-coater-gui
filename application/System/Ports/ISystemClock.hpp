@@ -7,7 +7,7 @@ class ISystemClock {
 public:
     virtual ~ISystemClock() = default;
 
-    virtual void delayMiliseconds(const uint32_t value) = 0;
+    virtual void delayMilliseconds(const uint32_t value) = 0;
     virtual uint32_t getMillisecondsSinceStart() = 0;
 };
 }

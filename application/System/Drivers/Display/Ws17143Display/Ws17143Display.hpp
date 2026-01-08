@@ -5,18 +5,20 @@
 #include "application/System/Ports/IGpioPin.hpp"
 #include "application/System/Ports/ISystemClock.hpp"
 
+#include <cstdint>
 #include <span>
-#include <stdint.h>
 
 namespace ATC {
+// NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
 struct Ws17143DisplayPinout {
     IGpioPin& lcdResetPin_;
 };
+// NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 
 class Ws17143Display : public IDisplay {
 private:
-    static const uint16_t WIDTH_ = 480;
-    static const uint16_t HEIGHT_ = 800;
+    static constexpr uint16_t WIDTH_ = 480;
+    static constexpr uint16_t HEIGHT_ = 800;
 
     const Ws17143DisplayPinout& pinout_;
     IFlexibleMemoryController& flexibleMemoryController_;
@@ -26,13 +28,10 @@ private:
 
     void initResetLcdPin();
     void resetLcd();
-    void initProprietaryHardwareSettings();
-    void initProprietaryGammaSettings();
-    void initRGB565Format();
+    void initSettings();
     void exitSleepState();
     void enableDisplay();
     void setAllPixelsOff();
-    void displayFramebuffer();
 
 public:
     Ws17143Display(
@@ -41,14 +40,12 @@ public:
         ISystemClock& systemClock
     );
 
-    virtual void init() override;
-    virtual void drawTestPattern(const uint8_t seed) override;
-    virtual void draw(
+    void init() override;
+    void drawTestPattern(uint8_t seed) override;
+    void draw(
         const std::span<const uint16_t>& framebuffer,
         const Rectangle& window
     ) override;
-    virtual void draw(
-        const std::span<const uint16_t>& framebuffer
-    ) override;
+    void draw(const std::span<const uint16_t>& framebuffer) override;
 };
 }

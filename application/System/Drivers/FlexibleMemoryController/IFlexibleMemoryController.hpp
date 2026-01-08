@@ -20,6 +20,11 @@ public:
     using RegisterNumber = TaggedType<RegisterNumberTag, uint16_t>;
     using Data = TaggedType<DataTag, uint16_t>;
 
+    struct Instruction {
+        RegisterNumber registerNumber;
+        Data data;
+    };
+
     IFlexibleMemoryController() = default;
 
     IFlexibleMemoryController(const IFlexibleMemoryController&) = delete;
@@ -38,7 +43,7 @@ public:
 
     virtual void writeRegister(RegisterNumber registerNumber) = 0;
     virtual void writeData(Data data) = 0;
-    virtual void write(RegisterNumber registerNumber, Data data) = 0;
+    virtual void write(const Instruction& instruction) = 0;
 
     [[nodiscard]] virtual uint16_t readData() const = 0;
     [[nodiscard]] virtual uint16_t read(

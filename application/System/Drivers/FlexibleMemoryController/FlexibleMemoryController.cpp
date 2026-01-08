@@ -26,12 +26,9 @@ void FlexibleMemoryController::writeData(Data data) {
     *dataRawAddress_ = data.value;
 }
 
-void FlexibleMemoryController::write(
-    RegisterNumber registerNumber,
-    Data data
-) {
-    *registerRawAddress_ = registerNumber.value;
-    *dataRawAddress_ = data.value;
+void FlexibleMemoryController::write(const Instruction& instruction) {
+    *registerRawAddress_ = instruction.registerNumber.value;
+    *dataRawAddress_ = instruction.data.value;
 }
 
 uint16_t FlexibleMemoryController::readData() const {
