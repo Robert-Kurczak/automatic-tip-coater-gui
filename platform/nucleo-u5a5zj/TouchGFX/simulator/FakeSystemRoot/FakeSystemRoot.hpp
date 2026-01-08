@@ -113,23 +113,29 @@ private:
     XAxisConfiguratorService xAxisConfiguratorService_ {
         persistentStorageController_,
         xAxisController_,
-        100,
-        5,
-        1000
+        AxisConfiguratorParameters {
+                                    .positionStep = 100,
+                                    .speedStep = 5,
+                                    .speedShowcasePosition = 1000,
+                                    }
     };
     YAxisConfiguratorService yAxisConfiguratorService_ {
         persistentStorageController_,
         yAxisController_,
-        100,
-        5,
-        1000
+        AxisConfiguratorParameters {
+                                    .positionStep = 100,
+                                    .speedStep = 5,
+                                    .speedShowcasePosition = 1000,
+                                    }
     };
     ZAxisConfiguratorService zAxisConfiguratorService_ {
         persistentStorageController_,
         zAxisController_,
-        100,
-        5,
-        1000
+        AxisConfiguratorParameters {
+                                    .positionStep = 100,
+                                    .speedStep = 5,
+                                    .speedShowcasePosition = 1000,
+                                    }
     };
     SpindleConfiguratorService spindleConfiguratorService_ {
         persistentStorageController_,

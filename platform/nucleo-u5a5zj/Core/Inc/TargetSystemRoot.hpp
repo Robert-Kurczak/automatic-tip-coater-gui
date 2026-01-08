@@ -47,8 +47,8 @@ namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
     SystemClock systemClock_ {};
-    UartLoggerSink loggerSink_ {uart_};
     Uart uart_ {huart1};
+    UartLoggerSink loggerSink_ {uart_};
 
     Eeprom eeprom_ {loggerSink_};
     PersistentStorageController persistentStorageController_ {
@@ -157,23 +157,29 @@ private:
     XAxisConfiguratorService xAxisConfiguratorService_ {
         persistentStorageController_,
         xAxisController_,
-        100,
-        5,
-        1000
+        AxisConfiguratorParameters {
+                                    .positionStep = 100,
+                                    .speedStep = 5,
+                                    .speedShowcasePosition = 1000,
+                                    }
     };
     YAxisConfiguratorService yAxisConfiguratorService_ {
         persistentStorageController_,
         yAxisController_,
-        100,
-        5,
-        1000
+        AxisConfiguratorParameters {
+                                    .positionStep = 100,
+                                    .speedStep = 5,
+                                    .speedShowcasePosition = 1000,
+                                    }
     };
     ZAxisConfiguratorService zAxisConfiguratorService_ {
         persistentStorageController_,
         zAxisController_,
-        100,
-        5,
-        1000
+        AxisConfiguratorParameters {
+                                    .positionStep = 100,
+                                    .speedStep = 5,
+                                    .speedShowcasePosition = 1000,
+                                    }
     };
     SpindleConfiguratorService spindleConfiguratorService_ {
         persistentStorageController_,

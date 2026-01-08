@@ -1,3 +1,6 @@
 CompileFlags:
   Add:
     - -std=c++20
+  Remove:
+    - -femit-class-debug-always
+    - -fcyclomatic-complexity
