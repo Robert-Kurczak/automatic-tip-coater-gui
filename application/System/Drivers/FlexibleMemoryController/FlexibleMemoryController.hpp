@@ -5,8 +5,8 @@
 namespace ATC {
 class FlexibleMemoryController : public IFlexibleMemoryController {
 private:
-    RegisterAddress registerAddress_;
-    DataAddress dataAddress_;
+    volatile uint16_t* registerRawAddress_;
+    volatile uint16_t* dataRawAddress_;
 
 public:
     FlexibleMemoryController(
