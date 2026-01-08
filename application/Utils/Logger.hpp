@@ -3,12 +3,12 @@
 #include "application/System/Config/Config.hpp"
 
 #include <array>
+#include <cstdint>
 #include <format>
 #include <source_location>
-#include <stdint.h>
 
 namespace ATC {
-enum class LogLevel { Error, Debug, Info };
+enum class LogLevel : uint8_t { Error, Debug, Info };
 
 template<typename SinkType, typename... Args>
 void logFormat(
@@ -20,7 +20,7 @@ void logFormat(
         return;
     }
 
-    std::array<char, LOG_BUFFER_SIZE> formatBuffer;
+    std::array<char, LOG_BUFFER_SIZE> formatBuffer {};
 
     const std::format_to_n_result result = std::format_to_n(
         formatBuffer.begin(),
@@ -40,12 +40,12 @@ void logNewLine(SinkType& sink) {
 
 template<typename SinkType>
 void logLevelLabel(SinkType& sink, LogLevel logLevel) {
-    static constexpr const char* enumNamesArray[] {
+    static constexpr std::array<std::string_view, 3> enumNamesArray {
         "ERROR", "DEBUG", "INFO"
     };
 
-    const char* logLevelString =
-        enumNamesArray[static_cast<uint8_t>(logLevel)];
+    std::string_view logLevelString =
+        enumNamesArray.at(static_cast<uint8_t>(logLevel));
 
     logFormat(sink, "[{}] ", logLevelString);
 }

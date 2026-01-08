@@ -5,36 +5,44 @@ FlexibleMemoryController::FlexibleMemoryController(
     RegisterAddress registerAddress,
     DataAddress dataAddress
 ) :
-    registerAddress_(registerAddress),
-    dataAddress_(dataAddress) {}
+    registerRawAddress_ {
+        reinterpret_cast<decltype(registerRawAddress_)>( // NOLINT
+            registerAddress.value
+        )
+    },
+    dataRawAddress_ {
+        reinterpret_cast<decltype(dataRawAddress_)>( // NOLINT
+            dataAddress.value
+        )
+    } {}
 
 void FlexibleMemoryController::writeRegister(
     RegisterNumber registerNumber
 ) {
-    *registerAddress_.value = registerNumber.value;
+    *registerRawAddress_ = registerNumber.value;
 }
 
 void FlexibleMemoryController::writeData(Data data) {
-    *dataAddress_.value = data.value;
+    *dataRawAddress_ = data.value;
 }
 
 void FlexibleMemoryController::write(
     RegisterNumber registerNumber,
     Data data
 ) {
-    *registerAddress_.value = registerNumber.value;
-    *dataAddress_.value = data.value;
+    *registerRawAddress_ = registerNumber.value;
+    *dataRawAddress_ = data.value;
 }
 
 uint16_t FlexibleMemoryController::readData() const {
-    return *dataAddress_.value;
+    return *dataRawAddress_;
 }
 
 uint16_t FlexibleMemoryController::read(
     RegisterNumber registerNumber
 ) const {
-    *registerAddress_.value = registerNumber.value;
+    *registerRawAddress_ = registerNumber.value;
 
-    return *dataAddress_.value;
+    return *dataRawAddress_;
 }
 }

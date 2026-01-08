@@ -14,9 +14,8 @@ private:
     struct DataTag {};
 
 public:
-    using RegisterAddress =
-        TaggedType<RegisterAddressTag, volatile uint16_t*>;
-    using DataAddress = TaggedType<DataAddressTag, volatile uint16_t*>;
+    using RegisterAddress = TaggedType<RegisterAddressTag, uintptr_t>;
+    using DataAddress = TaggedType<DataAddressTag, uintptr_t>;
 
     using RegisterNumber = TaggedType<RegisterNumberTag, uint16_t>;
     using Data = TaggedType<DataTag, uint16_t>;
