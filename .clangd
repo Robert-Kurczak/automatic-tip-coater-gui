@@ -4,3 +4,4 @@ CompileFlags:
   Remove:
     - -femit-class-debug-always
     - -fcyclomatic-complexity
+    - -Wformat-truncation=0

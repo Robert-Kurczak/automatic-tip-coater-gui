@@ -2,12 +2,18 @@
 
 #include "application/Utils/Math.hpp"
 
+#include <cstdint>
 #include <span>
-#include <stdint.h>
 
 namespace ATC {
 class IDisplay {
 public:
+    IDisplay(const IDisplay&) = delete;
+    IDisplay& operator=(const IDisplay&) = delete;
+    IDisplay(IDisplay&& other) = delete;
+    IDisplay& operator=(IDisplay&& other) = delete;
+
+    IDisplay() = default;
     virtual ~IDisplay() = default;
 
     virtual void init() = 0;

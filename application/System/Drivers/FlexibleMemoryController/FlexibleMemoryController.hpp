@@ -16,7 +16,7 @@ public:
 
     void writeRegister(RegisterNumber registerNumber) override;
     void writeData(Data data) override;
-    void write(RegisterNumber registerNumber, Data data) override;
+    void write(const Instruction& instruction) override;
 
     [[nodiscard]] uint16_t readData() const override;
     [[nodiscard]] uint16_t read(

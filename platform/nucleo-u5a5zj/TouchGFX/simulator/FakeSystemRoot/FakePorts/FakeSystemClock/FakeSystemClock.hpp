@@ -13,7 +13,7 @@ private:
 public:
     FakeSystemClock();
 
-    virtual void delayMiliseconds(const uint32_t value) override;
+    virtual void delayMilliseconds(const uint32_t value) override;
     virtual uint32_t getMillisecondsSinceStart() override;
 };
 }
