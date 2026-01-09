@@ -1,7 +1,5 @@
 #include "SpindleController.hpp"
 
-#include "application/Utils/Logger.hpp"
-
 namespace ATC {
 SpindleController::SpindleController(
     ILoggerSink& loggerSink,

@@ -5,7 +5,7 @@
 #include "application/System/Drivers/Motor/IMotor.hpp"
 #include "application/System/Ports/ISystemClock.hpp"
 
-#include <stdint.h>
+#include <cstdint>
 
 namespace ATC {
 class SpindleController : public ISpindleController {
@@ -14,8 +14,8 @@ private:
     ISystemClock& systemClock_;
     IMotor& motor_;
 
-    uint8_t speedPercent_ = 50;
-    uint32_t rotationTimeInMillis_ = 3000;
+    uint8_t speedPercent_ = 0;
+    uint32_t rotationTimeInMillis_ = 0;
 
     bool wasFaultReported_ = false;
     bool timedRotationStarted_ = false;
@@ -31,27 +31,27 @@ public:
         IMotor& motor
     );
 
-    virtual void tick() override;
-    virtual void init(const SpindlePersistentConfig& config) override;
+    void tick() override;
+    void init(const SpindlePersistentConfig& config) override;
 
-    virtual bool wasFaultReported() override;
+    [[nodiscard]] bool wasFaultReported() override;
 
-    virtual void startRotation() override;
-    virtual void startTimedRotation(uint32_t rotationMillis) override;
-    virtual void startTimedRotation() override;
+    void startRotation() override;
+    void startTimedRotation(uint32_t rotationMillis) override;
+    void startTimedRotation() override;
 
-    virtual void stopRotation() override;
+    void stopRotation() override;
 
-    virtual bool isTimedRotationFinished() const override;
+    [[nodiscard]] bool isTimedRotationFinished() const override;
 
-    virtual void setDirectionClockwise() override;
-    virtual void setDirectionCounterClockwise() override;
-    virtual bool isDirectionClockwise() const override;
+    void setDirectionClockwise() override;
+    void setDirectionCounterClockwise() override;
+    [[nodiscard]] bool isDirectionClockwise() const override;
 
-    virtual void setSpeedPercent(uint8_t value) override;
-    virtual uint8_t getSpeedPercent() const override;
+    void setSpeedPercent(uint8_t value) override;
+    [[nodiscard]] uint8_t getSpeedPercent() const override;
 
-    virtual void setRotationTimeInMillis(uint32_t value) override;
-    virtual uint32_t getRotationTimeInMillis() const override;
+    void setRotationTimeInMillis(uint32_t value) override;
+    [[nodiscard]] uint32_t getRotationTimeInMillis() const override;
 };
 }
