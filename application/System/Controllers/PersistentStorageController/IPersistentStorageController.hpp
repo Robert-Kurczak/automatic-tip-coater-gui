@@ -7,6 +7,16 @@
 namespace ATC {
 class IPersistentStorageController {
 public:
+    IPersistentStorageController() = default;
+    IPersistentStorageController(const IPersistentStorageController&) =
+        delete;
+    IPersistentStorageController& operator=(
+        const IPersistentStorageController&
+    ) = delete;
+    IPersistentStorageController(IPersistentStorageController&&) = delete;
+    IPersistentStorageController& operator=(
+        IPersistentStorageController&&
+    ) = delete;
     virtual ~IPersistentStorageController() = default;
 
     virtual void init() = 0;

@@ -37,7 +37,10 @@ private:
     void logHeaterConfig(const HeaterPersistentConfig& config);
     void logPersistentData(const PersistentData& data);
 
-    uint32_t calculateDataChecksum(PersistentData data) const;
+    [[nodiscard]] static uint32_t calculateDataChecksum(
+        PersistentData data
+    );
+
     void createDefaultData();
     void updateStoredChecksum();
     void loadData();
@@ -49,28 +52,20 @@ public:
         IPersistentStorage& persistentStorage
     );
 
-    virtual void init() override;
+    void init() override;
 
-    virtual void saveXAxisConfig(
-        const AxisPersistentConfig& config
-    ) override;
-    virtual void saveYAxisConfig(
-        const AxisPersistentConfig& config
-    ) override;
-    virtual void saveZAxisConfig(
-        const AxisPersistentConfig& config
-    ) override;
-    virtual void saveSpindleConfig(
+    void saveXAxisConfig(const AxisPersistentConfig& config) override;
+    void saveYAxisConfig(const AxisPersistentConfig& config) override;
+    void saveZAxisConfig(const AxisPersistentConfig& config) override;
+    void saveSpindleConfig(
         const SpindlePersistentConfig& config
     ) override;
-    virtual void saveHeaterConfig(
-        const HeaterPersistentConfig& config
-    ) override;
+    void saveHeaterConfig(const HeaterPersistentConfig& config) override;
 
-    virtual AxisPersistentConfig loadXAxisConfig() override;
-    virtual AxisPersistentConfig loadYAxisConfig() override;
-    virtual AxisPersistentConfig loadZAxisConfig() override;
-    virtual SpindlePersistentConfig loadSpindleConfig() override;
-    virtual HeaterPersistentConfig loadHeaterConfig() override;
+    [[nodiscard]] AxisPersistentConfig loadXAxisConfig() override;
+    [[nodiscard]] AxisPersistentConfig loadYAxisConfig() override;
+    [[nodiscard]] AxisPersistentConfig loadZAxisConfig() override;
+    [[nodiscard]] SpindlePersistentConfig loadSpindleConfig() override;
+    [[nodiscard]] HeaterPersistentConfig loadHeaterConfig() override;
 };
 }

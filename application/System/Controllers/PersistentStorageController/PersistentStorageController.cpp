@@ -1,5 +1,7 @@
 #include "PersistentStorageController.hpp"
 
+#include "application/System/Config/DefaultPersistentConfig.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
 #include "application/Utils/Byte.hpp"
 #include "application/Utils/Logger.hpp"
 
@@ -63,7 +65,7 @@ void PersistentStorageController::logPersistentData(
 
 uint32_t PersistentStorageController::calculateDataChecksum(
     PersistentData data
-) const {
+) {
     data.checksum = 0;
 
     uint32_t calculatedChecksum = 0;
@@ -76,11 +78,11 @@ uint32_t PersistentStorageController::calculateDataChecksum(
 
 void PersistentStorageController::createDefaultData() {
     PersistentData defaultData {
-        .xAxisConfig = AxisPersistentConfig::getDefaultXAxisConfig(),
-        .yAxisConfig = AxisPersistentConfig::getDefaultYAxisConfig(),
-        .zAxisConfig = AxisPersistentConfig::getDefaultZAxisConfig(),
-        .spindleConfig = SpindlePersistentConfig::getDefaultConfig(),
-        .heaterConfig = HeaterPersistentConfig::getDefaultConfig(),
+        .xAxisConfig = DEFAULT_X_AXIS_CONFIG,
+        .yAxisConfig = DEFAULT_Y_AXIS_CONFIG,
+        .zAxisConfig = DEFAULT_Z_AXIS_CONFIG,
+        .spindleConfig = DEFAULT_SPINDLE_CONFIG,
+        .heaterConfig = DEFAULT_HEATER_CONFIG,
         .signature = PersistentData::EXPECTED_SIGNATURE,
         .checksum = 0,
     };

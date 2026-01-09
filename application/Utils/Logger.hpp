@@ -1,6 +1,6 @@
 #pragma once
 
-#include "application/System/Config/Config.hpp"
+#include "application/System/Config/BuildConfig.hpp"
 
 #include <array>
 #include <cstdint>
