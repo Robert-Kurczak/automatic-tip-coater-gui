@@ -47,10 +47,10 @@ public:
         uint32_t axisMoveTimeoutInMillis
     );
 
-    virtual void start() override;
-    virtual void reset() override;
-    virtual void tick() override;
-    virtual bool isFinished() const override;
-    virtual AxisTestResults consumeResult() override;
+    void start() override;
+    void reset() override;
+    void tick() override;
+    [[nodiscard]] bool isFinished() const override;
+    AxisTestResults consumeResult() override;
 };
 }

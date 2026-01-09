@@ -55,7 +55,7 @@ void SpindleTestTask::tick() {
         return;
     }
 
-    std::invoke(stages_[currentStage_], this);
+    std::invoke(stages_.at(currentStage_), this);
 }
 
 bool SpindleTestTask::isFinished() const {

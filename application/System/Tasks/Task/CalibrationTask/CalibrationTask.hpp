@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../IConsumableTask.hpp"
-#include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
-#include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
-#include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
+#include "application/System/Controllers/AxisController/XAxisController/IXAxisController.hpp"
+#include "application/System/Controllers/AxisController/YAxisController/IYAxisController.hpp"
+#include "application/System/Controllers/AxisController/ZAxisController/IZAxisController.hpp"
 
 #include <array>
 
@@ -36,10 +36,10 @@ public:
         IZAxisController& zAxisController
     );
 
-    virtual void start() override;
-    virtual void reset() override;
-    virtual void tick() override;
-    virtual bool isFinished() const override;
-    virtual bool consumeResult() override;
+    void start() override;
+    void reset() override;
+    void tick() override;
+    [[nodiscard]] bool isFinished() const override;
+    bool consumeResult() override;
 };
 }

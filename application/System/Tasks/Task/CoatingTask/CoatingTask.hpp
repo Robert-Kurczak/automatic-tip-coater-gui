@@ -71,10 +71,10 @@ public:
         IHeaterController& heaterController
     );
 
-    virtual void start() override;
-    virtual void reset() override;
-    virtual void tick() override;
-    virtual bool isFinished() const override;
-    virtual bool consumeResult() override;
+    void start() override;
+    void reset() override;
+    void tick() override;
+    [[nodiscard]] bool isFinished() const override;
+    bool consumeResult() override;
 };
 }

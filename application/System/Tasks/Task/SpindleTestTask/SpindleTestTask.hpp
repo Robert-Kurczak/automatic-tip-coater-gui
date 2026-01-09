@@ -3,7 +3,6 @@
 #include "../IConsumableTask.hpp"
 #include "SpindleTestResults.hpp"
 #include "application/System/Controllers/SpindleController/ISpindleController.hpp"
-#include "application/System/Ports/ISystemClock.hpp"
 
 #include <array>
 
@@ -32,10 +31,10 @@ public:
         uint32_t rotationDurationInMillis
     );
 
-    virtual void start() override;
-    virtual void reset() override;
-    virtual void tick() override;
-    virtual bool isFinished() const override;
-    virtual SpindleTestResults consumeResult() override;
+    void start() override;
+    void reset() override;
+    void tick() override;
+    [[nodiscard]] bool isFinished() const override;
+    SpindleTestResults consumeResult() override;
 };
 }
