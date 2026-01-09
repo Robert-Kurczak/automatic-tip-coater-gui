@@ -9,11 +9,11 @@
 #include <span>
 
 namespace ATC {
-// NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
 struct Ws17143DisplayPinout {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IGpioPin& lcdResetPin_;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
-// NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 
 class Ws17143Display : public IDisplay {
 private:
