@@ -9,111 +9,112 @@ using RegisterNumber = IFlexibleMemoryController::RegisterNumber;
 using Data = IFlexibleMemoryController::Data;
 using Instruction = IFlexibleMemoryController::Instruction;
 
-static constexpr std::array PROPRIETARY_HARDWARE_SETTINGS_ {
-    // Manufacturer Page 1 Commands Enable
-    Instruction {RegisterNumber {0xF000}, Data {0x50}},
-    Instruction {RegisterNumber {0xF001}, Data {0xAA}},
-    Instruction {RegisterNumber {0xF002}, Data {0x52}},
-    Instruction {RegisterNumber {0xF003}, Data {0x08}},
-    Instruction {RegisterNumber {0xF004}, Data {0x01}},
-    //
-    Instruction {RegisterNumber {0xB000}, Data {0x0D}},
-    Instruction {RegisterNumber {0xB001}, Data {0x0D}},
-    Instruction {RegisterNumber {0xB002}, Data {0x0D}},
-    //
-    Instruction {RegisterNumber {0xB100}, Data {0x0D}},
-    Instruction {RegisterNumber {0xB101}, Data {0x0D}},
-    Instruction {RegisterNumber {0xB102}, Data {0x0D}},
-    //
-    Instruction {RegisterNumber {0xB200}, Data {0x00}},
-    Instruction {RegisterNumber {0xB201}, Data {0x00}},
-    Instruction {RegisterNumber {0xB202}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xB300}, Data {0x05}},
-    Instruction {RegisterNumber {0xB301}, Data {0x05}},
-    Instruction {RegisterNumber {0xB302}, Data {0x05}},
-    //
-    Instruction {RegisterNumber {0xB500}, Data {0x0B}},
-    Instruction {RegisterNumber {0xB501}, Data {0x0B}},
-    Instruction {RegisterNumber {0xB502}, Data {0x0B}},
-    //
-    Instruction {RegisterNumber {0xB600}, Data {0x34}},
-    Instruction {RegisterNumber {0xB601}, Data {0x34}},
-    Instruction {RegisterNumber {0xB602}, Data {0x34}},
-    //
-    Instruction {RegisterNumber {0xB701}, Data {0x24}},
-    Instruction {RegisterNumber {0xB701}, Data {0x24}},
-    Instruction {RegisterNumber {0xB701}, Data {0x24}},
-    //
-    Instruction {RegisterNumber {0xB800}, Data {0x24}},
-    Instruction {RegisterNumber {0xB801}, Data {0x24}},
-    Instruction {RegisterNumber {0xB802}, Data {0x24}},
-    //
-    Instruction {RegisterNumber {0xB900}, Data {0x24}},
-    Instruction {RegisterNumber {0xB901}, Data {0x24}},
-    Instruction {RegisterNumber {0xB902}, Data {0x24}},
-    //
-    Instruction {RegisterNumber {0xBA00}, Data {0x34}},
-    Instruction {RegisterNumber {0xBA01}, Data {0x34}},
-    Instruction {RegisterNumber {0xBA02}, Data {0x34}},
-    //
-    Instruction {RegisterNumber {0xBC00}, Data {0x00}},
-    Instruction {RegisterNumber {0xBC01}, Data {0xA3}},
-    Instruction {RegisterNumber {0xBC02}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xBD00}, Data {0x00}},
-    Instruction {RegisterNumber {0xBD01}, Data {0xA3}},
-    Instruction {RegisterNumber {0xBD02}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xBE00}, Data {0x00}},
-    Instruction {RegisterNumber {0xBE01}, Data {0x63}},
-    // Manufacturer Page 0 Commands Enable
-    Instruction {RegisterNumber {0xF000}, Data {0x55}},
-    Instruction {RegisterNumber {0xF001}, Data {0xAA}},
-    Instruction {RegisterNumber {0xF002}, Data {0x52}},
-    Instruction {RegisterNumber {0xF003}, Data {0x08}},
-    Instruction {RegisterNumber {0xF004}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0x3500}, Data {0x00}},
-    Instruction {RegisterNumber {0x3600}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xB000}, Data {0x08}},
-    Instruction {RegisterNumber {0xB001}, Data {0x05}},
-    Instruction {RegisterNumber {0xB002}, Data {0x02}},
-    Instruction {RegisterNumber {0xB003}, Data {0x05}},
-    Instruction {RegisterNumber {0xB004}, Data {0x02}},
-    //
-    Instruction {RegisterNumber {0xB600}, Data {0x08}},
-    Instruction {RegisterNumber {0xB500}, Data {0x50}},
-    //
-    Instruction {RegisterNumber {0xB700}, Data {0x00}},
-    Instruction {RegisterNumber {0xB701}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xB800}, Data {0x01}},
-    Instruction {RegisterNumber {0xB801}, Data {0x05}},
-    Instruction {RegisterNumber {0xB802}, Data {0x05}},
-    Instruction {RegisterNumber {0xB803}, Data {0x05}},
-    //
-    Instruction {RegisterNumber {0xBA00}, Data {0x01}},
-    //
-    Instruction {RegisterNumber {0xBC00}, Data {0x00}},
-    Instruction {RegisterNumber {0xBC01}, Data {0x00}},
-    Instruction {RegisterNumber {0xBC02}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xBD00}, Data {0x01}},
-    Instruction {RegisterNumber {0xBD01}, Data {0x84}},
-    Instruction {RegisterNumber {0xBD02}, Data {0x07}},
-    Instruction {RegisterNumber {0xBD03}, Data {0x31}},
-    Instruction {RegisterNumber {0xBD04}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xCC00}, Data {0x03}},
-    Instruction {RegisterNumber {0xCC01}, Data {0x00}},
-    Instruction {RegisterNumber {0xCC02}, Data {0x00}},
-    //
-    Instruction {RegisterNumber {0xFF00}, Data {0xAA}},
-    Instruction {RegisterNumber {0xFF01}, Data {0x55}},
-    Instruction {RegisterNumber {0xFF02}, Data {0x25}},
-    Instruction {RegisterNumber {0xFF03}, Data {0x01}},
+static constexpr std::array<Instruction, 311>
+    PROPRIETARY_HARDWARE_SETTINGS_ {
+        // Manufacturer Page 1 Commands Enable
+        Instruction {RegisterNumber {0xF000}, Data {0x50}},
+        Instruction {RegisterNumber {0xF001}, Data {0xAA}},
+        Instruction {RegisterNumber {0xF002}, Data {0x52}},
+        Instruction {RegisterNumber {0xF003}, Data {0x08}},
+        Instruction {RegisterNumber {0xF004}, Data {0x01}},
+        //
+        Instruction {RegisterNumber {0xB000}, Data {0x0D}},
+        Instruction {RegisterNumber {0xB001}, Data {0x0D}},
+        Instruction {RegisterNumber {0xB002}, Data {0x0D}},
+        //
+        Instruction {RegisterNumber {0xB100}, Data {0x0D}},
+        Instruction {RegisterNumber {0xB101}, Data {0x0D}},
+        Instruction {RegisterNumber {0xB102}, Data {0x0D}},
+        //
+        Instruction {RegisterNumber {0xB200}, Data {0x00}},
+        Instruction {RegisterNumber {0xB201}, Data {0x00}},
+        Instruction {RegisterNumber {0xB202}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xB300}, Data {0x05}},
+        Instruction {RegisterNumber {0xB301}, Data {0x05}},
+        Instruction {RegisterNumber {0xB302}, Data {0x05}},
+        //
+        Instruction {RegisterNumber {0xB500}, Data {0x0B}},
+        Instruction {RegisterNumber {0xB501}, Data {0x0B}},
+        Instruction {RegisterNumber {0xB502}, Data {0x0B}},
+        //
+        Instruction {RegisterNumber {0xB600}, Data {0x34}},
+        Instruction {RegisterNumber {0xB601}, Data {0x34}},
+        Instruction {RegisterNumber {0xB602}, Data {0x34}},
+        //
+        Instruction {RegisterNumber {0xB701}, Data {0x24}},
+        Instruction {RegisterNumber {0xB701}, Data {0x24}},
+        Instruction {RegisterNumber {0xB701}, Data {0x24}},
+        //
+        Instruction {RegisterNumber {0xB800}, Data {0x24}},
+        Instruction {RegisterNumber {0xB801}, Data {0x24}},
+        Instruction {RegisterNumber {0xB802}, Data {0x24}},
+        //
+        Instruction {RegisterNumber {0xB900}, Data {0x24}},
+        Instruction {RegisterNumber {0xB901}, Data {0x24}},
+        Instruction {RegisterNumber {0xB902}, Data {0x24}},
+        //
+        Instruction {RegisterNumber {0xBA00}, Data {0x34}},
+        Instruction {RegisterNumber {0xBA01}, Data {0x34}},
+        Instruction {RegisterNumber {0xBA02}, Data {0x34}},
+        //
+        Instruction {RegisterNumber {0xBC00}, Data {0x00}},
+        Instruction {RegisterNumber {0xBC01}, Data {0xA3}},
+        Instruction {RegisterNumber {0xBC02}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xBD00}, Data {0x00}},
+        Instruction {RegisterNumber {0xBD01}, Data {0xA3}},
+        Instruction {RegisterNumber {0xBD02}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xBE00}, Data {0x00}},
+        Instruction {RegisterNumber {0xBE01}, Data {0x63}},
+        // Manufacturer Page 0 Commands Enable
+        Instruction {RegisterNumber {0xF000}, Data {0x55}},
+        Instruction {RegisterNumber {0xF001}, Data {0xAA}},
+        Instruction {RegisterNumber {0xF002}, Data {0x52}},
+        Instruction {RegisterNumber {0xF003}, Data {0x08}},
+        Instruction {RegisterNumber {0xF004}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0x3500}, Data {0x00}},
+        Instruction {RegisterNumber {0x3600}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xB000}, Data {0x08}},
+        Instruction {RegisterNumber {0xB001}, Data {0x05}},
+        Instruction {RegisterNumber {0xB002}, Data {0x02}},
+        Instruction {RegisterNumber {0xB003}, Data {0x05}},
+        Instruction {RegisterNumber {0xB004}, Data {0x02}},
+        //
+        Instruction {RegisterNumber {0xB600}, Data {0x08}},
+        Instruction {RegisterNumber {0xB500}, Data {0x50}},
+        //
+        Instruction {RegisterNumber {0xB700}, Data {0x00}},
+        Instruction {RegisterNumber {0xB701}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xB800}, Data {0x01}},
+        Instruction {RegisterNumber {0xB801}, Data {0x05}},
+        Instruction {RegisterNumber {0xB802}, Data {0x05}},
+        Instruction {RegisterNumber {0xB803}, Data {0x05}},
+        //
+        Instruction {RegisterNumber {0xBA00}, Data {0x01}},
+        //
+        Instruction {RegisterNumber {0xBC00}, Data {0x00}},
+        Instruction {RegisterNumber {0xBC01}, Data {0x00}},
+        Instruction {RegisterNumber {0xBC02}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xBD00}, Data {0x01}},
+        Instruction {RegisterNumber {0xBD01}, Data {0x84}},
+        Instruction {RegisterNumber {0xBD02}, Data {0x07}},
+        Instruction {RegisterNumber {0xBD03}, Data {0x31}},
+        Instruction {RegisterNumber {0xBD04}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xCC00}, Data {0x03}},
+        Instruction {RegisterNumber {0xCC01}, Data {0x00}},
+        Instruction {RegisterNumber {0xCC02}, Data {0x00}},
+        //
+        Instruction {RegisterNumber {0xFF00}, Data {0xAA}},
+        Instruction {RegisterNumber {0xFF01}, Data {0x55}},
+        Instruction {RegisterNumber {0xFF02}, Data {0x25}},
+        Instruction {RegisterNumber {0xFF03}, Data {0x01}},
 };
 
 static constexpr std::array PROPRIETARY_GAMMA_SETTINGS_ {

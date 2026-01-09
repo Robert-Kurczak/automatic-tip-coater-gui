@@ -1,4 +1,4 @@
-#include <stdint.h>
+#include <cstdint>
 
 inline constexpr bool LOGGER_ENABLED = false;
 inline constexpr uint32_t LOG_BUFFER_SIZE = 1;

@@ -11,13 +11,11 @@ private:
 public:
     DisplayService(IDisplay& display);
 
-    virtual void draw(
+    void draw(
         const std::span<const uint16_t>& framebuffer,
         const Rectangle& window
     ) override;
 
-    virtual void draw(
-        const std::span<const uint16_t>& framebuffer
-    ) override;
+    void draw(const std::span<const uint16_t>& framebuffer) override;
 };
 }

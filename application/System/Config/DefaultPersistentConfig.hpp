@@ -1,8 +1,8 @@
 #pragma once
 
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
-#include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
 
 namespace ATC {
 inline constexpr AxisPersistentConfig DEFAULT_X_AXIS_CONFIG {
@@ -24,7 +24,7 @@ inline constexpr AxisPersistentConfig DEFAULT_Z_AXIS_CONFIG {
 };
 
 inline constexpr SpindlePersistentConfig DEFAULT_SPINDLE_CONFIG {
-    .speedPercentage = 50,
+    .speedPercent = 50,
     .isDirectionClockwise = true,
     .timedRotationInMillis = 3000
 };

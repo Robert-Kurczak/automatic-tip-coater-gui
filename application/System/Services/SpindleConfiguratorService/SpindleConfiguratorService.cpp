@@ -1,15 +1,19 @@
 #include "SpindleConfiguratorService.hpp"
 
+#include "application/System/Services/SpindleConfiguratorService/SpindleConfiguratorParameters.hpp"
+
 namespace ATC {
 SpindleConfiguratorService::SpindleConfiguratorService(
     IPersistentStorageController& persistentStorageController,
-    ISpindleController& spindleController
+    ISpindleController& spindleController,
+    SpindleConfiguratorParameters parameters
 ) :
     persistentStorageController_(persistentStorageController),
-    spindleController_(spindleController) {}
+    spindleController_(spindleController),
+    parameters_(parameters) {}
 
 void SpindleConfiguratorService::resetBufferedConfig() {
-    bufferedPersistentConfig_.speedPercentage =
+    bufferedPersistentConfig_.speedPercent =
         spindleController_.getSpeedPercent();
 
     bufferedPersistentConfig_.isDirectionClockwise =
@@ -20,20 +24,24 @@ void SpindleConfiguratorService::resetBufferedConfig() {
 }
 
 void SpindleConfiguratorService::showcaseRotation() {
-    spindleController_.startTimedRotation(SHOWCASE_ROTATION_TIME_MILLIS_);
+    spindleController_.startTimedRotation(
+        parameters_.showcaseRotationTimeMillis
+    );
 }
 
 void SpindleConfiguratorService::increaseSpeedPercent() {
-    bufferedPersistentConfig_.speedPercentage += SPEED_PERCENT_STEP_;
+    bufferedPersistentConfig_.speedPercent +=
+        parameters_.speedPercentStep;
 }
 
 void SpindleConfiguratorService::decreaseSpeedPercent() {
-    bufferedPersistentConfig_.speedPercentage -= SPEED_PERCENT_STEP_;
+    bufferedPersistentConfig_.speedPercent -=
+        parameters_.speedPercentStep;
 }
 
 void SpindleConfiguratorService::saveSpeedPercent() {
     spindleController_.setSpeedPercent(
-        bufferedPersistentConfig_.speedPercentage
+        bufferedPersistentConfig_.speedPercent
     );
 
     persistentStorageController_.saveSpindleConfig(
@@ -42,7 +50,7 @@ void SpindleConfiguratorService::saveSpeedPercent() {
 }
 
 uint8_t SpindleConfiguratorService::getSpeedPercent() const {
-    return bufferedPersistentConfig_.speedPercentage;
+    return bufferedPersistentConfig_.speedPercent;
 }
 
 void SpindleConfiguratorService::setDirectionClockwise() {
@@ -71,12 +79,12 @@ bool SpindleConfiguratorService::isDirectionClockwise() const {
 
 void SpindleConfiguratorService::increaseRotationTimeInMillis() {
     bufferedPersistentConfig_.timedRotationInMillis +=
-        ROTATION_TIME_STEP_MILLIS_;
+        parameters_.rotationTimeStepMillis;
 }
 
 void SpindleConfiguratorService::decreaseRotationTimeInMillis() {
     bufferedPersistentConfig_.timedRotationInMillis -=
-        ROTATION_TIME_STEP_MILLIS_;
+        parameters_.rotationTimeStepMillis;
 }
 
 void SpindleConfiguratorService::saveRotationTimeInMillis() {

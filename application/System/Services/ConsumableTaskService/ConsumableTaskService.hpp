@@ -8,9 +8,17 @@ namespace ATC {
 template<typename TaskResult>
 class ConsumableTaskService : public IConsumableTaskService<TaskResult> {
 private:
-	ITaskScheduler& scheduler_;
-	IConsumableTask<TaskResult>& task_;
+    ITaskScheduler& scheduler_;
+    IConsumableTask<TaskResult>& task_;
+
 public:
+    ConsumableTaskService(const ConsumableTaskService&) = delete;
+    ConsumableTaskService& operator=(const ConsumableTaskService&) =
+        delete;
+    ConsumableTaskService(ConsumableTaskService&&) = delete;
+    ConsumableTaskService& operator=(ConsumableTaskService&&) = delete;
+    virtual ~ConsumableTaskService() = default;
+
     ConsumableTaskService(
         ITaskScheduler& scheduler,
         IConsumableTask<TaskResult>& task
@@ -18,15 +26,15 @@ public:
         scheduler_(scheduler),
         task_(task) {}
 
-    virtual void schedule() override {
+    void schedule() override {
         scheduler_.schedule(task_);
     }
 
-    virtual bool isFinished() const override {
+    [[nodiscard]] bool isFinished() const override {
         return task_.isFinished();
     }
 
-    virtual TaskResult consumeResult() override {
+    TaskResult consumeResult() override {
         return task_.consumeResult();
     }
 };
