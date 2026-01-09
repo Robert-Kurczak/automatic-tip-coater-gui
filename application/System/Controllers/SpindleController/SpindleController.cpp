@@ -31,7 +31,7 @@ void SpindleController::checkTimedRotation() {
 }
 
 void SpindleController::init(const SpindlePersistentConfig& config) {
-    speedPercent_ = config.speedPercentage;
+    speedPercent_ = config.speedPercent;
     rotationTimeInMillis_ = config.timedRotationInMillis;
 
     motor_.init();

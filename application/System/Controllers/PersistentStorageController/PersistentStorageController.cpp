@@ -31,7 +31,7 @@ void PersistentStorageController::logSpindleConfig(
         "\tspeed [%]: {}\n"
         "\tclockwise: {}\n"
         "\ttimed rotation [ms]: {}\n",
-        config.speedPercentage,
+        config.speedPercent,
         config.isDirectionClockwise,
         config.timedRotationInMillis);
 }

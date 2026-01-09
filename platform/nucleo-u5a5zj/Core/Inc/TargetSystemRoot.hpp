@@ -5,6 +5,7 @@
 #include "Adapters/Spi/Spi.hpp"
 #include "Adapters/SystemClock/SystemClock.hpp"
 #include "Adapters/Uart/Uart.hpp"
+#include "application/System/Config/ConfiguratorsConfig.hpp"
 #include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
@@ -157,33 +158,23 @@ private:
     XAxisConfiguratorService xAxisConfiguratorService_ {
         persistentStorageController_,
         xAxisController_,
-        AxisConfiguratorParameters {
-                                    .positionStep = 100,
-                                    .speedStep = 5,
-                                    .speedShowcasePosition = 1000,
-                                    }
+        X_AXIS_CONFIGURATOR_PARAMETERS
     };
     YAxisConfiguratorService yAxisConfiguratorService_ {
         persistentStorageController_,
         yAxisController_,
-        AxisConfiguratorParameters {
-                                    .positionStep = 100,
-                                    .speedStep = 5,
-                                    .speedShowcasePosition = 1000,
-                                    }
+        Y_AXIS_CONFIGURATOR_PARAMETERS
+
     };
     ZAxisConfiguratorService zAxisConfiguratorService_ {
         persistentStorageController_,
         zAxisController_,
-        AxisConfiguratorParameters {
-                                    .positionStep = 100,
-                                    .speedStep = 5,
-                                    .speedShowcasePosition = 1000,
-                                    }
+        Z_AXIS_CONFIGURATOR_PARAMETERS
     };
     SpindleConfiguratorService spindleConfiguratorService_ {
         persistentStorageController_,
-        spindleController_
+        spindleController_,
+        SPINDLE_CONFIGURATOR_PARAMETERS
     };
     HeaterConfiguratorService heaterConfiguratorService_ {
         persistentStorageController_,

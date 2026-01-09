@@ -97,11 +97,11 @@ void AxisConfiguratorService::showcaseSpeed() {
 }
 
 void AxisConfiguratorService::increaseSpeed() {
-    bufferedPersistentConfig_.speed += parameters_.speedStep;
+    bufferedPersistentConfig_.speed += parameters_.speedPercentStep;
 }
 
 void AxisConfiguratorService::decreaseSpeed() {
-    bufferedPersistentConfig_.speed -= parameters_.speedStep;
+    bufferedPersistentConfig_.speed -= parameters_.speedPercentStep;
 }
 
 void AxisConfiguratorService::saveSpeed() {

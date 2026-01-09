@@ -11,6 +11,6 @@ private:
 public:
     TaskControlService(ITaskScheduler& taskScheduler);
 
-    virtual void cancelAll() override;
+    void cancelAll() override;
 };
 }

@@ -11,6 +11,6 @@ private:
 public:
     TouchPanelService(ITouchPanelController& touchPanelController);
 
-    virtual Vector2 readPosition() override;
+    [[nodiscard]] Vector2 readPosition() override;
 };
 }

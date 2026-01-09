@@ -5,8 +5,13 @@
 namespace ATC {
 class ITouchPanelService {
 public:
+    ITouchPanelService() = default;
+    ITouchPanelService(const ITouchPanelService&) = delete;
+    ITouchPanelService& operator=(const ITouchPanelService&) = delete;
+    ITouchPanelService(ITouchPanelService&&) = delete;
+    ITouchPanelService& operator=(ITouchPanelService&&) = delete;
     virtual ~ITouchPanelService() = default;
 
-    virtual Vector2 readPosition() = 0;
+    [[nodiscard]] virtual Vector2 readPosition() = 0;
 };
 }
