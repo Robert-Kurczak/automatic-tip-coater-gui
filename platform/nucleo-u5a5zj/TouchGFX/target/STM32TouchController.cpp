@@ -46,9 +46,9 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 
     ATC::Vector2 position = systemTouchPanel.readPosition();
 
-    if (position.x_ != UINT16_MAX && position.y_ != UINT16_MAX) {
-        x = position.x_;
-        y = position.y_;
+    if (position.x != UINT16_MAX && position.y != UINT16_MAX) {
+        x = position.x;
+        y = position.y;
 
         return true;
     }

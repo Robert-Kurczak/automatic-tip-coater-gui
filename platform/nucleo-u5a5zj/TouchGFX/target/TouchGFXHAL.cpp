@@ -87,10 +87,10 @@ void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect& rect)
     systemDisplay.draw(
         frameBufferSpan,
         ATC::Rectangle {
-            .xStart_ = uint16_t(rect.x),
-            .xEnd_ = uint16_t(rect.right() - 1),
-            .yStart_ = uint16_t(rect.y),
-            .yEnd_ = uint16_t(rect.bottom() - 1)
+            .xStart = uint16_t(rect.x),
+            .xEnd = uint16_t(rect.right() - 1),
+            .yStart = uint16_t(rect.y),
+            .yEnd = uint16_t(rect.bottom() - 1)
         }
     );
 

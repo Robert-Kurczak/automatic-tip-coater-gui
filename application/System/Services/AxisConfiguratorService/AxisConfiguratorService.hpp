@@ -33,18 +33,6 @@ public:
         const AxisConfiguratorParameters& parameters
     );
 
-    AxisConfiguratorService(const AxisConfiguratorService&) = delete;
-
-    AxisConfiguratorService& operator=(const AxisConfiguratorService&) =
-        delete;
-
-    AxisConfiguratorService(AxisConfiguratorService&& other) = delete;
-
-    AxisConfiguratorService& operator=(AxisConfiguratorService&& other) =
-        delete;
-
-    ~AxisConfiguratorService() = default;
-
     void resetBufferedConfig() override;
 
     void showcaseStartPosition() override;

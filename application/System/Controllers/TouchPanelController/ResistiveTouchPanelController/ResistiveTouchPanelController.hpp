@@ -22,7 +22,9 @@ private:
 
     bool isPressed();
     Vector2 getFilteredRawPosition();
-    Vector2 interpolateRawPosition(const Vector2& rawPosition) const;
+    [[nodiscard]] Vector2 interpolateRawPosition(
+        const Vector2& rawPosition
+    ) const;
 
 public:
     ResistiveTouchPanelController(
