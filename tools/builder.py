@@ -43,6 +43,7 @@ def check_touchgfx_simulator_quality(clang_log_file_path):
     clang_tidy_command = "run-clang-tidy"
     clang_tidy_command += " -j16"
     clang_tidy_command += " -use-color True"
+    clang_tidy_command += " -extra-arg-before=-Wno-unknown-warning-option"
     clang_tidy_command += f" -config-file {paths.MOUNTED_CLANG_TIDY_CONFIG_PATH}"
     clang_tidy_command += f" -export-fixes {clang_log_file_path}"
     clang_tidy_command += f" -p {paths.MOUNTED_APPLICATION_PATH}"

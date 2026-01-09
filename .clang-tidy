@@ -7,5 +7,6 @@ Checks: >
   readability-*,
   bugprone-*,
 
-  -modernize-use-trailing-return-type
+  -modernize-use-trailing-return-type,
+  -readability-convert-member-functions-to-static
 HeaderFilterRegex: "application/.*"

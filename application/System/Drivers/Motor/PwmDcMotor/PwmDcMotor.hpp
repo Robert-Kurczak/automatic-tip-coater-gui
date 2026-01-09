@@ -17,8 +17,6 @@ class PwmDcMotor : public IMotor {
 private:
     PwmDcMotorPinout& pinout_;
 
-    uint8_t dutyCyclePercent_ = 0;
-
 public:
     PwmDcMotor(PwmDcMotorPinout& pinout);
 

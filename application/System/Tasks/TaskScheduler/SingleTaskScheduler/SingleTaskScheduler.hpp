@@ -11,8 +11,8 @@ private:
 public:
     SingleTaskScheduler(ITask& nullTask);
 
-    virtual void schedule(ITask& task) override;
-    virtual void tick() override;
-    virtual void cancelAll() override;
+    void schedule(ITask& task) override;
+    void tick() override;
+    void cancelAll() override;
 };
 }
