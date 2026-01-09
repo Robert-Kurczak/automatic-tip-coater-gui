@@ -6,6 +6,6 @@ namespace ATC {
 class IXAxisController : public IAxisController {
 public:
     virtual void moveToHeaterFrontPosition() = 0;
-    virtual bool isAtHeaterFrontPosition() const = 0;
+    [[nodiscard]] virtual bool isAtHeaterFrontPosition() const = 0;
 };
 }
