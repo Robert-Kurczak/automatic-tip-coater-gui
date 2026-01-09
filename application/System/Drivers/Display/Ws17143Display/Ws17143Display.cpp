@@ -474,17 +474,17 @@ static constexpr uint16_t BLUE_565_ = 0x001F;
 
 void Ws17143Display::setWindow(const Rectangle& window) {
     const std::array<uint8_t, 4> xBytes {
-        uint8_t(window.xStart_ >> 8),
-        uint8_t(window.xStart_ & 0xFF),
-        uint8_t(window.xEnd_ >> 8),
-        uint8_t(window.xEnd_ & 0xFF)
+        uint8_t(window.xStart >> 8),
+        uint8_t(window.xStart & 0xFF),
+        uint8_t(window.xEnd >> 8),
+        uint8_t(window.xEnd & 0xFF)
     };
 
     const std::array<uint8_t, 4> yBytes {
-        uint8_t(window.yStart_ >> 8),
-        uint8_t(window.yStart_ & 0xFF),
-        uint8_t(window.yEnd_ >> 8),
-        uint8_t(window.yEnd_ & 0xFF)
+        uint8_t(window.yStart >> 8),
+        uint8_t(window.yStart & 0xFF),
+        uint8_t(window.yEnd >> 8),
+        uint8_t(window.yEnd & 0xFF)
     };
 
     for (uint16_t i = 0; i < 4; i++) {
@@ -562,10 +562,10 @@ void Ws17143Display::init() {
 void Ws17143Display::drawTestPattern(uint8_t seed) {
     setWindow(
         Rectangle {
-            .xStart_ = 0,
-            .xEnd_ = WIDTH_ - 1,
-            .yStart_ = 0,
-            .yEnd_ = HEIGHT_ - 1
+            .xStart = 0,
+            .xEnd = WIDTH_ - 1,
+            .yStart = 0,
+            .yEnd = HEIGHT_ - 1
         }
     );
 
@@ -594,9 +594,9 @@ void Ws17143Display::draw(
 
     flexibleMemoryController_.writeRegister(MEMORY_WRITE_REGISTER_);
 
-    for (uint16_t yIndex = window.yStart_; yIndex <= window.yEnd_;
+    for (uint16_t yIndex = window.yStart; yIndex <= window.yEnd;
          yIndex++) {
-        for (uint16_t xIndex = window.xStart_; xIndex <= window.xEnd_;
+        for (uint16_t xIndex = window.xStart; xIndex <= window.xEnd;
              xIndex++) {
             const uint16_t color =
                 frameBuffer[(yIndex * WIDTH_) + xIndex];
@@ -609,10 +609,7 @@ void Ws17143Display::draw(
 
 void Ws17143Display::draw(const std::span<const uint16_t>& framebuffer) {
     constexpr Rectangle fullWindow {
-        .xStart_ = 0,
-        .xEnd_ = WIDTH_ - 1,
-        .yStart_ = 0,
-        .yEnd_ = HEIGHT_ - 1
+        .xStart = 0, .xEnd = WIDTH_ - 1, .yStart = 0, .yEnd = HEIGHT_ - 1
     };
 
     draw(framebuffer, fullWindow);

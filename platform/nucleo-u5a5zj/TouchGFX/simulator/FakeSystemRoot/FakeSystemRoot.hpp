@@ -80,12 +80,12 @@ private:
         resistiveTouchPanel_,
         systemClock_,
         ATC::Rectangle {
-                        .xStart_ = 0,
-                        .xEnd_ = 800,
-                        .yStart_ = 0,
-                        .yEnd_ = 480
+                        .xStart = 0,
+                        .xEnd = 800,
+                        .yStart = 0,
+                        .yEnd = 480
         },
-        ATC::Vector2 {.x_ = 800, .y_ = 480},
+        ATC::Vector2 {.x = 800, .y = 480},
         3000
     };
 

@@ -16,35 +16,35 @@ Vector2 ResistiveTouchPanelController::getFilteredRawPosition() {
     }
 
     if (samplesTaken == 0) {
-        return Vector2 {.x_ = 0, .y_ = 0};
+        return Vector2 {.x = 0, .y = 0};
     }
 
     averageX /= samplesTaken;
     averageY /= samplesTaken;
 
-    return Vector2 {.x_ = uint16_t(averageX), .y_ = uint16_t(averageY)};
+    return Vector2 {.x = uint16_t(averageX), .y = uint16_t(averageY)};
 }
 
 Vector2 ResistiveTouchPanelController::interpolateRawPosition(
     const Vector2& rawPosition
 ) const {
     const auto xNumerator =
-        uint32_t(rawPosition.x_ - rawWorkingArea_.xStart_) *
-        uint32_t(pixelResolution_.x_);
+        uint32_t(rawPosition.x - rawWorkingArea_.xStart) *
+        uint32_t(pixelResolution_.x);
 
     const auto xDenominator =
-        uint32_t(rawWorkingArea_.xEnd_ - rawWorkingArea_.xStart_);
+        uint32_t(rawWorkingArea_.xEnd - rawWorkingArea_.xStart);
 
     const auto yNumerator =
-        uint32_t(rawPosition.y_ - rawWorkingArea_.yStart_) *
-        uint32_t(pixelResolution_.y_);
+        uint32_t(rawPosition.y - rawWorkingArea_.yStart) *
+        uint32_t(pixelResolution_.y);
 
     const auto yDenominator =
-        uint32_t(rawWorkingArea_.yEnd_ - rawWorkingArea_.yStart_);
+        uint32_t(rawWorkingArea_.yEnd - rawWorkingArea_.yStart);
 
     Vector2 interpolatedPosition {
-        .x_ = uint16_t(xNumerator / xDenominator),
-        .y_ = uint16_t(yNumerator / yDenominator)
+        .x = uint16_t(xNumerator / xDenominator),
+        .y = uint16_t(yNumerator / yDenominator)
     };
 
     return interpolatedPosition;
@@ -103,14 +103,14 @@ bool ResistiveTouchPanelController::isPressed() {
 
 Vector2 ResistiveTouchPanelController::readPosition() {
     if (!isPressed()) {
-        return Vector2 {.x_ = UINT16_MAX, .y_ = UINT16_MAX};
+        return Vector2 {.x = UINT16_MAX, .y = UINT16_MAX};
     }
 
     Vector2 position = getFilteredRawPosition();
     position = interpolateRawPosition(position);
 
     if (invertYAxis_) {
-        position.y_ = pixelResolution_.y_ - position.y_;
+        position.y = pixelResolution_.y - position.y;
     }
 
     return position;
