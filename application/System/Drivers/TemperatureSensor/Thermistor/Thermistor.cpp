@@ -21,6 +21,6 @@ uint32_t Thermistor::getCelsius() {
         "Not implemented");
     // TODO implement
 
-    return 100;
+    return 0;
 }
 }

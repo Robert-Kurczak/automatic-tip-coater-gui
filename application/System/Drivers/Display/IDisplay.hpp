@@ -8,12 +8,11 @@
 namespace ATC {
 class IDisplay {
 public:
+    IDisplay() = default;
     IDisplay(const IDisplay&) = delete;
     IDisplay& operator=(const IDisplay&) = delete;
-    IDisplay(IDisplay&& other) = delete;
-    IDisplay& operator=(IDisplay&& other) = delete;
-
-    IDisplay() = default;
+    IDisplay(IDisplay&&) = delete;
+    IDisplay& operator=(IDisplay&&) = delete;
     virtual ~IDisplay() = default;
 
     virtual void init() = 0;

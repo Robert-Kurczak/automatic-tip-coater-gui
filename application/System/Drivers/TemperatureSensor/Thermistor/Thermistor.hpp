@@ -11,8 +11,8 @@ private:
 public:
     Thermistor(ILoggerSink& loggerSink);
 
-    virtual void init() override;
+    void init() override;
 
-    virtual uint32_t getCelsius() override;
+    uint32_t getCelsius() override;
 };
 }

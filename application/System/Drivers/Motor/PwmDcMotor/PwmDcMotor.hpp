@@ -5,30 +5,32 @@
 #include "application/System/Ports/IPwmPin.hpp"
 
 namespace ATC {
+// NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
 struct PwmDcMotorPinout {
     IPwmPin& speedPwmPin;
     IGpioPin& directionPin;
     IGpioPin& faultPin;
 };
+// NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 
 class PwmDcMotor : public IMotor {
 private:
     PwmDcMotorPinout& pinout_;
 
-    uint8_t dutyCyclePercent_ = 50;
+    uint8_t dutyCyclePercent_ = 0;
 
 public:
     PwmDcMotor(PwmDcMotorPinout& pinout);
 
-    virtual void init() override;
+    void init() override;
 
-    virtual void startRotation(uint8_t speedPercent) override;
-    virtual void stopRotation() override;
+    void startRotation(uint8_t speedPercent) override;
+    void stopRotation() override;
 
-    virtual void setDirectionClockwise() override;
-    virtual void setDirectionCounterClockwise() override;
-    virtual bool isDirectionClockwise() const override;
+    void setDirectionClockwise() override;
+    void setDirectionCounterClockwise() override;
+    [[nodiscard]] bool isDirectionClockwise() const override;
 
-    virtual bool isFaultDetected() override;
+    [[nodiscard]] bool isFaultDetected() override;
 };
 }
