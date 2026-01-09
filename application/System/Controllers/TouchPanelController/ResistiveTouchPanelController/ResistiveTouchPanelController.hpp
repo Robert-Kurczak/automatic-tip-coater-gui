@@ -22,7 +22,7 @@ private:
 
     bool isPressed();
     Vector2 getFilteredRawPosition();
-    Vector2 interpolateRawPosition(const Vector2& rawPosition);
+    Vector2 interpolateRawPosition(const Vector2& rawPosition) const;
 
 public:
     ResistiveTouchPanelController(
@@ -34,8 +34,8 @@ public:
         bool invertYAxis = false
     );
 
-    virtual void init() override;
+    void init() override;
 
-    virtual Vector2 readPosition() override;
+    Vector2 readPosition() override;
 };
 }
