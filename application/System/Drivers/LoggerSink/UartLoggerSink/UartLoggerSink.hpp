@@ -11,6 +11,6 @@ private:
 public:
     UartLoggerSink(IUart& uart);
 
-    virtual ILoggerSink& operator<<(std::string_view text) override;
+    ILoggerSink& operator<<(std::string_view text) override;
 };
 }

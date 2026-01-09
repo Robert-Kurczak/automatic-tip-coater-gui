@@ -11,9 +11,9 @@ private:
 public:
     GpioActiveHighSwitch(IGpioPin& togglePin);
 
-    virtual void init() override;
+    void init() override;
 
-    virtual void turnOn() override;
-    virtual void turnOff() override;
+    void turnOn() override;
+    void turnOff() override;
 };
 }

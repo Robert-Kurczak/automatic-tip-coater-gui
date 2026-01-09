@@ -1,11 +1,16 @@
 #pragma once
 
+#include <cstdint>
 #include <span>
-#include <stdint.h>
 
 namespace ATC {
 class IPersistentStorage {
 public:
+    IPersistentStorage() = default;
+    IPersistentStorage(const IPersistentStorage&) = delete;
+    IPersistentStorage& operator=(const IPersistentStorage&) = delete;
+    IPersistentStorage(IPersistentStorage&&) = delete;
+    IPersistentStorage& operator=(IPersistentStorage&&) = delete;
     virtual ~IPersistentStorage() = default;
 
     virtual void init() = 0;
