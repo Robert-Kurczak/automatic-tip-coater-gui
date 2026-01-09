@@ -1,17 +1,25 @@
 #include "Xpt2046TouchPanel.hpp"
 
+#include <array>
+
 namespace ATC {
+static constexpr uint8_t READ_X_COMMAND_ = 0xD0;
+static constexpr uint8_t READ_Y_COMMAND_ = 0x90;
+static constexpr uint8_t READ_Z1_COMMAND_ = 0xB0;
+static constexpr uint8_t READ_Z2_COMMAND_ = 0xC0;
+
 uint16_t Xpt2046TouchPanel::transferReadCommand(uint8_t command) {
     pinout_.chipSelectPin.setLow();
 
-    uint8_t outputBuffer[2];
+    std::array<uint8_t, 2> outputBuffer {};
 
-    spi_.sendData({&command, 1});
+    spi_.sendData(std::span {&command, sizeof(command)});
     spi_.receiveData(outputBuffer);
 
     pinout_.chipSelectPin.setHigh();
 
-    return ((outputBuffer[0] << 8) | outputBuffer[1]) >> 4;
+    constexpr uint8_t bitsToShift = 8;
+    return ((outputBuffer[0] << bitsToShift) | outputBuffer[1]) >> 4;
 }
 
 Xpt2046TouchPanel::Xpt2046TouchPanel(

@@ -1,24 +1,25 @@
 #pragma once
 
-#include "application/Utils/TaggedType.hpp"
-
 #include <cstdint>
 
 namespace ATC {
 class IFlexibleMemoryController {
-private:
-    struct RegisterAddressTag {};
-    struct DataAddressTag {};
-
-    struct RegisterNumberTag {};
-    struct DataTag {};
-
 public:
-    using RegisterAddress = TaggedType<RegisterAddressTag, uintptr_t>;
-    using DataAddress = TaggedType<DataAddressTag, uintptr_t>;
+    struct RegisterAddress {
+        uintptr_t value;
+    };
 
-    using RegisterNumber = TaggedType<RegisterNumberTag, uint16_t>;
-    using Data = TaggedType<DataTag, uint16_t>;
+    struct DataAddress {
+        uintptr_t value;
+    };
+
+    struct RegisterNumber {
+        uint16_t value;
+    };
+
+    struct Data {
+        uint16_t value;
+    };
 
     struct Instruction {
         RegisterNumber registerNumber;
@@ -26,18 +27,13 @@ public:
     };
 
     IFlexibleMemoryController() = default;
-
     IFlexibleMemoryController(const IFlexibleMemoryController&) = delete;
-
     IFlexibleMemoryController& operator=(
         const IFlexibleMemoryController&
     ) = delete;
-
-    IFlexibleMemoryController(IFlexibleMemoryController&& other) = delete;
-
-    IFlexibleMemoryController& operator=(
-        IFlexibleMemoryController&& other
-    ) = delete;
+    IFlexibleMemoryController(IFlexibleMemoryController&&) = delete;
+    IFlexibleMemoryController& operator=(IFlexibleMemoryController&&) =
+        delete;
 
     virtual ~IFlexibleMemoryController() = default;
 

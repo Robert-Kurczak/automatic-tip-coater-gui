@@ -1,10 +1,16 @@
 #pragma once
 
-#include <stdint.h>
+#include <cstdint>
 
 namespace ATC {
 class IResistiveTouchPanel {
 public:
+    IResistiveTouchPanel() = default;
+    IResistiveTouchPanel(const IResistiveTouchPanel&) = delete;
+    IResistiveTouchPanel& operator=(const IResistiveTouchPanel&) = delete;
+    IResistiveTouchPanel(IResistiveTouchPanel&&) = delete;
+    IResistiveTouchPanel& operator=(IResistiveTouchPanel&&) = delete;
+
     virtual ~IResistiveTouchPanel() = default;
 
     virtual void init() = 0;
