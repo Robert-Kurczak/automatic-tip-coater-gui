@@ -14,7 +14,7 @@ private:
     ISystemClock& systemClock_;
     const uint32_t heatingTimeoutInMillis_;
 
-    uint32_t heatingStartTimestampInMillis_;
+    uint32_t heatingStartTimestampInMillis_ = 0;
 
     TaskState state_ = TaskState::IDLE;
     HeaterTestResults testResults_ {.temperatureSuccess = false};
@@ -35,10 +35,10 @@ public:
         uint32_t heatingTimeoutInMillis
     );
 
-    virtual void start() override;
-    virtual void reset() override;
-    virtual void tick() override;
-    virtual bool isFinished() const override;
-    virtual HeaterTestResults consumeResult() override;
+    void start() override;
+    void reset() override;
+    void tick() override;
+    [[nodiscard]] bool isFinished() const override;
+    HeaterTestResults consumeResult() override;
 };
 }

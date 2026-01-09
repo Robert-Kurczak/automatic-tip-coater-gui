@@ -7,9 +7,9 @@ class NullTask : public ITask {
 public:
     NullTask() = default;
 
-    virtual void start() override;
-    virtual void reset() override;
-    virtual void tick() override;
-    virtual bool isFinished() const override;
+    void start() override;
+    void reset() override;
+    void tick() override;
+    [[nodiscard]] bool isFinished() const override;
 };
 }
