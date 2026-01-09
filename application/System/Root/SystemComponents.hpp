@@ -12,6 +12,7 @@
 
 namespace ATC {
 struct SystemComponents {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IPersistentStorageController& persistentStorageController;
     IXAxisController& xAxisController;
     IYAxisController& yAxisController;
@@ -21,5 +22,6 @@ struct SystemComponents {
     IDisplay& display;
     ITouchPanelController& touchPanelController;
     ITaskScheduler& taskScheduler;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
 }

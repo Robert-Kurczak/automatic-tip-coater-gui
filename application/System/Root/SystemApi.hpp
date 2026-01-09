@@ -13,19 +13,24 @@
 
 namespace ATC {
 struct SystemPeripherals {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IDisplayService& display;
     ITouchPanelService& touchPanel;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
 
 struct SystemConfigurators {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IAxisConfiguratorService& xAxisConfigurator;
     IAxisConfiguratorService& yAxisConfigurator;
     IAxisConfiguratorService& zAxisConfigurator;
     ISpindleConfiguratorService& spindleConfigurator;
     IHeaterConfiguratorService& heaterConfigurator;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
 
 struct SystemTasks {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IConsumableTaskService<bool>& coatingTask;
     IConsumableTaskService<bool>& calibrationTask;
     IConsumableTaskService<AxisTestResults>& xAxisTestTask;
@@ -34,11 +39,14 @@ struct SystemTasks {
     IConsumableTaskService<SpindleTestResults>& spindleTestTask;
     IConsumableTaskService<HeaterTestResults>& heaterTestTask;
     ITaskControlService& taskControl;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
 
 struct SystemApi {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     SystemPeripherals peripherals;
     SystemConfigurators configurators;
     SystemTasks tasks;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
 }

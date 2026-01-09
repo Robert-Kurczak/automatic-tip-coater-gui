@@ -5,13 +5,13 @@
 #include "application/System/Ports/IPwmPin.hpp"
 
 namespace ATC {
-// NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
 struct PwmDcMotorPinout {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IPwmPin& speedPwmPin;
     IGpioPin& directionPin;
     IGpioPin& faultPin;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
-// NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 
 class PwmDcMotor : public IMotor {
 private:

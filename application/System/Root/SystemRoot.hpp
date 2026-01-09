@@ -11,6 +11,11 @@ private:
 
 public:
     SystemRoot(SystemComponents& systemComponents, SystemApi& systemApi);
+    SystemRoot(const SystemRoot&) = delete;
+    SystemRoot& operator=(const SystemRoot&) = delete;
+    SystemRoot(SystemRoot&&) = delete;
+    SystemRoot& operator=(SystemRoot&&) = delete;
+    ~SystemRoot() = default;
 
     void init();
     void tick();

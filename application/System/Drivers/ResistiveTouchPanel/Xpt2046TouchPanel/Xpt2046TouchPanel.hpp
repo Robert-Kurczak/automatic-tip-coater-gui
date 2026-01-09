@@ -6,12 +6,12 @@
 
 namespace ATC {
 
-// NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
 struct Xpt2046TouchPanelPinout {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IGpioPin& chipSelectPin;
     IGpioPin& touchInterruptPin;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
-// NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 
 class Xpt2046TouchPanel : public IResistiveTouchPanel {
 private:
