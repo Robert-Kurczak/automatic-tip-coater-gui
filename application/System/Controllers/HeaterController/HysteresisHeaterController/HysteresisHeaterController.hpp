@@ -21,16 +21,16 @@ public:
         ITemperatureSensor& temperatureSensor
     );
 
-    virtual void init(const HeaterPersistentConfig& config) override;
-    virtual void tick() override;
+    void init(const HeaterPersistentConfig& config) override;
+    void tick() override;
 
-    virtual void turnOn() override;
-    virtual void turnOff() override;
-    virtual bool isOn() const override;
+    void turnOn() override;
+    void turnOff() override;
+    [[nodiscard]] bool isOn() const override;
 
-    virtual void setTargetTemperatureInCelsius(uint32_t value) override;
-    virtual uint32_t getTargetTemperatureInCelsius() const override;
+    void setTargetTemperatureInCelsius(uint32_t value) override;
+    [[nodiscard]] uint32_t getTargetTemperatureInCelsius() const override;
 
-    virtual bool isAtTargetTemperature() const override;
+    [[nodiscard]] bool isAtTargetTemperature() const override;
 };
 }
