@@ -1,15 +1,22 @@
 #include "ResistiveTouchPanelController.hpp"
 
 namespace ATC {
+static constexpr uint8_t SAMPLES_PER_READING_ = 10;
+
 Vector2 ResistiveTouchPanelController::getFilteredRawPosition() {
     uint8_t samplesTaken = 0;
     uint32_t averageX = 0;
     uint32_t averageY = 0;
 
-    while (resistiveTouchPanel_.isTouchDetected() && samplesTaken < 10) {
+    while (resistiveTouchPanel_.isTouchDetected() &&
+           samplesTaken < SAMPLES_PER_READING_) {
         averageX += resistiveTouchPanel_.readRawX();
         averageY += resistiveTouchPanel_.readRawY();
         samplesTaken++;
+    }
+
+    if (samplesTaken == 0) {
+        return Vector2 {.x_ = 0, .y_ = 0};
     }
 
     averageX /= samplesTaken;
@@ -20,19 +27,19 @@ Vector2 ResistiveTouchPanelController::getFilteredRawPosition() {
 
 Vector2 ResistiveTouchPanelController::interpolateRawPosition(
     const Vector2& rawPosition
-) {
-    const uint32_t xNumerator =
+) const {
+    const auto xNumerator =
         uint32_t(rawPosition.x_ - rawWorkingArea_.xStart_) *
         uint32_t(pixelResolution_.x_);
 
-    const uint32_t xDenominator =
+    const auto xDenominator =
         uint32_t(rawWorkingArea_.xEnd_ - rawWorkingArea_.xStart_);
 
-    const uint32_t yNumerator =
+    const auto yNumerator =
         uint32_t(rawPosition.y_ - rawWorkingArea_.yStart_) *
         uint32_t(pixelResolution_.y_);
 
-    const uint32_t yDenominator =
+    const auto yDenominator =
         uint32_t(rawWorkingArea_.yEnd_ - rawWorkingArea_.yStart_);
 
     Vector2 interpolatedPosition {
