@@ -5,9 +5,14 @@
 namespace ATC {
 class ISystemClock {
 public:
+    ISystemClock() = default;
+    ISystemClock(const ISystemClock&) = delete;
+    ISystemClock& operator=(const ISystemClock&) = delete;
+    ISystemClock(ISystemClock&&) = delete;
+    ISystemClock& operator=(ISystemClock&&) = delete;
     virtual ~ISystemClock() = default;
 
-    virtual void delayMilliseconds(const uint32_t value) = 0;
-    virtual uint32_t getMillisecondsSinceStart() = 0;
+    virtual void delayMilliseconds(uint32_t value) = 0;
+    [[nodiscard]] virtual uint32_t getMillisecondsSinceStart() = 0;
 };
 }
