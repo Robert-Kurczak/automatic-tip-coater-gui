@@ -22,6 +22,11 @@ void CoatingTask::waitForCalibrationFinish() {
     }
 }
 
+void CoatingTask::startHeater() {
+    heaterController_.turnOn();
+    currentStage_++;
+}
+
 void CoatingTask::moveAxesToInitialPosition() {
     xAxisController_.moveToHeaterFrontPosition();
     yAxisController_.moveToStartPosition();
@@ -98,6 +103,12 @@ void CoatingTask::waitForXAxisAtEndPosition() {
     }
 }
 
+void CoatingTask::waitForHeaterTemperature() {
+    if (heaterController_.isAtTargetTemperature()) {
+        currentStage_++;
+    }
+}
+
 void CoatingTask::startRotation() {
     spindleController_.startRotation();
     currentStage_++;
@@ -136,6 +147,11 @@ void CoatingTask::waitForXAxisAtStartPosition() {
     }
 }
 
+void CoatingTask::stopHeater() {
+    heaterController_.turnOff();
+    currentStage_++;
+}
+
 void CoatingTask::stopRotation() {
     spindleController_.stopRotation();
     currentStage_++;
@@ -146,7 +162,12 @@ void CoatingTask::finishTask() {
     wasSuccessful_ = true;
 }
 
-const std::array<CoatingTask::stageMethod, 25> CoatingTask::stages_ {
+const std::array<CoatingTask::stageMethod, 30> CoatingTask::stages_ {
+    &CoatingTask::calibrateAxes,
+    &CoatingTask::waitForCalibrationFinish,
+
+    &CoatingTask::startHeater,
+
     &CoatingTask::moveAxesToInitialPosition,
     &CoatingTask::waitForAxesAtInitialPosition,
 
@@ -165,10 +186,12 @@ const std::array<CoatingTask::stageMethod, 25> CoatingTask::stages_ {
     &CoatingTask::moveXAxisToEndPosition,
     &CoatingTask::waitForXAxisAtEndPosition,
 
-    &CoatingTask::moveZAxisToEndPosition,
-    &CoatingTask::waitForZAxisAtEndPosition,
+    &CoatingTask::waitForHeaterTemperature,
 
     &CoatingTask::startRotation,
+
+    &CoatingTask::moveZAxisToEndPosition,
+    &CoatingTask::waitForZAxisAtEndPosition,
 
     &CoatingTask::moveXAxisToHeaterFrontPosition,
     &CoatingTask::waitForXAxisAtHeaterFrontPosition,
@@ -180,6 +203,8 @@ const std::array<CoatingTask::stageMethod, 25> CoatingTask::stages_ {
     &CoatingTask::waitForXAxisAtStartPosition,
 
     &CoatingTask::stopRotation,
+    
+    &CoatingTask::stopHeater,
 
     &CoatingTask::moveZAxisToStartPosition,
     &CoatingTask::waitForZAxisAtEndPosition,

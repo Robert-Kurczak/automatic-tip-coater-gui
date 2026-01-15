@@ -26,6 +26,8 @@ private:
     void calibrateAxes();
     void waitForCalibrationFinish();
 
+    void startHeater();
+
     void moveAxesToInitialPosition();
     void waitForAxesAtInitialPosition();
 
@@ -44,6 +46,8 @@ private:
     void moveXAxisToEndPosition();
     void waitForXAxisAtEndPosition();
 
+    void waitForHeaterTemperature();
+
     void startRotation();
 
     void moveXAxisToHeaterFrontPosition();
@@ -56,10 +60,13 @@ private:
     void waitForXAxisAtStartPosition();
 
     void stopRotation();
+
+    void stopHeater();
+
     void finishTask();
 
     using stageMethod = void (CoatingTask::*)();
-    static const std::array<stageMethod, 25> stages_;
+    static const std::array<stageMethod, 30> stages_;
 
 public:
     CoatingTask(
