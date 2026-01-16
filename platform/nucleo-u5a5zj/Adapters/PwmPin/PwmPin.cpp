@@ -9,7 +9,7 @@ void PwmPin::setDutyCycle(uint8_t percent) {
     const uint32_t autoReloadRegister =
         __HAL_TIM_GET_AUTORELOAD(&timerHandle_);
 
-    const uint32_t dutyCycle = (autoReloadRegister / 100) * percent;
+    const uint32_t dutyCycle = (autoReloadRegister * percent) / 100;
 
     __HAL_TIM_SET_COMPARE(&timerHandle_, channel_, dutyCycle);
 }

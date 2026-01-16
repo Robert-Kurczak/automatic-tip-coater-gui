@@ -64,18 +64,24 @@ void ATC_Loop();
 /* Private defines -----------------------------------------------------------*/
 #define Spindle_DIR_Pin GPIO_PIN_2
 #define Spindle_DIR_GPIO_Port GPIOE
-#define Spindle_SPEED_Pin GPIO_PIN_3
-#define Spindle_SPEED_GPIO_Port GPIOE
+#define xAxis_STEP_Pin GPIO_PIN_3
+#define xAxis_STEP_GPIO_Port GPIOE
 #define Spindle_FAULT_Pin GPIO_PIN_4
 #define Spindle_FAULT_GPIO_Port GPIOE
 #define LCD_RS_Pin GPIO_PIN_4
 #define LCD_RS_GPIO_Port GPIOF
+#define zAxis_STEP_Pin GPIO_PIN_6
+#define zAxis_STEP_GPIO_Port GPIOF
+#define Spindle_SPEED_Pin GPIO_PIN_9
+#define Spindle_SPEED_GPIO_Port GPIOF
 #define TouchPanel_IRQ_Pin GPIO_PIN_4
 #define TouchPanel_IRQ_GPIO_Port GPIOA
 #define TouchPanel_CS_Pin GPIO_PIN_5
 #define TouchPanel_CS_GPIO_Port GPIOA
 #define UCPD_FLT_Pin GPIO_PIN_14
 #define UCPD_FLT_GPIO_Port GPIOB
+#define YAxis_STEP_Pin GPIO_PIN_12
+#define YAxis_STEP_GPIO_Port GPIOD
 #define Heater_EN_Pin GPIO_PIN_3
 #define Heater_EN_GPIO_Port GPIOG
 #define UCPD_DBn_Pin GPIO_PIN_5
