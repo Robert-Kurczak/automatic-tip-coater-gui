@@ -1,7 +1,11 @@
 #pragma once
 
+#include <cstdint>
 #include <span>
-#include <stdint.h>
+
+// TODO add SPI speed getter
+// TODO Assert proper speed in modules using it
+// TODO add TransmitReceive functionality
 
 namespace ATC {
 class ISpi {
