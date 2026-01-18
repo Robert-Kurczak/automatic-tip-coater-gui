@@ -25,8 +25,10 @@ public:
 
     void init() override;
 
-    void start() override;
-    void stop() override;
+    void startStepping() override;
+    void stopStepping() override;
+
+    void setMicrosecondsBetweenStepToggle(uint32_t value) override;
 
     void setDirectionClockwise() override;
     void setDirectionCounterClockwise() override;

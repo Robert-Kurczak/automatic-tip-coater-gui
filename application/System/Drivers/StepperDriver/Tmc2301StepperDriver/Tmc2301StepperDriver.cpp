@@ -22,12 +22,18 @@ void Tmc2301StepperDriver::init() {
     pinout_.chipSelectPin.setHigh();
 }
 
-void Tmc2301StepperDriver::start() {
+void Tmc2301StepperDriver::startStepping() {
     pinout_.stepPin.enable();
 }
 
-void Tmc2301StepperDriver::stop() {
+void Tmc2301StepperDriver::stopStepping() {
     pinout_.stepPin.disable();
+}
+
+void Tmc2301StepperDriver::setMicrosecondsBetweenStepToggle(
+    uint32_t value
+) {
+    pinout_.stepPin.setToggleMicroseconds(value);
 }
 
 void Tmc2301StepperDriver::setDirectionClockwise() {
