@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 namespace ATC {
 class IStepperDriver {
 public:
@@ -12,8 +14,10 @@ public:
 
     virtual void init() = 0;
 
-    virtual void start() = 0;
-    virtual void stop() = 0;
+    virtual void startStepping() = 0;
+    virtual void stopStepping() = 0;
+
+    virtual void setMicrosecondsBetweenStepToggle(uint32_t value) = 0;
 
     virtual void setDirectionClockwise() = 0;
     virtual void setDirectionCounterClockwise() = 0;

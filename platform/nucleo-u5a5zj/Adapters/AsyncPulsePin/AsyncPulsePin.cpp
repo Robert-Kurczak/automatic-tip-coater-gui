@@ -1,12 +1,16 @@
 #include "AsyncPulsePin.hpp"
 
 namespace ATC {
-AsyncPulsePin::AsyncPulsePin(TIM_HandleTypeDef& timerHandle1MHz, uint32_t channel) :
+AsyncPulsePin::AsyncPulsePin(
+    TIM_HandleTypeDef& timerHandle1MHz,
+    uint32_t channel
+) :
     timerHandle1MHz_(timerHandle1MHz),
     channel_(channel) {}
 
 void AsyncPulsePin::enable() {
     __HAL_TIM_ENABLE(&timerHandle1MHz_);
+    __HAL_TIM_SET_COUNTER(&timerHandle1MHz_, 0)
 };
 
 void AsyncPulsePin::disable() {
