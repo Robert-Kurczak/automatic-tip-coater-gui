@@ -45,10 +45,7 @@ bool FakeMotor::isFaultDetected() {
     methodCalls++;
 
     if (methodCalls >= 1000) {
-        log(loggerSink_,
-            LogLevel::Debug,
-            "Reporting {} motor fault",
-            name_);
+        log(loggerSink_, LogLevel::Debug, "Reporting {} fault", name_);
 
         return true;
     }

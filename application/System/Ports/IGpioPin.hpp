@@ -13,6 +13,7 @@ public:
     virtual void setInputMode() = 0;
     virtual void setInputPullUpMode() = 0;
     virtual void setInputPullDownMode() = 0;
+
     [[nodiscard]] virtual bool isHigh() = 0;
 
     virtual void setOutputMode() = 0;

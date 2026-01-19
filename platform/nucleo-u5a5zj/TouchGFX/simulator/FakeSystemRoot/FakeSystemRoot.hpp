@@ -1,21 +1,26 @@
 #pragma once
 
 #include "FakeDrivers/FakeDisplay/FakeDisplay.hpp"
+#include "FakeDrivers/FakeLimitSwitch/FakeLimitSwitch.hpp"
 #include "FakeDrivers/FakeLoggerSink/FakeLoggerSink.hpp"
 #include "FakeDrivers/FakeMotor/FakeMotor.hpp"
 #include "FakeDrivers/FakePersistentStorage/FakePersistentStorage.hpp"
 #include "FakeDrivers/FakeResistiveTouchPanel/FakeResistiveTouchPanel.hpp"
+#include "FakeDrivers/FakeStepperDriver/FakeStepperDriver.hpp"
 #include "FakeDrivers/FakeSwitch/FakeSwitch.hpp"
 #include "FakeDrivers/FakeTemperatureSensor/FakeTemperatureSensor.hpp"
 #include "FakePorts/FakeSystemClock/FakeSystemClock.hpp"
+#include "application/System/Config/AxisMotionConfig.hpp"
 #include "application/System/Config/ConfiguratorsConfig.hpp"
 #include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
+#include "application/System/Controllers/AxisMotionController/AxisMotionController.hpp"
 #include "application/System/Controllers/HeaterController/HysteresisHeaterController/HysteresisHeaterController.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentStorageController.hpp"
 #include "application/System/Controllers/SpindleController/SpindleController.hpp"
 #include "application/System/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
+#include "application/System/Drivers/StepperDriver/Tmc2301StepperDriver/Tmc2301StepperDriver.hpp"
 #include "application/System/Root/SystemRoot.hpp"
 #include "application/System/Services/AxisConfiguratorService/XAxisConfiguratorService/XAxisConfiguratorService.hpp"
 #include "application/System/Services/AxisConfiguratorService/YAxisConfiguratorService/YAxisConfiguratorService.hpp"
@@ -51,7 +56,30 @@ private:
         persistentStorage_
     };
 
-    XAxisController xAxisController_ {loggerSink_};
+    FakeStepperDriver xAxisStepperDriver_ {loggerSink_, "X Axis Driver"};
+    FakeLimitSwitch xAxisMinLimitSwitch_ {
+        loggerSink_,
+        "X Axis Min Limiter"
+    };
+    FakeLimitSwitch xAxisMaxLimitSwitch_ {
+        loggerSink_,
+        "X Axis Max Limiter"
+    };
+    LimitSwitchPair xAxisLimitSwitchPair_ {
+        .minLimitSwitch = xAxisMinLimitSwitch_,
+        .maxLimitSwitch = xAxisMaxLimitSwitch_
+    };
+    AxisMotionController xAxisMotionController_ {
+        loggerSink_,
+        xAxisStepperDriver_,
+        xAxisLimitSwitchPair_,
+        X_AXIS_MOTION_PARAMETERS
+    };
+
+    XAxisController xAxisController_ {
+        loggerSink_,
+        xAxisMotionController_
+    };
     YAxisController yAxisController_ {loggerSink_};
     ZAxisController zAxisController_ {loggerSink_};
 

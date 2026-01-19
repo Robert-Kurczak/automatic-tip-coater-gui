@@ -143,11 +143,11 @@ uint32_t ZAxisController::getEndPosition() const {
     return endPosition_;
 }
 
-void ZAxisController::setSpeed(uint32_t value) {
-    speed_ = value;
+void ZAxisController::setSpeed(uint16_t millimetersPerSecond) {
+    speed_ = millimetersPerSecond;
 }
 
-uint32_t ZAxisController::getSpeed() const {
+uint16_t ZAxisController::getSpeed() const {
     return speed_;
 }
 }
