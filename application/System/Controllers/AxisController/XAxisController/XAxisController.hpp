@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IXAxisController.hpp"
+#include "application/System/Controllers/AxisMotionController/IAxisMotionController.hpp"
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
 #include <cstdint>
@@ -9,13 +10,17 @@ namespace ATC {
 class XAxisController : public IXAxisController {
 private:
     ILoggerSink& loggerSink_;
+    IAxisMotionController& axisMotionController_;
 
     uint32_t startPosition_ = 0;
     uint32_t endPosition_ = 0;
-    uint32_t speed_ = 0;
+    uint32_t heaterFrontPosition_ = 0;
 
 public:
-    XAxisController(ILoggerSink& loggerSink);
+    XAxisController(
+        ILoggerSink& loggerSink,
+        IAxisMotionController& axisMotionController
+    );
 
     void init(const AxisPersistentConfig& config) override;
     void tick() override;
@@ -49,7 +54,7 @@ public:
     void setEndPosition(uint32_t value) override;
     [[nodiscard]] uint32_t getEndPosition() const override;
 
-    void setSpeed(uint32_t value) override;
-    [[nodiscard]] uint32_t getSpeed() const override;
+    void setSpeed(uint16_t millimetersPerSecond) override;
+    [[nodiscard]] uint16_t getSpeed() const override;
 };
 }

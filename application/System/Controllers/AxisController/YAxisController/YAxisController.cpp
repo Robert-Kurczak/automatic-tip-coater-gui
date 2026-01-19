@@ -177,11 +177,11 @@ uint32_t YAxisController::getEndPosition() const {
     return endPosition_;
 }
 
-void YAxisController::setSpeed(uint32_t value) {
+void YAxisController::setSpeed(uint16_t value) {
     speed_ = value;
 }
 
-uint32_t YAxisController::getSpeed() const {
+uint16_t YAxisController::getSpeed() const {
     return speed_;
 }
 }

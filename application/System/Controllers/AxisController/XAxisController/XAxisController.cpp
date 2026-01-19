@@ -1,147 +1,84 @@
 #include "XAxisController.hpp"
 
-#include "application/Utils/Logger.hpp"
-
-#include <source_location>
-
 namespace ATC {
-XAxisController::XAxisController(ILoggerSink& loggerSink) :
-    loggerSink_(loggerSink) {}
+
+static constexpr uint32_t HEATER_FRONT_POSITION_MULTIPLIER = 8;
+static constexpr uint32_t HEATER_FRONT_POSITION_DIVIDER = 10;
+
+XAxisController::XAxisController(
+    ILoggerSink& loggerSink,
+    IAxisMotionController& axisMotionController
+) :
+    loggerSink_(loggerSink),
+    axisMotionController_(axisMotionController) {}
 
 void XAxisController::init(const AxisPersistentConfig& config) {
     startPosition_ = config.startPosition;
     endPosition_ = config.endPosition;
-    speed_ = config.speed;
+
+    axisMotionController_.init();
 }
 
-void XAxisController::tick() {}
+void XAxisController::tick() {
+    axisMotionController_.tick();
+}
 
 bool XAxisController::wasFaultReported() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.wasFaultDetected();
 }
 
-void XAxisController::moveToPosition(uint32_t position) {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-}
+void XAxisController::moveToPosition(uint32_t position) {}
 
 uint32_t XAxisController::getCurrentPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return 0;
+    return axisMotionController_.getCurrentPosition();
 }
 
 void XAxisController::moveToMinLimitPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveToMinLimitSwitch();
 }
 
 bool XAxisController::isAtMinLimitPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtMinLimit();
 }
 
 void XAxisController::moveToMaxLimitPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveToMaxLimitSwitch();
 }
 
 bool XAxisController::isAtMaxLimitPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtMaxLimit();
 }
 
 void XAxisController::moveToHomePosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.homeAxis();
 }
 
 bool XAxisController::isAtHomePosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return true;
+    return axisMotionController_.isAtMinLimit();
 }
 
 void XAxisController::moveToStartPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(startPosition_);
 }
 
 bool XAxisController::isAtStartPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(startPosition_);
 }
 
 void XAxisController::moveToEndPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(endPosition_);
 }
 
 bool XAxisController::isAtEndPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(endPosition_);
 }
 
 void XAxisController::moveToHeaterFrontPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(heaterFrontPosition_);
 }
 
 bool XAxisController::isAtHeaterFrontPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(heaterFrontPosition_);
 }
 
 void XAxisController::setStartPosition(uint32_t value) {
@@ -154,17 +91,20 @@ uint32_t XAxisController::getStartPosition() const {
 
 void XAxisController::setEndPosition(uint32_t value) {
     endPosition_ = value;
+    heaterFrontPosition_ =
+        (endPosition_ / HEATER_FRONT_POSITION_DIVIDER) *
+        HEATER_FRONT_POSITION_MULTIPLIER;
 }
 
 uint32_t XAxisController::getEndPosition() const {
     return endPosition_;
 }
 
-void XAxisController::setSpeed(uint32_t value) {
-    speed_ = value;
+void XAxisController::setSpeed(uint16_t millimetersPerSecond) {
+    axisMotionController_.setMillimetersPerSecond(millimetersPerSecond);
 }
 
-uint32_t XAxisController::getSpeed() const {
-    return speed_;
+uint16_t XAxisController::getSpeed() const {
+    return axisMotionController_.getMillimetersPerSecond();
 }
 }

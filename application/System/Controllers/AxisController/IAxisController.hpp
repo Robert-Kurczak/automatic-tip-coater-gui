@@ -43,7 +43,7 @@ public:
     virtual void setEndPosition(uint32_t value) = 0;
     [[nodiscard]] virtual uint32_t getEndPosition() const = 0;
 
-    virtual void setSpeed(uint32_t value) = 0;
-    [[nodiscard]] virtual uint32_t getSpeed() const = 0;
+    virtual void setSpeed(uint16_t millimetersPerSecond) = 0;
+    [[nodiscard]] virtual uint16_t getSpeed() const = 0;
 };
 }

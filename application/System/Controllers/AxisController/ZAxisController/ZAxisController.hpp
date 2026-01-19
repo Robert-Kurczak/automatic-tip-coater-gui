@@ -46,7 +46,7 @@ public:
     void setEndPosition(uint32_t value) override;
     [[nodiscard]] uint32_t getEndPosition() const override;
 
-    void setSpeed(uint32_t value) override;
-    [[nodiscard]] uint32_t getSpeed() const override;
+    void setSpeed(uint16_t millimetersPerSecond) override;
+    [[nodiscard]] uint16_t getSpeed() const override;
 };
 }

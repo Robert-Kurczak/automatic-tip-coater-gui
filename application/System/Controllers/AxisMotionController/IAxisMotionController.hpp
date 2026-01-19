@@ -27,7 +27,7 @@ public:
     virtual void moveToMaxLimitSwitch() = 0;
     virtual void homeAxis() = 0;
 
-    [[nodiscard]] virtual bool isAtPosition(uint32_t position) const;
+    [[nodiscard]] virtual bool isAtPosition(uint32_t position) const = 0;
     [[nodiscard]] virtual uint32_t getCurrentPosition() const = 0;
 
     [[nodiscard]] virtual bool isAtMinLimit() const = 0;
