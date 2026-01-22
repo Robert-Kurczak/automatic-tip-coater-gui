@@ -6,21 +6,21 @@ namespace ATC {
 inline constexpr AxisConfiguratorParameters
     X_AXIS_CONFIGURATOR_PARAMETERS {
         .positionStep = 5,
-        .speedPercentStep = 1,
+        .speedStep = 1,
         .speedShowcasePosition = 20
     };
 
 inline constexpr AxisConfiguratorParameters
     Y_AXIS_CONFIGURATOR_PARAMETERS {
         .positionStep = 5,
-        .speedPercentStep = 1,
+        .speedStep = 1,
         .speedShowcasePosition = 20
     };
 
 inline constexpr AxisConfiguratorParameters
     Z_AXIS_CONFIGURATOR_PARAMETERS {
         .positionStep = 5,
-        .speedPercentStep = 1,
+        .speedStep = 1,
         .speedShowcasePosition = 20
     };
 

@@ -42,5 +42,5 @@ uint32_t XAxisSpeedScreenPresenter::getXAxisSpeed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.xAxisConfigurator;
 
-    return axisConfigurator.getSpeed();
+    return axisConfigurator.getSpeedInMillimetersPerSecond();
 }

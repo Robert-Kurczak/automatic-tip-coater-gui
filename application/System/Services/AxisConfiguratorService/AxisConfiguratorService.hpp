@@ -23,7 +23,7 @@ private:
     AxisPersistentConfig bufferedPersistentConfig_ {
         .startPosition = 0,
         .endPosition = 0,
-        .speed = 0
+        .speedInMillimetersPerSecond = 0
     };
 
 public:
@@ -51,6 +51,6 @@ public:
     void increaseSpeed() override;
     void decreaseSpeed() override;
     void saveSpeed() override;
-    [[nodiscard]] uint32_t getSpeed() const override;
+    [[nodiscard]] uint32_t getSpeedInMillimetersPerSecond() const override;
 };
 }

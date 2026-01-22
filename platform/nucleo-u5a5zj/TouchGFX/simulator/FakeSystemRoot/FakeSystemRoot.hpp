@@ -80,7 +80,35 @@ private:
         loggerSink_,
         xAxisMotionController_
     };
-    YAxisController yAxisController_ {loggerSink_};
+
+    FakeStepperDriver yAxisStepperDriver_ {loggerSink_, "Y Axis Driver"};
+    FakeLimitSwitch yAxisMinLimitSwitch_ {
+        loggerSink_,
+        "Y Axis Min Limiter"
+    };
+    FakeLimitSwitch yAxisMaxLimitSwitch_ {
+        loggerSink_,
+        "Y Axis Max Limiter"
+    };
+    LimitSwitchPair yAxisLimitSwitchPair_ {
+        .minLimitSwitch = yAxisMinLimitSwitch_,
+        .maxLimitSwitch = yAxisMaxLimitSwitch_
+    };
+    AxisMotionController yAxisMotionController_ {
+        loggerSink_,
+        yAxisStepperDriver_,
+        yAxisLimitSwitchPair_,
+        Y_AXIS_MOTION_PARAMETERS
+    };
+
+    FakeLimitSwitch tipLimitSwitch_ {loggerSink_, "Tip Limit Switch"};
+
+    YAxisController yAxisController_ {
+        loggerSink_,
+        yAxisMotionController_,
+        tipLimitSwitch_
+    };
+
     ZAxisController zAxisController_ {loggerSink_};
 
     FakeMotor spindleMotor_ {loggerSink_, "Spindle Motor"};
