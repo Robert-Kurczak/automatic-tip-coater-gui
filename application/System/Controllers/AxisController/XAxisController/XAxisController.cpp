@@ -109,4 +109,8 @@ void XAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {
 uint16_t XAxisController::getSpeedInMillimetersPerSecond() const {
     return axisMotionController_.getMillimetersPerSecond();
 }
+
+void XAxisController::cancelMovement() {
+    axisMotionController_.cancelMovement();
+}
 }
