@@ -10,7 +10,7 @@ AsyncPulsePin::AsyncPulsePin(
 
 void AsyncPulsePin::enable() {
     __HAL_TIM_ENABLE(&timerHandle1MHz_);
-    __HAL_TIM_SET_COUNTER(&timerHandle1MHz_, 0)
+    __HAL_TIM_SET_COUNTER(&timerHandle1MHz_, 0);
 };
 
 void AsyncPulsePin::disable() {

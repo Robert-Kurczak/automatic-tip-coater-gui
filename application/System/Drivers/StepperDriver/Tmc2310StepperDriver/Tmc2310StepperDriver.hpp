@@ -6,7 +6,7 @@
 #include "application/System/Ports/ISpi.hpp"
 
 namespace ATC {
-struct Tmc2301StepperDriverPinout {
+struct Tmc2310StepperDriverPinout {
     // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IAsyncPulsePin& stepPin;
     IGpioPin& directionPin;
@@ -15,13 +15,13 @@ struct Tmc2301StepperDriverPinout {
     // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
 
-class Tmc2301StepperDriver : public IStepperDriver {
+class Tmc2310StepperDriver : public IStepperDriver {
 private:
-    Tmc2301StepperDriverPinout& pinout_;
+    Tmc2310StepperDriverPinout& pinout_;
     ISpi& spi_;
 
 public:
-    Tmc2301StepperDriver(Tmc2301StepperDriverPinout& pinout, ISpi& spi);
+    Tmc2310StepperDriver(Tmc2310StepperDriverPinout& pinout, ISpi& spi);
 
     void init() override;
 
