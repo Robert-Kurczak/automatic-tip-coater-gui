@@ -880,13 +880,16 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(Spindle_DIR_GPIO_Port, Spindle_DIR_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, Spindle_DIR_Pin|xAxis_DIR_Pin|xAxis_CS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LCD_RS_GPIO_Port, LCD_RS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, LCD_RS_Pin|zAxis_DIR_Pin|zAxis_CS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(TouchPanel_CS_GPIO_Port, TouchPanel_CS_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, yAxis_CS_Pin|yAxis_DIR_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(Heater_EN_GPIO_Port, Heater_EN_Pin, GPIO_PIN_RESET);
@@ -894,12 +897,12 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(UCPD_DBn_GPIO_Port, UCPD_DBn_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : Spindle_DIR_Pin */
-  GPIO_InitStruct.Pin = Spindle_DIR_Pin;
+  /*Configure GPIO pins : Spindle_DIR_Pin xAxis_DIR_Pin xAxis_CS_Pin */
+  GPIO_InitStruct.Pin = Spindle_DIR_Pin|xAxis_DIR_Pin|xAxis_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(Spindle_DIR_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /*Configure GPIO pin : Spindle_FAULT_Pin */
   GPIO_InitStruct.Pin = Spindle_FAULT_Pin;
@@ -907,12 +910,26 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(Spindle_FAULT_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LCD_RS_Pin */
-  GPIO_InitStruct.Pin = LCD_RS_Pin;
+  /*Configure GPIO pins : xAxis_DIAG_Pin xAxis_MIN_LIMIT_Pin xAxis_MAX_LIMIT_Pin tip_LIMIT_Pin
+                           zAxis_DIAG_Pin */
+  GPIO_InitStruct.Pin = xAxis_DIAG_Pin|xAxis_MIN_LIMIT_Pin|xAxis_MAX_LIMIT_Pin|tip_LIMIT_Pin
+                          |zAxis_DIAG_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LCD_RS_Pin zAxis_DIR_Pin zAxis_CS_Pin */
+  GPIO_InitStruct.Pin = LCD_RS_Pin|zAxis_DIR_Pin|zAxis_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LCD_RS_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : zAxis_MIN_LIMIT_Pin zAxis_MAX_LIMIT_Pin */
+  GPIO_InitStruct.Pin = zAxis_MIN_LIMIT_Pin|zAxis_MAX_LIMIT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : TouchPanel_IRQ_Pin */
   GPIO_InitStruct.Pin = TouchPanel_IRQ_Pin;
@@ -927,17 +944,24 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(TouchPanel_CS_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : UCPD_FLT_Pin */
-  GPIO_InitStruct.Pin = UCPD_FLT_Pin;
+  /*Configure GPIO pins : yAxis_MAX_LIMIT_Pin yAxis_MIN_LIMIT_Pin yAxis_DIAG_Pin UCPD_FLT_Pin */
+  GPIO_InitStruct.Pin = yAxis_MAX_LIMIT_Pin|yAxis_MIN_LIMIT_Pin|yAxis_DIAG_Pin|UCPD_FLT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(UCPD_FLT_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB15 */
   GPIO_InitStruct.Pin = GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : yAxis_CS_Pin yAxis_DIR_Pin */
+  GPIO_InitStruct.Pin = yAxis_CS_Pin|yAxis_DIR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pin : Heater_EN_Pin */
   GPIO_InitStruct.Pin = Heater_EN_Pin;

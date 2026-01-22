@@ -11,7 +11,7 @@ private:
     IGpioPin& inputPin_;
 
 public:
-    GpioLimitSwitch(IGpioPin& inputPin) : inputPin_(inputPin_) {}
+    GpioLimitSwitch(IGpioPin& inputPin) : inputPin_(inputPin) {}
 
     void init() override {
         if constexpr (LEVEL == ActiveLevel::ActiveHigh) {

@@ -1,24 +1,29 @@
 #pragma once
 
+#include "Adapters/AsyncPulsePin/AsyncPulsePin.hpp"
 #include "Adapters/GpioPin/GpioPin.hpp"
 #include "Adapters/PwmPin/PwmPin.hpp"
 #include "Adapters/Spi/Spi.hpp"
 #include "Adapters/SystemClock/SystemClock.hpp"
 #include "Adapters/Uart/Uart.hpp"
+#include "application/System/Config/AxisMotionConfig.hpp"
 #include "application/System/Config/ConfiguratorsConfig.hpp"
 #include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
+#include "application/System/Controllers/AxisMotionController/AxisMotionController.hpp"
 #include "application/System/Controllers/HeaterController/HysteresisHeaterController/HysteresisHeaterController.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentStorageController.hpp"
 #include "application/System/Controllers/SpindleController/SpindleController.hpp"
 #include "application/System/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
 #include "application/System/Drivers/Display/Ws17143Display/Ws17143Display.hpp"
 #include "application/System/Drivers/FlexibleMemoryController/FlexibleMemoryController.hpp"
+#include "application/System/Drivers/LimitSwitch/GpioLimitSwitch/GpioLimitSwitch.hpp"
 #include "application/System/Drivers/LoggerSink/UartLoggerSink/UartLoggerSink.hpp"
 #include "application/System/Drivers/Motor/PwmDcMotor/PwmDcMotor.hpp"
 #include "application/System/Drivers/PersistentStorage/Eeprom/Eeprom.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
+#include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
 #include "application/System/Drivers/Switch/GpioActiveHighSwitch/GpioActiveHighSwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
 #include "application/System/Root/SystemRoot.hpp"
@@ -43,7 +48,8 @@
 extern SPI_HandleTypeDef hspi1;
 extern UART_HandleTypeDef huart1;
 extern TIM_HandleTypeDef htim3;
-
+extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim5;
 namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
@@ -57,9 +63,139 @@ private:
         eeprom_
     };
 
-    XAxisController xAxisController_ {loggerSink_};
-    YAxisController yAxisController_ {loggerSink_};
-    ZAxisController zAxisController_ {loggerSink_};
+    AsyncPulsePin xAxisStepPin_ {htim3, TIM_CHANNEL_1};
+    GpioPin xAxisDirectionPin_ {*xAxis_DIR_GPIO_Port, xAxis_DIR_Pin};
+    GpioPin xAxisDiagnosticPin_ {*xAxis_DIAG_GPIO_Port, xAxis_DIAG_Pin};
+    GpioPin xAxisChipSelectPin_ {*xAxis_CS_GPIO_Port, xAxis_CS_Pin};
+    Tmc2310StepperDriverPinout xAxisStepperDriverPinout_ {
+        .stepPin = xAxisStepPin_,
+        .directionPin = xAxisDirectionPin_,
+        .diagnosticPin = xAxisDiagnosticPin_,
+        .chipSelectPin = xAxisChipSelectPin_
+    };
+    Tmc2310StepperDriver xAxisStepperDriver_ {
+        xAxisStepperDriverPinout_,
+        spi_
+    };
+    GpioPin xAxisMinLimitSwitchPin_ {
+        *xAxis_MIN_LIMIT_GPIO_Port,
+        xAxis_MIN_LIMIT_Pin
+    };
+    GpioLimitSwitch<ActiveLevel::ActiveLow> xAxisMinLimitSwitch_ {
+        xAxisMinLimitSwitchPin_
+    };
+    GpioPin xAxisMaxLimitSwitchPin_ {
+        *xAxis_MAX_LIMIT_GPIO_Port,
+        xAxis_MAX_LIMIT_Pin
+    };
+    GpioLimitSwitch<ActiveLevel::ActiveLow> xAxisMaxLimitSwitch_ {
+        xAxisMaxLimitSwitchPin_
+    };
+    LimitSwitchPair xAxisLimitSwitchPair_ {
+        .minLimitSwitch = xAxisMinLimitSwitch_,
+        .maxLimitSwitch = xAxisMaxLimitSwitch_
+    };
+    AxisMotionController xAxisMotionController_ {
+        loggerSink_,
+        xAxisStepperDriver_,
+        xAxisLimitSwitchPair_,
+        X_AXIS_MOTION_PARAMETERS
+    };
+    XAxisController xAxisController_ {
+        loggerSink_,
+        xAxisMotionController_
+    };
+
+    AsyncPulsePin yAxisStepPin_ {htim4, TIM_CHANNEL_1};
+    GpioPin yAxisDirectionPin_ {*yAxis_DIR_GPIO_Port, yAxis_DIR_Pin};
+    GpioPin yAxisDiagnosticPin_ {*yAxis_DIAG_GPIO_Port, yAxis_DIAG_Pin};
+    GpioPin yAxisChipSelectPin_ {*yAxis_CS_GPIO_Port, yAxis_CS_Pin};
+    Tmc2310StepperDriverPinout yAxisStepperDriverPinout_ {
+        .stepPin = yAxisStepPin_,
+        .directionPin = yAxisDirectionPin_,
+        .diagnosticPin = yAxisDiagnosticPin_,
+        .chipSelectPin = yAxisChipSelectPin_
+    };
+    Tmc2310StepperDriver yAxisStepperDriver_ {
+        yAxisStepperDriverPinout_,
+        spi_
+    };
+    GpioPin yAxisMinLimitSwitchPin_ {
+        *yAxis_MIN_LIMIT_GPIO_Port,
+        yAxis_MIN_LIMIT_Pin
+    };
+    GpioLimitSwitch<ActiveLevel::ActiveLow> yAxisMinLimitSwitch_ {
+        yAxisMinLimitSwitchPin_
+    };
+    GpioPin yAxisMaxLimitSwitchPin_ {
+        *yAxis_MAX_LIMIT_GPIO_Port,
+        yAxis_MAX_LIMIT_Pin
+    };
+    GpioLimitSwitch<ActiveLevel::ActiveLow> yAxisMaxLimitSwitch_ {
+        yAxisMaxLimitSwitchPin_
+    };
+    LimitSwitchPair yAxisLimitSwitchPair_ {
+        .minLimitSwitch = yAxisMinLimitSwitch_,
+        .maxLimitSwitch = yAxisMaxLimitSwitch_
+    };
+    AxisMotionController yAxisMotionController_ {
+        loggerSink_,
+        yAxisStepperDriver_,
+        yAxisLimitSwitchPair_,
+        Y_AXIS_MOTION_PARAMETERS
+    };
+    GpioPin tipLimitSwitchPin_ {*tip_LIMIT_GPIO_Port, tip_LIMIT_Pin};
+    GpioLimitSwitch<ActiveLevel::ActiveLow> tipLimitSwitch_ {
+        tipLimitSwitchPin_
+    };
+    YAxisController yAxisController_ {
+        loggerSink_,
+        yAxisMotionController_,
+        tipLimitSwitch_
+    };
+
+    AsyncPulsePin zAxisStepPin_ {htim5, TIM_CHANNEL_1};
+    GpioPin zAxisDirectionPin_ {*zAxis_DIR_GPIO_Port, zAxis_DIR_Pin};
+    GpioPin zAxisDiagnosticPin_ {*zAxis_DIAG_GPIO_Port, zAxis_DIAG_Pin};
+    GpioPin zAxisChipSelectPin_ {*zAxis_CS_GPIO_Port, zAxis_CS_Pin};
+    Tmc2310StepperDriverPinout zAxisStepperDriverPinout_ {
+        .stepPin = zAxisStepPin_,
+        .directionPin = zAxisDirectionPin_,
+        .diagnosticPin = zAxisDiagnosticPin_,
+        .chipSelectPin = zAxisChipSelectPin_
+    };
+    Tmc2310StepperDriver zAxisStepperDriver_ {
+        zAxisStepperDriverPinout_,
+        spi_
+    };
+    GpioPin zAxisMinLimitSwitchPin_ {
+        *zAxis_MIN_LIMIT_GPIO_Port,
+        zAxis_MIN_LIMIT_Pin
+    };
+    GpioLimitSwitch<ActiveLevel::ActiveLow> zAxisMinLimitSwitch_ {
+        zAxisMinLimitSwitchPin_
+    };
+    GpioPin zAxisMaxLimitSwitchPin_ {
+        *zAxis_MAX_LIMIT_GPIO_Port,
+        zAxis_MAX_LIMIT_Pin
+    };
+    GpioLimitSwitch<ActiveLevel::ActiveLow> zAxisMaxLimitSwitch_ {
+        zAxisMaxLimitSwitchPin_
+    };
+    LimitSwitchPair zAxisLimitSwitchPair_ {
+        .minLimitSwitch = zAxisMinLimitSwitch_,
+        .maxLimitSwitch = zAxisMaxLimitSwitch_
+    };
+    AxisMotionController zAxisMotionController_ {
+        loggerSink_,
+        zAxisStepperDriver_,
+        zAxisLimitSwitchPair_,
+        Z_AXIS_MOTION_PARAMETERS
+    };
+    ZAxisController zAxisController_ {
+        loggerSink_,
+        zAxisMotionController_
+    };
 
     PwmPin dcMotorPwmPin_ {htim3, TIM_CHANNEL_1};
     GpioPin dcMotorDirectionPin_ {

@@ -20,7 +20,7 @@
 #include "application/System/Controllers/PersistentStorageController/PersistentStorageController.hpp"
 #include "application/System/Controllers/SpindleController/SpindleController.hpp"
 #include "application/System/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
-#include "application/System/Drivers/StepperDriver/Tmc2301StepperDriver/Tmc2301StepperDriver.hpp"
+#include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
 #include "application/System/Root/SystemRoot.hpp"
 #include "application/System/Services/AxisConfiguratorService/XAxisConfiguratorService/XAxisConfiguratorService.hpp"
 #include "application/System/Services/AxisConfiguratorService/YAxisConfiguratorService/YAxisConfiguratorService.hpp"
