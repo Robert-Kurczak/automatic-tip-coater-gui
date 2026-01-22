@@ -46,5 +46,7 @@ public:
     virtual void setSpeedInMillimetersPerSecond(uint16_t value) = 0;
     [[nodiscard]] virtual uint16_t
     getSpeedInMillimetersPerSecond() const = 0;
+
+    virtual void cancelMovement() = 0;
 };
 }

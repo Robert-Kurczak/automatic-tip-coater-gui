@@ -133,4 +133,8 @@ void YAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {
 uint16_t YAxisController::getSpeedInMillimetersPerSecond() const {
     return axisMotionController_.getMillimetersPerSecond();
 }
+
+void YAxisController::cancelMovement() {
+    axisMotionController_.cancelMovement();
+}
 }

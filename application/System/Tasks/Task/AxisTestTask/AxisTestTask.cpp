@@ -106,6 +106,8 @@ void AxisTestTask::start() {
 }
 
 void AxisTestTask::reset() {
+    axisController_.cancelMovement();
+
     state_ = TaskState::IDLE;
     currentStage_ = 0;
 

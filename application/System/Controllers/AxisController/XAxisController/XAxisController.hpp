@@ -56,5 +56,7 @@ public:
 
     void setSpeedInMillimetersPerSecond(uint16_t value) override;
     [[nodiscard]] uint16_t getSpeedInMillimetersPerSecond() const override;
+
+    void cancelMovement() override;
 };
 }

@@ -73,6 +73,10 @@ void CalibrationTask::start() {
 }
 
 void CalibrationTask::reset() {
+    xAxisController_.cancelMovement();
+    yAxisController_.cancelMovement();
+    zAxisController_.cancelMovement();
+
     state_ = TaskState::IDLE;
     currentStage_ = 0;
     wasSuccessful_ = false;

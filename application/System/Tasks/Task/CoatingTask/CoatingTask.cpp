@@ -203,7 +203,7 @@ const std::array<CoatingTask::stageMethod, 30> CoatingTask::stages_ {
     &CoatingTask::waitForXAxisAtStartPosition,
 
     &CoatingTask::stopRotation,
-    
+
     &CoatingTask::stopHeater,
 
     &CoatingTask::moveZAxisToStartPosition,
@@ -232,6 +232,10 @@ void CoatingTask::start() {
 };
 
 void CoatingTask::reset() {
+    xAxisController_.cancelMovement();
+    yAxisController_.cancelMovement();
+    zAxisController_.cancelMovement();
+
     state_ = TaskState::IDLE;
     currentStage_ = 0;
     wasSuccessful_ = false;

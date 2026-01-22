@@ -62,7 +62,7 @@ bool ZAxisController::isAtStartPosition() const {
 }
 
 void ZAxisController::moveToEndPosition() {
-    return axisMotionController_.moveTo(endPosition_);
+    axisMotionController_.moveTo(endPosition_);
 }
 
 bool ZAxisController::isAtEndPosition() const {
@@ -91,5 +91,9 @@ void ZAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {
 
 uint16_t ZAxisController::getSpeedInMillimetersPerSecond() const {
     return axisMotionController_.getMillimetersPerSecond();
+}
+
+void ZAxisController::cancelMovement() {
+    axisMotionController_.cancelMovement();
 }
 }
