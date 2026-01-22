@@ -32,6 +32,7 @@ public:
     virtual void increaseSpeed() = 0;
     virtual void decreaseSpeed() = 0;
     virtual void saveSpeed() = 0;
-    [[nodiscard]] virtual uint32_t getSpeed() const = 0;
+    [[nodiscard]] virtual uint32_t
+    getSpeedInMillimetersPerSecond() const = 0;
 };
 }

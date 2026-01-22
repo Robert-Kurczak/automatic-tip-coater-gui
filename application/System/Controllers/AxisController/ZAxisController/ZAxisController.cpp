@@ -11,7 +11,7 @@ ZAxisController::ZAxisController(ILoggerSink& loggerSink) :
 void ZAxisController::init(const AxisPersistentConfig& config) {
     startPosition_ = config.startPosition;
     endPosition_ = config.endPosition;
-    speed_ = config.speed;
+    speed_ = config.speedInMillimetersPerSecond;
 }
 
 void ZAxisController::tick() {}
@@ -143,11 +143,11 @@ uint32_t ZAxisController::getEndPosition() const {
     return endPosition_;
 }
 
-void ZAxisController::setSpeed(uint16_t millimetersPerSecond) {
-    speed_ = millimetersPerSecond;
+void ZAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {
+    speed_ = value;
 }
 
-uint16_t ZAxisController::getSpeed() const {
+uint16_t ZAxisController::getSpeedInMillimetersPerSecond() const {
     return speed_;
 }
 }

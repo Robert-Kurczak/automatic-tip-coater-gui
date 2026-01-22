@@ -1,164 +1,113 @@
 #include "YAxisController.hpp"
 
-#include "application/Utils/Logger.hpp"
-
-#include <source_location>
+static constexpr uint8_t COATING_POSITION_OFFSET_FACTOR_NUMERATOR = 95;
+static constexpr uint8_t COATING_POSITION_OFFSET_FACTOR_DENOMINATOR = 100;
 
 namespace ATC {
-YAxisController::YAxisController(ILoggerSink& loggerSink) :
-    loggerSink_(loggerSink) {}
+void YAxisController::handleTipDetected() {
+    axisMotionController_.cancelMovement();
+
+    const uint32_t detectedTipPosition =
+        axisMotionController_.getCurrentPosition();
+    coatingPosition_ = (detectedTipPosition /
+                        COATING_POSITION_OFFSET_FACTOR_DENOMINATOR) *
+                       COATING_POSITION_OFFSET_FACTOR_NUMERATOR;
+
+    detectingTip_ = false;
+}
+
+YAxisController::YAxisController(
+    ILoggerSink& loggerSink,
+    IAxisMotionController& axisMotionController,
+    ILimitSwitch& tipLimitSwitch
+) :
+    loggerSink_(loggerSink),
+    axisMotionController_(axisMotionController),
+    tipLimitSwitch_(tipLimitSwitch) {}
 
 void YAxisController::init(const AxisPersistentConfig& config) {
     startPosition_ = config.startPosition;
     endPosition_ = config.endPosition;
-    speed_ = config.speed;
+
+    axisMotionController_.init();
+    tipLimitSwitch_.init();
 }
 
-void YAxisController::tick() {}
+void YAxisController::tick() {
+    axisMotionController_.tick();
+
+    if (detectingTip_ && tipLimitSwitch_.isActive()) {
+        handleTipDetected();
+    }
+}
 
 bool YAxisController::wasFaultReported() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.wasFaultDetected();
 }
 
 void YAxisController::moveToPosition(uint32_t position) {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(position);
 }
 
 uint32_t YAxisController::getCurrentPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return 0;
+    return axisMotionController_.getCurrentPosition();
 }
 
 void YAxisController::moveToMinLimitPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveToMinLimitSwitch();
 }
 
 bool YAxisController::isAtMinLimitPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtMinLimit();
 }
 
 void YAxisController::moveToMaxLimitPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveToMaxLimitSwitch();
 }
 
 bool YAxisController::isAtMaxLimitPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtMaxLimit();
 }
 
 void YAxisController::moveToHomePosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.homeAxis();
 }
 
 bool YAxisController::isAtHomePosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return true;
+    return axisMotionController_.isAtMinLimit();
 }
 
 void YAxisController::moveToStartPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(startPosition_);
 }
 
 bool YAxisController::isAtStartPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(startPosition_);
 }
 
 void YAxisController::moveToEndPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(endPosition_);
 }
 
 bool YAxisController::isAtEndPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(endPosition_);
 }
 
 void YAxisController::moveToDetectTip() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    detectingTip_ = true;
+    axisMotionController_.moveToMaxLimitSwitch();
 }
 
 bool YAxisController::isTipDetected() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return tipLimitSwitch_.isActive();
 }
 
 void YAxisController::moveToCoatingPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(coatingPosition_);
 }
 
 bool YAxisController::isAtCoatingPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(coatingPosition_);
 }
 
 void YAxisController::setStartPosition(uint32_t value) {
@@ -177,11 +126,11 @@ uint32_t YAxisController::getEndPosition() const {
     return endPosition_;
 }
 
-void YAxisController::setSpeed(uint16_t value) {
-    speed_ = value;
+void YAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {
+    axisMotionController_.setMillimetersPerSecond(value);
 }
 
-uint16_t YAxisController::getSpeed() const {
-    return speed_;
+uint16_t YAxisController::getSpeedInMillimetersPerSecond() const {
+    return axisMotionController_.getMillimetersPerSecond();
 }
 }

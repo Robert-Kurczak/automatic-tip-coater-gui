@@ -25,7 +25,8 @@ void AxisConfiguratorService::resetBufferedConfig() {
         axisController_.getStartPosition();
     bufferedPersistentConfig_.endPosition =
         axisController_.getEndPosition();
-    bufferedPersistentConfig_.speed = axisController_.getSpeed();
+    bufferedPersistentConfig_.speedInMillimetersPerSecond =
+        axisController_.getSpeedInMillimetersPerSecond();
 }
 
 void AxisConfiguratorService::showcaseStartPosition() {
@@ -97,20 +98,24 @@ void AxisConfiguratorService::showcaseSpeed() {
 }
 
 void AxisConfiguratorService::increaseSpeed() {
-    bufferedPersistentConfig_.speed += parameters_.speedPercentStep;
+    bufferedPersistentConfig_.speedInMillimetersPerSecond +=
+        parameters_.speedStep;
 }
 
 void AxisConfiguratorService::decreaseSpeed() {
-    bufferedPersistentConfig_.speed -= parameters_.speedPercentStep;
+    bufferedPersistentConfig_.speedInMillimetersPerSecond -=
+        parameters_.speedStep;
 }
 
 void AxisConfiguratorService::saveSpeed() {
-    axisController_.setSpeed(bufferedPersistentConfig_.speed);
+    axisController_.setSpeedInMillimetersPerSecond(
+        bufferedPersistentConfig_.speedInMillimetersPerSecond
+    );
     showcaseSpeed();
     saveConfigToPersistentMemory();
 }
 
-uint32_t AxisConfiguratorService::getSpeed() const {
-    return bufferedPersistentConfig_.speed;
+uint32_t AxisConfiguratorService::getSpeedInMillimetersPerSecond() const {
+    return bufferedPersistentConfig_.speedInMillimetersPerSecond;
 }
 }

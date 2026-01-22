@@ -1,6 +1,8 @@
 #pragma once
 
 #include "IYAxisController.hpp"
+#include "application/System/Controllers/AxisMotionController/IAxisMotionController.hpp"
+#include "application/System/Drivers/LimitSwitch/ILimitSwitch.hpp"
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
 #include <cstdint>
@@ -9,13 +11,23 @@ namespace ATC {
 class YAxisController : public IYAxisController {
 private:
     ILoggerSink& loggerSink_;
+    IAxisMotionController& axisMotionController_;
+    ILimitSwitch& tipLimitSwitch_;
 
     uint32_t startPosition_ = 0;
     uint32_t endPosition_ = 0;
-    uint32_t speed_ = 0;
+
+    bool detectingTip_ = false;
+    uint32_t coatingPosition_ = 0;
+
+    void handleTipDetected();
 
 public:
-    YAxisController(ILoggerSink& loggerSink);
+    YAxisController(
+        ILoggerSink& loggerSink,
+        IAxisMotionController& axisMotionController,
+        ILimitSwitch& tipLimitSwitch
+    );
 
     void init(const AxisPersistentConfig& config) override;
     void tick() override;
@@ -52,7 +64,7 @@ public:
     void setEndPosition(uint32_t value) override;
     [[nodiscard]] uint32_t getEndPosition() const override;
 
-    void setSpeed(uint16_t value) override;
-    [[nodiscard]] uint16_t getSpeed() const override;
+    void setSpeedInMillimetersPerSecond(uint16_t value) override;
+    [[nodiscard]] uint16_t getSpeedInMillimetersPerSecond() const override;
 };
 }

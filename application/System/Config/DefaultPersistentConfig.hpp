@@ -8,19 +8,19 @@ namespace ATC {
 inline constexpr AxisPersistentConfig DEFAULT_X_AXIS_CONFIG {
     .startPosition = 0,
     .endPosition = 100,
-    .speed = 10
+    .speedInMillimetersPerSecond = 10
 };
 
 inline constexpr AxisPersistentConfig DEFAULT_Y_AXIS_CONFIG {
     .startPosition = 0,
     .endPosition = 100,
-    .speed = 10
+    .speedInMillimetersPerSecond = 10
 };
 
 inline constexpr AxisPersistentConfig DEFAULT_Z_AXIS_CONFIG {
     .startPosition = 0,
     .endPosition = 100,
-    .speed = 10
+    .speedInMillimetersPerSecond = 10
 };
 
 inline constexpr SpindlePersistentConfig DEFAULT_SPINDLE_CONFIG {

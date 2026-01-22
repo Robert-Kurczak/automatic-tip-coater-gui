@@ -27,7 +27,9 @@ bool XAxisController::wasFaultReported() const {
     return axisMotionController_.wasFaultDetected();
 }
 
-void XAxisController::moveToPosition(uint32_t position) {}
+void XAxisController::moveToPosition(uint32_t position) {
+    axisMotionController_.moveTo(position);
+}
 
 uint32_t XAxisController::getCurrentPosition() const {
     return axisMotionController_.getCurrentPosition();
@@ -100,11 +102,11 @@ uint32_t XAxisController::getEndPosition() const {
     return endPosition_;
 }
 
-void XAxisController::setSpeed(uint16_t millimetersPerSecond) {
-    axisMotionController_.setMillimetersPerSecond(millimetersPerSecond);
+void XAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {
+    axisMotionController_.setMillimetersPerSecond(value);
 }
 
-uint16_t XAxisController::getSpeed() const {
+uint16_t XAxisController::getSpeedInMillimetersPerSecond() const {
     return axisMotionController_.getMillimetersPerSecond();
 }
 }

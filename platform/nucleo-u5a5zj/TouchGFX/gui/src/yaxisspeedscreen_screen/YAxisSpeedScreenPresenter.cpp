@@ -42,5 +42,5 @@ uint32_t YAxisSpeedScreenPresenter::getYAxisSpeed() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.yAxisConfigurator;
 
-    return axisConfigurator.getSpeed();
+    return axisConfigurator.getSpeedInMillimetersPerSecond();
 }

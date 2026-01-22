@@ -19,7 +19,7 @@ void PersistentStorageController::logAxisConfig(
         axisName,
         config.startPosition,
         config.endPosition,
-        config.speed);
+        config.speedInMillimetersPerSecond);
 }
 
 void PersistentStorageController::logSpindleConfig(
