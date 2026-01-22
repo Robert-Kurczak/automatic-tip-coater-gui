@@ -18,4 +18,12 @@ inline constexpr AxisMotionParameters Y_AXIS_MOTION_PARAMETERS {
     .isClockwiseRotationForwardMovement = true,
     .stepErrorMargin = 1
 };
+
+inline constexpr AxisMotionParameters Z_AXIS_MOTION_PARAMETERS {
+    .millimetersPerRotation = 8,
+    .motorStepsPerRotation = 200,
+    .driverStepDivider = 16,
+    .isClockwiseRotationForwardMovement = false,
+    .stepErrorMargin = 5
+};
 }

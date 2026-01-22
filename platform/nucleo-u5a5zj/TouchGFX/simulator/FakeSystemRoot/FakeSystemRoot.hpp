@@ -109,7 +109,29 @@ private:
         tipLimitSwitch_
     };
 
-    ZAxisController zAxisController_ {loggerSink_};
+    FakeStepperDriver zAxisStepperDriver_ {loggerSink_, "Z Axis Driver"};
+    FakeLimitSwitch zAxisMinLimitSwitch_ {
+        loggerSink_,
+        "Z Axis Min Limiter"
+    };
+    FakeLimitSwitch zAxisMaxLimitSwitch_ {
+        loggerSink_,
+        "Z Axis Max Limiter"
+    };
+    LimitSwitchPair zAxisLimitSwitchPair_ {
+        .minLimitSwitch = zAxisMinLimitSwitch_,
+        .maxLimitSwitch = zAxisMaxLimitSwitch_
+    };
+    AxisMotionController zAxisMotionController_ {
+        loggerSink_,
+        zAxisStepperDriver_,
+        zAxisLimitSwitchPair_,
+        Z_AXIS_MOTION_PARAMETERS
+    };
+    ZAxisController zAxisController_ {
+        loggerSink_,
+        zAxisMotionController_
+    };
 
     FakeMotor spindleMotor_ {loggerSink_, "Spindle Motor"};
     SpindleController spindleController_ {

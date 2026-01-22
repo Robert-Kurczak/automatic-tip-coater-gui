@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IZAxisController.hpp"
+#include "application/System/Controllers/AxisMotionController/IAxisMotionController.hpp"
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 
 #include <cstdint>
@@ -9,13 +10,16 @@ namespace ATC {
 class ZAxisController : public IZAxisController {
 private:
     ILoggerSink& loggerSink_;
+    IAxisMotionController& axisMotionController_;
 
     uint32_t startPosition_ = 0;
     uint32_t endPosition_ = 0;
-    uint32_t speed_ = 0;
 
 public:
-    ZAxisController(ILoggerSink& loggerSink);
+    ZAxisController(
+        ILoggerSink& loggerSink,
+        IAxisMotionController& axisMotionController
+    );
 
     void init(const AxisPersistentConfig& config) override;
     void tick() override;
