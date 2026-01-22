@@ -1,130 +1,72 @@
 #include "ZAxisController.hpp"
 
-#include "application/Utils/Logger.hpp"
-
-#include <source_location>
+#include "application/System/Controllers/AxisMotionController/IAxisMotionController.hpp"
 
 namespace ATC {
-ZAxisController::ZAxisController(ILoggerSink& loggerSink) :
-    loggerSink_(loggerSink) {}
+ZAxisController::ZAxisController(
+    ILoggerSink& loggerSink,
+    IAxisMotionController& axisMotionController
+) :
+    loggerSink_(loggerSink),
+    axisMotionController_(axisMotionController) {}
 
 void ZAxisController::init(const AxisPersistentConfig& config) {
     startPosition_ = config.startPosition;
     endPosition_ = config.endPosition;
-    speed_ = config.speedInMillimetersPerSecond;
 }
 
 void ZAxisController::tick() {}
 
 bool ZAxisController::wasFaultReported() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.wasFaultDetected();
 }
 
 void ZAxisController::moveToPosition(uint32_t position) {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(position);
 }
 
 uint32_t ZAxisController::getCurrentPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return 0;
+    return axisMotionController_.getCurrentPosition();
 }
 
 void ZAxisController::moveToMinLimitPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveToMinLimitSwitch();
 }
 
 bool ZAxisController::isAtMinLimitPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtMinLimit();
 }
 
 void ZAxisController::moveToMaxLimitPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveToMaxLimitSwitch();
 }
 
 bool ZAxisController::isAtMaxLimitPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtMaxLimit();
 }
 
 void ZAxisController::moveToHomePosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.homeAxis();
 }
 
 bool ZAxisController::isAtHomePosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return true;
+    return axisMotionController_.isAtMaxLimit();
 }
 
 void ZAxisController::moveToStartPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    axisMotionController_.moveTo(startPosition_);
 }
 
 bool ZAxisController::isAtStartPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(startPosition_);
 }
 
 void ZAxisController::moveToEndPosition() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    return axisMotionController_.moveTo(endPosition_);
 }
 
 bool ZAxisController::isAtEndPosition() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return axisMotionController_.isAtPosition(endPosition_);
 }
 
 void ZAxisController::setStartPosition(uint32_t value) {
@@ -144,10 +86,10 @@ uint32_t ZAxisController::getEndPosition() const {
 }
 
 void ZAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {
-    speed_ = value;
+    axisMotionController_.setMillimetersPerSecond(value);
 }
 
 uint16_t ZAxisController::getSpeedInMillimetersPerSecond() const {
-    return speed_;
+    return axisMotionController_.getMillimetersPerSecond();
 }
 }
