@@ -1,5 +1,7 @@
 #include "AsyncPulsePin.hpp"
 
+#include "stm32u5xx_hal_def.h"
+
 namespace ATC {
 AsyncPulsePin::AsyncPulsePin(
     TIM_HandleTypeDef& timerHandle1MHz,
@@ -7,6 +9,12 @@ AsyncPulsePin::AsyncPulsePin(
 ) :
     timerHandle1MHz_(timerHandle1MHz),
     channel_(channel) {}
+
+void AsyncPulsePin::init() {
+    if (HAL_TIM_Base_Start_IT(&timerHandle1MHz_) != HAL_OK) {
+        Error_Handler();
+    }
+}
 
 void AsyncPulsePin::enable() {
     __HAL_TIM_ENABLE(&timerHandle1MHz_);

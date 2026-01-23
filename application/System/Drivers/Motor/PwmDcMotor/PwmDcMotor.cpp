@@ -1,10 +1,12 @@
 #include "PwmDcMotor.hpp"
 
+#include "application/System/Ports/IGpioPin.hpp"
+
 namespace ATC {
 PwmDcMotor::PwmDcMotor(PwmDcMotorPinout& pinout) : pinout_(pinout) {}
 
 void PwmDcMotor::init() {
-    pinout_.directionPin.setOutputMode();
+    pinout_.directionPin.init(GpioMode::Output, GpioPull::NoPull);
     pinout_.directionPin.setLow();
 }
 
@@ -29,6 +31,6 @@ bool PwmDcMotor::isDirectionClockwise() const {
 }
 
 bool PwmDcMotor::isFaultDetected() {
-    return !pinout_.faultPin.isHigh();
+    return pinout_.faultPin.isLow();
 }
 }

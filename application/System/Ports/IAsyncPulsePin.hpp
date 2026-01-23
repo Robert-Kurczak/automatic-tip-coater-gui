@@ -12,6 +12,8 @@ public:
     IAsyncPulsePin& operator=(IAsyncPulsePin&&) = delete;
     virtual ~IAsyncPulsePin() = default;
 
+    virtual void init() = 0;
+
     virtual void enable() = 0;
     virtual void disable() = 0;
 

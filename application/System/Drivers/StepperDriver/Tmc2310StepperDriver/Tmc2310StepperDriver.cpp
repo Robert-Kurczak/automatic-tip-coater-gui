@@ -1,5 +1,7 @@
 #include "Tmc2310StepperDriver.hpp"
 
+#include "application/System/Ports/IGpioPin.hpp"
+
 namespace ATC {
 // TODO add SPI config
 
@@ -11,14 +13,15 @@ Tmc2310StepperDriver::Tmc2310StepperDriver(
     spi_(spi) {}
 
 void Tmc2310StepperDriver::init() {
+    pinout_.stepPin.init();
     pinout_.stepPin.disable();
 
-    pinout_.directionPin.setOutputMode();
+    pinout_.directionPin.init(GpioMode::Output, GpioPull::NoPull);
     pinout_.directionPin.setLow();
 
-    pinout_.diagnosticPin.setInputPullUpMode();
+    pinout_.diagnosticPin.init(GpioMode::Input, GpioPull::PullUp);
 
-    pinout_.chipSelectPin.setOutputMode();
+    pinout_.chipSelectPin.init(GpioMode::Output, GpioPull::NoPull);
     pinout_.chipSelectPin.setHigh();
 }
 
@@ -45,6 +48,6 @@ void Tmc2310StepperDriver::setDirectionCounterClockwise() {
 }
 
 [[nodiscard]] bool Tmc2310StepperDriver::isFaultDetected() const {
-    return !pinout_.diagnosticPin.isHigh();
+    return pinout_.diagnosticPin.isLow();
 }
 }

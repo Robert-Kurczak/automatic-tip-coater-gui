@@ -15,10 +15,13 @@ public:
 
     void init() override {
         if constexpr (LEVEL == ActiveLevel::ActiveHigh) {
-            // TODO probably should set interrupt input mode
-            inputPin_.setInputPullDownMode();
+            inputPin_.init(
+                GpioMode::InterruptOnFallingEdge, GpioPull::PullUp
+            );
         } else {
-            inputPin_.setInputPullUpMode();
+            inputPin_.init(
+                GpioMode::InterruptOnRisingEdge, GpioPull::PullDown
+            );
         }
     };
 
@@ -26,7 +29,7 @@ public:
         if constexpr (LEVEL == ActiveLevel::ActiveHigh) {
             return inputPin_.isHigh();
         } else {
-            return !inputPin_.isHigh();
+            return inputPin_.isLow();
         }
     }
 };

@@ -1,11 +1,13 @@
 #include "GpioActiveHighSwitch.hpp"
 
+#include "application/System/Ports/IGpioPin.hpp"
+
 namespace ATC {
 GpioActiveHighSwitch::GpioActiveHighSwitch(IGpioPin& togglePin) :
     togglePin_(togglePin) {}
 
 void GpioActiveHighSwitch::init() {
-    togglePin_.setOutputMode();
+    togglePin_.init(GpioMode::Output, GpioPull::NoPull);
 }
 
 void GpioActiveHighSwitch::turnOn() {
