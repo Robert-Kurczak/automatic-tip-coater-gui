@@ -1,6 +1,18 @@
 #pragma once
 
+#include <cstdint>
+
 namespace ATC {
+enum class GpioMode : uint8_t {
+    Input,
+    InterruptOnFallingEdge,
+    InterruptOnRisingEdge,
+    InterruptOnAnyEdge,
+    Output
+};
+
+enum class GpioPull : uint8_t { NoPull, PullUp, PullDown };
+
 class IGpioPin {
 public:
     IGpioPin() = default;
@@ -10,14 +22,13 @@ public:
     IGpioPin& operator=(IGpioPin&&) = delete;
     virtual ~IGpioPin() = default;
 
-    virtual void setInputMode() = 0;
-    virtual void setInputPullUpMode() = 0;
-    virtual void setInputPullDownMode() = 0;
+    virtual void init(GpioMode gpioMode, GpioPull gpioPull) = 0;
 
-    [[nodiscard]] virtual bool isHigh() = 0;
-
-    virtual void setOutputMode() = 0;
     virtual void setHigh() = 0;
     virtual void setLow() = 0;
+    virtual void toggle() = 0;
+
+    [[nodiscard]] virtual bool isHigh() const = 0;
+    [[nodiscard]] virtual bool isLow() const = 0;
 };
 }

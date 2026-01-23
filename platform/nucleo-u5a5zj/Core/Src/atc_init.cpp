@@ -1,6 +1,5 @@
 #include "TargetSystemRoot.hpp"
 #include "main.h"
-#include "stm32u5xx_hal_gpio.h"
 #include "touchgfx/hal/OSWrappers.hpp"
 
 static ATC::TargetSystemRoot& targetSystemRoot =
@@ -67,6 +66,5 @@ extern "C" void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
         systemInterrupts.zAxisInterruptService
             .handleMaxLimitReachedInterrupt();
         return;
-
     }
 }

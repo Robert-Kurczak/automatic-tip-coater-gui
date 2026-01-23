@@ -1,5 +1,7 @@
 #include "Xpt2046TouchPanel.hpp"
 
+#include "application/System/Ports/IGpioPin.hpp"
+
 #include <array>
 
 namespace ATC {
@@ -30,14 +32,14 @@ Xpt2046TouchPanel::Xpt2046TouchPanel(
     spi_(spi) {}
 
 void Xpt2046TouchPanel::init() {
-    pinout_.touchInterruptPin.setInputMode();
+    pinout_.touchInterruptPin.init(GpioMode::Input, GpioPull::NoPull);
 
-    pinout_.chipSelectPin.setOutputMode();
+    pinout_.chipSelectPin.init(GpioMode::Output, GpioPull::NoPull);
     pinout_.chipSelectPin.setHigh();
 }
 
 bool Xpt2046TouchPanel::isTouchDetected() {
-    return !pinout_.touchInterruptPin.isHigh();
+    return pinout_.touchInterruptPin.isLow();
 }
 
 uint16_t Xpt2046TouchPanel::readRawX() {

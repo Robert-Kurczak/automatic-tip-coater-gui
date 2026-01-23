@@ -1,6 +1,7 @@
 #include "Ws17143Display.hpp"
 
 #include "application/System/Drivers/FlexibleMemoryController/IFlexibleMemoryController.hpp"
+#include "application/System/Ports/IGpioPin.hpp"
 
 #include <array>
 
@@ -504,7 +505,7 @@ void Ws17143Display::setWindow(const Rectangle& window) {
 }
 
 void Ws17143Display::initResetLcdPin() {
-    pinout_.lcdResetPin_.setOutputMode();
+    pinout_.lcdResetPin_.init(GpioMode::Output, GpioPull::NoPull);
 }
 
 void Ws17143Display::resetLcd() {

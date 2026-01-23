@@ -12,6 +12,8 @@ private:
 public:
     AsyncPulsePin(TIM_HandleTypeDef& timerHandle1MHz, uint32_t channel);
 
+    void init() override;
+
     void enable() override;
     void disable() override;
 

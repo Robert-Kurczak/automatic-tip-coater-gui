@@ -12,22 +12,22 @@ private:
     const uint16_t pin_;
 
     void setGpioConfig(
-        uint32_t mode = 0,
-        uint32_t pull = 0,
-        uint32_t speed = 0,
-        uint32_t alternate = 0
+        uint32_t mode,
+        uint32_t pull,
+        uint32_t speed,
+        uint32_t alternate
     );
 
 public:
-    GpioPin(GPIO_TypeDef& port, const uint16_t pin);
+    GpioPin(GPIO_TypeDef& port, uint16_t pin);
 
-    virtual void setInputMode() override;
-    virtual void setInputPullUpMode() override;
-    virtual void setInputPullDownMode() override;
-    virtual bool isHigh() override;
+    void init(GpioMode gpioMode, GpioPull gpioPull) override;
 
-    virtual void setOutputMode() override;
-    virtual void setHigh() override;
-    virtual void setLow() override;
+    void setHigh() override;
+    void setLow() override;
+    void toggle() override;
+
+    [[nodiscard]] bool isHigh() const override;
+    [[nodiscard]] bool isLow() const override;
 };
 }

@@ -136,17 +136,6 @@ int main(void)
   MX_TIM15_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-    if (HAL_TIM_Base_Start_IT(&htim3) != HAL_OK) {
-        Error_Handler();
-    }
-
-    if (HAL_TIM_Base_Start_IT(&htim4) != HAL_OK) {
-        Error_Handler();
-    }
-
-    if (HAL_TIM_Base_Start_IT(&htim5) != HAL_OK) {
-        Error_Handler();
-    }
   /* USER CODE END 2 */
 
   /* Initialize leds */
