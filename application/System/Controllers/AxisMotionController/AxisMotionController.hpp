@@ -70,9 +70,9 @@ public:
     void init() override;
     void tick() override;
 
-    void handleStepPulseInterrupt();
-    void handleMinLimitSwitchInterrupt();
-    void handleMaxLimitSwitchInterrupt();
+    void handleStepPulseInterrupt() override;
+    void handleMinLimitSwitchInterrupt() override;
+    void handleMaxLimitSwitchInterrupt() override;
 
     [[nodiscard]] bool wasFaultDetected() const override;
 

@@ -1,6 +1,8 @@
 #pragma once
 
+#include "application/System/Controllers/AxisMotionController/IAxisMotionController.hpp"
 #include "application/System/Services/AxisConfiguratorService/IAxisConfiguratorService.hpp"
+#include "application/System/Services/AxisInterruptService/IAxisInterruptService.hpp"
 #include "application/System/Services/ConsumableTaskService/IConsumableTaskService.hpp"
 #include "application/System/Services/DisplayService/IDisplayService.hpp"
 #include "application/System/Services/HeaterConfiguratorService/IHeaterConfiguratorService.hpp"
@@ -16,6 +18,14 @@ struct SystemPeripherals {
     // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
     IDisplayService& display;
     ITouchPanelService& touchPanel;
+    // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
+};
+
+struct SystemInterrupts {
+    // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
+    IAxisInterruptService& xAxisInterruptService;
+    IAxisInterruptService& yAxisInterruptService;
+    IAxisInterruptService& zAxisInterruptService;
     // NOLINTEND(cppcoreguidelines-avoid-const-or-ref-data-members)
 };
 
@@ -44,6 +54,7 @@ struct SystemTasks {
 
 struct SystemApi {
     // NOLINTBEGIN(cppcoreguidelines-avoid-const-or-ref-data-members)
+    SystemInterrupts interrupts;
     SystemPeripherals peripherals;
     SystemConfigurators configurators;
     SystemTasks tasks;

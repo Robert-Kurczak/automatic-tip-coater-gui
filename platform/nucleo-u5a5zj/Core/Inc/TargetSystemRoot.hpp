@@ -26,10 +26,12 @@
 #include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
 #include "application/System/Drivers/Switch/GpioActiveHighSwitch/GpioActiveHighSwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
+#include "application/System/Root/SystemApi.hpp"
 #include "application/System/Root/SystemRoot.hpp"
 #include "application/System/Services/AxisConfiguratorService/XAxisConfiguratorService/XAxisConfiguratorService.hpp"
 #include "application/System/Services/AxisConfiguratorService/YAxisConfiguratorService/YAxisConfiguratorService.hpp"
 #include "application/System/Services/AxisConfiguratorService/ZAxisConfiguratorService/ZAxisConfiguratorService.hpp"
+#include "application/System/Services/AxisInterruptService/AxisInterruptService.hpp"
 #include "application/System/Services/ConsumableTaskService/ConsumableTaskService.hpp"
 #include "application/System/Services/DisplayService/DisplayService.hpp"
 #include "application/System/Services/HeaterConfiguratorService/HeaterConfiguratorService.hpp"
@@ -284,6 +286,16 @@ private:
         .taskScheduler = taskScheduler_
     };
 
+    AxisInterruptService xAxisInterruptService_ {xAxisMotionController_};
+    AxisInterruptService yAxisInterruptService_ {xAxisMotionController_};
+    AxisInterruptService zAxisInterruptService_ {xAxisMotionController_};
+
+    SystemInterrupts systemInterrupts_ {
+        .xAxisInterruptService = xAxisInterruptService_,
+        .yAxisInterruptService = yAxisInterruptService_,
+        .zAxisInterruptService = zAxisInterruptService_
+    };
+
     DisplayService displayService_ {display_};
     TouchPanelService touchPanelService_ {touchPanelController_};
     SystemPeripherals systemPeripherals_ {
@@ -412,6 +424,7 @@ private:
     };
 
     SystemApi systemApi_ {
+        .interrupts = systemInterrupts_,
         .peripherals = systemPeripherals_,
         .configurators = systemConfigurators_,
         .tasks = systemTasks_

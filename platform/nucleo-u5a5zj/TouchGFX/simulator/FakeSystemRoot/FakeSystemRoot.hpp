@@ -20,11 +20,11 @@
 #include "application/System/Controllers/PersistentStorageController/PersistentStorageController.hpp"
 #include "application/System/Controllers/SpindleController/SpindleController.hpp"
 #include "application/System/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
-#include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
 #include "application/System/Root/SystemRoot.hpp"
 #include "application/System/Services/AxisConfiguratorService/XAxisConfiguratorService/XAxisConfiguratorService.hpp"
 #include "application/System/Services/AxisConfiguratorService/YAxisConfiguratorService/YAxisConfiguratorService.hpp"
 #include "application/System/Services/AxisConfiguratorService/ZAxisConfiguratorService/ZAxisConfiguratorService.hpp"
+#include "application/System/Services/AxisInterruptService/AxisInterruptService.hpp"
 #include "application/System/Services/ConsumableTaskService/ConsumableTaskService.hpp"
 #include "application/System/Services/DisplayService/DisplayService.hpp"
 #include "application/System/Services/HeaterConfiguratorService/HeaterConfiguratorService.hpp"
@@ -38,7 +38,6 @@
 #include "application/System/Tasks/Task/NullTask/NullTask.hpp"
 #include "application/System/Tasks/Task/SpindleTestTask/SpindleTestTask.hpp"
 #include "application/System/Tasks/TaskScheduler/SingleTaskScheduler/SingleTaskScheduler.hpp"
-#include "application/Utils/Math.hpp"
 
 namespace ATC {
 class TargetSystemRoot : public SystemRoot {
@@ -189,6 +188,16 @@ private:
         .touchPanel = touchPanelService_
     };
 
+    AxisInterruptService xAxisInterruptService_ {xAxisMotionController_};
+    AxisInterruptService yAxisInterruptService_ {xAxisMotionController_};
+    AxisInterruptService zAxisInterruptService_ {xAxisMotionController_};
+
+    SystemInterrupts systemInterrupts_ {
+        .xAxisInterruptService = xAxisInterruptService_,
+        .yAxisInterruptService = yAxisInterruptService_,
+        .zAxisInterruptService = zAxisInterruptService_
+    };
+
     XAxisConfiguratorService xAxisConfiguratorService_ {
         persistentStorageController_,
         xAxisController_,
@@ -309,6 +318,7 @@ private:
     };
 
     SystemApi systemApi_ {
+        .interrupts = systemInterrupts_,
         .peripherals = systemPeripherals_,
         .configurators = systemConfigurators_,
         .tasks = systemTasks_

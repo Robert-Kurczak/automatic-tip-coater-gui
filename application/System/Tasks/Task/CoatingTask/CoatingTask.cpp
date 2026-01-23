@@ -5,6 +5,7 @@
 namespace ATC {
 void CoatingTask::calibrateAxes() {
     calibrationTask_.start();
+    currentStage_++;
 }
 
 void CoatingTask::waitForCalibrationFinish() {

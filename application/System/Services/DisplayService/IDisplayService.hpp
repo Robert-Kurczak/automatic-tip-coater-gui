@@ -3,7 +3,7 @@
 #include "application/Utils/Math.hpp"
 
 #include <span>
-#include <stdint.h>
+#include <cstdint>
 
 namespace ATC {
 class IDisplayService {

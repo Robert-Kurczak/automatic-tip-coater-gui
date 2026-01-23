@@ -17,6 +17,10 @@ public:
     virtual void init() = 0;
     virtual void tick() = 0;
 
+    virtual void handleStepPulseInterrupt() = 0;
+    virtual void handleMinLimitSwitchInterrupt() = 0;
+    virtual void handleMaxLimitSwitchInterrupt() = 0;
+
     [[nodiscard]] virtual bool wasFaultDetected() const = 0;
 
     virtual void setMillimetersPerSecond(uint16_t value) = 0;
