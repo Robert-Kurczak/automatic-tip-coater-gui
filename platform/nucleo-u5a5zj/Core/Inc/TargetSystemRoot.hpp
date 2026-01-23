@@ -24,7 +24,7 @@
 #include "application/System/Drivers/PersistentStorage/Eeprom/Eeprom.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
 #include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
-#include "application/System/Drivers/Switch/GpioActiveHighSwitch/GpioActiveHighSwitch.hpp"
+#include "application/System/Drivers/OutputSwitch/GpioOutputSwitch/GpioOutputSwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
 #include "application/System/Root/SystemApi.hpp"
 #include "application/System/Root/SystemRoot.hpp"
@@ -221,7 +221,9 @@ private:
     };
 
     GpioPin heaterTogglePin_ {*Heater_EN_GPIO_Port, Heater_EN_Pin};
-    GpioActiveHighSwitch heaterSwitch_ {heaterTogglePin_};
+    GpioOutputSwitch<ActiveLevel::ActiveHigh> heaterSwitch_ {
+        heaterTogglePin_
+    };
     Thermistor heaterThermistor_ {loggerSink_};
     HysteresisHeaterController heaterController_ {
         loggerSink_,

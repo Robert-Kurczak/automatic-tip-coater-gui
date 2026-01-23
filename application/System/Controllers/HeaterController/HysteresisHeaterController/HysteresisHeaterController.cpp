@@ -5,7 +5,7 @@
 namespace ATC {
 HysteresisHeaterController::HysteresisHeaterController(
     ILoggerSink& loggerSink,
-    ISwitch& heaterSwitch,
+    IOutputSwitch& heaterSwitch,
     ITemperatureSensor& temperatureSensor
 ) :
     loggerSink_(loggerSink),

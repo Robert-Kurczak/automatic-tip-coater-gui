@@ -1,12 +1,12 @@
 #pragma once
 
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
-#include "application/System/Drivers/Switch/ISwitch.hpp"
+#include "application/System/Drivers/OutputSwitch/IOutputSwitch.hpp"
 
 #include <string>
 
 namespace ATC {
-class FakeSwitch : public ISwitch {
+class FakeSwitch : public IOutputSwitch {
 private:
     ILoggerSink& loggerSink_;
     std::string name_;
