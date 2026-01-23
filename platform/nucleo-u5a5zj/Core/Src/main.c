@@ -918,12 +918,16 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(Spindle_FAULT_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : xAxis_DIAG_Pin xAxis_MIN_LIMIT_Pin xAxis_MAX_LIMIT_Pin tip_LIMIT_Pin
-                           zAxis_DIAG_Pin */
-  GPIO_InitStruct.Pin = xAxis_DIAG_Pin|xAxis_MIN_LIMIT_Pin|xAxis_MAX_LIMIT_Pin|tip_LIMIT_Pin
-                          |zAxis_DIAG_Pin;
+  /*Configure GPIO pins : xAxis_DIAG_Pin tip_LIMIT_Pin zAxis_DIAG_Pin */
+  GPIO_InitStruct.Pin = xAxis_DIAG_Pin|tip_LIMIT_Pin|zAxis_DIAG_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : xAxis_MIN_LIMIT_Pin xAxis_MAX_LIMIT_Pin */
+  GPIO_InitStruct.Pin = xAxis_MIN_LIMIT_Pin|xAxis_MAX_LIMIT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LCD_RS_Pin zAxis_DIR_Pin zAxis_CS_Pin */
@@ -933,11 +937,17 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : zAxis_MIN_LIMIT_Pin zAxis_MAX_LIMIT_Pin */
-  GPIO_InitStruct.Pin = zAxis_MIN_LIMIT_Pin|zAxis_MAX_LIMIT_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+  /*Configure GPIO pin : zAxis_MIN_LIMIT_Pin */
+  GPIO_InitStruct.Pin = zAxis_MIN_LIMIT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(zAxis_MIN_LIMIT_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : zAxis_MAX_LIMIT_Pin */
+  GPIO_InitStruct.Pin = zAxis_MAX_LIMIT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(zAxis_MAX_LIMIT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : TouchPanel_IRQ_Pin */
   GPIO_InitStruct.Pin = TouchPanel_IRQ_Pin;
@@ -952,8 +962,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(TouchPanel_CS_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : yAxis_MAX_LIMIT_Pin yAxis_MIN_LIMIT_Pin yAxis_DIAG_Pin UCPD_FLT_Pin */
-  GPIO_InitStruct.Pin = yAxis_MAX_LIMIT_Pin|yAxis_MIN_LIMIT_Pin|yAxis_DIAG_Pin|UCPD_FLT_Pin;
+  /*Configure GPIO pins : yAxis_MAX_LIMIT_Pin yAxis_MIN_LIMIT_Pin */
+  GPIO_InitStruct.Pin = yAxis_MAX_LIMIT_Pin|yAxis_MIN_LIMIT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : yAxis_DIAG_Pin UCPD_FLT_Pin */
+  GPIO_InitStruct.Pin = yAxis_DIAG_Pin|UCPD_FLT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -990,6 +1006,25 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(UCPD_DBn_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI1_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI10_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI11_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI11_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
