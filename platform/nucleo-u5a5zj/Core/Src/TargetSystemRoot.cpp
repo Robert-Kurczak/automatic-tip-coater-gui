@@ -8,5 +8,4 @@ TargetSystemRoot& TargetSystemRoot::getSystemRoot() {
     static TargetSystemRoot systemRoot;
     return systemRoot;
 }
-
 };
