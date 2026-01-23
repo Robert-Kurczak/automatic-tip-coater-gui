@@ -2,14 +2,14 @@
 
 #include "../IHeaterController.hpp"
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
-#include "application/System/Drivers/Switch/ISwitch.hpp"
+#include "application/System/Drivers/OutputSwitch/IOutputSwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/ITemperatureSensor.hpp"
 
 namespace ATC {
 class HysteresisHeaterController : public IHeaterController {
 private:
     ILoggerSink& loggerSink_;
-    ISwitch& heaterSwitch_;
+    IOutputSwitch& heaterSwitch_;
     ITemperatureSensor& temperatureSensor_;
 
     uint32_t targetTemperatureInCelsius_ = 0;
@@ -17,7 +17,7 @@ private:
 public:
     HysteresisHeaterController(
         ILoggerSink& loggerSink,
-        ISwitch& heaterSwitch,
+        IOutputSwitch& heaterSwitch,
         ITemperatureSensor& temperatureSensor
     );
 
