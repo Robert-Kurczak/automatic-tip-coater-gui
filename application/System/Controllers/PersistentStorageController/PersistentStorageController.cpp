@@ -1,6 +1,6 @@
 #include "PersistentStorageController.hpp"
 
-#include "application/System/Config/DefaultPersistentConfig.hpp"
+#include "application/System/Config/ComponentConfig/DefaultPersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
 #include "application/Utils/Byte.hpp"
 #include "application/Utils/Logger.hpp"
