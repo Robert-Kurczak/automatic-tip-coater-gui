@@ -8,6 +8,7 @@
 #include "Adapters/Uart/Uart.hpp"
 #include "application/System/Config/AxisMotionConfig.hpp"
 #include "application/System/Config/ConfiguratorsConfig.hpp"
+#include "application/System/Config/HeaterConfig.hpp"
 #include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
@@ -21,10 +22,10 @@
 #include "application/System/Drivers/LimitSwitch/GpioLimitSwitch/GpioLimitSwitch.hpp"
 #include "application/System/Drivers/LoggerSink/UartLoggerSink/UartLoggerSink.hpp"
 #include "application/System/Drivers/Motor/PwmDcMotor/PwmDcMotor.hpp"
+#include "application/System/Drivers/OutputSwitch/GpioOutputSwitch/GpioOutputSwitch.hpp"
 #include "application/System/Drivers/PersistentStorage/Eeprom/Eeprom.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
 #include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
-#include "application/System/Drivers/OutputSwitch/GpioOutputSwitch/GpioOutputSwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
 #include "application/System/Root/SystemApi.hpp"
 #include "application/System/Root/SystemRoot.hpp"
@@ -228,7 +229,8 @@ private:
     HysteresisHeaterController heaterController_ {
         loggerSink_,
         heaterSwitch_,
-        heaterThermistor_
+        heaterThermistor_,
+        HEATER_HYSTERESIS_MARGIN_IN_CELSIUS
     };
 
     FlexibleMemoryController flexibleMemoryController_ {
