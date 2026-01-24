@@ -3,14 +3,36 @@
 #include "application/Utils/Logger.hpp"
 
 namespace ATC {
+
+void HysteresisHeaterController::controlTemperature() {
+    const uint32_t currentTemperatureInCelsius =
+        temperatureSensor_.getCelsius();
+
+    const bool isBelowMinimum =
+        currentTemperatureInCelsius <
+        targetTemperatureInCelsius_ - hysteresisMarginInCelsius_;
+
+    const bool isAboveMaximum =
+        currentTemperatureInCelsius >
+        targetTemperatureInCelsius_ + hysteresisMarginInCelsius_;
+
+    if (isBelowMinimum) {
+        heaterSwitch_.turnOn();
+    } else if (isAboveMaximum) {
+        heaterSwitch_.turnOff();
+    }
+}
+
 HysteresisHeaterController::HysteresisHeaterController(
     ILoggerSink& loggerSink,
     IOutputSwitch& heaterSwitch,
-    ITemperatureSensor& temperatureSensor
+    ITemperatureSensor& temperatureSensor,
+    uint8_t hysteresisMarginInCelsius
 ) :
     loggerSink_(loggerSink),
     heaterSwitch_(heaterSwitch),
-    temperatureSensor_(temperatureSensor) {}
+    temperatureSensor_(temperatureSensor),
+    hysteresisMarginInCelsius_(hysteresisMarginInCelsius) {}
 
 void HysteresisHeaterController::init(
     const HeaterPersistentConfig& config
@@ -18,39 +40,46 @@ void HysteresisHeaterController::init(
     targetTemperatureInCelsius_ = config.targetTemperatureInCelsius;
 
     heaterSwitch_.init();
+    heaterSwitch_.turnOff();
+
     temperatureSensor_.init();
 }
 
-void HysteresisHeaterController::tick() {}
+void HysteresisHeaterController::tick() {
+    if (isOn_) {
+        controlTemperature();
+    }
+}
 
 void HysteresisHeaterController::turnOn() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    isOn_ = true;
 }
 
 void HysteresisHeaterController::turnOff() {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
+    heaterSwitch_.turnOff();
+    isOn_ = false;
 }
 
 bool HysteresisHeaterController::isOn() const {
-    log(loggerSink_,
-        LogLevel::Error,
-        std::source_location::current(),
-        "Not implemented");
-    // TODO implement
-    return false;
+    return isOn_;
 };
 
 void HysteresisHeaterController::setTargetTemperatureInCelsius(
     uint32_t value
 ) {
+    if (value < hysteresisMarginInCelsius_) {
+        log(loggerSink_,
+            LogLevel::Error,
+            "Target heater temperature {}*C "
+            "cannot be lower that hysteresis margin: {}*C\n"
+            "Using old target value: {}",
+            value,
+            hysteresisMarginInCelsius_,
+            targetTemperatureInCelsius_);
+
+        return;
+    }
+
     targetTemperatureInCelsius_ = value;
 }
 
@@ -60,7 +89,17 @@ uint32_t HysteresisHeaterController::
 }
 
 bool HysteresisHeaterController::isAtTargetTemperature() const {
-    // TODO add error margin
-    return temperatureSensor_.getCelsius() == targetTemperatureInCelsius_;
+    const uint32_t currentTemperatureInCelsius =
+        temperatureSensor_.getCelsius();
+
+    const bool isAboveMinimum =
+        currentTemperatureInCelsius >=
+        targetTemperatureInCelsius_ - hysteresisMarginInCelsius_;
+
+    const bool isBelowMaximum =
+        currentTemperatureInCelsius <=
+        targetTemperatureInCelsius_ + hysteresisMarginInCelsius_;
+
+    return isAboveMinimum and isBelowMaximum;
 }
 }

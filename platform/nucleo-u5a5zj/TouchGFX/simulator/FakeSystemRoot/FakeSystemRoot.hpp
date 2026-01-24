@@ -12,6 +12,7 @@
 #include "FakePorts/FakeSystemClock/FakeSystemClock.hpp"
 #include "application/System/Config/AxisMotionConfig.hpp"
 #include "application/System/Config/ConfiguratorsConfig.hpp"
+#include "application/System/Config/HeaterConfig.hpp"
 #include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
@@ -147,7 +148,8 @@ private:
     HysteresisHeaterController heaterController_ {
         loggerSink_,
         fakeSwitch_,
-        temperatureSensor_
+        temperatureSensor_,
+        HEATER_HYSTERESIS_MARGIN_IN_CELSIUS
     };
 
     FakeDisplay display_ {loggerSink_};
