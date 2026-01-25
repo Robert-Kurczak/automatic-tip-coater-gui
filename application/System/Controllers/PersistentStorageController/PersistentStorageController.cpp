@@ -1,6 +1,7 @@
 #include "PersistentStorageController.hpp"
 
 #include "application/System/Config/ComponentConfig/DefaultPersistentConfig.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
 #include "application/Utils/Byte.hpp"
 #include "application/Utils/Logger.hpp"
@@ -65,7 +66,7 @@ void PersistentStorageController::logPersistentData(
 
 uint32_t PersistentStorageController::calculateDataChecksum(
     PersistentData data
-) {
+) const {
     data.checksum = 0;
 
     uint32_t calculatedChecksum = 0;
@@ -88,7 +89,10 @@ void PersistentStorageController::createDefaultData() {
     };
     defaultData.checksum = calculateDataChecksum(defaultData);
 
-    persistentStorage_.write(0, toByteSpan(defaultData));
+    std::array<uint8_t, sizeof(PersistentData)> defaultDataBytes =
+        toByteArray(defaultData);
+
+    persistentStorage_.write(0, defaultDataBytes);
     storedData_ = defaultData;
 
     log(loggerSink_,
@@ -123,9 +127,10 @@ void PersistentStorageController::updateStoredChecksum() {
         checksumAddress,
         updatedChecksum);
 
-    persistentStorage_.write(
-        checksumAddress, toByteSpan(updatedChecksum)
-    );
+    std::array<uint8_t, sizeof(uint32_t)> updatedChecksumBytes =
+        toByteArray(updatedChecksum);
+
+    persistentStorage_.write(checksumAddress, updatedChecksumBytes);
 }
 
 void PersistentStorageController::validateStoredData() {
@@ -183,9 +188,12 @@ void PersistentStorageController::saveXAxisConfig(
         return;
     }
 
+    std::array<uint8_t, sizeof(AxisPersistentConfig)> configBytes =
+        toByteArray(config);
+
     const uint32_t address = offsetof(PersistentData, xAxisConfig);
     storedData_.xAxisConfig = config;
-    persistentStorage_.write(address, toByteSpan(config));
+    persistentStorage_.write(address, configBytes);
 
     updateStoredChecksum();
 
@@ -204,9 +212,12 @@ void PersistentStorageController::saveYAxisConfig(
         return;
     }
 
+    std::array<uint8_t, sizeof(AxisPersistentConfig)> configBytes =
+        toByteArray(config);
+
     const uint32_t address = offsetof(PersistentData, yAxisConfig);
     storedData_.yAxisConfig = config;
-    persistentStorage_.write(address, toByteSpan(config));
+    persistentStorage_.write(address, configBytes);
 
     updateStoredChecksum();
 
@@ -225,9 +236,12 @@ void PersistentStorageController::saveZAxisConfig(
         return;
     }
 
+    std::array<uint8_t, sizeof(AxisPersistentConfig)> configBytes =
+        toByteArray(config);
+
     const uint32_t address = offsetof(PersistentData, zAxisConfig);
     storedData_.zAxisConfig = config;
-    persistentStorage_.write(address, toByteSpan(config));
+    persistentStorage_.write(address, configBytes);
     updateStoredChecksum();
 
     log(loggerSink_,
@@ -245,9 +259,12 @@ void PersistentStorageController::saveSpindleConfig(
         return;
     }
 
+    std::array<uint8_t, sizeof(SpindlePersistentConfig)> configBytes =
+        toByteArray(config);
+
     const uint32_t address = offsetof(PersistentData, spindleConfig);
     storedData_.spindleConfig = config;
-    persistentStorage_.write(address, toByteSpan(config));
+    persistentStorage_.write(address, configBytes);
 
     updateStoredChecksum();
 
@@ -266,9 +283,12 @@ void PersistentStorageController::saveHeaterConfig(
         return;
     }
 
+    std::array<uint8_t, sizeof(HeaterPersistentConfig)> configBytes =
+        toByteArray(config);
+
     const uint32_t address = offsetof(PersistentData, heaterConfig);
     storedData_.heaterConfig = config;
-    persistentStorage_.write(address, toByteSpan(config));
+    persistentStorage_.write(address, configBytes);
 
     updateStoredChecksum();
 
