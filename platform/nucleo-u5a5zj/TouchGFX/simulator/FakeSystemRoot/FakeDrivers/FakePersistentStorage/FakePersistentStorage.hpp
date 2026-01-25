@@ -23,13 +23,13 @@ public:
     virtual void init() override;
 
     virtual void read(
-        uint32_t address,
-        const std::span<uint8_t>& outputBuffer
+        uint16_t address,
+        std::span<uint8_t> outputBuffer
     ) override;
 
     virtual void write(
-        uint32_t address,
-        const std::span<const uint8_t>& data
+        uint16_t address,
+        std::span<uint8_t> data
     ) override;
 };
 }

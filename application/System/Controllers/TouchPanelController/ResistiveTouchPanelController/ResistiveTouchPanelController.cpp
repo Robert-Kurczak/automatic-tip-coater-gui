@@ -1,7 +1,7 @@
 #include "ResistiveTouchPanelController.hpp"
 
 namespace ATC {
-static constexpr uint8_t SAMPLES_PER_READING_ = 10;
+static constexpr uint8_t SAMPLES_PER_READING = 10;
 
 Vector2 ResistiveTouchPanelController::getFilteredRawPosition() {
     uint8_t samplesTaken = 0;
@@ -9,7 +9,7 @@ Vector2 ResistiveTouchPanelController::getFilteredRawPosition() {
     uint32_t averageY = 0;
 
     while (resistiveTouchPanel_.isTouchDetected() &&
-           samplesTaken < SAMPLES_PER_READING_) {
+           samplesTaken < SAMPLES_PER_READING) {
         averageX += resistiveTouchPanel_.readRawX();
         averageY += resistiveTouchPanel_.readRawY();
         samplesTaken++;

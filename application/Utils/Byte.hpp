@@ -28,6 +28,15 @@ Type fromByteSpan(const std::span<const uint8_t>& bytes) {
 }
 
 template<typename Type>
+std::array<uint8_t, sizeof(Type)> toByteArray(const Type& data) {
+    static_assert(std::is_trivially_copyable_v<Type>);
+
+    std::array<uint8_t, sizeof(Type)> bytes;
+    std::memcpy(bytes.data(), &data, sizeof(Type));
+    return bytes;
+}
+
+template<typename Type>
 bool areBytesEqual(const Type& left, const Type& right) {
     static_assert(std::is_trivially_copyable_v<Type>);
 

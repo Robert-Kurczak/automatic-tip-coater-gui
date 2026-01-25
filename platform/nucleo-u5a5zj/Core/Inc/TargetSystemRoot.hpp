@@ -2,6 +2,7 @@
 
 #include "Adapters/AsyncPulsePin/AsyncPulsePin.hpp"
 #include "Adapters/GpioPin/GpioPin.hpp"
+#include "Adapters/I2c/I2c.hpp"
 #include "Adapters/PwmPin/PwmPin.hpp"
 #include "Adapters/Spi/Spi.hpp"
 #include "Adapters/SystemClock/SystemClock.hpp"
@@ -23,7 +24,7 @@
 #include "application/System/Drivers/LoggerSink/UartLoggerSink/UartLoggerSink.hpp"
 #include "application/System/Drivers/Motor/PwmDcMotor/PwmDcMotor.hpp"
 #include "application/System/Drivers/OutputSwitch/GpioOutputSwitch/GpioOutputSwitch.hpp"
-#include "application/System/Drivers/PersistentStorage/Eeprom/Eeprom.hpp"
+#include "application/System/Drivers/PersistentStorage/Eeprom24Lc64/Eeprom24Lc64.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
 #include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
 #include "application/System/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
@@ -47,8 +48,10 @@
 #include "application/System/Tasks/Task/SpindleTestTask/SpindleTestTask.hpp"
 #include "application/System/Tasks/TaskScheduler/SingleTaskScheduler/SingleTaskScheduler.hpp"
 #include "main.h"
+#include "stm32u5xx_hal_i2c.h"
 
 extern SPI_HandleTypeDef hspi1;
+extern I2C_HandleTypeDef hi2c1;
 extern UART_HandleTypeDef huart1;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
@@ -56,14 +59,17 @@ extern TIM_HandleTypeDef htim5;
 namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
-    SystemClock systemClock_ {};
     Uart uart_ {huart1};
+    Spi spi_ {hspi1};
+    I2c i2c_ {hi2c1};
+
+    SystemClock systemClock_ {};
     UartLoggerSink loggerSink_ {uart_};
 
-    Eeprom eeprom_ {loggerSink_};
+    Eeprom24Lc64 persistentStorage_ {i2c_, 0x00};
     PersistentStorageController persistentStorageController_ {
         loggerSink_,
-        eeprom_
+        persistentStorage_
     };
 
     AsyncPulsePin xAxisStepPin_ {htim3, TIM_CHANNEL_1};
@@ -245,7 +251,6 @@ private:
         systemClock_
     };
 
-    Spi spi_ {hspi1};
     GpioPin touchPanelChipSelectPin_ {
         *TouchPanel_CS_GPIO_Port,
         TouchPanel_CS_Pin

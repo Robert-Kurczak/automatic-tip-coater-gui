@@ -35,8 +35,8 @@ void FakePersistentStorage::init() {
 }
 
 void FakePersistentStorage::read(
-    uint32_t address,
-    const std::span<uint8_t>& outputBuffer
+    uint16_t address,
+    std::span<uint8_t> outputBuffer
 ) {
     if (address + outputBuffer.size() > storageSize_) {
         log(loggerSink_,
@@ -58,8 +58,8 @@ void FakePersistentStorage::read(
 }
 
 void FakePersistentStorage::write(
-    uint32_t address,
-    const std::span<const uint8_t>& data
+    uint16_t address,
+    std::span<uint8_t> data
 ) {
     if (address + data.size() > storageSize_) {
         log(loggerSink_,

@@ -16,13 +16,10 @@ public:
     virtual void init() = 0;
 
     virtual void read(
-        uint32_t address,
-        const std::span<uint8_t>& outputBuffer
+        uint16_t address,
+        std::span<uint8_t> outputBuffer
     ) = 0;
 
-    virtual void write(
-        uint32_t address,
-        const std::span<const uint8_t>& data
-    ) = 0;
+    virtual void write(uint16_t address, std::span<uint8_t> data) = 0;
 };
 }

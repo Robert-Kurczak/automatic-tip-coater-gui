@@ -37,9 +37,9 @@ private:
     void logHeaterConfig(const HeaterPersistentConfig& config);
     void logPersistentData(const PersistentData& data);
 
-    [[nodiscard]] static uint32_t calculateDataChecksum(
+    [[nodiscard]] uint32_t calculateDataChecksum(
         PersistentData data
-    );
+    ) const;
 
     void createDefaultData();
     void updateStoredChecksum();
