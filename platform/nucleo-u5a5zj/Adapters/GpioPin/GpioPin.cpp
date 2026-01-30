@@ -59,7 +59,7 @@ void GpioPin::setHigh() {
 }
 
 void GpioPin::setLow() {
-    HAL_GPIO_WritePin(&port_, pin_, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(&port_, pin_, GPIO_PIN_RESET);
 }
 
 void GpioPin::toggle() {
