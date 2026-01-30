@@ -5,7 +5,7 @@
 namespace ATC {
 
 void HysteresisHeaterController::controlTemperature() {
-    const uint32_t currentTemperatureInCelsius =
+    const float currentTemperatureInCelsius =
         temperatureSensor_.getCelsius();
 
     const bool isBelowMinimum =
@@ -27,7 +27,7 @@ HysteresisHeaterController::HysteresisHeaterController(
     ILoggerSink& loggerSink,
     IOutputSwitch& heaterSwitch,
     ITemperatureSensor& temperatureSensor,
-    uint8_t hysteresisMarginInCelsius
+    float hysteresisMarginInCelsius
 ) :
     loggerSink_(loggerSink),
     heaterSwitch_(heaterSwitch),
@@ -65,7 +65,7 @@ bool HysteresisHeaterController::isOn() const {
 };
 
 void HysteresisHeaterController::setTargetTemperatureInCelsius(
-    uint32_t value
+    float value
 ) {
     if (value < hysteresisMarginInCelsius_) {
         log(loggerSink_,
@@ -83,7 +83,7 @@ void HysteresisHeaterController::setTargetTemperatureInCelsius(
     targetTemperatureInCelsius_ = value;
 }
 
-uint32_t HysteresisHeaterController::
+float HysteresisHeaterController::
     getTargetTemperatureInCelsius() const {
     return targetTemperatureInCelsius_;
 }

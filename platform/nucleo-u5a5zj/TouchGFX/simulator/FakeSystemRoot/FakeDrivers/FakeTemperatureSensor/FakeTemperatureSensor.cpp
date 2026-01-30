@@ -14,7 +14,7 @@ void FakeTemperatureSensor::init() {
     log(loggerSink_, LogLevel::Debug, "{} initialized", name_);
 };
 
-uint32_t FakeTemperatureSensor::getCelsius() {
+float FakeTemperatureSensor::getCelsius() {
     static uint8_t calls = 0;
 
     if (calls < UINT8_MAX) {

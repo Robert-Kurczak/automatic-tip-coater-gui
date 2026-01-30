@@ -26,7 +26,7 @@ public:
 
     virtual void increaseTemperatureInCelsius() = 0;
     virtual void decreaseTemperatureInCelsius() = 0;
-    [[nodiscard]] virtual uint32_t getTemperatureInCelsius() const = 0;
+    [[nodiscard]] virtual float getTemperatureInCelsius() const = 0;
     virtual void saveTemperatureInCelsius() = 0;
 
     virtual void turnOn() = 0;

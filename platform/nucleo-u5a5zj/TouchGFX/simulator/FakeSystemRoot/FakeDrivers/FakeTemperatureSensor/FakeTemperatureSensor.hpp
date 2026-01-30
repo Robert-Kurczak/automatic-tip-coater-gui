@@ -16,6 +16,6 @@ public:
 
     virtual void init() override;
 
-    virtual uint32_t getCelsius() override;
+    virtual float getCelsius() override;
 };
 }

@@ -35,7 +35,7 @@ public:
     void decreaseButtonPressed();
     void saveButtonPressed();
 
-    uint32_t getHeaterTemperature();
+    float getHeaterTemperature();
 
 private:
     HeaterTemperatureScreenPresenter();

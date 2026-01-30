@@ -1,7 +1,5 @@
 #pragma once
 
-#include <cstdint>
-
 namespace ATC {
 class ITemperatureSensor {
 public:
@@ -14,6 +12,6 @@ public:
 
     virtual void init() = 0;
 
-    [[nodiscard]] virtual uint32_t getCelsius() = 0;
+    [[nodiscard]] virtual float getCelsius() = 0;
 };
 }

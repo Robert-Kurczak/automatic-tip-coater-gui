@@ -100,6 +100,8 @@ void ATC_Loop();
 #define zAxis_MAX_LIMIT_Pin GPIO_PIN_0
 #define zAxis_MAX_LIMIT_GPIO_Port GPIOA
 #define zAxis_MAX_LIMIT_EXTI_IRQn EXTI0_IRQn
+#define Termistor_IN_Pin GPIO_PIN_2
+#define Termistor_IN_GPIO_Port GPIOA
 #define TouchPanel_IRQ_Pin GPIO_PIN_4
 #define TouchPanel_IRQ_GPIO_Port GPIOA
 #define TouchPanel_CS_Pin GPIO_PIN_5

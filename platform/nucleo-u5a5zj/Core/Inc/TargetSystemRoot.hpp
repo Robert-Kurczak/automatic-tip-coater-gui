@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Adapters/Adc/Adc.hpp"
 #include "Adapters/AsyncPulsePin/AsyncPulsePin.hpp"
 #include "Adapters/GpioPin/GpioPin.hpp"
 #include "Adapters/I2c/I2c.hpp"
@@ -27,7 +28,7 @@
 #include "application/System/Drivers/PersistentStorage/Eeprom24Lc64/Eeprom24Lc64.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
 #include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
-#include "application/System/Drivers/TemperatureSensor/Thermistor/Thermistor.hpp"
+#include "application/System/Drivers/TemperatureSensor/Thermistor104Nt4/Thermistor104Nt4.hpp"
 #include "application/System/Root/SystemApi.hpp"
 #include "application/System/Root/SystemRoot.hpp"
 #include "application/System/Services/AxisConfiguratorService/XAxisConfiguratorService/XAxisConfiguratorService.hpp"
@@ -48,6 +49,7 @@
 #include "application/System/Tasks/Task/SpindleTestTask/SpindleTestTask.hpp"
 #include "application/System/Tasks/TaskScheduler/SingleTaskScheduler/SingleTaskScheduler.hpp"
 #include "main.h"
+#include "stm32u5xx_hal_adc.h"
 #include "stm32u5xx_hal_i2c.h"
 
 extern SPI_HandleTypeDef hspi1;
@@ -56,6 +58,7 @@ extern UART_HandleTypeDef huart1;
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim4;
 extern TIM_HandleTypeDef htim5;
+extern ADC_HandleTypeDef hadc1;
 namespace ATC {
 class TargetSystemRoot : public SystemRoot {
 private:
@@ -231,7 +234,12 @@ private:
     GpioOutputSwitch<ActiveLevel::ActiveHigh> heaterSwitch_ {
         heaterTogglePin_
     };
-    Thermistor heaterThermistor_ {loggerSink_};
+    Adc adc_ {
+        hadc1,
+        Adc::ResolutionBits {10},
+        Adc::ReferenceVoltage {3.3f}
+    };
+    Thermistor104Nt4 heaterThermistor_ {loggerSink_, adc_};
     HysteresisHeaterController heaterController_ {
         loggerSink_,
         heaterSwitch_,
