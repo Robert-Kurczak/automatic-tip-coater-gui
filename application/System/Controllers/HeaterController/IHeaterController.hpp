@@ -21,8 +21,8 @@ public:
     virtual void turnOff() = 0;
     [[nodiscard]] virtual bool isOn() const = 0;
 
-    virtual void setTargetTemperatureInCelsius(uint32_t value) = 0;
-    [[nodiscard]] virtual uint32_t
+    virtual void setTargetTemperatureInCelsius(float value) = 0;
+    [[nodiscard]] virtual float
     getTargetTemperatureInCelsius() const = 0;
 
     [[nodiscard]] virtual bool isAtTargetTemperature() const = 0;

@@ -11,7 +11,7 @@ private:
     IPersistentStorageController& persistentStorageController_;
     IHeaterController& heaterController_;
 
-    const uint8_t temperatureInCelsiusStep_;
+    const float temperatureInCelsiusStep_;
 
     bool bufferedHeaterOn_ = false;
     HeaterPersistentConfig bufferedPersistentConfig_ {
@@ -22,14 +22,14 @@ public:
     HeaterConfiguratorService(
         IPersistentStorageController& persistentStorageController,
         IHeaterController& heaterController,
-        uint8_t temperatureInCelsiusStep
+        float temperatureInCelsiusStep
     );
 
     void resetBufferedConfig() override;
 
     void increaseTemperatureInCelsius() override;
     void decreaseTemperatureInCelsius() override;
-    [[nodiscard]] uint32_t getTemperatureInCelsius() const override;
+    [[nodiscard]] float getTemperatureInCelsius() const override;
     void saveTemperatureInCelsius() override;
 
     void turnOn() override;

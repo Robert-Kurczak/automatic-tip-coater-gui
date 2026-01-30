@@ -13,9 +13,9 @@ private:
     ILoggerSink& loggerSink_;
     IOutputSwitch& heaterSwitch_;
     ITemperatureSensor& temperatureSensor_;
-    const uint8_t hysteresisMarginInCelsius_;
+    const float hysteresisMarginInCelsius_;
 
-    uint32_t targetTemperatureInCelsius_ = 0;
+    float targetTemperatureInCelsius_ = 0;
     bool isOn_ = false;
 
     void controlTemperature();
@@ -25,7 +25,7 @@ public:
         ILoggerSink& loggerSink,
         IOutputSwitch& heaterSwitch,
         ITemperatureSensor& temperatureSensor,
-        uint8_t hysteresisMarginInCelsius
+        float hysteresisMarginInCelsius
     );
 
     void init(const HeaterPersistentConfig& config) override;
@@ -35,8 +35,8 @@ public:
     void turnOff() override;
     [[nodiscard]] bool isOn() const override;
 
-    void setTargetTemperatureInCelsius(uint32_t value) override;
-    [[nodiscard]] uint32_t getTargetTemperatureInCelsius() const override;
+    void setTargetTemperatureInCelsius(float value) override;
+    [[nodiscard]] float getTargetTemperatureInCelsius() const override;
 
     [[nodiscard]] bool isAtTargetTemperature() const override;
 };

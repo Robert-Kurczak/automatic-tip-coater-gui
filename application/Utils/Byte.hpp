@@ -31,7 +31,7 @@ template<typename Type>
 std::array<uint8_t, sizeof(Type)> toByteArray(const Type& data) {
     static_assert(std::is_trivially_copyable_v<Type>);
 
-    std::array<uint8_t, sizeof(Type)> bytes;
+    std::array<uint8_t, sizeof(Type)> bytes {};
     std::memcpy(bytes.data(), &data, sizeof(Type));
     return bytes;
 }

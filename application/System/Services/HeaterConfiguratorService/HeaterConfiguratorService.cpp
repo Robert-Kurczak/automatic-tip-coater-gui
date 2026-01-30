@@ -4,7 +4,7 @@ namespace ATC {
 HeaterConfiguratorService::HeaterConfiguratorService(
     IPersistentStorageController& persistentStorageController,
     IHeaterController& heaterController,
-    uint8_t temperatureInCelsiusStep
+    float temperatureInCelsiusStep
 ) :
     persistentStorageController_(persistentStorageController),
     heaterController_(heaterController),
@@ -26,7 +26,7 @@ void HeaterConfiguratorService::decreaseTemperatureInCelsius() {
         temperatureInCelsiusStep_;
 }
 
-uint32_t HeaterConfiguratorService::getTemperatureInCelsius() const {
+float HeaterConfiguratorService::getTemperatureInCelsius() const {
     return bufferedPersistentConfig_.targetTemperatureInCelsius;
 }
 

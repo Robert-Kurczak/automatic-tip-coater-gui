@@ -38,7 +38,7 @@ void HeaterTemperatureScreenPresenter::saveButtonPressed() {
     heaterConfigurator.saveTemperatureInCelsius();
 }
 
-uint32_t HeaterTemperatureScreenPresenter::getHeaterTemperature() {
+float HeaterTemperatureScreenPresenter::getHeaterTemperature() {
     ATC::IHeaterConfiguratorService& heaterConfigurator =
         model->getSystemApi().configurators.heaterConfigurator;
 
