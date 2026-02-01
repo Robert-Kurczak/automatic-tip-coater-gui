@@ -42,5 +42,5 @@ uint32_t YAxisStartScreenPresenter::getYAxisStart() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.yAxisConfigurator;
 
-    return axisConfigurator.getStartPosition();
+    return axisConfigurator.getStartPositionInMicrometers();
 }

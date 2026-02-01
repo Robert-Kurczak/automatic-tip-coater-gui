@@ -18,8 +18,8 @@ void PersistentStorageController::logAxisConfig(
         "\tend position: {}\n"
         "\tspeed: {}\n",
         axisName,
-        config.startPosition,
-        config.endPosition,
+        config.startPositionInMicrometers,
+        config.endPositionInMicrometers,
         config.speedInMillimetersPerSecond);
 }
 

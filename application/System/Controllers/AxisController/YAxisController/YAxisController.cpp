@@ -7,11 +7,13 @@ namespace ATC {
 void YAxisController::handleTipDetected() {
     axisMotionController_.cancelMovement();
 
-    const uint32_t detectedTipPosition =
-        axisMotionController_.getCurrentPosition();
-    coatingPosition_ = (detectedTipPosition /
-                        COATING_POSITION_OFFSET_FACTOR_DENOMINATOR) *
-                       COATING_POSITION_OFFSET_FACTOR_NUMERATOR;
+    const uint32_t detectedTipPositionInMicrometers =
+        axisMotionController_.getCurrentPositionInMicrometers();
+
+    coatingPositionInMicrometers_ =
+        (detectedTipPositionInMicrometers /
+         COATING_POSITION_OFFSET_FACTOR_DENOMINATOR) *
+        COATING_POSITION_OFFSET_FACTOR_NUMERATOR;
 
     detectingTip_ = false;
 }
@@ -26,8 +28,8 @@ YAxisController::YAxisController(
     tipLimitSwitch_(tipLimitSwitch) {}
 
 void YAxisController::init(const AxisPersistentConfig& config) {
-    startPosition_ = config.startPosition;
-    endPosition_ = config.endPosition;
+    startPositionInMicrometers_ = config.startPositionInMicrometers;
+    endPositionInMicrometers_ = config.endPositionInMicrometers;
 
     axisMotionController_.init();
     tipLimitSwitch_.init();
@@ -45,12 +47,12 @@ bool YAxisController::wasFaultReported() const {
     return axisMotionController_.wasFaultDetected();
 }
 
-void YAxisController::moveToPosition(uint32_t position) {
-    axisMotionController_.moveTo(position);
+void YAxisController::moveToPositionInMicrometers(uint32_t value) {
+    axisMotionController_.moveToPositionInMicrometers(value);
 }
 
-uint32_t YAxisController::getCurrentPosition() const {
-    return axisMotionController_.getCurrentPosition();
+uint32_t YAxisController::getCurrentPositionInMicrometers() const {
+    return axisMotionController_.getCurrentPositionInMicrometers();
 }
 
 void YAxisController::moveToMinLimitPosition() {
@@ -78,19 +80,27 @@ bool YAxisController::isAtHomePosition() const {
 }
 
 void YAxisController::moveToStartPosition() {
-    axisMotionController_.moveTo(startPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        startPositionInMicrometers_
+    );
 }
 
 bool YAxisController::isAtStartPosition() const {
-    return axisMotionController_.isAtPosition(startPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        startPositionInMicrometers_
+    );
 }
 
 void YAxisController::moveToEndPosition() {
-    axisMotionController_.moveTo(endPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        endPositionInMicrometers_
+    );
 }
 
 bool YAxisController::isAtEndPosition() const {
-    return axisMotionController_.isAtPosition(endPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        endPositionInMicrometers_
+    );
 }
 
 void YAxisController::moveToDetectTip() {
@@ -103,27 +113,31 @@ bool YAxisController::isTipDetected() const {
 }
 
 void YAxisController::moveToCoatingPosition() {
-    axisMotionController_.moveTo(coatingPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        coatingPositionInMicrometers_
+    );
 }
 
 bool YAxisController::isAtCoatingPosition() const {
-    return axisMotionController_.isAtPosition(coatingPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        coatingPositionInMicrometers_
+    );
 }
 
-void YAxisController::setStartPosition(uint32_t value) {
-    startPosition_ = value;
+void YAxisController::setStartPositionInMicrometers(uint32_t value) {
+    startPositionInMicrometers_ = value;
 }
 
-uint32_t YAxisController::getStartPosition() const {
-    return startPosition_;
+uint32_t YAxisController::getStartPositionInMicrometers() const {
+    return startPositionInMicrometers_;
 }
 
-void YAxisController::setEndPosition(uint32_t value) {
-    endPosition_ = value;
+void YAxisController::setEndPositionInMicrometers(uint32_t value) {
+    endPositionInMicrometers_ = value;
 }
 
-uint32_t YAxisController::getEndPosition() const {
-    return endPosition_;
+uint32_t YAxisController::getEndPositionInMicrometers() const {
+    return endPositionInMicrometers_;
 }
 
 void YAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {

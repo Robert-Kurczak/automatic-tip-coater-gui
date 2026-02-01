@@ -6,6 +6,9 @@
 
 
 class StartScreenView : public StartScreenViewBase {
+private:
+    void displaySettings();
+
 public:
     StartScreenView();
     virtual ~StartScreenView() {}
@@ -16,8 +19,6 @@ public:
     virtual void cancelCoating() override;
 
     void resetFooterButtons();
-
-protected:
 };
 
 #endif // STARTSCREENVIEW_HPP

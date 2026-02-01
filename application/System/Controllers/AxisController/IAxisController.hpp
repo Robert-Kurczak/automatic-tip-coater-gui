@@ -19,8 +19,9 @@ public:
 
     [[nodiscard]] virtual bool wasFaultReported() const = 0;
 
-    virtual void moveToPosition(uint32_t position) = 0;
-    [[nodiscard]] virtual uint32_t getCurrentPosition() const = 0;
+    virtual void moveToPositionInMicrometers(uint32_t value) = 0;
+    [[nodiscard]] virtual uint32_t
+    getCurrentPositionInMicrometers() const = 0;
 
     virtual void moveToMinLimitPosition() = 0;
     [[nodiscard]] virtual bool isAtMinLimitPosition() const = 0;
@@ -37,11 +38,12 @@ public:
     virtual void moveToEndPosition() = 0;
     [[nodiscard]] virtual bool isAtEndPosition() const = 0;
 
-    virtual void setStartPosition(uint32_t value) = 0;
-    [[nodiscard]] virtual uint32_t getStartPosition() const = 0;
+    virtual void setStartPositionInMicrometers(uint32_t value) = 0;
+    [[nodiscard]] virtual uint32_t
+    getStartPositionInMicrometers() const = 0;
 
-    virtual void setEndPosition(uint32_t value) = 0;
-    [[nodiscard]] virtual uint32_t getEndPosition() const = 0;
+    virtual void setEndPositionInMicrometers(uint32_t value) = 0;
+    [[nodiscard]] virtual uint32_t getEndPositionInMicrometers() const = 0;
 
     virtual void setSpeedInMillimetersPerSecond(uint16_t value) = 0;
     [[nodiscard]] virtual uint16_t

@@ -11,8 +11,8 @@ ZAxisController::ZAxisController(
     axisMotionController_(axisMotionController) {}
 
 void ZAxisController::init(const AxisPersistentConfig& config) {
-    startPosition_ = config.startPosition;
-    endPosition_ = config.endPosition;
+    startPositionInMicrometers_ = config.startPositionInMicrometers;
+    endPositionInMicrometers_ = config.endPositionInMicrometers;
 }
 
 void ZAxisController::tick() {}
@@ -21,12 +21,12 @@ bool ZAxisController::wasFaultReported() const {
     return axisMotionController_.wasFaultDetected();
 }
 
-void ZAxisController::moveToPosition(uint32_t position) {
-    axisMotionController_.moveTo(position);
+void ZAxisController::moveToPositionInMicrometers(uint32_t value) {
+    axisMotionController_.moveToPositionInMicrometers(value);
 }
 
-uint32_t ZAxisController::getCurrentPosition() const {
-    return axisMotionController_.getCurrentPosition();
+uint32_t ZAxisController::getCurrentPositionInMicrometers() const {
+    return axisMotionController_.getCurrentPositionInMicrometers();
 }
 
 void ZAxisController::moveToMinLimitPosition() {
@@ -54,35 +54,43 @@ bool ZAxisController::isAtHomePosition() const {
 }
 
 void ZAxisController::moveToStartPosition() {
-    axisMotionController_.moveTo(startPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        startPositionInMicrometers_
+    );
 }
 
 bool ZAxisController::isAtStartPosition() const {
-    return axisMotionController_.isAtPosition(startPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        startPositionInMicrometers_
+    );
 }
 
 void ZAxisController::moveToEndPosition() {
-    axisMotionController_.moveTo(endPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        endPositionInMicrometers_
+    );
 }
 
 bool ZAxisController::isAtEndPosition() const {
-    return axisMotionController_.isAtPosition(endPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        endPositionInMicrometers_
+    );
 }
 
-void ZAxisController::setStartPosition(uint32_t value) {
-    startPosition_ = value;
+void ZAxisController::setStartPositionInMicrometers(uint32_t value) {
+    startPositionInMicrometers_ = value;
 }
 
-uint32_t ZAxisController::getStartPosition() const {
-    return startPosition_;
+uint32_t ZAxisController::getStartPositionInMicrometers() const {
+    return startPositionInMicrometers_;
 }
 
-void ZAxisController::setEndPosition(uint32_t value) {
-    endPosition_ = value;
+void ZAxisController::setEndPositionInMicrometers(uint32_t value) {
+    endPositionInMicrometers_ = value;
 }
 
-uint32_t ZAxisController::getEndPosition() const {
-    return endPosition_;
+uint32_t ZAxisController::getEndPositionInMicrometers() const {
+    return endPositionInMicrometers_;
 }
 
 void ZAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {

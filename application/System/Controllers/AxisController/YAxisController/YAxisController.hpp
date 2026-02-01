@@ -14,11 +14,11 @@ private:
     IAxisMotionController& axisMotionController_;
     ILimitSwitch& tipLimitSwitch_;
 
-    uint32_t startPosition_ = 0;
-    uint32_t endPosition_ = 0;
+    uint32_t startPositionInMicrometers_ = 0;
+    uint32_t endPositionInMicrometers_ = 0;
 
     bool detectingTip_ = false;
-    uint32_t coatingPosition_ = 0;
+    uint32_t coatingPositionInMicrometers_ = 0;
 
     void handleTipDetected();
 
@@ -34,8 +34,9 @@ public:
 
     [[nodiscard]] bool wasFaultReported() const override;
 
-    void moveToPosition(uint32_t position) override;
-    [[nodiscard]] uint32_t getCurrentPosition() const override;
+    void moveToPositionInMicrometers(uint32_t value) override;
+    [[nodiscard]] uint32_t
+    getCurrentPositionInMicrometers() const override;
 
     void moveToMinLimitPosition() override;
     [[nodiscard]] bool isAtMinLimitPosition() const override;
@@ -58,11 +59,11 @@ public:
     void moveToCoatingPosition() override;
     [[nodiscard]] bool isAtCoatingPosition() const override;
 
-    void setStartPosition(uint32_t value) override;
-    [[nodiscard]] uint32_t getStartPosition() const override;
+    void setStartPositionInMicrometers(uint32_t value) override;
+    [[nodiscard]] uint32_t getStartPositionInMicrometers() const override;
 
-    void setEndPosition(uint32_t value) override;
-    [[nodiscard]] uint32_t getEndPosition() const override;
+    void setEndPositionInMicrometers(uint32_t value) override;
+    [[nodiscard]] uint32_t getEndPositionInMicrometers() const override;
 
     void setSpeedInMillimetersPerSecond(uint16_t value) override;
     [[nodiscard]] uint16_t getSpeedInMillimetersPerSecond() const override;

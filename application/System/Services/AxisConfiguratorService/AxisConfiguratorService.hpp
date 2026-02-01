@@ -21,8 +21,8 @@ private:
     const AxisConfiguratorParameters parameters_;
 
     AxisPersistentConfig bufferedPersistentConfig_ {
-        .startPosition = 0,
-        .endPosition = 0,
+        .startPositionInMicrometers = 0,
+        .endPositionInMicrometers = 0,
         .speedInMillimetersPerSecond = 0
     };
 
@@ -39,18 +39,20 @@ public:
     void increaseStartPosition() override;
     void decreaseStartPosition() override;
     void saveStartPosition() override;
-    [[nodiscard]] uint32_t getStartPosition() const override;
+    [[nodiscard]] uint32_t getStartPositionInMicrometers() const override;
 
     void showcaseEndPosition() override;
     void increaseEndPosition() override;
     void decreaseEndPosition() override;
     void saveEndPosition() override;
-    [[nodiscard]] uint32_t getEndPosition() const override;
+    [[nodiscard]] uint32_t getEndPositionInMicrometers() const override;
 
     void showcaseSpeed() override;
     void increaseSpeed() override;
     void decreaseSpeed() override;
     void saveSpeed() override;
     [[nodiscard]] uint32_t getSpeedInMillimetersPerSecond() const override;
+
+    [[nodiscard]] AxisPersistentConfig getStoredConfig() const override;
 };
 }

@@ -83,13 +83,12 @@ void HysteresisHeaterController::setTargetTemperatureInCelsius(
     targetTemperatureInCelsius_ = value;
 }
 
-float HysteresisHeaterController::
-    getTargetTemperatureInCelsius() const {
+float HysteresisHeaterController::getTargetTemperatureInCelsius() const {
     return targetTemperatureInCelsius_;
 }
 
 bool HysteresisHeaterController::isAtTargetTemperature() const {
-    const uint32_t currentTemperatureInCelsius =
+    const float currentTemperatureInCelsius =
         temperatureSensor_.getCelsius();
 
     const bool isAboveMinimum =

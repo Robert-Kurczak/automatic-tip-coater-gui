@@ -1,9 +1,17 @@
 #include <gui/startscreen_screen/StartScreenView.hpp>
 
+void StartScreenView::displaySettings() {
+    settingDisplay.displayXAxisSettings(presenter->getXAxisConfig());
+    settingDisplay.displayYAxisSettings(presenter->getYAxisConfig());
+    settingDisplay.displayZAxisSettings(presenter->getZAxisConfig());
+}
+
 StartScreenView::StartScreenView() {}
 
 void StartScreenView::setupScreen() {
     StartScreenViewBase::setupScreen();
+
+    displaySettings();
 }
 
 void StartScreenView::tearDownScreen() {

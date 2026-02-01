@@ -40,5 +40,5 @@ uint32_t XAxisEndScreenPresenter::getXAxisEnd() {
     ATC::IAxisConfiguratorService& axisConfigurator =
         model->getSystemApi().configurators.xAxisConfigurator;
 
-    return axisConfigurator.getEndPosition();
+    return axisConfigurator.getEndPositionInMicrometers();
 }
