@@ -4,8 +4,8 @@
 
 namespace ATC {
 struct AxisPersistentConfig {
-    uint32_t startPosition;
-    uint32_t endPosition;
-    uint32_t speedInMillimetersPerSecond;
+    uint32_t startPositionInMicrometers;
+    uint32_t endPositionInMicrometers;
+    uint16_t speedInMillimetersPerSecond;
 };
 }

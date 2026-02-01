@@ -52,6 +52,14 @@ private:
         uint16_t millimetersPerSecond
     ) const;
 
+    [[nodiscard]] uint32_t convertMicrometersToSteps(
+        uint32_t micrometers
+    ) const;
+
+    [[nodiscard]] uint32_t convertStepsToMicrometers(
+        uint32_t steps
+    ) const;
+
     void logParametersClampStatus();
     void checkDriverFault();
 
@@ -79,13 +87,19 @@ public:
     void setMillimetersPerSecond(uint16_t value) override;
     [[nodiscard]] uint16_t getMillimetersPerSecond() const override;
 
-    void moveTo(uint32_t position) override;
+    void moveToPositionInMicrometers(uint32_t value) override;
     void moveToMinLimitSwitch() override;
     void moveToMaxLimitSwitch() override;
     void homeAxis() override;
 
-    [[nodiscard]] bool isAtPosition(uint32_t position) const override;
-    [[nodiscard]] uint32_t getCurrentPosition() const override;
+    [[nodiscard]] bool isAtPositionInMicrometers(
+        uint32_t value
+    ) const override;
+
+    [[nodiscard]] bool isAtPositionInSteps(uint32_t value) const override;
+
+    [[nodiscard]] uint32_t
+    getCurrentPositionInMicrometers() const override;
 
     [[nodiscard]] bool isAtMinLimit() const override;
     [[nodiscard]] bool isAtMaxLimit() const override;

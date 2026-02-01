@@ -8,19 +8,22 @@
 
 namespace ATC {
 static constexpr uint8_t MIN_MILLIMETERS_PER_ROTATION = 1;
-static constexpr uint8_t MAX_MILLIMETERS_PER_ROTATION = 255;
+static constexpr uint8_t MAX_MILLIMETERS_PER_ROTATION = 50;
 
-static constexpr uint16_t MIN_MOTOR_STEPS_PER_ROTATION = 1;
-static constexpr uint16_t MAX_MOTOR_STEPS_PER_ROTATION = 5000;
+static constexpr uint16_t MIN_MOTOR_STEPS_PER_ROTATION = 100;
+static constexpr uint16_t MAX_MOTOR_STEPS_PER_ROTATION = 600;
 
-static constexpr uint16_t MIN_DRIVER_STEP_DIVIDER = 1;
-static constexpr uint16_t MAX_DRIVER_STEP_DIVIDER = 256;
+static constexpr uint8_t MIN_DRIVER_STEP_DIVIDER = 1;
+static constexpr uint8_t MAX_DRIVER_STEP_DIVIDER = 64;
 
 static constexpr uint16_t MIN_MILLIMETERS_PER_SECOND = 1;
 static constexpr uint16_t MAX_MILLIMETERS_PER_SECOND = 3000;
 
 static constexpr uint8_t MIN_STEP_ERROR_MARGIN = 0;
 static constexpr uint8_t MAX_STEP_ERROR_MARGIN = 255;
+
+static constexpr uint32_t MICROSECONDS_IN_SECOND = 1'000'000;
+static constexpr uint16_t MICROMETERS_IN_MILLIMETER = 1000;
 
 bool AxisMotionController::areParametersWithinRange(
     const AxisMotionParameters& checkedParameters
@@ -115,13 +118,36 @@ uint32_t AxisMotionController::calculateMicrosecondsBetweenSteps(
         return UINT32_MAX;
     }
 
-    const uint32_t microsecondsInSecond = 1'000'000;
-
     const uint32_t totalStepsPerRotation =
         parameters_.motorStepsPerRotation * parameters_.driverStepDivider;
 
-    return (microsecondsInSecond * parameters_.millimetersPerRotation) /
+    return (MICROSECONDS_IN_SECOND * parameters_.millimetersPerRotation) /
            (totalStepsPerRotation * millimetersPerSecond);
+}
+
+[[nodiscard]] uint32_t AxisMotionController::convertMicrometersToSteps(
+    uint32_t micrometers
+) const {
+    const uint32_t millimeters = micrometers / MICROMETERS_IN_MILLIMETER;
+
+    const uint32_t stepsPerMillimeter =
+        parameters_.motorStepsPerRotation *
+        parameters_.driverStepDivider /
+        parameters_.millimetersPerRotation;
+
+    return millimeters / stepsPerMillimeter;
+}
+
+[[nodiscard]] uint32_t AxisMotionController::convertStepsToMicrometers(
+    uint32_t steps
+) const {
+    const uint32_t nominator = steps * MICROMETERS_IN_MILLIMETER *
+                               parameters_.millimetersPerRotation;
+
+    const uint32_t denominator =
+        parameters_.motorStepsPerRotation * parameters_.driverStepDivider;
+
+    return nominator / denominator;
 }
 
 void AxisMotionController::logParametersClampStatus() {
@@ -202,7 +228,7 @@ void AxisMotionController::tick() {
         return;
     }
 
-    if (isAtPosition(targetPositionInSteps_)) {
+    if (isAtPositionInSteps(targetPositionInSteps_)) {
         isMovingToTarget_ = false;
         stepperDriver_.stopStepping();
     }
@@ -261,8 +287,8 @@ uint16_t AxisMotionController::getMillimetersPerSecond() const {
     return currentMillimetersPerSecond_;
 }
 
-void AxisMotionController::moveTo(uint32_t position) {
-    targetPositionInSteps_ = position;
+void AxisMotionController::moveToPositionInMicrometers(uint32_t value) {
+    targetPositionInSteps_ = convertMicrometersToSteps(value);
     isMovingToTarget_ = true;
 
     if (targetPositionInSteps_ > currentPositionInSteps_) {
@@ -289,17 +315,25 @@ void AxisMotionController::homeAxis() {
     moveToMinLimitSwitch();
 }
 
-bool AxisMotionController::isAtPosition(uint32_t position) const {
+bool AxisMotionController::isAtPositionInMicrometers(
+    uint32_t value
+) const {
+    const uint32_t steps = convertMicrometersToSteps(value);
+    return isAtPositionInSteps(steps);
+}
+
+[[nodiscard]] bool AxisMotionController::isAtPositionInSteps(
+    uint32_t value
+) const {
     const uint32_t absoluteDifference =
-        position > currentPositionInSteps_
-            ? targetPositionInSteps_ - currentPositionInSteps_
-            : currentPositionInSteps_ - targetPositionInSteps_;
+        value > currentPositionInSteps_ ? value - currentPositionInSteps_
+                                        : currentPositionInSteps_ - value;
 
     return absoluteDifference <= parameters_.stepErrorMargin;
 }
 
-uint32_t AxisMotionController::getCurrentPosition() const {
-    return currentPositionInSteps_;
+uint32_t AxisMotionController::getCurrentPositionInMicrometers() const {
+    return convertStepsToMicrometers(currentPositionInSteps_);
 }
 
 bool AxisMotionController::isAtMinLimit() const {

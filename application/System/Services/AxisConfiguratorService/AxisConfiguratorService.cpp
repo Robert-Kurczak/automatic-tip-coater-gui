@@ -1,5 +1,7 @@
 #include "AxisConfiguratorService.hpp"
 
+#include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
+
 namespace ATC {
 IPersistentStorageController& AxisConfiguratorService::
     getPersistentStorageController() {
@@ -21,68 +23,77 @@ AxisConfiguratorService::AxisConfiguratorService(
     parameters_(parameters) {}
 
 void AxisConfiguratorService::resetBufferedConfig() {
-    bufferedPersistentConfig_.startPosition =
-        axisController_.getStartPosition();
-    bufferedPersistentConfig_.endPosition =
-        axisController_.getEndPosition();
+    bufferedPersistentConfig_.startPositionInMicrometers =
+        axisController_.getStartPositionInMicrometers();
+    bufferedPersistentConfig_.endPositionInMicrometers =
+        axisController_.getEndPositionInMicrometers();
     bufferedPersistentConfig_.speedInMillimetersPerSecond =
         axisController_.getSpeedInMillimetersPerSecond();
 }
 
 void AxisConfiguratorService::showcaseStartPosition() {
-    axisController_.moveToPosition(
-        bufferedPersistentConfig_.startPosition
+    axisController_.moveToPositionInMicrometers(
+        bufferedPersistentConfig_.startPositionInMicrometers
     );
 }
 
 void AxisConfiguratorService::increaseStartPosition() {
-    bufferedPersistentConfig_.startPosition += parameters_.positionStep;
+    bufferedPersistentConfig_.startPositionInMicrometers +=
+        parameters_.positionStep;
     showcaseStartPosition();
 }
 
 void AxisConfiguratorService::decreaseStartPosition() {
-    bufferedPersistentConfig_.startPosition -= parameters_.positionStep;
+    bufferedPersistentConfig_.startPositionInMicrometers -=
+        parameters_.positionStep;
     showcaseStartPosition();
 }
 
 void AxisConfiguratorService::saveStartPosition() {
-    axisController_.setStartPosition(
-        bufferedPersistentConfig_.startPosition
+    axisController_.setStartPositionInMicrometers(
+        bufferedPersistentConfig_.startPositionInMicrometers
     );
     saveConfigToPersistentMemory();
 }
 
-uint32_t AxisConfiguratorService::getStartPosition() const {
-    return bufferedPersistentConfig_.startPosition;
+uint32_t AxisConfiguratorService::getStartPositionInMicrometers() const {
+    return bufferedPersistentConfig_.startPositionInMicrometers;
 }
 
 void AxisConfiguratorService::showcaseEndPosition() {
-    axisController_.moveToPosition(bufferedPersistentConfig_.endPosition);
+    axisController_.moveToPositionInMicrometers(
+        bufferedPersistentConfig_.endPositionInMicrometers
+    );
 }
 
 void AxisConfiguratorService::increaseEndPosition() {
-    bufferedPersistentConfig_.endPosition += parameters_.positionStep;
+    bufferedPersistentConfig_.endPositionInMicrometers +=
+        parameters_.positionStep;
     showcaseEndPosition();
 }
 
 void AxisConfiguratorService::decreaseEndPosition() {
-    bufferedPersistentConfig_.endPosition -= parameters_.positionStep;
+    bufferedPersistentConfig_.endPositionInMicrometers -=
+        parameters_.positionStep;
     showcaseEndPosition();
 }
 
 void AxisConfiguratorService::saveEndPosition() {
-    axisController_.setEndPosition(bufferedPersistentConfig_.endPosition);
+    axisController_.setEndPositionInMicrometers(
+        bufferedPersistentConfig_.endPositionInMicrometers
+    );
     saveConfigToPersistentMemory();
 }
 
-uint32_t AxisConfiguratorService::getEndPosition() const {
-    return bufferedPersistentConfig_.endPosition;
+uint32_t AxisConfiguratorService::getEndPositionInMicrometers() const {
+    return bufferedPersistentConfig_.endPositionInMicrometers;
 }
 
 void AxisConfiguratorService::showcaseSpeed() {
     constexpr uint8_t errorMargin = 10;
 
-    const uint32_t currentPosition = axisController_.getCurrentPosition();
+    const uint32_t currentPosition =
+        axisController_.getCurrentPositionInMicrometers();
 
     const bool isAtShowcasePosition =
         currentPosition <=
@@ -93,7 +104,9 @@ void AxisConfiguratorService::showcaseSpeed() {
     if (isAtShowcasePosition) {
         axisController_.moveToStartPosition();
     } else {
-        axisController_.moveToPosition(parameters_.speedShowcasePosition);
+        axisController_.moveToPositionInMicrometers(
+            parameters_.speedShowcasePosition
+        );
     }
 }
 
@@ -117,5 +130,17 @@ void AxisConfiguratorService::saveSpeed() {
 
 uint32_t AxisConfiguratorService::getSpeedInMillimetersPerSecond() const {
     return bufferedPersistentConfig_.speedInMillimetersPerSecond;
+}
+
+[[nodiscard]] AxisPersistentConfig AxisConfiguratorService::
+    getStoredConfig() const {
+    return AxisPersistentConfig {
+        .startPositionInMicrometers =
+            axisController_.getStartPositionInMicrometers(),
+        .endPositionInMicrometers =
+            axisController_.getEndPositionInMicrometers(),
+        .speedInMillimetersPerSecond =
+            axisController_.getSpeedInMillimetersPerSecond()
+    };
 }
 }

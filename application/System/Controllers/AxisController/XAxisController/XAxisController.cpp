@@ -13,8 +13,8 @@ XAxisController::XAxisController(
     axisMotionController_(axisMotionController) {}
 
 void XAxisController::init(const AxisPersistentConfig& config) {
-    startPosition_ = config.startPosition;
-    endPosition_ = config.endPosition;
+    startPositionInMicrometers_ = config.startPositionInMicrometers;
+    endPositionInMicrometers_ = config.endPositionInMicrometers;
 
     axisMotionController_.init();
 }
@@ -27,12 +27,12 @@ bool XAxisController::wasFaultReported() const {
     return axisMotionController_.wasFaultDetected();
 }
 
-void XAxisController::moveToPosition(uint32_t position) {
-    axisMotionController_.moveTo(position);
+void XAxisController::moveToPositionInMicrometers(uint32_t value) {
+    axisMotionController_.moveToPositionInMicrometers(value);
 }
 
-uint32_t XAxisController::getCurrentPosition() const {
-    return axisMotionController_.getCurrentPosition();
+uint32_t XAxisController::getCurrentPositionInMicrometers() const {
+    return axisMotionController_.getCurrentPositionInMicrometers();
 }
 
 void XAxisController::moveToMinLimitPosition() {
@@ -60,46 +60,59 @@ bool XAxisController::isAtHomePosition() const {
 }
 
 void XAxisController::moveToStartPosition() {
-    axisMotionController_.moveTo(startPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        startPositionInMicrometers_
+    );
 }
 
 bool XAxisController::isAtStartPosition() const {
-    return axisMotionController_.isAtPosition(startPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        startPositionInMicrometers_
+    );
 }
 
 void XAxisController::moveToEndPosition() {
-    axisMotionController_.moveTo(endPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        endPositionInMicrometers_
+    );
 }
 
 bool XAxisController::isAtEndPosition() const {
-    return axisMotionController_.isAtPosition(endPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        endPositionInMicrometers_
+    );
 }
 
 void XAxisController::moveToHeaterFrontPosition() {
-    axisMotionController_.moveTo(heaterFrontPosition_);
+    axisMotionController_.moveToPositionInMicrometers(
+        heaterFrontPositionInMicrometers_
+    );
 }
 
 bool XAxisController::isAtHeaterFrontPosition() const {
-    return axisMotionController_.isAtPosition(heaterFrontPosition_);
+    return axisMotionController_.isAtPositionInMicrometers(
+        heaterFrontPositionInMicrometers_
+    );
 }
 
-void XAxisController::setStartPosition(uint32_t value) {
-    startPosition_ = value;
+void XAxisController::setStartPositionInMicrometers(uint32_t value) {
+    startPositionInMicrometers_ = value;
 }
 
-uint32_t XAxisController::getStartPosition() const {
-    return startPosition_;
+uint32_t XAxisController::getStartPositionInMicrometers() const {
+    return startPositionInMicrometers_;
 }
 
-void XAxisController::setEndPosition(uint32_t value) {
-    endPosition_ = value;
-    heaterFrontPosition_ =
-        (endPosition_ / HEATER_FRONT_POSITION_DIVIDER) *
-        HEATER_FRONT_POSITION_MULTIPLIER;
+void XAxisController::setEndPositionInMicrometers(uint32_t value) {
+    endPositionInMicrometers_ = value;
+
+    heaterFrontPositionInMicrometers_ = value /
+                                        HEATER_FRONT_POSITION_DIVIDER *
+                                        HEATER_FRONT_POSITION_MULTIPLIER;
 }
 
-uint32_t XAxisController::getEndPosition() const {
-    return endPosition_;
+uint32_t XAxisController::getEndPositionInMicrometers() const {
+    return endPositionInMicrometers_;
 }
 
 void XAxisController::setSpeedInMillimetersPerSecond(uint16_t value) {

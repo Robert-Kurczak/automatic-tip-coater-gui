@@ -1,8 +1,11 @@
 #ifndef STARTSCREENPRESENTER_HPP
 #define STARTSCREENPRESENTER_HPP
 
+#include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
+
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
+
 
 using namespace touchgfx;
 
@@ -34,6 +37,10 @@ public:
 
     void startButtonPressed();
     void cancelButtonPressed();
+
+    ATC::AxisPersistentConfig getXAxisConfig() const;
+    ATC::AxisPersistentConfig getYAxisConfig() const;
+    ATC::AxisPersistentConfig getZAxisConfig() const;
 
 private:
     StartScreenPresenter();

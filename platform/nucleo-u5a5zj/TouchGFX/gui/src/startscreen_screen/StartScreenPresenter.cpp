@@ -25,3 +25,18 @@ void StartScreenPresenter::cancelButtonPressed() {
 
     taskControl.cancelAll();
 }
+
+ATC::AxisPersistentConfig StartScreenPresenter::getXAxisConfig() const {
+    return model->getSystemApi()
+        .configurators.xAxisConfigurator.getStoredConfig();
+}
+
+ATC::AxisPersistentConfig StartScreenPresenter::getYAxisConfig() const {
+    return model->getSystemApi()
+        .configurators.yAxisConfigurator.getStoredConfig();
+}
+
+ATC::AxisPersistentConfig StartScreenPresenter::getZAxisConfig() const {
+    return model->getSystemApi()
+        .configurators.zAxisConfigurator.getStoredConfig();
+}
