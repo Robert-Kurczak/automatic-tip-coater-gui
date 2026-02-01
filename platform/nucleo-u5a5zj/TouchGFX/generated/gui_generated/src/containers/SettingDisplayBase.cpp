@@ -18,7 +18,7 @@ SettingDisplayBase::SettingDisplayBase()
     resultsBackground.setColor(touchgfx::Color::getColorFromRGB(17, 17, 27));
     add(resultsBackground);
 
-    settingsList.setXY(13, 125);
+    settingsList.setXY(10, 125);
     settingsList.setDirection(touchgfx::EAST);
     labelsList.setDirection(touchgfx::SOUTH);
     xAxisStartLabel.setWidth(161);
@@ -162,16 +162,16 @@ SettingDisplayBase::SettingDisplayBase()
 
     settingsList.add(labelsList);
 
-    divider.setWidth(43);
+    divider.setWidth(8);
     divider.setHeight(0);
     settingsList.add(divider);
 
     valuesList.setDirection(touchgfx::SOUTH);
-    xAxisStartValue.setWidth(73);
+    xAxisStartValue.setWidth(145);
     xAxisStartValue.setHeight(30);
     xAxisStartValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     xAxisStartValue.setLinespacing(1);
-    Unicode::snprintf(xAxisStartValueBuffer, XAXISSTARTVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VR04).getText());
+    Unicode::snprintf(xAxisStartValueBuffer, XAXISSTARTVALUE_SIZE, "%s", touchgfx::TypedText(T_XAXISSTARTVALUE).getText());
     xAxisStartValue.setWildcard(xAxisStartValueBuffer);
     xAxisStartValue.resizeToCurrentText();
     xAxisStartValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1XMR));
@@ -181,11 +181,11 @@ SettingDisplayBase::SettingDisplayBase()
     smallDivider_11_1.setHeight(10);
     valuesList.add(smallDivider_11_1);
 
-    xAxisEndValue.setWidth(73);
+    xAxisEndValue.setWidth(145);
     xAxisEndValue.setHeight(30);
     xAxisEndValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     xAxisEndValue.setLinespacing(1);
-    Unicode::snprintf(xAxisEndValueBuffer, XAXISENDVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_WTU8).getText());
+    Unicode::snprintf(xAxisEndValueBuffer, XAXISENDVALUE_SIZE, "%s", touchgfx::TypedText(T_XAXISENDVALUE).getText());
     xAxisEndValue.setWildcard(xAxisEndValueBuffer);
     xAxisEndValue.resizeToCurrentText();
     xAxisEndValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_US11));
@@ -195,11 +195,11 @@ SettingDisplayBase::SettingDisplayBase()
     smallDivider_10_1.setHeight(10);
     valuesList.add(smallDivider_10_1);
 
-    xAxisSpeedValue.setWidth(97);
+    xAxisSpeedValue.setWidth(161);
     xAxisSpeedValue.setHeight(30);
     xAxisSpeedValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     xAxisSpeedValue.setLinespacing(1);
-    Unicode::snprintf(xAxisSpeedValueBuffer, XAXISSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_X7E9).getText());
+    Unicode::snprintf(xAxisSpeedValueBuffer, XAXISSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T_XAXISSPEEDVALUE).getText());
     xAxisSpeedValue.setWildcard(xAxisSpeedValueBuffer);
     xAxisSpeedValue.resizeToCurrentText();
     xAxisSpeedValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D3HY));
@@ -209,11 +209,11 @@ SettingDisplayBase::SettingDisplayBase()
     bigDivider_2_1_1.setHeight(20);
     valuesList.add(bigDivider_2_1_1);
 
-    yAxisStartValue.setWidth(73);
+    yAxisStartValue.setWidth(145);
     yAxisStartValue.setHeight(30);
     yAxisStartValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     yAxisStartValue.setLinespacing(1);
-    Unicode::snprintf(yAxisStartValueBuffer, YAXISSTARTVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_WYR6).getText());
+    Unicode::snprintf(yAxisStartValueBuffer, YAXISSTARTVALUE_SIZE, "%s", touchgfx::TypedText(T_YAXISSTARTVALUE).getText());
     yAxisStartValue.setWildcard(yAxisStartValueBuffer);
     yAxisStartValue.resizeToCurrentText();
     yAxisStartValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_S3PD));
@@ -223,11 +223,11 @@ SettingDisplayBase::SettingDisplayBase()
     smallDivider_8_1.setHeight(10);
     valuesList.add(smallDivider_8_1);
 
-    yAxisEndValue.setWidth(73);
+    yAxisEndValue.setWidth(145);
     yAxisEndValue.setHeight(30);
     yAxisEndValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     yAxisEndValue.setLinespacing(1);
-    Unicode::snprintf(yAxisEndValueBuffer, YAXISENDVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6MOL).getText());
+    Unicode::snprintf(yAxisEndValueBuffer, YAXISENDVALUE_SIZE, "%s", touchgfx::TypedText(T_YAXISENDVALUE).getText());
     yAxisEndValue.setWildcard(yAxisEndValueBuffer);
     yAxisEndValue.resizeToCurrentText();
     yAxisEndValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JU19));
@@ -237,11 +237,11 @@ SettingDisplayBase::SettingDisplayBase()
     smallDivider_7_1.setHeight(10);
     valuesList.add(smallDivider_7_1);
 
-    yAxisSpeedValue.setWidth(97);
+    yAxisSpeedValue.setWidth(161);
     yAxisSpeedValue.setHeight(30);
     yAxisSpeedValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     yAxisSpeedValue.setLinespacing(1);
-    Unicode::snprintf(yAxisSpeedValueBuffer, YAXISSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_R6S5).getText());
+    Unicode::snprintf(yAxisSpeedValueBuffer, YAXISSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T_YAXISSPEEDVALUE).getText());
     yAxisSpeedValue.setWildcard(yAxisSpeedValueBuffer);
     yAxisSpeedValue.resizeToCurrentText();
     yAxisSpeedValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6VFJ));
@@ -251,11 +251,11 @@ SettingDisplayBase::SettingDisplayBase()
     bigDivider_2_2.setHeight(20);
     valuesList.add(bigDivider_2_2);
 
-    zAxisStartValue.setWidth(73);
+    zAxisStartValue.setWidth(145);
     zAxisStartValue.setHeight(30);
     zAxisStartValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     zAxisStartValue.setLinespacing(1);
-    Unicode::snprintf(zAxisStartValueBuffer, ZAXISSTARTVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_KAAJ).getText());
+    Unicode::snprintf(zAxisStartValueBuffer, ZAXISSTARTVALUE_SIZE, "%s", touchgfx::TypedText(T_ZAXISSTARTVALUE).getText());
     zAxisStartValue.setWildcard(zAxisStartValueBuffer);
     zAxisStartValue.resizeToCurrentText();
     zAxisStartValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_70KH));
@@ -265,11 +265,11 @@ SettingDisplayBase::SettingDisplayBase()
     smallDivider_5_1.setHeight(10);
     valuesList.add(smallDivider_5_1);
 
-    zAxisEndValue.setWidth(73);
+    zAxisEndValue.setWidth(145);
     zAxisEndValue.setHeight(30);
     zAxisEndValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     zAxisEndValue.setLinespacing(1);
-    Unicode::snprintf(zAxisEndValueBuffer, ZAXISENDVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_UCLR).getText());
+    Unicode::snprintf(zAxisEndValueBuffer, ZAXISENDVALUE_SIZE, "%s", touchgfx::TypedText(T_ZAXISENDVALUE).getText());
     zAxisEndValue.setWildcard(zAxisEndValueBuffer);
     zAxisEndValue.resizeToCurrentText();
     zAxisEndValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7QBP));
@@ -279,11 +279,11 @@ SettingDisplayBase::SettingDisplayBase()
     smallDivider_4_1.setHeight(10);
     valuesList.add(smallDivider_4_1);
 
-    zAxisSpeedValue.setWidth(97);
+    zAxisSpeedValue.setWidth(161);
     zAxisSpeedValue.setHeight(30);
     zAxisSpeedValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     zAxisSpeedValue.setLinespacing(1);
-    Unicode::snprintf(zAxisSpeedValueBuffer, ZAXISSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_5I9U).getText());
+    Unicode::snprintf(zAxisSpeedValueBuffer, ZAXISSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T_ZAXISSPEEDVALUE).getText());
     zAxisSpeedValue.setWildcard(zAxisSpeedValueBuffer);
     zAxisSpeedValue.resizeToCurrentText();
     zAxisSpeedValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F5RK));
@@ -293,11 +293,12 @@ SettingDisplayBase::SettingDisplayBase()
     bigDivider_1_1.setHeight(20);
     valuesList.add(bigDivider_1_1);
 
-    rotationSpeedValue.setWidth(76);
+    rotationSpeedValue.setWidth(84);
     rotationSpeedValue.setHeight(30);
     rotationSpeedValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     rotationSpeedValue.setLinespacing(1);
-    rotationSpeedValue.setWildcard(touchgfx::TypedText(T___SINGLEUSE_4GVK).getText());
+    Unicode::snprintf(rotationSpeedValueBuffer, ROTATIONSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLESPEEDVALUE).getText());
+    rotationSpeedValue.setWildcard(rotationSpeedValueBuffer);
     rotationSpeedValue.resizeToCurrentText();
     rotationSpeedValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QUDW));
     valuesList.add(rotationSpeedValue);
@@ -310,7 +311,7 @@ SettingDisplayBase::SettingDisplayBase()
     rotationDirectionValue.setHeight(30);
     rotationDirectionValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     rotationDirectionValue.setLinespacing(1);
-    Unicode::snprintf(rotationDirectionValueBuffer, ROTATIONDIRECTIONVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_O6J1).getText());
+    Unicode::snprintf(rotationDirectionValueBuffer, ROTATIONDIRECTIONVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLEDIRECTIONVALUE).getText());
     rotationDirectionValue.setWildcard(rotationDirectionValueBuffer);
     rotationDirectionValue.resizeToCurrentText();
     rotationDirectionValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WM2X));
@@ -320,11 +321,11 @@ SettingDisplayBase::SettingDisplayBase()
     smallDivider_1_1.setHeight(10);
     valuesList.add(smallDivider_1_1);
 
-    rotatiomTimeValue.setWidth(62);
+    rotatiomTimeValue.setWidth(126);
     rotatiomTimeValue.setHeight(30);
     rotatiomTimeValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     rotatiomTimeValue.setLinespacing(1);
-    Unicode::snprintf(rotatiomTimeValueBuffer, ROTATIOMTIMEVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_17MC).getText());
+    Unicode::snprintf(rotatiomTimeValueBuffer, ROTATIOMTIMEVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLEROTATIONTIMEVALUE).getText());
     rotatiomTimeValue.setWildcard(rotatiomTimeValueBuffer);
     rotatiomTimeValue.resizeToCurrentText();
     rotatiomTimeValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YATL));
@@ -334,11 +335,11 @@ SettingDisplayBase::SettingDisplayBase()
     bigDivider_3.setHeight(20);
     valuesList.add(bigDivider_3);
 
-    heaterTemperatureValue.setWidth(56);
+    heaterTemperatureValue.setWidth(88);
     heaterTemperatureValue.setHeight(30);
     heaterTemperatureValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     heaterTemperatureValue.setLinespacing(1);
-    Unicode::snprintf(heaterTemperatureValueBuffer, HEATERTEMPERATUREVALUE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_4BKF).getText());
+    Unicode::snprintf(heaterTemperatureValueBuffer, HEATERTEMPERATUREVALUE_SIZE, "%s", touchgfx::TypedText(T_HEATERTEMPERATUREVALUE).getText());
     heaterTemperatureValue.setWildcard(heaterTemperatureValueBuffer);
     heaterTemperatureValue.resizeToCurrentText();
     heaterTemperatureValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SYAX));

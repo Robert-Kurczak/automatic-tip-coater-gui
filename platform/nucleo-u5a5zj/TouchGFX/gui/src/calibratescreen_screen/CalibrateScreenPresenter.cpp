@@ -29,3 +29,21 @@ void CalibrateScreenPresenter::cancelButtonPressed() {
 
     taskControl.cancelAll();
 }
+
+ATC::AxisPersistentConfig CalibrateScreenPresenter::
+    getXAxisConfig() const {
+    return model->getSystemApi()
+        .configurators.xAxisConfigurator.getStoredConfig();
+}
+
+ATC::AxisPersistentConfig CalibrateScreenPresenter::
+    getYAxisConfig() const {
+    return model->getSystemApi()
+        .configurators.yAxisConfigurator.getStoredConfig();
+}
+
+ATC::AxisPersistentConfig CalibrateScreenPresenter::
+    getZAxisConfig() const {
+    return model->getSystemApi()
+        .configurators.zAxisConfigurator.getStoredConfig();
+}

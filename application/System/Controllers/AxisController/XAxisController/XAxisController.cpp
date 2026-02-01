@@ -17,6 +17,9 @@ void XAxisController::init(const AxisPersistentConfig& config) {
     endPositionInMicrometers_ = config.endPositionInMicrometers;
 
     axisMotionController_.init();
+    axisMotionController_.setMillimetersPerSecond(
+        config.speedInMillimetersPerSecond
+    );
 }
 
 void XAxisController::tick() {

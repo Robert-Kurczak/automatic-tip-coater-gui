@@ -35,6 +35,10 @@ public:
     void startButtonPressed();
     void cancelButtonPressed();
 
+    [[nodiscard]] ATC::AxisPersistentConfig getXAxisConfig() const;
+    [[nodiscard]] ATC::AxisPersistentConfig getYAxisConfig() const;
+    [[nodiscard]] ATC::AxisPersistentConfig getZAxisConfig() const;
+
 private:
     CalibrateScreenPresenter();
 

@@ -90,24 +90,26 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t XAXISSTARTVALUE_SIZE = 5;
+    static const uint16_t XAXISSTARTVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar xAxisStartValueBuffer[XAXISSTARTVALUE_SIZE];
-    static const uint16_t XAXISENDVALUE_SIZE = 5;
+    static const uint16_t XAXISENDVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar xAxisEndValueBuffer[XAXISENDVALUE_SIZE];
     static const uint16_t XAXISSPEEDVALUE_SIZE = 5;
     touchgfx::Unicode::UnicodeChar xAxisSpeedValueBuffer[XAXISSPEEDVALUE_SIZE];
-    static const uint16_t YAXISSTARTVALUE_SIZE = 5;
+    static const uint16_t YAXISSTARTVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar yAxisStartValueBuffer[YAXISSTARTVALUE_SIZE];
-    static const uint16_t YAXISENDVALUE_SIZE = 5;
+    static const uint16_t YAXISENDVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar yAxisEndValueBuffer[YAXISENDVALUE_SIZE];
     static const uint16_t YAXISSPEEDVALUE_SIZE = 5;
     touchgfx::Unicode::UnicodeChar yAxisSpeedValueBuffer[YAXISSPEEDVALUE_SIZE];
-    static const uint16_t ZAXISSTARTVALUE_SIZE = 5;
+    static const uint16_t ZAXISSTARTVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar zAxisStartValueBuffer[ZAXISSTARTVALUE_SIZE];
-    static const uint16_t ZAXISENDVALUE_SIZE = 5;
+    static const uint16_t ZAXISENDVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar zAxisEndValueBuffer[ZAXISENDVALUE_SIZE];
     static const uint16_t ZAXISSPEEDVALUE_SIZE = 5;
     touchgfx::Unicode::UnicodeChar zAxisSpeedValueBuffer[ZAXISSPEEDVALUE_SIZE];
+    static const uint16_t ROTATIONSPEEDVALUE_SIZE = 3;
+    touchgfx::Unicode::UnicodeChar rotationSpeedValueBuffer[ROTATIONSPEEDVALUE_SIZE];
     static const uint16_t ROTATIONDIRECTIONVALUE_SIZE = 17;
     touchgfx::Unicode::UnicodeChar rotationDirectionValueBuffer[ROTATIONDIRECTIONVALUE_SIZE];
     static const uint16_t ROTATIOMTIMEVALUE_SIZE = 5;
