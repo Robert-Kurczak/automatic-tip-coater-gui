@@ -38,9 +38,9 @@ public:
     void startButtonPressed();
     void cancelButtonPressed();
 
-    ATC::AxisPersistentConfig getXAxisConfig() const;
-    ATC::AxisPersistentConfig getYAxisConfig() const;
-    ATC::AxisPersistentConfig getZAxisConfig() const;
+    [[nodiscard]] ATC::AxisPersistentConfig getXAxisConfig() const;
+    [[nodiscard]] ATC::AxisPersistentConfig getYAxisConfig() const;
+    [[nodiscard]] ATC::AxisPersistentConfig getZAxisConfig() const;
 
 private:
     StartScreenPresenter();

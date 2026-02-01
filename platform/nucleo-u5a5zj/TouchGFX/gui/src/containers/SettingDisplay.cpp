@@ -35,7 +35,7 @@ void SettingDisplay::displayYAxisSettings(
 ) {
     Unicode::snprintf(
         yAxisStartValueBuffer,
-        XAXISSTARTVALUE_SIZE,
+        YAXISSTARTVALUE_SIZE,
         "%d",
         config.startPositionInMicrometers
     );
@@ -43,7 +43,7 @@ void SettingDisplay::displayYAxisSettings(
 
     Unicode::snprintf(
         yAxisEndValueBuffer,
-        XAXISENDVALUE_SIZE,
+        YAXISENDVALUE_SIZE,
         "%d",
         config.endPositionInMicrometers
     );
@@ -51,7 +51,7 @@ void SettingDisplay::displayYAxisSettings(
 
     Unicode::snprintf(
         yAxisSpeedValueBuffer,
-        XAXISSPEEDVALUE_SIZE,
+        YAXISSPEEDVALUE_SIZE,
         "%d",
         config.speedInMillimetersPerSecond
     );
@@ -63,7 +63,7 @@ void SettingDisplay::displayZAxisSettings(
 ) {
     Unicode::snprintf(
         zAxisStartValueBuffer,
-        XAXISSTARTVALUE_SIZE,
+        ZAXISSTARTVALUE_SIZE,
         "%d",
         config.startPositionInMicrometers
     );
@@ -71,7 +71,7 @@ void SettingDisplay::displayZAxisSettings(
 
     Unicode::snprintf(
         zAxisEndValueBuffer,
-        XAXISENDVALUE_SIZE,
+        ZAXISENDVALUE_SIZE,
         "%d",
         config.endPositionInMicrometers
     );
@@ -79,7 +79,7 @@ void SettingDisplay::displayZAxisSettings(
 
     Unicode::snprintf(
         zAxisSpeedValueBuffer,
-        XAXISSPEEDVALUE_SIZE,
+        ZAXISSPEEDVALUE_SIZE,
         "%d",
         config.speedInMillimetersPerSecond
     );

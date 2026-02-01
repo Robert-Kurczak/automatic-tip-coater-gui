@@ -2,8 +2,15 @@
 
 CalibrateScreenView::CalibrateScreenView() {}
 
+void CalibrateScreenView::displaySettings() {
+    settingDisplay.displayXAxisSettings(presenter->getXAxisConfig());
+    settingDisplay.displayYAxisSettings(presenter->getYAxisConfig());
+    settingDisplay.displayZAxisSettings(presenter->getZAxisConfig());
+}
+
 void CalibrateScreenView::setupScreen() {
     CalibrateScreenViewBase::setupScreen();
+    displaySettings();
 }
 
 void CalibrateScreenView::tearDownScreen() {

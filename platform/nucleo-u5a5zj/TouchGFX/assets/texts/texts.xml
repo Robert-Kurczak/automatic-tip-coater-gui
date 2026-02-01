@@ -5,83 +5,83 @@
   </Languages>
   <Texts>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_4BKF" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0</Translation>
+      <Text Id="heaterTemperatureValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">999</Translation>
       </Text>
       <Text Id="__SingleUse_SYAX" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
-      <Text Id="__SingleUse_17MC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0</Translation>
+      <Text Id="spindleRotationTimeValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">99999</Translation>
       </Text>
       <Text Id="__SingleUse_YATL" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; ms</Translation>
       </Text>
-      <Text Id="__SingleUse_O6J1" Alignment="Left" TypographyId="Default">
+      <Text Id="spindleDirectionValue" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Clockwise</Translation>
       </Text>
       <Text Id="__SingleUse_WM2X" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_4GVK" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="spindleSpeedValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">100</Translation>
       </Text>
       <Text Id="__SingleUse_QUDW" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; rpm</Translation>
+        <Translation Language="GB">&lt;value&gt; %</Translation>
       </Text>
-      <Text Id="__SingleUse_5I9U" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="zAxisSpeedValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">99999</Translation>
       </Text>
       <Text Id="__SingleUse_F5RK" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; mm/s</Translation>
       </Text>
-      <Text Id="__SingleUse_UCLR" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="zAxisEndValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">999999</Translation>
       </Text>
       <Text Id="__SingleUse_7QBP" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
+        <Translation Language="GB">&lt;value&gt; μm</Translation>
       </Text>
-      <Text Id="__SingleUse_KAAJ" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="zAxisStartValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">999999</Translation>
       </Text>
       <Text Id="__SingleUse_70KH" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
+        <Translation Language="GB">&lt;value&gt; μm</Translation>
       </Text>
-      <Text Id="__SingleUse_R6S5" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="yAxisSpeedValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">99999</Translation>
       </Text>
       <Text Id="__SingleUse_6VFJ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; mm/s</Translation>
       </Text>
-      <Text Id="__SingleUse_6MOL" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="yAxisEndValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">999999</Translation>
       </Text>
       <Text Id="__SingleUse_JU19" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
+        <Translation Language="GB">&lt;value&gt; μm</Translation>
       </Text>
-      <Text Id="__SingleUse_WYR6" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="yAxisStartValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">999999</Translation>
       </Text>
       <Text Id="__SingleUse_S3PD" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
+        <Translation Language="GB">&lt;value&gt; μm</Translation>
       </Text>
-      <Text Id="__SingleUse_X7E9" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="xAxisSpeedValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">99999</Translation>
       </Text>
       <Text Id="__SingleUse_D3HY" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; mm/s</Translation>
       </Text>
-      <Text Id="__SingleUse_WTU8" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="xAxisEndValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">999999</Translation>
       </Text>
       <Text Id="__SingleUse_US11" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
+        <Translation Language="GB">&lt;value&gt; μm</Translation>
       </Text>
-      <Text Id="__SingleUse_VR04" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
+      <Text Id="xAxisStartValue" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">999999</Translation>
       </Text>
       <Text Id="__SingleUse_1XMR" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;value&gt; mm</Translation>
+        <Translation Language="GB">&lt;value&gt; μm</Translation>
       </Text>
       <Text Id="__SingleUse_PMN0" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Heater Temperature:</Translation>
@@ -413,7 +413,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>

@@ -264,7 +264,7 @@ void AxisMotionController::setMillimetersPerSecond(uint16_t value) {
         log(loggerSink_,
             LogLevel::Error,
             "Speed [mm/s] out of range:"
-            "\n\t value: {} | range: <{}, {}>",
+            "\n\t value: {} | range: <{}, {}>"
             "\n\t Clamping to nearest",
             value,
             MIN_MILLIMETERS_PER_SECOND,

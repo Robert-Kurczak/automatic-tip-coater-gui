@@ -8997,9 +8997,9 @@
           {
             "Type": "ListLayout",
             "Name": "settingsList",
-            "X": 13,
+            "X": 10,
             "Y": 125,
-            "Width": 456,
+            "Width": 460,
             "Height": 550,
             "Direction": "East",
             "Components": [
@@ -9318,21 +9318,21 @@
                 "Type": "Container",
                 "Name": "divider",
                 "X": 291,
-                "Width": 43,
+                "Width": 8,
                 "Components": []
               },
               {
                 "Type": "ListLayout",
                 "Name": "valuesList",
-                "X": 334,
-                "Width": 122,
+                "X": 299,
+                "Width": 161,
                 "Height": 550,
                 "Direction": "South",
                 "Components": [
                   {
                     "Type": "TextArea",
                     "Name": "xAxisStartValue",
-                    "Width": 73,
+                    "Width": 145,
                     "Height": 30,
                     "TextId": "__SingleUse_1XMR",
                     "TextRotation": "0",
@@ -9344,9 +9344,9 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_VR04",
+                      "TextId": "xAxisStartValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9360,7 +9360,7 @@
                     "Type": "TextArea",
                     "Name": "xAxisEndValue",
                     "Y": 40,
-                    "Width": 73,
+                    "Width": 145,
                     "Height": 30,
                     "TextId": "__SingleUse_US11",
                     "TextRotation": "0",
@@ -9372,9 +9372,9 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_WTU8",
+                      "TextId": "xAxisEndValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9388,7 +9388,7 @@
                     "Type": "TextArea",
                     "Name": "xAxisSpeedValue",
                     "Y": 80,
-                    "Width": 97,
+                    "Width": 161,
                     "Height": 30,
                     "TextId": "__SingleUse_D3HY",
                     "TextRotation": "0",
@@ -9400,7 +9400,7 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_X7E9",
+                      "TextId": "xAxisSpeedValue",
                       "UseBuffer": true,
                       "BufferSize": 5
                     }
@@ -9416,7 +9416,7 @@
                     "Type": "TextArea",
                     "Name": "yAxisStartValue",
                     "Y": 130,
-                    "Width": 73,
+                    "Width": 145,
                     "Height": 30,
                     "TextId": "__SingleUse_S3PD",
                     "TextRotation": "0",
@@ -9428,9 +9428,9 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_WYR6",
+                      "TextId": "yAxisStartValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9444,7 +9444,7 @@
                     "Type": "TextArea",
                     "Name": "yAxisEndValue",
                     "Y": 170,
-                    "Width": 73,
+                    "Width": 145,
                     "Height": 30,
                     "TextId": "__SingleUse_JU19",
                     "TextRotation": "0",
@@ -9456,9 +9456,9 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_6MOL",
+                      "TextId": "yAxisEndValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9472,7 +9472,7 @@
                     "Type": "TextArea",
                     "Name": "yAxisSpeedValue",
                     "Y": 210,
-                    "Width": 97,
+                    "Width": 161,
                     "Height": 30,
                     "TextId": "__SingleUse_6VFJ",
                     "TextRotation": "0",
@@ -9484,7 +9484,7 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_R6S5",
+                      "TextId": "yAxisSpeedValue",
                       "UseBuffer": true,
                       "BufferSize": 5
                     }
@@ -9500,7 +9500,7 @@
                     "Type": "TextArea",
                     "Name": "zAxisStartValue",
                     "Y": 260,
-                    "Width": 73,
+                    "Width": 145,
                     "Height": 30,
                     "TextId": "__SingleUse_70KH",
                     "TextRotation": "0",
@@ -9512,9 +9512,9 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_KAAJ",
+                      "TextId": "zAxisStartValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9528,7 +9528,7 @@
                     "Type": "TextArea",
                     "Name": "zAxisEndValue",
                     "Y": 300,
-                    "Width": 73,
+                    "Width": 145,
                     "Height": 30,
                     "TextId": "__SingleUse_7QBP",
                     "TextRotation": "0",
@@ -9540,9 +9540,9 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_UCLR",
+                      "TextId": "zAxisEndValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9556,7 +9556,7 @@
                     "Type": "TextArea",
                     "Name": "zAxisSpeedValue",
                     "Y": 340,
-                    "Width": 97,
+                    "Width": 161,
                     "Height": 30,
                     "TextId": "__SingleUse_F5RK",
                     "TextRotation": "0",
@@ -9568,7 +9568,7 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_5I9U",
+                      "TextId": "zAxisSpeedValue",
                       "UseBuffer": true,
                       "BufferSize": 5
                     }
@@ -9584,7 +9584,7 @@
                     "Type": "TextArea",
                     "Name": "rotationSpeedValue",
                     "Y": 390,
-                    "Width": 76,
+                    "Width": 84,
                     "Height": 30,
                     "TextId": "__SingleUse_QUDW",
                     "TextRotation": "0",
@@ -9596,7 +9596,9 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_4GVK"
+                      "TextId": "spindleSpeedValue",
+                      "UseBuffer": true,
+                      "BufferSize": 3
                     }
                   },
                   {
@@ -9622,7 +9624,7 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_O6J1",
+                      "TextId": "spindleDirectionValue",
                       "UseBuffer": true,
                       "BufferSize": 17
                     }
@@ -9638,7 +9640,7 @@
                     "Type": "TextArea",
                     "Name": "rotatiomTimeValue",
                     "Y": 470,
-                    "Width": 62,
+                    "Width": 126,
                     "Height": 30,
                     "TextId": "__SingleUse_YATL",
                     "TextRotation": "0",
@@ -9650,7 +9652,7 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_17MC",
+                      "TextId": "spindleRotationTimeValue",
                       "UseBuffer": true,
                       "BufferSize": 5
                     }
@@ -9666,7 +9668,7 @@
                     "Type": "TextArea",
                     "Name": "heaterTemperatureValue",
                     "Y": 520,
-                    "Width": 56,
+                    "Width": 88,
                     "Height": 30,
                     "TextId": "__SingleUse_SYAX",
                     "TextRotation": "0",
@@ -9678,7 +9680,7 @@
                     "AutoSize": true,
                     "LineSpacing": 1,
                     "Wildcard1": {
-                      "TextId": "__SingleUse_4BKF",
+                      "TextId": "heaterTemperatureValue",
                       "UseBuffer": true,
                       "BufferSize": 3
                     }
