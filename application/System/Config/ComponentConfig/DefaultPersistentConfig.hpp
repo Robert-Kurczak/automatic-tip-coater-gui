@@ -6,20 +6,20 @@
 
 namespace ATC {
 inline constexpr AxisPersistentConfig DEFAULT_X_AXIS_CONFIG {
-    .startPositionInMicrometers = 0,
-    .endPositionInMicrometers = 100,
+    .startPositionInMicrometers = 1'000,
+    .endPositionInMicrometers = 100'000,
     .speedInMillimetersPerSecond = 10
 };
 
 inline constexpr AxisPersistentConfig DEFAULT_Y_AXIS_CONFIG {
-    .startPositionInMicrometers = 0,
-    .endPositionInMicrometers = 100,
+    .startPositionInMicrometers = 1'000,
+    .endPositionInMicrometers = 100'000,
     .speedInMillimetersPerSecond = 10
 };
 
 inline constexpr AxisPersistentConfig DEFAULT_Z_AXIS_CONFIG {
-    .startPositionInMicrometers = 0,
-    .endPositionInMicrometers = 100,
+    .startPositionInMicrometers = 1'000,
+    .endPositionInMicrometers = 100'000,
     .speedInMillimetersPerSecond = 10
 };
 
@@ -30,6 +30,6 @@ inline constexpr SpindlePersistentConfig DEFAULT_SPINDLE_CONFIG {
 };
 
 inline constexpr HeaterPersistentConfig DEFAULT_HEATER_CONFIG {
-    .targetTemperatureInCelsius = 200
+    .targetTemperatureInCelsius = 200.00F
 };
 }

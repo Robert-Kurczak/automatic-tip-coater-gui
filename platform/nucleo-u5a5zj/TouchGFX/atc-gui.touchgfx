@@ -8971,6 +8971,7 @@
       },
       {
         "Name": "SettingDisplay",
+        "Y": -2,
         "Width": 480,
         "Height": 800,
         "Components": [

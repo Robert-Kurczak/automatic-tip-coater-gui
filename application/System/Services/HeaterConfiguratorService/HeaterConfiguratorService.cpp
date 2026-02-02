@@ -1,14 +1,16 @@
 #include "HeaterConfiguratorService.hpp"
 
+#include "application/System/Services/HeaterConfiguratorService/HeaterConfiguratorParameters.hpp"
+
 namespace ATC {
 HeaterConfiguratorService::HeaterConfiguratorService(
     IPersistentStorageController& persistentStorageController,
     IHeaterController& heaterController,
-    float temperatureInCelsiusStep
+    HeaterConfiguratorParameters parameters
 ) :
     persistentStorageController_(persistentStorageController),
     heaterController_(heaterController),
-    temperatureInCelsiusStep_(temperatureInCelsiusStep) {}
+    parameters_(parameters) {}
 
 void HeaterConfiguratorService::resetBufferedConfig() {
     bufferedHeaterOn_ = heaterController_.isOn();
@@ -17,13 +19,31 @@ void HeaterConfiguratorService::resetBufferedConfig() {
 }
 
 void HeaterConfiguratorService::increaseTemperatureInCelsius() {
-    bufferedPersistentConfig_.targetTemperatureInCelsius +=
-        temperatureInCelsiusStep_;
+    float& currentValue =
+        bufferedPersistentConfig_.targetTemperatureInCelsius;
+
+    const float step = parameters_.temperatureStepInCelsius;
+    const float maxBound = parameters_.maxTemperatureInCelsius;
+
+    if (currentValue > maxBound - step) {
+        return;
+    }
+
+    currentValue += step;
 }
 
 void HeaterConfiguratorService::decreaseTemperatureInCelsius() {
-    bufferedPersistentConfig_.targetTemperatureInCelsius -=
-        temperatureInCelsiusStep_;
+    float& currentValue =
+        bufferedPersistentConfig_.targetTemperatureInCelsius;
+
+    const float step = parameters_.temperatureStepInCelsius;
+    const float minBound = parameters_.minTemperatureInCelsius;
+
+    if (currentValue < minBound + step) {
+        return;
+    }
+
+    currentValue -= step;
 }
 
 float HeaterConfiguratorService::getTemperatureInCelsius() const {

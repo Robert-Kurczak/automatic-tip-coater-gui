@@ -1,6 +1,9 @@
 #include "AxisConfiguratorService.hpp"
 
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
+#include "application/Utils/Logger.hpp"
+
+#include <algorithm>
 
 namespace ATC {
 IPersistentStorageController& AxisConfiguratorService::
@@ -38,14 +41,36 @@ void AxisConfiguratorService::showcaseStartPosition() {
 }
 
 void AxisConfiguratorService::increaseStartPosition() {
-    bufferedPersistentConfig_.startPositionInMicrometers +=
-        parameters_.positionStep;
+    uint32_t& currentValue =
+        bufferedPersistentConfig_.startPositionInMicrometers;
+
+    const uint32_t step = parameters_.positionStepInMicrometers;
+
+    const uint32_t maxBound = std::min(
+        bufferedPersistentConfig_.endPositionInMicrometers,
+        parameters_.maxPositionInMicrometers
+    );
+
+    if (currentValue > maxBound - step) {
+        return;
+    }
+
+    currentValue += step;
     showcaseStartPosition();
 }
 
 void AxisConfiguratorService::decreaseStartPosition() {
-    bufferedPersistentConfig_.startPositionInMicrometers -=
-        parameters_.positionStep;
+    uint32_t& currentValue =
+        bufferedPersistentConfig_.startPositionInMicrometers;
+
+    const uint32_t step = parameters_.positionStepInMicrometers;
+    const uint32_t minBound = parameters_.minPositionInMicrometers;
+
+    if (currentValue < minBound + step) {
+        return;
+    }
+
+    currentValue -= step;
     showcaseStartPosition();
 }
 
@@ -67,14 +92,37 @@ void AxisConfiguratorService::showcaseEndPosition() {
 }
 
 void AxisConfiguratorService::increaseEndPosition() {
-    bufferedPersistentConfig_.endPositionInMicrometers +=
-        parameters_.positionStep;
+    uint32_t& currentValue =
+        bufferedPersistentConfig_.endPositionInMicrometers;
+
+    const uint32_t step = parameters_.positionStepInMicrometers;
+
+    const uint32_t maxBound = parameters_.maxPositionInMicrometers;
+
+    if (currentValue > maxBound - step) {
+        return;
+    }
+
+    currentValue += step;
     showcaseEndPosition();
 }
 
 void AxisConfiguratorService::decreaseEndPosition() {
-    bufferedPersistentConfig_.endPositionInMicrometers -=
-        parameters_.positionStep;
+    uint32_t& currentValue =
+        bufferedPersistentConfig_.endPositionInMicrometers;
+
+    const uint32_t step = parameters_.positionStepInMicrometers;
+
+    const uint32_t minBound = std::max(
+        bufferedPersistentConfig_.startPositionInMicrometers,
+        parameters_.minPositionInMicrometers
+    );
+
+    if (currentValue < minBound + step) {
+        return;
+    }
+
+    currentValue -= step;
     showcaseEndPosition();
 }
 
@@ -95,29 +143,48 @@ void AxisConfiguratorService::showcaseSpeed() {
     const uint32_t currentPosition =
         axisController_.getCurrentPositionInMicrometers();
 
+    const uint32_t showcasePosition =
+        parameters_.speedShowcasePositionInMicrometers;
+
     const bool isAtShowcasePosition =
-        currentPosition <=
-            parameters_.speedShowcasePosition + errorMargin &&
-        currentPosition >=
-            parameters_.speedShowcasePosition - errorMargin;
+        currentPosition <= showcasePosition + errorMargin &&
+        currentPosition >= showcasePosition - errorMargin;
 
     if (isAtShowcasePosition) {
         axisController_.moveToStartPosition();
     } else {
         axisController_.moveToPositionInMicrometers(
-            parameters_.speedShowcasePosition
+            parameters_.speedShowcasePositionInMicrometers
         );
     }
 }
 
 void AxisConfiguratorService::increaseSpeed() {
-    bufferedPersistentConfig_.speedInMillimetersPerSecond +=
-        parameters_.speedStep;
+    uint16_t& currentValue =
+        bufferedPersistentConfig_.speedInMillimetersPerSecond;
+
+    const uint16_t step = parameters_.speedStepInMillimetersPerSecond;
+    const uint16_t maxBound = parameters_.maxSpeedInMillimetersPerSecond;
+
+    if (currentValue > maxBound - step) {
+        return;
+    }
+
+    currentValue += step;
 }
 
 void AxisConfiguratorService::decreaseSpeed() {
-    bufferedPersistentConfig_.speedInMillimetersPerSecond -=
-        parameters_.speedStep;
+    uint16_t& currentValue =
+        bufferedPersistentConfig_.speedInMillimetersPerSecond;
+
+    const uint16_t step = parameters_.speedStepInMillimetersPerSecond;
+    const uint16_t minBound = parameters_.minSpeedInMillimetersPerSecond;
+
+    if (currentValue < minBound + step) {
+        return;
+    }
+
+    currentValue -= step;
 }
 
 void AxisConfiguratorService::saveSpeed() {

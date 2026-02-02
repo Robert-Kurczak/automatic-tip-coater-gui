@@ -223,7 +223,7 @@ private:
     HeaterConfiguratorService heaterConfiguratorService_ {
         persistentStorageController_,
         heaterController_,
-        1
+        HEATER_CONFIGURATOR_PARAMETERS
     };
 
     SystemConfigurators systemConfigurators_ {
