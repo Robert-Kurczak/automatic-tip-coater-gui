@@ -18,7 +18,7 @@
         <Translation Language="GB">&lt;value&gt; ms</Translation>
       </Text>
       <Text Id="spindleDirectionValue" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Clockwise</Translation>
+        <Translation Language="GB">CCW</Translation>
       </Text>
       <Text Id="__SingleUse_WM2X" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>

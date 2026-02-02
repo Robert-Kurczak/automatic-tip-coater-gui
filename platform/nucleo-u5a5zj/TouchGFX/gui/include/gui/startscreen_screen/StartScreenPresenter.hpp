@@ -3,10 +3,10 @@
 
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
-
 
 using namespace touchgfx;
 
@@ -43,6 +43,7 @@ public:
     [[nodiscard]] ATC::AxisPersistentConfig getYAxisConfig() const;
     [[nodiscard]] ATC::AxisPersistentConfig getZAxisConfig() const;
     [[nodiscard]] ATC::HeaterPersistentConfig getHeaterConfig() const;
+    [[nodiscard]] ATC::SpindlePersistentConfig getSpindleConfig() const;
 
 private:
     StartScreenPresenter();

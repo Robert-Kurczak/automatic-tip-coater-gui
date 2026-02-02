@@ -1,6 +1,9 @@
 #pragma once
 
+#include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
+
 #include <cstdint>
+
 
 namespace ATC {
 class ISpindleConfiguratorService {
@@ -35,5 +38,8 @@ public:
     virtual void decreaseRotationTimeInMillis() = 0;
     virtual void saveRotationTimeInMillis() = 0;
     [[nodiscard]] virtual uint32_t getRotationTimeInMillis() const = 0;
+
+    [[nodiscard]] virtual SpindlePersistentConfig
+    getStoredConfig() const = 0;
 };
 }
