@@ -114,7 +114,7 @@ protected:
     touchgfx::Unicode::UnicodeChar rotationDirectionValueBuffer[ROTATIONDIRECTIONVALUE_SIZE];
     static const uint16_t ROTATIOMTIMEVALUE_SIZE = 5;
     touchgfx::Unicode::UnicodeChar rotatiomTimeValueBuffer[ROTATIOMTIMEVALUE_SIZE];
-    static const uint16_t HEATERTEMPERATUREVALUE_SIZE = 3;
+    static const uint16_t HEATERTEMPERATUREVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar heaterTemperatureValueBuffer[HEATERTEMPERATUREVALUE_SIZE];
 
 private:

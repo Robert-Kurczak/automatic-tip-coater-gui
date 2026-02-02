@@ -2,6 +2,7 @@
 #define SETTINGDISPLAY_HPP
 
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
 
 #include <gui_generated/containers/SettingDisplayBase.hpp>
 
@@ -15,6 +16,7 @@ public:
     void displayXAxisSettings(const ATC::AxisPersistentConfig& config);
     void displayYAxisSettings(const ATC::AxisPersistentConfig& config);
     void displayZAxisSettings(const ATC::AxisPersistentConfig& config);
+    void displayHeaterSettings(const ATC::HeaterPersistentConfig& config);
 };
 
 #endif // SETTINGDISPLAY_HPP

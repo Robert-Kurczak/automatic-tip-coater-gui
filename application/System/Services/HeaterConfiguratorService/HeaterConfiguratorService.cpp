@@ -31,6 +31,10 @@ float HeaterConfiguratorService::getTemperatureInCelsius() const {
 }
 
 void HeaterConfiguratorService::saveTemperatureInCelsius() {
+    heaterController_.setTargetTemperatureInCelsius(
+        bufferedPersistentConfig_.targetTemperatureInCelsius
+    );
+
     persistentStorageController_.saveHeaterConfig(
         bufferedPersistentConfig_
     );
@@ -54,5 +58,13 @@ void HeaterConfiguratorService::saveHeaterState() {
     } else {
         heaterController_.turnOff();
     }
+}
+
+HeaterPersistentConfig HeaterConfiguratorService::
+    getStoredConfig() const {
+    return HeaterPersistentConfig {
+        .targetTemperatureInCelsius =
+            heaterController_.getTargetTemperatureInCelsius()
+    };
 }
 }

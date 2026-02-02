@@ -2,6 +2,7 @@
 #define STARTSCREENPRESENTER_HPP
 
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
+#include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
@@ -41,6 +42,7 @@ public:
     [[nodiscard]] ATC::AxisPersistentConfig getXAxisConfig() const;
     [[nodiscard]] ATC::AxisPersistentConfig getYAxisConfig() const;
     [[nodiscard]] ATC::AxisPersistentConfig getZAxisConfig() const;
+    [[nodiscard]] ATC::HeaterPersistentConfig getHeaterConfig() const;
 
 private:
     StartScreenPresenter();
