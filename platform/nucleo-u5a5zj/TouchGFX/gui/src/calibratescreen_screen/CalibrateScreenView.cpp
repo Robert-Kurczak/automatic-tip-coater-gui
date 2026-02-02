@@ -6,6 +6,7 @@ void CalibrateScreenView::displaySettings() {
     settingDisplay.displayXAxisSettings(presenter->getXAxisConfig());
     settingDisplay.displayYAxisSettings(presenter->getYAxisConfig());
     settingDisplay.displayZAxisSettings(presenter->getZAxisConfig());
+    settingDisplay.displayHeaterSettings(presenter->getHeaterConfig());
 }
 
 void CalibrateScreenView::setupScreen() {

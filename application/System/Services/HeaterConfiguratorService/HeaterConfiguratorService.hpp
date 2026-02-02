@@ -36,5 +36,7 @@ public:
     void turnOff() override;
     [[nodiscard]] bool isOn() const override;
     void saveHeaterState() override;
+
+    [[nodiscard]] HeaterPersistentConfig getStoredConfig() const override;
 };
 }

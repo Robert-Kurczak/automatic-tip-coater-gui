@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstdint>
+#include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
 
 namespace ATC {
 class IHeaterConfiguratorService {
@@ -33,5 +33,8 @@ public:
     virtual void turnOff() = 0;
     [[nodiscard]] virtual bool isOn() const = 0;
     virtual void saveHeaterState() = 0;
+
+    [[nodiscard]] virtual HeaterPersistentConfig
+    getStoredConfig() const = 0;
 };
 }

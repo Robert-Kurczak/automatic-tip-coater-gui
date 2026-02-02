@@ -335,7 +335,7 @@ SettingDisplayBase::SettingDisplayBase()
     bigDivider_3.setHeight(20);
     valuesList.add(bigDivider_3);
 
-    heaterTemperatureValue.setWidth(88);
+    heaterTemperatureValue.setWidth(140);
     heaterTemperatureValue.setHeight(30);
     heaterTemperatureValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
     heaterTemperatureValue.setLinespacing(1);

@@ -86,6 +86,18 @@ void SettingDisplay::displayZAxisSettings(
     zAxisSpeedValue.invalidate();
 }
 
+void SettingDisplay::displayHeaterSettings(
+    const ATC::HeaterPersistentConfig& config
+) {
+    Unicode::snprintfFloat(
+        &heaterTemperatureValueBuffer[0],
+        HEATERTEMPERATUREVALUE_SIZE,
+        "%.2f",
+        config.targetTemperatureInCelsius
+    );
+    heaterTemperatureValue.invalidate();
+}
+
 void SettingDisplay::initialize() {
     SettingDisplayBase::initialize();
 }

@@ -6,9 +6,9 @@
   <Texts>
     <TextGroup Id="Unsorted">
       <Text Id="heaterTemperatureValue" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">999</Translation>
+        <Translation Language="GB">-999.99</Translation>
       </Text>
-      <Text Id="__SingleUse_SYAX" Alignment="Right" TypographyId="Default">
+      <Text Id="__SingleUse_SYAX" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt; °C</Translation>
       </Text>
       <Text Id="spindleRotationTimeValue" Alignment="Left" TypographyId="Default">

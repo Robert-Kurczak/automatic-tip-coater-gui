@@ -40,3 +40,9 @@ ATC::AxisPersistentConfig StartScreenPresenter::getZAxisConfig() const {
     return model->getSystemApi()
         .configurators.zAxisConfigurator.getStoredConfig();
 }
+
+ATC::HeaterPersistentConfig StartScreenPresenter::
+    getHeaterConfig() const {
+    return model->getSystemApi()
+        .configurators.heaterConfigurator.getStoredConfig();
+}

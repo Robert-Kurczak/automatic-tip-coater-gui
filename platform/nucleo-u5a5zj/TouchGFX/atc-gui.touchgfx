@@ -9668,7 +9668,7 @@
                     "Type": "TextArea",
                     "Name": "heaterTemperatureValue",
                     "Y": 520,
-                    "Width": 88,
+                    "Width": 140,
                     "Height": 30,
                     "TextId": "__SingleUse_SYAX",
                     "TextRotation": "0",
@@ -9682,7 +9682,7 @@
                     "Wildcard1": {
                       "TextId": "heaterTemperatureValue",
                       "UseBuffer": true,
-                      "BufferSize": 3
+                      "BufferSize": 6
                     }
                   }
                 ]
