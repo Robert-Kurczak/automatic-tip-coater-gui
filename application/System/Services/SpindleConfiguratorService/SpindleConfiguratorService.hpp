@@ -44,5 +44,7 @@ public:
     void decreaseRotationTimeInMillis() override;
     void saveRotationTimeInMillis() override;
     [[nodiscard]] uint32_t getRotationTimeInMillis() const override;
+
+    [[nodiscard]] SpindlePersistentConfig getStoredConfig() const override;
 };
 }

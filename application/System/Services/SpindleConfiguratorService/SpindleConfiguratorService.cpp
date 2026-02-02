@@ -100,4 +100,14 @@ void SpindleConfiguratorService::saveRotationTimeInMillis() {
 uint32_t SpindleConfiguratorService::getRotationTimeInMillis() const {
     return bufferedPersistentConfig_.timedRotationInMillis;
 }
+
+SpindlePersistentConfig SpindleConfiguratorService::
+    getStoredConfig() const {
+    return SpindlePersistentConfig {
+        .speedPercent = spindleController_.getSpeedPercent(),
+        .isDirectionClockwise = spindleController_.isDirectionClockwise(),
+        .timedRotationInMillis =
+            spindleController_.getRotationTimeInMillis()
+    };
+}
 }

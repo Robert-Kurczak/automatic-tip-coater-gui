@@ -6,7 +6,7 @@ void SettingDisplay::displayXAxisSettings(
     const ATC::AxisPersistentConfig& config
 ) {
     Unicode::snprintf(
-        xAxisStartValueBuffer,
+        &xAxisStartValueBuffer[0],
         XAXISSTARTVALUE_SIZE,
         "%d",
         config.startPositionInMicrometers
@@ -14,7 +14,7 @@ void SettingDisplay::displayXAxisSettings(
     xAxisStartValue.invalidate();
 
     Unicode::snprintf(
-        xAxisEndValueBuffer,
+        &xAxisEndValueBuffer[0],
         XAXISENDVALUE_SIZE,
         "%d",
         config.endPositionInMicrometers
@@ -22,7 +22,7 @@ void SettingDisplay::displayXAxisSettings(
     xAxisEndValue.invalidate();
 
     Unicode::snprintf(
-        xAxisSpeedValueBuffer,
+        &xAxisSpeedValueBuffer[0],
         XAXISSPEEDVALUE_SIZE,
         "%d",
         config.speedInMillimetersPerSecond
@@ -34,7 +34,7 @@ void SettingDisplay::displayYAxisSettings(
     const ATC::AxisPersistentConfig& config
 ) {
     Unicode::snprintf(
-        yAxisStartValueBuffer,
+        &yAxisStartValueBuffer[0],
         YAXISSTARTVALUE_SIZE,
         "%d",
         config.startPositionInMicrometers
@@ -42,7 +42,7 @@ void SettingDisplay::displayYAxisSettings(
     yAxisStartValue.invalidate();
 
     Unicode::snprintf(
-        yAxisEndValueBuffer,
+        &yAxisEndValueBuffer[0],
         YAXISENDVALUE_SIZE,
         "%d",
         config.endPositionInMicrometers
@@ -50,7 +50,7 @@ void SettingDisplay::displayYAxisSettings(
     yAxisEndValue.invalidate();
 
     Unicode::snprintf(
-        yAxisSpeedValueBuffer,
+        &yAxisSpeedValueBuffer[0],
         YAXISSPEEDVALUE_SIZE,
         "%d",
         config.speedInMillimetersPerSecond
@@ -62,7 +62,7 @@ void SettingDisplay::displayZAxisSettings(
     const ATC::AxisPersistentConfig& config
 ) {
     Unicode::snprintf(
-        zAxisStartValueBuffer,
+        &zAxisStartValueBuffer[0],
         ZAXISSTARTVALUE_SIZE,
         "%d",
         config.startPositionInMicrometers
@@ -70,7 +70,7 @@ void SettingDisplay::displayZAxisSettings(
     zAxisStartValue.invalidate();
 
     Unicode::snprintf(
-        zAxisEndValueBuffer,
+        &zAxisEndValueBuffer[0],
         ZAXISENDVALUE_SIZE,
         "%d",
         config.endPositionInMicrometers
@@ -78,7 +78,7 @@ void SettingDisplay::displayZAxisSettings(
     zAxisEndValue.invalidate();
 
     Unicode::snprintf(
-        zAxisSpeedValueBuffer,
+        &zAxisSpeedValueBuffer[0],
         ZAXISSPEEDVALUE_SIZE,
         "%d",
         config.speedInMillimetersPerSecond
@@ -96,6 +96,33 @@ void SettingDisplay::displayHeaterSettings(
         config.targetTemperatureInCelsius
     );
     heaterTemperatureValue.invalidate();
+}
+
+void SettingDisplay::displaySpindleSettings(
+    const ATC::SpindlePersistentConfig& config
+) {
+    Unicode::snprintf(
+        &spindleSpeedValueBuffer[0],
+        SPINDLESPEEDVALUE_SIZE,
+        "%d",
+        config.speedPercent
+    );
+    spindleSpeedValue.invalidate();
+
+    Unicode::snprintf(
+        &spindleDirectionValueBuffer[0],
+        SPINDLEDIRECTIONVALUE_SIZE,
+        config.isDirectionClockwise ? "CW" : "CCW"
+    );
+    spindleDirectionValue.invalidate();
+
+    Unicode::snprintf(
+        &spindleRotationTimeValueBuffer[0],
+        SPINDLEROTATIONTIMEVALUE_SIZE,
+        "%d",
+        config.timedRotationInMillis
+    );
+    spindleRotationTimeValue.invalidate();
 }
 
 void SettingDisplay::initialize() {

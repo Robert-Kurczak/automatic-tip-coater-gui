@@ -293,43 +293,43 @@ SettingDisplayBase::SettingDisplayBase()
     bigDivider_1_1.setHeight(20);
     valuesList.add(bigDivider_1_1);
 
-    rotationSpeedValue.setWidth(84);
-    rotationSpeedValue.setHeight(30);
-    rotationSpeedValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
-    rotationSpeedValue.setLinespacing(1);
-    Unicode::snprintf(rotationSpeedValueBuffer, ROTATIONSPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLESPEEDVALUE).getText());
-    rotationSpeedValue.setWildcard(rotationSpeedValueBuffer);
-    rotationSpeedValue.resizeToCurrentText();
-    rotationSpeedValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QUDW));
-    valuesList.add(rotationSpeedValue);
+    spindleSpeedValue.setWidth(84);
+    spindleSpeedValue.setHeight(30);
+    spindleSpeedValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
+    spindleSpeedValue.setLinespacing(1);
+    Unicode::snprintf(spindleSpeedValueBuffer, SPINDLESPEEDVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLESPEEDVALUE).getText());
+    spindleSpeedValue.setWildcard(spindleSpeedValueBuffer);
+    spindleSpeedValue.resizeToCurrentText();
+    spindleSpeedValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QUDW));
+    valuesList.add(spindleSpeedValue);
 
     smallDivider_2_1.setWidth(0);
     smallDivider_2_1.setHeight(10);
     valuesList.add(smallDivider_2_1);
 
-    rotationDirectionValue.setWidth(122);
-    rotationDirectionValue.setHeight(30);
-    rotationDirectionValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
-    rotationDirectionValue.setLinespacing(1);
-    Unicode::snprintf(rotationDirectionValueBuffer, ROTATIONDIRECTIONVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLEDIRECTIONVALUE).getText());
-    rotationDirectionValue.setWildcard(rotationDirectionValueBuffer);
-    rotationDirectionValue.resizeToCurrentText();
-    rotationDirectionValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WM2X));
-    valuesList.add(rotationDirectionValue);
+    spindleDirectionValue.setWidth(59);
+    spindleDirectionValue.setHeight(30);
+    spindleDirectionValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
+    spindleDirectionValue.setLinespacing(1);
+    Unicode::snprintf(spindleDirectionValueBuffer, SPINDLEDIRECTIONVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLEDIRECTIONVALUE).getText());
+    spindleDirectionValue.setWildcard(spindleDirectionValueBuffer);
+    spindleDirectionValue.resizeToCurrentText();
+    spindleDirectionValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WM2X));
+    valuesList.add(spindleDirectionValue);
 
     smallDivider_1_1.setWidth(0);
     smallDivider_1_1.setHeight(10);
     valuesList.add(smallDivider_1_1);
 
-    rotatiomTimeValue.setWidth(126);
-    rotatiomTimeValue.setHeight(30);
-    rotatiomTimeValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
-    rotatiomTimeValue.setLinespacing(1);
-    Unicode::snprintf(rotatiomTimeValueBuffer, ROTATIOMTIMEVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLEROTATIONTIMEVALUE).getText());
-    rotatiomTimeValue.setWildcard(rotatiomTimeValueBuffer);
-    rotatiomTimeValue.resizeToCurrentText();
-    rotatiomTimeValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YATL));
-    valuesList.add(rotatiomTimeValue);
+    spindleRotationTimeValue.setWidth(126);
+    spindleRotationTimeValue.setHeight(30);
+    spindleRotationTimeValue.setColor(touchgfx::Color::getColorFromRGB(205, 214, 244));
+    spindleRotationTimeValue.setLinespacing(1);
+    Unicode::snprintf(spindleRotationTimeValueBuffer, SPINDLEROTATIONTIMEVALUE_SIZE, "%s", touchgfx::TypedText(T_SPINDLEROTATIONTIMEVALUE).getText());
+    spindleRotationTimeValue.setWildcard(spindleRotationTimeValueBuffer);
+    spindleRotationTimeValue.resizeToCurrentText();
+    spindleRotationTimeValue.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YATL));
+    valuesList.add(spindleRotationTimeValue);
 
     bigDivider_3.setWidth(0);
     bigDivider_3.setHeight(20);
@@ -361,9 +361,9 @@ SettingDisplayBase::SettingDisplayBase()
     zAxisSectionUnderline.setColor(touchgfx::Color::getColorFromRGB(166, 227, 161));
     add(zAxisSectionUnderline);
 
-    rotationSectionUnderline.setPosition(13, 633, 454, 5);
-    rotationSectionUnderline.setColor(touchgfx::Color::getColorFromRGB(137, 220, 235));
-    add(rotationSectionUnderline);
+    spindleSectionUnderline.setPosition(13, 633, 454, 5);
+    spindleSectionUnderline.setColor(touchgfx::Color::getColorFromRGB(137, 220, 235));
+    add(spindleSectionUnderline);
 }
 
 SettingDisplayBase::~SettingDisplayBase()

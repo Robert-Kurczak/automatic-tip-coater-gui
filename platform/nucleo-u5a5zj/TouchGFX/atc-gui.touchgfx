@@ -9346,7 +9346,7 @@
                     "Wildcard1": {
                       "TextId": "xAxisStartValue",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   },
                   {
@@ -9374,7 +9374,7 @@
                     "Wildcard1": {
                       "TextId": "xAxisEndValue",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   },
                   {
@@ -9402,7 +9402,7 @@
                     "Wildcard1": {
                       "TextId": "xAxisSpeedValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9430,7 +9430,7 @@
                     "Wildcard1": {
                       "TextId": "yAxisStartValue",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   },
                   {
@@ -9458,7 +9458,7 @@
                     "Wildcard1": {
                       "TextId": "yAxisEndValue",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   },
                   {
@@ -9486,7 +9486,7 @@
                     "Wildcard1": {
                       "TextId": "yAxisSpeedValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9514,7 +9514,7 @@
                     "Wildcard1": {
                       "TextId": "zAxisStartValue",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   },
                   {
@@ -9542,7 +9542,7 @@
                     "Wildcard1": {
                       "TextId": "zAxisEndValue",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   },
                   {
@@ -9570,7 +9570,7 @@
                     "Wildcard1": {
                       "TextId": "zAxisSpeedValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9582,7 +9582,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "rotationSpeedValue",
+                    "Name": "spindleSpeedValue",
                     "Y": 390,
                     "Width": 84,
                     "Height": 30,
@@ -9598,7 +9598,7 @@
                     "Wildcard1": {
                       "TextId": "spindleSpeedValue",
                       "UseBuffer": true,
-                      "BufferSize": 3
+                      "BufferSize": 4
                     }
                   },
                   {
@@ -9610,9 +9610,9 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "rotationDirectionValue",
-                    "Y": 430,
-                    "Width": 122,
+                    "Name": "spindleDirectionValue",
+                    "Y": 428,
+                    "Width": 59,
                     "Height": 30,
                     "TextId": "__SingleUse_WM2X",
                     "TextRotation": "0",
@@ -9626,7 +9626,7 @@
                     "Wildcard1": {
                       "TextId": "spindleDirectionValue",
                       "UseBuffer": true,
-                      "BufferSize": 17
+                      "BufferSize": 4
                     }
                   },
                   {
@@ -9638,7 +9638,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "rotatiomTimeValue",
+                    "Name": "spindleRotationTimeValue",
                     "Y": 470,
                     "Width": 126,
                     "Height": 30,
@@ -9654,7 +9654,7 @@
                     "Wildcard1": {
                       "TextId": "spindleRotationTimeValue",
                       "UseBuffer": true,
-                      "BufferSize": 5
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -9682,7 +9682,7 @@
                     "Wildcard1": {
                       "TextId": "heaterTemperatureValue",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   }
                 ]
@@ -9730,7 +9730,7 @@
           },
           {
             "Type": "Box",
-            "Name": "rotationSectionUnderline",
+            "Name": "spindleSectionUnderline",
             "X": 13,
             "Y": 633,
             "Width": 454,

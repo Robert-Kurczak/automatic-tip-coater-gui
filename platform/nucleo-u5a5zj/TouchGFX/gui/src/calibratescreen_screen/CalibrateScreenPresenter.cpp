@@ -48,8 +48,14 @@ ATC::AxisPersistentConfig CalibrateScreenPresenter::
         .configurators.zAxisConfigurator.getStoredConfig();
 }
 
-[[nodiscard]] ATC::HeaterPersistentConfig CalibrateScreenPresenter::
+ATC::HeaterPersistentConfig CalibrateScreenPresenter::
     getHeaterConfig() const {
     return model->getSystemApi()
         .configurators.heaterConfigurator.getStoredConfig();
+}
+
+ATC::SpindlePersistentConfig CalibrateScreenPresenter::
+    getSpindleConfig() const {
+    return model->getSystemApi()
+        .configurators.spindleConfigurator.getStoredConfig();
 }

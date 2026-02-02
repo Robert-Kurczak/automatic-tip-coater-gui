@@ -75,46 +75,46 @@ protected:
     touchgfx::Container smallDivider_4_1;
     touchgfx::TextAreaWithOneWildcard zAxisSpeedValue;
     touchgfx::Container bigDivider_1_1;
-    touchgfx::TextAreaWithOneWildcard rotationSpeedValue;
+    touchgfx::TextAreaWithOneWildcard spindleSpeedValue;
     touchgfx::Container smallDivider_2_1;
-    touchgfx::TextAreaWithOneWildcard rotationDirectionValue;
+    touchgfx::TextAreaWithOneWildcard spindleDirectionValue;
     touchgfx::Container smallDivider_1_1;
-    touchgfx::TextAreaWithOneWildcard rotatiomTimeValue;
+    touchgfx::TextAreaWithOneWildcard spindleRotationTimeValue;
     touchgfx::Container bigDivider_3;
     touchgfx::TextAreaWithOneWildcard heaterTemperatureValue;
     touchgfx::Box xAxisSectionUnderline;
     touchgfx::Box yAxisSectionUnderline;
     touchgfx::Box zAxisSectionUnderline;
-    touchgfx::Box rotationSectionUnderline;
+    touchgfx::Box spindleSectionUnderline;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t XAXISSTARTVALUE_SIZE = 6;
+    static const uint16_t XAXISSTARTVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar xAxisStartValueBuffer[XAXISSTARTVALUE_SIZE];
-    static const uint16_t XAXISENDVALUE_SIZE = 6;
+    static const uint16_t XAXISENDVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar xAxisEndValueBuffer[XAXISENDVALUE_SIZE];
-    static const uint16_t XAXISSPEEDVALUE_SIZE = 5;
+    static const uint16_t XAXISSPEEDVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar xAxisSpeedValueBuffer[XAXISSPEEDVALUE_SIZE];
-    static const uint16_t YAXISSTARTVALUE_SIZE = 6;
+    static const uint16_t YAXISSTARTVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar yAxisStartValueBuffer[YAXISSTARTVALUE_SIZE];
-    static const uint16_t YAXISENDVALUE_SIZE = 6;
+    static const uint16_t YAXISENDVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar yAxisEndValueBuffer[YAXISENDVALUE_SIZE];
-    static const uint16_t YAXISSPEEDVALUE_SIZE = 5;
+    static const uint16_t YAXISSPEEDVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar yAxisSpeedValueBuffer[YAXISSPEEDVALUE_SIZE];
-    static const uint16_t ZAXISSTARTVALUE_SIZE = 6;
+    static const uint16_t ZAXISSTARTVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar zAxisStartValueBuffer[ZAXISSTARTVALUE_SIZE];
-    static const uint16_t ZAXISENDVALUE_SIZE = 6;
+    static const uint16_t ZAXISENDVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar zAxisEndValueBuffer[ZAXISENDVALUE_SIZE];
-    static const uint16_t ZAXISSPEEDVALUE_SIZE = 5;
+    static const uint16_t ZAXISSPEEDVALUE_SIZE = 6;
     touchgfx::Unicode::UnicodeChar zAxisSpeedValueBuffer[ZAXISSPEEDVALUE_SIZE];
-    static const uint16_t ROTATIONSPEEDVALUE_SIZE = 3;
-    touchgfx::Unicode::UnicodeChar rotationSpeedValueBuffer[ROTATIONSPEEDVALUE_SIZE];
-    static const uint16_t ROTATIONDIRECTIONVALUE_SIZE = 17;
-    touchgfx::Unicode::UnicodeChar rotationDirectionValueBuffer[ROTATIONDIRECTIONVALUE_SIZE];
-    static const uint16_t ROTATIOMTIMEVALUE_SIZE = 5;
-    touchgfx::Unicode::UnicodeChar rotatiomTimeValueBuffer[ROTATIOMTIMEVALUE_SIZE];
-    static const uint16_t HEATERTEMPERATUREVALUE_SIZE = 6;
+    static const uint16_t SPINDLESPEEDVALUE_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar spindleSpeedValueBuffer[SPINDLESPEEDVALUE_SIZE];
+    static const uint16_t SPINDLEDIRECTIONVALUE_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar spindleDirectionValueBuffer[SPINDLEDIRECTIONVALUE_SIZE];
+    static const uint16_t SPINDLEROTATIONTIMEVALUE_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar spindleRotationTimeValueBuffer[SPINDLEROTATIONTIMEVALUE_SIZE];
+    static const uint16_t HEATERTEMPERATUREVALUE_SIZE = 7;
     touchgfx::Unicode::UnicodeChar heaterTemperatureValueBuffer[HEATERTEMPERATUREVALUE_SIZE];
 
 private:

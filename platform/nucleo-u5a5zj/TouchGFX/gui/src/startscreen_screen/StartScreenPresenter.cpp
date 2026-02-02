@@ -46,3 +46,9 @@ ATC::HeaterPersistentConfig StartScreenPresenter::
     return model->getSystemApi()
         .configurators.heaterConfigurator.getStoredConfig();
 }
+
+[[nodiscard]] ATC::SpindlePersistentConfig StartScreenPresenter::
+    getSpindleConfig() const {
+    return model->getSystemApi()
+        .configurators.spindleConfigurator.getStoredConfig();
+}
