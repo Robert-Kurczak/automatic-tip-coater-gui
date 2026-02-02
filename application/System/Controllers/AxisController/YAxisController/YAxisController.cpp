@@ -32,6 +32,10 @@ void YAxisController::init(const AxisPersistentConfig& config) {
     endPositionInMicrometers_ = config.endPositionInMicrometers;
 
     axisMotionController_.init();
+    axisMotionController_.setMillimetersPerSecond(
+        config.speedInMillimetersPerSecond
+    );
+
     tipLimitSwitch_.init();
 }
 

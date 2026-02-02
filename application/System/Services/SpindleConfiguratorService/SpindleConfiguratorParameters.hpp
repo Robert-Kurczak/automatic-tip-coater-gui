@@ -4,8 +4,8 @@
 
 namespace ATC {
 struct SpindleConfiguratorParameters {
-    uint32_t showcaseRotationTimeMillis;
+    uint32_t showcaseRotationTimeInMillis;
     uint8_t speedPercentStep;
-    uint32_t rotationTimeStepMillis;
+    uint32_t rotationTimeStepInMillis;
 };
 }

@@ -1,5 +1,6 @@
 #include "PersistentStorageController.hpp"
 
+#include "application/System/Config/ComponentConfig/ConfiguratorsConfig.hpp"
 #include "application/System/Config/ComponentConfig/DefaultPersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"

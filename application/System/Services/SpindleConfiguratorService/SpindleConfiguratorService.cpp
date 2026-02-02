@@ -25,7 +25,7 @@ void SpindleConfiguratorService::resetBufferedConfig() {
 
 void SpindleConfiguratorService::showcaseRotation() {
     spindleController_.startTimedRotation(
-        parameters_.showcaseRotationTimeMillis
+        parameters_.showcaseRotationTimeInMillis
     );
 }
 
@@ -79,12 +79,12 @@ bool SpindleConfiguratorService::isDirectionClockwise() const {
 
 void SpindleConfiguratorService::increaseRotationTimeInMillis() {
     bufferedPersistentConfig_.timedRotationInMillis +=
-        parameters_.rotationTimeStepMillis;
+        parameters_.rotationTimeStepInMillis;
 }
 
 void SpindleConfiguratorService::decreaseRotationTimeInMillis() {
     bufferedPersistentConfig_.timedRotationInMillis -=
-        parameters_.rotationTimeStepMillis;
+        parameters_.rotationTimeStepInMillis;
 }
 
 void SpindleConfiguratorService::saveRotationTimeInMillis() {

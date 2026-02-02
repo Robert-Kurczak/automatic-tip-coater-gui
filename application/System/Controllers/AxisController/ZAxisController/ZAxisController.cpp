@@ -13,6 +13,11 @@ ZAxisController::ZAxisController(
 void ZAxisController::init(const AxisPersistentConfig& config) {
     startPositionInMicrometers_ = config.startPositionInMicrometers;
     endPositionInMicrometers_ = config.endPositionInMicrometers;
+
+    axisMotionController_.init();
+    axisMotionController_.setMillimetersPerSecond(
+        config.speedInMillimetersPerSecond
+    );
 }
 
 void ZAxisController::tick() {}
