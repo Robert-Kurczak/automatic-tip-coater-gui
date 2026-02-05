@@ -927,7 +927,8 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOE, Spindle_DIR_Pin|xAxis_DIR_Pin|xAxis_CS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOE, Spindle_PH_Pin|xAxis_DIR_Pin|xAxis_CS_Pin|Spindle_SLP_Pin
+                          |Spindle_MD_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, LCD_RS_Pin|zAxis_DIR_Pin|zAxis_CS_Pin, GPIO_PIN_RESET);
@@ -944,18 +945,20 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(UCPD_DBn_GPIO_Port, UCPD_DBn_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : Spindle_DIR_Pin xAxis_DIR_Pin xAxis_CS_Pin */
-  GPIO_InitStruct.Pin = Spindle_DIR_Pin|xAxis_DIR_Pin|xAxis_CS_Pin;
+  /*Configure GPIO pins : Spindle_PH_Pin xAxis_DIR_Pin xAxis_CS_Pin Spindle_SLP_Pin
+                           Spindle_MD_Pin */
+  GPIO_InitStruct.Pin = Spindle_PH_Pin|xAxis_DIR_Pin|xAxis_CS_Pin|Spindle_SLP_Pin
+                          |Spindle_MD_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : Spindle_FAULT_Pin */
-  GPIO_InitStruct.Pin = Spindle_FAULT_Pin;
+  /*Configure GPIO pin : Spindle_FLT_Pin */
+  GPIO_InitStruct.Pin = Spindle_FLT_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(Spindle_FAULT_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(Spindle_FLT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : xAxis_DIAG_Pin zAxis_DIAG_Pin */
   GPIO_InitStruct.Pin = xAxis_DIAG_Pin|zAxis_DIAG_Pin;

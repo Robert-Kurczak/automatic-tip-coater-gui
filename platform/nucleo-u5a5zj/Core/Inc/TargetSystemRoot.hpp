@@ -23,7 +23,7 @@
 #include "application/System/Drivers/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/System/Drivers/LimitSwitch/GpioLimitSwitch/GpioLimitSwitch.hpp"
 #include "application/System/Drivers/LoggerSink/UartLoggerSink/UartLoggerSink.hpp"
-#include "application/System/Drivers/Motor/PwmDcMotor/PwmDcMotor.hpp"
+#include "application/System/Drivers/MotorDriver/Drv8876MotorDriver/Drv8876MotorDriver.hpp"
 #include "application/System/Drivers/OutputSwitch/GpioOutputSwitch/GpioOutputSwitch.hpp"
 #include "application/System/Drivers/PersistentStorage/Eeprom24Lc64/Eeprom24Lc64.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
@@ -209,25 +209,32 @@ private:
         zAxisMotionController_
     };
 
-    PwmPin dcMotorPwmPin_ {htim3, TIM_CHANNEL_1};
-    GpioPin dcMotorDirectionPin_ {
-        *Spindle_DIR_GPIO_Port,
-        Spindle_DIR_Pin
+    GpioPin motorDriverModePin_ {
+        *Spindle_MD_GPIO_Port,
+        Spindle_MD_Pin
     };
-    GpioPin dcMotorFaultPin_ {
-        *Spindle_FAULT_GPIO_Port,
-        Spindle_FAULT_Pin
+    PwmPin motorDriverEnablePin_ {htim3, TIM_CHANNEL_1};
+    GpioPin motorDriverPhasePin_ {*Spindle_PH_GPIO_Port, Spindle_PH_Pin};
+    GpioPin motorDriverSleepPin_ {
+        *Spindle_SLP_GPIO_Port,
+        Spindle_SLP_Pin
     };
-    PwmDcMotorPinout pwmDcMotorPinout_ {
-        .speedPwmPin = dcMotorPwmPin_,
-        .directionPin = dcMotorDirectionPin_,
-        .faultPin = dcMotorFaultPin_
+    GpioPin motorDriverFaultPin_ {
+        *Spindle_FLT_GPIO_Port,
+        Spindle_FLT_Pin
     };
-    PwmDcMotor pwmDcMotor_ {pwmDcMotorPinout_};
+    Drv8876MotorDriverPinout motorDriverPinout_ {
+        .modePin = motorDriverModePin_,
+        .enablePin = motorDriverEnablePin_,
+        .phasePin = motorDriverPhasePin_,
+        .sleepPin = motorDriverSleepPin_,
+        .faultPin = motorDriverFaultPin_
+    };
+    DRV8876MotorDriver motorDriver_ {motorDriverPinout_};
     SpindleController spindleController_ {
         loggerSink_,
         systemClock_,
-        pwmDcMotor_
+        motorDriver_
     };
 
     GpioPin heaterTogglePin_ {*Heater_EN_GPIO_Port, Heater_EN_Pin};

@@ -2,7 +2,7 @@
 
 #include "ISpindleController.hpp"
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
-#include "application/System/Drivers/Motor/IMotor.hpp"
+#include "application/System/Drivers/MotorDriver/IMotorDriver.hpp"
 #include "application/System/Ports/ISystemClock.hpp"
 
 #include <cstdint>
@@ -12,7 +12,7 @@ class SpindleController : public ISpindleController {
 private:
     ILoggerSink& loggerSink_;
     ISystemClock& systemClock_;
-    IMotor& motor_;
+    IMotorDriver& motorDriver_;
 
     uint8_t speedPercent_ = 0;
     uint32_t rotationTimeInMillis_ = 0;
@@ -28,7 +28,7 @@ public:
     SpindleController(
         ILoggerSink& loggerSink,
         ISystemClock& systemClock,
-        IMotor& motor
+        IMotorDriver& motorDriver
     );
 
     void tick() override;

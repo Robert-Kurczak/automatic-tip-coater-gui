@@ -1,24 +1,27 @@
-#include "FakeMotor.hpp"
+#include "FakeMotorDriver.hpp"
 
 #include "application/Utils/Logger.hpp"
 
 namespace ATC {
-FakeMotor::FakeMotor(ILoggerSink& loggerSink, std::string&& name) :
+FakeMotorDriver::FakeMotorDriver(
+    ILoggerSink& loggerSink,
+    std::string&& name
+) :
     loggerSink_(loggerSink),
     name_(std::move(name)) {}
 
-void FakeMotor::init() {
+void FakeMotorDriver::init() {
     log(loggerSink_, LogLevel::Debug, "{} initialized", name_);
 }
 
-void FakeMotor::startRotation(uint8_t speedPercent) {
+void FakeMotorDriver::startRotation(uint8_t speedPercent) {
     log(loggerSink_, LogLevel::Debug, "{} started", name_);
 }
-void FakeMotor::stopRotation() {
+void FakeMotorDriver::stopRotation() {
     log(loggerSink_, LogLevel::Debug, "{} stopped", name_);
 }
 
-void FakeMotor::setDirectionClockwise() {
+void FakeMotorDriver::setDirectionClockwise() {
     isDirectionClockwise_ = true;
 
     log(loggerSink_,
@@ -27,7 +30,7 @@ void FakeMotor::setDirectionClockwise() {
         name_);
 }
 
-void FakeMotor::setDirectionCounterClockwise() {
+void FakeMotorDriver::setDirectionCounterClockwise() {
     isDirectionClockwise_ = false;
 
     log(loggerSink_,
@@ -36,11 +39,11 @@ void FakeMotor::setDirectionCounterClockwise() {
         name_);
 }
 
-bool FakeMotor::isDirectionClockwise() const {
+bool FakeMotorDriver::isDirectionClockwise() const {
     return isDirectionClockwise_;
 }
 
-bool FakeMotor::isFaultDetected() {
+bool FakeMotorDriver::isFaultDetected() {
     static uint16_t methodCalls = 0;
     methodCalls++;
 
