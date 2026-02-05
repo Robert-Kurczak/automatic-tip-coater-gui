@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../ITouchPanelController.hpp"
+#include "ResistiveTouchPanelParameters.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/IResistiveTouchPanel.hpp"
 #include "application/System/Ports/ISystemClock.hpp"
 
@@ -11,10 +12,7 @@ private:
 
     IResistiveTouchPanel& resistiveTouchPanel_;
     ISystemClock& systemClock_;
-    Rectangle rawWorkingArea_;
-    const Vector2 pixelResolution_;
-    const uint16_t pressureTreshold_;
-    const bool invertYAxis_;
+    const ResistiveTouchPanelParameters parameters_;
 
     bool wasTouched_ = false;
     bool debounceInProgress_ = false;
@@ -30,10 +28,7 @@ public:
     ResistiveTouchPanelController(
         IResistiveTouchPanel& resistiveTouchPanel,
         ISystemClock& systemClock,
-        Rectangle rawWorkingArea,
-        Vector2 pixelResolution,
-        uint16_t pressureTreshold,
-        bool invertYAxis = false
+        ResistiveTouchPanelParameters parameters
     );
 
     void init() override;

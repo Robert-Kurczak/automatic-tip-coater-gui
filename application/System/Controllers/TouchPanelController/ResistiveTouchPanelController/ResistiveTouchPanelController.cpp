@@ -29,18 +29,22 @@ Vector2 ResistiveTouchPanelController::interpolateRawPosition(
     const Vector2& rawPosition
 ) const {
     const auto xNumerator =
-        uint32_t(rawPosition.x - rawWorkingArea_.xStart) *
-        uint32_t(pixelResolution_.x);
+        uint32_t(rawPosition.x - parameters_.rawWorkingArea.xStart) *
+        uint32_t(parameters_.pixelResolution.x);
 
-    const auto xDenominator =
-        uint32_t(rawWorkingArea_.xEnd - rawWorkingArea_.xStart);
+    const auto xDenominator = uint32_t(
+        parameters_.rawWorkingArea.xEnd -
+        parameters_.rawWorkingArea.xStart
+    );
 
     const auto yNumerator =
-        uint32_t(rawPosition.y - rawWorkingArea_.yStart) *
-        uint32_t(pixelResolution_.y);
+        uint32_t(rawPosition.y - parameters_.rawWorkingArea.yStart) *
+        uint32_t(parameters_.pixelResolution.y);
 
-    const auto yDenominator =
-        uint32_t(rawWorkingArea_.yEnd - rawWorkingArea_.yStart);
+    const auto yDenominator = uint32_t(
+        parameters_.rawWorkingArea.yEnd -
+        parameters_.rawWorkingArea.yStart
+    );
 
     Vector2 interpolatedPosition {
         .x = uint16_t(xNumerator / xDenominator),
@@ -53,17 +57,11 @@ Vector2 ResistiveTouchPanelController::interpolateRawPosition(
 ResistiveTouchPanelController::ResistiveTouchPanelController(
     IResistiveTouchPanel& resistiveTouchPanel,
     ISystemClock& systemClock,
-    Rectangle rawWorkingArea,
-    Vector2 pixelResolution,
-    uint16_t pressureTreshold,
-    bool invertYAxis
+    ResistiveTouchPanelParameters parameters
 ) :
     resistiveTouchPanel_(resistiveTouchPanel),
     systemClock_(systemClock),
-    rawWorkingArea_(rawWorkingArea),
-    pixelResolution_(pixelResolution),
-    pressureTreshold_(pressureTreshold),
-    invertYAxis_(invertYAxis) {}
+    parameters_(parameters) {}
 
 void ResistiveTouchPanelController::init() {
     resistiveTouchPanel_.init();
@@ -75,7 +73,7 @@ bool ResistiveTouchPanelController::isPressed() {
     }
 
     const bool isPressedEnough =
-        resistiveTouchPanel_.readRawZ() <= pressureTreshold_;
+        resistiveTouchPanel_.readRawZ() <= parameters_.pressureTreshold;
 
     if (!wasTouched_ && isPressedEnough) {
         if (!debounceInProgress_) {
@@ -109,8 +107,8 @@ Vector2 ResistiveTouchPanelController::readPosition() {
     Vector2 position = getFilteredRawPosition();
     position = interpolateRawPosition(position);
 
-    if (invertYAxis_) {
-        position.y = pixelResolution_.y - position.y;
+    if (parameters_.invertYAxis) {
+        position.y = parameters_.pixelResolution.y - position.y;
     }
 
     return position;

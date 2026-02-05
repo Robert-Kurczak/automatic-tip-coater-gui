@@ -11,6 +11,7 @@
 #include "application/System/Config/ComponentConfig/AxisMotionConfig.hpp"
 #include "application/System/Config/ComponentConfig/ConfiguratorsConfig.hpp"
 #include "application/System/Config/ComponentConfig/HeaterConfig.hpp"
+#include "application/System/Config/ComponentConfig/Xpt2046TouchPanelConfig.hpp"
 #include "application/System/Controllers/AxisController/XAxisController/XAxisController.hpp"
 #include "application/System/Controllers/AxisController/YAxisController/YAxisController.hpp"
 #include "application/System/Controllers/AxisController/ZAxisController/ZAxisController.hpp"
@@ -284,15 +285,7 @@ private:
     ResistiveTouchPanelController touchPanelController_ {
         touchPanel_,
         systemClock_,
-        Rectangle {
-                   .xStart = 130,
-                   .xEnd = 1900,
-                   .yStart = 80,
-                   .yEnd = 1950
-        },
-        Vector2 {.x = 480, .y = 800},
-        1300,
-        true
+        XPT_2046_TOUCH_PANEL_CONFIG
     };
 
     NullTask nullTask_ {};
