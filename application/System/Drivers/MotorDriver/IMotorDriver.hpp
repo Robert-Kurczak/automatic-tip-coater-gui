@@ -3,14 +3,14 @@
 #include <cstdint>
 
 namespace ATC {
-class IMotor {
+class IMotorDriver {
 public:
-    IMotor() = default;
-    IMotor(const IMotor&) = delete;
-    IMotor& operator=(const IMotor&) = delete;
-    IMotor(IMotor&&) = delete;
-    IMotor& operator=(IMotor&&) = delete;
-    virtual ~IMotor() = default;
+    IMotorDriver() = default;
+    IMotorDriver(const IMotorDriver&) = delete;
+    IMotorDriver& operator=(const IMotorDriver&) = delete;
+    IMotorDriver(IMotorDriver&&) = delete;
+    IMotorDriver& operator=(IMotorDriver&&) = delete;
+    virtual ~IMotorDriver() = default;
 
     virtual void init() = 0;
 

@@ -4,14 +4,14 @@ namespace ATC {
 SpindleController::SpindleController(
     ILoggerSink& loggerSink,
     ISystemClock& systemClock,
-    IMotor& motor
+    IMotorDriver& motorDriver
 ) :
     loggerSink_(loggerSink),
     systemClock_(systemClock),
-    motor_(motor) {}
+    motorDriver_(motorDriver) {}
 
 void SpindleController::checkMotorFault() {
-    if (!wasFaultReported_ && motor_.isFaultDetected()) {
+    if (!wasFaultReported_ && motorDriver_.isFaultDetected()) {
         wasFaultReported_ = true;
     }
 }
@@ -34,12 +34,12 @@ void SpindleController::init(const SpindlePersistentConfig& config) {
     speedPercent_ = config.speedPercent;
     rotationTimeInMillis_ = config.timedRotationInMillis;
 
-    motor_.init();
+    motorDriver_.init();
 
     if (config.isDirectionClockwise) {
-        motor_.setDirectionClockwise();
+        motorDriver_.setDirectionClockwise();
     } else {
-        motor_.setDirectionCounterClockwise();
+        motorDriver_.setDirectionCounterClockwise();
     }
 }
 
@@ -53,7 +53,7 @@ bool SpindleController::wasFaultReported() {
 }
 
 void SpindleController::startRotation() {
-    motor_.startRotation(speedPercent_);
+    motorDriver_.startRotation(speedPercent_);
 }
 
 void SpindleController::startTimedRotation(uint32_t rotationMillis) {
@@ -61,7 +61,7 @@ void SpindleController::startTimedRotation(uint32_t rotationMillis) {
         systemClock_.getMillisecondsSinceStart() + rotationMillis;
     timedRotationStarted_ = true;
 
-    motor_.startRotation(speedPercent_);
+    motorDriver_.startRotation(speedPercent_);
 }
 
 void SpindleController::startTimedRotation() {
@@ -69,7 +69,7 @@ void SpindleController::startTimedRotation() {
 }
 
 void SpindleController::stopRotation() {
-    motor_.stopRotation();
+    motorDriver_.stopRotation();
 }
 
 bool SpindleController::isTimedRotationFinished() const {
@@ -77,15 +77,15 @@ bool SpindleController::isTimedRotationFinished() const {
 }
 
 void SpindleController::setDirectionClockwise() {
-    motor_.setDirectionClockwise();
+    motorDriver_.setDirectionClockwise();
 }
 
 void SpindleController::setDirectionCounterClockwise() {
-    motor_.setDirectionCounterClockwise();
+    motorDriver_.setDirectionCounterClockwise();
 }
 
 bool SpindleController::isDirectionClockwise() const {
-    return motor_.isDirectionClockwise();
+    return motorDriver_.isDirectionClockwise();
 }
 
 void SpindleController::setSpeedPercent(uint8_t value) {

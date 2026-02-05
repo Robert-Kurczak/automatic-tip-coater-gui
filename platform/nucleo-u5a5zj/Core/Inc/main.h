@@ -62,12 +62,12 @@ void ATC_Loop();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Spindle_DIR_Pin GPIO_PIN_2
-#define Spindle_DIR_GPIO_Port GPIOE
+#define Spindle_PH_Pin GPIO_PIN_2
+#define Spindle_PH_GPIO_Port GPIOE
 #define xAxis_STEP_Pin GPIO_PIN_3
 #define xAxis_STEP_GPIO_Port GPIOE
-#define Spindle_FAULT_Pin GPIO_PIN_4
-#define Spindle_FAULT_GPIO_Port GPIOE
+#define Spindle_FLT_Pin GPIO_PIN_4
+#define Spindle_FLT_GPIO_Port GPIOE
 #define xAxis_DIR_Pin GPIO_PIN_5
 #define xAxis_DIR_GPIO_Port GPIOE
 #define xAxis_CS_Pin GPIO_PIN_6
@@ -90,8 +90,8 @@ void ATC_Loop();
 #define zAxis_DIR_GPIO_Port GPIOF
 #define zAxis_CS_Pin GPIO_PIN_8
 #define zAxis_CS_GPIO_Port GPIOF
-#define Spindle_SPEED_Pin GPIO_PIN_9
-#define Spindle_SPEED_GPIO_Port GPIOF
+#define Spindle_EN_Pin GPIO_PIN_9
+#define Spindle_EN_GPIO_Port GPIOF
 #define zAxis_DIAG_Pin GPIO_PIN_10
 #define zAxis_DIAG_GPIO_Port GPIOF
 #define zAxis_MIN_LIMIT_Pin GPIO_PIN_1
@@ -126,6 +126,10 @@ void ATC_Loop();
 #define Heater_EN_GPIO_Port GPIOG
 #define UCPD_DBn_Pin GPIO_PIN_5
 #define UCPD_DBn_GPIO_Port GPIOB
+#define Spindle_SLP_Pin GPIO_PIN_0
+#define Spindle_SLP_GPIO_Port GPIOE
+#define Spindle_MD_Pin GPIO_PIN_1
+#define Spindle_MD_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 

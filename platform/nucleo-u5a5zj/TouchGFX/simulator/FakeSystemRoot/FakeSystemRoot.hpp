@@ -3,7 +3,7 @@
 #include "FakeDrivers/FakeDisplay/FakeDisplay.hpp"
 #include "FakeDrivers/FakeLimitSwitch/FakeLimitSwitch.hpp"
 #include "FakeDrivers/FakeLoggerSink/FakeLoggerSink.hpp"
-#include "FakeDrivers/FakeMotor/FakeMotor.hpp"
+#include "FakeDrivers/FakeMotorDriver/FakeMotorDriver.hpp"
 #include "FakeDrivers/FakePersistentStorage/FakePersistentStorage.hpp"
 #include "FakeDrivers/FakeResistiveTouchPanel/FakeResistiveTouchPanel.hpp"
 #include "FakeDrivers/FakeStepperDriver/FakeStepperDriver.hpp"
@@ -133,7 +133,7 @@ private:
         zAxisMotionController_
     };
 
-    FakeMotor spindleMotor_ {loggerSink_, "Spindle Motor"};
+    FakeMotorDriver spindleMotor_ {loggerSink_, "Spindle Motor"};
     SpindleController spindleController_ {
         loggerSink_,
         systemClock_,

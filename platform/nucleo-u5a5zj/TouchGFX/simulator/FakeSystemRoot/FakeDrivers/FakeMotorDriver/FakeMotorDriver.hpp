@@ -1,12 +1,12 @@
 #pragma once
 
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
-#include "application/System/Drivers/Motor/IMotor.hpp"
+#include "application/System/Drivers/MotorDriver/IMotorDriver.hpp"
 
 #include <string>
 
 namespace ATC {
-class FakeMotor : public IMotor {
+class FakeMotorDriver : public IMotorDriver {
 private:
     ILoggerSink& loggerSink_;
     const std::string name_;
@@ -14,7 +14,7 @@ private:
     bool isDirectionClockwise_ = true;
 
 public:
-    FakeMotor(ILoggerSink& loggerSink, std::string&& name);
+    FakeMotorDriver(ILoggerSink& loggerSink, std::string&& name);
 
     virtual void init() override;
 
