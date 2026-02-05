@@ -9612,7 +9612,7 @@
                   {
                     "Type": "TextArea",
                     "Name": "spindleDirectionValue",
-                    "Y": 428,
+                    "Y": 430,
                     "Width": 59,
                     "Height": 30,
                     "TextId": "__SingleUse_WM2X",
