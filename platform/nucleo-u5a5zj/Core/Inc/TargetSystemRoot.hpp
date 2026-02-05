@@ -28,7 +28,7 @@
 #include "application/System/Drivers/OutputSwitch/GpioOutputSwitch/GpioOutputSwitch.hpp"
 #include "application/System/Drivers/PersistentStorage/Eeprom24Lc64/Eeprom24Lc64.hpp"
 #include "application/System/Drivers/ResistiveTouchPanel/Xpt2046TouchPanel/Xpt2046TouchPanel.hpp"
-#include "application/System/Drivers/StepperDriver/Tmc2310StepperDriver/Tmc2310StepperDriver.hpp"
+#include "application/System/Drivers/StepperDriver/Tmc2130StepperDriver/Tmc2130StepperDriver.hpp"
 #include "application/System/Drivers/TemperatureSensor/Thermistor104Nt4/Thermistor104Nt4.hpp"
 #include "application/System/Root/SystemApi.hpp"
 #include "application/System/Root/SystemRoot.hpp"
@@ -80,13 +80,13 @@ private:
     GpioPin xAxisDirectionPin_ {*xAxis_DIR_GPIO_Port, xAxis_DIR_Pin};
     GpioPin xAxisDiagnosticPin_ {*xAxis_DIAG_GPIO_Port, xAxis_DIAG_Pin};
     GpioPin xAxisChipSelectPin_ {*xAxis_CS_GPIO_Port, xAxis_CS_Pin};
-    Tmc2310StepperDriverPinout xAxisStepperDriverPinout_ {
+    Tmc2130StepperDriverPinout xAxisStepperDriverPinout_ {
         .stepPin = xAxisStepPin_,
         .directionPin = xAxisDirectionPin_,
         .diagnosticPin = xAxisDiagnosticPin_,
         .chipSelectPin = xAxisChipSelectPin_
     };
-    Tmc2310StepperDriver xAxisStepperDriver_ {
+    Tmc2130StepperDriver xAxisStepperDriver_ {
         xAxisStepperDriverPinout_,
         spi_
     };
@@ -123,13 +123,13 @@ private:
     GpioPin yAxisDirectionPin_ {*yAxis_DIR_GPIO_Port, yAxis_DIR_Pin};
     GpioPin yAxisDiagnosticPin_ {*yAxis_DIAG_GPIO_Port, yAxis_DIAG_Pin};
     GpioPin yAxisChipSelectPin_ {*yAxis_CS_GPIO_Port, yAxis_CS_Pin};
-    Tmc2310StepperDriverPinout yAxisStepperDriverPinout_ {
+    Tmc2130StepperDriverPinout yAxisStepperDriverPinout_ {
         .stepPin = yAxisStepPin_,
         .directionPin = yAxisDirectionPin_,
         .diagnosticPin = yAxisDiagnosticPin_,
         .chipSelectPin = yAxisChipSelectPin_
     };
-    Tmc2310StepperDriver yAxisStepperDriver_ {
+    Tmc2130StepperDriver yAxisStepperDriver_ {
         yAxisStepperDriverPinout_,
         spi_
     };
@@ -171,13 +171,13 @@ private:
     GpioPin zAxisDirectionPin_ {*zAxis_DIR_GPIO_Port, zAxis_DIR_Pin};
     GpioPin zAxisDiagnosticPin_ {*zAxis_DIAG_GPIO_Port, zAxis_DIAG_Pin};
     GpioPin zAxisChipSelectPin_ {*zAxis_CS_GPIO_Port, zAxis_CS_Pin};
-    Tmc2310StepperDriverPinout zAxisStepperDriverPinout_ {
+    Tmc2130StepperDriverPinout zAxisStepperDriverPinout_ {
         .stepPin = zAxisStepPin_,
         .directionPin = zAxisDirectionPin_,
         .diagnosticPin = zAxisDiagnosticPin_,
         .chipSelectPin = zAxisChipSelectPin_
     };
-    Tmc2310StepperDriver zAxisStepperDriver_ {
+    Tmc2130StepperDriver zAxisStepperDriver_ {
         zAxisStepperDriverPinout_,
         spi_
     };

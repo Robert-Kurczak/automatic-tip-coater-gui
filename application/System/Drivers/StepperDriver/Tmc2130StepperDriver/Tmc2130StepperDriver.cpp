@@ -1,18 +1,18 @@
-#include "Tmc2310StepperDriver.hpp"
+#include "Tmc2130StepperDriver.hpp"
 
 #include "application/System/Ports/IGpioPin.hpp"
 
 namespace ATC {
 // TODO add SPI config
 
-Tmc2310StepperDriver::Tmc2310StepperDriver(
-    Tmc2310StepperDriverPinout& pinout,
+Tmc2130StepperDriver::Tmc2130StepperDriver(
+    Tmc2130StepperDriverPinout& pinout,
     ISpi& spi
 ) :
     pinout_(pinout),
     spi_(spi) {}
 
-void Tmc2310StepperDriver::init() {
+void Tmc2130StepperDriver::init() {
     pinout_.stepPin.init();
     pinout_.stepPin.disable();
 
@@ -25,29 +25,29 @@ void Tmc2310StepperDriver::init() {
     pinout_.chipSelectPin.setHigh();
 }
 
-void Tmc2310StepperDriver::startStepping() {
+void Tmc2130StepperDriver::startStepping() {
     pinout_.stepPin.enable();
 }
 
-void Tmc2310StepperDriver::stopStepping() {
+void Tmc2130StepperDriver::stopStepping() {
     pinout_.stepPin.disable();
 }
 
-void Tmc2310StepperDriver::setMicrosecondsBetweenStepToggle(
+void Tmc2130StepperDriver::setMicrosecondsBetweenStepToggle(
     uint32_t value
 ) {
     pinout_.stepPin.setToggleMicroseconds(value);
 }
 
-void Tmc2310StepperDriver::setDirectionClockwise() {
+void Tmc2130StepperDriver::setDirectionClockwise() {
     pinout_.directionPin.setLow();
 }
 
-void Tmc2310StepperDriver::setDirectionCounterClockwise() {
+void Tmc2130StepperDriver::setDirectionCounterClockwise() {
     pinout_.directionPin.setHigh();
 }
 
-[[nodiscard]] bool Tmc2310StepperDriver::isFaultDetected() const {
+[[nodiscard]] bool Tmc2130StepperDriver::isFaultDetected() const {
     return pinout_.diagnosticPin.isLow();
 }
 }
