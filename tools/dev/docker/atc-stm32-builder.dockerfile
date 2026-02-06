@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     g++ \
     libsdl2-dev \
     libsdl2-image-dev \
+    cmake \
     && apt-get clean
 
 RUN python3 -m venv /opt/venv

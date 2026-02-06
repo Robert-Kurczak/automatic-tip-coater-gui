@@ -7,6 +7,20 @@ import argparse
 from tempfile import NamedTemporaryFile
 from dev import common
 from dev import paths
+from pathlib import Path
+
+def run_command_in_container(command, working_directory=Path("/tmp")):
+    subprocess.run(
+            [
+                "docker", "run", "--rm", "-it",
+                "-u", f"{os.getuid()}:{os.getgid()}",
+                "--volume", f"{paths.REPOSITORY_ROOT_PATH}:{paths.MOUNTED_REPOSITORY_ROOT_PATH}:Z",
+                "--workdir", working_directory,
+                paths.STM32_BUILDER_IMAGE_NAME,
+                *command.split()
+            ],
+            check=True
+        )
 
 def is_docker_image_built():
     result = subprocess.run(
@@ -50,17 +64,7 @@ def check_touchgfx_simulator_quality(clang_log_file_path):
     clang_tidy_command += f" {paths.MOUNTED_APPLICATION_PATH}"
 
     try:
-        subprocess.run(
-            [
-                "docker", "run", "--rm", "-it",
-                "-u", f"{os.getuid()}:{os.getgid()}",
-                "--volume", f"{paths.REPOSITORY_ROOT_PATH}:{paths.MOUNTED_REPOSITORY_ROOT_PATH}:Z",
-                paths.STM32_BUILDER_IMAGE_NAME,
-                *clang_tidy_command.split()
-            ],
-            check=True
-        )
-
+        run_command_in_container(clang_tidy_command)
     except subprocess.CalledProcessError:
         common.log_error("=== Quality check failed ===")
         return
@@ -74,17 +78,7 @@ def generate_clang_html_report(clang_log_file_path):
     clang_html_command += f" {clang_log_file_path} -o {paths.MOUNTED_QUALITY_REPORT_FILE_PATH}"
 
     try:
-        subprocess.run(
-                [
-                    "docker", "run", "--rm", "-it",
-                    "-u", f"{os.getuid()}:{os.getgid()}",
-                    "--volume", f"{paths.REPOSITORY_ROOT_PATH}:{paths.MOUNTED_REPOSITORY_ROOT_PATH}:Z",
-                    paths.STM32_BUILDER_IMAGE_NAME,
-                    *clang_html_command.split()
-                ],
-                check=True
-            )
-
+        run_command_in_container(clang_html_command)
     except subprocess.CalledProcessError:
         common.log_error("=== Clang report failed ===")
         sys.exit(1)
@@ -103,16 +97,7 @@ def build_touchgfx_simulator(clean, quality_check):
 
         build_command += " all"
 
-        subprocess.run(
-            [
-                "docker", "run", "--rm", "-it",
-                "-u", f"{os.getuid()}:{os.getgid()}",
-                "--volume", f"{paths.REPOSITORY_ROOT_PATH}:{paths.MOUNTED_REPOSITORY_ROOT_PATH}:Z",
-                paths.STM32_BUILDER_IMAGE_NAME,
-                *build_command.split()
-            ],
-            check=True
-        )
+        run_command_in_container(build_command)
     except subprocess.CalledProcessError:
         common.log_error("=== Build failed ===")
         sys.exit(1)
@@ -126,8 +111,30 @@ def build_touchgfx_simulator(clean, quality_check):
             check_touchgfx_simulator_quality(temp_file.name)
             generate_clang_html_report(temp_file.name)
 
+def build_unit_tests(clean, quality_check):
+    common.log_info("=== Building unit tests ===")
+
+    try:
+        if clean:
+            run_command_in_container(f"rm -rf {paths.MOUNTED_HOST_BUILD_DIRECTORY_PATH}")
+
+        run_command_in_container(f"mkdir -p {paths.MOUNTED_HOST_BUILD_DIRECTORY_PATH}")
+        run_command_in_container(
+            f"cmake {paths.MOUNTED_HOST_CMAKE_PATH} -B {paths.MOUNTED_HOST_BUILD_DIRECTORY_PATH}",
+            working_directory=paths.MOUNTED_HOST_BUILD_DIRECTORY_PATH
+        )
+        run_command_in_container(
+            "make",
+            working_directory=paths.MOUNTED_HOST_BUILD_DIRECTORY_PATH
+        )
+
+    except subprocess.CalledProcessError:
+        common.log_error("=== Unit tests build failed ===")
+        sys.exit(1)
+
 BUILD_TARGETS = {
-    "touchgfx-simulator": build_touchgfx_simulator
+    "touchgfx-simulator": build_touchgfx_simulator,
+    "unit-tests": build_unit_tests
 }
 
 def main(build_target_function, clean, quality_check):
