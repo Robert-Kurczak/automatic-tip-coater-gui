@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../IResistiveTouchPanel.hpp"
+#include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 #include "application/System/Ports/IGpioPin.hpp"
 #include "application/System/Ports/ISpi.hpp"
 
@@ -15,13 +16,20 @@ struct Xpt2046TouchPanelPinout {
 
 class Xpt2046TouchPanel : public IResistiveTouchPanel {
 private:
+    ILoggerSink& loggerSink_;
     Xpt2046TouchPanelPinout& pinout_;
     ISpi& spi_;
 
     uint16_t transferReadCommand(uint8_t command);
 
+    void verifySpiSpeed();
+
 public:
-    Xpt2046TouchPanel(Xpt2046TouchPanelPinout& pinout, ISpi& spi);
+    Xpt2046TouchPanel(
+        ILoggerSink& loggerSink,
+        Xpt2046TouchPanelPinout& pinout,
+        ISpi& spi
+    );
 
     void init() override;
 

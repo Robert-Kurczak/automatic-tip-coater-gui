@@ -61,10 +61,12 @@ extern TIM_HandleTypeDef htim4;
 extern TIM_HandleTypeDef htim5;
 extern ADC_HandleTypeDef hadc1;
 namespace ATC {
+static constexpr uint32_t SPI1_BAUD_RATE_IN_KILOHERTZ = 1250;
+
 class TargetSystemRoot : public SystemRoot {
 private:
     Uart uart_ {huart1};
-    Spi spi_ {hspi1};
+    Spi spi_ {hspi1, SPI1_BAUD_RATE_IN_KILOHERTZ};
     I2c i2c_ {hi2c1};
 
     SystemClock systemClock_ {};
@@ -84,9 +86,7 @@ private:
         .directionPin = xAxisDirectionPin_,
         .diagnosticPin = xAxisDiagnosticPin_,
     };
-    Tmc2226StepperDriver xAxisStepperDriver_ {
-        xAxisStepperDriverPinout_
-    };
+    Tmc2226StepperDriver xAxisStepperDriver_ {xAxisStepperDriverPinout_};
     GpioPin xAxisMinLimitSwitchPin_ {
         *xAxis_MIN_LIMIT_GPIO_Port,
         xAxis_MIN_LIMIT_Pin
@@ -124,9 +124,7 @@ private:
         .directionPin = yAxisDirectionPin_,
         .diagnosticPin = yAxisDiagnosticPin_,
     };
-    Tmc2226StepperDriver yAxisStepperDriver_ {
-        yAxisStepperDriverPinout_
-    };
+    Tmc2226StepperDriver yAxisStepperDriver_ {yAxisStepperDriverPinout_};
     GpioPin yAxisMinLimitSwitchPin_ {
         *yAxis_MIN_LIMIT_GPIO_Port,
         yAxis_MIN_LIMIT_Pin
@@ -169,9 +167,7 @@ private:
         .directionPin = zAxisDirectionPin_,
         .diagnosticPin = zAxisDiagnosticPin_
     };
-    Tmc2226StepperDriver zAxisStepperDriver_ {
-        zAxisStepperDriverPinout_
-    };
+    Tmc2226StepperDriver zAxisStepperDriver_ {zAxisStepperDriverPinout_};
     GpioPin zAxisMinLimitSwitchPin_ {
         *zAxis_MIN_LIMIT_GPIO_Port,
         zAxis_MIN_LIMIT_Pin
@@ -268,7 +264,11 @@ private:
         .touchInterruptPin = touchPanelInterruptPin_
     };
 
-    Xpt2046TouchPanel touchPanel_ {xpt2046TouchPanelPinout_, spi_};
+    Xpt2046TouchPanel touchPanel_ {
+        loggerSink_,
+        xpt2046TouchPanelPinout_,
+        spi_
+    };
 
     ResistiveTouchPanelController touchPanelController_ {
         touchPanel_,
