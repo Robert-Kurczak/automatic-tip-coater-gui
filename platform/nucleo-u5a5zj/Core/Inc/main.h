@@ -70,8 +70,6 @@ void ATC_Loop();
 #define Spindle_FLT_GPIO_Port GPIOE
 #define xAxis_DIR_Pin GPIO_PIN_5
 #define xAxis_DIR_GPIO_Port GPIOE
-#define xAxis_CS_Pin GPIO_PIN_6
-#define xAxis_CS_GPIO_Port GPIOE
 #define xAxis_DIAG_Pin GPIO_PIN_1
 #define xAxis_DIAG_GPIO_Port GPIOF
 #define xAxis_MIN_LIMIT_Pin GPIO_PIN_2
@@ -88,8 +86,6 @@ void ATC_Loop();
 #define zAxis_STEP_GPIO_Port GPIOF
 #define zAxis_DIR_Pin GPIO_PIN_7
 #define zAxis_DIR_GPIO_Port GPIOF
-#define zAxis_CS_Pin GPIO_PIN_8
-#define zAxis_CS_GPIO_Port GPIOF
 #define Spindle_EN_Pin GPIO_PIN_9
 #define Spindle_EN_GPIO_Port GPIOF
 #define zAxis_DIAG_Pin GPIO_PIN_10
@@ -116,8 +112,6 @@ void ATC_Loop();
 #define yAxis_DIAG_GPIO_Port GPIOB
 #define UCPD_FLT_Pin GPIO_PIN_14
 #define UCPD_FLT_GPIO_Port GPIOB
-#define yAxis_CS_Pin GPIO_PIN_11
-#define yAxis_CS_GPIO_Port GPIOD
 #define yAxis_STEP_Pin GPIO_PIN_12
 #define yAxis_STEP_GPIO_Port GPIOD
 #define yAxis_DIR_Pin GPIO_PIN_13
