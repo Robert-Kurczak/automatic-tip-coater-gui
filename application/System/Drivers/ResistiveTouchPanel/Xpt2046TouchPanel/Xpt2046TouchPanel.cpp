@@ -1,6 +1,7 @@
 #include "Xpt2046TouchPanel.hpp"
 
 #include "application/System/Ports/IGpioPin.hpp"
+#include "application/Utils/Logger.hpp"
 
 #include <array>
 
@@ -24,10 +25,32 @@ uint16_t Xpt2046TouchPanel::transferReadCommand(uint8_t command) {
     return ((outputBuffer[0] << bitsToShift) | outputBuffer[1]) >> 4;
 }
 
+void Xpt2046TouchPanel::verifySpiSpeed() {
+    constexpr uint32_t nanosecondsInSecond = 1'000'000'000;
+    constexpr uint32_t hertzInKilohertz = 1'000;
+
+    constexpr uint32_t minimumClockPulseInNanoseconds = 500;
+    constexpr uint32_t maxClockInKilohertz =
+        nanosecondsInSecond /
+        (minimumClockPulseInNanoseconds * hertzInKilohertz);
+
+    const uint32_t spiClockInKilohertz = spi_.getSpeedInKilohertz();
+
+    if (spiClockInKilohertz > maxClockInKilohertz) {
+        log(loggerSink_,
+            LogLevel::Error,
+            "SPI Clock: {}khz is too big for XPT2046 Touch Panel: {}khz",
+            spiClockInKilohertz,
+            maxClockInKilohertz);
+    }
+}
+
 Xpt2046TouchPanel::Xpt2046TouchPanel(
+    ILoggerSink& loggerSink,
     Xpt2046TouchPanelPinout& pinout,
     ISpi& spi
 ) :
+    loggerSink_(loggerSink),
     pinout_(pinout),
     spi_(spi) {}
 
