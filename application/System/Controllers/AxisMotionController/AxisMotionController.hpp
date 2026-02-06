@@ -22,7 +22,6 @@ private:
     IStepperDriver& stepperDriver_;
     LimitSwitchPair& limitSwitchPair_;
 
-    const bool wereParametersClamped_;
     const AxisMotionParameters parameters_;
 
     bool wasFaultDetected_ = false;
@@ -34,16 +33,8 @@ private:
     volatile uint32_t currentPositionInSteps_ = 0;
     uint32_t targetPositionInSteps_ = 0;
 
-    [[nodiscard]] bool areParametersWithinRange(
-        const AxisMotionParameters& checkedParameters
-    ) const;
-
     [[nodiscard]] bool isSpeedWithinRange(
         uint16_t millimetersPerSecond
-    ) const;
-
-    [[nodiscard]] AxisMotionParameters clampParameters(
-        const AxisMotionParameters& clampedParameters
     ) const;
 
     [[nodiscard]] uint32_t calculateStepsToTargetPosition() const;
