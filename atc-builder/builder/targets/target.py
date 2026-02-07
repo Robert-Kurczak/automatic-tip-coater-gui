@@ -10,9 +10,8 @@ class Target:
     Target with the capability of being build and run
     """
 
-    def __init__(self, container: Container, name: str) -> None:
+    def __init__(self, container: Container) -> None:
         self.container = container
-        self.name = name
 
     @abstractmethod
     def build(self) -> None:
