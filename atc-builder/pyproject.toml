@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atc-builder"
+version = "1.0.0"
+
+[project.scripts]
+atc-builder = "builder.cli:main"
