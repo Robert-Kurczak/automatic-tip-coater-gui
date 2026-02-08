@@ -12,14 +12,22 @@ from builder.container.container import Container
 from builder.utils.logger import Logger
 from builder.targets.target import Target
 from builder.targets.touchgfxsimulator import TouchGfxSimulatorTarget
-from builder.config.environment_paths import TOUCHGFX_SIMULATOR_PATHS, CONTAINER_PATHS
+from builder.targets.gtest import GTestTarget
+from builder.config.environment_paths import (
+    CONTAINER_PATHS,
+    TOUCHGFX_SIMULATOR_PATHS,
+    GTEST_PATHS
+)
 
 LOGGER = Logger()
 CONTAINER = Container(LOGGER, CONTAINER_PATHS, "atc-builder")
 
 BUILD_TARGETS: dict[str, Target] = {
     "touchgfx-simulator":
-    TouchGfxSimulatorTarget(LOGGER, CONTAINER, TOUCHGFX_SIMULATOR_PATHS)
+    TouchGfxSimulatorTarget(LOGGER, CONTAINER, TOUCHGFX_SIMULATOR_PATHS),
+
+    "gtest":
+    GTestTarget(LOGGER, CONTAINER, GTEST_PATHS)
 }
 
 class BuilderMode(StrEnum):
