@@ -7,6 +7,16 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+get_filename_component(
+    REPOSITORY_ROOT
+    ${CMAKE_CURRENT_LIST_DIR}/../../
+    ABSOLUTE
+)
+set(APPLICATION_DIR ${REPOSITORY_ROOT}/application)
+
+message("REPOSITORY_ROOT: ${REPOSITORY_ROOT}")
+message("APPLICATION_DIR: ${APPLICATION_DIR}")
+
 include(FetchContent)
 FetchContent_Declare(
     googletest
@@ -19,14 +29,18 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+file(GLOB_RECURSE DOMAIN_SOURCES CONFIGURE_DEPENDS
+    ${APPLICATION_DIR}/*.cpp
+)
+
+file(GLOB_RECURSE TESTS_SOURCES CONFIGURE_DEPENDS
     Tests/*.cpp
 )
 
-
 add_executable(
     ${PROJECT_NAME}
-    ${SOURCES}
+    ${DOMAIN_SOURCES}
+    ${TESTS_SOURCES}
 )
 
 target_include_directories(

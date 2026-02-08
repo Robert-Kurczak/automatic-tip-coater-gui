@@ -7,23 +7,28 @@ class IFlexibleMemoryController {
 public:
     struct RegisterAddress {
         uintptr_t value;
+        constexpr bool operator==(const RegisterAddress&) const = default;
     };
 
     struct DataAddress {
         uintptr_t value;
+        constexpr bool operator==(const DataAddress&) const = default;
     };
 
     struct RegisterNumber {
         uint16_t value;
+        constexpr bool operator==(const RegisterNumber&) const = default;
     };
 
     struct Data {
         uint16_t value;
+        constexpr bool operator==(const Data&) const = default;
     };
 
     struct Instruction {
         RegisterNumber registerNumber;
         Data data;
+        constexpr bool operator==(const Instruction&) const = default;
     };
 
     IFlexibleMemoryController() = default;
