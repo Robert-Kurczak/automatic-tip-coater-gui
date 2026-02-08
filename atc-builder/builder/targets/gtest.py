@@ -38,6 +38,10 @@ class GTestTarget(Target):
         clean_command = f"rm -rf {self.paths.build_directory}"
         build_command = f"cmake {self.paths.cmake} -B {self.paths.build_directory}"
 
+        compile_commands = self.paths.build_directory.joinpath("compile_commands.json")
+        move_compile_commands_command = \
+            f"mv -f {compile_commands} {self.paths.cmake.parent}"
+
         try:
             if clean_build:
                 self.container.run_container_command(clean_command)
@@ -47,6 +51,9 @@ class GTestTarget(Target):
                 "make",
                 work_directory=self.paths.build_directory
             )
+
+            if clean_build:
+                self.container.run_container_command(move_compile_commands_command)
 
         except subprocess.CalledProcessError:
             self.logger.log_error("=== GTest build failed ===")
