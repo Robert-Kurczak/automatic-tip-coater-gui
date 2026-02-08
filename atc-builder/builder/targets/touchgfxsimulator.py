@@ -110,7 +110,8 @@ class TouchGfxSimulatorTarget(Target):
         try:
             subprocess.run(
                 [self.paths.touchgfx_binary],
-                check=True
+                check=True,
+                cwd=self.paths.touchgfx_binary.parent
             )
         except subprocess.CalledProcessError:
             self.logger.log_error("=== Run failed ===")
