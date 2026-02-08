@@ -2,13 +2,20 @@
 Definition of a development container
 """
 
+from dataclasses import dataclass
 import sys
 import os
 import subprocess
 from pathlib import Path
 
-from builder.config import environment_paths
 from builder.utils.logger import Logger
+
+@dataclass
+class ContainerPaths:
+    "Dev container related paths"
+
+    repository_root: Path
+    dockerfile: Path
 
 class Container:
     """
@@ -16,8 +23,9 @@ class Container:
     allowing to execute commands inside of it
     """
 
-    def __init__(self, logger: Logger, container_name: str) -> None:
+    def __init__(self, logger: Logger, paths: ContainerPaths, container_name: str) -> None:
         self.logger = logger
+        self.paths = paths
         self.container_name = container_name
 
         if not self._is_docker_image_built():
@@ -41,9 +49,9 @@ class Container:
                 "-u", f"{os.getuid()}:{os.getgid()}",
                 "--workdir", work_directory,
                 "--volume",
-                f"{environment_paths.REPOSITORY_ROOT_PATH}"
+                f"{self.paths.repository_root}"
                 + ":"
-                + f"{environment_paths.REPOSITORY_ROOT_PATH}"
+                + f"{self.paths.repository_root}"
                 + ":Z",
                 self.container_name,
                 *command.split()
@@ -76,7 +84,7 @@ class Container:
                 [
                     "docker", "build",
                     "--tag", self.container_name,
-                    "--file", environment_paths.BUILDER_DOCKERFILE_PATH,
+                    "--file", self.paths.dockerfile,
                     "."
                 ],
                 check=True
