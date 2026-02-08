@@ -2,8 +2,8 @@
 
 #include "application/System/Ports/IUart.hpp"
 
-#include <gmock/gmock.h>
-#include <gtest/gtest.h>
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 using namespace testing;
 

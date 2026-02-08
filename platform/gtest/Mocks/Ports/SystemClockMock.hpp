@@ -2,8 +2,8 @@
 
 #include "application/System/Ports/ISystemClock.hpp"
 
-#include <gmock/gmock.h>
-#include <gtest/gtest.h>
+#include "gmock/gmock.h"
+#include "gtest/gtest.h"
 
 using namespace testing;
 

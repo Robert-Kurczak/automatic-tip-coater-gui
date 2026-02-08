@@ -1,7 +1,6 @@
 #include "AxisTestTask.hpp"
 
 #include <functional>
-#include <touchgfx/Utils.hpp>
 
 namespace ATC {
 void AxisTestTask::calibrateAxes() {
