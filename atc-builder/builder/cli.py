@@ -11,11 +11,16 @@ from dataclasses import dataclass
 from builder.container.container import Container
 from builder.utils.logger import Logger
 from builder.targets.target import Target
+from builder.targets.touchgfxsimulator import TouchGfxSimulatorTarget
+from builder.config.environment_paths import TOUCHGFX_SIMULATOR_PATHS, CONTAINER_PATHS
 
 LOGGER = Logger()
-CONTAINER = Container(LOGGER, "atc-builder")
+CONTAINER = Container(LOGGER, CONTAINER_PATHS, "atc-builder")
 
-BUILD_TARGETS: dict[str, Target] = {}
+BUILD_TARGETS: dict[str, Target] = {
+    "touchgfx-simulator":
+    TouchGfxSimulatorTarget(LOGGER, CONTAINER, TOUCHGFX_SIMULATOR_PATHS)
+}
 
 class BuilderMode(StrEnum):
     "Mode defining what should be done with the target"
@@ -79,9 +84,9 @@ def parse_arguments() -> Args :
         sys.exit(1)
 
     return Args(
-        clean_build=args.clean_build,
+        clean_build=args.clean,
         quality_check=args.quality_check,
-        build_target=args.build_target,
+        build_target=build_target,
         builder_mode=args.builder_mode
     )
 
@@ -94,11 +99,11 @@ def main():
 
     match args.builder_mode:
         case BuilderMode.BUILD:
-            args.build_target.build()
+            args.build_target.build(args.clean_build, args.quality_check)
         case BuilderMode.RUN:
             args.build_target.run()
         case BuilderMode.BUILD_AND_RUN:
-            args.build_target.build()
+            args.build_target.build(args.clean_build, args.quality_check)
             args.build_target.run()
 
 
