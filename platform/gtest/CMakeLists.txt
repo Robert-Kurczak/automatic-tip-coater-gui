@@ -5,6 +5,7 @@ project(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -19,17 +20,25 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
-    tests/*.cpp
+    Tests/*.cpp
 )
+
 
 add_executable(
     ${PROJECT_NAME}
     ${SOURCES}
 )
 
+target_include_directories(
+    ${PROJECT_NAME}
+    PRIVATE
+    ../../
+)
+
 target_link_libraries(
     ${PROJECT_NAME}
     GTest::gtest_main
+    GTest::gmock_main
 )
 
 include(GoogleTest)
