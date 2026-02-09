@@ -9,7 +9,7 @@ using Data = IFlexibleMemoryController::Data;
 using Instruction = IFlexibleMemoryController::Instruction;
 
 inline constexpr std::array<Instruction, 79>
-    PROPRIETARY_HARDWARE_SETTINGS_ {
+    PROPRIETARY_HARDWARE_SETTINGS {
         // Manufacturer Page 1 Commands Enable
         Instruction {RegisterNumber {0xF000}, Data {0x50}},
         Instruction {RegisterNumber {0xF001}, Data {0xAA}},
@@ -117,7 +117,7 @@ inline constexpr std::array<Instruction, 79>
 };
 
 inline constexpr std::array<Instruction, 311>
-    PROPRIETARY_GAMMA_SETTINGS_ {
+    PROPRIETARY_GAMMA_SETTINGS {
         // Red +
         Instruction {RegisterNumber {0xD100}, Data {0x00}},
         Instruction {RegisterNumber {0xD101}, Data {0x37}},
@@ -437,35 +437,33 @@ inline constexpr std::array<Instruction, 311>
         Instruction {RegisterNumber {0xD633}, Data {0xC1}},
 };
 
-inline constexpr Instruction RGB565_FORMAT_INSTRUCTION_ {
+inline constexpr Instruction RGB565_FORMAT_INSTRUCTION {
     RegisterNumber {0x3A00},
     Data {0x55}
 };
 
-inline constexpr Instruction EXIT_SLEEP_INSTRUCTION_ {
+inline constexpr Instruction EXIT_SLEEP_INSTRUCTION {
     RegisterNumber {0x1100},
     Data {0x00}
 };
-inline constexpr uint8_t DELAY_AFTER_SLEEP_MILLIS_ = 120;
 
-inline constexpr Instruction ENABLE_DISPLAY_INSTRUCTION_ {
+inline constexpr Instruction ENABLE_DISPLAY_INSTRUCTION {
     RegisterNumber {0x2900},
     Data {0x00}
 };
-inline constexpr uint8_t DELAY_AFTER_ENABLE_MILLIS_ = 10;
 
-inline constexpr Instruction SET_PIXELS_OFF_INSTRUCTION_ {
+inline constexpr Instruction SET_PIXELS_OFF_INSTRUCTION {
     RegisterNumber {0x2200},
     Data {0x00}
 };
 
-inline constexpr Instruction NORMAL_DISPLAY_MODE_INSTRUCTION_ {
+inline constexpr Instruction NORMAL_DISPLAY_MODE_INSTRUCTION {
     RegisterNumber {0x1300},
     Data {0x00}
 };
 
-inline constexpr RegisterNumber MEMORY_WRITE_REGISTER_ {0x2C00};
-inline constexpr RegisterNumber COLUMN_SET_REGISTER_ {0x2A00};
-inline constexpr RegisterNumber ROW_SET_REGISTER_ {0x2B00};
+inline constexpr RegisterNumber MEMORY_WRITE_REGISTER {0x2C00};
+inline constexpr RegisterNumber COLUMN_SET_REGISTER {0x2A00};
+inline constexpr RegisterNumber ROW_SET_REGISTER {0x2B00};
 
 }

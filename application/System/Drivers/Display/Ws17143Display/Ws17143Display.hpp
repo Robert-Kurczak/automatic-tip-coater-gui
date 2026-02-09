@@ -17,9 +17,6 @@ struct Ws17143DisplayPinout {
 
 class Ws17143Display : public IDisplay {
 private:
-    static constexpr uint16_t WIDTH_ = 480;
-    static constexpr uint16_t HEIGHT_ = 800;
-
     const Ws17143DisplayPinout& pinout_;
     IFlexibleMemoryController& flexibleMemoryController_;
     ISystemClock& systemClock_;
@@ -34,6 +31,9 @@ private:
     void setAllPixelsOff();
 
 public:
+    static constexpr uint16_t WIDTH_ = 480;
+    static constexpr uint16_t HEIGHT_ = 800;
+
     Ws17143Display(
         const Ws17143DisplayPinout& pinout,
         IFlexibleMemoryController& flexibleMemoryController,
