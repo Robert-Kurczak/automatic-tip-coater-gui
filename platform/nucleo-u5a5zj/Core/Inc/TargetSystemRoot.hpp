@@ -21,7 +21,7 @@
 #include "application/System/Controllers/SpindleController/SpindleController.hpp"
 #include "application/System/Controllers/TouchPanelController/ResistiveTouchPanelController/ResistiveTouchPanelController.hpp"
 #include "application/System/Drivers/Display/Ws17143Display/Ws17143Display.hpp"
-#include "application/System/Drivers/FlexibleMemoryController/FlexibleMemoryController.hpp"
+#include "Adapters/FlexibleMemoryController/FlexibleMemoryController.hpp"
 #include "application/System/Drivers/LimitSwitch/GpioLimitSwitch/GpioLimitSwitch.hpp"
 #include "application/System/Drivers/LoggerSink/UartLoggerSink/UartLoggerSink.hpp"
 #include "application/System/Drivers/MotorDriver/Drv8876MotorDriver/Drv8876MotorDriver.hpp"

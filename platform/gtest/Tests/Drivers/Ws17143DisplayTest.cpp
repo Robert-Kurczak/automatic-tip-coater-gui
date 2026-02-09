@@ -1,7 +1,6 @@
 #include "application/System/Drivers/Display/Ws17143Display/Ws17143Display.hpp"
 
 #include "application/System/Drivers/Display/Ws17143Display/Ws17143ProprietarySettings.hpp"
-#include "application/System/Ports/IGpioPin.hpp"
 #include "application/Utils/Math.hpp"
 #include "platform/gtest/Mocks/Controllers/FlexibleMemoryControllerMock.hpp"
 #include "platform/gtest/Mocks/Ports/GpioPinMock.hpp"
