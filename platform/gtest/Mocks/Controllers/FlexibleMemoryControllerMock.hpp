@@ -1,9 +1,8 @@
 #pragma once
 
-#include "application/System/Drivers/FlexibleMemoryController/IFlexibleMemoryController.hpp"
+#include "application/System/Ports/IFlexibleMemoryController.hpp"
 
 #include "gmock/gmock.h"
-#include "gtest/gtest.h"
 
 using namespace testing;
 
