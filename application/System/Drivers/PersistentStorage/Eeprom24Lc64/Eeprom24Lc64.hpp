@@ -10,6 +10,8 @@ private:
     const uint8_t deviceAddress_;
 
 public:
+    static constexpr uint8_t MEMORY_ADDRESS_SIZE = 2;
+
     Eeprom24Lc64(II2c& i2c, uint8_t deviceAddress);
 
     void init() override;
