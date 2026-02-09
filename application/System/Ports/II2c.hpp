@@ -8,14 +8,17 @@ class II2c {
 public:
     struct DeviceAddress {
         uint8_t value;
+        constexpr bool operator==(const DeviceAddress&) const = default;
     };
 
     struct MemoryAddress {
         uint16_t value;
+        constexpr bool operator==(const MemoryAddress&) const = default;
     };
 
     struct MemoryAddressSize {
         uint8_t value;
+        constexpr bool operator==(const MemoryAddressSize&) const = default;
     };
 
     II2c() = default;

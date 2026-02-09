@@ -3,7 +3,6 @@
 #include "application/System/Ports/II2c.hpp"
 
 #include "gmock/gmock.h"
-#include "gtest/gtest.h"
 #include <span>
 
 using namespace testing;
@@ -15,7 +14,7 @@ public:
         void,
         sendData,
         (DeviceAddress, std::span<uint8_t>),
-        (const override)
+        (override)
     );
 
     MOCK_METHOD(
