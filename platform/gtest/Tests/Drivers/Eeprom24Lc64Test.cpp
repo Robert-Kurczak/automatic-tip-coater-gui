@@ -2,6 +2,7 @@
 
 #include "application/System/Ports/II2c.hpp"
 #include "platform/gtest//Mocks/Ports/I2cMock.hpp"
+#include "platform/gtest/Matchers/SpanMatcher.hpp"
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
@@ -10,11 +11,6 @@
 using namespace testing;
 
 namespace ATC {
-
-MATCHER_P(SpanEq, expected, "") { //NOLINT
-    return arg.data() == expected.data() && arg.size() == expected.size();
-}
-
 class Eeprom24Lc64Test : public Test {
 public:
     I2cMock i2cMock_ {};
@@ -38,7 +34,7 @@ TEST_F(
             II2c::MemoryAddressSize {
                 ATC::Eeprom24Lc64::MEMORY_ADDRESS_SIZE
             },
-            SpanEq(std::span<uint8_t> {buffer})
+            SpanRefEq(std::span<uint8_t> {buffer})
         )
     );
 
@@ -60,7 +56,7 @@ TEST_F(
             II2c::MemoryAddressSize {
                 ATC::Eeprom24Lc64::MEMORY_ADDRESS_SIZE
             },
-            SpanEq(std::span<uint8_t> {buffer})
+            SpanRefEq(std::span<uint8_t> {buffer})
         )
     );
 

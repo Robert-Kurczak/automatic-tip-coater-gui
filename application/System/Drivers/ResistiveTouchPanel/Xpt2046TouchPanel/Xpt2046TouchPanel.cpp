@@ -6,10 +6,6 @@
 #include <array>
 
 namespace ATC {
-static constexpr uint8_t READ_X_COMMAND_ = 0xD0;
-static constexpr uint8_t READ_Y_COMMAND_ = 0x90;
-static constexpr uint8_t READ_Z1_COMMAND_ = 0xB0;
-static constexpr uint8_t READ_Z2_COMMAND_ = 0xC0;
 
 uint16_t Xpt2046TouchPanel::transferReadCommand(uint8_t command) {
     pinout_.chipSelectPin.setLow();
@@ -59,6 +55,8 @@ void Xpt2046TouchPanel::init() {
 
     pinout_.chipSelectPin.init(GpioMode::Output, GpioPull::NoPull);
     pinout_.chipSelectPin.setHigh();
+
+    verifySpiSpeed();
 }
 
 bool Xpt2046TouchPanel::isTouchDetected() {
@@ -66,16 +64,16 @@ bool Xpt2046TouchPanel::isTouchDetected() {
 }
 
 uint16_t Xpt2046TouchPanel::readRawX() {
-    return transferReadCommand(READ_X_COMMAND_);
+    return transferReadCommand(READ_X_COMMAND);
 }
 
 uint16_t Xpt2046TouchPanel::readRawY() {
-    return transferReadCommand(READ_Y_COMMAND_);
+    return transferReadCommand(READ_Y_COMMAND);
 }
 
 uint16_t Xpt2046TouchPanel::readRawZ() {
-    const uint16_t rawZ1Value = transferReadCommand(READ_Z1_COMMAND_);
-    const uint16_t rawZ2Value = transferReadCommand(READ_Z2_COMMAND_);
+    const uint16_t rawZ1Value = transferReadCommand(READ_Z1_COMMAND);
+    const uint16_t rawZ2Value = transferReadCommand(READ_Z2_COMMAND);
 
     const uint16_t rawPressure = (rawZ2Value > rawZ1Value)
                                      ? (rawZ2Value - rawZ1Value)
