@@ -43,6 +43,12 @@ add_executable(
     ${TESTS_SOURCES}
 )
 
+target_compile_definitions(
+    ${PROJECT_NAME}
+    PRIVATE
+    DEBUG_BUILD
+)
+
 target_include_directories(
     ${PROJECT_NAME}
     PRIVATE

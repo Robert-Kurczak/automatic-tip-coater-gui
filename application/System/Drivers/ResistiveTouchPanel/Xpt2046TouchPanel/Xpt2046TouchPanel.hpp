@@ -25,6 +25,11 @@ private:
     void verifySpiSpeed();
 
 public:
+    static constexpr uint8_t READ_X_COMMAND = 0xD0;
+    static constexpr uint8_t READ_Y_COMMAND = 0x90;
+    static constexpr uint8_t READ_Z1_COMMAND = 0xB0;
+    static constexpr uint8_t READ_Z2_COMMAND = 0xC0;
+
     Xpt2046TouchPanel(
         ILoggerSink& loggerSink,
         Xpt2046TouchPanelPinout& pinout,
