@@ -10,8 +10,9 @@ using namespace testing;
 namespace ATC {
 class AdcMock : public IAdc {
 public:
-    MOCK_METHOD(void, init, (), (const override));
+    MOCK_METHOD(void, init, (), (override));
 
+    MOCK_METHOD(uint8_t, getResolutionBits, (), (const override));
     MOCK_METHOD(float, getReferenceVoltage, (), (const override));
 
     MOCK_METHOD(uint32_t, readRaw, (), (override));
