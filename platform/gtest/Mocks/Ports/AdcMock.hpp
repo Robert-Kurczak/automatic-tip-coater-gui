@@ -3,7 +3,6 @@
 #include "application/System/Ports/IAdc.hpp"
 
 #include "gmock/gmock.h"
-#include "gtest/gtest.h"
 
 using namespace testing;
 

@@ -20,7 +20,9 @@ void ZAxisController::init(const AxisPersistentConfig& config) {
     );
 }
 
-void ZAxisController::tick() {}
+void ZAxisController::tick() {
+    axisMotionController_.tick();
+}
 
 bool ZAxisController::wasFaultReported() const {
     return axisMotionController_.wasFaultDetected();
@@ -55,7 +57,7 @@ void ZAxisController::moveToHomePosition() {
 }
 
 bool ZAxisController::isAtHomePosition() const {
-    return axisMotionController_.isAtMaxLimit();
+    return axisMotionController_.isAtMinLimit();
 }
 
 void ZAxisController::moveToStartPosition() {
