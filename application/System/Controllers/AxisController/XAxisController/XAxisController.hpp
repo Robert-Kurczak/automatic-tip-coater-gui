@@ -16,6 +16,8 @@ private:
     uint32_t endPositionInMicrometers_ = 0;
     uint32_t heaterFrontPositionInMicrometers_ = 0;
 
+    void updateHeaterFrontPosition();
+
 public:
     XAxisController(
         ILoggerSink& loggerSink,

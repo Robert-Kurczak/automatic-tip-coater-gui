@@ -5,6 +5,12 @@ namespace ATC {
 static constexpr uint32_t HEATER_FRONT_POSITION_MULTIPLIER = 8;
 static constexpr uint32_t HEATER_FRONT_POSITION_DIVIDER = 10;
 
+void XAxisController::updateHeaterFrontPosition() {
+    heaterFrontPositionInMicrometers_ = endPositionInMicrometers_ *
+                                        HEATER_FRONT_POSITION_MULTIPLIER /
+                                        HEATER_FRONT_POSITION_DIVIDER;
+}
+
 XAxisController::XAxisController(
     ILoggerSink& loggerSink,
     IAxisMotionController& axisMotionController
@@ -20,6 +26,8 @@ void XAxisController::init(const AxisPersistentConfig& config) {
     axisMotionController_.setMillimetersPerSecond(
         config.speedInMillimetersPerSecond
     );
+
+    updateHeaterFrontPosition();
 }
 
 void XAxisController::tick() {
@@ -109,9 +117,7 @@ uint32_t XAxisController::getStartPositionInMicrometers() const {
 void XAxisController::setEndPositionInMicrometers(uint32_t value) {
     endPositionInMicrometers_ = value;
 
-    heaterFrontPositionInMicrometers_ = value /
-                                        HEATER_FRONT_POSITION_DIVIDER *
-                                        HEATER_FRONT_POSITION_MULTIPLIER;
+    updateHeaterFrontPosition();
 }
 
 uint32_t XAxisController::getEndPositionInMicrometers() const {
