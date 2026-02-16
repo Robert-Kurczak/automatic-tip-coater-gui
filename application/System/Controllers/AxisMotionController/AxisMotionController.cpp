@@ -8,9 +8,6 @@
 #include <cstdint>
 
 namespace ATC {
-static constexpr uint16_t MIN_MILLIMETERS_PER_SECOND = 1;
-static constexpr uint16_t MAX_MILLIMETERS_PER_SECOND = 1'000;
-
 static constexpr uint32_t MICROSECONDS_IN_SECOND = 1'000'000;
 static constexpr uint16_t MICROMETERS_IN_MILLIMETER = 1'000;
 
@@ -26,7 +23,7 @@ consteval void checkMicrosecondsBetweenStepsOverflows() {
     static_assert(
         (MAX_AXIS_MOTION_PARAMETERS.motorStepsPerRotation *
          MAX_AXIS_MOTION_PARAMETERS.driverStepDivider *
-         MAX_MILLIMETERS_PER_SECOND) <= UINT32_MAX
+         AxisMotionController::MAX_MILLIMETERS_PER_SECOND) <= UINT32_MAX
     );
 }
 
@@ -240,6 +237,11 @@ uint16_t AxisMotionController::getMillimetersPerSecond() const {
 
 void AxisMotionController::moveToPositionInMicrometers(uint32_t value) {
     targetPositionInSteps_ = convertMicrometersToSteps(value);
+
+    if (isAtPositionInSteps(targetPositionInSteps_)) {
+        return;
+    }
+
     isMovingToTarget_ = true;
 
     if (targetPositionInSteps_ > currentPositionInSteps_) {
@@ -254,6 +256,7 @@ void AxisMotionController::moveToPositionInMicrometers(uint32_t value) {
 void AxisMotionController::moveToMinLimitSwitch() {
     setDirectionBackward();
     stepperDriver_.startStepping();
+    isMovingToTarget_ = true;
 }
 
 void AxisMotionController::moveToMaxLimitSwitch() {
