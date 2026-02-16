@@ -59,6 +59,9 @@ private:
     void setDirectionBackward();
 
 public:
+    static constexpr uint16_t MIN_MILLIMETERS_PER_SECOND = 1;
+    static constexpr uint16_t MAX_MILLIMETERS_PER_SECOND = 1'000;
+
     AxisMotionController(
         ILoggerSink& loggerSink,
         IStepperDriver& stepperDriver,
