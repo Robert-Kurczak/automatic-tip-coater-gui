@@ -5,8 +5,6 @@
 #include "application/System/Drivers/OutputSwitch/IOutputSwitch.hpp"
 #include "application/System/Drivers/TemperatureSensor/ITemperatureSensor.hpp"
 
-#include <cstdint>
-
 namespace ATC {
 class HysteresisHeaterController : public IHeaterController {
 private:
