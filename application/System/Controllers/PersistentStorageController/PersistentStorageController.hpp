@@ -3,6 +3,7 @@
 #include "IPersistentStorageController.hpp"
 #include "PersistentData/AxisPersistentConfig.hpp"
 #include "PersistentData/HeaterPersistentConfig.hpp"
+#include "PersistentData/PersistentData.hpp"
 #include "PersistentData/SpindlePersistentConfig.hpp"
 #include "application/System/Drivers/LoggerSink/ILoggerSink.hpp"
 #include "application/System/Drivers/PersistentStorage/IPersistentStorage.hpp"
@@ -12,18 +13,6 @@
 namespace ATC {
 class PersistentStorageController : public IPersistentStorageController {
 private:
-    struct PersistentData {
-        static constexpr uint32_t EXPECTED_SIGNATURE = 0xDEADBEEF;
-
-        AxisPersistentConfig xAxisConfig;
-        AxisPersistentConfig yAxisConfig;
-        AxisPersistentConfig zAxisConfig;
-        SpindlePersistentConfig spindleConfig;
-        HeaterPersistentConfig heaterConfig;
-        uint32_t signature;
-        uint32_t checksum;
-    };
-
     ILoggerSink& loggerSink_;
     IPersistentStorage& persistentStorage_;
 
