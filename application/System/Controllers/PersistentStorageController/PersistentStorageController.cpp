@@ -1,6 +1,5 @@
 #include "PersistentStorageController.hpp"
 
-#include "application/System/Config/ComponentConfig/ConfiguratorsConfig.hpp"
 #include "application/System/Config/ComponentConfig/DefaultPersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
 #include "application/System/Controllers/PersistentStorageController/PersistentData/SpindlePersistentConfig.hpp"
@@ -15,9 +14,9 @@ void PersistentStorageController::logAxisConfig(
     log(loggerSink_,
         LogLevel::Debug,
         "=== {} axis config ===\n"
-        "\tstart position: {}\n"
-        "\tend position: {}\n"
-        "\tspeed: {}\n",
+        "\tstart position [μm]: {}\n"
+        "\tend position [μm]: {}\n"
+        "\tspeed [mm/s]: {}\n",
         axisName,
         config.startPositionInMicrometers,
         config.endPositionInMicrometers,
