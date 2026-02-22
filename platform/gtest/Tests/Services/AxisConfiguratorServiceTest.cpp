@@ -1,5 +1,6 @@
 #include "application/System/Services/AxisConfiguratorService/AxisConfiguratorService.hpp"
 
+#include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
 #include "application/System/Services/AxisConfiguratorService/AxisConfiguratorParameters.hpp"
 #include "application/System/Services/AxisConfiguratorService/XAxisConfiguratorService/XAxisConfiguratorService.hpp"
 #include "application/System/Services/AxisConfiguratorService/YAxisConfiguratorService/YAxisConfiguratorService.hpp"
@@ -256,8 +257,6 @@ TEST_P(
     axisConfiguratorService_->saveStartPosition();
 }
 
-// ===
-
 TEST_P(
     AxisConfiguratorServiceTest,
     GIVEN_axisConfiguratorService_WHEN_showcaseEndPositionIsCalled_THEN_axisControllerIsMovedToPosition
@@ -377,8 +376,6 @@ TEST_P(
     axisConfiguratorService_->saveEndPosition();
 }
 
-// ===
-
 TEST_P(
     AxisConfiguratorServiceTest,
     GIVEN_axisConfiguratorService_WHEN_showcaseSpeedIsCalled_THEN_axisControllerIsMovedToPosition
@@ -491,5 +488,26 @@ TEST_P(
     );
 
     axisConfiguratorService_->saveSpeed();
+}
+
+TEST_P(
+    AxisConfiguratorServiceTest,
+    GIVEN_axisConfiguratorService_WHEN_getStoredConfigIsCalled_THEN_controllerConfigIsReturned
+) {
+    EXPECT_CALL(axisControllerMock_, getStartPositionInMicrometers())
+        .WillOnce(Return(START_POSITION));
+
+    EXPECT_CALL(axisControllerMock_, getEndPositionInMicrometers())
+        .WillOnce(Return(END_POSITION));
+
+    EXPECT_CALL(axisControllerMock_, getSpeedInMillimetersPerSecond())
+        .WillOnce(Return(SPEED));
+
+    const AxisPersistentConfig config =
+        axisConfiguratorService_->getStoredConfig();
+
+    ASSERT_EQ(config.startPositionInMicrometers, START_POSITION);
+    ASSERT_EQ(config.endPositionInMicrometers, END_POSITION);
+    ASSERT_EQ(config.speedInMillimetersPerSecond, SPEED);
 }
 }
