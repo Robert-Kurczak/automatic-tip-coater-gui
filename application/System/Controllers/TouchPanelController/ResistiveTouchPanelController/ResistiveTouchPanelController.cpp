@@ -54,19 +54,6 @@ Vector2 ResistiveTouchPanelController::interpolateRawPosition(
     return interpolatedPosition;
 }
 
-ResistiveTouchPanelController::ResistiveTouchPanelController(
-    IResistiveTouchPanel& resistiveTouchPanel,
-    ISystemClock& systemClock,
-    ResistiveTouchPanelParameters parameters
-) :
-    resistiveTouchPanel_(resistiveTouchPanel),
-    systemClock_(systemClock),
-    parameters_(parameters) {}
-
-void ResistiveTouchPanelController::init() {
-    resistiveTouchPanel_.init();
-}
-
 bool ResistiveTouchPanelController::isPressed() {
     if (!resistiveTouchPanel_.isTouchDetected()) {
         return false;
@@ -97,6 +84,19 @@ bool ResistiveTouchPanelController::isPressed() {
     }
 
     return wasTouched_;
+}
+
+ResistiveTouchPanelController::ResistiveTouchPanelController(
+    IResistiveTouchPanel& resistiveTouchPanel,
+    ISystemClock& systemClock,
+    ResistiveTouchPanelParameters parameters
+) :
+    resistiveTouchPanel_(resistiveTouchPanel),
+    systemClock_(systemClock),
+    parameters_(parameters) {}
+
+void ResistiveTouchPanelController::init() {
+    resistiveTouchPanel_.init();
 }
 
 Vector2 ResistiveTouchPanelController::readPosition() {
