@@ -1,7 +1,6 @@
 #include "AxisConfiguratorService.hpp"
 
 #include "application/System/Controllers/PersistentStorageController/PersistentData/AxisPersistentConfig.hpp"
-#include "application/Utils/Logger.hpp"
 
 #include <algorithm>
 
