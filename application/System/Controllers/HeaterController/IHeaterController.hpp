@@ -2,8 +2,6 @@
 
 #include "application/System/Controllers/PersistentStorageController/PersistentData/HeaterPersistentConfig.hpp"
 
-#include <cstdint>
-
 namespace ATC {
 class IHeaterController {
 public:
@@ -22,8 +20,7 @@ public:
     [[nodiscard]] virtual bool isOn() const = 0;
 
     virtual void setTargetTemperatureInCelsius(float value) = 0;
-    [[nodiscard]] virtual float
-    getTargetTemperatureInCelsius() const = 0;
+    [[nodiscard]] virtual float getTargetTemperatureInCelsius() const = 0;
 
     [[nodiscard]] virtual bool isAtTargetTemperature() const = 0;
 };
