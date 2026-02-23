@@ -1,13 +1,17 @@
 #pragma once
 
 #include "application/System/Controllers/AxisController/IAxisController.hpp"
+#include "application/System/Controllers/AxisController/XAxisController/IXAxisController.hpp"
+#include "application/System/Controllers/AxisController/YAxisController/IYAxisController.hpp"
+#include "application/System/Controllers/AxisController/ZAxisController/IZAxisController.hpp"
 
 #include "gmock/gmock.h"
 
 using namespace testing;
 
 namespace ATC {
-class AxisControllerMock : public IAxisController {
+template<typename Base>
+class AxisControllerMockBase : public Base {
 public:
     MOCK_METHOD(
         void,
@@ -98,4 +102,30 @@ public:
 
     MOCK_METHOD(void, cancelMovement, (), (override));
 };
+
+class AxisControllerMock :
+    public AxisControllerMockBase<IAxisController> {};
+
+class XAxisControllerMock :
+    public AxisControllerMockBase<IXAxisController> {
+public:
+    MOCK_METHOD(void, moveToHeaterFrontPosition, (), (override));
+
+    MOCK_METHOD(bool, isAtHeaterFrontPosition, (), (const override));
+};
+
+class YAxisControllerMock :
+    public AxisControllerMockBase<IYAxisController> {
+public:
+    MOCK_METHOD(void, moveToDetectTip, (), (override));
+
+    MOCK_METHOD(bool, isTipDetected, (), (const override));
+
+    MOCK_METHOD(void, moveToCoatingPosition, (), (override));
+
+    MOCK_METHOD(bool, isAtCoatingPosition, (), (const override));
+};
+
+class ZAxisControllerMock :
+    public AxisControllerMockBase<IZAxisController> {};
 }
