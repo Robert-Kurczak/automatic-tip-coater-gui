@@ -62,7 +62,7 @@ TEST_F(
         .WillRepeatedly(Return(true));
 
     {
-        InSequence seq;
+        InSequence sequence;
 
         EXPECT_CALL(calibrationTaskMock_, start());
 

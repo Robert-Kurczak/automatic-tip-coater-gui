@@ -1,5 +1,3 @@
-#pragma once
-
 #include "application/System/Services/TaskControlService/TaskControlService.hpp"
 
 #include "platform/gtest/Mocks/Tasks/TaskSchedulerMock.hpp"

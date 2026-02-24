@@ -99,7 +99,7 @@ void CoatingTask::moveXAxisToEndPosition() {
 }
 
 void CoatingTask::waitForXAxisAtEndPosition() {
-    if (zAxisController_.isAtEndPosition()) {
+    if (xAxisController_.isAtEndPosition()) {
         currentStage_++;
     }
 }
@@ -127,7 +127,7 @@ void CoatingTask::waitForXAxisAtHeaterFrontPosition() {
 }
 
 void CoatingTask::startTimedRotationInHeaterFront() {
-    spindleController_.startRotation();
+    spindleController_.startTimedRotation();
     currentStage_++;
 }
 
@@ -203,12 +203,12 @@ const std::array<CoatingTask::stageMethod, 30> CoatingTask::stages_ {
     &CoatingTask::moveXAxisToStartPosition,
     &CoatingTask::waitForXAxisAtStartPosition,
 
-    &CoatingTask::stopRotation,
-
     &CoatingTask::stopHeater,
 
+    &CoatingTask::stopRotation,
+
     &CoatingTask::moveZAxisToStartPosition,
-    &CoatingTask::waitForZAxisAtEndPosition,
+    &CoatingTask::waitForZAxisAtStartPosition,
 
     &CoatingTask::finishTask
 };
