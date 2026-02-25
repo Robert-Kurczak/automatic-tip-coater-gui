@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import sys
 import os
 import subprocess
+import shlex
 from pathlib import Path
 
 from builder.utils.logger import Logger
@@ -54,7 +55,7 @@ class Container:
                 + f"{self.paths.repository_root}"
                 + ":Z",
                 self.container_name,
-                *command.split()
+                *shlex.split(command)
             ],
             check=True
         )
@@ -94,4 +95,3 @@ class Container:
             sys.exit(1)
 
         self.logger.log_success("=== Build succeed ===")
-

@@ -3,7 +3,6 @@
 __pycache__
 atc-storage.bin
 .cache
+application/Reports/**
 compile_commands.json
-clang-tidy-report.html
-clang-tidy-checks.py
 *.egg-info
