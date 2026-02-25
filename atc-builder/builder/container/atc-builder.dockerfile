@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     make \
     python3-venv \
     clang-tidy \
+    gcovr \
     g++ \
     libsdl2-dev \
     libsdl2-image-dev \

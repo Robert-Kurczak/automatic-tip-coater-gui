@@ -9,18 +9,19 @@ from builder.container.container import ContainerPaths
 BUILDER_DIRECTORY_PATH = Path(__file__).parent.parent.parent
 REPOSITORY_ROOT_PATH = BUILDER_DIRECTORY_PATH.parent
 APPLICATION_PATH = REPOSITORY_ROOT_PATH.joinpath("application")
+REPORTS_DIRECTORY_PATH = APPLICATION_PATH.joinpath("Reports")
 # ===
 
 CONTAINER_PATHS = ContainerPaths(
     repository_root = REPOSITORY_ROOT_PATH,
     dockerfile = BUILDER_DIRECTORY_PATH.joinpath(
-        "container/atc-builder.dockerfile"
+        "builder/container/atc-builder.dockerfile"
     )
 )
 
 TOUCHGFX_SIMULATOR_PATHS = TouchGfxSimulatorPaths(
     clang_tidy_config = REPOSITORY_ROOT_PATH.joinpath(".clang-tidy"),
-    clang_tidy_report = APPLICATION_PATH.joinpath("clang-tidy-report.html"),
+    clang_tidy_report = REPORTS_DIRECTORY_PATH.joinpath("clang-tidy-report.html"),
     touchgfx_simulator_makefile = REPOSITORY_ROOT_PATH.joinpath(
         "platform/nucleo-u5a5zj/TouchGFX/simulator/gcc/Makefile"
     ),
@@ -33,5 +34,6 @@ TOUCHGFX_SIMULATOR_PATHS = TouchGfxSimulatorPaths(
 
 GTEST_PATHS = GTestPaths(
     build_directory = REPOSITORY_ROOT_PATH.joinpath("platform/gtest/build"),
-    cmake = REPOSITORY_ROOT_PATH.joinpath("platform/gtest/CMakeLists.txt")
+    cmake = REPOSITORY_ROOT_PATH.joinpath("platform/gtest/CMakeLists.txt"),
+    gcovr_html_file = REPORTS_DIRECTORY_PATH.joinpath("gcovr/gcovr-report.html")
 )

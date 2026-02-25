@@ -49,6 +49,18 @@ target_compile_definitions(
     DEBUG_BUILD
 )
 
+target_compile_options(
+    ${PROJECT_NAME}
+    PRIVATE
+    -fprofile-arcs -ftest-coverage -fPIC -O0
+)
+
+target_link_options(
+    ${PROJECT_NAME}
+    PRIVATE
+    -fprofile-arcs -ftest-coverage --coverage
+)
+
 target_include_directories(
     ${PROJECT_NAME}
     PRIVATE
