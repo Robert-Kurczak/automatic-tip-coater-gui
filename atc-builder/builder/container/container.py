@@ -71,8 +71,11 @@ class Container:
         """
 
         if not self.is_docker_available():
-            self.logger.log_error("Docker dependency is missing")
-            return
+            self.logger.log_error(
+                "Docker engine is missing at the host machine\n"
+                "https://docs.docker.com/engine/install"
+            )
+            sys.exit(1)
 
         if not self.is_docker_image_built():
             self.build_docker_image()
