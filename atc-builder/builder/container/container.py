@@ -2,14 +2,16 @@
 Definition of a development container
 """
 
-from dataclasses import dataclass
-import sys
 import os
-import subprocess
 import shlex
+import shutil
+import subprocess
+import sys
+from dataclasses import dataclass
 from pathlib import Path
 
 from builder.utils.logger import Logger
+
 
 @dataclass
 class ContainerPaths:
@@ -18,21 +20,45 @@ class ContainerPaths:
     repository_root: Path
     dockerfile: Path
 
+
 class Container:
     """
     Dev container containing build dependencies,
     allowing to execute commands inside of it
     """
 
-    def __init__(self, logger: Logger, paths: ContainerPaths, container_name: str) -> None:
+    @staticmethod
+    def is_docker_available() -> bool:
+        """
+        Checks whether docker is available on the machine
+        """
+
+        return shutil.which("docker") is not None
+
+    def is_docker_image_built(self) -> bool:
+        """
+        Checks whether dev image is present in the docker registry
+        """
+
+        result = subprocess.run(
+            ["sudo", "docker", "images", "-q", self.container_name],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            check=False,
+        )
+        return result.stdout != ""
+
+    def __init__(
+        self, logger: Logger, paths: ContainerPaths, container_name: str
+    ) -> None:
         self.logger = logger
         self.paths = paths
         self.container_name = container_name
 
-        if not self._is_docker_image_built():
-            self.build_docker_image()
-
-    def run_container_command(self, command: str, work_directory = Path("/tmp")) -> None:
+    def run_container_command(
+        self, command: str, work_directory=Path("/tmp")
+    ) -> None:
         """
         Run given command in the dev container
 
@@ -44,35 +70,34 @@ class Container:
         :type work_directory: Path
         """
 
+        if not self.is_docker_available():
+            self.logger.log_error("Docker dependency is missing")
+            return
+
+        if not self.is_docker_image_built():
+            self.build_docker_image()
+
         subprocess.run(
             [
-                "docker", "run", "--rm", "-it",
-                "-u", f"{os.getuid()}:{os.getgid()}",
-                "--workdir", work_directory,
+                "sudo",
+                "docker",
+                "run",
+                "--rm",
+                "-it",
+                "-u",
+                f"{os.getuid()}:{os.getgid()}",
+                "--workdir",
+                work_directory,
                 "--volume",
                 f"{self.paths.repository_root}"
                 + ":"
                 + f"{self.paths.repository_root}"
                 + ":Z",
                 self.container_name,
-                *shlex.split(command)
+                *shlex.split(command),
             ],
-            check=True
+            check=True,
         )
-
-    def _is_docker_image_built(self) -> bool:
-        """
-        Checks whether dev image is present in the docker registry
-        """
-
-        result = subprocess.run(
-            ["docker", "images", "-q", self.container_name],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
-            text=True,
-            check=False
-        )
-        return result.stdout != ""
 
     def build_docker_image(self):
         """
@@ -83,12 +108,16 @@ class Container:
         try:
             subprocess.run(
                 [
-                    "docker", "build",
-                    "--tag", self.container_name,
-                    "--file", self.paths.dockerfile,
-                    "."
+                    "sudo",
+                    "docker",
+                    "build",
+                    "--tag",
+                    self.container_name,
+                    "--file",
+                    self.paths.dockerfile,
+                    ".",
                 ],
-                check=True
+                check=True,
             )
         except subprocess.CalledProcessError:
             self.logger.log_error("=== Build failed ===")

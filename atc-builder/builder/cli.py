@@ -5,19 +5,19 @@ Builder CLI entry point
 
 import argparse
 import sys
-from enum import StrEnum
 from dataclasses import dataclass
+from enum import StrEnum
 
-from builder.container.container import Container
-from builder.utils.logger import Logger
-from builder.targets.target import Target
-from builder.targets.touchgfxsimulator import TouchGfxSimulatorTarget
-from builder.targets.gtest import GTestTarget
 from builder.config.environment_paths import (
     CONTAINER_PATHS,
+    GTEST_PATHS,
     TOUCHGFX_SIMULATOR_PATHS,
-    GTEST_PATHS
 )
+from builder.container.container import Container
+from builder.targets.gtest import GTestTarget
+from builder.targets.target import Target
+from builder.targets.touchgfxsimulator import TouchGfxSimulatorTarget
+from builder.utils.logger import Logger
 
 LOGGER = Logger()
 CONTAINER = Container(LOGGER, CONTAINER_PATHS, "atc-builder")
